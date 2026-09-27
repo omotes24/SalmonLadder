@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-09-26T18:40:00Z",
+  "counts": {
+    "recurrence": 576,
+    "stream": 592,
+    "runtime": 24,
+    "holdout": 18
+  },
+  "unique_id_pool": 44974,
+  "class_panels": [
+    "arctocephalus_galapagoensis",
+    "high_heels",
+    "creme_brulee",
+    "dendrolagus_lumholtzi",
+    "erysimum_franciscanum",
+    "shuttlecock",
+    "windsor_chair",
+    "lasionycteris_noctivagans"
+  ],
+  "r": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "same_class_difficulty_matching": "greedy nearest absolute difference of log(product static DINO p); differences saved",
+  "score_labels_used_only_in_plan_and_metrics": true
+}

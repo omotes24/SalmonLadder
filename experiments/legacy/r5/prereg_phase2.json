@@ -1,0 +1,34 @@
+{
+ "name": "R5 Phase 2 decision rule (v5), written before any M1/M2a/M3/M4 result exists",
+ "written_utc": "2026-09-26T20:30:38Z",
+ "baseline": "v4 (REPRISE, frozen: scripts/iter3_eval.py sha256 40a9bf33..., entrance 0.40/0.30/0.10, m=2, LP k10 a0.9 g3 15 warm sweeps)",
+ "candidates": {
+  "M1": [
+   "m1_bh_all_{q}_full",
+   "m1_bh_last_{q}_full",
+   "q in 0.05, 0.1, 0.2"
+  ],
+  "M2a": [
+   "m2a_split1_full"
+  ],
+  "M3": [
+   "m3_product",
+   "m3_cauchy",
+   "m3_hmp",
+   "m3_withinview_product",
+   "m3_withinview_cauchy"
+  ],
+  "M4": [
+   "m4_full_x_maha"
+  ],
+  "entrance_m1": [
+   "E3m1@0.1 (neighbour rank m = 1, thresholds frozen from dev1 tuning in (2))"
+  ]
+ },
+ "conditions": "the 15 matched conditions per dev split (5 shot draws x 3 order seeds); draw-level means; 95% t interval over draws (4 d.o.f.)",
+ "primary": "near FPR95 of the full score (x TINS where the candidate uses TINS)",
+ "selection_dev1": "among candidates whose mean far FPR95 difference to v4 on dev1 is <= +0.5, the one with the lowest mean dev1 near FPR95; it must beat v4 on dev1 with the upper end of the 95% CI of the near FPR95 difference < 0",
+ "confirmation_dev2": "the selected candidate must have the upper end of the 95% CI of the near FPR95 difference to v4 on dev2 < 0 and a mean far FPR95 difference <= +0.5",
+ "adoption": "at most one modification; if confirmed, v5 = v4 + that modification (all other settings frozen); otherwise v5 is not defined and Phase 3 evaluates v4",
+ "not_decision_inputs": "E1, E2-E5, sensitivity and oracle diagnostics (E5) are analyses only; test data are not used"
+}

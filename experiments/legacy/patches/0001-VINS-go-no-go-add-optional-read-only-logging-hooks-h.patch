@@ -1,0 +1,75 @@
+From 26aff17680d60422c15ff550858d704b7787314e Mon Sep 17 00:00:00 2001
+From: "Claude (VINS go/no-go)" <noreply@anthropic.com>
+Date: Fri, 25 Sep 2026 23:47:33 +0900
+Subject: [PATCH] VINS go/no-go: add optional read-only logging hooks
+ (hook=None keeps upstream behavior)
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_012A3rPUKnzerF19BcRDUJVq
+---
+ eval_tins_w_init.py | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/eval_tins_w_init.py b/eval_tins_w_init.py
+index 2e27fc9..deb8837 100644
+--- a/eval_tins_w_init.py
++++ b/eval_tins_w_init.py
+@@ -1161,6 +1161,7 @@ def maybe_expand_dynamic_bank(
+     init_candidates,
+     buffer_features=None,
+     buffer_scores=None,
++    hook=None,
+ ):
+     # # NOTE: 用户要求关闭 neglabel 动态扩张（dynamic bank expansion）。
+     # # 这里直接短路返回，保持函数签名与调用逻辑不变。
+@@ -1169,6 +1170,7 @@ def maybe_expand_dynamic_bank(
+     use_buffer = bool(getattr(args, "use_buffer", False))
+ 
+     activate_indicator = current_scores < args.ood_threshold
++    if hook is not None: hook.on_activate(activate_indicator)
+     if not torch.any(activate_indicator):
+         return None, bank_features, bank_scores, buffer_features, buffer_scores
+ 
+@@ -1215,6 +1217,7 @@ def maybe_expand_dynamic_bank(
+ 
+         intermodal_sim = template_features @ class_prototypes.T
+         mask = torch.all(intermodal_sim < base_sim.unsqueeze(0), dim=1)
++        if hook is not None: hook.on_criterion(activate_indicator, intermodal_sim, base_sim, mask)
+         if mask.numel() == 0 or not torch.any(mask):
+             return None, bank_features, bank_scores, buffer_features, buffer_scores
+ 
+@@ -1283,6 +1286,7 @@ def compute_tins_scores_from_image_features(
+     inversion_init_candidates,
+     class_prototypes,
+     base_sim,
++    hook=None,
+ ):
+     device = positive_features.device
+     logit_scale = float(model.logit_scale.exp().detach().cpu())
+@@ -1320,6 +1324,7 @@ def compute_tins_scores_from_image_features(
+             group_num=args.group_num,
+             random_permute=args.random_permute,
+         )
++        if hook is not None: hook.on_arrival(start, batch_scores)
+ 
+         (
+             updated_text_bank,
+@@ -1341,6 +1346,7 @@ def compute_tins_scores_from_image_features(
+             init_candidates=inversion_init_candidates,
+             buffer_features=buffer_features,
+             buffer_scores=buffer_scores,
++            hook=hook,
+         )
+ 
+         if updated_text_bank is not None:
+@@ -1354,6 +1360,7 @@ def compute_tins_scores_from_image_features(
+                 random_permute=args.random_permute,
+             )
+ 
++        if hook is not None: hook.on_final(start, batch_scores, int(bank_features.shape[0]), int(buffer_features.shape[0]))
+         all_scores.append(batch_scores.cpu())
+ 
+     return torch.cat(all_scores, dim=0).numpy()
+-- 
+2.43.0
+

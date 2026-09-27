@@ -1,0 +1,9 @@
+{
+  "n": 115879,
+  "excluded_eval_pixel_duplicates": 445,
+  "ns": 12000,
+  "nc": 4000,
+  "nclass": 1000,
+  "source": "frozen REPRISE caches",
+  "pretraining_unseen_claim": false
+}

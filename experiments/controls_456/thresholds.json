@@ -1,0 +1,19 @@
+{
+  "source": "old dev1 near streams, seeds123/124/125; ID scores only, OOD not used to optimize cutoff",
+  "target_ID_false_alarm_per_1000": 10,
+  "strict_alarm_rule": "score < threshold",
+  "visual": {
+    "static": 0.000176445171166854,
+    "memory": 0.00013048305490136227,
+    "lp": 0.00019125175895707948,
+    "full": 2.693722120415472e-07
+  },
+  "with_tins": {
+    "TINS": 0.1767609864473343,
+    "TINS_x_static": 0.00010024333765234347,
+    "TINS_x_memory": 9.32988977966935e-05,
+    "TINS_x_lp": 0.00011539405801205627,
+    "TINS_x_full": 1.714231754052367e-07
+  },
+  "fixed_across_prevalence_recurrence_pattern_and_capacity": true
+}

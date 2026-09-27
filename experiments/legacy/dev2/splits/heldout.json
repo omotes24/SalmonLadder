@@ -1,0 +1,2524 @@
+[
+ {
+  "wnid": "n01443537",
+  "idx_1k": 1,
+  "clean_name": "goldfish",
+  "raw_name": "goldfish",
+  "lemmas": [
+   "goldfish",
+   "Carassius_auratus"
+  ],
+  "parents": [
+   "cyprinid.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01440764",
+    "clean_name": "tench"
+   }
+  ]
+ },
+ {
+  "wnid": "n01632458",
+  "idx_1k": 28,
+  "clean_name": "spotted salamander",
+  "raw_name": "spotted_salamander",
+  "lemmas": [
+   "spotted_salamander",
+   "Ambystoma_maculatum"
+  ],
+  "parents": [
+   "ambystomid.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01632777",
+    "clean_name": "axolotl"
+   }
+  ]
+ },
+ {
+  "wnid": "n01667114",
+  "idx_1k": 35,
+  "clean_name": "mud turtle",
+  "raw_name": "mud_turtle",
+  "lemmas": [
+   "mud_turtle"
+  ],
+  "parents": [
+   "turtle.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01667778",
+    "clean_name": "terrapin"
+   },
+   {
+    "wnid": "n01669191",
+    "clean_name": "box turtle"
+   }
+  ]
+ },
+ {
+  "wnid": "n01682714",
+  "idx_1k": 40,
+  "clean_name": "Carolina anole",
+  "raw_name": "American_chameleon",
+  "lemmas": [
+   "American_chameleon",
+   "anole",
+   "Anolis_carolinensis"
+  ],
+  "parents": [
+   "iguanid.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01677366",
+    "clean_name": "green iguana"
+   }
+  ]
+ },
+ {
+  "wnid": "n01768244",
+  "idx_1k": 69,
+  "clean_name": "trilobite",
+  "raw_name": "trilobite",
+  "lemmas": [
+   "trilobite"
+  ],
+  "parents": [
+   "arthropod.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01784675",
+    "clean_name": "centipede"
+   }
+  ]
+ },
+ {
+  "wnid": "n01773549",
+  "idx_1k": 73,
+  "clean_name": "barn spider",
+  "raw_name": "barn_spider",
+  "lemmas": [
+   "barn_spider",
+   "Araneus_cavaticus"
+  ],
+  "parents": [
+   "spider.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01773157",
+    "clean_name": "yellow garden spider"
+   },
+   {
+    "wnid": "n01773797",
+    "clean_name": "European garden spider"
+   },
+   {
+    "wnid": "n01774384",
+    "clean_name": "southern black widow"
+   },
+   {
+    "wnid": "n01774750",
+    "clean_name": "tarantula"
+   },
+   {
+    "wnid": "n01775062",
+    "clean_name": "wolf spider"
+   }
+  ]
+ },
+ {
+  "wnid": "n01797886",
+  "idx_1k": 82,
+  "clean_name": "ruffed grouse",
+  "raw_name": "ruffed_grouse",
+  "lemmas": [
+   "ruffed_grouse",
+   "partridge",
+   "Bonasa_umbellus"
+  ],
+  "parents": [
+   "grouse.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01795545",
+    "clean_name": "black grouse"
+   },
+   {
+    "wnid": "n01796340",
+    "clean_name": "ptarmigan"
+   },
+   {
+    "wnid": "n01798484",
+    "clean_name": "prairie grouse"
+   }
+  ]
+ },
+ {
+  "wnid": "n01843383",
+  "idx_1k": 96,
+  "clean_name": "toucan",
+  "raw_name": "toucan",
+  "lemmas": [
+   "toucan"
+  ],
+  "parents": [
+   "piciform_bird.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01843065",
+    "clean_name": "jacamar"
+   }
+  ]
+ },
+ {
+  "wnid": "n01924916",
+  "idx_1k": 110,
+  "clean_name": "flatworm",
+  "raw_name": "flatworm",
+  "lemmas": [
+   "flatworm",
+   "platyhelminth"
+  ],
+  "parents": [
+   "worm.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01930112",
+    "clean_name": "nematode"
+   }
+  ]
+ },
+ {
+  "wnid": "n01950731",
+  "idx_1k": 115,
+  "clean_name": "sea slug",
+  "raw_name": "sea_slug",
+  "lemmas": [
+   "sea_slug",
+   "nudibranch"
+  ],
+  "parents": [
+   "gastropod.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01943899",
+    "clean_name": "conch"
+   },
+   {
+    "wnid": "n01944390",
+    "clean_name": "snail"
+   },
+   {
+    "wnid": "n01945685",
+    "clean_name": "slug"
+   }
+  ]
+ },
+ {
+  "wnid": "n01978287",
+  "idx_1k": 118,
+  "clean_name": "Dungeness crab",
+  "raw_name": "Dungeness_crab",
+  "lemmas": [
+   "Dungeness_crab",
+   "Cancer_magister"
+  ],
+  "parents": [
+   "crab.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n01978455",
+    "clean_name": "rock crab"
+   },
+   {
+    "wnid": "n01980166",
+    "clean_name": "fiddler crab"
+   },
+   {
+    "wnid": "n01981276",
+    "clean_name": "red king crab"
+   }
+  ]
+ },
+ {
+  "wnid": "n02002556",
+  "idx_1k": 127,
+  "clean_name": "white stork",
+  "raw_name": "white_stork",
+  "lemmas": [
+   "white_stork",
+   "Ciconia_ciconia"
+  ],
+  "parents": [
+   "stork.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02002724",
+    "clean_name": "black stork"
+   }
+  ]
+ },
+ {
+  "wnid": "n02018795",
+  "idx_1k": 138,
+  "clean_name": "bustard",
+  "raw_name": "bustard",
+  "lemmas": [
+   "bustard"
+  ],
+  "parents": [
+   "wading_bird.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02006656",
+    "clean_name": "spoonbill"
+   },
+   {
+    "wnid": "n02007558",
+    "clean_name": "flamingo"
+   },
+   {
+    "wnid": "n02012849",
+    "clean_name": "crane bird"
+   },
+   {
+    "wnid": "n02013706",
+    "clean_name": "limpkin"
+   }
+  ]
+ },
+ {
+  "wnid": "n02085620",
+  "idx_1k": 151,
+  "clean_name": "Chihuahua",
+  "raw_name": "Chihuahua",
+  "lemmas": [
+   "Chihuahua"
+  ],
+  "parents": [
+   "toy_dog.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02085782",
+    "clean_name": "Japanese Chin"
+   },
+   {
+    "wnid": "n02085936",
+    "clean_name": "Maltese"
+   },
+   {
+    "wnid": "n02086079",
+    "clean_name": "Pekingese"
+   },
+   {
+    "wnid": "n02086240",
+    "clean_name": "Shih Tzu"
+   },
+   {
+    "wnid": "n02087046",
+    "clean_name": "toy terrier"
+   }
+  ]
+ },
+ {
+  "wnid": "n02088466",
+  "idx_1k": 163,
+  "clean_name": "Bloodhound",
+  "raw_name": "bloodhound",
+  "lemmas": [
+   "bloodhound",
+   "sleuthhound"
+  ],
+  "parents": [
+   "hound.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02088094",
+    "clean_name": "Afghan Hound"
+   },
+   {
+    "wnid": "n02088238",
+    "clean_name": "Basset Hound"
+   },
+   {
+    "wnid": "n02088364",
+    "clean_name": "Beagle"
+   },
+   {
+    "wnid": "n02088632",
+    "clean_name": "Bluetick Coonhound"
+   },
+   {
+    "wnid": "n02090379",
+    "clean_name": "Redbone Coonhound"
+   },
+   {
+    "wnid": "n02091244",
+    "clean_name": "Ibizan Hound"
+   },
+   {
+    "wnid": "n02091467",
+    "clean_name": "Norwegian Elkhound"
+   },
+   {
+    "wnid": "n02091635",
+    "clean_name": "Otterhound"
+   },
+   {
+    "wnid": "n02091831",
+    "clean_name": "Saluki"
+   },
+   {
+    "wnid": "n02092002",
+    "clean_name": "Scottish Deerhound"
+   },
+   {
+    "wnid": "n02092339",
+    "clean_name": "Weimaraner"
+   }
+  ]
+ },
+ {
+  "wnid": "n02090622",
+  "idx_1k": 169,
+  "clean_name": "borzoi",
+  "raw_name": "borzoi",
+  "lemmas": [
+   "borzoi",
+   "Russian_wolfhound"
+  ],
+  "parents": [
+   "wolfhound.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02090721",
+    "clean_name": "Irish Wolfhound"
+   }
+  ]
+ },
+ {
+  "wnid": "n02093647",
+  "idx_1k": 181,
+  "clean_name": "Bedlington Terrier",
+  "raw_name": "Bedlington_terrier",
+  "lemmas": [
+   "Bedlington_terrier"
+  ],
+  "parents": [
+   "terrier.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02093754",
+    "clean_name": "Border Terrier"
+   },
+   {
+    "wnid": "n02093859",
+    "clean_name": "Kerry Blue Terrier"
+   },
+   {
+    "wnid": "n02093991",
+    "clean_name": "Irish Terrier"
+   },
+   {
+    "wnid": "n02094114",
+    "clean_name": "Norfolk Terrier"
+   },
+   {
+    "wnid": "n02094258",
+    "clean_name": "Norwich Terrier"
+   },
+   {
+    "wnid": "n02094433",
+    "clean_name": "Yorkshire Terrier"
+   },
+   {
+    "wnid": "n02096051",
+    "clean_name": "Airedale Terrier"
+   },
+   {
+    "wnid": "n02096177",
+    "clean_name": "Cairn Terrier"
+   },
+   {
+    "wnid": "n02096294",
+    "clean_name": "Australian Terrier"
+   },
+   {
+    "wnid": "n02096437",
+    "clean_name": "Dandie Dinmont Terrier"
+   },
+   {
+    "wnid": "n02096585",
+    "clean_name": "Boston Terrier"
+   },
+   {
+    "wnid": "n02097298",
+    "clean_name": "Scottish Terrier"
+   },
+   {
+    "wnid": "n02097474",
+    "clean_name": "Tibetan Terrier"
+   },
+   {
+    "wnid": "n02097658",
+    "clean_name": "Australian Silky Terrier"
+   },
+   {
+    "wnid": "n02098105",
+    "clean_name": "Soft-coated Wheaten Terrier"
+   },
+   {
+    "wnid": "n02098286",
+    "clean_name": "West Highland White Terrier"
+   },
+   {
+    "wnid": "n02098413",
+    "clean_name": "Lhasa Apso"
+   }
+  ]
+ },
+ {
+  "wnid": "n02097130",
+  "idx_1k": 197,
+  "clean_name": "Giant Schnauzer",
+  "raw_name": "giant_schnauzer",
+  "lemmas": [
+   "giant_schnauzer"
+  ],
+  "parents": [
+   "schnauzer.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02097047",
+    "clean_name": "Miniature Schnauzer"
+   },
+   {
+    "wnid": "n02097209",
+    "clean_name": "Standard Schnauzer"
+   }
+  ]
+ },
+ {
+  "wnid": "n02099601",
+  "idx_1k": 207,
+  "clean_name": "Golden Retriever",
+  "raw_name": "golden_retriever",
+  "lemmas": [
+   "golden_retriever"
+  ],
+  "parents": [
+   "retriever.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02099267",
+    "clean_name": "Flat-Coated Retriever"
+   },
+   {
+    "wnid": "n02099429",
+    "clean_name": "Curly-coated Retriever"
+   },
+   {
+    "wnid": "n02099712",
+    "clean_name": "Labrador Retriever"
+   },
+   {
+    "wnid": "n02099849",
+    "clean_name": "Chesapeake Bay Retriever"
+   }
+  ]
+ },
+ {
+  "wnid": "n02100236",
+  "idx_1k": 210,
+  "clean_name": "German Shorthaired Pointer",
+  "raw_name": "German_short-haired_pointer",
+  "lemmas": [
+   "German_short-haired_pointer"
+  ],
+  "parents": [
+   "pointer.n.04"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02100583",
+    "clean_name": "Vizsla"
+   }
+  ]
+ },
+ {
+  "wnid": "n02100877",
+  "idx_1k": 213,
+  "clean_name": "Irish Setter",
+  "raw_name": "Irish_setter",
+  "lemmas": [
+   "Irish_setter",
+   "red_setter"
+  ],
+  "parents": [
+   "setter.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02100735",
+    "clean_name": "English Setter"
+   },
+   {
+    "wnid": "n02101006",
+    "clean_name": "Gordon Setter"
+   }
+  ]
+ },
+ {
+  "wnid": "n02101556",
+  "idx_1k": 216,
+  "clean_name": "Clumber Spaniel",
+  "raw_name": "clumber",
+  "lemmas": [
+   "clumber",
+   "clumber_spaniel"
+  ],
+  "parents": [
+   "spaniel.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02101388",
+    "clean_name": "Brittany dog"
+   },
+   {
+    "wnid": "n02102318",
+    "clean_name": "Cocker Spaniel"
+   },
+   {
+    "wnid": "n02102480",
+    "clean_name": "Sussex Spaniel"
+   }
+  ]
+ },
+ {
+  "wnid": "n02102177",
+  "idx_1k": 218,
+  "clean_name": "Welsh Springer Spaniel",
+  "raw_name": "Welsh_springer_spaniel",
+  "lemmas": [
+   "Welsh_springer_spaniel"
+  ],
+  "parents": [
+   "springer_spaniel.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02102040",
+    "clean_name": "English Springer Spaniel"
+   }
+  ]
+ },
+ {
+  "wnid": "n02104029",
+  "idx_1k": 222,
+  "clean_name": "Kuvasz",
+  "raw_name": "kuvasz",
+  "lemmas": [
+   "kuvasz"
+  ],
+  "parents": [
+   "watchdog.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02104365",
+    "clean_name": "Schipperke"
+   }
+  ]
+ },
+ {
+  "wnid": "n02105056",
+  "idx_1k": 224,
+  "clean_name": "Groenendael dog",
+  "raw_name": "groenendael",
+  "lemmas": [
+   "groenendael"
+  ],
+  "parents": [
+   "belgian_sheepdog.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02105162",
+    "clean_name": "Malinois"
+   }
+  ]
+ },
+ {
+  "wnid": "n02106382",
+  "idx_1k": 233,
+  "clean_name": "Bouvier des Flandres dog",
+  "raw_name": "Bouvier_des_Flandres",
+  "lemmas": [
+   "Bouvier_des_Flandres",
+   "Bouviers_des_Flandres"
+  ],
+  "parents": [
+   "shepherd_dog.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02105251",
+    "clean_name": "Briard"
+   },
+   {
+    "wnid": "n02105412",
+    "clean_name": "Australian Kelpie"
+   },
+   {
+    "wnid": "n02105505",
+    "clean_name": "Komondor"
+   },
+   {
+    "wnid": "n02105641",
+    "clean_name": "Old English Sheepdog"
+   },
+   {
+    "wnid": "n02105855",
+    "clean_name": "Shetland Sheepdog"
+   },
+   {
+    "wnid": "n02106030",
+    "clean_name": "collie"
+   },
+   {
+    "wnid": "n02106166",
+    "clean_name": "Border Collie"
+   },
+   {
+    "wnid": "n02106550",
+    "clean_name": "Rottweiler"
+   },
+   {
+    "wnid": "n02106662",
+    "clean_name": "German Shepherd Dog"
+   }
+  ]
+ },
+ {
+  "wnid": "n02107574",
+  "idx_1k": 238,
+  "clean_name": "Greater Swiss Mountain Dog",
+  "raw_name": "Greater_Swiss_Mountain_dog",
+  "lemmas": [
+   "Greater_Swiss_Mountain_dog"
+  ],
+  "parents": [
+   "sennenhunde.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02107683",
+    "clean_name": "Bernese Mountain Dog"
+   },
+   {
+    "wnid": "n02107908",
+    "clean_name": "Appenzeller Sennenhund"
+   },
+   {
+    "wnid": "n02108000",
+    "clean_name": "Entlebucher Sennenhund"
+   }
+  ]
+ },
+ {
+  "wnid": "n02110185",
+  "idx_1k": 250,
+  "clean_name": "Siberian Husky",
+  "raw_name": "Siberian_husky",
+  "lemmas": [
+   "Siberian_husky"
+  ],
+  "parents": [
+   "sled_dog.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02110063",
+    "clean_name": "Alaskan Malamute"
+   }
+  ]
+ },
+ {
+  "wnid": "n02110341",
+  "idx_1k": 251,
+  "clean_name": "Dalmatian",
+  "raw_name": "dalmatian",
+  "lemmas": [
+   "dalmatian",
+   "coach_dog",
+   "carriage_dog"
+  ],
+  "parents": [
+   "dog.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02110806",
+    "clean_name": "Basenji"
+   },
+   {
+    "wnid": "n02110958",
+    "clean_name": "pug"
+   },
+   {
+    "wnid": "n02111129",
+    "clean_name": "Leonberger"
+   },
+   {
+    "wnid": "n02111277",
+    "clean_name": "Newfoundland dog"
+   },
+   {
+    "wnid": "n02111500",
+    "clean_name": "Great Pyrenees dog"
+   },
+   {
+    "wnid": "n02113978",
+    "clean_name": "Mexican hairless dog (xoloitzcuintli)"
+   }
+  ]
+ },
+ {
+  "wnid": "n02111889",
+  "idx_1k": 258,
+  "clean_name": "Samoyed",
+  "raw_name": "Samoyed",
+  "lemmas": [
+   "Samoyed",
+   "Samoyede"
+  ],
+  "parents": [
+   "spitz.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02112018",
+    "clean_name": "Pomeranian"
+   },
+   {
+    "wnid": "n02112137",
+    "clean_name": "Chow Chow"
+   },
+   {
+    "wnid": "n02112350",
+    "clean_name": "Keeshond"
+   }
+  ]
+ },
+ {
+  "wnid": "n02113186",
+  "idx_1k": 264,
+  "clean_name": "Cardigan Welsh Corgi",
+  "raw_name": "Cardigan",
+  "lemmas": [
+   "Cardigan",
+   "Cardigan_Welsh_corgi"
+  ],
+  "parents": [
+   "corgi.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02113023",
+    "clean_name": "Pembroke Welsh Corgi"
+   }
+  ]
+ },
+ {
+  "wnid": "n02113712",
+  "idx_1k": 266,
+  "clean_name": "Miniature Poodle",
+  "raw_name": "miniature_poodle",
+  "lemmas": [
+   "miniature_poodle"
+  ],
+  "parents": [
+   "poodle.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02113624",
+    "clean_name": "Toy Poodle"
+   },
+   {
+    "wnid": "n02113799",
+    "clean_name": "Standard Poodle"
+   }
+  ]
+ },
+ {
+  "wnid": "n02114367",
+  "idx_1k": 269,
+  "clean_name": "grey wolf",
+  "raw_name": "timber_wolf",
+  "lemmas": [
+   "timber_wolf",
+   "grey_wolf",
+   "gray_wolf",
+   "Canis_lupus"
+  ],
+  "parents": [
+   "wolf.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02114548",
+    "clean_name": "Alaskan tundra wolf"
+   },
+   {
+    "wnid": "n02114712",
+    "clean_name": "red wolf or maned wolf"
+   },
+   {
+    "wnid": "n02114855",
+    "clean_name": "coyote"
+   }
+  ]
+ },
+ {
+  "wnid": "n02115913",
+  "idx_1k": 274,
+  "clean_name": "dhole",
+  "raw_name": "dhole",
+  "lemmas": [
+   "dhole",
+   "Cuon_alpinus"
+  ],
+  "parents": [
+   "wild_dog.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02115641",
+    "clean_name": "dingo"
+   },
+   {
+    "wnid": "n02116738",
+    "clean_name": "African wild dog"
+   }
+  ]
+ },
+ {
+  "wnid": "n02123394",
+  "idx_1k": 283,
+  "clean_name": "Persian cat",
+  "raw_name": "Persian_cat",
+  "lemmas": [
+   "Persian_cat"
+  ],
+  "parents": [
+   "domestic_cat.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02123045",
+    "clean_name": "tabby cat"
+   },
+   {
+    "wnid": "n02123159",
+    "clean_name": "tiger cat"
+   },
+   {
+    "wnid": "n02123597",
+    "clean_name": "Siamese cat"
+   },
+   {
+    "wnid": "n02124075",
+    "clean_name": "Egyptian Mau"
+   }
+  ]
+ },
+ {
+  "wnid": "n02125311",
+  "idx_1k": 286,
+  "clean_name": "cougar",
+  "raw_name": "cougar",
+  "lemmas": [
+   "cougar",
+   "puma",
+   "catamount",
+   "mountain_lion",
+   "painter",
+   "panther",
+   "Felis_concolor"
+  ],
+  "parents": [
+   "wildcat.n.03"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02127052",
+    "clean_name": "lynx"
+   }
+  ]
+ },
+ {
+  "wnid": "n02129165",
+  "idx_1k": 291,
+  "clean_name": "lion",
+  "raw_name": "lion",
+  "lemmas": [
+   "lion",
+   "king_of_beasts",
+   "Panthera_leo"
+  ],
+  "parents": [
+   "big_cat.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02128385",
+    "clean_name": "leopard"
+   },
+   {
+    "wnid": "n02128757",
+    "clean_name": "snow leopard"
+   },
+   {
+    "wnid": "n02128925",
+    "clean_name": "jaguar"
+   },
+   {
+    "wnid": "n02129604",
+    "clean_name": "tiger"
+   },
+   {
+    "wnid": "n02130308",
+    "clean_name": "cheetah"
+   }
+  ]
+ },
+ {
+  "wnid": "n02138441",
+  "idx_1k": 299,
+  "clean_name": "meerkat",
+  "raw_name": "meerkat",
+  "lemmas": [
+   "meerkat",
+   "mierkat"
+  ],
+  "parents": [
+   "viverrine.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02137549",
+    "clean_name": "mongoose"
+   }
+  ]
+ },
+ {
+  "wnid": "n02167151",
+  "idx_1k": 302,
+  "clean_name": "ground beetle",
+  "raw_name": "ground_beetle",
+  "lemmas": [
+   "ground_beetle",
+   "carabid_beetle"
+  ],
+  "parents": [
+   "beetle.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02165105",
+    "clean_name": "tiger beetle"
+   },
+   {
+    "wnid": "n02165456",
+    "clean_name": "ladybug"
+   },
+   {
+    "wnid": "n02168699",
+    "clean_name": "longhorn beetle"
+   },
+   {
+    "wnid": "n02169497",
+    "clean_name": "leaf beetle"
+   },
+   {
+    "wnid": "n02177972",
+    "clean_name": "weevil"
+   }
+  ]
+ },
+ {
+  "wnid": "n02172182",
+  "idx_1k": 305,
+  "clean_name": "dung beetle",
+  "raw_name": "dung_beetle",
+  "lemmas": [
+   "dung_beetle"
+  ],
+  "parents": [
+   "scarabaeid_beetle.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02174001",
+    "clean_name": "rhinoceros beetle"
+   }
+  ]
+ },
+ {
+  "wnid": "n02233338",
+  "idx_1k": 314,
+  "clean_name": "cockroach",
+  "raw_name": "cockroach",
+  "lemmas": [
+   "cockroach",
+   "roach"
+  ],
+  "parents": [
+   "dictyopterous_insect.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02236044",
+    "clean_name": "praying mantis"
+   }
+  ]
+ },
+ {
+  "wnid": "n02268853",
+  "idx_1k": 320,
+  "clean_name": "damselfly",
+  "raw_name": "damselfly",
+  "lemmas": [
+   "damselfly"
+  ],
+  "parents": [
+   "odonate.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02268443",
+    "clean_name": "dragonfly"
+   }
+  ]
+ },
+ {
+  "wnid": "n02317335",
+  "idx_1k": 327,
+  "clean_name": "starfish",
+  "raw_name": "starfish",
+  "lemmas": [
+   "starfish",
+   "sea_star"
+  ],
+  "parents": [
+   "echinoderm.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02319095",
+    "clean_name": "sea urchin"
+   },
+   {
+    "wnid": "n02321529",
+    "clean_name": "sea cucumber"
+   }
+  ]
+ },
+ {
+  "wnid": "n02361337",
+  "idx_1k": 336,
+  "clean_name": "marmot",
+  "raw_name": "marmot",
+  "lemmas": [
+   "marmot"
+  ],
+  "parents": [
+   "rodent.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02342885",
+    "clean_name": "hamster"
+   },
+   {
+    "wnid": "n02346627",
+    "clean_name": "porcupine"
+   },
+   {
+    "wnid": "n02363005",
+    "clean_name": "beaver"
+   }
+  ]
+ },
+ {
+  "wnid": "n02423022",
+  "idx_1k": 353,
+  "clean_name": "gazelle",
+  "raw_name": "gazelle",
+  "lemmas": [
+   "gazelle"
+  ],
+  "parents": [
+   "antelope.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02422106",
+    "clean_name": "hartebeest"
+   },
+   {
+    "wnid": "n02422699",
+    "clean_name": "impala (antelope)"
+   }
+  ]
+ },
+ {
+  "wnid": "n02441942",
+  "idx_1k": 356,
+  "clean_name": "weasel",
+  "raw_name": "weasel",
+  "lemmas": [
+   "weasel"
+  ],
+  "parents": [
+   "musteline_mammal.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02442845",
+    "clean_name": "mink"
+   },
+   {
+    "wnid": "n02443114",
+    "clean_name": "European polecat"
+   },
+   {
+    "wnid": "n02443484",
+    "clean_name": "black-footed ferret"
+   },
+   {
+    "wnid": "n02444819",
+    "clean_name": "otter"
+   },
+   {
+    "wnid": "n02445715",
+    "clean_name": "skunk"
+   },
+   {
+    "wnid": "n02447366",
+    "clean_name": "badger"
+   }
+  ]
+ },
+ {
+  "wnid": "n02487347",
+  "idx_1k": 373,
+  "clean_name": "macaque",
+  "raw_name": "macaque",
+  "lemmas": [
+   "macaque"
+  ],
+  "parents": [
+   "old_world_monkey.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02484975",
+    "clean_name": "guenon"
+   },
+   {
+    "wnid": "n02486261",
+    "clean_name": "patas monkey"
+   },
+   {
+    "wnid": "n02486410",
+    "clean_name": "baboon"
+   },
+   {
+    "wnid": "n02488291",
+    "clean_name": "langur"
+   },
+   {
+    "wnid": "n02488702",
+    "clean_name": "black-and-white colobus"
+   },
+   {
+    "wnid": "n02489166",
+    "clean_name": "proboscis monkey"
+   }
+  ]
+ },
+ {
+  "wnid": "n02493793",
+  "idx_1k": 381,
+  "clean_name": "Geoffroy's spider monkey",
+  "raw_name": "spider_monkey",
+  "lemmas": [
+   "spider_monkey",
+   "Ateles_geoffroyi"
+  ],
+  "parents": [
+   "new_world_monkey.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02490219",
+    "clean_name": "marmoset"
+   },
+   {
+    "wnid": "n02492035",
+    "clean_name": "white-headed capuchin"
+   },
+   {
+    "wnid": "n02492660",
+    "clean_name": "howler monkey"
+   },
+   {
+    "wnid": "n02493509",
+    "clean_name": "titi monkey"
+   },
+   {
+    "wnid": "n02494079",
+    "clean_name": "common squirrel monkey"
+   }
+  ]
+ },
+ {
+  "wnid": "n02497673",
+  "idx_1k": 383,
+  "clean_name": "ring-tailed lemur",
+  "raw_name": "Madagascar_cat",
+  "lemmas": [
+   "Madagascar_cat",
+   "ring-tailed_lemur",
+   "Lemur_catta"
+  ],
+  "parents": [
+   "lemur.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02500267",
+    "clean_name": "indri"
+   }
+  ]
+ },
+ {
+  "wnid": "n02509815",
+  "idx_1k": 387,
+  "clean_name": "red panda",
+  "raw_name": "lesser_panda",
+  "lemmas": [
+   "lesser_panda",
+   "red_panda",
+   "panda",
+   "bear_cat",
+   "cat_bear",
+   "Ailurus_fulgens"
+  ],
+  "parents": [
+   "procyonid.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02510455",
+    "clean_name": "giant panda"
+   }
+  ]
+ },
+ {
+  "wnid": "n02776631",
+  "idx_1k": 415,
+  "clean_name": "bakery",
+  "raw_name": "bakery",
+  "lemmas": [
+   "bakery",
+   "bakeshop",
+   "bakehouse"
+  ],
+  "parents": [
+   "shop.n.01",
+   "workplace.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02791270",
+    "clean_name": "barbershop"
+   },
+   {
+    "wnid": "n02871525",
+    "clean_name": "bookstore"
+   },
+   {
+    "wnid": "n02927161",
+    "clean_name": "butcher shop"
+   },
+   {
+    "wnid": "n03089624",
+    "clean_name": "candy store"
+   },
+   {
+    "wnid": "n04200800",
+    "clean_name": "shoe store"
+   },
+   {
+    "wnid": "n04443257",
+    "clean_name": "tobacco shop"
+   },
+   {
+    "wnid": "n04462240",
+    "clean_name": "toy store"
+   }
+  ]
+ },
+ {
+  "wnid": "n02782093",
+  "idx_1k": 417,
+  "clean_name": "balloon",
+  "raw_name": "balloon",
+  "lemmas": [
+   "balloon"
+  ],
+  "parents": [
+   "lighter-than-air_craft.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02692877",
+    "clean_name": "airship"
+   }
+  ]
+ },
+ {
+  "wnid": "n02788148",
+  "idx_1k": 421,
+  "clean_name": "baluster / handrail",
+  "raw_name": "bannister",
+  "lemmas": [
+   "bannister",
+   "banister",
+   "balustrade",
+   "balusters",
+   "handrail"
+  ],
+  "parents": [
+   "barrier.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02894605",
+    "clean_name": "breakwater"
+   },
+   {
+    "wnid": "n03160309",
+    "clean_name": "dam"
+   }
+  ]
+ },
+ {
+  "wnid": "n02815834",
+  "idx_1k": 438,
+  "clean_name": "beaker",
+  "raw_name": "beaker",
+  "lemmas": [
+   "beaker"
+  ],
+  "parents": [
+   "jar.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04522168",
+    "clean_name": "vase"
+   }
+  ]
+ },
+ {
+  "wnid": "n02841315",
+  "idx_1k": 447,
+  "clean_name": "binoculars",
+  "raw_name": "binoculars",
+  "lemmas": [
+   "binoculars",
+   "field_glasses",
+   "opera_glasses"
+  ],
+  "parents": [
+   "optical_instrument.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04009552",
+    "clean_name": "projector"
+   }
+  ]
+ },
+ {
+  "wnid": "n02951358",
+  "idx_1k": 472,
+  "clean_name": "canoe",
+  "raw_name": "canoe",
+  "lemmas": [
+   "canoe"
+  ],
+  "parents": [
+   "small_boat.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04612504",
+    "clean_name": "sailboat"
+   }
+  ]
+ },
+ {
+  "wnid": "n02981792",
+  "idx_1k": 484,
+  "clean_name": "catamaran",
+  "raw_name": "catamaran",
+  "lemmas": [
+   "catamaran"
+  ],
+  "parents": [
+   "sailboat.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04483307",
+    "clean_name": "trimaran"
+   }
+  ]
+ },
+ {
+  "wnid": "n03032252",
+  "idx_1k": 498,
+  "clean_name": "movie theater",
+  "raw_name": "cinema",
+  "lemmas": [
+   "cinema",
+   "movie_theater",
+   "movie_theatre",
+   "movie_house",
+   "picture_palace"
+  ],
+  "parents": [
+   "theater.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03529860",
+    "clean_name": "home theater"
+   }
+  ]
+ },
+ {
+  "wnid": "n03110669",
+  "idx_1k": 513,
+  "clean_name": "cornet",
+  "raw_name": "cornet",
+  "lemmas": [
+   "cornet",
+   "horn",
+   "trumpet",
+   "trump"
+  ],
+  "parents": [
+   "brass.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03394916",
+    "clean_name": "French horn"
+   },
+   {
+    "wnid": "n04487394",
+    "clean_name": "trombone"
+   }
+  ]
+ },
+ {
+  "wnid": "n03125729",
+  "idx_1k": 516,
+  "clean_name": "cradle",
+  "raw_name": "cradle",
+  "lemmas": [
+   "cradle"
+  ],
+  "parents": [
+   "baby_bed.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02804414",
+    "clean_name": "bassinet"
+   },
+   {
+    "wnid": "n03131574",
+    "clean_name": "infant bed"
+   }
+  ]
+ },
+ {
+  "wnid": "n03207743",
+  "idx_1k": 533,
+  "clean_name": "dishcloth",
+  "raw_name": "dishrag",
+  "lemmas": [
+   "dishrag",
+   "dishcloth"
+  ],
+  "parents": [
+   "piece_of_cloth.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02834397",
+    "clean_name": "baby bib"
+   },
+   {
+    "wnid": "n03485794",
+    "clean_name": "handkerchief"
+   }
+  ]
+ },
+ {
+  "wnid": "n03220513",
+  "idx_1k": 538,
+  "clean_name": "dome",
+  "raw_name": "dome",
+  "lemmas": [
+   "dome"
+  ],
+  "parents": [
+   "roof.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04417672",
+    "clean_name": "thatched roof"
+   },
+   {
+    "wnid": "n04435653",
+    "clean_name": "tile roof"
+   },
+   {
+    "wnid": "n04523525",
+    "clean_name": "vaulted or arched ceiling"
+   }
+  ]
+ },
+ {
+  "wnid": "n03259280",
+  "idx_1k": 544,
+  "clean_name": "Dutch oven",
+  "raw_name": "Dutch_oven",
+  "lemmas": [
+   "Dutch_oven"
+  ],
+  "parents": [
+   "oven.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04111531",
+    "clean_name": "rotisserie"
+   }
+  ]
+ },
+ {
+  "wnid": "n03347037",
+  "idx_1k": 556,
+  "clean_name": "fire screen",
+  "raw_name": "fire_screen",
+  "lemmas": [
+   "fire_screen",
+   "fireguard"
+  ],
+  "parents": [
+   "screen.n.05"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03788365",
+    "clean_name": "mosquito net"
+   },
+   {
+    "wnid": "n04589890",
+    "clean_name": "window screen"
+   }
+  ]
+ },
+ {
+  "wnid": "n03388043",
+  "idx_1k": 562,
+  "clean_name": "fountain",
+  "raw_name": "fountain",
+  "lemmas": [
+   "fountain"
+  ],
+  "parents": [
+   "structure.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02699494",
+    "clean_name": "altar"
+   },
+   {
+    "wnid": "n03065424",
+    "clean_name": "spiral or coil"
+   }
+  ]
+ },
+ {
+  "wnid": "n03447721",
+  "idx_1k": 577,
+  "clean_name": "gong",
+  "raw_name": "gong",
+  "lemmas": [
+   "gong",
+   "tam-tam"
+  ],
+  "parents": [
+   "percussion_instrument.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03017168",
+    "clean_name": "bell or wind chime"
+   },
+   {
+    "wnid": "n03249569",
+    "clean_name": "drum"
+   },
+   {
+    "wnid": "n03720891",
+    "clean_name": "maraca"
+   },
+   {
+    "wnid": "n03721384",
+    "clean_name": "marimba"
+   },
+   {
+    "wnid": "n04311174",
+    "clean_name": "steel drum"
+   }
+  ]
+ },
+ {
+  "wnid": "n03457902",
+  "idx_1k": 580,
+  "clean_name": "greenhouse",
+  "raw_name": "greenhouse",
+  "lemmas": [
+   "greenhouse",
+   "nursery",
+   "glasshouse"
+  ],
+  "parents": [
+   "building.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03661043",
+    "clean_name": "library"
+   },
+   {
+    "wnid": "n03956157",
+    "clean_name": "planetarium"
+   },
+   {
+    "wnid": "n04081281",
+    "clean_name": "restaurant"
+   }
+  ]
+ },
+ {
+  "wnid": "n03482405",
+  "idx_1k": 588,
+  "clean_name": "hamper",
+  "raw_name": "hamper",
+  "lemmas": [
+   "hamper"
+  ],
+  "parents": [
+   "basket.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04204238",
+    "clean_name": "shopping basket"
+   }
+  ]
+ },
+ {
+  "wnid": "n03494278",
+  "idx_1k": 593,
+  "clean_name": "harmonica",
+  "raw_name": "harmonica",
+  "lemmas": [
+   "harmonica",
+   "mouth_organ",
+   "harp",
+   "mouth_harp"
+  ],
+  "parents": [
+   "free-reed_instrument.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02672831",
+    "clean_name": "accordion"
+   }
+  ]
+ },
+ {
+  "wnid": "n03598930",
+  "idx_1k": 611,
+  "clean_name": "jigsaw puzzle",
+  "raw_name": "jigsaw_puzzle",
+  "lemmas": [
+   "jigsaw_puzzle"
+  ],
+  "parents": [
+   "puzzle.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n06785654",
+    "clean_name": "crossword"
+   }
+  ]
+ },
+ {
+  "wnid": "n03617480",
+  "idx_1k": 614,
+  "clean_name": "kimono",
+  "raw_name": "kimono",
+  "lemmas": [
+   "kimono"
+  ],
+  "parents": [
+   "robe.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02667093",
+    "clean_name": "abaya"
+   }
+  ]
+ },
+ {
+  "wnid": "n03658185",
+  "idx_1k": 623,
+  "clean_name": "letter opener",
+  "raw_name": "letter_opener",
+  "lemmas": [
+   "letter_opener",
+   "paper_knife",
+   "paperknife"
+  ],
+  "parents": [
+   "knife.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03041632",
+    "clean_name": "cleaver"
+   }
+  ]
+ },
+ {
+  "wnid": "n03666591",
+  "idx_1k": 626,
+  "clean_name": "lighter",
+  "raw_name": "lighter",
+  "lemmas": [
+   "lighter",
+   "light",
+   "igniter",
+   "ignitor"
+  ],
+  "parents": [
+   "device.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03929660",
+    "clean_name": "plectrum"
+   },
+   {
+    "wnid": "n04074963",
+    "clean_name": "remote control"
+   }
+  ]
+ },
+ {
+  "wnid": "n03710721",
+  "idx_1k": 639,
+  "clean_name": "one-piece bathing suit",
+  "raw_name": "maillot",
+  "lemmas": [
+   "maillot",
+   "tank_suit"
+  ],
+  "parents": [
+   "swimsuit.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02837789",
+    "clean_name": "bikini"
+   },
+   {
+    "wnid": "n04371430",
+    "clean_name": "swim trunks / shorts"
+   }
+  ]
+ },
+ {
+  "wnid": "n03742115",
+  "idx_1k": 648,
+  "clean_name": "medicine cabinet",
+  "raw_name": "medicine_chest",
+  "lemmas": [
+   "medicine_chest",
+   "medicine_cabinet"
+  ],
+  "parents": [
+   "cabinet.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03018349",
+    "clean_name": "china cabinet"
+   }
+  ]
+ },
+ {
+  "wnid": "n03786901",
+  "idx_1k": 666,
+  "clean_name": "mortar and pestle",
+  "raw_name": "mortar",
+  "lemmas": [
+   "mortar"
+  ],
+  "parents": [
+   "vessel.n.03"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02795169",
+    "clean_name": "barrel"
+   },
+   {
+    "wnid": "n02808440",
+    "clean_name": "bathtub"
+   },
+   {
+    "wnid": "n02909870",
+    "clean_name": "bucket"
+   },
+   {
+    "wnid": "n03633091",
+    "clean_name": "ladle"
+   },
+   {
+    "wnid": "n03950228",
+    "clean_name": "drink pitcher"
+   },
+   {
+    "wnid": "n04493381",
+    "clean_name": "hot tub"
+   }
+  ]
+ },
+ {
+  "wnid": "n03796401",
+  "idx_1k": 675,
+  "clean_name": "moving van",
+  "raw_name": "moving_van",
+  "lemmas": [
+   "moving_van"
+  ],
+  "parents": [
+   "van.n.05"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03977966",
+    "clean_name": "police van"
+   }
+  ]
+ },
+ {
+  "wnid": "n03825788",
+  "idx_1k": 680,
+  "clean_name": "baby pacifier",
+  "raw_name": "nipple",
+  "lemmas": [
+   "nipple"
+  ],
+  "parents": [
+   "cap.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02877765",
+    "clean_name": "bottle cap"
+   }
+  ]
+ },
+ {
+  "wnid": "n03840681",
+  "idx_1k": 684,
+  "clean_name": "ocarina",
+  "raw_name": "ocarina",
+  "lemmas": [
+   "ocarina",
+   "sweet_potato"
+  ],
+  "parents": [
+   "wind_instrument.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03854065",
+    "clean_name": "pipe organ"
+   }
+  ]
+ },
+ {
+  "wnid": "n03857828",
+  "idx_1k": 688,
+  "clean_name": "oscilloscope",
+  "raw_name": "oscilloscope",
+  "lemmas": [
+   "oscilloscope",
+   "scope",
+   "cathode-ray_oscilloscope",
+   "CRO"
+  ],
+  "parents": [
+   "electronic_equipment.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02979186",
+    "clean_name": "cassette player"
+   },
+   {
+    "wnid": "n02988304",
+    "clean_name": "CD player"
+   },
+   {
+    "wnid": "n03777754",
+    "clean_name": "modem"
+   },
+   {
+    "wnid": "n03782006",
+    "clean_name": "monitor"
+   },
+   {
+    "wnid": "n04392985",
+    "clean_name": "tape player"
+   }
+  ]
+ },
+ {
+  "wnid": "n04069434",
+  "idx_1k": 759,
+  "clean_name": "reflex camera",
+  "raw_name": "reflex_camera",
+  "lemmas": [
+   "reflex_camera"
+  ],
+  "parents": [
+   "camera.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03976467",
+    "clean_name": "Polaroid camera"
+   }
+  ]
+ },
+ {
+  "wnid": "n04243546",
+  "idx_1k": 800,
+  "clean_name": "slot machine",
+  "raw_name": "slot",
+  "lemmas": [
+   "slot",
+   "one-armed_bandit"
+  ],
+  "parents": [
+   "slot_machine.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04525305",
+    "clean_name": "vending machine"
+   }
+  ]
+ },
+ {
+  "wnid": "n04251144",
+  "idx_1k": 801,
+  "clean_name": "snorkel",
+  "raw_name": "snorkel",
+  "lemmas": [
+   "snorkel"
+  ],
+  "parents": [
+   "breathing_device.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03868863",
+    "clean_name": "oxygen mask"
+   }
+  ]
+ },
+ {
+  "wnid": "n04254680",
+  "idx_1k": 805,
+  "clean_name": "soccer ball",
+  "raw_name": "soccer_ball",
+  "lemmas": [
+   "soccer_ball"
+  ],
+  "parents": [
+   "ball.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02799071",
+    "clean_name": "baseball"
+   },
+   {
+    "wnid": "n02802426",
+    "clean_name": "basketball"
+   },
+   {
+    "wnid": "n03134739",
+    "clean_name": "croquet ball"
+   },
+   {
+    "wnid": "n03445777",
+    "clean_name": "golf ball"
+   },
+   {
+    "wnid": "n03942813",
+    "clean_name": "ping-pong ball"
+   },
+   {
+    "wnid": "n04023962",
+    "clean_name": "punching bag"
+   },
+   {
+    "wnid": "n04118538",
+    "clean_name": "rugby ball"
+   },
+   {
+    "wnid": "n04409515",
+    "clean_name": "tennis ball"
+   },
+   {
+    "wnid": "n04540053",
+    "clean_name": "volleyball"
+   }
+  ]
+ },
+ {
+  "wnid": "n04259630",
+  "idx_1k": 808,
+  "clean_name": "sombrero",
+  "raw_name": "sombrero",
+  "lemmas": [
+   "sombrero"
+  ],
+  "parents": [
+   "hat.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02817516",
+    "clean_name": "military hat (bearskin or shako)"
+   },
+   {
+    "wnid": "n02869837",
+    "clean_name": "poke bonnet"
+   },
+   {
+    "wnid": "n03124170",
+    "clean_name": "cowboy hat"
+   }
+  ]
+ },
+ {
+  "wnid": "n04277352",
+  "idx_1k": 816,
+  "clean_name": "spindle",
+  "raw_name": "spindle",
+  "lemmas": [
+   "spindle"
+  ],
+  "parents": [
+   "stick.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03250847",
+    "clean_name": "drumstick"
+   },
+   {
+    "wnid": "n03729826",
+    "clean_name": "matchstick"
+   }
+  ]
+ },
+ {
+  "wnid": "n04372370",
+  "idx_1k": 844,
+  "clean_name": "electrical switch",
+  "raw_name": "switch",
+  "lemmas": [
+   "switch",
+   "electric_switch",
+   "electrical_switch"
+  ],
+  "parents": [
+   "control.n.09"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03602883",
+    "clean_name": "joystick"
+   }
+  ]
+ },
+ {
+  "wnid": "n04398044",
+  "idx_1k": 849,
+  "clean_name": "teapot",
+  "raw_name": "teapot",
+  "lemmas": [
+   "teapot"
+  ],
+  "parents": [
+   "pot.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02939185",
+    "clean_name": "cauldron"
+   },
+   {
+    "wnid": "n03063689",
+    "clean_name": "coffeemaker"
+   }
+  ]
+ },
+ {
+  "wnid": "n04418357",
+  "idx_1k": 854,
+  "clean_name": "front curtain",
+  "raw_name": "theater_curtain",
+  "lemmas": [
+   "theater_curtain",
+   "theatre_curtain"
+  ],
+  "parents": [
+   "curtain.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n04209239",
+    "clean_name": "shower curtain"
+   }
+  ]
+ },
+ {
+  "wnid": "n04428191",
+  "idx_1k": 856,
+  "clean_name": "threshing machine",
+  "raw_name": "thresher",
+  "lemmas": [
+   "thresher",
+   "thrasher",
+   "threshing_machine"
+  ],
+  "parents": [
+   "farm_machine.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03496892",
+    "clean_name": "combine harvester"
+   }
+  ]
+ },
+ {
+  "wnid": "n04465501",
+  "idx_1k": 866,
+  "clean_name": "tractor",
+  "raw_name": "tractor",
+  "lemmas": [
+   "tractor"
+  ],
+  "parents": [
+   "self-propelled_vehicle.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03384352",
+    "clean_name": "forklift"
+   },
+   {
+    "wnid": "n04065272",
+    "clean_name": "recreational vehicle"
+   },
+   {
+    "wnid": "n04335435",
+    "clean_name": "tram"
+   }
+  ]
+ },
+ {
+  "wnid": "n04487081",
+  "idx_1k": 874,
+  "clean_name": "trolleybus",
+  "raw_name": "trolleybus",
+  "lemmas": [
+   "trolleybus",
+   "trolley_coach",
+   "trackless_trolley"
+  ],
+  "parents": [
+   "bus.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03769881",
+    "clean_name": "minibus"
+   },
+   {
+    "wnid": "n04146614",
+    "clean_name": "school bus"
+   }
+  ]
+ },
+ {
+  "wnid": "n04552348",
+  "idx_1k": 895,
+  "clean_name": "military aircraft",
+  "raw_name": "warplane",
+  "lemmas": [
+   "warplane",
+   "military_plane"
+  ],
+  "parents": [
+   "heavier-than-air_craft.n.01",
+   "military_vehicle.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03478589",
+    "clean_name": "half-track"
+   },
+   {
+    "wnid": "n04389033",
+    "clean_name": "tank"
+   }
+  ]
+ },
+ {
+  "wnid": "n04557648",
+  "idx_1k": 898,
+  "clean_name": "water bottle",
+  "raw_name": "water_bottle",
+  "lemmas": [
+   "water_bottle"
+  ],
+  "parents": [
+   "bottle.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n02823428",
+    "clean_name": "beer bottle"
+   },
+   {
+    "wnid": "n03937543",
+    "clean_name": "pill bottle"
+   },
+   {
+    "wnid": "n03983396",
+    "clean_name": "soda bottle"
+   },
+   {
+    "wnid": "n04591713",
+    "clean_name": "wine bottle"
+   }
+  ]
+ },
+ {
+  "wnid": "n04596742",
+  "idx_1k": 909,
+  "clean_name": "wok",
+  "raw_name": "wok",
+  "lemmas": [
+   "wok"
+  ],
+  "parents": [
+   "pan.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n03400231",
+    "clean_name": "frying pan"
+   }
+  ]
+ },
+ {
+  "wnid": "n07614500",
+  "idx_1k": 928,
+  "clean_name": "ice cream",
+  "raw_name": "ice_cream",
+  "lemmas": [
+   "ice_cream",
+   "icecream"
+  ],
+  "parents": [
+   "frozen_dessert.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n07615774",
+    "clean_name": "popsicle"
+   }
+  ]
+ },
+ {
+  "wnid": "n07715103",
+  "idx_1k": 938,
+  "clean_name": "cauliflower",
+  "raw_name": "cauliflower",
+  "lemmas": [
+   "cauliflower"
+  ],
+  "parents": [
+   "cruciferous_vegetable.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n07714990",
+    "clean_name": "broccoli"
+   }
+  ]
+ },
+ {
+  "wnid": "n07753113",
+  "idx_1k": 952,
+  "clean_name": "fig",
+  "raw_name": "fig",
+  "lemmas": [
+   "fig"
+  ],
+  "parents": [
+   "edible_fruit.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n07753275",
+    "clean_name": "pineapple"
+   },
+   {
+    "wnid": "n07753592",
+    "clean_name": "banana"
+   },
+   {
+    "wnid": "n07754684",
+    "clean_name": "jackfruit"
+   },
+   {
+    "wnid": "n07760859",
+    "clean_name": "cherimoya (custard apple)"
+   },
+   {
+    "wnid": "n07768694",
+    "clean_name": "pomegranate"
+   }
+  ]
+ },
+ {
+  "wnid": "n07875152",
+  "idx_1k": 964,
+  "clean_name": "pot pie",
+  "raw_name": "potpie",
+  "lemmas": [
+   "potpie"
+  ],
+  "parents": [
+   "dish.n.02"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n07871810",
+    "clean_name": "meatloaf"
+   },
+   {
+    "wnid": "n07873807",
+    "clean_name": "pizza"
+   },
+   {
+    "wnid": "n07880968",
+    "clean_name": "burrito"
+   }
+  ]
+ },
+ {
+  "wnid": "n12267677",
+  "idx_1k": 988,
+  "clean_name": "acorn",
+  "raw_name": "acorn",
+  "lemmas": [
+   "acorn"
+  ],
+  "parents": [
+   "fruit.n.01"
+  ],
+  "id_siblings": [
+   {
+    "wnid": "n12620546",
+    "clean_name": "rose hip"
+   },
+   {
+    "wnid": "n13133613",
+    "clean_name": "corn cob"
+   }
+  ]
+ }
+]

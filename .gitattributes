@@ -1,0 +1,5 @@
+# Preserve byte-for-byte source and manifest receipts on every checkout.
+experiments/** -text
+third_party/** -text
+manifests/** -text
+provenance/** -text

@@ -1,0 +1,18 @@
+{
+  "registered_utc": "2026-09-26T11:45:00Z",
+  "use_of_test_split": "THIRD use of the OpenOOD v1.5 ImageNet-1K test split (1st: CLAVIS, 2nd: CLAVIS-M c1). Run exactly once.",
+  "run_condition": "only because the frozen candidate passed the pre-registered rule on dev1 and on its first dev2 look (iter2/dev2_looks.jsonl)",
+  "frozen_candidate": {"path": "iter2/frozen_m2.json", "sha256": "3efbb961baa7e03e62ff55a0d67f11af817bedba3c69344c24ef2e691ff8889c"},
+  "iteration_prereg": {"path": "iter2/prereg_iter2.json", "sha256": "1cbdcdc4da5fa7b0c51945c77418903029ce2b69d508c95c8bd6a01a922e6800"},
+  "benchmark": "OpenOOD v1.5 ImageNet-1K: ID test_imagenet (45,000); near = SSB-hard, NINCO; far = iNaturalist, Textures, OpenImage-O",
+  "tins": "test_runs/default/<dataset>_seed<s>.npz: unchanged-upstream TINS (Codex's setup), per-dataset ID+OOD streams, stream orders s = 123..127 (the same runs as the paper's main table)",
+  "features": {
+    "B14": "test_eval/results/features.pt (stored by the first evaluation; also holds the CLIP zero-shot candidate sets)",
+    "L14": "DINOv2 ViT-L/14 CLS features of exactly the same image list (paths in features.pt), standard eval preprocessing, extracted once by scripts/iter2_extract_test.py after this registration; its sha256 is written to test_eval/results/features_vitl14.sha256 at extraction"
+  },
+  "method": "CLAVIS-M2 as frozen: per view (B/14, L/14) two-stage admission (candidate p_all <= 0.30, admit p_C <= 0.10), memory reset for every ID+OOD stream, score = S_final * p_t(B/14) * p_t(L/14)",
+  "primary_endpoints": "near-average and far-average AUROC (upstream get_measures), mean over the 5 stream orders, compared with CLAVIS-M c1 recomputed on the same runs (paper: near 90.45, far 98.50) and TINS",
+  "secondary": ["FPR95 (upstream)", "per-dataset AUROC / FPR95 and SD over orders", "class-level bootstrap 95% interval (B = 1000, seed 123) of CLAVIS-M2 minus CLAVIS-M c1 and minus TINS", "paired DeLong test (seed 123)", "ID admission rate per view"],
+  "not_evaluated": "no other variant, threshold or backbone is evaluated on the test",
+  "no_changes_after_seeing_test": true
+}

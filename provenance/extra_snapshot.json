@@ -1,0 +1,254 @@
+{
+  "experiments/legacy/test_eval/eval_openood_test.py": {
+    "sha256": "4deab35fb07f6f58fd59edc552c1e2e4294815196863c570f174600b24f5177d",
+    "bytes": 8006
+  },
+  "experiments/legacy/test_eval/eval_openood_test_m3.py": {
+    "sha256": "a513226dc7861d7738cda78e3d31a1dd3fde230e9b1607374761a7ca4bec60ba",
+    "bytes": 12057
+  },
+  "experiments/legacy/test_eval/eval_openood_test_m2.py": {
+    "sha256": "1b2b9da82a31cf50aaf0af0ce06e71f31bc5a01fb7246bf6baeb37f1db1c22a7",
+    "bytes": 11854
+  },
+  "experiments/legacy/test_eval/eval_openood_test_clavism.py": {
+    "sha256": "b11540cbbf42615126ba04527f678cf9544d71af9554a8697c8604adc08e8827",
+    "bytes": 8559
+  },
+  "experiments/legacy/test_eval/prereg_test2.json": {
+    "sha256": "8bb64c4c2f698c0cc38501193b96e3e5caaf1ed3cd3a79183cfb1f078fcac36a",
+    "bytes": 1655
+  },
+  "experiments/legacy/test_eval/prereg_test4.json": {
+    "sha256": "bdaae9d968a6d2da6ac7dd7c44aa33676bb4a111977dda7d3e114a4dafd26d84",
+    "bytes": 1991
+  },
+  "experiments/legacy/test_eval/prereg_test3.json": {
+    "sha256": "4b6cacce2ffd7f69433f658173b9f3c91dee90a2e66e0eefc0e0c7b4deb4b7a7",
+    "bytes": 2139
+  },
+  "experiments/legacy/test_eval/prereg_test.json": {
+    "sha256": "6286847dba2d54af32c0c3fa26b0cd977c7517f4699ae4ac9ca61150787fd545",
+    "bytes": 1192
+  },
+  "experiments/tins_reference/prepare.py": {
+    "sha256": "8081ab09a9fba014e49ef42664437e37f6de13f268fab5ea16f57d5be669aee4",
+    "bytes": 8162
+  },
+  "experiments/tins_reference/run.py": {
+    "sha256": "49ddbbcbba3e492f6d26b2066ec94395e30dc8d4e6e4a963097a7d0aad52b3cc",
+    "bytes": 6446
+  },
+  "experiments/tins_reference/finalize.py": {
+    "sha256": "0a19db701ad9bba2458b37b91abfa327eb62da9ffdff2545e4d19513b8f25d55",
+    "bytes": 4192
+  },
+  "experiments/tins_reference/arguments.json": {
+    "sha256": "571c7faffc8e2bee7a27e18a9c6fa23180c1a03234abaa884e76dfc8806abbe9",
+    "bytes": 972
+  },
+  "experiments/tins_reference/protocol.json": {
+    "sha256": "fb55747f439c8affcf7183f66aebc6773566a5007f8fc10a878f5734a7ca60a3",
+    "bytes": 16710
+  },
+  "experiments/tins_reference/prototype_train16.txt": {
+    "sha256": "2e778c31333809ad408137e92da1edbb2ff98209ff09ee08ab5a11c85a6d2ec9",
+    "bytes": 650028
+  },
+  "experiments/tins_reference/prototype_manifest.jsonl": {
+    "sha256": "0f964cf0011de9b83c5e710a8480af30a6cfce47f6a17ceb0f0ea45e6f5e6c9f",
+    "bytes": 4493785
+  },
+  "experiments/tins_reference/prototype_overlap_resolution.json": {
+    "sha256": "763708ea20302330151377043f323bec175e77ae4fd9d4c2885d04e19a6a6eda",
+    "bytes": 5476
+  },
+  "experiments/tins_reference/model_receipt.json": {
+    "sha256": "e0696ea990180a29058e722500e222bab571f02f5edacbd7ea275313c90ddf51",
+    "bytes": 587
+  },
+  "experiments/legacy/r5/prereg_r5.json": {
+    "sha256": "1848e86347ed7ab3a2514fea60029c6cdd20af54f87a22a05e04f05f312d6451",
+    "bytes": 3038
+  },
+  "experiments/legacy/r5/prereg_phase2.json": {
+    "sha256": "5de00e6989012a2d53e3f8b16de9d8b7b3728ecd6f34f4a8a85d9bc2a7f13f09",
+    "bytes": 1594
+  },
+  "experiments/legacy/r5/stream_specs.json": {
+    "sha256": "86b4e117ce4bf7056c4936f70c7cf359e00fb4a4e50bc6ec9215375bd5bcc723",
+    "bytes": 8726
+  },
+  "third_party/LoCoOp/eval_ood_detection.py": {
+    "sha256": "5e350de20f5f74771980b1f0e8cbf3fec5900e760a44a72fd794f7a343cccec2",
+    "bytes": 6558
+  },
+  "third_party/LoCoOp/requirements.txt": {
+    "sha256": "560c6aefcc6c556b3c4758c334b67e2f62d889fe1602322a2a07267b83e04a57",
+    "bytes": 23
+  },
+  "third_party/LoCoOp/train.py": {
+    "sha256": "c6a5a32a79a3c1fe34534de39311cb95a300a5c73b6fc9eb5017872a60c0f182",
+    "bytes": 4974
+  },
+  "third_party/LoCoOp/demo_visualization.py": {
+    "sha256": "e8ccfd0a16fc8a68e44bed188b9b82a40b31da84647d23c8360c3d5cce59c248",
+    "bytes": 5831
+  },
+  "third_party/LoCoOp/README.md": {
+    "sha256": "9ea4804a89223b28a4019c01d315ecd7ad74fdd99e2fbf8618887b97b7e68c1d",
+    "bytes": 9466
+  },
+  "third_party/LoCoOp/LICENSE": {
+    "sha256": "258078577317ec0bff3294bf402b963dadc0322e725fb5dedc905d6b094f8c09",
+    "bytes": 1070
+  },
+  "third_party/LoCoOp/utils/__init__.py": {
+    "sha256": "3a5642739a724f126311659a1ae0ccdd49924229bc06548b98b4d4bfd5e20aac",
+    "bytes": 69
+  },
+  "third_party/LoCoOp/utils/train_eval_util.py": {
+    "sha256": "0521a3e5dc0fbd17c00197ce84c818393d61a822a0a93b2e096d58ab3f3142ce",
+    "bytes": 2598
+  },
+  "third_party/LoCoOp/utils/plot_util.py": {
+    "sha256": "4b0e7f6a6dbd530cde741137e3d77e0f7846d9981c56eafdb7c7d6bec5714aef",
+    "bytes": 1273
+  },
+  "third_party/LoCoOp/utils/detection_util.py": {
+    "sha256": "230a0e0eaafb8cd04cbcefe87cce4253b0b171ba366518f0ad3f914812a40004",
+    "bytes": 4283
+  },
+  "third_party/LoCoOp/datasets/__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "third_party/LoCoOp/datasets/imagenet.py": {
+    "sha256": "18d7dacf14c66f613f508710e94fa4182d209b2f5de6fc59671d74957ba5cce5",
+    "bytes": 3723
+  },
+  "third_party/LoCoOp/datasets/oxford_pets.py": {
+    "sha256": "74e2ec2525c5ec6e725a0f067105771ad93060404de7cc2f5c6929a0a6809a73",
+    "bytes": 6653
+  },
+  "third_party/LoCoOp/clip_w_local/simple_tokenizer.py": {
+    "sha256": "d1b09f10ed3d1e2c343619cb98cbfacb92363dd8607526a43aa7fe2d60d15bad",
+    "bytes": 4632
+  },
+  "third_party/LoCoOp/clip_w_local/bpe_simple_vocab_16e6.txt.gz": {
+    "sha256": "924691ac288e54409236115652ad4aa250f48203de50a9e4722a6ecd48d6804a",
+    "bytes": 1356917
+  },
+  "third_party/LoCoOp/clip_w_local/__init__.py": {
+    "sha256": "d7930eb290ebed432116795c91473200d098451a94c0aedd4ae0f934f97955e8",
+    "bytes": 20
+  },
+  "third_party/LoCoOp/clip_w_local/clip.py": {
+    "sha256": "f42d29d6ff24715a4d3dd6860c820ea21a3839e3a45b42ad92c7bc37019cd3c6",
+    "bytes": 8256
+  },
+  "third_party/LoCoOp/clip_w_local/model.py": {
+    "sha256": "859b42e49f41dca359d18a8acbf34e7b8cee2230511ac4f81463d7a85fd335df",
+    "bytes": 18924
+  },
+  "third_party/LoCoOp/trainers/__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "third_party/LoCoOp/trainers/locoop.py": {
+    "sha256": "485762eed60383616a6c0fbbcca4d150193999dca74d6158d7957a0dcd8be3da",
+    "bytes": 16873
+  },
+  "third_party/LoCoOp/configs/datasets/imagenet_a.yaml": {
+    "sha256": "4b6f11ad8de9e2754db37d0abd8b5c8c502acf1a0879b0bac2062012b56d352b",
+    "bytes": 29
+  },
+  "third_party/LoCoOp/configs/datasets/oxford_flowers.yaml": {
+    "sha256": "90c8f4798551181bb98456223da2a15392d78c29216f1ad43b67cd48665292b7",
+    "bytes": 32
+  },
+  "third_party/LoCoOp/configs/datasets/imagenet_r.yaml": {
+    "sha256": "6e2d272e3eb45477ccc6869a3dcb2da6d75dc979d148c4f4a762c318310e181d",
+    "bytes": 29
+  },
+  "third_party/LoCoOp/configs/datasets/sun397.yaml": {
+    "sha256": "0e337d4f6748c1f5a9b907f7175f74710232dc33cb4d6ae33396d973f44e0908",
+    "bytes": 26
+  },
+  "third_party/LoCoOp/configs/datasets/eurosat.yaml": {
+    "sha256": "0eccbd77c6932575cc3e112d062cdc46eb4f8f01733ee959b64bcc4198d1a65a",
+    "bytes": 27
+  },
+  "third_party/LoCoOp/configs/datasets/imagenetv2.yaml": {
+    "sha256": "2eac7c97b73e902cce131d2624fc2d33181b6539766066f21417f7e3f5af8433",
+    "bytes": 30
+  },
+  "third_party/LoCoOp/configs/datasets/fgvc_aircraft.yaml": {
+    "sha256": "e8de7dee200453254296083419ffd8e71ec389465d698ba333389404bb02323a",
+    "bytes": 32
+  },
+  "third_party/LoCoOp/configs/datasets/caltech101.yaml": {
+    "sha256": "1b788ea9a7752c610858ab8dc9f5458447c556038f55d3f19c82d7d651190f23",
+    "bytes": 30
+  },
+  "third_party/LoCoOp/configs/datasets/imagenet_sketch.yaml": {
+    "sha256": "89c2d82f54c264b54c5603c18c7ba71d07772de81911f5771fe642a1f192d40e",
+    "bytes": 34
+  },
+  "third_party/LoCoOp/configs/datasets/food101.yaml": {
+    "sha256": "7b892667618fcffb23af75fe67167e763600d28cf47f444a55c20e02af9cd7de",
+    "bytes": 27
+  },
+  "third_party/LoCoOp/configs/datasets/imagenet.yaml": {
+    "sha256": "5d3eba6165e791c5855649a328cd1c3c318fcda7d69c8d61384d5ee781d09bf2",
+    "bytes": 28
+  },
+  "third_party/LoCoOp/configs/datasets/dtd.yaml": {
+    "sha256": "5c68a9cfd2a18ebf780136a2f4a3bda0c86c17b69782acd84c98e9d53de54074",
+    "bytes": 39
+  },
+  "third_party/LoCoOp/configs/datasets/ucf101.yaml": {
+    "sha256": "bd4d1e5e443808b9b5f6b21997a0f1db3d358adf07aa357da4366d260b2dd085",
+    "bytes": 26
+  },
+  "third_party/LoCoOp/configs/datasets/oxford_pets.yaml": {
+    "sha256": "e6d57b9ee4b1041d6c4424e6384154ffd82e9898412d3b3ca16450de11612b4c",
+    "bytes": 29
+  },
+  "third_party/LoCoOp/configs/datasets/stanford_cars.yaml": {
+    "sha256": "379ff3ba677c059f8effa1d5bd96de3afe26cfe5287362a62b632dfdbd827722",
+    "bytes": 32
+  },
+  "third_party/LoCoOp/configs/trainers/LoCoOp/rn50_ep50.yaml": {
+    "sha256": "e30d4e2624b58cbcb0d4affd56f97065662edd9e21cc2616a424a8c16b2af026",
+    "bytes": 509
+  },
+  "third_party/LoCoOp/configs/trainers/LoCoOp/vit_b16_ep50.yaml": {
+    "sha256": "7092bc03dea03f08fb31ceaf798a28bab143ee18c464558d7e03dd112f0cd56f",
+    "bytes": 513
+  },
+  "experiments/legacy/runs/main/stream_near_seed125.parquet": {
+    "sha256": "8ff5bcbbecc0cae53406124d576b9a88ce8279cf5b88dd9659e0359e562c0dd9",
+    "bytes": 2229452
+  },
+  "experiments/legacy/runs/main/stream_far_seed125.parquet": {
+    "sha256": "1506a434012b74a8e11e5aa2d02f2c58659baffbea6fcf4179d6f70db04a43a0",
+    "bytes": 1927827
+  },
+  "experiments/legacy/runs/main/stream_near_seed123.parquet": {
+    "sha256": "3ca0f69a6d3f216de834ccd9a800f25d69102532b205f3c6b10aa3025c5c0bd9",
+    "bytes": 2228794
+  },
+  "experiments/legacy/runs/main/stream_far_seed124.parquet": {
+    "sha256": "56cc8f87612539bb513350b5ed215a688edcfc3c8a0dbacab8ce6c064339ce09",
+    "bytes": 1927192
+  },
+  "experiments/legacy/runs/main/stream_near_seed124.parquet": {
+    "sha256": "754b8c551634336fa6923e029834eb02382dccd9cb561af21f4cf4d215747f40",
+    "bytes": 2230423
+  },
+  "experiments/legacy/runs/main/stream_far_seed123.parquet": {
+    "sha256": "b73ede0b40c91caf76d18736925bc1a2836d60cf72a8537d6de2d176e63a2fd9",
+    "bytes": 1926534
+  }
+}

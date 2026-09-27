@@ -1,0 +1,16 @@
+{
+  "registered_utc": "2026-09-27T00:45:00Z",
+  "use_of_test_split": "FOURTH use of the OpenOOD v1.5 ImageNet-1K test split (1st: CLAVIS, 2nd: CLAVIS-M c1, 3rd: CLAVIS-M2). Run exactly once. Final loop.",
+  "run_condition": "only if the frozen candidate passes the pre-registered rule on dev1 and on its first dev2 look (iter3/dev2_looks.jsonl)",
+  "frozen_candidate": {"path": "iter3/frozen_m3.json", "sha256": "ddd948af299fcd6b3defa8f441327413f73dec6962d40962711bcd91facb0489"},
+  "code": {"path": "scripts/iter3_eval.py", "sha256": "40a9bf336c7ea02cb062b2b78fc48492445add34168c309857f12df670c161ad"},
+  "iteration_prereg": {"path": "iter3/prereg_iter3.json", "sha256": "05f7dee9e1917c800894cd8beb42dc79de2bff414d4a417a109ae0046beff89c"},
+  "benchmark": "OpenOOD v1.5 ImageNet-1K: ID test_imagenet (45,000); near = SSB-hard, NINCO; far = iNaturalist, Textures, OpenImage-O",
+  "tins": "test_runs/default/<dataset>_seed<s>.npz, stream orders s = 123..127 (same runs as the paper and the third use)",
+  "features": {"B14": "test_eval/results/features.pt", "L14": "test_eval/results/features_vitl14.pt (sha256 18636082b714dd97e780a9c7fad91d14897a6cb58ffa53f0e2b56d9321d8cca7)"},
+  "method": "CLAVIS-M3 as frozen (prototype views B/14 and L/14, iterated two-stage entrance 0.40 / 0.30 / 0.10, conformal label propagation k = 10, alpha = 0.9, gamma = 3, 15 iterations); memories and graphs reset for every ID+OOD stream",
+  "primary_endpoints": "near-average and far-average AUROC (upstream get_measures), mean over the 5 stream orders, compared with CLAVIS-M2 recomputed on the same runs (third use: near 92.94, far 98.48)",
+  "secondary": ["FPR95", "per-dataset AUROC / FPR95 and SD over orders", "class-level bootstrap 95% interval (B = 1000, seed 123) of CLAVIS-M3 minus CLAVIS-M2 and minus TINS", "paired DeLong test (seed 123)", "ID admission rate per view"],
+  "not_evaluated": "no other variant, threshold or backbone is evaluated on the test",
+  "no_changes_after_seeing_test": true
+}

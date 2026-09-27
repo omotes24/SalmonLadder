@@ -1,0 +1,17 @@
+{
+ "frozen_utc": "2026-09-25T14:58:26Z",
+ "set_by": "user (Kotaro), answer to the Step 0 approval questions on 2026-09-25",
+ "rule": "GO if for at least one combination of feature in {clip, dino}, m in {1, 2} and eps in {0.005, 0.01}: mean over order seeds of (c) >= X AND mean over order seeds of (d)[1:1] >= Y. Otherwise NO-GO. Not to be changed after the main run.",
+ "X": 0.05,
+ "Y": 0.85,
+ "features": ["clip", "dino"],
+ "m": [1, 2],
+ "eps_for_decision": [0.005, 0.01],
+ "eps_reported": [0.005, 0.01, 0.02],
+ "order_seeds": [123, 124, 125],
+ "definitions": {
+  "c": "P(nominated AND NOT seeded | near) in the (ID dev + near dev) stream; seeded = S_arrival < beta (0.3); nominated = d(x) > q_eps",
+  "d_1to1": "P(novel | near) / (P(novel | near) + P(novel | ID)), both rates from the (ID dev + near dev) stream",
+  "aggregation": "arithmetic mean over the order seeds"
+ }
+}

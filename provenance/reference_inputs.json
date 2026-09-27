@@ -1,0 +1,18 @@
+{
+  "manifests/reference_manifest.jsonl.gz": {
+    "bytes": 8308921,
+    "sha256": "6f0cf869b472457f68800ba35369eb83480dc711ca79289e5551c6f3681f135d"
+  },
+  "manifests/reference_data_audit.json.gz": {
+    "bytes": 3873,
+    "sha256": "85d5f0a33e1367daee1fe462fff1d927fd6c19c789056a0515600c53ff6f1b8e"
+  },
+  "experiments/legacy/inputs/prototype_train16.txt": {
+    "bytes": 650028,
+    "sha256": "2e778c31333809ad408137e92da1edbb2ff98209ff09ee08ab5a11c85a6d2ec9"
+  },
+  "experiments/legacy/dev2/inputs/prototype_train16.txt": {
+    "bytes": 650028,
+    "sha256": "2e778c31333809ad408137e92da1edbb2ff98209ff09ee08ab5a11c85a6d2ec9"
+  }
+}

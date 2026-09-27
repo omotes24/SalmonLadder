@@ -1,0 +1,50 @@
+{
+  "checked_utc": "2026-09-27T02:42:20Z",
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "GPU_benchmark_rerun": false,
+  "checks": [
+    {
+      "command": "python tools/verify_snapshot.py",
+      "returncode": 0,
+      "seconds": 0.576,
+      "stdout": "{\n  \"archived_files_checked\": 799,\n  \"mismatches\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m pytest -q experiments/controls_456/src/test_controls.py",
+      "returncode": 0,
+      "seconds": 11.616,
+      "stdout": "......                                                                   [100%]\n6 passed in 8.18s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m pytest -q experiments/legacy/tests/test_r5.py",
+      "returncode": 0,
+      "seconds": 12.8,
+      "stdout": "..............                                                           [100%]\n14 passed in 10.05s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python examples/feature_stream.py",
+      "returncode": 0,
+      "seconds": 5.898,
+      "stdout": "batch 0: REPRISE ID scores [0.5472, 0.2432, 0.6384, 0.1792]\nbatch 1: REPRISE ID scores [0.5184, 0.432, 0.6, 0.12]\nbatch 2: REPRISE ID scores [0.1728, 0.48, 0.016, 0.504]\nbatch 3: REPRISE ID scores [0.048, 0.576, 0.2448, 0.1296]\nSynthetic feature smoke test passed. No benchmark metric is reported.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/materialize_workspace.py --workspace /home/omote/reprise_submission_materialized_20260927",
+      "returncode": 0,
+      "seconds": 7.854,
+      "stdout": "Materialized /home/omote/reprise_submission_materialized_20260927. Put data/checkpoints in place and build feature banks before running experiments.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/encode_manifest.py --help",
+      "returncode": 0,
+      "seconds": 0.147,
+      "stdout": "usage: encode_manifest.py [-h] --workspace WORKSPACE --bank\n                          {cub,cifar,dev,openood} --model {CLIP,B14,L14}\n\nRebuild control-bank features in the archived manifest order, using the frozen\nencoders.\n\noptions:\n  -h, --help            show this help message and exit\n  --workspace WORKSPACE\n  --bank {cub,cifar,dev,openood}\n  --model {CLIP,B14,L14}\n",
+      "stderr": ""
+    }
+  ],
+  "all_passed": true
+}

@@ -1,0 +1,5402 @@
+[
+ {
+  "id_idx": 0,
+  "wnid": "n01440764",
+  "idx_1k": 0,
+  "clean_name": "tench"
+ },
+ {
+  "id_idx": 1,
+  "wnid": "n01484850",
+  "idx_1k": 2,
+  "clean_name": "great white shark"
+ },
+ {
+  "id_idx": 2,
+  "wnid": "n01491361",
+  "idx_1k": 3,
+  "clean_name": "tiger shark"
+ },
+ {
+  "id_idx": 3,
+  "wnid": "n01494475",
+  "idx_1k": 4,
+  "clean_name": "hammerhead shark"
+ },
+ {
+  "id_idx": 4,
+  "wnid": "n01496331",
+  "idx_1k": 5,
+  "clean_name": "electric ray"
+ },
+ {
+  "id_idx": 5,
+  "wnid": "n01498041",
+  "idx_1k": 6,
+  "clean_name": "stingray"
+ },
+ {
+  "id_idx": 6,
+  "wnid": "n01514668",
+  "idx_1k": 7,
+  "clean_name": "rooster"
+ },
+ {
+  "id_idx": 7,
+  "wnid": "n01514859",
+  "idx_1k": 8,
+  "clean_name": "hen"
+ },
+ {
+  "id_idx": 8,
+  "wnid": "n01518878",
+  "idx_1k": 9,
+  "clean_name": "ostrich"
+ },
+ {
+  "id_idx": 9,
+  "wnid": "n01530575",
+  "idx_1k": 10,
+  "clean_name": "brambling"
+ },
+ {
+  "id_idx": 10,
+  "wnid": "n01531178",
+  "idx_1k": 11,
+  "clean_name": "goldfinch"
+ },
+ {
+  "id_idx": 11,
+  "wnid": "n01532829",
+  "idx_1k": 12,
+  "clean_name": "house finch"
+ },
+ {
+  "id_idx": 12,
+  "wnid": "n01534433",
+  "idx_1k": 13,
+  "clean_name": "junco"
+ },
+ {
+  "id_idx": 13,
+  "wnid": "n01537544",
+  "idx_1k": 14,
+  "clean_name": "indigo bunting"
+ },
+ {
+  "id_idx": 14,
+  "wnid": "n01558993",
+  "idx_1k": 15,
+  "clean_name": "American robin"
+ },
+ {
+  "id_idx": 15,
+  "wnid": "n01560419",
+  "idx_1k": 16,
+  "clean_name": "bulbul"
+ },
+ {
+  "id_idx": 16,
+  "wnid": "n01580077",
+  "idx_1k": 17,
+  "clean_name": "jay"
+ },
+ {
+  "id_idx": 17,
+  "wnid": "n01582220",
+  "idx_1k": 18,
+  "clean_name": "magpie"
+ },
+ {
+  "id_idx": 18,
+  "wnid": "n01592084",
+  "idx_1k": 19,
+  "clean_name": "chickadee"
+ },
+ {
+  "id_idx": 19,
+  "wnid": "n01601694",
+  "idx_1k": 20,
+  "clean_name": "American dipper"
+ },
+ {
+  "id_idx": 20,
+  "wnid": "n01608432",
+  "idx_1k": 21,
+  "clean_name": "kite (bird of prey)"
+ },
+ {
+  "id_idx": 21,
+  "wnid": "n01614925",
+  "idx_1k": 22,
+  "clean_name": "bald eagle"
+ },
+ {
+  "id_idx": 22,
+  "wnid": "n01616318",
+  "idx_1k": 23,
+  "clean_name": "vulture"
+ },
+ {
+  "id_idx": 23,
+  "wnid": "n01622779",
+  "idx_1k": 24,
+  "clean_name": "great grey owl"
+ },
+ {
+  "id_idx": 24,
+  "wnid": "n01629819",
+  "idx_1k": 25,
+  "clean_name": "fire salamander"
+ },
+ {
+  "id_idx": 25,
+  "wnid": "n01630670",
+  "idx_1k": 26,
+  "clean_name": "smooth newt"
+ },
+ {
+  "id_idx": 26,
+  "wnid": "n01631663",
+  "idx_1k": 27,
+  "clean_name": "newt"
+ },
+ {
+  "id_idx": 27,
+  "wnid": "n01632777",
+  "idx_1k": 29,
+  "clean_name": "axolotl"
+ },
+ {
+  "id_idx": 28,
+  "wnid": "n01641577",
+  "idx_1k": 30,
+  "clean_name": "American bullfrog"
+ },
+ {
+  "id_idx": 29,
+  "wnid": "n01644373",
+  "idx_1k": 31,
+  "clean_name": "tree frog"
+ },
+ {
+  "id_idx": 30,
+  "wnid": "n01644900",
+  "idx_1k": 32,
+  "clean_name": "tailed frog"
+ },
+ {
+  "id_idx": 31,
+  "wnid": "n01664065",
+  "idx_1k": 33,
+  "clean_name": "loggerhead sea turtle"
+ },
+ {
+  "id_idx": 32,
+  "wnid": "n01665541",
+  "idx_1k": 34,
+  "clean_name": "leatherback sea turtle"
+ },
+ {
+  "id_idx": 33,
+  "wnid": "n01667778",
+  "idx_1k": 36,
+  "clean_name": "terrapin"
+ },
+ {
+  "id_idx": 34,
+  "wnid": "n01669191",
+  "idx_1k": 37,
+  "clean_name": "box turtle"
+ },
+ {
+  "id_idx": 35,
+  "wnid": "n01675722",
+  "idx_1k": 38,
+  "clean_name": "banded gecko"
+ },
+ {
+  "id_idx": 36,
+  "wnid": "n01677366",
+  "idx_1k": 39,
+  "clean_name": "green iguana"
+ },
+ {
+  "id_idx": 37,
+  "wnid": "n01685808",
+  "idx_1k": 41,
+  "clean_name": "desert grassland whiptail lizard"
+ },
+ {
+  "id_idx": 38,
+  "wnid": "n01687978",
+  "idx_1k": 42,
+  "clean_name": "agama"
+ },
+ {
+  "id_idx": 39,
+  "wnid": "n01688243",
+  "idx_1k": 43,
+  "clean_name": "frilled-necked lizard"
+ },
+ {
+  "id_idx": 40,
+  "wnid": "n01689811",
+  "idx_1k": 44,
+  "clean_name": "alligator lizard"
+ },
+ {
+  "id_idx": 41,
+  "wnid": "n01692333",
+  "idx_1k": 45,
+  "clean_name": "Gila monster"
+ },
+ {
+  "id_idx": 42,
+  "wnid": "n01693334",
+  "idx_1k": 46,
+  "clean_name": "European green lizard"
+ },
+ {
+  "id_idx": 43,
+  "wnid": "n01694178",
+  "idx_1k": 47,
+  "clean_name": "chameleon"
+ },
+ {
+  "id_idx": 44,
+  "wnid": "n01695060",
+  "idx_1k": 48,
+  "clean_name": "Komodo dragon"
+ },
+ {
+  "id_idx": 45,
+  "wnid": "n01697457",
+  "idx_1k": 49,
+  "clean_name": "Nile crocodile"
+ },
+ {
+  "id_idx": 46,
+  "wnid": "n01698640",
+  "idx_1k": 50,
+  "clean_name": "American alligator"
+ },
+ {
+  "id_idx": 47,
+  "wnid": "n01704323",
+  "idx_1k": 51,
+  "clean_name": "triceratops"
+ },
+ {
+  "id_idx": 48,
+  "wnid": "n01728572",
+  "idx_1k": 52,
+  "clean_name": "worm snake"
+ },
+ {
+  "id_idx": 49,
+  "wnid": "n01728920",
+  "idx_1k": 53,
+  "clean_name": "ring-necked snake"
+ },
+ {
+  "id_idx": 50,
+  "wnid": "n01729322",
+  "idx_1k": 54,
+  "clean_name": "eastern hog-nosed snake"
+ },
+ {
+  "id_idx": 51,
+  "wnid": "n01729977",
+  "idx_1k": 55,
+  "clean_name": "smooth green snake"
+ },
+ {
+  "id_idx": 52,
+  "wnid": "n01734418",
+  "idx_1k": 56,
+  "clean_name": "kingsnake"
+ },
+ {
+  "id_idx": 53,
+  "wnid": "n01735189",
+  "idx_1k": 57,
+  "clean_name": "garter snake"
+ },
+ {
+  "id_idx": 54,
+  "wnid": "n01737021",
+  "idx_1k": 58,
+  "clean_name": "water snake"
+ },
+ {
+  "id_idx": 55,
+  "wnid": "n01739381",
+  "idx_1k": 59,
+  "clean_name": "vine snake"
+ },
+ {
+  "id_idx": 56,
+  "wnid": "n01740131",
+  "idx_1k": 60,
+  "clean_name": "night snake"
+ },
+ {
+  "id_idx": 57,
+  "wnid": "n01742172",
+  "idx_1k": 61,
+  "clean_name": "boa constrictor"
+ },
+ {
+  "id_idx": 58,
+  "wnid": "n01744401",
+  "idx_1k": 62,
+  "clean_name": "African rock python"
+ },
+ {
+  "id_idx": 59,
+  "wnid": "n01748264",
+  "idx_1k": 63,
+  "clean_name": "Indian cobra"
+ },
+ {
+  "id_idx": 60,
+  "wnid": "n01749939",
+  "idx_1k": 64,
+  "clean_name": "green mamba"
+ },
+ {
+  "id_idx": 61,
+  "wnid": "n01751748",
+  "idx_1k": 65,
+  "clean_name": "sea snake"
+ },
+ {
+  "id_idx": 62,
+  "wnid": "n01753488",
+  "idx_1k": 66,
+  "clean_name": "Saharan horned viper"
+ },
+ {
+  "id_idx": 63,
+  "wnid": "n01755581",
+  "idx_1k": 67,
+  "clean_name": "eastern diamondback rattlesnake"
+ },
+ {
+  "id_idx": 64,
+  "wnid": "n01756291",
+  "idx_1k": 68,
+  "clean_name": "sidewinder rattlesnake"
+ },
+ {
+  "id_idx": 65,
+  "wnid": "n01770081",
+  "idx_1k": 70,
+  "clean_name": "harvestman"
+ },
+ {
+  "id_idx": 66,
+  "wnid": "n01770393",
+  "idx_1k": 71,
+  "clean_name": "scorpion"
+ },
+ {
+  "id_idx": 67,
+  "wnid": "n01773157",
+  "idx_1k": 72,
+  "clean_name": "yellow garden spider"
+ },
+ {
+  "id_idx": 68,
+  "wnid": "n01773797",
+  "idx_1k": 74,
+  "clean_name": "European garden spider"
+ },
+ {
+  "id_idx": 69,
+  "wnid": "n01774384",
+  "idx_1k": 75,
+  "clean_name": "southern black widow"
+ },
+ {
+  "id_idx": 70,
+  "wnid": "n01774750",
+  "idx_1k": 76,
+  "clean_name": "tarantula"
+ },
+ {
+  "id_idx": 71,
+  "wnid": "n01775062",
+  "idx_1k": 77,
+  "clean_name": "wolf spider"
+ },
+ {
+  "id_idx": 72,
+  "wnid": "n01776313",
+  "idx_1k": 78,
+  "clean_name": "tick"
+ },
+ {
+  "id_idx": 73,
+  "wnid": "n01784675",
+  "idx_1k": 79,
+  "clean_name": "centipede"
+ },
+ {
+  "id_idx": 74,
+  "wnid": "n01795545",
+  "idx_1k": 80,
+  "clean_name": "black grouse"
+ },
+ {
+  "id_idx": 75,
+  "wnid": "n01796340",
+  "idx_1k": 81,
+  "clean_name": "ptarmigan"
+ },
+ {
+  "id_idx": 76,
+  "wnid": "n01798484",
+  "idx_1k": 83,
+  "clean_name": "prairie grouse"
+ },
+ {
+  "id_idx": 77,
+  "wnid": "n01806143",
+  "idx_1k": 84,
+  "clean_name": "peafowl"
+ },
+ {
+  "id_idx": 78,
+  "wnid": "n01806567",
+  "idx_1k": 85,
+  "clean_name": "quail"
+ },
+ {
+  "id_idx": 79,
+  "wnid": "n01807496",
+  "idx_1k": 86,
+  "clean_name": "partridge"
+ },
+ {
+  "id_idx": 80,
+  "wnid": "n01817953",
+  "idx_1k": 87,
+  "clean_name": "african grey parrot"
+ },
+ {
+  "id_idx": 81,
+  "wnid": "n01818515",
+  "idx_1k": 88,
+  "clean_name": "macaw"
+ },
+ {
+  "id_idx": 82,
+  "wnid": "n01819313",
+  "idx_1k": 89,
+  "clean_name": "sulphur-crested cockatoo"
+ },
+ {
+  "id_idx": 83,
+  "wnid": "n01820546",
+  "idx_1k": 90,
+  "clean_name": "lorikeet"
+ },
+ {
+  "id_idx": 84,
+  "wnid": "n01824575",
+  "idx_1k": 91,
+  "clean_name": "coucal"
+ },
+ {
+  "id_idx": 85,
+  "wnid": "n01828970",
+  "idx_1k": 92,
+  "clean_name": "bee eater"
+ },
+ {
+  "id_idx": 86,
+  "wnid": "n01829413",
+  "idx_1k": 93,
+  "clean_name": "hornbill"
+ },
+ {
+  "id_idx": 87,
+  "wnid": "n01833805",
+  "idx_1k": 94,
+  "clean_name": "hummingbird"
+ },
+ {
+  "id_idx": 88,
+  "wnid": "n01843065",
+  "idx_1k": 95,
+  "clean_name": "jacamar"
+ },
+ {
+  "id_idx": 89,
+  "wnid": "n01847000",
+  "idx_1k": 97,
+  "clean_name": "duck"
+ },
+ {
+  "id_idx": 90,
+  "wnid": "n01855032",
+  "idx_1k": 98,
+  "clean_name": "red-breasted merganser"
+ },
+ {
+  "id_idx": 91,
+  "wnid": "n01855672",
+  "idx_1k": 99,
+  "clean_name": "goose"
+ },
+ {
+  "id_idx": 92,
+  "wnid": "n01860187",
+  "idx_1k": 100,
+  "clean_name": "black swan"
+ },
+ {
+  "id_idx": 93,
+  "wnid": "n01871265",
+  "idx_1k": 101,
+  "clean_name": "tusker"
+ },
+ {
+  "id_idx": 94,
+  "wnid": "n01872401",
+  "idx_1k": 102,
+  "clean_name": "echidna"
+ },
+ {
+  "id_idx": 95,
+  "wnid": "n01873310",
+  "idx_1k": 103,
+  "clean_name": "platypus"
+ },
+ {
+  "id_idx": 96,
+  "wnid": "n01877812",
+  "idx_1k": 104,
+  "clean_name": "wallaby"
+ },
+ {
+  "id_idx": 97,
+  "wnid": "n01882714",
+  "idx_1k": 105,
+  "clean_name": "koala"
+ },
+ {
+  "id_idx": 98,
+  "wnid": "n01883070",
+  "idx_1k": 106,
+  "clean_name": "wombat"
+ },
+ {
+  "id_idx": 99,
+  "wnid": "n01910747",
+  "idx_1k": 107,
+  "clean_name": "jellyfish"
+ },
+ {
+  "id_idx": 100,
+  "wnid": "n01914609",
+  "idx_1k": 108,
+  "clean_name": "sea anemone"
+ },
+ {
+  "id_idx": 101,
+  "wnid": "n01917289",
+  "idx_1k": 109,
+  "clean_name": "brain coral"
+ },
+ {
+  "id_idx": 102,
+  "wnid": "n01930112",
+  "idx_1k": 111,
+  "clean_name": "nematode"
+ },
+ {
+  "id_idx": 103,
+  "wnid": "n01943899",
+  "idx_1k": 112,
+  "clean_name": "conch"
+ },
+ {
+  "id_idx": 104,
+  "wnid": "n01944390",
+  "idx_1k": 113,
+  "clean_name": "snail"
+ },
+ {
+  "id_idx": 105,
+  "wnid": "n01945685",
+  "idx_1k": 114,
+  "clean_name": "slug"
+ },
+ {
+  "id_idx": 106,
+  "wnid": "n01955084",
+  "idx_1k": 116,
+  "clean_name": "chiton"
+ },
+ {
+  "id_idx": 107,
+  "wnid": "n01968897",
+  "idx_1k": 117,
+  "clean_name": "chambered nautilus"
+ },
+ {
+  "id_idx": 108,
+  "wnid": "n01978455",
+  "idx_1k": 119,
+  "clean_name": "rock crab"
+ },
+ {
+  "id_idx": 109,
+  "wnid": "n01980166",
+  "idx_1k": 120,
+  "clean_name": "fiddler crab"
+ },
+ {
+  "id_idx": 110,
+  "wnid": "n01981276",
+  "idx_1k": 121,
+  "clean_name": "red king crab"
+ },
+ {
+  "id_idx": 111,
+  "wnid": "n01983481",
+  "idx_1k": 122,
+  "clean_name": "American lobster"
+ },
+ {
+  "id_idx": 112,
+  "wnid": "n01984695",
+  "idx_1k": 123,
+  "clean_name": "spiny lobster"
+ },
+ {
+  "id_idx": 113,
+  "wnid": "n01985128",
+  "idx_1k": 124,
+  "clean_name": "crayfish"
+ },
+ {
+  "id_idx": 114,
+  "wnid": "n01986214",
+  "idx_1k": 125,
+  "clean_name": "hermit crab"
+ },
+ {
+  "id_idx": 115,
+  "wnid": "n01990800",
+  "idx_1k": 126,
+  "clean_name": "isopod"
+ },
+ {
+  "id_idx": 116,
+  "wnid": "n02002724",
+  "idx_1k": 128,
+  "clean_name": "black stork"
+ },
+ {
+  "id_idx": 117,
+  "wnid": "n02006656",
+  "idx_1k": 129,
+  "clean_name": "spoonbill"
+ },
+ {
+  "id_idx": 118,
+  "wnid": "n02007558",
+  "idx_1k": 130,
+  "clean_name": "flamingo"
+ },
+ {
+  "id_idx": 119,
+  "wnid": "n02009229",
+  "idx_1k": 131,
+  "clean_name": "little blue heron"
+ },
+ {
+  "id_idx": 120,
+  "wnid": "n02009912",
+  "idx_1k": 132,
+  "clean_name": "great egret"
+ },
+ {
+  "id_idx": 121,
+  "wnid": "n02011460",
+  "idx_1k": 133,
+  "clean_name": "bittern bird"
+ },
+ {
+  "id_idx": 122,
+  "wnid": "n02012849",
+  "idx_1k": 134,
+  "clean_name": "crane bird"
+ },
+ {
+  "id_idx": 123,
+  "wnid": "n02013706",
+  "idx_1k": 135,
+  "clean_name": "limpkin"
+ },
+ {
+  "id_idx": 124,
+  "wnid": "n02017213",
+  "idx_1k": 136,
+  "clean_name": "common gallinule"
+ },
+ {
+  "id_idx": 125,
+  "wnid": "n02018207",
+  "idx_1k": 137,
+  "clean_name": "American coot"
+ },
+ {
+  "id_idx": 126,
+  "wnid": "n02025239",
+  "idx_1k": 139,
+  "clean_name": "ruddy turnstone"
+ },
+ {
+  "id_idx": 127,
+  "wnid": "n02027492",
+  "idx_1k": 140,
+  "clean_name": "dunlin"
+ },
+ {
+  "id_idx": 128,
+  "wnid": "n02028035",
+  "idx_1k": 141,
+  "clean_name": "common redshank"
+ },
+ {
+  "id_idx": 129,
+  "wnid": "n02033041",
+  "idx_1k": 142,
+  "clean_name": "dowitcher"
+ },
+ {
+  "id_idx": 130,
+  "wnid": "n02037110",
+  "idx_1k": 143,
+  "clean_name": "oystercatcher"
+ },
+ {
+  "id_idx": 131,
+  "wnid": "n02051845",
+  "idx_1k": 144,
+  "clean_name": "pelican"
+ },
+ {
+  "id_idx": 132,
+  "wnid": "n02056570",
+  "idx_1k": 145,
+  "clean_name": "king penguin"
+ },
+ {
+  "id_idx": 133,
+  "wnid": "n02058221",
+  "idx_1k": 146,
+  "clean_name": "albatross"
+ },
+ {
+  "id_idx": 134,
+  "wnid": "n02066245",
+  "idx_1k": 147,
+  "clean_name": "grey whale"
+ },
+ {
+  "id_idx": 135,
+  "wnid": "n02071294",
+  "idx_1k": 148,
+  "clean_name": "killer whale"
+ },
+ {
+  "id_idx": 136,
+  "wnid": "n02074367",
+  "idx_1k": 149,
+  "clean_name": "dugong"
+ },
+ {
+  "id_idx": 137,
+  "wnid": "n02077923",
+  "idx_1k": 150,
+  "clean_name": "sea lion"
+ },
+ {
+  "id_idx": 138,
+  "wnid": "n02085782",
+  "idx_1k": 152,
+  "clean_name": "Japanese Chin"
+ },
+ {
+  "id_idx": 139,
+  "wnid": "n02085936",
+  "idx_1k": 153,
+  "clean_name": "Maltese"
+ },
+ {
+  "id_idx": 140,
+  "wnid": "n02086079",
+  "idx_1k": 154,
+  "clean_name": "Pekingese"
+ },
+ {
+  "id_idx": 141,
+  "wnid": "n02086240",
+  "idx_1k": 155,
+  "clean_name": "Shih Tzu"
+ },
+ {
+  "id_idx": 142,
+  "wnid": "n02086646",
+  "idx_1k": 156,
+  "clean_name": "King Charles Spaniel"
+ },
+ {
+  "id_idx": 143,
+  "wnid": "n02086910",
+  "idx_1k": 157,
+  "clean_name": "Papillon"
+ },
+ {
+  "id_idx": 144,
+  "wnid": "n02087046",
+  "idx_1k": 158,
+  "clean_name": "toy terrier"
+ },
+ {
+  "id_idx": 145,
+  "wnid": "n02087394",
+  "idx_1k": 159,
+  "clean_name": "Rhodesian Ridgeback"
+ },
+ {
+  "id_idx": 146,
+  "wnid": "n02088094",
+  "idx_1k": 160,
+  "clean_name": "Afghan Hound"
+ },
+ {
+  "id_idx": 147,
+  "wnid": "n02088238",
+  "idx_1k": 161,
+  "clean_name": "Basset Hound"
+ },
+ {
+  "id_idx": 148,
+  "wnid": "n02088364",
+  "idx_1k": 162,
+  "clean_name": "Beagle"
+ },
+ {
+  "id_idx": 149,
+  "wnid": "n02088632",
+  "idx_1k": 164,
+  "clean_name": "Bluetick Coonhound"
+ },
+ {
+  "id_idx": 150,
+  "wnid": "n02089078",
+  "idx_1k": 165,
+  "clean_name": "Black and Tan Coonhound"
+ },
+ {
+  "id_idx": 151,
+  "wnid": "n02089867",
+  "idx_1k": 166,
+  "clean_name": "Treeing Walker Coonhound"
+ },
+ {
+  "id_idx": 152,
+  "wnid": "n02089973",
+  "idx_1k": 167,
+  "clean_name": "English foxhound"
+ },
+ {
+  "id_idx": 153,
+  "wnid": "n02090379",
+  "idx_1k": 168,
+  "clean_name": "Redbone Coonhound"
+ },
+ {
+  "id_idx": 154,
+  "wnid": "n02090721",
+  "idx_1k": 170,
+  "clean_name": "Irish Wolfhound"
+ },
+ {
+  "id_idx": 155,
+  "wnid": "n02091032",
+  "idx_1k": 171,
+  "clean_name": "Italian Greyhound"
+ },
+ {
+  "id_idx": 156,
+  "wnid": "n02091134",
+  "idx_1k": 172,
+  "clean_name": "Whippet"
+ },
+ {
+  "id_idx": 157,
+  "wnid": "n02091244",
+  "idx_1k": 173,
+  "clean_name": "Ibizan Hound"
+ },
+ {
+  "id_idx": 158,
+  "wnid": "n02091467",
+  "idx_1k": 174,
+  "clean_name": "Norwegian Elkhound"
+ },
+ {
+  "id_idx": 159,
+  "wnid": "n02091635",
+  "idx_1k": 175,
+  "clean_name": "Otterhound"
+ },
+ {
+  "id_idx": 160,
+  "wnid": "n02091831",
+  "idx_1k": 176,
+  "clean_name": "Saluki"
+ },
+ {
+  "id_idx": 161,
+  "wnid": "n02092002",
+  "idx_1k": 177,
+  "clean_name": "Scottish Deerhound"
+ },
+ {
+  "id_idx": 162,
+  "wnid": "n02092339",
+  "idx_1k": 178,
+  "clean_name": "Weimaraner"
+ },
+ {
+  "id_idx": 163,
+  "wnid": "n02093256",
+  "idx_1k": 179,
+  "clean_name": "Staffordshire Bull Terrier"
+ },
+ {
+  "id_idx": 164,
+  "wnid": "n02093428",
+  "idx_1k": 180,
+  "clean_name": "American Staffordshire Terrier"
+ },
+ {
+  "id_idx": 165,
+  "wnid": "n02093754",
+  "idx_1k": 182,
+  "clean_name": "Border Terrier"
+ },
+ {
+  "id_idx": 166,
+  "wnid": "n02093859",
+  "idx_1k": 183,
+  "clean_name": "Kerry Blue Terrier"
+ },
+ {
+  "id_idx": 167,
+  "wnid": "n02093991",
+  "idx_1k": 184,
+  "clean_name": "Irish Terrier"
+ },
+ {
+  "id_idx": 168,
+  "wnid": "n02094114",
+  "idx_1k": 185,
+  "clean_name": "Norfolk Terrier"
+ },
+ {
+  "id_idx": 169,
+  "wnid": "n02094258",
+  "idx_1k": 186,
+  "clean_name": "Norwich Terrier"
+ },
+ {
+  "id_idx": 170,
+  "wnid": "n02094433",
+  "idx_1k": 187,
+  "clean_name": "Yorkshire Terrier"
+ },
+ {
+  "id_idx": 171,
+  "wnid": "n02095314",
+  "idx_1k": 188,
+  "clean_name": "Wire Fox Terrier"
+ },
+ {
+  "id_idx": 172,
+  "wnid": "n02095570",
+  "idx_1k": 189,
+  "clean_name": "Lakeland Terrier"
+ },
+ {
+  "id_idx": 173,
+  "wnid": "n02095889",
+  "idx_1k": 190,
+  "clean_name": "Sealyham Terrier"
+ },
+ {
+  "id_idx": 174,
+  "wnid": "n02096051",
+  "idx_1k": 191,
+  "clean_name": "Airedale Terrier"
+ },
+ {
+  "id_idx": 175,
+  "wnid": "n02096177",
+  "idx_1k": 192,
+  "clean_name": "Cairn Terrier"
+ },
+ {
+  "id_idx": 176,
+  "wnid": "n02096294",
+  "idx_1k": 193,
+  "clean_name": "Australian Terrier"
+ },
+ {
+  "id_idx": 177,
+  "wnid": "n02096437",
+  "idx_1k": 194,
+  "clean_name": "Dandie Dinmont Terrier"
+ },
+ {
+  "id_idx": 178,
+  "wnid": "n02096585",
+  "idx_1k": 195,
+  "clean_name": "Boston Terrier"
+ },
+ {
+  "id_idx": 179,
+  "wnid": "n02097047",
+  "idx_1k": 196,
+  "clean_name": "Miniature Schnauzer"
+ },
+ {
+  "id_idx": 180,
+  "wnid": "n02097209",
+  "idx_1k": 198,
+  "clean_name": "Standard Schnauzer"
+ },
+ {
+  "id_idx": 181,
+  "wnid": "n02097298",
+  "idx_1k": 199,
+  "clean_name": "Scottish Terrier"
+ },
+ {
+  "id_idx": 182,
+  "wnid": "n02097474",
+  "idx_1k": 200,
+  "clean_name": "Tibetan Terrier"
+ },
+ {
+  "id_idx": 183,
+  "wnid": "n02097658",
+  "idx_1k": 201,
+  "clean_name": "Australian Silky Terrier"
+ },
+ {
+  "id_idx": 184,
+  "wnid": "n02098105",
+  "idx_1k": 202,
+  "clean_name": "Soft-coated Wheaten Terrier"
+ },
+ {
+  "id_idx": 185,
+  "wnid": "n02098286",
+  "idx_1k": 203,
+  "clean_name": "West Highland White Terrier"
+ },
+ {
+  "id_idx": 186,
+  "wnid": "n02098413",
+  "idx_1k": 204,
+  "clean_name": "Lhasa Apso"
+ },
+ {
+  "id_idx": 187,
+  "wnid": "n02099267",
+  "idx_1k": 205,
+  "clean_name": "Flat-Coated Retriever"
+ },
+ {
+  "id_idx": 188,
+  "wnid": "n02099429",
+  "idx_1k": 206,
+  "clean_name": "Curly-coated Retriever"
+ },
+ {
+  "id_idx": 189,
+  "wnid": "n02099712",
+  "idx_1k": 208,
+  "clean_name": "Labrador Retriever"
+ },
+ {
+  "id_idx": 190,
+  "wnid": "n02099849",
+  "idx_1k": 209,
+  "clean_name": "Chesapeake Bay Retriever"
+ },
+ {
+  "id_idx": 191,
+  "wnid": "n02100583",
+  "idx_1k": 211,
+  "clean_name": "Vizsla"
+ },
+ {
+  "id_idx": 192,
+  "wnid": "n02100735",
+  "idx_1k": 212,
+  "clean_name": "English Setter"
+ },
+ {
+  "id_idx": 193,
+  "wnid": "n02101006",
+  "idx_1k": 214,
+  "clean_name": "Gordon Setter"
+ },
+ {
+  "id_idx": 194,
+  "wnid": "n02101388",
+  "idx_1k": 215,
+  "clean_name": "Brittany dog"
+ },
+ {
+  "id_idx": 195,
+  "wnid": "n02102040",
+  "idx_1k": 217,
+  "clean_name": "English Springer Spaniel"
+ },
+ {
+  "id_idx": 196,
+  "wnid": "n02102318",
+  "idx_1k": 219,
+  "clean_name": "Cocker Spaniel"
+ },
+ {
+  "id_idx": 197,
+  "wnid": "n02102480",
+  "idx_1k": 220,
+  "clean_name": "Sussex Spaniel"
+ },
+ {
+  "id_idx": 198,
+  "wnid": "n02102973",
+  "idx_1k": 221,
+  "clean_name": "Irish Water Spaniel"
+ },
+ {
+  "id_idx": 199,
+  "wnid": "n02104365",
+  "idx_1k": 223,
+  "clean_name": "Schipperke"
+ },
+ {
+  "id_idx": 200,
+  "wnid": "n02105162",
+  "idx_1k": 225,
+  "clean_name": "Malinois"
+ },
+ {
+  "id_idx": 201,
+  "wnid": "n02105251",
+  "idx_1k": 226,
+  "clean_name": "Briard"
+ },
+ {
+  "id_idx": 202,
+  "wnid": "n02105412",
+  "idx_1k": 227,
+  "clean_name": "Australian Kelpie"
+ },
+ {
+  "id_idx": 203,
+  "wnid": "n02105505",
+  "idx_1k": 228,
+  "clean_name": "Komondor"
+ },
+ {
+  "id_idx": 204,
+  "wnid": "n02105641",
+  "idx_1k": 229,
+  "clean_name": "Old English Sheepdog"
+ },
+ {
+  "id_idx": 205,
+  "wnid": "n02105855",
+  "idx_1k": 230,
+  "clean_name": "Shetland Sheepdog"
+ },
+ {
+  "id_idx": 206,
+  "wnid": "n02106030",
+  "idx_1k": 231,
+  "clean_name": "collie"
+ },
+ {
+  "id_idx": 207,
+  "wnid": "n02106166",
+  "idx_1k": 232,
+  "clean_name": "Border Collie"
+ },
+ {
+  "id_idx": 208,
+  "wnid": "n02106550",
+  "idx_1k": 234,
+  "clean_name": "Rottweiler"
+ },
+ {
+  "id_idx": 209,
+  "wnid": "n02106662",
+  "idx_1k": 235,
+  "clean_name": "German Shepherd Dog"
+ },
+ {
+  "id_idx": 210,
+  "wnid": "n02107142",
+  "idx_1k": 236,
+  "clean_name": "Dobermann"
+ },
+ {
+  "id_idx": 211,
+  "wnid": "n02107312",
+  "idx_1k": 237,
+  "clean_name": "Miniature Pinscher"
+ },
+ {
+  "id_idx": 212,
+  "wnid": "n02107683",
+  "idx_1k": 239,
+  "clean_name": "Bernese Mountain Dog"
+ },
+ {
+  "id_idx": 213,
+  "wnid": "n02107908",
+  "idx_1k": 240,
+  "clean_name": "Appenzeller Sennenhund"
+ },
+ {
+  "id_idx": 214,
+  "wnid": "n02108000",
+  "idx_1k": 241,
+  "clean_name": "Entlebucher Sennenhund"
+ },
+ {
+  "id_idx": 215,
+  "wnid": "n02108089",
+  "idx_1k": 242,
+  "clean_name": "Boxer"
+ },
+ {
+  "id_idx": 216,
+  "wnid": "n02108422",
+  "idx_1k": 243,
+  "clean_name": "Bullmastiff"
+ },
+ {
+  "id_idx": 217,
+  "wnid": "n02108551",
+  "idx_1k": 244,
+  "clean_name": "Tibetan Mastiff"
+ },
+ {
+  "id_idx": 218,
+  "wnid": "n02108915",
+  "idx_1k": 245,
+  "clean_name": "French Bulldog"
+ },
+ {
+  "id_idx": 219,
+  "wnid": "n02109047",
+  "idx_1k": 246,
+  "clean_name": "Great Dane"
+ },
+ {
+  "id_idx": 220,
+  "wnid": "n02109525",
+  "idx_1k": 247,
+  "clean_name": "St. Bernard"
+ },
+ {
+  "id_idx": 221,
+  "wnid": "n02109961",
+  "idx_1k": 248,
+  "clean_name": "husky"
+ },
+ {
+  "id_idx": 222,
+  "wnid": "n02110063",
+  "idx_1k": 249,
+  "clean_name": "Alaskan Malamute"
+ },
+ {
+  "id_idx": 223,
+  "wnid": "n02110627",
+  "idx_1k": 252,
+  "clean_name": "Affenpinscher"
+ },
+ {
+  "id_idx": 224,
+  "wnid": "n02110806",
+  "idx_1k": 253,
+  "clean_name": "Basenji"
+ },
+ {
+  "id_idx": 225,
+  "wnid": "n02110958",
+  "idx_1k": 254,
+  "clean_name": "pug"
+ },
+ {
+  "id_idx": 226,
+  "wnid": "n02111129",
+  "idx_1k": 255,
+  "clean_name": "Leonberger"
+ },
+ {
+  "id_idx": 227,
+  "wnid": "n02111277",
+  "idx_1k": 256,
+  "clean_name": "Newfoundland dog"
+ },
+ {
+  "id_idx": 228,
+  "wnid": "n02111500",
+  "idx_1k": 257,
+  "clean_name": "Great Pyrenees dog"
+ },
+ {
+  "id_idx": 229,
+  "wnid": "n02112018",
+  "idx_1k": 259,
+  "clean_name": "Pomeranian"
+ },
+ {
+  "id_idx": 230,
+  "wnid": "n02112137",
+  "idx_1k": 260,
+  "clean_name": "Chow Chow"
+ },
+ {
+  "id_idx": 231,
+  "wnid": "n02112350",
+  "idx_1k": 261,
+  "clean_name": "Keeshond"
+ },
+ {
+  "id_idx": 232,
+  "wnid": "n02112706",
+  "idx_1k": 262,
+  "clean_name": "brussels griffon"
+ },
+ {
+  "id_idx": 233,
+  "wnid": "n02113023",
+  "idx_1k": 263,
+  "clean_name": "Pembroke Welsh Corgi"
+ },
+ {
+  "id_idx": 234,
+  "wnid": "n02113624",
+  "idx_1k": 265,
+  "clean_name": "Toy Poodle"
+ },
+ {
+  "id_idx": 235,
+  "wnid": "n02113799",
+  "idx_1k": 267,
+  "clean_name": "Standard Poodle"
+ },
+ {
+  "id_idx": 236,
+  "wnid": "n02113978",
+  "idx_1k": 268,
+  "clean_name": "Mexican hairless dog (xoloitzcuintli)"
+ },
+ {
+  "id_idx": 237,
+  "wnid": "n02114548",
+  "idx_1k": 270,
+  "clean_name": "Alaskan tundra wolf"
+ },
+ {
+  "id_idx": 238,
+  "wnid": "n02114712",
+  "idx_1k": 271,
+  "clean_name": "red wolf or maned wolf"
+ },
+ {
+  "id_idx": 239,
+  "wnid": "n02114855",
+  "idx_1k": 272,
+  "clean_name": "coyote"
+ },
+ {
+  "id_idx": 240,
+  "wnid": "n02115641",
+  "idx_1k": 273,
+  "clean_name": "dingo"
+ },
+ {
+  "id_idx": 241,
+  "wnid": "n02116738",
+  "idx_1k": 275,
+  "clean_name": "African wild dog"
+ },
+ {
+  "id_idx": 242,
+  "wnid": "n02117135",
+  "idx_1k": 276,
+  "clean_name": "hyena"
+ },
+ {
+  "id_idx": 243,
+  "wnid": "n02119022",
+  "idx_1k": 277,
+  "clean_name": "red fox"
+ },
+ {
+  "id_idx": 244,
+  "wnid": "n02119789",
+  "idx_1k": 278,
+  "clean_name": "kit fox"
+ },
+ {
+  "id_idx": 245,
+  "wnid": "n02120079",
+  "idx_1k": 279,
+  "clean_name": "Arctic fox"
+ },
+ {
+  "id_idx": 246,
+  "wnid": "n02120505",
+  "idx_1k": 280,
+  "clean_name": "grey fox"
+ },
+ {
+  "id_idx": 247,
+  "wnid": "n02123045",
+  "idx_1k": 281,
+  "clean_name": "tabby cat"
+ },
+ {
+  "id_idx": 248,
+  "wnid": "n02123159",
+  "idx_1k": 282,
+  "clean_name": "tiger cat"
+ },
+ {
+  "id_idx": 249,
+  "wnid": "n02123597",
+  "idx_1k": 284,
+  "clean_name": "Siamese cat"
+ },
+ {
+  "id_idx": 250,
+  "wnid": "n02124075",
+  "idx_1k": 285,
+  "clean_name": "Egyptian Mau"
+ },
+ {
+  "id_idx": 251,
+  "wnid": "n02127052",
+  "idx_1k": 287,
+  "clean_name": "lynx"
+ },
+ {
+  "id_idx": 252,
+  "wnid": "n02128385",
+  "idx_1k": 288,
+  "clean_name": "leopard"
+ },
+ {
+  "id_idx": 253,
+  "wnid": "n02128757",
+  "idx_1k": 289,
+  "clean_name": "snow leopard"
+ },
+ {
+  "id_idx": 254,
+  "wnid": "n02128925",
+  "idx_1k": 290,
+  "clean_name": "jaguar"
+ },
+ {
+  "id_idx": 255,
+  "wnid": "n02129604",
+  "idx_1k": 292,
+  "clean_name": "tiger"
+ },
+ {
+  "id_idx": 256,
+  "wnid": "n02130308",
+  "idx_1k": 293,
+  "clean_name": "cheetah"
+ },
+ {
+  "id_idx": 257,
+  "wnid": "n02132136",
+  "idx_1k": 294,
+  "clean_name": "brown bear"
+ },
+ {
+  "id_idx": 258,
+  "wnid": "n02133161",
+  "idx_1k": 295,
+  "clean_name": "American black bear"
+ },
+ {
+  "id_idx": 259,
+  "wnid": "n02134084",
+  "idx_1k": 296,
+  "clean_name": "polar bear"
+ },
+ {
+  "id_idx": 260,
+  "wnid": "n02134418",
+  "idx_1k": 297,
+  "clean_name": "sloth bear"
+ },
+ {
+  "id_idx": 261,
+  "wnid": "n02137549",
+  "idx_1k": 298,
+  "clean_name": "mongoose"
+ },
+ {
+  "id_idx": 262,
+  "wnid": "n02165105",
+  "idx_1k": 300,
+  "clean_name": "tiger beetle"
+ },
+ {
+  "id_idx": 263,
+  "wnid": "n02165456",
+  "idx_1k": 301,
+  "clean_name": "ladybug"
+ },
+ {
+  "id_idx": 264,
+  "wnid": "n02168699",
+  "idx_1k": 303,
+  "clean_name": "longhorn beetle"
+ },
+ {
+  "id_idx": 265,
+  "wnid": "n02169497",
+  "idx_1k": 304,
+  "clean_name": "leaf beetle"
+ },
+ {
+  "id_idx": 266,
+  "wnid": "n02174001",
+  "idx_1k": 306,
+  "clean_name": "rhinoceros beetle"
+ },
+ {
+  "id_idx": 267,
+  "wnid": "n02177972",
+  "idx_1k": 307,
+  "clean_name": "weevil"
+ },
+ {
+  "id_idx": 268,
+  "wnid": "n02190166",
+  "idx_1k": 308,
+  "clean_name": "fly"
+ },
+ {
+  "id_idx": 269,
+  "wnid": "n02206856",
+  "idx_1k": 309,
+  "clean_name": "bee"
+ },
+ {
+  "id_idx": 270,
+  "wnid": "n02219486",
+  "idx_1k": 310,
+  "clean_name": "ant"
+ },
+ {
+  "id_idx": 271,
+  "wnid": "n02226429",
+  "idx_1k": 311,
+  "clean_name": "grasshopper"
+ },
+ {
+  "id_idx": 272,
+  "wnid": "n02229544",
+  "idx_1k": 312,
+  "clean_name": "cricket insect"
+ },
+ {
+  "id_idx": 273,
+  "wnid": "n02231487",
+  "idx_1k": 313,
+  "clean_name": "stick insect"
+ },
+ {
+  "id_idx": 274,
+  "wnid": "n02236044",
+  "idx_1k": 315,
+  "clean_name": "praying mantis"
+ },
+ {
+  "id_idx": 275,
+  "wnid": "n02256656",
+  "idx_1k": 316,
+  "clean_name": "cicada"
+ },
+ {
+  "id_idx": 276,
+  "wnid": "n02259212",
+  "idx_1k": 317,
+  "clean_name": "leafhopper"
+ },
+ {
+  "id_idx": 277,
+  "wnid": "n02264363",
+  "idx_1k": 318,
+  "clean_name": "lacewing"
+ },
+ {
+  "id_idx": 278,
+  "wnid": "n02268443",
+  "idx_1k": 319,
+  "clean_name": "dragonfly"
+ },
+ {
+  "id_idx": 279,
+  "wnid": "n02276258",
+  "idx_1k": 321,
+  "clean_name": "red admiral butterfly"
+ },
+ {
+  "id_idx": 280,
+  "wnid": "n02277742",
+  "idx_1k": 322,
+  "clean_name": "ringlet butterfly"
+ },
+ {
+  "id_idx": 281,
+  "wnid": "n02279972",
+  "idx_1k": 323,
+  "clean_name": "monarch butterfly"
+ },
+ {
+  "id_idx": 282,
+  "wnid": "n02280649",
+  "idx_1k": 324,
+  "clean_name": "small white butterfly"
+ },
+ {
+  "id_idx": 283,
+  "wnid": "n02281406",
+  "idx_1k": 325,
+  "clean_name": "sulphur butterfly"
+ },
+ {
+  "id_idx": 284,
+  "wnid": "n02281787",
+  "idx_1k": 326,
+  "clean_name": "gossamer-winged butterfly"
+ },
+ {
+  "id_idx": 285,
+  "wnid": "n02319095",
+  "idx_1k": 328,
+  "clean_name": "sea urchin"
+ },
+ {
+  "id_idx": 286,
+  "wnid": "n02321529",
+  "idx_1k": 329,
+  "clean_name": "sea cucumber"
+ },
+ {
+  "id_idx": 287,
+  "wnid": "n02325366",
+  "idx_1k": 330,
+  "clean_name": "cottontail rabbit"
+ },
+ {
+  "id_idx": 288,
+  "wnid": "n02326432",
+  "idx_1k": 331,
+  "clean_name": "hare"
+ },
+ {
+  "id_idx": 289,
+  "wnid": "n02328150",
+  "idx_1k": 332,
+  "clean_name": "Angora rabbit"
+ },
+ {
+  "id_idx": 290,
+  "wnid": "n02342885",
+  "idx_1k": 333,
+  "clean_name": "hamster"
+ },
+ {
+  "id_idx": 291,
+  "wnid": "n02346627",
+  "idx_1k": 334,
+  "clean_name": "porcupine"
+ },
+ {
+  "id_idx": 292,
+  "wnid": "n02356798",
+  "idx_1k": 335,
+  "clean_name": "fox squirrel"
+ },
+ {
+  "id_idx": 293,
+  "wnid": "n02363005",
+  "idx_1k": 337,
+  "clean_name": "beaver"
+ },
+ {
+  "id_idx": 294,
+  "wnid": "n02364673",
+  "idx_1k": 338,
+  "clean_name": "guinea pig"
+ },
+ {
+  "id_idx": 295,
+  "wnid": "n02389026",
+  "idx_1k": 339,
+  "clean_name": "common sorrel horse"
+ },
+ {
+  "id_idx": 296,
+  "wnid": "n02391049",
+  "idx_1k": 340,
+  "clean_name": "zebra"
+ },
+ {
+  "id_idx": 297,
+  "wnid": "n02395406",
+  "idx_1k": 341,
+  "clean_name": "pig"
+ },
+ {
+  "id_idx": 298,
+  "wnid": "n02396427",
+  "idx_1k": 342,
+  "clean_name": "wild boar"
+ },
+ {
+  "id_idx": 299,
+  "wnid": "n02397096",
+  "idx_1k": 343,
+  "clean_name": "warthog"
+ },
+ {
+  "id_idx": 300,
+  "wnid": "n02398521",
+  "idx_1k": 344,
+  "clean_name": "hippopotamus"
+ },
+ {
+  "id_idx": 301,
+  "wnid": "n02403003",
+  "idx_1k": 345,
+  "clean_name": "ox"
+ },
+ {
+  "id_idx": 302,
+  "wnid": "n02408429",
+  "idx_1k": 346,
+  "clean_name": "water buffalo"
+ },
+ {
+  "id_idx": 303,
+  "wnid": "n02410509",
+  "idx_1k": 347,
+  "clean_name": "bison"
+ },
+ {
+  "id_idx": 304,
+  "wnid": "n02412080",
+  "idx_1k": 348,
+  "clean_name": "ram (adult male sheep)"
+ },
+ {
+  "id_idx": 305,
+  "wnid": "n02415577",
+  "idx_1k": 349,
+  "clean_name": "bighorn sheep"
+ },
+ {
+  "id_idx": 306,
+  "wnid": "n02417914",
+  "idx_1k": 350,
+  "clean_name": "Alpine ibex"
+ },
+ {
+  "id_idx": 307,
+  "wnid": "n02422106",
+  "idx_1k": 351,
+  "clean_name": "hartebeest"
+ },
+ {
+  "id_idx": 308,
+  "wnid": "n02422699",
+  "idx_1k": 352,
+  "clean_name": "impala (antelope)"
+ },
+ {
+  "id_idx": 309,
+  "wnid": "n02437312",
+  "idx_1k": 354,
+  "clean_name": "arabian camel"
+ },
+ {
+  "id_idx": 310,
+  "wnid": "n02437616",
+  "idx_1k": 355,
+  "clean_name": "llama"
+ },
+ {
+  "id_idx": 311,
+  "wnid": "n02442845",
+  "idx_1k": 357,
+  "clean_name": "mink"
+ },
+ {
+  "id_idx": 312,
+  "wnid": "n02443114",
+  "idx_1k": 358,
+  "clean_name": "European polecat"
+ },
+ {
+  "id_idx": 313,
+  "wnid": "n02443484",
+  "idx_1k": 359,
+  "clean_name": "black-footed ferret"
+ },
+ {
+  "id_idx": 314,
+  "wnid": "n02444819",
+  "idx_1k": 360,
+  "clean_name": "otter"
+ },
+ {
+  "id_idx": 315,
+  "wnid": "n02445715",
+  "idx_1k": 361,
+  "clean_name": "skunk"
+ },
+ {
+  "id_idx": 316,
+  "wnid": "n02447366",
+  "idx_1k": 362,
+  "clean_name": "badger"
+ },
+ {
+  "id_idx": 317,
+  "wnid": "n02454379",
+  "idx_1k": 363,
+  "clean_name": "armadillo"
+ },
+ {
+  "id_idx": 318,
+  "wnid": "n02457408",
+  "idx_1k": 364,
+  "clean_name": "three-toed sloth"
+ },
+ {
+  "id_idx": 319,
+  "wnid": "n02480495",
+  "idx_1k": 365,
+  "clean_name": "orangutan"
+ },
+ {
+  "id_idx": 320,
+  "wnid": "n02480855",
+  "idx_1k": 366,
+  "clean_name": "gorilla"
+ },
+ {
+  "id_idx": 321,
+  "wnid": "n02481823",
+  "idx_1k": 367,
+  "clean_name": "chimpanzee"
+ },
+ {
+  "id_idx": 322,
+  "wnid": "n02483362",
+  "idx_1k": 368,
+  "clean_name": "gibbon"
+ },
+ {
+  "id_idx": 323,
+  "wnid": "n02483708",
+  "idx_1k": 369,
+  "clean_name": "siamang"
+ },
+ {
+  "id_idx": 324,
+  "wnid": "n02484975",
+  "idx_1k": 370,
+  "clean_name": "guenon"
+ },
+ {
+  "id_idx": 325,
+  "wnid": "n02486261",
+  "idx_1k": 371,
+  "clean_name": "patas monkey"
+ },
+ {
+  "id_idx": 326,
+  "wnid": "n02486410",
+  "idx_1k": 372,
+  "clean_name": "baboon"
+ },
+ {
+  "id_idx": 327,
+  "wnid": "n02488291",
+  "idx_1k": 374,
+  "clean_name": "langur"
+ },
+ {
+  "id_idx": 328,
+  "wnid": "n02488702",
+  "idx_1k": 375,
+  "clean_name": "black-and-white colobus"
+ },
+ {
+  "id_idx": 329,
+  "wnid": "n02489166",
+  "idx_1k": 376,
+  "clean_name": "proboscis monkey"
+ },
+ {
+  "id_idx": 330,
+  "wnid": "n02490219",
+  "idx_1k": 377,
+  "clean_name": "marmoset"
+ },
+ {
+  "id_idx": 331,
+  "wnid": "n02492035",
+  "idx_1k": 378,
+  "clean_name": "white-headed capuchin"
+ },
+ {
+  "id_idx": 332,
+  "wnid": "n02492660",
+  "idx_1k": 379,
+  "clean_name": "howler monkey"
+ },
+ {
+  "id_idx": 333,
+  "wnid": "n02493509",
+  "idx_1k": 380,
+  "clean_name": "titi monkey"
+ },
+ {
+  "id_idx": 334,
+  "wnid": "n02494079",
+  "idx_1k": 382,
+  "clean_name": "common squirrel monkey"
+ },
+ {
+  "id_idx": 335,
+  "wnid": "n02500267",
+  "idx_1k": 384,
+  "clean_name": "indri"
+ },
+ {
+  "id_idx": 336,
+  "wnid": "n02504013",
+  "idx_1k": 385,
+  "clean_name": "Asian elephant"
+ },
+ {
+  "id_idx": 337,
+  "wnid": "n02504458",
+  "idx_1k": 386,
+  "clean_name": "African bush elephant"
+ },
+ {
+  "id_idx": 338,
+  "wnid": "n02510455",
+  "idx_1k": 388,
+  "clean_name": "giant panda"
+ },
+ {
+  "id_idx": 339,
+  "wnid": "n02514041",
+  "idx_1k": 389,
+  "clean_name": "snoek fish"
+ },
+ {
+  "id_idx": 340,
+  "wnid": "n02526121",
+  "idx_1k": 390,
+  "clean_name": "eel"
+ },
+ {
+  "id_idx": 341,
+  "wnid": "n02536864",
+  "idx_1k": 391,
+  "clean_name": "silver salmon"
+ },
+ {
+  "id_idx": 342,
+  "wnid": "n02606052",
+  "idx_1k": 392,
+  "clean_name": "rock beauty fish"
+ },
+ {
+  "id_idx": 343,
+  "wnid": "n02607072",
+  "idx_1k": 393,
+  "clean_name": "clownfish"
+ },
+ {
+  "id_idx": 344,
+  "wnid": "n02640242",
+  "idx_1k": 394,
+  "clean_name": "sturgeon"
+ },
+ {
+  "id_idx": 345,
+  "wnid": "n02641379",
+  "idx_1k": 395,
+  "clean_name": "gar fish"
+ },
+ {
+  "id_idx": 346,
+  "wnid": "n02643566",
+  "idx_1k": 396,
+  "clean_name": "lionfish"
+ },
+ {
+  "id_idx": 347,
+  "wnid": "n02655020",
+  "idx_1k": 397,
+  "clean_name": "pufferfish"
+ },
+ {
+  "id_idx": 348,
+  "wnid": "n02666196",
+  "idx_1k": 398,
+  "clean_name": "abacus"
+ },
+ {
+  "id_idx": 349,
+  "wnid": "n02667093",
+  "idx_1k": 399,
+  "clean_name": "abaya"
+ },
+ {
+  "id_idx": 350,
+  "wnid": "n02669723",
+  "idx_1k": 400,
+  "clean_name": "academic gown"
+ },
+ {
+  "id_idx": 351,
+  "wnid": "n02672831",
+  "idx_1k": 401,
+  "clean_name": "accordion"
+ },
+ {
+  "id_idx": 352,
+  "wnid": "n02676566",
+  "idx_1k": 402,
+  "clean_name": "acoustic guitar"
+ },
+ {
+  "id_idx": 353,
+  "wnid": "n02687172",
+  "idx_1k": 403,
+  "clean_name": "aircraft carrier"
+ },
+ {
+  "id_idx": 354,
+  "wnid": "n02690373",
+  "idx_1k": 404,
+  "clean_name": "airliner"
+ },
+ {
+  "id_idx": 355,
+  "wnid": "n02692877",
+  "idx_1k": 405,
+  "clean_name": "airship"
+ },
+ {
+  "id_idx": 356,
+  "wnid": "n02699494",
+  "idx_1k": 406,
+  "clean_name": "altar"
+ },
+ {
+  "id_idx": 357,
+  "wnid": "n02701002",
+  "idx_1k": 407,
+  "clean_name": "ambulance"
+ },
+ {
+  "id_idx": 358,
+  "wnid": "n02704792",
+  "idx_1k": 408,
+  "clean_name": "amphibious vehicle"
+ },
+ {
+  "id_idx": 359,
+  "wnid": "n02708093",
+  "idx_1k": 409,
+  "clean_name": "analog clock"
+ },
+ {
+  "id_idx": 360,
+  "wnid": "n02727426",
+  "idx_1k": 410,
+  "clean_name": "apiary"
+ },
+ {
+  "id_idx": 361,
+  "wnid": "n02730930",
+  "idx_1k": 411,
+  "clean_name": "apron"
+ },
+ {
+  "id_idx": 362,
+  "wnid": "n02747177",
+  "idx_1k": 412,
+  "clean_name": "trash can"
+ },
+ {
+  "id_idx": 363,
+  "wnid": "n02749479",
+  "idx_1k": 413,
+  "clean_name": "assault rifle"
+ },
+ {
+  "id_idx": 364,
+  "wnid": "n02769748",
+  "idx_1k": 414,
+  "clean_name": "backpack"
+ },
+ {
+  "id_idx": 365,
+  "wnid": "n02777292",
+  "idx_1k": 416,
+  "clean_name": "balance beam"
+ },
+ {
+  "id_idx": 366,
+  "wnid": "n02783161",
+  "idx_1k": 418,
+  "clean_name": "ballpoint pen"
+ },
+ {
+  "id_idx": 367,
+  "wnid": "n02786058",
+  "idx_1k": 419,
+  "clean_name": "Band-Aid"
+ },
+ {
+  "id_idx": 368,
+  "wnid": "n02787622",
+  "idx_1k": 420,
+  "clean_name": "banjo"
+ },
+ {
+  "id_idx": 369,
+  "wnid": "n02790996",
+  "idx_1k": 422,
+  "clean_name": "barbell"
+ },
+ {
+  "id_idx": 370,
+  "wnid": "n02791124",
+  "idx_1k": 423,
+  "clean_name": "barber chair"
+ },
+ {
+  "id_idx": 371,
+  "wnid": "n02791270",
+  "idx_1k": 424,
+  "clean_name": "barbershop"
+ },
+ {
+  "id_idx": 372,
+  "wnid": "n02793495",
+  "idx_1k": 425,
+  "clean_name": "barn"
+ },
+ {
+  "id_idx": 373,
+  "wnid": "n02794156",
+  "idx_1k": 426,
+  "clean_name": "barometer"
+ },
+ {
+  "id_idx": 374,
+  "wnid": "n02795169",
+  "idx_1k": 427,
+  "clean_name": "barrel"
+ },
+ {
+  "id_idx": 375,
+  "wnid": "n02797295",
+  "idx_1k": 428,
+  "clean_name": "wheelbarrow"
+ },
+ {
+  "id_idx": 376,
+  "wnid": "n02799071",
+  "idx_1k": 429,
+  "clean_name": "baseball"
+ },
+ {
+  "id_idx": 377,
+  "wnid": "n02802426",
+  "idx_1k": 430,
+  "clean_name": "basketball"
+ },
+ {
+  "id_idx": 378,
+  "wnid": "n02804414",
+  "idx_1k": 431,
+  "clean_name": "bassinet"
+ },
+ {
+  "id_idx": 379,
+  "wnid": "n02804610",
+  "idx_1k": 432,
+  "clean_name": "bassoon"
+ },
+ {
+  "id_idx": 380,
+  "wnid": "n02807133",
+  "idx_1k": 433,
+  "clean_name": "swimming cap"
+ },
+ {
+  "id_idx": 381,
+  "wnid": "n02808304",
+  "idx_1k": 434,
+  "clean_name": "bath towel"
+ },
+ {
+  "id_idx": 382,
+  "wnid": "n02808440",
+  "idx_1k": 435,
+  "clean_name": "bathtub"
+ },
+ {
+  "id_idx": 383,
+  "wnid": "n02814533",
+  "idx_1k": 436,
+  "clean_name": "station wagon"
+ },
+ {
+  "id_idx": 384,
+  "wnid": "n02814860",
+  "idx_1k": 437,
+  "clean_name": "lighthouse"
+ },
+ {
+  "id_idx": 385,
+  "wnid": "n02817516",
+  "idx_1k": 439,
+  "clean_name": "military hat (bearskin or shako)"
+ },
+ {
+  "id_idx": 386,
+  "wnid": "n02823428",
+  "idx_1k": 440,
+  "clean_name": "beer bottle"
+ },
+ {
+  "id_idx": 387,
+  "wnid": "n02823750",
+  "idx_1k": 441,
+  "clean_name": "beer glass"
+ },
+ {
+  "id_idx": 388,
+  "wnid": "n02825657",
+  "idx_1k": 442,
+  "clean_name": "bell tower"
+ },
+ {
+  "id_idx": 389,
+  "wnid": "n02834397",
+  "idx_1k": 443,
+  "clean_name": "baby bib"
+ },
+ {
+  "id_idx": 390,
+  "wnid": "n02835271",
+  "idx_1k": 444,
+  "clean_name": "tandem bicycle"
+ },
+ {
+  "id_idx": 391,
+  "wnid": "n02837789",
+  "idx_1k": 445,
+  "clean_name": "bikini"
+ },
+ {
+  "id_idx": 392,
+  "wnid": "n02840245",
+  "idx_1k": 446,
+  "clean_name": "ring binder"
+ },
+ {
+  "id_idx": 393,
+  "wnid": "n02843684",
+  "idx_1k": 448,
+  "clean_name": "birdhouse"
+ },
+ {
+  "id_idx": 394,
+  "wnid": "n02859443",
+  "idx_1k": 449,
+  "clean_name": "boathouse"
+ },
+ {
+  "id_idx": 395,
+  "wnid": "n02860847",
+  "idx_1k": 450,
+  "clean_name": "bobsleigh"
+ },
+ {
+  "id_idx": 396,
+  "wnid": "n02865351",
+  "idx_1k": 451,
+  "clean_name": "bolo tie"
+ },
+ {
+  "id_idx": 397,
+  "wnid": "n02869837",
+  "idx_1k": 452,
+  "clean_name": "poke bonnet"
+ },
+ {
+  "id_idx": 398,
+  "wnid": "n02870880",
+  "idx_1k": 453,
+  "clean_name": "bookcase"
+ },
+ {
+  "id_idx": 399,
+  "wnid": "n02871525",
+  "idx_1k": 454,
+  "clean_name": "bookstore"
+ },
+ {
+  "id_idx": 400,
+  "wnid": "n02877765",
+  "idx_1k": 455,
+  "clean_name": "bottle cap"
+ },
+ {
+  "id_idx": 401,
+  "wnid": "n02879718",
+  "idx_1k": 456,
+  "clean_name": "hunting bow"
+ },
+ {
+  "id_idx": 402,
+  "wnid": "n02883205",
+  "idx_1k": 457,
+  "clean_name": "bow tie"
+ },
+ {
+  "id_idx": 403,
+  "wnid": "n02892201",
+  "idx_1k": 458,
+  "clean_name": "brass memorial plaque"
+ },
+ {
+  "id_idx": 404,
+  "wnid": "n02892767",
+  "idx_1k": 459,
+  "clean_name": "bra"
+ },
+ {
+  "id_idx": 405,
+  "wnid": "n02894605",
+  "idx_1k": 460,
+  "clean_name": "breakwater"
+ },
+ {
+  "id_idx": 406,
+  "wnid": "n02895154",
+  "idx_1k": 461,
+  "clean_name": "breastplate"
+ },
+ {
+  "id_idx": 407,
+  "wnid": "n02906734",
+  "idx_1k": 462,
+  "clean_name": "broom"
+ },
+ {
+  "id_idx": 408,
+  "wnid": "n02909870",
+  "idx_1k": 463,
+  "clean_name": "bucket"
+ },
+ {
+  "id_idx": 409,
+  "wnid": "n02910353",
+  "idx_1k": 464,
+  "clean_name": "buckle"
+ },
+ {
+  "id_idx": 410,
+  "wnid": "n02916936",
+  "idx_1k": 465,
+  "clean_name": "bulletproof vest"
+ },
+ {
+  "id_idx": 411,
+  "wnid": "n02917067",
+  "idx_1k": 466,
+  "clean_name": "high-speed train"
+ },
+ {
+  "id_idx": 412,
+  "wnid": "n02927161",
+  "idx_1k": 467,
+  "clean_name": "butcher shop"
+ },
+ {
+  "id_idx": 413,
+  "wnid": "n02930766",
+  "idx_1k": 468,
+  "clean_name": "taxicab"
+ },
+ {
+  "id_idx": 414,
+  "wnid": "n02939185",
+  "idx_1k": 469,
+  "clean_name": "cauldron"
+ },
+ {
+  "id_idx": 415,
+  "wnid": "n02948072",
+  "idx_1k": 470,
+  "clean_name": "candle"
+ },
+ {
+  "id_idx": 416,
+  "wnid": "n02950826",
+  "idx_1k": 471,
+  "clean_name": "cannon"
+ },
+ {
+  "id_idx": 417,
+  "wnid": "n02951585",
+  "idx_1k": 473,
+  "clean_name": "can opener"
+ },
+ {
+  "id_idx": 418,
+  "wnid": "n02963159",
+  "idx_1k": 474,
+  "clean_name": "cardigan"
+ },
+ {
+  "id_idx": 419,
+  "wnid": "n02965783",
+  "idx_1k": 475,
+  "clean_name": "car mirror"
+ },
+ {
+  "id_idx": 420,
+  "wnid": "n02966193",
+  "idx_1k": 476,
+  "clean_name": "carousel"
+ },
+ {
+  "id_idx": 421,
+  "wnid": "n02966687",
+  "idx_1k": 477,
+  "clean_name": "tool kit"
+ },
+ {
+  "id_idx": 422,
+  "wnid": "n02971356",
+  "idx_1k": 478,
+  "clean_name": "cardboard box / carton"
+ },
+ {
+  "id_idx": 423,
+  "wnid": "n02974003",
+  "idx_1k": 479,
+  "clean_name": "car wheel"
+ },
+ {
+  "id_idx": 424,
+  "wnid": "n02977058",
+  "idx_1k": 480,
+  "clean_name": "automated teller machine"
+ },
+ {
+  "id_idx": 425,
+  "wnid": "n02978881",
+  "idx_1k": 481,
+  "clean_name": "cassette"
+ },
+ {
+  "id_idx": 426,
+  "wnid": "n02979186",
+  "idx_1k": 482,
+  "clean_name": "cassette player"
+ },
+ {
+  "id_idx": 427,
+  "wnid": "n02980441",
+  "idx_1k": 483,
+  "clean_name": "castle"
+ },
+ {
+  "id_idx": 428,
+  "wnid": "n02988304",
+  "idx_1k": 485,
+  "clean_name": "CD player"
+ },
+ {
+  "id_idx": 429,
+  "wnid": "n02992211",
+  "idx_1k": 486,
+  "clean_name": "cello"
+ },
+ {
+  "id_idx": 430,
+  "wnid": "n02992529",
+  "idx_1k": 487,
+  "clean_name": "mobile phone"
+ },
+ {
+  "id_idx": 431,
+  "wnid": "n02999410",
+  "idx_1k": 488,
+  "clean_name": "chain"
+ },
+ {
+  "id_idx": 432,
+  "wnid": "n03000134",
+  "idx_1k": 489,
+  "clean_name": "chain-link fence"
+ },
+ {
+  "id_idx": 433,
+  "wnid": "n03000247",
+  "idx_1k": 490,
+  "clean_name": "chain mail"
+ },
+ {
+  "id_idx": 434,
+  "wnid": "n03000684",
+  "idx_1k": 491,
+  "clean_name": "chainsaw"
+ },
+ {
+  "id_idx": 435,
+  "wnid": "n03014705",
+  "idx_1k": 492,
+  "clean_name": "storage chest"
+ },
+ {
+  "id_idx": 436,
+  "wnid": "n03016953",
+  "idx_1k": 493,
+  "clean_name": "chiffonier"
+ },
+ {
+  "id_idx": 437,
+  "wnid": "n03017168",
+  "idx_1k": 494,
+  "clean_name": "bell or wind chime"
+ },
+ {
+  "id_idx": 438,
+  "wnid": "n03018349",
+  "idx_1k": 495,
+  "clean_name": "china cabinet"
+ },
+ {
+  "id_idx": 439,
+  "wnid": "n03026506",
+  "idx_1k": 496,
+  "clean_name": "Christmas stocking"
+ },
+ {
+  "id_idx": 440,
+  "wnid": "n03028079",
+  "idx_1k": 497,
+  "clean_name": "church"
+ },
+ {
+  "id_idx": 441,
+  "wnid": "n03041632",
+  "idx_1k": 499,
+  "clean_name": "cleaver"
+ },
+ {
+  "id_idx": 442,
+  "wnid": "n03042490",
+  "idx_1k": 500,
+  "clean_name": "cliff dwelling"
+ },
+ {
+  "id_idx": 443,
+  "wnid": "n03045698",
+  "idx_1k": 501,
+  "clean_name": "cloak"
+ },
+ {
+  "id_idx": 444,
+  "wnid": "n03047690",
+  "idx_1k": 502,
+  "clean_name": "clogs"
+ },
+ {
+  "id_idx": 445,
+  "wnid": "n03062245",
+  "idx_1k": 503,
+  "clean_name": "cocktail shaker"
+ },
+ {
+  "id_idx": 446,
+  "wnid": "n03063599",
+  "idx_1k": 504,
+  "clean_name": "coffee mug"
+ },
+ {
+  "id_idx": 447,
+  "wnid": "n03063689",
+  "idx_1k": 505,
+  "clean_name": "coffeemaker"
+ },
+ {
+  "id_idx": 448,
+  "wnid": "n03065424",
+  "idx_1k": 506,
+  "clean_name": "spiral or coil"
+ },
+ {
+  "id_idx": 449,
+  "wnid": "n03075370",
+  "idx_1k": 507,
+  "clean_name": "combination lock"
+ },
+ {
+  "id_idx": 450,
+  "wnid": "n03085013",
+  "idx_1k": 508,
+  "clean_name": "computer keyboard"
+ },
+ {
+  "id_idx": 451,
+  "wnid": "n03089624",
+  "idx_1k": 509,
+  "clean_name": "candy store"
+ },
+ {
+  "id_idx": 452,
+  "wnid": "n03095699",
+  "idx_1k": 510,
+  "clean_name": "container ship"
+ },
+ {
+  "id_idx": 453,
+  "wnid": "n03100240",
+  "idx_1k": 511,
+  "clean_name": "convertible"
+ },
+ {
+  "id_idx": 454,
+  "wnid": "n03109150",
+  "idx_1k": 512,
+  "clean_name": "corkscrew"
+ },
+ {
+  "id_idx": 455,
+  "wnid": "n03124043",
+  "idx_1k": 514,
+  "clean_name": "cowboy boot"
+ },
+ {
+  "id_idx": 456,
+  "wnid": "n03124170",
+  "idx_1k": 515,
+  "clean_name": "cowboy hat"
+ },
+ {
+  "id_idx": 457,
+  "wnid": "n03126707",
+  "idx_1k": 517,
+  "clean_name": "construction crane"
+ },
+ {
+  "id_idx": 458,
+  "wnid": "n03127747",
+  "idx_1k": 518,
+  "clean_name": "crash helmet"
+ },
+ {
+  "id_idx": 459,
+  "wnid": "n03127925",
+  "idx_1k": 519,
+  "clean_name": "crate"
+ },
+ {
+  "id_idx": 460,
+  "wnid": "n03131574",
+  "idx_1k": 520,
+  "clean_name": "infant bed"
+ },
+ {
+  "id_idx": 461,
+  "wnid": "n03133878",
+  "idx_1k": 521,
+  "clean_name": "Crock Pot"
+ },
+ {
+  "id_idx": 462,
+  "wnid": "n03134739",
+  "idx_1k": 522,
+  "clean_name": "croquet ball"
+ },
+ {
+  "id_idx": 463,
+  "wnid": "n03141823",
+  "idx_1k": 523,
+  "clean_name": "crutch"
+ },
+ {
+  "id_idx": 464,
+  "wnid": "n03146219",
+  "idx_1k": 524,
+  "clean_name": "cuirass"
+ },
+ {
+  "id_idx": 465,
+  "wnid": "n03160309",
+  "idx_1k": 525,
+  "clean_name": "dam"
+ },
+ {
+  "id_idx": 466,
+  "wnid": "n03179701",
+  "idx_1k": 526,
+  "clean_name": "desk"
+ },
+ {
+  "id_idx": 467,
+  "wnid": "n03180011",
+  "idx_1k": 527,
+  "clean_name": "desktop computer"
+ },
+ {
+  "id_idx": 468,
+  "wnid": "n03187595",
+  "idx_1k": 528,
+  "clean_name": "rotary dial telephone"
+ },
+ {
+  "id_idx": 469,
+  "wnid": "n03188531",
+  "idx_1k": 529,
+  "clean_name": "diaper"
+ },
+ {
+  "id_idx": 470,
+  "wnid": "n03196217",
+  "idx_1k": 530,
+  "clean_name": "digital clock"
+ },
+ {
+  "id_idx": 471,
+  "wnid": "n03197337",
+  "idx_1k": 531,
+  "clean_name": "digital watch"
+ },
+ {
+  "id_idx": 472,
+  "wnid": "n03201208",
+  "idx_1k": 532,
+  "clean_name": "dining table"
+ },
+ {
+  "id_idx": 473,
+  "wnid": "n03207941",
+  "idx_1k": 534,
+  "clean_name": "dishwasher"
+ },
+ {
+  "id_idx": 474,
+  "wnid": "n03208938",
+  "idx_1k": 535,
+  "clean_name": "disc brake"
+ },
+ {
+  "id_idx": 475,
+  "wnid": "n03216828",
+  "idx_1k": 536,
+  "clean_name": "dock"
+ },
+ {
+  "id_idx": 476,
+  "wnid": "n03218198",
+  "idx_1k": 537,
+  "clean_name": "dog sled"
+ },
+ {
+  "id_idx": 477,
+  "wnid": "n03223299",
+  "idx_1k": 539,
+  "clean_name": "doormat"
+ },
+ {
+  "id_idx": 478,
+  "wnid": "n03240683",
+  "idx_1k": 540,
+  "clean_name": "drilling rig"
+ },
+ {
+  "id_idx": 479,
+  "wnid": "n03249569",
+  "idx_1k": 541,
+  "clean_name": "drum"
+ },
+ {
+  "id_idx": 480,
+  "wnid": "n03250847",
+  "idx_1k": 542,
+  "clean_name": "drumstick"
+ },
+ {
+  "id_idx": 481,
+  "wnid": "n03255030",
+  "idx_1k": 543,
+  "clean_name": "dumbbell"
+ },
+ {
+  "id_idx": 482,
+  "wnid": "n03271574",
+  "idx_1k": 545,
+  "clean_name": "electric fan"
+ },
+ {
+  "id_idx": 483,
+  "wnid": "n03272010",
+  "idx_1k": 546,
+  "clean_name": "electric guitar"
+ },
+ {
+  "id_idx": 484,
+  "wnid": "n03272562",
+  "idx_1k": 547,
+  "clean_name": "electric locomotive"
+ },
+ {
+  "id_idx": 485,
+  "wnid": "n03290653",
+  "idx_1k": 548,
+  "clean_name": "entertainment center"
+ },
+ {
+  "id_idx": 486,
+  "wnid": "n03291819",
+  "idx_1k": 549,
+  "clean_name": "envelope"
+ },
+ {
+  "id_idx": 487,
+  "wnid": "n03297495",
+  "idx_1k": 550,
+  "clean_name": "espresso machine"
+ },
+ {
+  "id_idx": 488,
+  "wnid": "n03314780",
+  "idx_1k": 551,
+  "clean_name": "face powder"
+ },
+ {
+  "id_idx": 489,
+  "wnid": "n03325584",
+  "idx_1k": 552,
+  "clean_name": "feather boa"
+ },
+ {
+  "id_idx": 490,
+  "wnid": "n03337140",
+  "idx_1k": 553,
+  "clean_name": "filing cabinet"
+ },
+ {
+  "id_idx": 491,
+  "wnid": "n03344393",
+  "idx_1k": 554,
+  "clean_name": "fireboat"
+ },
+ {
+  "id_idx": 492,
+  "wnid": "n03345487",
+  "idx_1k": 555,
+  "clean_name": "fire truck"
+ },
+ {
+  "id_idx": 493,
+  "wnid": "n03355925",
+  "idx_1k": 557,
+  "clean_name": "flagpole"
+ },
+ {
+  "id_idx": 494,
+  "wnid": "n03372029",
+  "idx_1k": 558,
+  "clean_name": "flute"
+ },
+ {
+  "id_idx": 495,
+  "wnid": "n03376595",
+  "idx_1k": 559,
+  "clean_name": "folding chair"
+ },
+ {
+  "id_idx": 496,
+  "wnid": "n03379051",
+  "idx_1k": 560,
+  "clean_name": "football helmet"
+ },
+ {
+  "id_idx": 497,
+  "wnid": "n03384352",
+  "idx_1k": 561,
+  "clean_name": "forklift"
+ },
+ {
+  "id_idx": 498,
+  "wnid": "n03388183",
+  "idx_1k": 563,
+  "clean_name": "fountain pen"
+ },
+ {
+  "id_idx": 499,
+  "wnid": "n03388549",
+  "idx_1k": 564,
+  "clean_name": "four-poster bed"
+ },
+ {
+  "id_idx": 500,
+  "wnid": "n03393912",
+  "idx_1k": 565,
+  "clean_name": "freight car"
+ },
+ {
+  "id_idx": 501,
+  "wnid": "n03394916",
+  "idx_1k": 566,
+  "clean_name": "French horn"
+ },
+ {
+  "id_idx": 502,
+  "wnid": "n03400231",
+  "idx_1k": 567,
+  "clean_name": "frying pan"
+ },
+ {
+  "id_idx": 503,
+  "wnid": "n03404251",
+  "idx_1k": 568,
+  "clean_name": "fur coat"
+ },
+ {
+  "id_idx": 504,
+  "wnid": "n03417042",
+  "idx_1k": 569,
+  "clean_name": "garbage truck"
+ },
+ {
+  "id_idx": 505,
+  "wnid": "n03424325",
+  "idx_1k": 570,
+  "clean_name": "gas mask or respirator"
+ },
+ {
+  "id_idx": 506,
+  "wnid": "n03425413",
+  "idx_1k": 571,
+  "clean_name": "gas pump"
+ },
+ {
+  "id_idx": 507,
+  "wnid": "n03443371",
+  "idx_1k": 572,
+  "clean_name": "goblet"
+ },
+ {
+  "id_idx": 508,
+  "wnid": "n03444034",
+  "idx_1k": 573,
+  "clean_name": "go-kart"
+ },
+ {
+  "id_idx": 509,
+  "wnid": "n03445777",
+  "idx_1k": 574,
+  "clean_name": "golf ball"
+ },
+ {
+  "id_idx": 510,
+  "wnid": "n03445924",
+  "idx_1k": 575,
+  "clean_name": "golf cart"
+ },
+ {
+  "id_idx": 511,
+  "wnid": "n03447447",
+  "idx_1k": 576,
+  "clean_name": "gondola"
+ },
+ {
+  "id_idx": 512,
+  "wnid": "n03450230",
+  "idx_1k": 578,
+  "clean_name": "gown"
+ },
+ {
+  "id_idx": 513,
+  "wnid": "n03452741",
+  "idx_1k": 579,
+  "clean_name": "grand piano"
+ },
+ {
+  "id_idx": 514,
+  "wnid": "n03459775",
+  "idx_1k": 581,
+  "clean_name": "radiator grille"
+ },
+ {
+  "id_idx": 515,
+  "wnid": "n03461385",
+  "idx_1k": 582,
+  "clean_name": "grocery store"
+ },
+ {
+  "id_idx": 516,
+  "wnid": "n03467068",
+  "idx_1k": 583,
+  "clean_name": "guillotine"
+ },
+ {
+  "id_idx": 517,
+  "wnid": "n03476684",
+  "idx_1k": 584,
+  "clean_name": "hair clip"
+ },
+ {
+  "id_idx": 518,
+  "wnid": "n03476991",
+  "idx_1k": 585,
+  "clean_name": "hair spray"
+ },
+ {
+  "id_idx": 519,
+  "wnid": "n03478589",
+  "idx_1k": 586,
+  "clean_name": "half-track"
+ },
+ {
+  "id_idx": 520,
+  "wnid": "n03481172",
+  "idx_1k": 587,
+  "clean_name": "hammer"
+ },
+ {
+  "id_idx": 521,
+  "wnid": "n03483316",
+  "idx_1k": 589,
+  "clean_name": "hair dryer"
+ },
+ {
+  "id_idx": 522,
+  "wnid": "n03485407",
+  "idx_1k": 590,
+  "clean_name": "hand-held computer"
+ },
+ {
+  "id_idx": 523,
+  "wnid": "n03485794",
+  "idx_1k": 591,
+  "clean_name": "handkerchief"
+ },
+ {
+  "id_idx": 524,
+  "wnid": "n03492542",
+  "idx_1k": 592,
+  "clean_name": "hard disk drive"
+ },
+ {
+  "id_idx": 525,
+  "wnid": "n03495258",
+  "idx_1k": 594,
+  "clean_name": "harp"
+ },
+ {
+  "id_idx": 526,
+  "wnid": "n03496892",
+  "idx_1k": 595,
+  "clean_name": "combine harvester"
+ },
+ {
+  "id_idx": 527,
+  "wnid": "n03498962",
+  "idx_1k": 596,
+  "clean_name": "hatchet"
+ },
+ {
+  "id_idx": 528,
+  "wnid": "n03527444",
+  "idx_1k": 597,
+  "clean_name": "holster"
+ },
+ {
+  "id_idx": 529,
+  "wnid": "n03529860",
+  "idx_1k": 598,
+  "clean_name": "home theater"
+ },
+ {
+  "id_idx": 530,
+  "wnid": "n03530642",
+  "idx_1k": 599,
+  "clean_name": "honeycomb"
+ },
+ {
+  "id_idx": 531,
+  "wnid": "n03532672",
+  "idx_1k": 600,
+  "clean_name": "hook"
+ },
+ {
+  "id_idx": 532,
+  "wnid": "n03534580",
+  "idx_1k": 601,
+  "clean_name": "hoop skirt"
+ },
+ {
+  "id_idx": 533,
+  "wnid": "n03535780",
+  "idx_1k": 602,
+  "clean_name": "gymnastic horizontal bar"
+ },
+ {
+  "id_idx": 534,
+  "wnid": "n03538406",
+  "idx_1k": 603,
+  "clean_name": "horse-drawn vehicle"
+ },
+ {
+  "id_idx": 535,
+  "wnid": "n03544143",
+  "idx_1k": 604,
+  "clean_name": "hourglass"
+ },
+ {
+  "id_idx": 536,
+  "wnid": "n03584254",
+  "idx_1k": 605,
+  "clean_name": "iPod"
+ },
+ {
+  "id_idx": 537,
+  "wnid": "n03584829",
+  "idx_1k": 606,
+  "clean_name": "clothes iron"
+ },
+ {
+  "id_idx": 538,
+  "wnid": "n03590841",
+  "idx_1k": 607,
+  "clean_name": "carved pumpkin"
+ },
+ {
+  "id_idx": 539,
+  "wnid": "n03594734",
+  "idx_1k": 608,
+  "clean_name": "jeans"
+ },
+ {
+  "id_idx": 540,
+  "wnid": "n03594945",
+  "idx_1k": 609,
+  "clean_name": "jeep"
+ },
+ {
+  "id_idx": 541,
+  "wnid": "n03595614",
+  "idx_1k": 610,
+  "clean_name": "T-shirt"
+ },
+ {
+  "id_idx": 542,
+  "wnid": "n03599486",
+  "idx_1k": 612,
+  "clean_name": "rickshaw"
+ },
+ {
+  "id_idx": 543,
+  "wnid": "n03602883",
+  "idx_1k": 613,
+  "clean_name": "joystick"
+ },
+ {
+  "id_idx": 544,
+  "wnid": "n03623198",
+  "idx_1k": 615,
+  "clean_name": "knee pad"
+ },
+ {
+  "id_idx": 545,
+  "wnid": "n03627232",
+  "idx_1k": 616,
+  "clean_name": "knot"
+ },
+ {
+  "id_idx": 546,
+  "wnid": "n03630383",
+  "idx_1k": 617,
+  "clean_name": "lab coat"
+ },
+ {
+  "id_idx": 547,
+  "wnid": "n03633091",
+  "idx_1k": 618,
+  "clean_name": "ladle"
+ },
+ {
+  "id_idx": 548,
+  "wnid": "n03637318",
+  "idx_1k": 619,
+  "clean_name": "lampshade"
+ },
+ {
+  "id_idx": 549,
+  "wnid": "n03642806",
+  "idx_1k": 620,
+  "clean_name": "laptop computer"
+ },
+ {
+  "id_idx": 550,
+  "wnid": "n03649909",
+  "idx_1k": 621,
+  "clean_name": "lawn mower"
+ },
+ {
+  "id_idx": 551,
+  "wnid": "n03657121",
+  "idx_1k": 622,
+  "clean_name": "lens cap"
+ },
+ {
+  "id_idx": 552,
+  "wnid": "n03661043",
+  "idx_1k": 624,
+  "clean_name": "library"
+ },
+ {
+  "id_idx": 553,
+  "wnid": "n03662601",
+  "idx_1k": 625,
+  "clean_name": "lifeboat"
+ },
+ {
+  "id_idx": 554,
+  "wnid": "n03670208",
+  "idx_1k": 627,
+  "clean_name": "limousine"
+ },
+ {
+  "id_idx": 555,
+  "wnid": "n03673027",
+  "idx_1k": 628,
+  "clean_name": "ocean liner"
+ },
+ {
+  "id_idx": 556,
+  "wnid": "n03676483",
+  "idx_1k": 629,
+  "clean_name": "lipstick"
+ },
+ {
+  "id_idx": 557,
+  "wnid": "n03680355",
+  "idx_1k": 630,
+  "clean_name": "slip-on shoe"
+ },
+ {
+  "id_idx": 558,
+  "wnid": "n03690938",
+  "idx_1k": 631,
+  "clean_name": "lotion"
+ },
+ {
+  "id_idx": 559,
+  "wnid": "n03691459",
+  "idx_1k": 632,
+  "clean_name": "music speaker"
+ },
+ {
+  "id_idx": 560,
+  "wnid": "n03692522",
+  "idx_1k": 633,
+  "clean_name": "loupe magnifying glass"
+ },
+ {
+  "id_idx": 561,
+  "wnid": "n03697007",
+  "idx_1k": 634,
+  "clean_name": "sawmill"
+ },
+ {
+  "id_idx": 562,
+  "wnid": "n03706229",
+  "idx_1k": 635,
+  "clean_name": "magnetic compass"
+ },
+ {
+  "id_idx": 563,
+  "wnid": "n03709823",
+  "idx_1k": 636,
+  "clean_name": "messenger bag"
+ },
+ {
+  "id_idx": 564,
+  "wnid": "n03710193",
+  "idx_1k": 637,
+  "clean_name": "mailbox"
+ },
+ {
+  "id_idx": 565,
+  "wnid": "n03710637",
+  "idx_1k": 638,
+  "clean_name": "tights"
+ },
+ {
+  "id_idx": 566,
+  "wnid": "n03717622",
+  "idx_1k": 640,
+  "clean_name": "manhole cover"
+ },
+ {
+  "id_idx": 567,
+  "wnid": "n03720891",
+  "idx_1k": 641,
+  "clean_name": "maraca"
+ },
+ {
+  "id_idx": 568,
+  "wnid": "n03721384",
+  "idx_1k": 642,
+  "clean_name": "marimba"
+ },
+ {
+  "id_idx": 569,
+  "wnid": "n03724870",
+  "idx_1k": 643,
+  "clean_name": "mask"
+ },
+ {
+  "id_idx": 570,
+  "wnid": "n03729826",
+  "idx_1k": 644,
+  "clean_name": "matchstick"
+ },
+ {
+  "id_idx": 571,
+  "wnid": "n03733131",
+  "idx_1k": 645,
+  "clean_name": "maypole"
+ },
+ {
+  "id_idx": 572,
+  "wnid": "n03733281",
+  "idx_1k": 646,
+  "clean_name": "maze"
+ },
+ {
+  "id_idx": 573,
+  "wnid": "n03733805",
+  "idx_1k": 647,
+  "clean_name": "measuring cup"
+ },
+ {
+  "id_idx": 574,
+  "wnid": "n03743016",
+  "idx_1k": 649,
+  "clean_name": "megalith"
+ },
+ {
+  "id_idx": 575,
+  "wnid": "n03759954",
+  "idx_1k": 650,
+  "clean_name": "microphone"
+ },
+ {
+  "id_idx": 576,
+  "wnid": "n03761084",
+  "idx_1k": 651,
+  "clean_name": "microwave oven"
+ },
+ {
+  "id_idx": 577,
+  "wnid": "n03763968",
+  "idx_1k": 652,
+  "clean_name": "military uniform"
+ },
+ {
+  "id_idx": 578,
+  "wnid": "n03764736",
+  "idx_1k": 653,
+  "clean_name": "milk can"
+ },
+ {
+  "id_idx": 579,
+  "wnid": "n03769881",
+  "idx_1k": 654,
+  "clean_name": "minibus"
+ },
+ {
+  "id_idx": 580,
+  "wnid": "n03770439",
+  "idx_1k": 655,
+  "clean_name": "miniskirt"
+ },
+ {
+  "id_idx": 581,
+  "wnid": "n03770679",
+  "idx_1k": 656,
+  "clean_name": "minivan"
+ },
+ {
+  "id_idx": 582,
+  "wnid": "n03773504",
+  "idx_1k": 657,
+  "clean_name": "missile"
+ },
+ {
+  "id_idx": 583,
+  "wnid": "n03775071",
+  "idx_1k": 658,
+  "clean_name": "mitten"
+ },
+ {
+  "id_idx": 584,
+  "wnid": "n03775546",
+  "idx_1k": 659,
+  "clean_name": "mixing bowl"
+ },
+ {
+  "id_idx": 585,
+  "wnid": "n03776460",
+  "idx_1k": 660,
+  "clean_name": "mobile home"
+ },
+ {
+  "id_idx": 586,
+  "wnid": "n03777568",
+  "idx_1k": 661,
+  "clean_name": "ford model t"
+ },
+ {
+  "id_idx": 587,
+  "wnid": "n03777754",
+  "idx_1k": 662,
+  "clean_name": "modem"
+ },
+ {
+  "id_idx": 588,
+  "wnid": "n03781244",
+  "idx_1k": 663,
+  "clean_name": "monastery"
+ },
+ {
+  "id_idx": 589,
+  "wnid": "n03782006",
+  "idx_1k": 664,
+  "clean_name": "monitor"
+ },
+ {
+  "id_idx": 590,
+  "wnid": "n03785016",
+  "idx_1k": 665,
+  "clean_name": "moped"
+ },
+ {
+  "id_idx": 591,
+  "wnid": "n03787032",
+  "idx_1k": 667,
+  "clean_name": "graduation cap"
+ },
+ {
+  "id_idx": 592,
+  "wnid": "n03788195",
+  "idx_1k": 668,
+  "clean_name": "mosque"
+ },
+ {
+  "id_idx": 593,
+  "wnid": "n03788365",
+  "idx_1k": 669,
+  "clean_name": "mosquito net"
+ },
+ {
+  "id_idx": 594,
+  "wnid": "n03791053",
+  "idx_1k": 670,
+  "clean_name": "vespa"
+ },
+ {
+  "id_idx": 595,
+  "wnid": "n03792782",
+  "idx_1k": 671,
+  "clean_name": "mountain bike"
+ },
+ {
+  "id_idx": 596,
+  "wnid": "n03792972",
+  "idx_1k": 672,
+  "clean_name": "tent"
+ },
+ {
+  "id_idx": 597,
+  "wnid": "n03793489",
+  "idx_1k": 673,
+  "clean_name": "computer mouse"
+ },
+ {
+  "id_idx": 598,
+  "wnid": "n03794056",
+  "idx_1k": 674,
+  "clean_name": "mousetrap"
+ },
+ {
+  "id_idx": 599,
+  "wnid": "n03803284",
+  "idx_1k": 676,
+  "clean_name": "muzzle"
+ },
+ {
+  "id_idx": 600,
+  "wnid": "n03804744",
+  "idx_1k": 677,
+  "clean_name": "metal nail"
+ },
+ {
+  "id_idx": 601,
+  "wnid": "n03814639",
+  "idx_1k": 678,
+  "clean_name": "neck brace"
+ },
+ {
+  "id_idx": 602,
+  "wnid": "n03814906",
+  "idx_1k": 679,
+  "clean_name": "necklace"
+ },
+ {
+  "id_idx": 603,
+  "wnid": "n03832673",
+  "idx_1k": 681,
+  "clean_name": "notebook computer"
+ },
+ {
+  "id_idx": 604,
+  "wnid": "n03837869",
+  "idx_1k": 682,
+  "clean_name": "obelisk"
+ },
+ {
+  "id_idx": 605,
+  "wnid": "n03838899",
+  "idx_1k": 683,
+  "clean_name": "oboe"
+ },
+ {
+  "id_idx": 606,
+  "wnid": "n03841143",
+  "idx_1k": 685,
+  "clean_name": "odometer"
+ },
+ {
+  "id_idx": 607,
+  "wnid": "n03843555",
+  "idx_1k": 686,
+  "clean_name": "oil filter"
+ },
+ {
+  "id_idx": 608,
+  "wnid": "n03854065",
+  "idx_1k": 687,
+  "clean_name": "pipe organ"
+ },
+ {
+  "id_idx": 609,
+  "wnid": "n03866082",
+  "idx_1k": 689,
+  "clean_name": "overskirt"
+ },
+ {
+  "id_idx": 610,
+  "wnid": "n03868242",
+  "idx_1k": 690,
+  "clean_name": "bullock cart"
+ },
+ {
+  "id_idx": 611,
+  "wnid": "n03868863",
+  "idx_1k": 691,
+  "clean_name": "oxygen mask"
+ },
+ {
+  "id_idx": 612,
+  "wnid": "n03871628",
+  "idx_1k": 692,
+  "clean_name": "product packet / packaging"
+ },
+ {
+  "id_idx": 613,
+  "wnid": "n03873416",
+  "idx_1k": 693,
+  "clean_name": "paddle"
+ },
+ {
+  "id_idx": 614,
+  "wnid": "n03874293",
+  "idx_1k": 694,
+  "clean_name": "paddle wheel"
+ },
+ {
+  "id_idx": 615,
+  "wnid": "n03874599",
+  "idx_1k": 695,
+  "clean_name": "padlock"
+ },
+ {
+  "id_idx": 616,
+  "wnid": "n03876231",
+  "idx_1k": 696,
+  "clean_name": "paintbrush"
+ },
+ {
+  "id_idx": 617,
+  "wnid": "n03877472",
+  "idx_1k": 697,
+  "clean_name": "pajamas"
+ },
+ {
+  "id_idx": 618,
+  "wnid": "n03877845",
+  "idx_1k": 698,
+  "clean_name": "palace"
+ },
+ {
+  "id_idx": 619,
+  "wnid": "n03884397",
+  "idx_1k": 699,
+  "clean_name": "pan flute"
+ },
+ {
+  "id_idx": 620,
+  "wnid": "n03887697",
+  "idx_1k": 700,
+  "clean_name": "paper towel"
+ },
+ {
+  "id_idx": 621,
+  "wnid": "n03888257",
+  "idx_1k": 701,
+  "clean_name": "parachute"
+ },
+ {
+  "id_idx": 622,
+  "wnid": "n03888605",
+  "idx_1k": 702,
+  "clean_name": "parallel bars"
+ },
+ {
+  "id_idx": 623,
+  "wnid": "n03891251",
+  "idx_1k": 703,
+  "clean_name": "park bench"
+ },
+ {
+  "id_idx": 624,
+  "wnid": "n03891332",
+  "idx_1k": 704,
+  "clean_name": "parking meter"
+ },
+ {
+  "id_idx": 625,
+  "wnid": "n03895866",
+  "idx_1k": 705,
+  "clean_name": "railroad car"
+ },
+ {
+  "id_idx": 626,
+  "wnid": "n03899768",
+  "idx_1k": 706,
+  "clean_name": "patio"
+ },
+ {
+  "id_idx": 627,
+  "wnid": "n03902125",
+  "idx_1k": 707,
+  "clean_name": "payphone"
+ },
+ {
+  "id_idx": 628,
+  "wnid": "n03903868",
+  "idx_1k": 708,
+  "clean_name": "pedestal"
+ },
+ {
+  "id_idx": 629,
+  "wnid": "n03908618",
+  "idx_1k": 709,
+  "clean_name": "pencil case"
+ },
+ {
+  "id_idx": 630,
+  "wnid": "n03908714",
+  "idx_1k": 710,
+  "clean_name": "pencil sharpener"
+ },
+ {
+  "id_idx": 631,
+  "wnid": "n03916031",
+  "idx_1k": 711,
+  "clean_name": "perfume"
+ },
+ {
+  "id_idx": 632,
+  "wnid": "n03920288",
+  "idx_1k": 712,
+  "clean_name": "Petri dish"
+ },
+ {
+  "id_idx": 633,
+  "wnid": "n03924679",
+  "idx_1k": 713,
+  "clean_name": "photocopier"
+ },
+ {
+  "id_idx": 634,
+  "wnid": "n03929660",
+  "idx_1k": 714,
+  "clean_name": "plectrum"
+ },
+ {
+  "id_idx": 635,
+  "wnid": "n03929855",
+  "idx_1k": 715,
+  "clean_name": "Pickelhaube"
+ },
+ {
+  "id_idx": 636,
+  "wnid": "n03930313",
+  "idx_1k": 716,
+  "clean_name": "picket fence"
+ },
+ {
+  "id_idx": 637,
+  "wnid": "n03930630",
+  "idx_1k": 717,
+  "clean_name": "pickup truck"
+ },
+ {
+  "id_idx": 638,
+  "wnid": "n03933933",
+  "idx_1k": 718,
+  "clean_name": "pier"
+ },
+ {
+  "id_idx": 639,
+  "wnid": "n03935335",
+  "idx_1k": 719,
+  "clean_name": "piggy bank"
+ },
+ {
+  "id_idx": 640,
+  "wnid": "n03937543",
+  "idx_1k": 720,
+  "clean_name": "pill bottle"
+ },
+ {
+  "id_idx": 641,
+  "wnid": "n03938244",
+  "idx_1k": 721,
+  "clean_name": "pillow"
+ },
+ {
+  "id_idx": 642,
+  "wnid": "n03942813",
+  "idx_1k": 722,
+  "clean_name": "ping-pong ball"
+ },
+ {
+  "id_idx": 643,
+  "wnid": "n03944341",
+  "idx_1k": 723,
+  "clean_name": "pinwheel"
+ },
+ {
+  "id_idx": 644,
+  "wnid": "n03947888",
+  "idx_1k": 724,
+  "clean_name": "pirate ship"
+ },
+ {
+  "id_idx": 645,
+  "wnid": "n03950228",
+  "idx_1k": 725,
+  "clean_name": "drink pitcher"
+ },
+ {
+  "id_idx": 646,
+  "wnid": "n03954731",
+  "idx_1k": 726,
+  "clean_name": "block plane"
+ },
+ {
+  "id_idx": 647,
+  "wnid": "n03956157",
+  "idx_1k": 727,
+  "clean_name": "planetarium"
+ },
+ {
+  "id_idx": 648,
+  "wnid": "n03958227",
+  "idx_1k": 728,
+  "clean_name": "plastic bag"
+ },
+ {
+  "id_idx": 649,
+  "wnid": "n03961711",
+  "idx_1k": 729,
+  "clean_name": "plate rack"
+ },
+ {
+  "id_idx": 650,
+  "wnid": "n03967562",
+  "idx_1k": 730,
+  "clean_name": "farm plow"
+ },
+ {
+  "id_idx": 651,
+  "wnid": "n03970156",
+  "idx_1k": 731,
+  "clean_name": "plunger"
+ },
+ {
+  "id_idx": 652,
+  "wnid": "n03976467",
+  "idx_1k": 732,
+  "clean_name": "Polaroid camera"
+ },
+ {
+  "id_idx": 653,
+  "wnid": "n03976657",
+  "idx_1k": 733,
+  "clean_name": "pole"
+ },
+ {
+  "id_idx": 654,
+  "wnid": "n03977966",
+  "idx_1k": 734,
+  "clean_name": "police van"
+ },
+ {
+  "id_idx": 655,
+  "wnid": "n03980874",
+  "idx_1k": 735,
+  "clean_name": "poncho"
+ },
+ {
+  "id_idx": 656,
+  "wnid": "n03982430",
+  "idx_1k": 736,
+  "clean_name": "pool table"
+ },
+ {
+  "id_idx": 657,
+  "wnid": "n03983396",
+  "idx_1k": 737,
+  "clean_name": "soda bottle"
+ },
+ {
+  "id_idx": 658,
+  "wnid": "n03991062",
+  "idx_1k": 738,
+  "clean_name": "plant pot"
+ },
+ {
+  "id_idx": 659,
+  "wnid": "n03992509",
+  "idx_1k": 739,
+  "clean_name": "potter's wheel"
+ },
+ {
+  "id_idx": 660,
+  "wnid": "n03995372",
+  "idx_1k": 740,
+  "clean_name": "power drill"
+ },
+ {
+  "id_idx": 661,
+  "wnid": "n03998194",
+  "idx_1k": 741,
+  "clean_name": "prayer rug"
+ },
+ {
+  "id_idx": 662,
+  "wnid": "n04004767",
+  "idx_1k": 742,
+  "clean_name": "printer"
+ },
+ {
+  "id_idx": 663,
+  "wnid": "n04005630",
+  "idx_1k": 743,
+  "clean_name": "prison"
+ },
+ {
+  "id_idx": 664,
+  "wnid": "n04008634",
+  "idx_1k": 744,
+  "clean_name": "missile"
+ },
+ {
+  "id_idx": 665,
+  "wnid": "n04009552",
+  "idx_1k": 745,
+  "clean_name": "projector"
+ },
+ {
+  "id_idx": 666,
+  "wnid": "n04019541",
+  "idx_1k": 746,
+  "clean_name": "hockey puck"
+ },
+ {
+  "id_idx": 667,
+  "wnid": "n04023962",
+  "idx_1k": 747,
+  "clean_name": "punching bag"
+ },
+ {
+  "id_idx": 668,
+  "wnid": "n04026417",
+  "idx_1k": 748,
+  "clean_name": "purse"
+ },
+ {
+  "id_idx": 669,
+  "wnid": "n04033901",
+  "idx_1k": 749,
+  "clean_name": "quill"
+ },
+ {
+  "id_idx": 670,
+  "wnid": "n04033995",
+  "idx_1k": 750,
+  "clean_name": "quilt"
+ },
+ {
+  "id_idx": 671,
+  "wnid": "n04037443",
+  "idx_1k": 751,
+  "clean_name": "race car"
+ },
+ {
+  "id_idx": 672,
+  "wnid": "n04039381",
+  "idx_1k": 752,
+  "clean_name": "racket"
+ },
+ {
+  "id_idx": 673,
+  "wnid": "n04040759",
+  "idx_1k": 753,
+  "clean_name": "radiator"
+ },
+ {
+  "id_idx": 674,
+  "wnid": "n04041544",
+  "idx_1k": 754,
+  "clean_name": "radio"
+ },
+ {
+  "id_idx": 675,
+  "wnid": "n04044716",
+  "idx_1k": 755,
+  "clean_name": "radio telescope"
+ },
+ {
+  "id_idx": 676,
+  "wnid": "n04049303",
+  "idx_1k": 756,
+  "clean_name": "rain barrel"
+ },
+ {
+  "id_idx": 677,
+  "wnid": "n04065272",
+  "idx_1k": 757,
+  "clean_name": "recreational vehicle"
+ },
+ {
+  "id_idx": 678,
+  "wnid": "n04067472",
+  "idx_1k": 758,
+  "clean_name": "fishing casting reel"
+ },
+ {
+  "id_idx": 679,
+  "wnid": "n04070727",
+  "idx_1k": 760,
+  "clean_name": "refrigerator"
+ },
+ {
+  "id_idx": 680,
+  "wnid": "n04074963",
+  "idx_1k": 761,
+  "clean_name": "remote control"
+ },
+ {
+  "id_idx": 681,
+  "wnid": "n04081281",
+  "idx_1k": 762,
+  "clean_name": "restaurant"
+ },
+ {
+  "id_idx": 682,
+  "wnid": "n04086273",
+  "idx_1k": 763,
+  "clean_name": "revolver"
+ },
+ {
+  "id_idx": 683,
+  "wnid": "n04090263",
+  "idx_1k": 764,
+  "clean_name": "rifle"
+ },
+ {
+  "id_idx": 684,
+  "wnid": "n04099969",
+  "idx_1k": 765,
+  "clean_name": "rocking chair"
+ },
+ {
+  "id_idx": 685,
+  "wnid": "n04111531",
+  "idx_1k": 766,
+  "clean_name": "rotisserie"
+ },
+ {
+  "id_idx": 686,
+  "wnid": "n04116512",
+  "idx_1k": 767,
+  "clean_name": "eraser"
+ },
+ {
+  "id_idx": 687,
+  "wnid": "n04118538",
+  "idx_1k": 768,
+  "clean_name": "rugby ball"
+ },
+ {
+  "id_idx": 688,
+  "wnid": "n04118776",
+  "idx_1k": 769,
+  "clean_name": "ruler measuring stick"
+ },
+ {
+  "id_idx": 689,
+  "wnid": "n04120489",
+  "idx_1k": 770,
+  "clean_name": "sneaker"
+ },
+ {
+  "id_idx": 690,
+  "wnid": "n04125021",
+  "idx_1k": 771,
+  "clean_name": "safe"
+ },
+ {
+  "id_idx": 691,
+  "wnid": "n04127249",
+  "idx_1k": 772,
+  "clean_name": "safety pin"
+ },
+ {
+  "id_idx": 692,
+  "wnid": "n04131690",
+  "idx_1k": 773,
+  "clean_name": "salt shaker"
+ },
+ {
+  "id_idx": 693,
+  "wnid": "n04133789",
+  "idx_1k": 774,
+  "clean_name": "sandal"
+ },
+ {
+  "id_idx": 694,
+  "wnid": "n04136333",
+  "idx_1k": 775,
+  "clean_name": "sarong"
+ },
+ {
+  "id_idx": 695,
+  "wnid": "n04141076",
+  "idx_1k": 776,
+  "clean_name": "saxophone"
+ },
+ {
+  "id_idx": 696,
+  "wnid": "n04141327",
+  "idx_1k": 777,
+  "clean_name": "scabbard"
+ },
+ {
+  "id_idx": 697,
+  "wnid": "n04141975",
+  "idx_1k": 778,
+  "clean_name": "weighing scale"
+ },
+ {
+  "id_idx": 698,
+  "wnid": "n04146614",
+  "idx_1k": 779,
+  "clean_name": "school bus"
+ },
+ {
+  "id_idx": 699,
+  "wnid": "n04147183",
+  "idx_1k": 780,
+  "clean_name": "schooner"
+ },
+ {
+  "id_idx": 700,
+  "wnid": "n04149813",
+  "idx_1k": 781,
+  "clean_name": "scoreboard"
+ },
+ {
+  "id_idx": 701,
+  "wnid": "n04152593",
+  "idx_1k": 782,
+  "clean_name": "CRT monitor"
+ },
+ {
+  "id_idx": 702,
+  "wnid": "n04153751",
+  "idx_1k": 783,
+  "clean_name": "screw"
+ },
+ {
+  "id_idx": 703,
+  "wnid": "n04154565",
+  "idx_1k": 784,
+  "clean_name": "screwdriver"
+ },
+ {
+  "id_idx": 704,
+  "wnid": "n04162706",
+  "idx_1k": 785,
+  "clean_name": "seat belt"
+ },
+ {
+  "id_idx": 705,
+  "wnid": "n04179913",
+  "idx_1k": 786,
+  "clean_name": "sewing machine"
+ },
+ {
+  "id_idx": 706,
+  "wnid": "n04192698",
+  "idx_1k": 787,
+  "clean_name": "shield"
+ },
+ {
+  "id_idx": 707,
+  "wnid": "n04200800",
+  "idx_1k": 788,
+  "clean_name": "shoe store"
+ },
+ {
+  "id_idx": 708,
+  "wnid": "n04201297",
+  "idx_1k": 789,
+  "clean_name": "shoji screen / room divider"
+ },
+ {
+  "id_idx": 709,
+  "wnid": "n04204238",
+  "idx_1k": 790,
+  "clean_name": "shopping basket"
+ },
+ {
+  "id_idx": 710,
+  "wnid": "n04204347",
+  "idx_1k": 791,
+  "clean_name": "shopping cart"
+ },
+ {
+  "id_idx": 711,
+  "wnid": "n04208210",
+  "idx_1k": 792,
+  "clean_name": "shovel"
+ },
+ {
+  "id_idx": 712,
+  "wnid": "n04209133",
+  "idx_1k": 793,
+  "clean_name": "shower cap"
+ },
+ {
+  "id_idx": 713,
+  "wnid": "n04209239",
+  "idx_1k": 794,
+  "clean_name": "shower curtain"
+ },
+ {
+  "id_idx": 714,
+  "wnid": "n04228054",
+  "idx_1k": 795,
+  "clean_name": "ski"
+ },
+ {
+  "id_idx": 715,
+  "wnid": "n04229816",
+  "idx_1k": 796,
+  "clean_name": "balaclava ski mask"
+ },
+ {
+  "id_idx": 716,
+  "wnid": "n04235860",
+  "idx_1k": 797,
+  "clean_name": "sleeping bag"
+ },
+ {
+  "id_idx": 717,
+  "wnid": "n04238763",
+  "idx_1k": 798,
+  "clean_name": "slide rule"
+ },
+ {
+  "id_idx": 718,
+  "wnid": "n04239074",
+  "idx_1k": 799,
+  "clean_name": "sliding door"
+ },
+ {
+  "id_idx": 719,
+  "wnid": "n04252077",
+  "idx_1k": 802,
+  "clean_name": "snowmobile"
+ },
+ {
+  "id_idx": 720,
+  "wnid": "n04252225",
+  "idx_1k": 803,
+  "clean_name": "snowplow"
+ },
+ {
+  "id_idx": 721,
+  "wnid": "n04254120",
+  "idx_1k": 804,
+  "clean_name": "soap dispenser"
+ },
+ {
+  "id_idx": 722,
+  "wnid": "n04254777",
+  "idx_1k": 806,
+  "clean_name": "sock"
+ },
+ {
+  "id_idx": 723,
+  "wnid": "n04258138",
+  "idx_1k": 807,
+  "clean_name": "solar thermal collector"
+ },
+ {
+  "id_idx": 724,
+  "wnid": "n04263257",
+  "idx_1k": 809,
+  "clean_name": "soup bowl"
+ },
+ {
+  "id_idx": 725,
+  "wnid": "n04264628",
+  "idx_1k": 810,
+  "clean_name": "keyboard space bar"
+ },
+ {
+  "id_idx": 726,
+  "wnid": "n04265275",
+  "idx_1k": 811,
+  "clean_name": "space heater"
+ },
+ {
+  "id_idx": 727,
+  "wnid": "n04266014",
+  "idx_1k": 812,
+  "clean_name": "space shuttle"
+ },
+ {
+  "id_idx": 728,
+  "wnid": "n04270147",
+  "idx_1k": 813,
+  "clean_name": "spatula"
+ },
+ {
+  "id_idx": 729,
+  "wnid": "n04273569",
+  "idx_1k": 814,
+  "clean_name": "motorboat"
+ },
+ {
+  "id_idx": 730,
+  "wnid": "n04275548",
+  "idx_1k": 815,
+  "clean_name": "spider web"
+ },
+ {
+  "id_idx": 731,
+  "wnid": "n04285008",
+  "idx_1k": 817,
+  "clean_name": "sports car"
+ },
+ {
+  "id_idx": 732,
+  "wnid": "n04286575",
+  "idx_1k": 818,
+  "clean_name": "spotlight"
+ },
+ {
+  "id_idx": 733,
+  "wnid": "n04296562",
+  "idx_1k": 819,
+  "clean_name": "stage"
+ },
+ {
+  "id_idx": 734,
+  "wnid": "n04310018",
+  "idx_1k": 820,
+  "clean_name": "steam locomotive"
+ },
+ {
+  "id_idx": 735,
+  "wnid": "n04311004",
+  "idx_1k": 821,
+  "clean_name": "through arch bridge"
+ },
+ {
+  "id_idx": 736,
+  "wnid": "n04311174",
+  "idx_1k": 822,
+  "clean_name": "steel drum"
+ },
+ {
+  "id_idx": 737,
+  "wnid": "n04317175",
+  "idx_1k": 823,
+  "clean_name": "stethoscope"
+ },
+ {
+  "id_idx": 738,
+  "wnid": "n04325704",
+  "idx_1k": 824,
+  "clean_name": "scarf"
+ },
+ {
+  "id_idx": 739,
+  "wnid": "n04326547",
+  "idx_1k": 825,
+  "clean_name": "stone wall"
+ },
+ {
+  "id_idx": 740,
+  "wnid": "n04328186",
+  "idx_1k": 826,
+  "clean_name": "stopwatch"
+ },
+ {
+  "id_idx": 741,
+  "wnid": "n04330267",
+  "idx_1k": 827,
+  "clean_name": "stove"
+ },
+ {
+  "id_idx": 742,
+  "wnid": "n04332243",
+  "idx_1k": 828,
+  "clean_name": "strainer"
+ },
+ {
+  "id_idx": 743,
+  "wnid": "n04335435",
+  "idx_1k": 829,
+  "clean_name": "tram"
+ },
+ {
+  "id_idx": 744,
+  "wnid": "n04336792",
+  "idx_1k": 830,
+  "clean_name": "stretcher"
+ },
+ {
+  "id_idx": 745,
+  "wnid": "n04344873",
+  "idx_1k": 831,
+  "clean_name": "couch"
+ },
+ {
+  "id_idx": 746,
+  "wnid": "n04346328",
+  "idx_1k": 832,
+  "clean_name": "stupa"
+ },
+ {
+  "id_idx": 747,
+  "wnid": "n04347754",
+  "idx_1k": 833,
+  "clean_name": "submarine"
+ },
+ {
+  "id_idx": 748,
+  "wnid": "n04350905",
+  "idx_1k": 834,
+  "clean_name": "suit"
+ },
+ {
+  "id_idx": 749,
+  "wnid": "n04355338",
+  "idx_1k": 835,
+  "clean_name": "sundial"
+ },
+ {
+  "id_idx": 750,
+  "wnid": "n04355933",
+  "idx_1k": 836,
+  "clean_name": "sunglasses"
+ },
+ {
+  "id_idx": 751,
+  "wnid": "n04356056",
+  "idx_1k": 837,
+  "clean_name": "sunglasses"
+ },
+ {
+  "id_idx": 752,
+  "wnid": "n04357314",
+  "idx_1k": 838,
+  "clean_name": "sunscreen"
+ },
+ {
+  "id_idx": 753,
+  "wnid": "n04366367",
+  "idx_1k": 839,
+  "clean_name": "suspension bridge"
+ },
+ {
+  "id_idx": 754,
+  "wnid": "n04367480",
+  "idx_1k": 840,
+  "clean_name": "mop"
+ },
+ {
+  "id_idx": 755,
+  "wnid": "n04370456",
+  "idx_1k": 841,
+  "clean_name": "sweatshirt"
+ },
+ {
+  "id_idx": 756,
+  "wnid": "n04371430",
+  "idx_1k": 842,
+  "clean_name": "swim trunks / shorts"
+ },
+ {
+  "id_idx": 757,
+  "wnid": "n04371774",
+  "idx_1k": 843,
+  "clean_name": "swing"
+ },
+ {
+  "id_idx": 758,
+  "wnid": "n04376876",
+  "idx_1k": 845,
+  "clean_name": "syringe"
+ },
+ {
+  "id_idx": 759,
+  "wnid": "n04380533",
+  "idx_1k": 846,
+  "clean_name": "table lamp"
+ },
+ {
+  "id_idx": 760,
+  "wnid": "n04389033",
+  "idx_1k": 847,
+  "clean_name": "tank"
+ },
+ {
+  "id_idx": 761,
+  "wnid": "n04392985",
+  "idx_1k": 848,
+  "clean_name": "tape player"
+ },
+ {
+  "id_idx": 762,
+  "wnid": "n04399382",
+  "idx_1k": 850,
+  "clean_name": "teddy bear"
+ },
+ {
+  "id_idx": 763,
+  "wnid": "n04404412",
+  "idx_1k": 851,
+  "clean_name": "television"
+ },
+ {
+  "id_idx": 764,
+  "wnid": "n04409515",
+  "idx_1k": 852,
+  "clean_name": "tennis ball"
+ },
+ {
+  "id_idx": 765,
+  "wnid": "n04417672",
+  "idx_1k": 853,
+  "clean_name": "thatched roof"
+ },
+ {
+  "id_idx": 766,
+  "wnid": "n04423845",
+  "idx_1k": 855,
+  "clean_name": "thimble"
+ },
+ {
+  "id_idx": 767,
+  "wnid": "n04429376",
+  "idx_1k": 857,
+  "clean_name": "throne"
+ },
+ {
+  "id_idx": 768,
+  "wnid": "n04435653",
+  "idx_1k": 858,
+  "clean_name": "tile roof"
+ },
+ {
+  "id_idx": 769,
+  "wnid": "n04442312",
+  "idx_1k": 859,
+  "clean_name": "toaster"
+ },
+ {
+  "id_idx": 770,
+  "wnid": "n04443257",
+  "idx_1k": 860,
+  "clean_name": "tobacco shop"
+ },
+ {
+  "id_idx": 771,
+  "wnid": "n04447861",
+  "idx_1k": 861,
+  "clean_name": "toilet seat"
+ },
+ {
+  "id_idx": 772,
+  "wnid": "n04456115",
+  "idx_1k": 862,
+  "clean_name": "torch"
+ },
+ {
+  "id_idx": 773,
+  "wnid": "n04458633",
+  "idx_1k": 863,
+  "clean_name": "totem pole"
+ },
+ {
+  "id_idx": 774,
+  "wnid": "n04461696",
+  "idx_1k": 864,
+  "clean_name": "tow truck"
+ },
+ {
+  "id_idx": 775,
+  "wnid": "n04462240",
+  "idx_1k": 865,
+  "clean_name": "toy store"
+ },
+ {
+  "id_idx": 776,
+  "wnid": "n04467665",
+  "idx_1k": 867,
+  "clean_name": "semi-trailer truck"
+ },
+ {
+  "id_idx": 777,
+  "wnid": "n04476259",
+  "idx_1k": 868,
+  "clean_name": "tray"
+ },
+ {
+  "id_idx": 778,
+  "wnid": "n04479046",
+  "idx_1k": 869,
+  "clean_name": "trench coat"
+ },
+ {
+  "id_idx": 779,
+  "wnid": "n04482393",
+  "idx_1k": 870,
+  "clean_name": "tricycle"
+ },
+ {
+  "id_idx": 780,
+  "wnid": "n04483307",
+  "idx_1k": 871,
+  "clean_name": "trimaran"
+ },
+ {
+  "id_idx": 781,
+  "wnid": "n04485082",
+  "idx_1k": 872,
+  "clean_name": "tripod"
+ },
+ {
+  "id_idx": 782,
+  "wnid": "n04486054",
+  "idx_1k": 873,
+  "clean_name": "triumphal arch"
+ },
+ {
+  "id_idx": 783,
+  "wnid": "n04487394",
+  "idx_1k": 875,
+  "clean_name": "trombone"
+ },
+ {
+  "id_idx": 784,
+  "wnid": "n04493381",
+  "idx_1k": 876,
+  "clean_name": "hot tub"
+ },
+ {
+  "id_idx": 785,
+  "wnid": "n04501370",
+  "idx_1k": 877,
+  "clean_name": "turnstile"
+ },
+ {
+  "id_idx": 786,
+  "wnid": "n04505470",
+  "idx_1k": 878,
+  "clean_name": "typewriter keyboard"
+ },
+ {
+  "id_idx": 787,
+  "wnid": "n04507155",
+  "idx_1k": 879,
+  "clean_name": "umbrella"
+ },
+ {
+  "id_idx": 788,
+  "wnid": "n04509417",
+  "idx_1k": 880,
+  "clean_name": "unicycle"
+ },
+ {
+  "id_idx": 789,
+  "wnid": "n04515003",
+  "idx_1k": 881,
+  "clean_name": "upright piano"
+ },
+ {
+  "id_idx": 790,
+  "wnid": "n04517823",
+  "idx_1k": 882,
+  "clean_name": "vacuum cleaner"
+ },
+ {
+  "id_idx": 791,
+  "wnid": "n04522168",
+  "idx_1k": 883,
+  "clean_name": "vase"
+ },
+ {
+  "id_idx": 792,
+  "wnid": "n04523525",
+  "idx_1k": 884,
+  "clean_name": "vaulted or arched ceiling"
+ },
+ {
+  "id_idx": 793,
+  "wnid": "n04525038",
+  "idx_1k": 885,
+  "clean_name": "velvet fabric"
+ },
+ {
+  "id_idx": 794,
+  "wnid": "n04525305",
+  "idx_1k": 886,
+  "clean_name": "vending machine"
+ },
+ {
+  "id_idx": 795,
+  "wnid": "n04532106",
+  "idx_1k": 887,
+  "clean_name": "vestment"
+ },
+ {
+  "id_idx": 796,
+  "wnid": "n04532670",
+  "idx_1k": 888,
+  "clean_name": "viaduct"
+ },
+ {
+  "id_idx": 797,
+  "wnid": "n04536866",
+  "idx_1k": 889,
+  "clean_name": "violin"
+ },
+ {
+  "id_idx": 798,
+  "wnid": "n04540053",
+  "idx_1k": 890,
+  "clean_name": "volleyball"
+ },
+ {
+  "id_idx": 799,
+  "wnid": "n04542943",
+  "idx_1k": 891,
+  "clean_name": "waffle iron"
+ },
+ {
+  "id_idx": 800,
+  "wnid": "n04548280",
+  "idx_1k": 892,
+  "clean_name": "wall clock"
+ },
+ {
+  "id_idx": 801,
+  "wnid": "n04548362",
+  "idx_1k": 893,
+  "clean_name": "wallet"
+ },
+ {
+  "id_idx": 802,
+  "wnid": "n04550184",
+  "idx_1k": 894,
+  "clean_name": "wardrobe"
+ },
+ {
+  "id_idx": 803,
+  "wnid": "n04553703",
+  "idx_1k": 896,
+  "clean_name": "sink"
+ },
+ {
+  "id_idx": 804,
+  "wnid": "n04554684",
+  "idx_1k": 897,
+  "clean_name": "washing machine"
+ },
+ {
+  "id_idx": 805,
+  "wnid": "n04560804",
+  "idx_1k": 899,
+  "clean_name": "water jug"
+ },
+ {
+  "id_idx": 806,
+  "wnid": "n04562935",
+  "idx_1k": 900,
+  "clean_name": "water tower"
+ },
+ {
+  "id_idx": 807,
+  "wnid": "n04579145",
+  "idx_1k": 901,
+  "clean_name": "whiskey jug"
+ },
+ {
+  "id_idx": 808,
+  "wnid": "n04579432",
+  "idx_1k": 902,
+  "clean_name": "whistle"
+ },
+ {
+  "id_idx": 809,
+  "wnid": "n04584207",
+  "idx_1k": 903,
+  "clean_name": "hair wig"
+ },
+ {
+  "id_idx": 810,
+  "wnid": "n04589890",
+  "idx_1k": 904,
+  "clean_name": "window screen"
+ },
+ {
+  "id_idx": 811,
+  "wnid": "n04590129",
+  "idx_1k": 905,
+  "clean_name": "window shade"
+ },
+ {
+  "id_idx": 812,
+  "wnid": "n04591157",
+  "idx_1k": 906,
+  "clean_name": "Windsor tie"
+ },
+ {
+  "id_idx": 813,
+  "wnid": "n04591713",
+  "idx_1k": 907,
+  "clean_name": "wine bottle"
+ },
+ {
+  "id_idx": 814,
+  "wnid": "n04592741",
+  "idx_1k": 908,
+  "clean_name": "airplane wing"
+ },
+ {
+  "id_idx": 815,
+  "wnid": "n04597913",
+  "idx_1k": 910,
+  "clean_name": "wooden spoon"
+ },
+ {
+  "id_idx": 816,
+  "wnid": "n04599235",
+  "idx_1k": 911,
+  "clean_name": "wool"
+ },
+ {
+  "id_idx": 817,
+  "wnid": "n04604644",
+  "idx_1k": 912,
+  "clean_name": "split-rail fence"
+ },
+ {
+  "id_idx": 818,
+  "wnid": "n04606251",
+  "idx_1k": 913,
+  "clean_name": "shipwreck"
+ },
+ {
+  "id_idx": 819,
+  "wnid": "n04612504",
+  "idx_1k": 914,
+  "clean_name": "sailboat"
+ },
+ {
+  "id_idx": 820,
+  "wnid": "n04613696",
+  "idx_1k": 915,
+  "clean_name": "yurt"
+ },
+ {
+  "id_idx": 821,
+  "wnid": "n06359193",
+  "idx_1k": 916,
+  "clean_name": "website"
+ },
+ {
+  "id_idx": 822,
+  "wnid": "n06596364",
+  "idx_1k": 917,
+  "clean_name": "comic book"
+ },
+ {
+  "id_idx": 823,
+  "wnid": "n06785654",
+  "idx_1k": 918,
+  "clean_name": "crossword"
+ },
+ {
+  "id_idx": 824,
+  "wnid": "n06794110",
+  "idx_1k": 919,
+  "clean_name": "traffic or street sign"
+ },
+ {
+  "id_idx": 825,
+  "wnid": "n06874185",
+  "idx_1k": 920,
+  "clean_name": "traffic light"
+ },
+ {
+  "id_idx": 826,
+  "wnid": "n07248320",
+  "idx_1k": 921,
+  "clean_name": "dust jacket"
+ },
+ {
+  "id_idx": 827,
+  "wnid": "n07565083",
+  "idx_1k": 922,
+  "clean_name": "menu"
+ },
+ {
+  "id_idx": 828,
+  "wnid": "n07579787",
+  "idx_1k": 923,
+  "clean_name": "plate"
+ },
+ {
+  "id_idx": 829,
+  "wnid": "n07583066",
+  "idx_1k": 924,
+  "clean_name": "guacamole"
+ },
+ {
+  "id_idx": 830,
+  "wnid": "n07584110",
+  "idx_1k": 925,
+  "clean_name": "consomme"
+ },
+ {
+  "id_idx": 831,
+  "wnid": "n07590611",
+  "idx_1k": 926,
+  "clean_name": "hot pot"
+ },
+ {
+  "id_idx": 832,
+  "wnid": "n07613480",
+  "idx_1k": 927,
+  "clean_name": "trifle"
+ },
+ {
+  "id_idx": 833,
+  "wnid": "n07615774",
+  "idx_1k": 929,
+  "clean_name": "popsicle"
+ },
+ {
+  "id_idx": 834,
+  "wnid": "n07684084",
+  "idx_1k": 930,
+  "clean_name": "baguette"
+ },
+ {
+  "id_idx": 835,
+  "wnid": "n07693725",
+  "idx_1k": 931,
+  "clean_name": "bagel"
+ },
+ {
+  "id_idx": 836,
+  "wnid": "n07695742",
+  "idx_1k": 932,
+  "clean_name": "pretzel"
+ },
+ {
+  "id_idx": 837,
+  "wnid": "n07697313",
+  "idx_1k": 933,
+  "clean_name": "cheeseburger"
+ },
+ {
+  "id_idx": 838,
+  "wnid": "n07697537",
+  "idx_1k": 934,
+  "clean_name": "hot dog"
+ },
+ {
+  "id_idx": 839,
+  "wnid": "n07711569",
+  "idx_1k": 935,
+  "clean_name": "mashed potatoes"
+ },
+ {
+  "id_idx": 840,
+  "wnid": "n07714571",
+  "idx_1k": 936,
+  "clean_name": "cabbage"
+ },
+ {
+  "id_idx": 841,
+  "wnid": "n07714990",
+  "idx_1k": 937,
+  "clean_name": "broccoli"
+ },
+ {
+  "id_idx": 842,
+  "wnid": "n07716358",
+  "idx_1k": 939,
+  "clean_name": "zucchini"
+ },
+ {
+  "id_idx": 843,
+  "wnid": "n07716906",
+  "idx_1k": 940,
+  "clean_name": "spaghetti squash"
+ },
+ {
+  "id_idx": 844,
+  "wnid": "n07717410",
+  "idx_1k": 941,
+  "clean_name": "acorn squash"
+ },
+ {
+  "id_idx": 845,
+  "wnid": "n07717556",
+  "idx_1k": 942,
+  "clean_name": "butternut squash"
+ },
+ {
+  "id_idx": 846,
+  "wnid": "n07718472",
+  "idx_1k": 943,
+  "clean_name": "cucumber"
+ },
+ {
+  "id_idx": 847,
+  "wnid": "n07718747",
+  "idx_1k": 944,
+  "clean_name": "artichoke"
+ },
+ {
+  "id_idx": 848,
+  "wnid": "n07720875",
+  "idx_1k": 945,
+  "clean_name": "bell pepper"
+ },
+ {
+  "id_idx": 849,
+  "wnid": "n07730033",
+  "idx_1k": 946,
+  "clean_name": "cardoon"
+ },
+ {
+  "id_idx": 850,
+  "wnid": "n07734744",
+  "idx_1k": 947,
+  "clean_name": "mushroom"
+ },
+ {
+  "id_idx": 851,
+  "wnid": "n07742313",
+  "idx_1k": 948,
+  "clean_name": "Granny Smith apple"
+ },
+ {
+  "id_idx": 852,
+  "wnid": "n07745940",
+  "idx_1k": 949,
+  "clean_name": "strawberry"
+ },
+ {
+  "id_idx": 853,
+  "wnid": "n07747607",
+  "idx_1k": 950,
+  "clean_name": "orange"
+ },
+ {
+  "id_idx": 854,
+  "wnid": "n07749582",
+  "idx_1k": 951,
+  "clean_name": "lemon"
+ },
+ {
+  "id_idx": 855,
+  "wnid": "n07753275",
+  "idx_1k": 953,
+  "clean_name": "pineapple"
+ },
+ {
+  "id_idx": 856,
+  "wnid": "n07753592",
+  "idx_1k": 954,
+  "clean_name": "banana"
+ },
+ {
+  "id_idx": 857,
+  "wnid": "n07754684",
+  "idx_1k": 955,
+  "clean_name": "jackfruit"
+ },
+ {
+  "id_idx": 858,
+  "wnid": "n07760859",
+  "idx_1k": 956,
+  "clean_name": "cherimoya (custard apple)"
+ },
+ {
+  "id_idx": 859,
+  "wnid": "n07768694",
+  "idx_1k": 957,
+  "clean_name": "pomegranate"
+ },
+ {
+  "id_idx": 860,
+  "wnid": "n07802026",
+  "idx_1k": 958,
+  "clean_name": "hay"
+ },
+ {
+  "id_idx": 861,
+  "wnid": "n07831146",
+  "idx_1k": 959,
+  "clean_name": "carbonara"
+ },
+ {
+  "id_idx": 862,
+  "wnid": "n07836838",
+  "idx_1k": 960,
+  "clean_name": "chocolate syrup"
+ },
+ {
+  "id_idx": 863,
+  "wnid": "n07860988",
+  "idx_1k": 961,
+  "clean_name": "dough"
+ },
+ {
+  "id_idx": 864,
+  "wnid": "n07871810",
+  "idx_1k": 962,
+  "clean_name": "meatloaf"
+ },
+ {
+  "id_idx": 865,
+  "wnid": "n07873807",
+  "idx_1k": 963,
+  "clean_name": "pizza"
+ },
+ {
+  "id_idx": 866,
+  "wnid": "n07880968",
+  "idx_1k": 965,
+  "clean_name": "burrito"
+ },
+ {
+  "id_idx": 867,
+  "wnid": "n07892512",
+  "idx_1k": 966,
+  "clean_name": "red wine"
+ },
+ {
+  "id_idx": 868,
+  "wnid": "n07920052",
+  "idx_1k": 967,
+  "clean_name": "espresso"
+ },
+ {
+  "id_idx": 869,
+  "wnid": "n07930864",
+  "idx_1k": 968,
+  "clean_name": "tea cup"
+ },
+ {
+  "id_idx": 870,
+  "wnid": "n07932039",
+  "idx_1k": 969,
+  "clean_name": "eggnog"
+ },
+ {
+  "id_idx": 871,
+  "wnid": "n09193705",
+  "idx_1k": 970,
+  "clean_name": "mountain"
+ },
+ {
+  "id_idx": 872,
+  "wnid": "n09229709",
+  "idx_1k": 971,
+  "clean_name": "bubble"
+ },
+ {
+  "id_idx": 873,
+  "wnid": "n09246464",
+  "idx_1k": 972,
+  "clean_name": "cliff"
+ },
+ {
+  "id_idx": 874,
+  "wnid": "n09256479",
+  "idx_1k": 973,
+  "clean_name": "coral reef"
+ },
+ {
+  "id_idx": 875,
+  "wnid": "n09288635",
+  "idx_1k": 974,
+  "clean_name": "geyser"
+ },
+ {
+  "id_idx": 876,
+  "wnid": "n09332890",
+  "idx_1k": 975,
+  "clean_name": "lakeshore"
+ },
+ {
+  "id_idx": 877,
+  "wnid": "n09399592",
+  "idx_1k": 976,
+  "clean_name": "promontory"
+ },
+ {
+  "id_idx": 878,
+  "wnid": "n09421951",
+  "idx_1k": 977,
+  "clean_name": "sandbar"
+ },
+ {
+  "id_idx": 879,
+  "wnid": "n09428293",
+  "idx_1k": 978,
+  "clean_name": "beach"
+ },
+ {
+  "id_idx": 880,
+  "wnid": "n09468604",
+  "idx_1k": 979,
+  "clean_name": "valley"
+ },
+ {
+  "id_idx": 881,
+  "wnid": "n09472597",
+  "idx_1k": 980,
+  "clean_name": "volcano"
+ },
+ {
+  "id_idx": 882,
+  "wnid": "n09835506",
+  "idx_1k": 981,
+  "clean_name": "baseball player"
+ },
+ {
+  "id_idx": 883,
+  "wnid": "n10148035",
+  "idx_1k": 982,
+  "clean_name": "bridegroom"
+ },
+ {
+  "id_idx": 884,
+  "wnid": "n10565667",
+  "idx_1k": 983,
+  "clean_name": "scuba diver"
+ },
+ {
+  "id_idx": 885,
+  "wnid": "n11879895",
+  "idx_1k": 984,
+  "clean_name": "rapeseed"
+ },
+ {
+  "id_idx": 886,
+  "wnid": "n11939491",
+  "idx_1k": 985,
+  "clean_name": "daisy"
+ },
+ {
+  "id_idx": 887,
+  "wnid": "n12057211",
+  "idx_1k": 986,
+  "clean_name": "yellow lady's slipper"
+ },
+ {
+  "id_idx": 888,
+  "wnid": "n12144580",
+  "idx_1k": 987,
+  "clean_name": "corn"
+ },
+ {
+  "id_idx": 889,
+  "wnid": "n12620546",
+  "idx_1k": 989,
+  "clean_name": "rose hip"
+ },
+ {
+  "id_idx": 890,
+  "wnid": "n12768682",
+  "idx_1k": 990,
+  "clean_name": "horse chestnut seed"
+ },
+ {
+  "id_idx": 891,
+  "wnid": "n12985857",
+  "idx_1k": 991,
+  "clean_name": "coral fungus"
+ },
+ {
+  "id_idx": 892,
+  "wnid": "n12998815",
+  "idx_1k": 992,
+  "clean_name": "agaric"
+ },
+ {
+  "id_idx": 893,
+  "wnid": "n13037406",
+  "idx_1k": 993,
+  "clean_name": "gyromitra"
+ },
+ {
+  "id_idx": 894,
+  "wnid": "n13040303",
+  "idx_1k": 994,
+  "clean_name": "stinkhorn mushroom"
+ },
+ {
+  "id_idx": 895,
+  "wnid": "n13044778",
+  "idx_1k": 995,
+  "clean_name": "earth star fungus"
+ },
+ {
+  "id_idx": 896,
+  "wnid": "n13052670",
+  "idx_1k": 996,
+  "clean_name": "hen of the woods mushroom"
+ },
+ {
+  "id_idx": 897,
+  "wnid": "n13054560",
+  "idx_1k": 997,
+  "clean_name": "bolete"
+ },
+ {
+  "id_idx": 898,
+  "wnid": "n13133613",
+  "idx_1k": 998,
+  "clean_name": "corn cob"
+ },
+ {
+  "id_idx": 899,
+  "wnid": "n15075141",
+  "idx_1k": 999,
+  "clean_name": "toilet paper"
+ }
+]

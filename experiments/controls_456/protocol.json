@@ -1,0 +1,172 @@
+{
+  "protocol": "REPRISE controls 4-6, version 1",
+  "frozen_utc": "2026-09-26T18:36:02.535302+00:00",
+  "prior_method": "REPRISE v4/CLAVIS-M3, no parameter tuning on new evaluation",
+  "development_unused": {
+    "cub": true,
+    "cifar100": true,
+    "evidence": "user explicitly confirmed neither consulted during method design",
+    "pretraining_unseen_claim": false
+  },
+  "features": {
+    "B14": "DINOv2 ViT-B/14 frozen",
+    "L14": "DINOv2 ViT-L/14 frozen",
+    "CLIP": "official CLIP ViT-B/16 frozen",
+    "image_transform": "pinned prior implementation, 224 pixels",
+    "dtype": "FP32 features and exact cosine, FP64 prototype statistics and LP state",
+    "microbatch": 32,
+    "tf32": false
+  },
+  "method": {
+    "shots_per_ID_class": 16,
+    "support": 12,
+    "calibration": 4,
+    "prototype_shrinkage": 12,
+    "candidate_k": 5,
+    "memory_neighbor": 2,
+    "admission": [
+      0.4,
+      0.3,
+      0.1
+    ],
+    "LP": {
+      "k": 10,
+      "alpha": 0.9,
+      "cosine_power": 3,
+      "native": "warm state, 15 sweeps",
+      "converged": "cold state; ||next-u||2 / (0.1 ||next||2) <= 1e-6; maximum500, fail if not reached"
+    },
+    "TINS": "upstream commit194759d716b27534bf2e8eeb0d71f5c4f0dabc40 plus read-only hooks; original fixed hyperparameters"
+  },
+  "experiment4": {
+    "r": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20
+    ],
+    "history_total": 1024,
+    "history_ID": 768,
+    "history_OOD": 256,
+    "classes": "4 each from NINCO and SSB-hard, random among classes with >=40 unique eligible images",
+    "queries_per_class": 8,
+    "common_ID_queries": 128,
+    "history_replicates": 2,
+    "s0": 1,
+    "methods": [
+      "static",
+      "memory",
+      "LP",
+      "full"
+    ],
+    "history_batch": [
+      1,
+      16,
+      256
+    ],
+    "solvers": [
+      "warm15",
+      "converged"
+    ],
+    "queries": "one at a time, clone pre-query state and discard; never share query images across probes",
+    "peer_control": "for history B16/B256, append 15/255 unscored reserve peers with each independent query, replace five static-difficulty matched unrelated peers by same-class peers; singleton primary, same vs unrelated secondary",
+    "matching": "greedy nearest abs log(product static B14/L14 p); paired residuals saved",
+    "replacement": "nested20 same-class/donor pairs, keep their positions and all ID images fixed across r",
+    "CIs": "class bootstrap of already-scored histories, 2000 resamples; preliminary only4classes/dataset"
+  },
+  "experiment5": {
+    "OOD_fractions": [
+      0,
+      0.001,
+      0.01,
+      0.05,
+      0.2
+    ],
+    "recurrences": [
+      1,
+      5,
+      20
+    ],
+    "patterns": [
+      "random",
+      "burst",
+      "long_gap"
+    ],
+    "capacities": [
+      1000,
+      5000,
+      20000,
+      null
+    ],
+    "panels": 4,
+    "unknown_classes_per_panel": 2,
+    "max_stream_images": 40000,
+    "fraction_manipulation": "same unique OOD image sequence per recurrence/pattern, insert unique ID; no repeated image within a stream",
+    "long_gap_r1": "recorded but recurrence undefined, cannot support return-after-gap claim",
+    "zero_OOD": "40000uniqueID, AUROC/FPR95 null, report false alarms",
+    "retention": "last W stream arrivals: A1,A2,M eligibility ages and graph stream nodes; fixed support/calibration always retained; exact affected kNN recomputation on eviction",
+    "batch": 256,
+    "operating_threshold": "per-method 1% lower ID quantile pooled across old dev1 near streams seeds123/124/125; freeze before experiments; alarm score<threshold; same across all frequencies/recurrences/patterns/caps",
+    "operating": [
+      "IDfalsealarms/1000",
+      "OODdetectionrate",
+      "first-to-detection delay in images and same-class occurrences",
+      "never-detected class fraction"
+    ],
+    "timing": "24 explicitly selected end-to-end jobs, panel0,r20: all fractions random x4caps, .1%long_gap x4caps, zeroOOD x4caps; includes raw image decoding/transforms/3encoders/TINS/memory/exactneighbors/graph/LP; other592jobs cached feature runtime labelled separately",
+    "latency": "sequential batch-ready service latency, no synthetic arrival queue; mean ms/image, last-quarter ms/image, batch and per-image completion p95",
+    "memory": "peak CPU RSS and PyTorch CUDA allocated/reserved, model and state included; startup separated; precomputed fixed shots not re-encoded in stream timing"
+  },
+  "experiment6": {
+    "cub": "100 randomID/100OOD, officialtrain support/calib, officialtest eval",
+    "cifar": "50randomID/50OOD, officialtrain support/calib, officialtest eval",
+    "split_seeds": {
+      "cub": 2026092706,
+      "cifar": 2026092707
+    },
+    "orders": [
+      123,
+      124,
+      125
+    ],
+    "feature_conditions": [
+      "B14 image-only including image-prototype candidates",
+      "CLIP image-only including image-prototype candidates",
+      "B14+L14 with frozen CLIP-text candidate policy, reference"
+    ],
+    "primary_s0": 1,
+    "methods": [
+      "static",
+      "memory",
+      "LP",
+      "full",
+      "same-feature kNN",
+      "same-feature Mahalanobis++"
+    ],
+    "additional": "actual online TINS and TINS times each comparator, explicitly labelled as VLM-conditioned",
+    "baseline_selection": "k=[1,2,3,5,10,20,50], shrinkage=[0,.001,.01,.05,.1,.2,.5], olddev1 only lowest nearFPR95 then AUROC; frozen before any new data results",
+    "new_test_labels": "only sampler and metrics; detector receives IDclass names when needed; singleimagefeature primary does not use text candidates",
+    "split_integrity": "decodedRGB exact duplicates excluded; no eval pixel duplicate of support/calibration; freeze manifest hash before encoding"
+  },
+  "metrics": {
+    "AUROC": "IDpositive, scorehigherID, percent",
+    "FPR95": "lowest observed ID score reaching >=95% ID acceptance; tiesaccepted; threshold=sortedID[floor(.05*nID)]; record achievedTPR and ID/OODties",
+    "difference_from_prior": "fixed quantile convention can differ from prior closest-TPR ROC; all present comparisons same rule"
+  },
+  "execution": {
+    "isolation": "/home/omote/reprise_controls_20260927",
+    "do_not_interrupt": "existing R5 pipeline and all foreign processes",
+    "GPU_start_guard": "R5 tins runs done/DONE or no active R5processes, plus memory<1024MiB/util<10%; poll30s",
+    "CPU_threads_per_job": 2,
+    "priority": "nice10",
+    "failed_conditions": "record individually and block dependent experiments with reasons, never represent missing results as zero",
+    "pixel_hash_workers": 4
+  },
+  "sources": [
+    "https://www.vision.caltech.edu/datasets/cub_200_2011/",
+    "https://data.caltech.edu/records/65de6-vp158",
+    "https://cave.cs.toronto.edu/kriz/cifar.html"
+  ]
+}

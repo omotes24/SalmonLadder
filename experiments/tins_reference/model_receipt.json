@@ -1,0 +1,9 @@
+{
+  "utc": "2026-09-25T03:58:58Z",
+  "checkpoint_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+  "cuda_device": "NVIDIA GeForce RTX 2080 Ti",
+  "logit_scale": 100.0,
+  "model_dtype": "torch.float16",
+  "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _transform.<locals>.<lambda> at 0x797327ce3380>\n    ToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+  "official_source_unchanged": true
+}

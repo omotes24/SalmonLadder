@@ -1,0 +1,644 @@
+[
+ {
+  "name": "E2_ratio01",
+  "dev": "dev1",
+  "id_n": 9900,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 1
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio02",
+  "dev": "dev1",
+  "id_n": 9800,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 2
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio05",
+  "dev": "dev1",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 5
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio10",
+  "dev": "dev1",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio25",
+  "dev": "dev1",
+  "id_n": 7500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 25
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio50",
+  "dev": "dev1",
+  "id_n": 5000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls100x5",
+  "dev": "dev1",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 5
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls50x10",
+  "dev": "dev1",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 50,
+    "per_class": 10
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls25x20",
+  "dev": "dev1",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 25,
+    "per_class": 20
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls10x50",
+  "dev": "dev1",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 10,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_idburst",
+  "dev": "dev1",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "id_burst",
+  "run": 10,
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_idfirst",
+  "dev": "dev1",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "id_first",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_pseudoburst",
+  "dev": "dev1",
+  "id_n": 2000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 2
+   }
+  ],
+  "order": "pseudo_burst",
+  "k": 4,
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_mixall",
+  "dev": "dev1",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   },
+   {
+    "source": "far",
+    "n": 1000
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_random_ref",
+  "dev": "dev1",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E4_delayed",
+  "dev": "dev1",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "delayed",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "S_batch16",
+  "dev": "dev1",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 16,
+  "seed": 0
+ },
+ {
+  "name": "S_batch64",
+  "dev": "dev1",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 64,
+  "seed": 0
+ },
+ {
+  "name": "S_batch256",
+  "dev": "dev1",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "S_batch1024",
+  "dev": "dev1",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 1024,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio01",
+  "dev": "dev2",
+  "id_n": 9900,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 1
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio02",
+  "dev": "dev2",
+  "id_n": 9800,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 2
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio05",
+  "dev": "dev2",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 5
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio10",
+  "dev": "dev2",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio25",
+  "dev": "dev2",
+  "id_n": 7500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 25
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_ratio50",
+  "dev": "dev2",
+  "id_n": 5000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls100x5",
+  "dev": "dev2",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 5
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls50x10",
+  "dev": "dev2",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 50,
+    "per_class": 10
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls25x20",
+  "dev": "dev2",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 25,
+    "per_class": 20
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E2_cls10x50",
+  "dev": "dev2",
+  "id_n": 9500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 10,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_idburst",
+  "dev": "dev2",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "id_burst",
+  "run": 10,
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_idfirst",
+  "dev": "dev2",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "id_first",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_pseudoburst",
+  "dev": "dev2",
+  "id_n": 2000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 2
+   }
+  ],
+  "order": "pseudo_burst",
+  "k": 4,
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_mixall",
+  "dev": "dev2",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   },
+   {
+    "source": "far",
+    "n": 1000
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E3_random_ref",
+  "dev": "dev2",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E4_delayed",
+  "dev": "dev2",
+  "id_n": 9000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 10
+   }
+  ],
+  "order": "delayed",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E5_ssblike",
+  "dev": "dev1",
+  "id_n": 4500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E5_nincolike",
+  "dev": "dev1",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 40,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E5_ssblike",
+  "dev": "dev2",
+  "id_n": 4500,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 100,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "name": "E5_nincolike",
+  "dev": "dev2",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "near",
+    "n_classes": 40,
+    "per_class": 50
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 0
+ },
+ {
+  "dev": "dev1",
+  "name": "M3_places",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "places",
+    "n_classes": null,
+    "per_class": null
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 2026092751
+ },
+ {
+  "dev": "dev2",
+  "name": "M3_places",
+  "id_n": 18000,
+  "ood": [
+   {
+    "source": "places",
+    "n_classes": null,
+    "per_class": null
+   }
+  ],
+  "order": "random",
+  "batch": 256,
+  "seed": 2026092752
+ }
+]

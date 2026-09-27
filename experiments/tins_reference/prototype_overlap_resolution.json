@@ -1,0 +1,126 @@
+{
+  "utc": "2026-09-25T03:58:34.452790+00:00",
+  "initial_overlap_images": 8,
+  "excluded": [
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01669191/n01669191_10045.JPEG",
+      "sha256": "5cdf6bc40f4088162ebf795cb6bcdd673eb6f7ae883d6b0eacb7f89f2deb69a8",
+      "evaluation_ids": [
+        "imagenet_001627"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01749939/n01749939_1025.JPEG",
+      "sha256": "45c73eb8d0bb8957e9ee923356d93de11cd254d30fa66c75e76b73fc34fcacf9",
+      "evaluation_ids": [
+        "imagenet_002480"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01773549/n01773549_102.JPEG",
+      "sha256": "f4067489cbfb4549f9f67f946be33b78cad384f6047e307e34df34dc47d4631a",
+      "evaluation_ids": [
+        "imagenet_003278"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n02443114/n02443114_10354.JPEG",
+      "sha256": "d0ef1406fa8221f22ef244277701c28861b4749822aa02c4bcc026fdb3ca7abd",
+      "evaluation_ids": [
+        "imagenet_016189"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n02808440/n02808440_10112.JPEG",
+      "sha256": "b3d33a9d3c2424af105141032df4c6861daf596047aa77354de0c97860edd525",
+      "evaluation_ids": [
+        "imagenet_039420"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n03272010/n03272010_10270.JPEG",
+      "sha256": "aa3db246f76a16e62841f0089eb8cabc136fe5fbd5d2faed045255104f24177f",
+      "evaluation_ids": [
+        "imagenet_018119"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n03710637/n03710637_10065.JPEG",
+      "sha256": "3595c56a0e677871197a0703554e41b4719ba52e1e27939d9a34ea9b85aa670a",
+      "evaluation_ids": [
+        "imagenet_028779"
+      ]
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n07730033/n07730033_10418.JPEG",
+      "sha256": "001b52642be12d53637a38a015704dac52262381852a8db1372f3a88f1dbebca",
+      "evaluation_ids": [
+        "imagenet_042502"
+      ]
+    }
+  ],
+  "replacements": [
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01669191/n01669191_10076.JPEG",
+      "relative_path": "train/n01669191/n01669191_10076.JPEG",
+      "label": 37,
+      "sha256": "620a64579f5ad5dfae81cf4b3b2010a5fcac834767cc0fad52609b4b93f8c381",
+      "bytes": 286251
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01749939/n01749939_10299.JPEG",
+      "relative_path": "train/n01749939/n01749939_10299.JPEG",
+      "label": 64,
+      "sha256": "cc6a67d52667aac4f59da9bbd1d854827a86d1fea9ead82dd76a30af2d5028ce",
+      "bytes": 1015846
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01773549/n01773549_10215.JPEG",
+      "relative_path": "train/n01773549/n01773549_10215.JPEG",
+      "label": 73,
+      "sha256": "66b91494b2299bccc2a8d3efad58bb71444428f5f98f3d57475618668164f47d",
+      "bytes": 5984
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n02443114/n02443114_10404.JPEG",
+      "relative_path": "train/n02443114/n02443114_10404.JPEG",
+      "label": 358,
+      "sha256": "60eade9dca7c0c5fec0899058644d8716ab790577ebee7ee3f6409a94e49b503",
+      "bytes": 77317
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n02808440/n02808440_10652.JPEG",
+      "relative_path": "train/n02808440/n02808440_10652.JPEG",
+      "label": 435,
+      "sha256": "24f5b64901e169912ca0bc1a32e93de90032838394572ff1c9883d779a8a4533",
+      "bytes": 68685
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n03272010/n03272010_10443.JPEG",
+      "relative_path": "train/n03272010/n03272010_10443.JPEG",
+      "label": 546,
+      "sha256": "17b7404472bb31f40421d4f256456c3d2a62d06cb007709d653d13d72b682f7e",
+      "bytes": 175177
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n03710637/n03710637_10120.JPEG",
+      "relative_path": "train/n03710637/n03710637_10120.JPEG",
+      "label": 638,
+      "sha256": "5ec23847b4198608611914bd0c6ef1ed4202e270a46634617ed10c5192de99de",
+      "bytes": 154211
+    },
+    {
+      "path": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n07730033/n07730033_10432.JPEG",
+      "relative_path": "train/n07730033/n07730033_10432.JPEG",
+      "label": 946,
+      "sha256": "adbba870253434266fba8bf95546fc5adcac7669fbe0feb786724f8d9f298bfe",
+      "bytes": 38138
+    }
+  ],
+  "final_overlap": 0,
+  "per_class": 16,
+  "original_manifest_sha256": "30591c4fc38384082292dddb0057b071189c8bcf66ce7b91690c947b7847c713",
+  "final_manifest_sha256": "0f964cf0011de9b83c5e710a8480af30a6cfce47f6a17ceb0f0ea45e6f5e6c9f",
+  "reason": "Known exact content duplicates of frozen test/calibration images were excluded from training prototypes before first TINS inference. No performance metrics used.",
+  "deviation": "Official first-N fallback modified only to skip known content duplicates; not the unpublished author-specific 16-shot sample."
+}

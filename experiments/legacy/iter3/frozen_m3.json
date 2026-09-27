@@ -1,0 +1,36 @@
+{
+  "name": "CLAVIS-M3",
+  "frozen_utc": "2026-09-27T00:30:00Z",
+  "code": {
+    "path": "scripts/iter3_eval.py",
+    "sha256": "40a9bf336c7ea02cb062b2b78fc48492445add34168c309857f12df670c161ad"
+  },
+  "config": {
+    "views": [
+      "dino.pt:proto",
+      "dino_vitl14.pt:proto"
+    ],
+    "rule": "cand40_30_10",
+    "lp": "10,0.9,3",
+    "combo": "0,1,2,3",
+    "score": "S_final * p_t(B/14) * p_t(L/14) * p_LP(B/14) * p_LP(L/14)"
+  },
+  "definition": [
+    "Views: DINOv2 B/14 and L/14, same support (12 shots) / calibration (4 shots) split and CLIP candidate sets K(x) as CLAVIS.",
+    "Static view (proto): r_c(x) = 1 - cos(f(x), normalised mean of the 12 support shots of class c); class statistics from leave-one-out prototype distances (median / MAD x 1.4826, shrunk with n0 = 12); d = min over K(x) of the robust z; p, p_all conformal against the calibration shots.",
+    "Memory (per view): iterated two-stage entrance C1 = {p_all <= 0.40}, C2 = {p_C1 <= 0.30}, M = {p_C2 <= 0.10}; p_t = conformal p of g = d - (r_M - med_all)/mad_all (kNN statistics of the support for the memory scale), recomputed per batch.",
+    "Label propagation (per view): kNN graph (k = 10, weights max(cos,0)^3, symmetric max, D^-1/2 W D^-1/2) over support shots (label 1), calibration shots and the stream so far (batch b joins before it is scored); f = 15 iterations of f <- 0.9 W f + 0.1 y (warm start); p_LP = rank of f among the calibration shots.",
+    "Score = S_final * prod of the four p-values. No training, no weights; LP hyper-parameters were set a priori (not tuned)."
+  ],
+  "selection_on_dev1": {
+    "explored": "whitening (no gain), extra views g/14 and CLIP image (no gain), joint cross-view admission (worse), stream-density admission (far drop), iterated two-stage admission (+0.4 to +0.8), prototype static views (+0.9 to +1.9 with iterated admission), conformal label propagation (+2.6 with prototype views)",
+    "dev1_exploration_result": {
+      "near_AUROC": 91.69,
+      "far_AUROC": 97.1,
+      "near_FPR95": 36.05,
+      "far_FPR95": 15.83
+    },
+    "frozen_before": "any ablation of this configuration was run"
+  },
+  "prereg": "iter3/prereg_iter3.json (sha256 05f7dee9e1917c800894cd8beb42dc79de2bff414d4a417a109ae0046beff89c)"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "VINS iteration 3 (beyond CLAVIS-M2; final loop)",
+  "registered_utc": "2026-09-26T12:10:00Z",
+  "baseline": {
+    "method": "CLAVIS-M2 (iter2/frozen_m2.json, sha256 3efbb961...): S_final * p_t(B/14) * p_t(L/14), two-stage admission (p_all <= 0.30 candidates, admit p_C <= 0.10)",
+    "dev1": {"near_AUROC": 89.07, "far_AUROC": 96.25, "near_FPR95": 40.12, "far_FPR95": 20.91},
+    "dev2": {"near_AUROC": 89.10, "far_AUROC": 95.97, "near_FPR95": 37.95, "far_FPR95": 23.22}
+  },
+  "metric": "AUROC (%) averaged over the 3 order seeds (123, 124, 125) of the (ID dev + near dev) and (ID dev + far dev) streams, upstream get_measures",
+  "stopping_rule": {
+    "pass": "near_AUROC >= baseline.near_AUROC + 1.5 AND far_AUROC >= baseline.far_AUROC - 0.3, on dev1 AND on dev2",
+    "rationale": "+1.5 pt is about 14% of the remaining near AUROC error of CLAVIS-M2 on dev1 (10.93 pt), the same relative bar as the previous loops (+3.0 over CLAVIS: 14%; +2.0 over CLAVIS-M: 13%)",
+    "procedure": [
+      "Exploration uses dev1 only. dev2 is evaluated only for a configuration frozen (file + sha256) after it passes on dev1.",
+      "Every dev2 evaluation is appended to iter3/dev2_looks.jsonl before the verdict is read. At most 3 dev2 looks in this loop.",
+      "The first frozen configuration that passes on both dev1 and dev2 stops the loop. If none passes, the loop ends and CLAVIS-M2 stays the final method.",
+      "The OpenOOD test split (already used three times) is evaluated at most once more, only for the stopping configuration, after a separate pre-registration, and is reported as the fourth use."
+    ]
+  },
+  "not_allowed": ["reading OpenOOD test images or test-derived scores for any design decision", "reading val_imagenet"],
+  "disclosure": "Test results of CLAVIS-M2 and its components (B/14-only and L/14-only products) are known from the third test use; they are not used for any choice in this loop."
+}

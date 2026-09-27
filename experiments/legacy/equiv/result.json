@@ -1,0 +1,71 @@
+{
+ "selected_static_negatives_identical": true,
+ "n_labels": 1000,
+ "streams": {
+  "openood_nearood_ssb_hard": {
+   "n": 2050,
+   "order_matches_upstream": true,
+   "a_scores_bitwise_equal_upstream": true,
+   "a_max_abs_diff": 0.0,
+   "features_bitwise_equal": false,
+   "features_max_abs_diff": 0.00023789703845977783,
+   "b_scores_bitwise_equal_upstream": false,
+   "b_max_abs_diff": 2.1755695343017578e-05,
+   "auroc_upstream_main": 0.4369311111111111,
+   "auroc_driver_a": 0.4369311111111111,
+   "auroc_driver_b": 0.4369355555555555
+  },
+  "openood_nearood_ninco": {
+   "n": 2050,
+   "order_matches_upstream": true,
+   "a_scores_bitwise_equal_upstream": true,
+   "a_max_abs_diff": 0.0,
+   "features_bitwise_equal": false,
+   "features_max_abs_diff": 0.00023789703845977783,
+   "b_scores_bitwise_equal_upstream": false,
+   "b_max_abs_diff": 2.1636486053466797e-05,
+   "auroc_upstream_main": 0.5425033333333333,
+   "auroc_driver_a": 0.5425033333333333,
+   "auroc_driver_b": 0.5425033333333333
+  },
+  "openood_farood_inaturalist": {
+   "n": 1888,
+   "order_matches_upstream": true,
+   "a_scores_bitwise_equal_upstream": true,
+   "a_max_abs_diff": 0.0,
+   "features_bitwise_equal": false,
+   "features_max_abs_diff": 0.0003510713577270508,
+   "b_scores_bitwise_equal_upstream": false,
+   "b_max_abs_diff": 0.013663172721862793,
+   "auroc_upstream_main": 0.9307070707070707,
+   "auroc_driver_a": 0.9307070707070707,
+   "auroc_driver_b": 0.9307007575757575
+  },
+  "openood_farood_textures": {
+   "n": 1888,
+   "order_matches_upstream": true,
+   "a_scores_bitwise_equal_upstream": true,
+   "a_max_abs_diff": 0.0,
+   "features_bitwise_equal": false,
+   "features_max_abs_diff": 0.0003510713577270508,
+   "b_scores_bitwise_equal_upstream": false,
+   "b_max_abs_diff": 0.0075550079345703125,
+   "auroc_upstream_main": 0.8871464646464646,
+   "auroc_driver_a": 0.8871464646464646,
+   "auroc_driver_b": 0.8871212121212122
+  },
+  "openood_farood_openimageo": {
+   "n": 1976,
+   "order_matches_upstream": true,
+   "a_scores_bitwise_equal_upstream": true,
+   "a_max_abs_diff": 0.0,
+   "features_bitwise_equal": true,
+   "features_max_abs_diff": 0.0,
+   "b_scores_bitwise_equal_upstream": true,
+   "b_max_abs_diff": 0.0,
+   "auroc_upstream_main": 0.9077967171717172,
+   "auroc_driver_a": 0.9077967171717172,
+   "auroc_driver_b": 0.9077967171717172
+  }
+ }
+}

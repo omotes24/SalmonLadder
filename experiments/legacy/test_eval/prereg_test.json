@@ -1,0 +1,14 @@
+{
+ "frozen_utc": "2026-09-26T01:31:43Z",
+ "written_before": "the dev2 result is known and before any OpenOOD test image is read by this project",
+ "run_condition": "only if the dev2 primary endpoint (prereg_confirm.json) passes; run exactly once",
+ "benchmark": "OpenOOD v1.5 ImageNet-1K: ID test_imagenet (45,000); near = SSB-hard, NINCO; far = iNaturalist, Textures, OpenImage-O",
+ "method": {
+  "tins": "S_final from Codex's reproduction of unchanged upstream TINS (194759d), 1000 ID classes, stream seed 123, per-dataset ID+OOD streams (scores_openood_*.npz)",
+  "visual_view": "d(x) with DINOv2 ViT-B/14 CLS features (standard eval preprocessing), m = 2, K(x) = CLIP ViT-B/16 zero-shot top-5 over the 1000 labels with the TINS template, support = first 12 of TINS's 16 shots per class, LOO med/MAD shrunk with n0 = 12",
+  "p_value": "p_d(x) = (1 + #{calib d >= d(x)}) / (n_calib + 1), calib = last 4 of the 16 shots per class (4,000 images)",
+  "fused": "S_final(x) * p_d(x)"
+ },
+ "report": "AUROC and FPR95 (Codex's convention, ties included) per dataset and near/far means for TINS, d only and fused; no other variant is evaluated on the test",
+ "no_changes_after_seeing_test": true
+}

@@ -1,0 +1,263 @@
+{
+  "utc": "2026-09-25T03:57:20.741056+00:00",
+  "method": "TINS",
+  "role": "additional comparator requested after original test results were disclosed; not a retroactive change to the six-comparator primary endpoint",
+  "repo": "https://github.com/zxk1212/tins",
+  "commit": "194759d716b27534bf2e8eeb0d71f5c4f0dabc40",
+  "gpu_physical": 0,
+  "parameters": {
+    "in_dataset": "ImageNet",
+    "root_dir": "/home/omote/ood_large_best_20260923/tins_20260925/datasets",
+    "eval_protocol": "openood_imagenet1k",
+    "openood_root": "/home/omote/ood_large_best_20260923/tins_20260925/openood",
+    "wordnet_dir": "/home/omote/ood_large_best_20260923/tins_20260925/repo/txtfiles",
+    "train_imglist": "/home/omote/ood_large_best_20260923/tins_20260925/prototype_train16.txt",
+    "cache_dir": "/home/omote/ood_large_best_20260923/tins_20260925/cache",
+    "name": "tins_official_b16_seed0",
+    "seed": 0,
+    "gpu": 0,
+    "batch_size": 256,
+    "CLIP_ckpt": "ViT-B/16",
+    "train_shot_per_class": 16,
+    "ood_number": 2000,
+    "extra_text_length": 2000,
+    "group_num": 5,
+    "ood_threshold": 0.3,
+    "tau": 1.0,
+    "text_batch_size": 1000,
+    "pos_prompt": "The nice {}.",
+    "noun_prompt": "The nice {}.",
+    "adj_prompt": "This is a {} photo.",
+    "inversion_token": "$",
+    "inversion_steps": 30,
+    "inversion_lr": 0.02,
+    "inversion_weight_decay": 0.01,
+    "inversion_reg_lambda": 0.3,
+    "inversion_init_mode": "best_neg_word",
+    "random_permute": true,
+    "no_cache": false,
+    "no_image_feature_cache": false,
+    "image_feature_cache_dir": "/home/omote/ood_large_best_20260923/tins_20260925/cache/image_features",
+    "prototype_batch_size": 256,
+    "stream_shuffle": true,
+    "stream_seed": 123,
+    "save_stream_scores": true,
+    "use_buffer": true,
+    "bank_buffer_size": 2000,
+    "score": "tins",
+    "model": "CLIP",
+    "clip_impl": "openai_official_v1",
+    "log_directory": "results/ImageNet/tins/openood_imagenet1k/CLIP_ViT-B-16_ID_tins_official_b16_seed0"
+  },
+  "source_sha256": {
+    ".gitignore": "9774871094c8d23742106089e1455d4906c064cf06456b62020a4ee2b4ed6d33",
+    "README.md": "d0026cc3f03edeecc13457148dfe203d254a703181b5e5d7dbea9c8547e258b2",
+    "data/ImageNet/imagenet_class_clean.npy": "639d226fe36dbc4038eeac3efd049963b4c4acdda61a8026fd9e886398ea05f3",
+    "data/ImageNet/imagenet_class_index.json": "a1e7a966a1f601d39e4b43e119b3e7dd4a2ad3ea08cf69847cbaf021013767bc",
+    "data/ImageNet10/ImageNet-10-classlist.csv": "d8c893de738956bbe3c8ceb0e81ddb19407a6a9d7d6c5cdf99d08ade3b5bf725",
+    "data/ImageNet10/class_list.txt": "38ded461fe974c17541a2d16837da6bbd645c2555daa3730d7f993ecf543e241",
+    "data/ImageNet100/class_list.txt": "94fc3b205ac5c7e2bf27a74c492c38ae99925546f6e67fa5007a1799b0425304",
+    "data/ImageNet20/ImageNet-20-classlist.csv": "af9adc99fe1aa1c95cedf24bacdd5bf739b39138cd9a907127fe98aacb6d5e40",
+    "data/ImageNet20/class_list.txt": "f85b2660edf7a3e3cefa6487e7c60fdccffad801502b96eed5fae8ccaf40b3d3",
+    "data/food-101/README.txt": "678f1797555dfc5cea5205c27e8cde827b6fcf5a23dd4e71979137aa5fabf30d",
+    "data/food-101/license_agreement.txt": "48c39411ce18a57fb5a945d0101d41eb602486a0be1dd259559775d98f74d0c9",
+    "data/food-101/meta/classes.txt": "eb6b396455a281445a698d8af22b2142be9a6eb9401520ee702746545f1c8820",
+    "data/food-101/meta/labels.txt": "9760abad507139d89e4662b89a26a2b43f1e9d19be41a0a5ee22ebe70e47bb9b",
+    "data/food-101/meta/test.json": "4c8977721ce1efe10085ef1be227dc39c4c374b578d6f08614253e46f0750594",
+    "data/food-101/meta/test.txt": "440d53374697d019a972fe66e8e44031ae80267a126ecb814ad537ec1fd506db",
+    "data/food-101/meta/train.json": "203df9e8f6935a97929356a5353d046708d26f01bbd2797a224f49371c2947f5",
+    "data/food-101/meta/train.txt": "2920f7d55473974492b41a01241ccfd71df1b74d29d27b617337f840f58f77ab",
+    "dataloaders/__init__.py": "ccfa251faf5c9d9fbe0b91d34c68ecde314dc0fbb1be90e1534da1d05c1eff2d",
+    "dataloaders/bird200.py": "9147da7b2f583d93b6fdd625422ecc64bc3588c4cc7305988cdec688380bfcaf",
+    "dataloaders/car196.py": "9a2ded6ab217352cf75fcb8fbbe2432b6361a6799d835eeee33c81f73e2eaffe",
+    "dataloaders/food101.py": "aa6146031605058c47d92c524b142d9e5bc3341a0bf846a3158578f453dd5eac",
+    "dataloaders/pet37.py": "91248150c30beef1b414c7900351346b7fc2af502b240016131580f3d3387360",
+    "download.py": "dc76bd3274a3d1a18e3b84a9c55eba611e7991c4f3cdbcfc5ee3238273487f88",
+    "eval_neglabel_ood.py": "0e44c6b74115cb8b04dbe581fd205e11e0e1d07ab6c4f4d98606a180f1eea897",
+    "eval_tins_w_init.py": "018ffecba19a14abdde2a370556170a7e56f0e32eda82b72c69d36c70ca16449",
+    "eval_tins_w_init_across_id.py": "24ab61d811f21b26de83e66e4d9da046265fd546c572adbc0409c2a177c44f93",
+    "eval_tins_w_init_cifar10_100.py": "eff62184283ea56dc2b69e3cf88612501d1fe51928e93009961273d3db275547",
+    "eval_tins_w_init_temporal_shift.py": "6c88922758e357660451fff923255bf09f967fbc6641c72710825ab6570d94fe",
+    "readme_figs/Arch_figure.png": "c0e93feefd91a490782806d782b880e16301558c6302866d3082d628eba801fd",
+    "requirements.txt": "71e861bee7393f7a96b26e31f805aced158fe28f97c53ed134687e3d70a64c43",
+    "run_eval_tins_w_init_across_id.sh": "0299290da7725c45b8925bce3a740e8ebb0d29f725e12985af7bebb10e2e2c60",
+    "run_eval_tins_w_init_backbones.sh": "813d84cbe656410d43af61b9d1553a3579d0e1c68f82b93c27241652c5ba8a93",
+    "run_eval_tins_w_init_temporal_shift.sh": "b8fb0fd39510dc47f44defa20b751d12385de06b27e6cc700b5227cd308db5f4",
+    "third_party/openai_clip/__init__.py": "d7930eb290ebed432116795c91473200d098451a94c0aedd4ae0f934f97955e8",
+    "third_party/openai_clip/bpe_simple_vocab_16e6.txt.gz": "924691ac288e54409236115652ad4aa250f48203de50a9e4722a6ecd48d6804a",
+    "third_party/openai_clip/clip.py": "4ad30aac4aba6c065f20a8b07e62a84a3581533c512bb49fbcc285278e587fce",
+    "third_party/openai_clip/clip_localfeat.py": "9d404147f420f9a412008181cfb7c4ab371352e5ce3f64c76966e197bb2d04f9",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_caltech101.json": "b5c3f52be95a1e450c4ebbac1fd0d2644a5d2efc2bac15e1a82cad587fdd09f6",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_dtd.json": "b5d2ae76c1e8e5ded0df87d70aa60ce78730060ae65d7b36c30034457b8cfbe8",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_eurosat.json": "c1831f13dff8f8f2b6e3121b122b4e40582ccc1274537c3f9023641d35d07234",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_fgvcaircraft.json": "3d0733867fa1e30a229639df9528d9da3fe11b9cf56c0cd6eda11688d9a31393",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_flowers102.json": "904c8850eafeaa1cc60a0f55fab7bdc168af4b2d1e5cb5bd06c5d32cbbc9d676",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_food101.json": "67cb17f323b7f0726e4b152224365fda289658ff92b0d14ee264910a16af96dc",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_imagenet.json": "da0e4d5542371cbaea8654b3e59111627c8b012a4977a8d0b5cb21249fc5ce91",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_oxfordpets.json": "f393a01f911ceed70458d1b7fa3b8f2df2148732210b3783488f2efecc672c95",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_stanfordcars.json": "8b84424728b57442cbe190b0d996fda7a16fbb8ac42617911c61fea8f1496a53",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_sun397.json": "b6e2c68f1cfaad78a725de1aea337cea8f5481402708225bcecbe8ce8b436967",
+    "third_party/openai_clip/gpt3_prompts/CuPL_prompts_ucf101.json": "3acc805cbcd115331cc975f6146b24de2fc1732c45ee54a57c25259facbc6b9a",
+    "third_party/openai_clip/model.py": "a51721d470cda422b699ff65274c0f96384f56851deec3481cb5f6ab3de58d17",
+    "third_party/openai_clip/model_localfeat.py": "4a10621cb5b332f260573f5c4bf41bd39f15da6b0d7ba26c3aae25eafbb9a047",
+    "third_party/openai_clip/simple_tokenizer.py": "d1b09f10ed3d1e2c343619cb98cbfacb92363dd8607526a43aa7fe2d60d15bad",
+    "txtfiles/adj.all.txt": "7f888903bdfedab07224a1f96fb84dec2bda534d72158c3ee0361a3a27178d90",
+    "txtfiles/adj.pert.txt": "33cff27ba64b4d4ae7c776521b2fdc6ccc5f3ca89d0f45f01444418c8aa24aa6",
+    "txtfiles/adj.ppl.txt": "fef9547241d68552d8237b0ccecc4211c74050d0effaaae08e584a1c00d3c688",
+    "txtfiles/noun.Tops.txt": "9dbd5114ea55c420a6fd1d1837dcf8224afa6a4f90ddf759d767e4270e2ff8dc",
+    "txtfiles/noun.act.txt": "3a48bd561bfa122b3b0699577112f5ae08c881e31c702d71d4c5abf3ab09709f",
+    "txtfiles/noun.artifact.txt": "d55b2dde3a44d220374cd36aaa306853aa99d7162b56e62772c66ed339e3158f",
+    "txtfiles/noun.attribute.txt": "c8b9ec05eab345f6917f29c6010e7699a4b791f0479d5c652bc322cd76f933a5",
+    "txtfiles/noun.body.txt": "0a1947594abcba99a0aa1012db4735febe24835ba52f81233e151ba2679ce493",
+    "txtfiles/noun.cognition.txt": "3f527c3bc1d92d168e8d6e22e62fc52ef21adcd7e8555f75fdcbf63832747e1d",
+    "txtfiles/noun.communication.txt": "581ed30741b17c242c6d92660e741137c8d28cc35a769f089b99f4a5d8d05f68",
+    "txtfiles/noun.event.txt": "96ef789309aaa8ffeec625e7fb3b98749d650199c3e396899ac77c1ed203c493",
+    "txtfiles/noun.feeling.txt": "e4546336c87bcf508fde08d352ffed1c2e52970c826b9c0166e5a9f8c3a9455f",
+    "txtfiles/noun.group.txt": "bf1c87d255ec0ac27bffa7bfc40ac7621227088d99a3f2d82f5e0d82e100c1bb",
+    "txtfiles/noun.location.txt": "6ba5f3222409227a99d23c5560eb62e61b6f86913cb645bdaeec18b690a4ba90",
+    "txtfiles/noun.motive.txt": "db9f18278e2db6a417af134da6b0f887919b5f91710bd93b0a70cbd5c0036218",
+    "txtfiles/noun.object.txt": "157840456faa99eddddae56a939ec0f66455cfe655f401628f6013563546980e",
+    "txtfiles/noun.person.txt": "3c5195cab0795d32f409caa964e29897a569e095b999c49257a859b89ee6cac9",
+    "txtfiles/noun.phenomenon.txt": "1a93823d253f6156df4e05b2c6a9ac013a7b080805736f38ad3f355e30df8cf5",
+    "txtfiles/noun.plant.txt": "3c605c60eadedac6150dd573ba650a289640e57e7fcb91c733501fc213fcf700",
+    "txtfiles/noun.possession.txt": "487c28b12e18896dd252bc54ff79b32df23daa76bd5ad0b9abc6cac91f860d58",
+    "txtfiles/noun.process.txt": "7824eaf4ead41f6536786d9c58693bbcafef5cac63c94b8c54763d67810e619a",
+    "txtfiles/noun.quantity.txt": "0bf3aeacc7a42479578afc2c668a83a9cabe65db192295ea6203b8fde363ecdb",
+    "txtfiles/noun.relation.txt": "a40af1466e7bb94fc6f3d6829e6c3df25b154dbb219be36ff1f3c25266b9f124",
+    "txtfiles/noun.shape.txt": "2dd6330f50472e3321dd7bbfca1f8bd7c2fa370802ef32b3ecf95c95df93d9e5",
+    "txtfiles/noun.state.txt": "c6b1d9e5df6cf1a1e0873b9d8c57d512c42ef9ca879848bc8ed055621f80d2cd",
+    "txtfiles/noun.substance.txt": "e22be239af2333abeeb549623a57eb2168ea90d0c8c80c57644781698a947607",
+    "txtfiles/noun.time.txt": "7547cf817d5b4bcf66055eceecc4a7d831073588bfd5005826f1b5ab4b127da0",
+    "utils/__init__.py": "831d8ad5e3f7067d1cc352c9955c4f5375c226268d21d2fdfb21cf1d17cef6d6",
+    "utils/common.py": "b2b740289155e23576ea2ebd8621713e4349a7e5341fc1506af7a5ae026f570a",
+    "utils/detection_util.py": "e435d48c77eacd83a5c23766b0e8ec55a4bc36c29c4588569632ad825fbf6b61",
+    "utils/file_ops.py": "c56f599c4911cf0597f18d680d68d747d163683b403315262021a39d7ed83091",
+    "utils/imagenet_templates.py": "dac58b7d6efcad1ae702d729ce7aa0c773a24c75fb17ba5b5f4fab077e24b169",
+    "utils/openimage_dataset.py": "f0dbe46c53d8fcba004f21f21005b686620b5cfd21c256cea75b032b3cddf152",
+    "utils/train_eval_util.py": "85caba1f7b4da87c7a4ba252671754cf3d64e806832c9a5f7d0f458b9a111bea",
+    "word/README.md": "c9d7054c787a5e20c93fa2164cb842c93c602e5af2fc94c643ef47589c355b38",
+    "word/common20k_20k.txt": "4ed6e5336d7760d281f7e72df31827da880c861363e820d8c65666b0f10d9ac0",
+    "word/part_of_speech_370k_nltk_tagged.csv": "c44bc4f3dad7b31d397991653921cf2cc361322a743360fd373e1b9937d537a5",
+    "word/part_of_speech_370k_words_alpha.txt": "3ed0c94610d8bcf7c11bbb49c56aa49c7234d32b66824df91f554169e572da48"
+  },
+  "runner_sha256": "49ddbbcbba3e492f6d26b2066ec94395e30dc8d4e6e4a963097a7d0aad52b3cc",
+  "checkpoint_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+  "prototype_selection": "First 16 lexicographically ordered training images per class excluding exact content duplicates of frozen test/calibration images. Eight original candidates replaced before TINS inference. Author-specific 16-shot list unavailable.",
+  "prototype_images": 16000,
+  "prototype_list_sha256": "2e778c31333809ad408137e92da1edbb2ff98209ff09ee08ab5a11c85a6d2ec9",
+  "prototype_content_overlap": [],
+  "eval_lists": {
+    "id": {
+      "count": 45000,
+      "sha256": "7e0e05f8aa8e312992bfe342d57b8513dd4e62b68fedb5a1c63b6bca662d047c",
+      "file": "test_imagenet.txt"
+    },
+    "ssb_hard": {
+      "count": 49000,
+      "sha256": "e2dc7ba6c1e2bd2179a06038598344d5d8716be3bbc9409c45b0c3de95431510",
+      "file": "test_ssb_hard.txt"
+    },
+    "ninco": {
+      "count": 5879,
+      "sha256": "28450babf7d8d7389b75989a3af15346be0d514f048eac3711694045fdf40dd8",
+      "file": "test_ninco.txt"
+    },
+    "inaturalist": {
+      "count": 10000,
+      "sha256": "86a19665f968eecf17383bafa15dea3aeb53db96c305d08f026cdb6438376ecb",
+      "file": "test_inaturalist.txt"
+    },
+    "textures": {
+      "count": 5160,
+      "sha256": "9cf1ff7e97ce67ea61a8bb1ffc17bb845ae06e1d22bfebc74c3c0aa284a408c9",
+      "file": "test_textures.txt"
+    },
+    "openimageo": {
+      "count": 15869,
+      "sha256": "cbfb3ab73257f2d1523e1358e3c55d9589844194447cbad737248835cceb2ffc",
+      "file": "test_openimage_o.txt"
+    }
+  },
+  "test_unique_list_entries": 130908,
+  "streams": {
+    "openood_nearood_ssb_hard": {
+      "events": 94000,
+      "sha256": "a2eac303b4045faeec77f7e663c29a4bd59c159989e8d66fca5def2da255c631"
+    },
+    "openood_nearood_ninco": {
+      "events": 50879,
+      "sha256": "3d7c08f237144b2b3bdba5aec15aa85bee4fbc5010ab7bac5fd460fb3a05c878"
+    },
+    "openood_farood_inaturalist": {
+      "events": 55000,
+      "sha256": "497ea8dc3849202bbe514fcbe51de97b932ff5cdd2937a5fa5c5405425d979e0"
+    },
+    "openood_farood_textures": {
+      "events": 50160,
+      "sha256": "f39de686fa498a239fc4a2ff30218f45fedf41c7fc202121bcad73f8253928c3"
+    },
+    "openood_farood_openimageo": {
+      "events": 60869,
+      "sha256": "cf4e8c70b53f88fe8c6f3fa1d17b15cbd18820eab44c37798971bbf2b761acd1"
+    }
+  },
+  "stream_events": 310908,
+  "scoring": "Official per-dataset shuffled ID+OOD stream, dynamic bank reset per dataset, current batch rescored after its unsupervised adaptation; original batch size 256 retained.",
+  "temperature": "Official code uses pretrained CLIP exp(logit_scale). The --tau argument is unused in its score implementation; retained at default.",
+  "no_test_hyperparameter_tuning": true,
+  "validation_not_used": true,
+  "metric_reporting": "Save official metrics and separately compute original study FPR95 convention including threshold ties. Adaptive ID scores differ between OOD streams.",
+  "uncertainty": "Image-wise bootstrap of cached adaptive scores would condition on the learned stream; do not treat it as a rerun of adaptation or add it to original frozen success criterion.",
+  "initial_prototype_content_overlap": [
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01669191/n01669191_10045.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_001627"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01749939/n01749939_1025.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_002480"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n01773549/n01773549_102.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_003278"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n02443114/n02443114_10354.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_016189"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n02808440/n02808440_10112.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_039420"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n03272010/n03272010_10270.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_018119"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n03710637/n03710637_10065.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_028779"
+      ]
+    },
+    {
+      "train": "/home/omote/openood_simple_sota/data/images_largescale/imagenet_1k/train/n07730033/n07730033_10418.JPEG",
+      "evaluation_or_calibration_ids": [
+        "imagenet_042502"
+      ]
+    }
+  ],
+  "finalized_before_first_TINS_inference_utc": "2026-09-25T03:58:34.452790+00:00",
+  "input_selection_deviation_receipt_sha256": "763708ea20302330151377043f323bec175e77ae4fd9d4c2885d04e19a6a6eda"
+}

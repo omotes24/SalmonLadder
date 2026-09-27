@@ -1,0 +1,25 @@
+{
+ "frozen_utc": "2026-09-26T05:02:50Z",
+ "use_of_test": "second evaluation of this project on the OpenOOD v1.5 ImageNet-1K test split; the first (test_eval/prereg_test.json) evaluated CLAVIS",
+ "written_before": "any CLAVIS-M score on the test split is computed",
+ "run_condition": "the frozen candidate passed the stopping rule of iter/prereg_iter.json on dev1 and on dev2 (dev2 look 1 of at most 3); run exactly once (the script refuses a second run)",
+ "frozen_candidate": "iter/frozen_c1.json",
+ "frozen_candidate_sha256": "40e27cb0e59d15205f21708090ec86d0506c86b99852abcf345494072860d211",
+ "stopping_rule_sha256": "a3a20677636b5e2b1266058bb30d4719c6ffbd1bfa6bde4ebd2d641b6383e989",
+ "dev_results": {
+  "dev1": {
+   "near_AUROC": 84.62,
+   "far_AUROC": 96.25
+  },
+  "dev2": {
+   "near_AUROC": 82.56,
+   "far_AUROC": 96.04
+  }
+ },
+ "features": "test_eval/results/features.pt stored by the first evaluation (DINOv2 ViT-B/14 CLS of 12,000 support + 4,000 calibration shots + all test images; CLIP zero-shot top-5 candidates); no test image is re-read",
+ "features_sha256": "55db11fb3e1c58a2b4ccf346199c8a93a16a9bc3ec6a79eb0f5bd15d28137e8a",
+ "tins": "S_final of Codex's unchanged-upstream reproduction (scores_openood_*.npz), stream seed 123, batch 256; the memory follows the same stream order and batches and is reset for every ID+OOD stream",
+ "report": "AUROC and FPR95 (Codex's convention and upstream) per dataset and near/far means for TINS, CLAVIS, CLAVIS-M_c1 and the visual score g alone; no other variant is evaluated on the test",
+ "then": "stop the improvement loop and report whatever the result",
+ "no_changes_after_seeing_test": true
+}

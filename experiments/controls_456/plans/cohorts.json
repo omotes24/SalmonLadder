@@ -1,0 +1,114 @@
+[
+  {
+    "dataset": "ninco",
+    "class": "hindu_temple",
+    "query_ids": [
+      "ninco_002986",
+      "ninco_002953",
+      "ninco_002968",
+      "ninco_002970",
+      "ninco_002978",
+      "ninco_002977",
+      "ninco_002983",
+      "ninco_002963"
+    ]
+  },
+  {
+    "dataset": "ninco",
+    "class": "pyramid",
+    "query_ids": [
+      "ninco_005708",
+      "ninco_005728",
+      "ninco_005738",
+      "ninco_005771",
+      "ninco_005768",
+      "ninco_005685",
+      "ninco_005740",
+      "ninco_005714"
+    ]
+  },
+  {
+    "dataset": "ninco",
+    "class": "ferocactus_pilosus",
+    "query_ids": [
+      "ninco_004281",
+      "ninco_004315",
+      "ninco_004342",
+      "ninco_004270",
+      "ninco_004355",
+      "ninco_004298",
+      "ninco_004296",
+      "ninco_004337"
+    ]
+  },
+  {
+    "dataset": "ninco",
+    "class": "f_field_road",
+    "query_ids": [
+      "ninco_005664",
+      "ninco_005650",
+      "ninco_005659",
+      "ninco_005631",
+      "ninco_005637",
+      "ninco_005673",
+      "ninco_005597",
+      "ninco_005646"
+    ]
+  },
+  {
+    "dataset": "ssb_hard",
+    "class": "n03010915",
+    "query_ids": [
+      "ssb_hard_020659",
+      "ssb_hard_020650",
+      "ssb_hard_020693",
+      "ssb_hard_020668",
+      "ssb_hard_020658",
+      "ssb_hard_020669",
+      "ssb_hard_020695",
+      "ssb_hard_020688"
+    ]
+  },
+  {
+    "dataset": "ssb_hard",
+    "class": "n02396014",
+    "query_ids": [
+      "ssb_hard_045836",
+      "ssb_hard_045831",
+      "ssb_hard_045812",
+      "ssb_hard_045805",
+      "ssb_hard_045840",
+      "ssb_hard_045824",
+      "ssb_hard_045801",
+      "ssb_hard_045804"
+    ]
+  },
+  {
+    "dataset": "ssb_hard",
+    "class": "n07842044",
+    "query_ids": [
+      "ssb_hard_036487",
+      "ssb_hard_036488",
+      "ssb_hard_036489",
+      "ssb_hard_036478",
+      "ssb_hard_036462",
+      "ssb_hard_036469",
+      "ssb_hard_036466",
+      "ssb_hard_036467"
+    ]
+  },
+  {
+    "dataset": "ssb_hard",
+    "class": "n07614825",
+    "query_ids": [
+      "ssb_hard_044940",
+      "ssb_hard_044947",
+      "ssb_hard_044900",
+      "ssb_hard_044944",
+      "ssb_hard_044917",
+      "ssb_hard_044927",
+      "ssb_hard_044925",
+      "ssb_hard_044924"
+    ]
+  }
+]
