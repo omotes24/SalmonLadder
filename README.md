@@ -6,7 +6,7 @@ Salmon Ladder is a training-free detector of unknown classes that recur in an on
 
 The paper (in Japanese, three pages) is [paper/Salmon_Ladder.pdf](paper/Salmon_Ladder.pdf). <!-- maintainers -->
 
-## The idea
+## The idea💡
 
 In a stream, an unknown class rarely appears once: like a salmon, it comes back. Salmon Ladder uses these returns as evidence. It trains nothing, and it never revises a score once it is issued.
 
@@ -20,7 +20,7 @@ The score is the product of the memory rank and the propagation rank over both e
 
 **About the name.** The experiments were run under the working name REPRISE. Archived scripts, registrations, result files and the directory names of the experiment server keep that name, because their content is fixed by hashes. The documentation says Salmon Ladder for the same method.
 
-## Results at a glance
+## Results at a glance🙆
 
 AUROC / FPR95 in %, frozen configuration, batches of 256. `zeta` is the registered comparator: among the detectors that use propagation without the entrance and the memory, it was the strongest on the development split, where every detector was tuned with the same budget. [docs/RESULTS.md](docs/RESULTS.md) holds all result tables. It and the table below are generated from the archived result files. Values that the paper quotes from other publications are not part of it.
 
@@ -39,7 +39,7 @@ Registered endpoints on U1: E1 is the standalone row. E2 uses TINS and gives zet
 
 U1 and U2 were built after the configurations of both methods had been locked (by the file times of the records). On the OpenOOD test split a frozen configuration was evaluated six times in the course of the project, and analyses scored further variants on it in between, so that split is not independent of the design of the method. [docs/PREREGISTRATION.md](docs/PREREGISTRATION.md) gives the full account, including where the records are weaker than the word "registered" suggests. On OpenOOD the two methods are close, and the registered claim about the entrance and the memory rests on U1 and U2.
 
-## What the repository contains
+## What the repository contains😃
 
 The experiment code is archived byte for byte as it was on the experiment server when it was exported, together with the registrations and selection locks that fix the order of decisions and the aggregated result files.
 
@@ -65,7 +65,7 @@ The experiment code is archived byte for byte as it was on the experiment server
 
 An anonymized export of this repository contains `provenance/anonymized_export.json`. The files listed there differ from the server copies: names and paths are replaced, the hashes and sizes of changed files are updated, and the hashes and sizes of files outside the archive are replaced by pseudonyms and null.
 
-## Verify on a CPU
+## Verify on a CPU✌️
 
 Python 3.12.3, PyTorch 2.5.1 and torchvision 0.20.1 were used on the server. Nothing below needs data, model weights or a GPU.
 
@@ -93,13 +93,13 @@ python examples/feature_stream.py
 
 `python tools/run_cpu_checks.py` runs all of the commands above. The examples use synthetic features. They show the interface and the behaviour under recurrence; they are not benchmark results.
 
-## Run the experiments
+## Run the experiments🍤
 
 The archived scripts keep the paths of the server. `python tools/materialize_workspace.py --workspace /absolute/path` writes a separate copy with the server layout, resolves the paths, and rebuilds the image tables from `manifests/`. The archive itself is never edited. Data and model weights are obtained from their providers; [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) lists what is needed and the order of execution. The archived selection locks make it possible to rerun an evaluation without repeating the selection.
 
 `python tools/compare_rerun.py --workspace /absolute/path` compares the metric tables of a re-run with the archived ones. `provenance/rerun_check_20261004.json` records such a check on the experiment server.
 
-## Conventions
+## Conventions🦀
 
 - Scores are large for in-distribution images. AUROC takes ID as the positive class; FPR95 is the share of unknown images accepted at the threshold that accepts 95% of the ID images.
 - `x` denotes the product of scores (the sum of log scores with weight 1). `standalone` means no base detector.
@@ -108,7 +108,7 @@ The archived scripts keep the paths of the server. `python tools/materialize_wor
 - Intervals are paired 95% t intervals over the stated units. Analyses that were not registered are labelled descriptive or post hoc.
 - The working names in the archived files (`REPRISE`, `CLAVIS`, `v4`, `v5`, `minimal`) are explained at the end of [docs/METHOD.md](docs/METHOD.md).
 
-## Third-party code and licences
+## Third-party code and licences📃
 
 [THIRD_PARTY.md](THIRD_PARTY.md) lists the upstream revisions and licences of the vendored code. Datasets and pretrained models are not redistributed. A licence for the code of Salmon Ladder itself has not been selected yet.
 
