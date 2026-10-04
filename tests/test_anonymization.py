@@ -324,7 +324,7 @@ def test_pseudonyms_depend_on_the_key_only():
 
 def test_rules_file_is_consistent():
     raw = json.loads((ROOT / "tools/anonymization_rules.json").read_text(encoding="utf-8"))
-    assert {"tools/make_submission_zip.py", "tools/anonymization_rules.json", "CITATION.cff", "docs/SUBMISSION.md", "tests/test_anonymization.py"} <= set(raw["exclude"])
+    assert {"tools/make_submission_zip.py", "tools/anonymization_rules.json", "CITATION.cff", "docs/SUBMISSION.md", "tests/test_anonymization.py", "paper/**"} <= set(raw["exclude"])
     forbidden = {r["id"] for r in raw["forbidden"]}
     assert {a["forbidden"] for a in raw["allow"]} <= forbidden
     for rule in raw["replace"]:                                # a replacement never produces a forbidden string

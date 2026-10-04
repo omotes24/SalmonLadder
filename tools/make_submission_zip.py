@@ -119,8 +119,8 @@ class Rules:
         self.allow = {(a["forbidden"], a["sha256"]) for a in raw["allow"]}
         self.encoded = {f"needle {i + 1}": re.compile(b"|".join(re.escape(form) for form in sorted(encoded_forms(needle))))
                         for i, needle in enumerate(raw["encoded_needles"])}
-        # plain form for binary data, where the text patterns would match noise; needles under 5 characters would too
-        self.plain = re.compile(b"|".join(re.escape(needle.encode()) for needle in raw["encoded_needles"] if len(needle) >= 5), re.IGNORECASE)
+        # plain form for binary data, where the text patterns would match noise; needles under 5 bytes would too
+        self.plain = re.compile(b"|".join(re.escape(needle.encode()) for needle in raw["encoded_needles"] if len(needle.encode()) >= 5), re.IGNORECASE)
         self.keep_hashes = raw["keep_hashes"]
         self.third_party = raw["third_party"]
         self.allowed_emails = set(raw["allowed_emails"])

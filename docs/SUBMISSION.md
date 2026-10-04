@@ -19,8 +19,8 @@ python tools/make_submission_zip.py --out ../salmon_ladder_supplementary.zip --t
 
 What the tool does:
 
-1. Takes the files tracked by git and leaves out `CITATION.cff`, `.github/`, this file, the tool, its rules and its test. Symbolic links are refused.
-2. Applies the `replace` rules of `tools/anonymization_rules.json` to text files, to text inside gzip files and to strings inside parquet files: server home directory, account names, personal and laboratory names, the name of the shared Python environment, the commit hash of this repository, session links, and the line of the README that points to this file.
+1. Takes the files tracked by git and leaves out `CITATION.cff`, `.github/`, `paper/` (the paper names the authors), this file, the tool, its rules and its test. Symbolic links are refused.
+2. Applies the `replace` rules of `tools/anonymization_rules.json` to text files, to text inside gzip files and to strings inside parquet files: server home directory, account names, personal and laboratory names, the name of the shared Python environment, the commit hash of this repository, session links, and the lines of the README that point to this file and to the paper.
 3. Rewrites hashes.
    - A hash of an archived file that changed is replaced by the hash of the exported file wherever it stands as a hexadecimal value: complete, or its first digits (from 8 digits for SHA-256, from 12 for other algorithms). This is repeated along the chains of records that quote each other. Inside the export, `tools/verify_snapshot.py` therefore verifies every file against the records, and no record keeps a hash of an original. The registrations and locks that quote such hashes get new hashes themselves.
    - Every other SHA-256 value in a record that cannot be verified inside the archive (server tables, feature files, earlier versions of scripts, unarchived results, public files that are not in the archive) is replaced by a keyed pseudonym. Equal values stay equal, so the documented deviations of the final test still match their registration. Image hashes in the manifests and hashes of public model weights are kept (`keep_hashes` in the rules), and third-party code is not touched.
@@ -41,7 +41,7 @@ At the commit that introduced the tool the archive holds about 1,960 files in 71
 
 - Unpack the zip in an empty directory and run `python tools/run_cpu_checks.py` there.
 - Read `review_before_upload` in the receipt. It lists the files with Japanese text, the e-mail-like strings, the owners of the cited GitHub repositories, and numbers that equal the original size of a changed file and stand near its name (empty in a clean export).
-- **Names in kanji** are not in the rules: `names_in_japanese_script` holds kana forms only. Add the kanji forms of the authors, the laboratory and the institution to `forbidden` (and to `replace` if they occur) before the final export.
+- **Names in Japanese script**: `forbidden` holds the names as the paper prints them (author, faculty, laboratory) and kana forms. Add any other spelling that is in use, and the names of further authors, before the final export.
 - The rules leave the following unchanged. Decide for each whether it may stay:
   - **Text in Japanese**: the requests quoted in the Phase 7 registration and its amendments 2 and 3, comments and report strings in scripts of the early stages, and three run logs. An archived file cannot simply be excluded: the verification inside the export would report it as missing. Prefer to keep these files; if one has to go, remove it from the repository and from its provenance record first.
   - **Time zone**: the patch file carries the offset +0900, one amendment says JST, and `docs/PREREGISTRATION.md` explains three typed times as local times (UTC+9).
@@ -59,7 +59,7 @@ What the tool cannot remove:
 
 ## The public repository during review
 
-The repository on GitHub is public, carries the account name, and is named after the method, so a search for the name of the method finds it. Do not cite it or link it in the submission. Whether a public repository may stay online during review is decided by the venue. The author guidelines of CVPR 2026 allowed existing public repositories to remain as long as the submission does not point to them; the guidelines of CVPR 2027 were not yet published on 2026-10-04 and have to be checked. Making the repository private until the decision removes the question.
+The repository on GitHub is public, carries the account name, holds the paper with the authors' names (`paper/`), and is named after the method, so a search for the name of the method finds it. Do not cite it or link it in the submission. Whether a public repository may stay online during review is decided by the venue. The author guidelines of CVPR 2026 allowed existing public repositories to remain as long as the submission does not point to them; the guidelines of CVPR 2027 were not yet published on 2026-10-04 and have to be checked. Making the repository private until the decision removes the question.
 
 Dates announced for CVPR 2027 on 2026-10-04 (anywhere on Earth): paper registration 10 November 2026, paper submission 16 November 2026, supplementary material 23 November 2026. Verify them at <https://cvpr.thecvf.com/Conferences/2027/Dates> and read the supplementary-material limits (size, format, anonymity of code) in the author guidelines once they are published.
 

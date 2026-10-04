@@ -4,6 +4,7 @@
   "exclude": [
     "CITATION.cff",
     ".github/**",
+    "paper/**",
     "docs/SUBMISSION.md",
     "tools/make_submission_zip.py",
     "tools/anonymization_rules.json",
@@ -120,11 +121,11 @@
     },
     {
       "id": "names_in_japanese_script",
-      "pattern": "おもて|オモテ|こうたろう|コウタロウ|ｵﾓﾃ"
+      "pattern": "おもて|オモテ|こうたろう|コウタロウ|ｵﾓﾃ|紘太朗|表\\s*紘"
     },
     {
       "id": "institution",
-      "pattern": "(?i)keio|慶應|慶応|義塾|湘南藤沢"
+      "pattern": "(?i)keio|慶應|慶応|義塾|湘南藤沢|総合政策学部"
     },
     {
       "id": "campus",
@@ -133,6 +134,10 @@
     {
       "id": "lab_name",
       "pattern": "(?i)(?<![A-Za-z])d[-_. ]?hacks(?![A-Za-z])"
+    },
+    {
+      "id": "lab_in_japanese_script",
+      "pattern": "中澤|大越"
     },
     {
       "id": "advisor_name",
@@ -174,7 +179,8 @@
     "zackey",
     "granood",
     "d-hacks",
-    "maf07"
+    "maf07",
+    "紘太朗"
   ],
   "keep_hashes": [
     "manifests/*.csv.gz",

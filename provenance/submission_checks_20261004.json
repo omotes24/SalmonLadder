@@ -1,5 +1,5 @@
 {
- "checked_utc": "2026-10-04T09:53:27Z",
+ "checked_utc": "2026-10-04T14:45:43Z",
  "python": "3.12.3",
  "platform": "Linux-6.18.44-fc-v64-x86_64-with-glibc2.39",
  "packages": {
@@ -17,7 +17,7 @@
    "command": "python tools/verify_snapshot.py",
    "directory": ".",
    "returncode": 0,
-   "seconds": 0.3,
+   "seconds": 0.4,
    "last_output": [
     "  \"mismatches\": []",
     "}"
@@ -27,7 +27,7 @@
    "command": "python tools/make_results_tables.py --check",
    "directory": ".",
    "returncode": 0,
-   "seconds": 2.3,
+   "seconds": 2.5,
    "last_output": [
     "docs/RESULTS.md is up to date",
     "the results table of README.md is up to date"
@@ -46,39 +46,39 @@
    "command": "python -m pytest -q tests",
    "directory": ".",
    "returncode": 0,
-   "seconds": 51.6,
+   "seconds": 69.3,
    "last_output": [
     "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
-    "30 passed, 1 warning in 50.65s"
+    "30 passed, 1 warning in 68.35s (0:01:08)"
    ]
   },
   {
    "command": "python -m pytest -q experiments/controls_456/src/test_controls.py",
    "directory": ".",
    "returncode": 0,
-   "seconds": 3.3,
+   "seconds": 4.4,
    "last_output": [
     "......                                                                   [100%]",
-    "6 passed in 2.42s"
+    "6 passed in 3.41s"
    ]
   },
   {
    "command": "python -m pytest -q experiments/legacy/tests/test_r5.py",
    "directory": ".",
    "returncode": 0,
-   "seconds": 3.9,
+   "seconds": 4.4,
    "last_output": [
     "..............                                                           [100%]",
-    "14 passed in 3.04s"
+    "14 passed in 3.58s"
    ]
   },
   {
    "command": "python -m unittest discover -s unit_tests",
    "directory": "experiments/lp_audit",
    "returncode": 0,
-   "seconds": 3.3,
+   "seconds": 3.4,
    "last_output": [
-    "Ran 16 tests in 0.350s",
+    "Ran 16 tests in 0.360s",
     "OK"
    ]
   },
@@ -96,7 +96,7 @@
    "command": "python examples/salmon_ladder_stream.py",
    "directory": ".",
    "returncode": 0,
-   "seconds": 3.5,
+   "seconds": 3.8,
    "last_output": [
     "  memory admission in the last view: 78.4% of the unknown-class images, 11.3% of the ID images",
     "Synthetic feature example finished. No benchmark metric is reported."
