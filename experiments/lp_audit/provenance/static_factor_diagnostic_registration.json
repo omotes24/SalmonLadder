@@ -1,0 +1,9 @@
+{
+  "utc": "2026-09-27T12:32:56.122300+00:00",
+  "stage": "post-primary read-only diagnostic",
+  "reason": "REPRISE-minus-pLP includes both the static scoring factor and adaptation through pt. Explicitly isolate the unchanged static factor to avoid attributing the whole difference to memory admission.",
+  "control": "product_v(static_p_v * pLP_v), each existing solver, standalone and identical TINS product. Compare against stored REPRISE with M0.",
+  "data": "Only existing primary dev1 scores. No new scoring forward, graph fit, images, parameter, or GPU allocation.",
+  "selection": "Diagnostic only; not added to the four registered candidates or their selection. Exploratory paired t intervals, not a preregistered confirmatory claim.",
+  "sha256": "e8a2b2499c8a336a31c4cfca203ed751156416408ab8337f7583caf928397f7c"
+}

@@ -7,7 +7,7 @@ permissions:
 jobs:
   cpu:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       CUDA_VISIBLE_DEVICES: ''
       OMP_NUM_THREADS: '2'
@@ -21,7 +21,7 @@ jobs:
           cache: pip
       - run: pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -r requirements-core.txt
-      - run: python tools/verify_snapshot.py
-      - run: python -m pytest -q experiments/controls_456/src/test_controls.py
-      - run: PYTHONPATH=experiments/legacy python -m pytest -q experiments/legacy/tests/test_r5.py
-      - run: python examples/feature_stream.py
+      # archive hashes, generated documents, tests of every stage, examples (the commands of the README)
+      - run: python tools/run_cpu_checks.py
+      # the anonymized archive still builds and contains no identifying string
+      - run: python tools/make_submission_zip.py --out "$RUNNER_TEMP/salmon_ladder_supplementary.zip"

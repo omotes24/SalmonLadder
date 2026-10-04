@@ -1,0 +1,22 @@
+/home/omote/reprise_p5_20261002/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{"exp": "u1std", "view": "B14", "task": "U1_s1_d0_seed125", "n": 23000, "seconds": 12.4, "utc": "2026-10-03T13:14:48Z"}
+{"exp": "u1std", "view": "L14", "task": "U1_s1_d1_seed123", "n": 23000, "seconds": 13.2, "utc": "2026-10-03T13:15:01Z"}
+{"exp": "u1std", "view": "B14", "task": "U1_s1_d1_seed125", "n": 23000, "seconds": 11.0, "utc": "2026-10-03T13:15:12Z"}
+{"exp": "u1std", "view": "L14", "task": "U1_s1_d2_seed123", "n": 23000, "seconds": 11.4, "utc": "2026-10-03T13:15:24Z"}
+Traceback (most recent call last):
+  File "/home/omote/reprise_p7_20261003/code/run7.py", line 232, in <module>
+    main()
+  File "/home/omote/reprise_p7_20261003/code/run7.py", line 191, in main
+    arr = run_stream(P, ids, flag, bidx, view, lp_batch=(exp == "u1std"), lp_alone=(exp == "u1alone"), logS=logS,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p7_20261003/code/run7.py", line 47, in run_stream
+    out, aux = E7.run_view7(sup, cal, sf, bidx, st, V5["thresholds"], k=V5["kg"], gamma=V5["gamma"], lam=V5["lam"], device=device,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p7_20261003/code/engine7.py", line 111, in run_view7
+    sims, oldn = graph.append(sf[rows])
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p5_20261002/code/engine.py", line 56, in append
+    self.X = torch.cat([self.X, b])
+             ^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 62.00 MiB. GPU 0 has a total capacity of 10.57 GiB of which 50.75 MiB is free. Process 330518 has 734.00 MiB memory in use. Process 330517 has 734.00 MiB memory in use. Process 330516 has 734.00 MiB memory in use. Process 332981 has 7.31 GiB memory in use. Including non-PyTorch memory, this process has 452.00 MiB memory in use. Process 332983 has 630.00 MiB memory in use. Of the allocated memory 147.14 MiB is allocated by PyTorch, and 116.86 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

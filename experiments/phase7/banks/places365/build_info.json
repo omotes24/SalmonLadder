@@ -1,0 +1,105 @@
+{
+ "dataset": "places365",
+ "utc": "2026-10-03T12:56:53Z",
+ "seed": [
+  20261003,
+  3
+ ],
+ "n_images": 36500,
+ "n_classes": 365,
+ "splits": [
+  {
+   "split": 1,
+   "counts": {
+    "id": 24528,
+    "ood": 7300,
+    "sup": 3504,
+    "cal": 1168
+   },
+   "ood_share": 0.22935779816513763,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 292,
+   "n_unknown": 73,
+   "sha256": "aaa1d3c98bcfc4e83be34baf2e91a0f2e55c4b1c23fc0714093638bcdefb292a"
+  },
+  {
+   "split": 2,
+   "counts": {
+    "id": 24528,
+    "ood": 7300,
+    "sup": 3504,
+    "cal": 1168
+   },
+   "ood_share": 0.22935779816513763,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 292,
+   "n_unknown": 73,
+   "sha256": "074e47569524b5d75ade0c70ba2bdb34f71996edd8199c6adf6d8aa8e200da70"
+  },
+  {
+   "split": 3,
+   "counts": {
+    "id": 24528,
+    "ood": 7300,
+    "sup": 3504,
+    "cal": 1168
+   },
+   "ood_share": 0.22935779816513763,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 292,
+   "n_unknown": 73,
+   "sha256": "fbaae23efedfeceadfe6de8436bea7445f39f46a6e79f4e2acc1189502488504"
+  },
+  {
+   "split": 4,
+   "counts": {
+    "id": 24528,
+    "ood": 7300,
+    "sup": 3504,
+    "cal": 1168
+   },
+   "ood_share": 0.22935779816513763,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 292,
+   "n_unknown": 73,
+   "sha256": "cd71c10fc5a648f90b3d48418409104074dd50bebd2d48d68740426000d3ae74"
+  },
+  {
+   "split": 5,
+   "counts": {
+    "id": 24528,
+    "ood": 7300,
+    "sup": 3504,
+    "cal": 1168
+   },
+   "ood_share": 0.22935779816513763,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 292,
+   "n_unknown": 73,
+   "sha256": "5d997b2471bf6e578ed618a3fb3753282139f5fa67e85a977b8809d74414480d"
+  }
+ ],
+ "n_val": 36500,
+ "dropped_sealed_or_four_ood": 0,
+ "n_four_ood_places": 10000
+}

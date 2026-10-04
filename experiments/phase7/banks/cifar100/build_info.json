@@ -1,0 +1,102 @@
+{
+ "dataset": "cifar100",
+ "utc": "2026-10-03T12:49:23Z",
+ "seed": [
+  20261003,
+  2
+ ],
+ "n_images": 60000,
+ "n_classes": 100,
+ "splits": [
+  {
+   "split": 1,
+   "counts": {
+    "id": 5000,
+    "ood": 5000,
+    "sup": 600,
+    "cal": 200
+   },
+   "ood_share": 0.5,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 50,
+   "n_unknown": 50,
+   "sha256": "3e24887e72b6dc167b3abe345206a1c41e5e05d5798ba1c5414bb7a22ec06e0e"
+  },
+  {
+   "split": 2,
+   "counts": {
+    "id": 5000,
+    "ood": 5000,
+    "sup": 600,
+    "cal": 200
+   },
+   "ood_share": 0.5,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 50,
+   "n_unknown": 50,
+   "sha256": "01e8b14ade2001a665d15aab86963b2238073e7111383b26c5251eaf76ce59af"
+  },
+  {
+   "split": 3,
+   "counts": {
+    "id": 5000,
+    "ood": 5000,
+    "sup": 600,
+    "cal": 200
+   },
+   "ood_share": 0.5,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 50,
+   "n_unknown": 50,
+   "sha256": "9436ab3483920f2c9cf4f27e9860a83ec0a407a0924b9b4439e75382ce341bce"
+  },
+  {
+   "split": 4,
+   "counts": {
+    "id": 5000,
+    "ood": 5000,
+    "sup": 600,
+    "cal": 200
+   },
+   "ood_share": 0.5,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 50,
+   "n_unknown": 50,
+   "sha256": "72395d929ce233202b51fa4a96bc49a9e575a18c2cb128f1ce8ddf741e4c19d9"
+  },
+  {
+   "split": 5,
+   "counts": {
+    "id": 5000,
+    "ood": 5000,
+    "sup": 600,
+    "cal": 200
+   },
+   "ood_share": 0.5,
+   "ood_per_class": {
+    "min": 100,
+    "median": 100.0,
+    "max": 100
+   },
+   "n_id_classes": 50,
+   "n_unknown": 50,
+   "sha256": "367649b64b6c77ac854179a4aeafe5466b462a5ee2e6e94b7b79dcd77f281f14"
+  }
+ ]
+}

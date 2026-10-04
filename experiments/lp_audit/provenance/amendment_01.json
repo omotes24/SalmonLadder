@@ -1,0 +1,32 @@
+{
+  "time_utc": "2026-09-27T11:20:44.695662+00:00",
+  "primary_results_seen": false,
+  "changes": [
+    {
+      "id": "arithmetic_zero",
+      "reason": "Preserve exact zero-product ties. log(0) is -inf; AUROC uses ranks so does not reject mathematically valid zero scores. This supersedes the unused log_score_floor field; no primary run has started."
+    },
+    {
+      "id": "new_modules",
+      "reason": "Implement the already frozen capacity, baseline, real-calibration tasks. No candidate/configuration grid change."
+    },
+    {
+      "id": "synthetic_burst_scope",
+      "reason": "Synthetic class-burst condition sorts all classes and therefore also moves OOD positions. It is a combined arrival stress, not an isolated effect of ID bursts. Real-feature burst retains OOD positions."
+    }
+  ],
+  "code_sha256": {
+    "synthetic.py": "f085acfd05eca1203ff8f37e53b5aa7ceea2b44924c177892f5e43c10a2822d0",
+    "pilot.py": "d26a05ea81a69722216e43845913888891e4599e7a04c70da6f22f7f0a5d3d6c",
+    "metrics.py": "879c6706882c7909dde577e7c37aea9bc1e95a0869c775ab5357c88b6c5ec832",
+    "run.py": "a52bc6a9e5e075b139bb025f4d1e4881d2ef193cfa1825ac82086c464ea4d89a",
+    "bounded.py": "feea03f2f8b8376b4990907f4b79ca678bdbbfb355c76eda6a3a4f4c25ea6b27",
+    "tins_prefix.py": "0178b672f0272ad98f54c32ce19bd9a0ee238750199100f2d16ed628effe764e",
+    "audit.py": "4b1f53fbc55f812557f7d7bd58354d7cbf141ea1b81530f5ed937de32a5e6ef3",
+    "real_calibration.py": "f2edc603b7b391470828c6419c7067296a9548d85d035f6232b88179f86d33cd",
+    "core.py": "42ab295401f16f120f33fb98a10a66c59bc78b5410f02a93161c845941d84288",
+    "schedule.py": "4c787573f7612228ce2482abd785f12611756c2a794e96598c3c6c7c6fdf195f",
+    "alternatives.py": "66e32cf65824e98d90df979a02a2fbd635b659d0539d49af6ddcacae31b0c7f8",
+    "preregister.py": "768e6ed78934295a236ede5b528f3739ba6590ef63052dce92f367f450215120"
+  }
+}

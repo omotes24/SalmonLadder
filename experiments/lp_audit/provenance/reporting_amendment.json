@@ -1,0 +1,18 @@
+{
+  "utc": "2026-09-27T12:27:31.799006+00:00",
+  "scope": "Read-only report additions after primary results; no detector, sample, parameter, or selection-rule change. These are exploratory diagnostics, not new confirmatory comparisons.",
+  "changes": [
+    "Paired old-versus-new solver REPRISE differences and identical cached TINS multiplier differences.",
+    "Memory pt versus static p empirical calibration differences.",
+    "Single-view paired global and within-batch AUROC differences.",
+    "Real-calibration seed replay and output metadata/finite-range/convergence checks; synthetic seed/range checks.",
+    "Complete failed-attempt and budget-skipped task inventory."
+  ],
+  "sha256": {
+    "report.py": "0b5bf79b58609db93e460d672b61fe61f28d0694ab09d027e1edfdf2ebc7d19e",
+    "analyze.py": "aad32465b015659e3790da39cec12ad360ba9a1393617680085e71f1a92b3a5b",
+    "verify_results.py": "c679d7251bced31090286b233bb750d6a94228753de2f65507b67f5293ad285c",
+    "summarize_execution.py": "399add44212376659119950b90f6f5a9df648910b7cee12e2465c9750b6d4a69",
+    "write_reports.py": "97fd6d0bb57fccf8bdf7eff06b6ca449bf5df32899385fbdac7bf29d97d3ac9a"
+  }
+}

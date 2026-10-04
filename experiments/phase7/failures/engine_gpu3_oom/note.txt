@@ -1,0 +1,1 @@
+One u1std worker grew to 7.3 GB on GPU 3 (allocator fragmentation: the graph tensor is re-allocated every batch) and another worker hit CUDA OOM. Added torch.cuda.empty_cache() every 8 batches and PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True; scores are unaffected. Missing tasks are re-run.

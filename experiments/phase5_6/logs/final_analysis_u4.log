@@ -1,0 +1,7 @@
+near_none      frozen_v5 93.44/27.08  locked 94.88/21.13  zeta 91.94/30.35  M0xlp_zero 93.72/25.75
+               locked - frozen: FPR95 -5.94 [-6.83, -5.05]  AUROC +1.44 [+1.23, +1.64] (n=5)
+near_TINS      frozen_v5 93.32/27.54  locked 94.85/21.20  zeta 91.74/31.39  M0xlp_zero 93.62/26.16  base_only 63.04/87.52
+               locked - frozen: FPR95 -6.34 [-7.20, -5.48]  AUROC +1.53 [+1.30, +1.75] (n=5)
+near_MCM       frozen_v5 93.45/27.08  locked 94.88/21.12  zeta 91.98/30.33  M0xlp_zero 93.73/25.76  base_only 68.41/85.69
+               locked - frozen: FPR95 -5.96 [-6.85, -5.06]  AUROC +1.44 [+1.23, +1.64] (n=5)
+{"F1": {"mean": -5.941333333333333, "lo": -6.834408203568731, "hi": -5.048258463097935, "n": 5}, "F2": {"mean": -6.340444444444443, "lo": -7.201403114680378, "hi": -5.4794857742085075, "n": 5}, "confirmed": true}

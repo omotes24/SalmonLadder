@@ -1,0 +1,42 @@
+{
+ "amendment": 3,
+ "to": "prereg_p7.json (sha256 345b9704...), amendment_01.json (sha256 9832dd11...) and amendment_02.json (sha256 dca23389...)",
+ "written_utc": "2026-10-03T17:46:43Z",
+ "origin": "User (2026-10-04 JST, after the Phase 7 report listed the lighter encoders as waiting for permission to download): 「ダウンロードの許可待ちとは？いいよ」",
+ "status_at_writing": "Seen so far: every result of Phase 7, including B on U1 / U2 for the 11 registered single views and 9 pairs and the locked extension. None of the three encoders below has been downloaded; no feature or score of them exists. U1 and U2 were scored before (Phase 4 and Phase 7): they are 'not used for selection', not 'unused'. Nothing is selected in this amendment.",
+ "B_additional_views": {
+  "kind": "descriptive addition to B, registered after the B results were seen (post hoc); no hypothesis is tested and nothing is selected",
+  "views": {
+   "D3S": "DINOv3 ViT-S/16 (timm vit_small_patch16_dinov3.lvd1689m): CLS token after the final norm (forward_features()[:, 0]), L2-normalised, fp32, TF32 off; 256 px (Resize 293 bicubic + CenterCrop 256, ImageNet mean/std) exactly as D3B / D3L",
+   "D3SP": "DINOv3 ViT-S+/16 (timm vit_small_plus_patch16_dinov3.lvd1689m): same read-out and input",
+   "RN50": "CLIP RN50 image embedding (OpenAI weights RN50.pt, loaded with jit=False through the OpenAI CLIP package vendored in TINS, i.e. the loader of the CLIP ViT-B/16 view; half precision on the GPU as that view; its own preprocessing: Resize 224 bicubic + CenterCrop 224, CLIP mean/std), L2-normalised"
+  },
+  "weights": {
+   "D3S": "Hugging Face hub, timm/vit_small_patch16_dinov3.lvd1689m, model.safetensors (about 90 MB), DINOv3 License (as the B/16 and L/16 files accepted in Phase 6)",
+   "D3SP": "Hugging Face hub, timm/vit_small_plus_patch16_dinov3.lvd1689m, model.safetensors (about 120 MB), DINOv3 License",
+   "RN50": "https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt (about 250 MB; the loader verifies this sha256), MIT License",
+   "permission": "given by the user for these three files; nothing else is downloaded",
+   "record": "file sizes and sha256 are written to results/weights_p7b.json before any image is opened"
+  },
+  "eligibility": "none of the three was trained with ImageNet-1K labels (DINOv3: self-supervised distillation on LVD-1689M; CLIP: image-text pairs), so the exclusion rule of B does not apply",
+  "sets": [
+   "D3S",
+   "D3SP",
+   "RN50",
+   "S14+D3S",
+   "D3S+D3SP",
+   "S14+RN50"
+  ],
+  "why_these_pairs": "small-end counterparts of registered pairs: one family (D3B+D3L -> D3S+D3SP), two families (L14+D3L -> S14+D3S), with a CLIP image tower (S14+CLIP -> S14+RN50). A pair is the product over its views, computed from the single-view runs.",
+  "unchanged": "Everything else as registered for B: the frozen hyper-parameters (thresholds 0.3 / 0.2 / 0.10191613435745239, k = 10, gamma = 1, lambda = 0.9, 15 sweeps, warm start), the candidate classes K(x) and s0 from CLIP ViT-B/16, the 16 shots (12 + 4), the streams (U1: 5 splits x 3 draws x 3 orders; U2: 5 draws x 3 orders; run7.py experiments u1w / u2w), the read-outs (static p, zeta, memory only, REPRISE, the locked extension of selection_lock_p7.json), the units (U1 split, U2 draw) and the paired 95% t intervals.",
+  "outcomes": "the columns of the B table: parameters of the image encoder, encoding time per image (RTX 2080 Ti, batch 64, synthetic input, 3 warm-up + 10 timed batches; fp32 for the DINOv3 encoders, fp16 for RN50 as loaded; DINOv2 ViT-S/14 is timed again in the same session as a reference), 12-shot nearest-class-mean accuracy on the U1 ID images, U1 AUROC / FPR95 of static p, zeta, REPRISE and the extension, U2 FPR95 of zeta, REPRISE and the extension, REPRISE - zeta and extension - REPRISE",
+  "reporting": "all six sets are reported whatever the outcome and are marked as added after the first results. Statements that count views ('k of n single views', ranges over views) are recomputed over all 14 single views and 12 pairs. The results of the 20 registered sets must not change (checked against the earlier an_b.json).",
+  "not_used": [
+   "OpenOOD v1.5 test (6 uses so far)",
+   "ImageNet val",
+   "Four-OOD",
+   "U4 and the dataset banks (B is U1 / U2 only)"
+  ],
+  "verification": "verify7.py recomputes the six sets with its own AUROC / FPR95 and unit aggregation; file counts per view are checked (45 / 15)"
+ }
+}

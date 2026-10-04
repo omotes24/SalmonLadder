@@ -1,0 +1,350 @@
+{
+  "completion": {
+    "primary": {
+      "completed": 30,
+      "planned": 30
+    },
+    "tuning": {
+      "completed": 0,
+      "planned": 30
+    },
+    "capacity": {
+      "completed": 30,
+      "planned": 30
+    },
+    "baselines": {
+      "completed": 30,
+      "planned": 30
+    },
+    "real_calibration": {
+      "completed": 50,
+      "planned": 50
+    },
+    "synthetic": {
+      "completed": 200,
+      "planned": 200
+    }
+  },
+  "final_dispatch_active": false,
+  "hard_limit_gpu_hours": 8,
+  "charged_gpu_hours_conservative": 7.116052746747931,
+  "measured_successful_dispatch_gpu_hours": 6.6532512228221945,
+  "pilot_and_startup_allowance_gpu_seconds": 200,
+  "failed_attempts": [
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep0",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.15087546780705,
+      "gpu": 0
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep1",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.10772208869457,
+      "gpu": 1
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep2",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.06145410612226,
+      "gpu": 2
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep3",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.03260466083884,
+      "gpu": 3
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep4",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.4927062988281,
+      "gpu": 0,
+      "seconds_lower_bound": 64.04727387428284,
+      "seconds_upper_bound": 300.4927062988281,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep5",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.45275926589966,
+      "gpu": 1,
+      "seconds_lower_bound": 65.03432035446167,
+      "seconds_upper_bound": 300.45275926589966,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep6",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.41299962997437,
+      "gpu": 2,
+      "seconds_lower_bound": 64.09456634521484,
+      "seconds_upper_bound": 300.41299962997437,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    },
+    {
+      "ledger": "history0",
+      "stage": "real_calibration",
+      "name": "rep7",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.3743646144867,
+      "gpu": 3,
+      "seconds_lower_bound": 64.43192911148071,
+      "seconds_upper_bound": 300.3743646144867,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    }
+  ],
+  "unexecuted_individual_tasks": [
+    {
+      "stage": "tuning",
+      "name": "draw0_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    }
+  ],
+  "unexecuted_counts": {
+    "('tuning', 'BUDGET_NOT_ADMITTED')": 30
+  },
+  "primary_peak_cpu_GiB": 3.1669769287109375,
+  "primary_peak_gpu_allocated_GiB": 0.29400634765625,
+  "primary_peak_gpu_reserved_GiB": 9.84765625,
+  "cost_scope": "Allocated process wall time summed over GPUs. A conservative bound, not device active-kernel time. Previous failure bounds include paused-supervisor time. Cached features are reused; no end-to-end feature-extraction benchmark or monetary electricity estimate.",
+  "new_holdout_opened": false,
+  "selection_data": "previously used dev1 only",
+  "out_of_scope": [
+    "Phase3 controlled recurrence",
+    "Phase4 operational rates and end-to-end costs",
+    "Phase5 new holdout and confirmatory Holm tests"
+  ],
+  "additional_limitations": [
+    "Two extra LP/REPRISE graph configurations require the complete tuning stage; any budget-skipped stage remains unexecuted.",
+    "AdaNeg_type and OODD_type are explicitly simplified surrogates, not official method reproductions.",
+    "Real-feature ID distribution shift was not run; synthetic shift was run."
+  ]
+}

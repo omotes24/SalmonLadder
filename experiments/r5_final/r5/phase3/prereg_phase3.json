@@ -1,0 +1,127 @@
+{
+ "name": "R5 Phase 3: final evaluation on the test data, run once",
+ "written_utc": "2026-09-27T03:46:09Z",
+ "provenance": {
+  "round2_decision_sha256": "d865c063cd1ab82fcf0dfa78851c2a2ee18a7f6aea34156dc05e13dc08fe3f49",
+  "round2_verdict": "confirmed: v5 = round-2 configuration",
+  "prereg_phase2_round2_sha256": "bc49cc233b49730bdad450b718886d44a04553f9eb883aa98be78b1bbb8161a6"
+ },
+ "configs": {
+  "v4": {
+   "n0": 12,
+   "K": 5,
+   "m": 2,
+   "gamma": 3.0,
+   "lam": 0.9,
+   "kg": 10,
+   "thresholds": [
+    0.4,
+    0.3,
+    0.1
+   ]
+  },
+  "v5": {
+   "n0": 48,
+   "K": 20,
+   "m": 1,
+   "gamma": 1.0,
+   "lam": 0.9,
+   "kg": 10,
+   "thresholds": [
+    0.3,
+    0.2,
+    0.10191613435745239
+   ]
+  }
+ },
+ "baselines": {
+  "knn_k": 3,
+  "maha_lam": 0.9,
+  "knn_k_l14": 5,
+  "maha_lam_l14": 0.95,
+  "knnF_k": 200,
+  "mahaF_lam": 0.01,
+  "adaneg_tau": 0.55,
+  "adaneg_lam": 2.0,
+  "oodd_K": 8192,
+  "dev1_selection_evidence": {
+   "adaneg_top": {
+    "s_adaneg_t0.55_l2": 37.900000000000006,
+    "s_adaneg_t0.55_l3": 38.17466666666667,
+    "s_adaneg_t0.6_l2": 38.264,
+    "s_adaneg_t0.5_l3": 38.277333333333324,
+    "s_adaneg_t0.5_l4": 38.462666666666664,
+    "s_adaneg_t0.5_l2": 38.49333333333333,
+    "s_adaneg_t0.7_l1": 38.545333333333346,
+    "s_adaneg_t0.55_l4": 38.59066666666667
+   },
+   "oodd_top": {
+    "s_oodd_K8192": 37.81333333333332,
+    "s_oodd_K16384": 38.256,
+    "s_oodd_K4096": 38.82266666666666,
+    "s_oodd_K1024": 50.22933333333334,
+    "s_oodd_K256": 58.50933333333333
+   }
+  }
+ },
+ "shots": "the TINS 16-shot list used throughout (12 support + 4 calibration per class); M2b replaces the 4 calibration shots by 4 OpenOOD ID-val images per class (seeded), support unchanged",
+ "benchmarks": {
+  "F1_openood": "OpenOOD v1.5 ImageNet-1K; one stream per OOD set (ID = test_imagenet); near = SSB-hard, NINCO; far = iNaturalist, Textures, OpenImage-O; order seeds 123..127; TINS from the unchanged-upstream runs",
+  "F1_fourood": "Four-OOD (ID = ImageNet-1K val 50,000; iNaturalist, SUN, Places, DTD); order seeds 123..125",
+  "E2_E4_test": "p3_streams.py specs (OOD ratio, classes x images, ID bursts, ID first, pseudo-bursts, mixed OOD, delayed classes), order seeds 123..125 each",
+  "F2_cub": "SSB CUB (known 100 / unknown Easy, Medium, Hard), 16 train shots per known class, seeds 123..125",
+  "F3_camera_trap": "not run in this registration (time / camera metadata of the felid data not available on hades)"
+ },
+ "methods": [
+  "tins",
+  "v4",
+  "v4_lp",
+  "v5",
+  "v5_lp",
+  "v5_static",
+  "v5_mem",
+  "v5_vis",
+  "reprise_clip",
+  "adaneg",
+  "oodd",
+  "knn16_2view",
+  "maha16_2view",
+  "knn16_l14",
+  "maha16_l14",
+  "knnF_l14",
+  "mahaF_l14",
+  "protoF_l14",
+  "v5_m2b (OpenOOD)",
+  "v5_dino1",
+  "v5_l14only",
+  "E5: v5_noK, v5_mem_pure, v5_mem_allood, v5_lp_keep_id, v5_lp_keep_ood (oracles are diagnostics)",
+  "LoCoOp MCM / GL-MCM (official 16-shot checkpoints, seeds 1-3)",
+  "GalLoP: not run (no public checkpoint; to be added later by the user)"
+ ],
+ "metrics": "AUROC and FPR95 (upstream get_measures) per stream; OpenOOD near / far = means over their sets; Four-OOD average; within-batch AUROC; ID admission and Pr(p_t <= 0.1 | ID)",
+ "hypotheses": {
+  "H1": "entrance + memory add over LP on test: v5 - v5_lp near FPR95 < 0 (order-level paired 95% t interval, OpenOOD)",
+  "H2": "v5 vs v4 near FPR95 (the round-2 changes transfer to test)",
+  "H3": "v5 vs TINS and vs the strongest same-feature baseline (maha16_2view) near FPR95",
+  "H4": "M2b: ID-val calibration brings Pr(p_t <= 0.1 | ID) and the ID admission rate close to nominal",
+  "H5": "SSB-hard contamination: v5_dino1 vs v5 on SSB-hard relative to NINCO"
+ },
+ "rules": "nothing is selected or tuned on these results; every number is reported; the test data are read only by the scripts listed under code, and only after this file is frozen (unseal token = its sha256)",
+ "code": {
+  "scripts/p3_eval.py": "50eb97093f7adb967ec1fb3ed638342613e79f9e6ac5feeb0a2f5ee27ce0bb06",
+  "scripts/p3_static.py": "887b5248ef039499d30b8c3d095908d991b601eccee19cd85c4e793871936046",
+  "scripts/p3_extract.py": "349cb7da3a20413441db52d83f352205489cf2a4fc381dc593350b1c0f438c8f",
+  "scripts/p3_m2b.py": "513bbc2bb9ed4008a28c70ee44bab5f8880718a2eb87a223bfb2567474e5ecb6",
+  "scripts/p3_streams.py": "2b139f7ad0a6e6744dfc7a9888e367f70695802b26daac4f28483f4df38d9a6a",
+  "scripts/p3_cub.py": "fb253cf6e32c266abd20c4c8670926e3bf9c12e5d26c6f78903e99d0c2ac0ea6",
+  "scripts/p3_locoop.py": "74af85c487b321883f6e0e2bae8788376396c09e8d33a782ad73d2aad95d80cd",
+  "scripts/p3_locoop_run.py": "bddeb61d86469d684adc3504b0516ce5e4b5566b96fbd88c3711bb5b6aabfab5",
+  "scripts/p3_report.py": "ba7bc79643ba9761b2727d4cfb9a39bf20eb14c324010cdf546aafc7f329547d",
+  "scripts/r5_e1.py": "61342b5535b0edf04add05a9b3733d3c18dcb31be03ae506aef0c2953aefb7b3",
+  "scripts/run_tins_test.py": "e539bc78df0d7aebe4ca39bb89f72e4abbbcd6742d9328961a5a8b36f0d553a2",
+  "vins/r5.py": "8249ea0687cee3582d5c15e706d1dd4da8db848141afcdf519d23e9b859aadfc",
+  "vins/memory.py": "ff774707cb9ac68b1c100af05001e77f55f5f671d96c3853867eaf471184da06",
+  "vins/dview.py": "055ba3204e29a776a2b7b49be4812e7767a7503f9733af1fe346fef8a7b9be04"
+ },
+ "sha256_of_this_file_is_logged": true
+}

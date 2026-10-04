@@ -1,0 +1,10 @@
+[
+  {
+    "utc": "2026-09-27T11:38:55.875843+00:00",
+    "stage": "intermediate_report",
+    "script": "analyze.py",
+    "failure": "pandas EmptyDataError: real calibration report was empty before any real run completed",
+    "fix": "skip empty intermediate CSV; detector code and scores unchanged",
+    "gpu_seconds": 0
+  }
+]

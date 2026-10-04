@@ -1,0 +1,100 @@
+{
+ "S14": {
+  "params_M": 22.1,
+  "ms_per_image": 1.41,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.38
+ },
+ "B14": {
+  "params_M": 86.6,
+  "ms_per_image": 4.55,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.88
+ },
+ "L14": {
+  "params_M": 304.4,
+  "ms_per_image": 15.09,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 1.87
+ },
+ "G14": {
+  "params_M": 1136.5,
+  "ms_per_image": 55.9,
+  "input": 224,
+  "batch": 32,
+  "gpu_mem_GB": 4.9
+ },
+ "D3B": {
+  "params_M": 85.6,
+  "ms_per_image": 5.16,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 0.9
+ },
+ "D3L": {
+  "params_M": 303.1,
+  "ms_per_image": 17.0,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 1.88
+ },
+ "DINO1": {
+  "params_M": 85.8,
+  "ms_per_image": 3.54,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.8
+ },
+ "MAE": {
+  "params_M": 85.8,
+  "ms_per_image": 3.54,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.8
+ },
+ "CLIP": {
+  "params_M": 86.2,
+  "ms_per_image": 1.29,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.68
+ },
+ "CLIPL": {
+  "params_M": 304.0,
+  "ms_per_image": 16.24,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 2.18
+ },
+ "SIG2L": {
+  "params_M": 316.0,
+  "ms_per_image": 15.77,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 1.98
+ },
+ "D3S": {
+  "params_M": 21.6,
+  "ms_per_image": 1.7,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 0.4
+ },
+ "D3SP": {
+  "params_M": 28.7,
+  "ms_per_image": 2.14,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 0.62
+ },
+ "RN50": {
+  "params_M": 38.3,
+  "ms_per_image": 0.65,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.63
+ }
+}

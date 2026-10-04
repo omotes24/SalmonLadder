@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/omote/reprise_p4_20260928/code/analyze_eval.py", line 84, in <module>
+    main()
+  File "/home/omote/reprise_p4_20260928/code/analyze_eval.py", line 37, in main
+    df = load()
+         ^^^^^^
+  File "/home/omote/reprise_p4_20260928/code/analyze_eval.py", line 16, in load
+    return pd.concat([pd.read_parquet(f) for f in fs], ignore_index=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 808, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+EVAL_DONE

@@ -1,0 +1,47 @@
+{
+ "name": "R5 Phase 2 round 2 (v5), requested by the user after round 1; written before any round-2 dev2 result exists",
+ "written_utc": "2026-09-27T02:35:25Z",
+ "context": "round 1 (r5/prereg_phase2.json) selected v4 + m=1 entrance; the dev1 sensitivity analysis (an analysis, not a decision input in round 1) showed larger dev1 gains for some settings. dev2 has not been evaluated for any of the round-2 settings below except m=1 alone.",
+ "baseline": "v4 (n0=12, |K|=5, m=2 with entrance 0.40/0.30/0.10, LP kg=10, lambda(alpha)=0.9, gamma=3, 15 warm sweeps)",
+ "factors_in_order": {
+  "n0": [
+   12,
+   24,
+   48
+  ],
+  "K": [
+   5,
+   10,
+   20
+  ],
+  "m": [
+   "2 (entrance 0.40/0.30/0.10)",
+   "1 (entrance 0.30/0.20/0.10191613, frozen from the dev1 tuning in (2))"
+  ],
+  "gamma": [
+   0,
+   0.5,
+   1,
+   2,
+   3
+  ],
+  "lambda": [
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9
+  ],
+  "kg": [
+   5,
+   7,
+   10,
+   15
+  ]
+ },
+ "search": "coordinate-wise on dev1 in the order above, starting from v4; for each factor every level is evaluated with the other factors at their current values; the level with the lowest mean dev1 near FPR95 among levels whose mean dev1 far FPR95 difference to v4 is <= +0.5 is kept (ties keep the current value)",
+ "conditions": "the 15 matched conditions per dev split (5 shot draws x 3 order seeds); score S_final x prod_views p_t x prod_views p_LP; draw-level means, 95% t interval over draws",
+ "selection_dev1": "the final configuration must beat v4 on dev1 (upper end of the 95% CI of the near FPR95 difference < 0)",
+ "confirmation_dev2": "upper end of the 95% CI of the near FPR95 difference to v4 on dev2 < 0 and mean far FPR95 difference <= +0.5",
+ "adoption": "if confirmed, v5 = the round-2 configuration; otherwise v5 = the round-1 decision (v4 + m=1 entrance). Nothing else is changed; test data are not used."
+}

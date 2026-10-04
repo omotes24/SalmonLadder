@@ -1,0 +1,306 @@
+{
+ "title": "REPRISE Phase 7: additional experiments on five limitations (first appearance, backbone dependence, separation of memory and propagation, dataset dependence, design space of stream conditions)",
+ "written_utc": "2026-10-03T12:38:42Z",
+ "request": "User (2026-10-03): 追加実験をしてください。・初出の画像への対応 ・DINOv2依存(軽量モデルやその他) ・メモリと伝播の役割を完全に分離する ・データセット依存 ・ストリーム条件の設計空間",
+ "status_at_writing": "Written before any Phase 7 score is computed. Existing results that were already seen: Phase 4 (U1/U2 with frozen v5 and the minimal configurations, Exp 4-8), Phase 5 (dev1/dev2/U4/OpenOOD test with frozen v5 and the two-sided lock), Phase 6 (dev1/dev2 with DINOv3 views).",
+ "frozen_method": {
+  "name": "REPRISE v5 (unchanged)",
+  "views": [
+   "DINOv2 ViT-B/14 CLS",
+   "DINOv2 ViT-L/14 CLS"
+  ],
+  "input": "Resize 256 bicubic + CenterCrop 224",
+  "labels": "16 images per ID class: 12 support + 4 calibration",
+  "static": {
+   "n0": 48,
+   "K": "CLIP ViT-B/16 zero-shot top-20 ID classes",
+   "m": 1
+  },
+  "entrance_thresholds": [
+   0.3,
+   0.2,
+   0.10191613435745239
+  ],
+  "graph": {
+   "k": 10,
+   "gamma": 1.0,
+   "lambda": 0.9,
+   "sweeps": 15,
+   "start": "warm (previous batch)"
+  },
+  "score": "s0 * prod_views p_M * p_LP; standalone means s0 = 1",
+  "zeta": "best minimal configuration of Phase 4: robust z of the zero-start u through the normal cdf, k10 g1 l0.9",
+  "batch": 256,
+  "metrics": "metrics_p4.metrics: AUROC (ID positive), FPR95 at the empirical threshold accepting >= 95% of ID (ties accepted)"
+ },
+ "data_policy": {
+  "never_opened": [
+   "OpenOOD v1.5 test images (sealed manifest guard; 6 uses so far, no 7th in this phase)",
+   "ImageNet-1K val",
+   "Four-OOD sets (iNaturalist / SUN / Places / DTD under datasets/extra_ood)",
+   "NINCO / SSB-hard"
+  ],
+  "selection": "dev1 only (free exploration). dev2: confirmation of a locked candidate only, at most 3 attempts. No selection on any other data.",
+  "evaluation_banks": "U1, U2 (Phase 4) and U4 (Phase 5) were scored before (frozen v5; U4 also the Phase 5 lock). Here they are used (i) descriptively with frozen methods, no selection, and (ii) for a single evaluation of a candidate locked on dev1/dev2 (experiment A). They are 'not used for selection', not 'unused'.",
+  "wildlife": "WILD / bigcats (U3) are not used.",
+  "downloads": "None. Only weights and data already on hades. Encoders that would need a download (DINOv3 ViT-S/16, S+/16, ConvNeXt-T; CLIP RN50) are run only if the user permits it later; they would be reported as an addendum.",
+  "post_hoc": "Anything decided after seeing Phase 7 scores (outside the dev1 selection of A) is labelled post hoc / descriptive."
+ },
+ "A_first_appearance": {
+  "definitions": {
+   "appearance_index": "k = 1 + number of earlier stream images (arrival order) of the same unknown class; first appearance: k = 1",
+   "bins": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     11,
+     20
+    ],
+    [
+     21,
+     30
+    ],
+    [
+     31,
+     50
+    ]
+   ],
+   "miss_rate": "share of the OOD images of a bin with score >= the stream's ID-95% threshold (the FPR95 threshold of that detector on that stream)",
+   "auroc_bin": "AUROC of the bin's OOD images against all ID images of the stream"
+  },
+  "A1_descriptive": "U1 (5 splits x 3 draws x 3 orders, Phase 4 scores): miss rate and AUROC per bin for static p, memory only, p_LP only, zeta, static x p_LP, frozen REPRISE. Unit: split.",
+  "A2_candidates": {
+   "form": "sum over views of [ a * log p_static + log p_mem + trunc_tau(log p_lp) ], entrance sets, graph and thresholds frozen",
+   "memory_readout": {
+    "M": "frozen g = d - (rho - med)/mad",
+    "Mh<c>, c in {0,1,2,3,4}": "one-sided (hinge) memory: g = d + max(0, c - (rho - med)/mad); the calibration images are scored with the same formula. c -> infinity is the frozen read-out, an empty memory gives the static p",
+    "Mmin": "min(p_M, p_static) per view"
+   },
+   "static_weight_a": [
+    0,
+    0.5,
+    1
+   ],
+   "lp": {
+    "lp0": "frozen (warm start)",
+    "lp": "every node from 0"
+   },
+   "lp_truncation_tau": {
+    "values": [
+     1,
+     0.5,
+     0.2
+    ],
+    "rule": "log p_lp replaced by min(0, log(p_lp / tau)); tau = 1 is no truncation"
+   },
+   "n_candidates": 126,
+   "frozen_is": "M, a=0, lp0, tau=1",
+   "exploration": "dev1 may be explored further (new candidates) before the lock; every candidate ever evaluated on dev1 is listed in the report."
+  },
+  "A2_selection_rule_dev1": {
+   "streams": "dev1 near and far, 5 draws x 3 orders, standalone unless stated; unit: draw",
+   "objective": "minimise F1 = first-appearance (k = 1) miss rate on the near streams",
+   "constraints": [
+    "overall near FPR95 <= frozen + 0.30",
+    "far FPR95 <= frozen + 0.50",
+    "x TINS near FPR95 <= frozen x TINS + 0.30"
+   ],
+   "tie_break": "among candidates within 0.5 points of the minimum F1: fewest changed components (a != 0, memory != M, lp != lp0, tau != 1); then larger c; then larger tau; then smaller a",
+   "no_selection": "if no candidate other than frozen satisfies the constraints, or the F1 gain of the selected one is < 1.0 point, no remedy is locked and the negative result is reported"
+  },
+  "A2_confirmation_dev2": {
+   "criteria": [
+    "F1 difference (candidate - frozen): 95% t interval upper bound < 0",
+    "overall near FPR95 difference: point <= +0.30 and upper bound < +1.0"
+   ],
+   "attempts": "at most 3 locked candidates"
+  },
+  "A3_evaluation_after_lock": {
+   "lock": "selection_lock_p7.json (sha256) written after the dev2 confirmation and before any candidate metric is computed on U1/U4",
+   "U1_U4_natural": "45 streams each; F1, miss rate per bin, overall AUROC / FPR95 (standalone, x TINS), candidate - frozen, unit split",
+   "intervention": "Exp 4 design (U1, 250 split-class pairs, history 768 ID + 256 OOD, r in {0,1,2,5,10,20} same-class replacements): AUROC of the candidate, frozen REPRISE and static p; bootstrap over pairs",
+   "criteria": {
+    "P1": "U1 F1 difference (candidate - frozen): upper bound < 0",
+    "P2": "U1 overall standalone FPR95 difference: upper bound < +1.0",
+    "P3": "intervention r = 0: AUROC(candidate) - AUROC(static p), bootstrap 95% lower bound > -0.5 ('first-appearance deficit removed')"
+   }
+  }
+ },
+ "B_backbone": {
+  "design": "Frozen hyper-parameters, K(x), s0, shots and streams; only the visual views change. Every single view is run once per stream; a multi-view result is the product over its views (v5 has no cross-view interaction).",
+  "views": {
+   "S14": "DINOv2 ViT-S/14 CLS (torch hub, cached)",
+   "B14": "DINOv2 ViT-B/14 CLS (frozen cache)",
+   "L14": "DINOv2 ViT-L/14 CLS (frozen cache)",
+   "G14": "DINOv2 ViT-g/14 CLS",
+   "D3B": "DINOv3 ViT-B/16 CLS after final norm, 256 px (Resize 293 + CenterCrop 256), as Phase 6",
+   "D3L": "DINOv3 ViT-L/16, same",
+   "DINO1": "DINO ViT-B/16 (ImageNet-1K images, no labels; timm vit_base_patch16_224.dino) CLS",
+   "MAE": "MAE ViT-B/16 (ImageNet-1K images, no labels; timm vit_base_patch16_224.mae) CLS",
+   "CLIP": "CLIP ViT-B/16 image embedding (the VLM's own features: no extra encoder)",
+   "CLIPL": "CLIP ViT-L/14 image embedding (transformers, cached)",
+   "SIG2L": "SigLIP2 large patch16-256 image embedding (transformers, cached)"
+  },
+  "input": "DINOv2 / DINO / MAE: Resize 256 bicubic + CenterCrop 224, ImageNet mean/std. DINOv3: 256 px as above. CLIP / SigLIP2: their own processors.",
+  "excluded": "ImageNet-1K-supervised encoders (ResNet, ConvNeXt, ViT-augreg, BEiT/Swin fine-tuned): the unknown classes of U1 are ImageNet-1K classes, so their labels were used in pre-training.",
+  "sets": [
+   "S14",
+   "B14",
+   "L14",
+   "G14",
+   "D3B",
+   "D3L",
+   "DINO1",
+   "MAE",
+   "CLIP",
+   "CLIPL",
+   "SIG2L",
+   "B14+L14 (frozen)",
+   "S14+B14",
+   "S14+CLIP",
+   "B14+CLIP",
+   "L14+CLIP",
+   "L14+G14",
+   "D3B+D3L",
+   "L14+D3L",
+   "CLIP+CLIPL"
+  ],
+  "data": "U1: 5 splits x 3 draws x 3 orders; U2 (ImageNet-O): 5 draws x 3 orders. Features of the new views are extracted for the shot, ID-evaluation and OOD-evaluation images of the Phase 4 pool and ImageNet-O.",
+  "outcomes": "standalone and x TINS AUROC / FPR95 of static p, zeta, memory only, REPRISE; REPRISE - zeta and REPRISE - static p within each view set (paired, unit split / draw); 12-shot nearest-class-mean accuracy on the ID evaluation images, parameters, encoding time per image (RTX 2080 Ti, fp32).",
+  "confirmatory_H_B": {
+   "statement": "Views (L14, D3L) give a lower U1 standalone FPR95 than the frozen (B14, L14) with v5 unchanged (configuration chosen post hoc on dev1/dev2 in Phase 6: -5.8 on both).",
+   "test": "paired difference over the 5 U1 splits (each the mean of 9 streams); confirmed if the 95% t interval upper bound < 0",
+   "secondary": "x TINS; U2"
+  },
+  "everything_else": "descriptive"
+ },
+ "C_separation": {
+  "C1_intervention_2x2": {
+   "data": "Exp 4 per-query scores (Phase 4, no new run): for each of the 250 split-class pairs and r in {1,2,5,10,20}, the history H_r with r same-class images and H_0 without.",
+   "cells": "score = log p_M[H_a] + log p_LP[H_b], (a,b) in {0,r}^2. In v5 the memory and the propagation do not read each other, so mixing the factors of two runs is exactly the intervention 'the recurrence is visible to the memory only / the graph only / both / neither'.",
+   "effects": "E_M = AUROC(r,0) - AUROC(0,0); E_G = AUROC(0,r) - AUROC(0,0); E_MG = AUROC(r,r) - AUROC(0,0); interaction I = E_MG - E_M - E_G. AUROC per pair: 8 class queries vs 64 common ID queries. Percentile bootstrap over pairs (10,000 resamples, seed 20261003) and split-cluster bootstrap. Also for the contents near / far / dup."
+  },
+  "C2_pure_signals": "U1 natural streams (45): three separate calibrated ranks per view: static (d), memory proximity alone (rank of the nearest-member distance rho against the calibration images' rho; no d), propagation (u). AUROC / FPR95 of each, of every product, and of the frozen p_M x p_LP; miss rate per appearance bin; overlap of detections at each detector's ID-95% threshold; Spearman correlation of the log ranks within ID and within OOD.",
+  "C3_history_2x2": {
+   "memory": {
+    "off": "static p (memory with no history)",
+    "on": "p_M"
+   },
+   "propagation": {
+    "alone": "graph = support + calibration + the image alone (no test-time information), zero start",
+    "batch": "graph = support + calibration + the current batch only",
+    "history": "frozen (all earlier batches, warm)"
+   },
+   "data": "U1: 'alone' on splits 1-5, draw 0, order 123 (5 streams; exact per-image computation); 'batch' and 'history' on all 45 streams",
+   "outcome": "AUROC / FPR95 of the cells; main effects and interaction of streaming memory and streaming propagation; unit split"
+  },
+  "all": "descriptive (frozen components only)"
+ },
+ "D_datasets": {
+  "protocol": "Same frozen configuration as ImageNet (nothing tuned). Views DINOv2 B/14 + L/14, K(x) from CLIP ViT-B/16 zero-shot on the ID class names (TINS positive prompt), 16 labelled images per ID class (12 + 4, seeded), batch 256, TINS order rule, 5 class splits x 3 orders; unit split. Bases: none and MCM.",
+  "datasets": {
+   "cub": "CUB-200-2011: 150 ID / 50 unknown classes (random); shots from the train split; ID stream = test images of the ID classes; OOD = test images of the unknown classes",
+   "cub_ssb": "SSB CUB (authors' split): 100 known classes, OOD = Easy / Medium / Hard test images (three streams per order); shots as Phase 3",
+   "cifar100": "CIFAR-100: 50 / 50 classes (random); shots from train; ID / OOD = test images",
+   "places365": "Places365-Standard val (100 per class): 292 / 73 classes; 16 shots per ID class from val, the other 84 are the ID stream; OOD = the 100 images of each unknown class. Images identical (sha256) to a sealed or Four-OOD image are dropped. Note: 5,500 val images of 275 classes served as far-OOD in the R5 development streams.",
+   "imagenet_r": "ImageNet-R (200 classes): 160 / 40 classes; 16 shots per ID class from ImageNet-R itself; ID = the other images of the ID classes (at most 100 per class, seeded); OOD = images of the unknown classes (at most 100 per class)",
+   "imagenet_sketch": "ImageNet-Sketch: the five U1 class splits (900 ID / 100 unknown sibling classes); 16 sketch shots per ID class, 20 ID images per ID class, 50 images per unknown class: the same classes and composition as U1, different image domain",
+   "U1_U2": "existing results (reference rows)"
+  },
+  "class_splits": "seeded (20261003 + split index); recorded with the bank before features are scored",
+  "matched_condition": "every dataset (and U1) also with the same composition: 40 unknown classes x 25 images (1,000 OOD) and 4,000 ID images (seeded subsamples of the natural streams; unknown classes with fewer than 25 images are not eligible), to separate the image domain from the stream composition",
+  "outcomes": "AUROC / FPR95 of static p, zeta, memory only, static x p_LP, REPRISE (standalone, x MCM); REPRISE - zeta and REPRISE - static p; same-feature kNN and Mahalanobis++ (Phase 3 registered parameters) as static references; descriptors: classes, unknown classes, images per unknown class, OOD share, stream length, 12-shot NCM accuracy, share of OOD images whose nearest stream neighbour (L/14) is of the same unknown class",
+  "all": "descriptive"
+ },
+ "E_stream_design_space": {
+  "bank": "U1 splits 1-5, shots of draw 0, frozen REPRISE and the reference detectors; standalone and x MCM (TINS is stream-dependent and is not re-run). Images of an unknown class: all 210 pool images of that class (shot / ID-evaluation / long / OOD-evaluation roles; none is used as a shot in that split).",
+  "E1_composition": {
+   "factors": {
+    "U (unknown classes)": [
+     10,
+     30,
+     100
+    ],
+    "m (images per unknown class)": [
+     1,
+     2,
+     5,
+     10,
+     20,
+     50,
+     100,
+     200
+    ],
+    "n_id": [
+     4500,
+     18000
+    ]
+   },
+   "kept": "cells with U*m >= 100 (19 per n_id level)",
+   "extra": "n_id = 72,000 (ID evaluation + long images) with U = 100 and m in {1, 5, 20, 50, 200}",
+   "replicates": "5 splits x 2 sampling/order seeds (n_id = 72,000: 1 seed)",
+   "order": "uniformly random",
+   "batch": 256
+  },
+  "E2_arrival_patterns": {
+   "compositions": {
+    "native": "U=100, m=50, n_id=18,000 (OOD 21.7%)",
+    "sparse": "U=100, m=10, n_id=18,000 (OOD 5.3%)"
+   },
+   "patterns": {
+    "random": "uniform",
+    "id_burst10": "ID in same-class runs of 10 (Exp 6)",
+    "ood_burst": "the images of an unknown class arrive consecutively, bursts at random positions",
+    "id_first": "the first half of the ID images before any OOD",
+    "ood_early": "all OOD within the first third of the stream",
+    "emerging": "unknown class j appears only after position 0.8 N j / U and is then spread uniformly over the rest",
+    "two_visits": "each unknown class arrives in two bursts (half each), one in the first 40% and one in the last 40% of the stream"
+   },
+   "replicates": "5 splits x 1 seed"
+  },
+  "E3_batch_size": {
+   "batch": [
+    1,
+    16,
+    64,
+    256
+   ],
+   "patterns": [
+    "random",
+    "ood_burst"
+   ],
+   "composition": "native",
+   "replicates": "5 splits x 1 seed"
+  },
+  "E4_time_course": "from the E1/E2 runs and the Phase 4 scores: ID false-alarm rate at a fixed threshold and OOD miss rate by stream decile",
+  "outcomes": "AUROC / FPR95 of static p, zeta, memory only, static x p_LP, REPRISE (and, after the lock of A, the locked candidate); differences REPRISE - static p and REPRISE - zeta per cell; response surface over (m, OOD share, stream length)",
+  "all": "descriptive (no selection); the m = 1 cells are streams made only of first appearances"
+ },
+ "statistics": {
+  "split_unit": "paired differences over the 5 splits (streams of a split averaged), 95% t interval (df = 4)",
+  "draw_unit": "dev1 / dev2 / U2: 5 draws (orders averaged), df = 4",
+  "pairs": "intervention: percentile bootstrap over the 250 pairs, plus a split-cluster bootstrap",
+  "multiplicity": "one confirmatory hypothesis in B and the criteria P1-P3 in A; everything else is descriptive and reported with intervals, without significance claims"
+ },
+ "verification": [
+  "engine7 reproduces the Phase 4 scores of U1 streams (static, memory, warm p_LP, zeta) and the Phase 5 dev scores",
+  "independent re-computation of the headline numbers from the saved scores",
+  "task counts and missing files",
+  "sealed-image guard in every extraction"
+ ],
+ "deviations": "recorded under $P7/failures and in the report"
+}

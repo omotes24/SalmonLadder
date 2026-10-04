@@ -1,0 +1,68 @@
+{
+ "utc": "2026-10-02T11:38:25Z",
+ "seed": 20261002,
+ "lock_sha256": "8fea3cbd77104a63dd40c3ec98c22290ca0204c9b6da3ae48ab2fdb218f6ae4a",
+ "wordnet_version": "3.0",
+ "n_pool": 84250,
+ "pool_roles": {
+  "shot": 48000,
+  "ideval": 20000,
+  "oodeval": 16250
+ },
+ "n_heldout_union": 325,
+ "n_heldout_union_in_U1": 213,
+ "split_overlap": {
+  "1-2": 25,
+  "1-3": 21,
+  "1-4": 22,
+  "1-5": 23,
+  "2-3": 28,
+  "2-4": 18,
+  "2-5": 25,
+  "3-4": 24,
+  "3-5": 23,
+  "4-5": 20
+ },
+ "n_phase4_pool_excluded": 175700,
+ "n_used_hashes": 319335,
+ "n_cross_class_duplicates": 33,
+ "rejected": {
+  "sealed_path": 0,
+  "sealed_hash": 82,
+  "used_hash": 282,
+  "duplicate": 1,
+  "cross_class_duplicate": 66
+ },
+ "splits": [
+  {
+   "split": 1,
+   "seed": 20261003,
+   "n_heldout": 100,
+   "n_also_in_U1": 71
+  },
+  {
+   "split": 2,
+   "seed": 20261004,
+   "n_heldout": 100,
+   "n_also_in_U1": 59
+  },
+  {
+   "split": 3,
+   "seed": 20261005,
+   "n_heldout": 100,
+   "n_also_in_U1": 64
+  },
+  {
+   "split": 4,
+   "seed": 20261006,
+   "n_heldout": 100,
+   "n_also_in_U1": 66
+  },
+  {
+   "split": 5,
+   "seed": 20261007,
+   "n_heldout": 100,
+   "n_also_in_U1": 64
+  }
+ ]
+}

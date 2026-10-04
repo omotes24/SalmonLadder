@@ -1,0 +1,5 @@
+/home/omote/reprise_p5_20261002/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{"exp": "u2std", "view": "D3L", "task": "U2_s0_d4_seed125", "n": 11999, "seconds": 14.3, "utc": "2026-10-03T14:44:48Z"}
+{"exp": "u2std", "view": "SIG2L", "task": "U2_s0_d4_seed125", "n": 11999, "seconds": 11.1, "utc": "2026-10-03T14:44:59Z"}
+fix_u2std rc 0

@@ -1,0 +1,13 @@
+2026-10-03T12:48:47Z start
+2026-10-03T12:50:08Z smoke ok: {"tag": "S14-DINO1-MAE-D3B-D3L-CLIPL-SIG2L", "shard": 0, "complete": "/home/omote/reprise_p7_20261003/features/u1x/S14-DINO1-MAE-D3B-D3L-CLIPL-SIG2L.shard0of4.limit96.npz", "n": 96, "seconds": 38.5, "dims": {"S14": 384, "DINO1": 768, "MAE": 768, "D3B": 768, "D3L": 1024, "CLIPL": 768, "SIG2L": 1024},
+2026-10-03T12:55:16Z stage1b start (shard 3 of pass 1 failed with CUDA OOM next to the regression test; re-split over GPUs 0-2)
+2026-10-03T13:26:42Z pass1 shards 0-2 done
+2026-10-03T13:39:36Z u1x pass1 merged
+2026-10-03T13:55:54Z banks built (line added by hand: the five build_info.json exist; the build subshell that writes this line was killed with the first orchestrator, and the deployed run_stage1b.sh still waited for it)
+2026-10-03T14:00:08Z cub merged
+2026-10-03T14:11:40Z cifar100 merged
+2026-10-03T14:19:21Z places365 merged
+2026-10-03T14:26:18Z inr merged
+2026-10-03T14:35:23Z insk merged
+2026-10-03T14:35:40Z datasets done
+2026-10-03T15:21:25Z STAGE1_DONE

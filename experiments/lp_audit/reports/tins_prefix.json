@@ -1,0 +1,10 @@
+{
+  "prefix_extended_max_error": 0.0,
+  "prefix_changed_future_max_error": 0.0,
+  "cached_full_stream_max_error": 0.0,
+  "n_prefix": 512,
+  "extended_n": 768,
+  "seconds": 20.484377164393663,
+  "gpu_seconds": 20.484377685934305,
+  "condition": "dev1 draw0 near seed123, complete batches; reset RNG each run; fresh internal bank each call"
+}

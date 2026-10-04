@@ -1,0 +1,26 @@
+{
+  "primary": {
+    "completed": 30,
+    "planned": 30
+  },
+  "tuning": {
+    "completed": 0,
+    "planned": 30
+  },
+  "capacity": {
+    "completed": 30,
+    "planned": 30
+  },
+  "baselines": {
+    "completed": 30,
+    "planned": 30
+  },
+  "real_calibration": {
+    "completed": 50,
+    "planned": 50
+  },
+  "synthetic": {
+    "completed": 200,
+    "planned": 200
+  }
+}

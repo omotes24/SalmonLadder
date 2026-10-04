@@ -1,0 +1,232 @@
+{
+ "prereg_sha256": "8bb64c4c2f698c0cc38501193b96e3e5caaf1ed3cd3a79183cfb1f078fcac36a",
+ "frozen": {
+  "m": 2,
+  "eps_admit": 0.1,
+  "m_mem": 2,
+  "kind": "diff"
+ },
+ "results": {
+  "ssb_hard": {
+   "n_ID": 45000,
+   "n_OOD": 49000,
+   "tins": {
+    "AUROC": 0.825244675510204,
+    "AUROC_sklearn": 0.825244675510204,
+    "FPR95_upstream": 0.562795918367347,
+    "FPR95_codex": 0.5626938775510204
+   },
+   "clavis": {
+    "AUROC": 0.8281217748299319,
+    "AUROC_sklearn": 0.8281217748299319,
+    "FPR95_upstream": 0.5478979591836735,
+    "FPR95_codex": 0.5476122448979592
+   },
+   "clavism": {
+    "AUROC": 0.873423838095238,
+    "AUROC_sklearn": 0.873423838095238,
+    "FPR95_upstream": 0.43018367346938774,
+    "FPR95_codex": 0.4301632653061224
+   },
+   "visual_g": {
+    "AUROC": 0.829730281632653,
+    "AUROC_sklearn": 0.829730281632653,
+    "FPR95_upstream": 0.5175918367346939,
+    "FPR95_codex": 0.5175918367346939
+   }
+  },
+  "ninco": {
+   "n_ID": 45000,
+   "n_OOD": 5879,
+   "tins": {
+    "AUROC": 0.8085098656234053,
+    "AUROC_sklearn": 0.8085098656234053,
+    "FPR95_upstream": 0.5541758802517435,
+    "FPR95_codex": 0.5541758802517435
+   },
+   "clavis": {
+    "AUROC": 0.8918524503411389,
+    "AUROC_sklearn": 0.8918524503411389,
+    "FPR95_upstream": 0.45671032488518454,
+    "FPR95_codex": 0.45654022792992005
+   },
+   "clavism": {
+    "AUROC": 0.9391942053637239,
+    "AUROC_sklearn": 0.9391942053637239,
+    "FPR95_upstream": 0.2466405851335261,
+    "FPR95_codex": 0.2463003912229971
+   },
+   "visual_g": {
+    "AUROC": 0.9202774734932245,
+    "AUROC_sklearn": 0.9202774734932245,
+    "FPR95_upstream": 0.2502126211940806,
+    "FPR95_codex": 0.2502126211940806
+   }
+  },
+  "inaturalist": {
+   "n_ID": 45000,
+   "n_OOD": 10000,
+   "tins": {
+    "AUROC": 0.9993152377777779,
+    "AUROC_sklearn": 0.9993152377777779,
+    "FPR95_upstream": 0.0019,
+    "FPR95_codex": 0.0019
+   },
+   "clavis": {
+    "AUROC": 0.9994199955555556,
+    "AUROC_sklearn": 0.9994199955555556,
+    "FPR95_upstream": 0.0017,
+    "FPR95_codex": 0.0017
+   },
+   "clavism": {
+    "AUROC": 0.9995216066666667,
+    "AUROC_sklearn": 0.9995216066666667,
+    "FPR95_upstream": 0.0013,
+    "FPR95_codex": 0.0013
+   },
+   "visual_g": {
+    "AUROC": 0.9896930844444445,
+    "AUROC_sklearn": 0.9896930844444445,
+    "FPR95_upstream": 0.023,
+    "FPR95_codex": 0.023
+   }
+  },
+  "textures": {
+   "n_ID": 45000,
+   "n_OOD": 5160,
+   "tins": {
+    "AUROC": 0.9835432601205858,
+    "AUROC_sklearn": 0.9835432601205858,
+    "FPR95_upstream": 0.07596899224806201,
+    "FPR95_codex": 0.07596899224806201
+   },
+   "clavis": {
+    "AUROC": 0.9815774117140397,
+    "AUROC_sklearn": 0.9815774117140397,
+    "FPR95_upstream": 0.08856589147286821,
+    "FPR95_codex": 0.08856589147286821
+   },
+   "clavism": {
+    "AUROC": 0.9852779801894918,
+    "AUROC_sklearn": 0.9852779801894918,
+    "FPR95_upstream": 0.06918604651162791,
+    "FPR95_codex": 0.06918604651162791
+   },
+   "visual_g": {
+    "AUROC": 0.9216179069767442,
+    "AUROC_sklearn": 0.9216179069767442,
+    "FPR95_upstream": 0.3313953488372093,
+    "FPR95_codex": 0.3313953488372093
+   }
+  },
+  "openimageo": {
+   "n_ID": 45000,
+   "n_OOD": 15869,
+   "tins": {
+    "AUROC": 0.9301021866532233,
+    "AUROC_sklearn": 0.9301021866532233,
+    "FPR95_upstream": 0.28105110592980026,
+    "FPR95_codex": 0.28105110592980026
+   },
+   "clavis": {
+    "AUROC": 0.9661075374069639,
+    "AUROC_sklearn": 0.9661075374069639,
+    "FPR95_upstream": 0.196609742264793,
+    "FPR95_codex": 0.196609742264793
+   },
+   "clavism": {
+    "AUROC": 0.9711929786235918,
+    "AUROC_sklearn": 0.9711929786235918,
+    "FPR95_upstream": 0.1522465183691474,
+    "FPR95_codex": 0.1521835024261138
+   },
+   "visual_g": {
+    "AUROC": 0.9491305774360914,
+    "AUROC_sklearn": 0.9491305774360914,
+    "FPR95_upstream": 0.24702249669166298,
+    "FPR95_codex": 0.24702249669166298
+   }
+  }
+ },
+ "means": {
+  "nearood": {
+   "tins": {
+    "AUROC": 0.8168772705668046,
+    "FPR95_codex": 0.558434878901382,
+    "FPR95_upstream": 0.5584858993095452
+   },
+   "clavis": {
+    "AUROC": 0.8599871125855354,
+    "FPR95_codex": 0.5020762364139396,
+    "FPR95_upstream": 0.502304142034429
+   },
+   "clavism": {
+    "AUROC": 0.9063090217294809,
+    "FPR95_codex": 0.3382318282645598,
+    "FPR95_upstream": 0.3384121293014569
+   },
+   "visual_g": {
+    "AUROC": 0.8750038775629387,
+    "FPR95_codex": 0.38390222896438725,
+    "FPR95_upstream": 0.38390222896438725
+   }
+  },
+  "farood": {
+   "tins": {
+    "AUROC": 0.970986894850529,
+    "FPR95_codex": 0.1196400327259541,
+    "FPR95_upstream": 0.1196400327259541
+   },
+   "clavis": {
+    "AUROC": 0.9823683148921863,
+    "FPR95_codex": 0.09562521124588708,
+    "FPR95_upstream": 0.09562521124588708
+   },
+   "clavism": {
+    "AUROC": 0.9853308551599168,
+    "FPR95_codex": 0.07422318297924724,
+    "FPR95_upstream": 0.07424418829359176
+   },
+   "visual_g": {
+    "AUROC": 0.9534805229524267,
+    "FPR95_codex": 0.20047261517629078,
+    "FPR95_upstream": 0.20047261517629078
+   }
+  }
+ },
+ "memory": {
+  "ssb_hard": {
+   "admitted": 26179,
+   "frac_ID_admitted": 0.10973333333333334,
+   "frac_OOD_admitted": 0.43348979591836734,
+   "seconds": 16.0
+  },
+  "ninco": {
+   "admitted": 8707,
+   "frac_ID_admitted": 0.10973333333333334,
+   "frac_OOD_admitted": 0.6410954243919034,
+   "seconds": 2.5
+  },
+  "inaturalist": {
+   "admitted": 14329,
+   "frac_ID_admitted": 0.10973333333333334,
+   "frac_OOD_admitted": 0.9391,
+   "seconds": 4.3
+  },
+  "textures": {
+   "admitted": 8093,
+   "frac_ID_admitted": 0.10973333333333334,
+   "frac_OOD_admitted": 0.6114341085271318,
+   "seconds": 2.3
+  },
+  "openimageo": {
+   "admitted": 18057,
+   "frac_ID_admitted": 0.10973333333333334,
+   "frac_OOD_admitted": 0.8267061566576344,
+   "seconds": 6.0
+  }
+ },
+ "clavis_reproduction_max_abs_diff_vs_first_eval": 0.0,
+ "view_seconds": 29.5,
+ "seconds": 69.0
+}

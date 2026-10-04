@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "Please cite this repository and the exact commit used for your experiments."
-title: "REPRISE: Research code and reproduction records"
+title: "Salmon Ladder: Research code and reproduction records"
 type: software
 authors:
   - family-names: "omote"
     affiliation: "d-hacks B3"
-repository-code: "https://github.com/omotes24/reprise"
+repository-code: "https://github.com/omotes24/SalmonLadder"
 abstract: "Code and frozen protocols for prototype, memory, and label-propagation based detection of recurring out-of-distribution images."

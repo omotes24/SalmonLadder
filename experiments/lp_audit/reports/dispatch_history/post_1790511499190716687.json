@@ -1,0 +1,616 @@
+{
+  "completed": [
+    {
+      "stage": "real_calibration",
+      "name": "rep0",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.15087546780705,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep1",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.10772208869457,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep2",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.06145410612226,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep3",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 66.03260466083884,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep4",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.4927062988281,
+      "gpu": 0,
+      "seconds_lower_bound": 64.04727387428284,
+      "seconds_upper_bound": 300.4927062988281,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep5",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.45275926589966,
+      "gpu": 1,
+      "seconds_lower_bound": 65.03432035446167,
+      "seconds_upper_bound": 300.45275926589966,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep6",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.41299962997437,
+      "gpu": 2,
+      "seconds_lower_bound": 64.09456634521484,
+      "seconds_upper_bound": 300.41299962997437,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep7",
+      "state": "FAILED",
+      "exit_code": 1,
+      "seconds": 300.3743646144867,
+      "gpu": 3,
+      "seconds_lower_bound": 64.43192911148071,
+      "seconds_upper_bound": 300.3743646144867,
+      "duration_status": "upper bound charged; dispatcher paused after job started"
+    }
+  ],
+  "active": [],
+  "pending": [
+    [
+      "real_calibration",
+      "rep8"
+    ],
+    [
+      "real_calibration",
+      "rep9"
+    ],
+    [
+      "real_calibration",
+      "rep10"
+    ],
+    [
+      "real_calibration",
+      "rep11"
+    ],
+    [
+      "real_calibration",
+      "rep12"
+    ],
+    [
+      "real_calibration",
+      "rep13"
+    ],
+    [
+      "real_calibration",
+      "rep14"
+    ],
+    [
+      "real_calibration",
+      "rep15"
+    ],
+    [
+      "real_calibration",
+      "rep16"
+    ],
+    [
+      "real_calibration",
+      "rep17"
+    ],
+    [
+      "real_calibration",
+      "rep18"
+    ],
+    [
+      "real_calibration",
+      "rep19"
+    ],
+    [
+      "real_calibration",
+      "rep20"
+    ],
+    [
+      "real_calibration",
+      "rep21"
+    ],
+    [
+      "real_calibration",
+      "rep22"
+    ],
+    [
+      "real_calibration",
+      "rep23"
+    ],
+    [
+      "real_calibration",
+      "rep24"
+    ],
+    [
+      "real_calibration",
+      "rep25"
+    ],
+    [
+      "real_calibration",
+      "rep26"
+    ],
+    [
+      "real_calibration",
+      "rep27"
+    ],
+    [
+      "real_calibration",
+      "rep28"
+    ],
+    [
+      "real_calibration",
+      "rep29"
+    ],
+    [
+      "real_calibration",
+      "rep30"
+    ],
+    [
+      "real_calibration",
+      "rep31"
+    ],
+    [
+      "real_calibration",
+      "rep32"
+    ],
+    [
+      "real_calibration",
+      "rep33"
+    ],
+    [
+      "real_calibration",
+      "rep34"
+    ],
+    [
+      "real_calibration",
+      "rep35"
+    ],
+    [
+      "real_calibration",
+      "rep36"
+    ],
+    [
+      "real_calibration",
+      "rep37"
+    ],
+    [
+      "real_calibration",
+      "rep38"
+    ],
+    [
+      "real_calibration",
+      "rep39"
+    ],
+    [
+      "real_calibration",
+      "rep40"
+    ],
+    [
+      "real_calibration",
+      "rep41"
+    ],
+    [
+      "real_calibration",
+      "rep42"
+    ],
+    [
+      "real_calibration",
+      "rep43"
+    ],
+    [
+      "real_calibration",
+      "rep44"
+    ],
+    [
+      "real_calibration",
+      "rep45"
+    ],
+    [
+      "real_calibration",
+      "rep46"
+    ],
+    [
+      "real_calibration",
+      "rep47"
+    ],
+    [
+      "real_calibration",
+      "rep48"
+    ],
+    [
+      "real_calibration",
+      "rep49"
+    ],
+    [
+      "baselines",
+      "draw0_near_seed123"
+    ],
+    [
+      "baselines",
+      "draw0_far_seed123"
+    ],
+    [
+      "baselines",
+      "draw0_near_seed124"
+    ],
+    [
+      "baselines",
+      "draw0_far_seed124"
+    ],
+    [
+      "baselines",
+      "draw0_near_seed125"
+    ],
+    [
+      "baselines",
+      "draw0_far_seed125"
+    ],
+    [
+      "baselines",
+      "draw1_near_seed123"
+    ],
+    [
+      "baselines",
+      "draw1_far_seed123"
+    ],
+    [
+      "baselines",
+      "draw1_near_seed124"
+    ],
+    [
+      "baselines",
+      "draw1_far_seed124"
+    ],
+    [
+      "baselines",
+      "draw1_near_seed125"
+    ],
+    [
+      "baselines",
+      "draw1_far_seed125"
+    ],
+    [
+      "baselines",
+      "draw2_near_seed123"
+    ],
+    [
+      "baselines",
+      "draw2_far_seed123"
+    ],
+    [
+      "baselines",
+      "draw2_near_seed124"
+    ],
+    [
+      "baselines",
+      "draw2_far_seed124"
+    ],
+    [
+      "baselines",
+      "draw2_near_seed125"
+    ],
+    [
+      "baselines",
+      "draw2_far_seed125"
+    ],
+    [
+      "baselines",
+      "draw3_near_seed123"
+    ],
+    [
+      "baselines",
+      "draw3_far_seed123"
+    ],
+    [
+      "baselines",
+      "draw3_near_seed124"
+    ],
+    [
+      "baselines",
+      "draw3_far_seed124"
+    ],
+    [
+      "baselines",
+      "draw3_near_seed125"
+    ],
+    [
+      "baselines",
+      "draw3_far_seed125"
+    ],
+    [
+      "baselines",
+      "draw4_near_seed123"
+    ],
+    [
+      "baselines",
+      "draw4_far_seed123"
+    ],
+    [
+      "baselines",
+      "draw4_near_seed124"
+    ],
+    [
+      "baselines",
+      "draw4_far_seed124"
+    ],
+    [
+      "baselines",
+      "draw4_near_seed125"
+    ],
+    [
+      "baselines",
+      "draw4_far_seed125"
+    ],
+    [
+      "capacity",
+      "draw0_near_seed123"
+    ],
+    [
+      "capacity",
+      "draw0_far_seed123"
+    ],
+    [
+      "capacity",
+      "draw0_near_seed124"
+    ],
+    [
+      "capacity",
+      "draw0_far_seed124"
+    ],
+    [
+      "capacity",
+      "draw0_near_seed125"
+    ],
+    [
+      "capacity",
+      "draw0_far_seed125"
+    ],
+    [
+      "capacity",
+      "draw1_near_seed123"
+    ],
+    [
+      "capacity",
+      "draw1_far_seed123"
+    ],
+    [
+      "capacity",
+      "draw1_near_seed124"
+    ],
+    [
+      "capacity",
+      "draw1_far_seed124"
+    ],
+    [
+      "capacity",
+      "draw1_near_seed125"
+    ],
+    [
+      "capacity",
+      "draw1_far_seed125"
+    ],
+    [
+      "capacity",
+      "draw2_near_seed123"
+    ],
+    [
+      "capacity",
+      "draw2_far_seed123"
+    ],
+    [
+      "capacity",
+      "draw2_near_seed124"
+    ],
+    [
+      "capacity",
+      "draw2_far_seed124"
+    ],
+    [
+      "capacity",
+      "draw2_near_seed125"
+    ],
+    [
+      "capacity",
+      "draw2_far_seed125"
+    ],
+    [
+      "capacity",
+      "draw3_near_seed123"
+    ],
+    [
+      "capacity",
+      "draw3_far_seed123"
+    ],
+    [
+      "capacity",
+      "draw3_near_seed124"
+    ],
+    [
+      "capacity",
+      "draw3_far_seed124"
+    ],
+    [
+      "capacity",
+      "draw3_near_seed125"
+    ],
+    [
+      "capacity",
+      "draw3_far_seed125"
+    ],
+    [
+      "capacity",
+      "draw4_near_seed123"
+    ],
+    [
+      "capacity",
+      "draw4_far_seed123"
+    ],
+    [
+      "capacity",
+      "draw4_near_seed124"
+    ],
+    [
+      "capacity",
+      "draw4_far_seed124"
+    ],
+    [
+      "capacity",
+      "draw4_near_seed125"
+    ],
+    [
+      "capacity",
+      "draw4_far_seed125"
+    ],
+    [
+      "tuning",
+      "draw0_near_seed123"
+    ],
+    [
+      "tuning",
+      "draw0_far_seed123"
+    ],
+    [
+      "tuning",
+      "draw0_near_seed124"
+    ],
+    [
+      "tuning",
+      "draw0_far_seed124"
+    ],
+    [
+      "tuning",
+      "draw0_near_seed125"
+    ],
+    [
+      "tuning",
+      "draw0_far_seed125"
+    ],
+    [
+      "tuning",
+      "draw1_near_seed123"
+    ],
+    [
+      "tuning",
+      "draw1_far_seed123"
+    ],
+    [
+      "tuning",
+      "draw1_near_seed124"
+    ],
+    [
+      "tuning",
+      "draw1_far_seed124"
+    ],
+    [
+      "tuning",
+      "draw1_near_seed125"
+    ],
+    [
+      "tuning",
+      "draw1_far_seed125"
+    ],
+    [
+      "tuning",
+      "draw2_near_seed123"
+    ],
+    [
+      "tuning",
+      "draw2_far_seed123"
+    ],
+    [
+      "tuning",
+      "draw2_near_seed124"
+    ],
+    [
+      "tuning",
+      "draw2_far_seed124"
+    ],
+    [
+      "tuning",
+      "draw2_near_seed125"
+    ],
+    [
+      "tuning",
+      "draw2_far_seed125"
+    ],
+    [
+      "tuning",
+      "draw3_near_seed123"
+    ],
+    [
+      "tuning",
+      "draw3_far_seed123"
+    ],
+    [
+      "tuning",
+      "draw3_near_seed124"
+    ],
+    [
+      "tuning",
+      "draw3_far_seed124"
+    ],
+    [
+      "tuning",
+      "draw3_near_seed125"
+    ],
+    [
+      "tuning",
+      "draw3_far_seed125"
+    ],
+    [
+      "tuning",
+      "draw4_near_seed123"
+    ],
+    [
+      "tuning",
+      "draw4_far_seed123"
+    ],
+    [
+      "tuning",
+      "draw4_near_seed124"
+    ],
+    [
+      "tuning",
+      "draw4_far_seed124"
+    ],
+    [
+      "tuning",
+      "draw4_near_seed125"
+    ],
+    [
+      "tuning",
+      "draw4_far_seed125"
+    ]
+  ],
+  "skipped": [],
+  "prior_gpu_seconds": 10115.746558785439,
+  "gpu_seconds_completed": 1466.0854861326516,
+  "hard_limit_gpu_seconds": 28800,
+  "interruption": "Metadata-only object-ID serialization fix. All8 computed runs failed before saving. Logs preserved; no performance-dependent changes."
+}

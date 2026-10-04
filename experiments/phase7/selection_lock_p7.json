@@ -1,0 +1,96 @@
+{
+ "utc": "2026-10-03T14:10:15Z",
+ "amendment": "amendment_02.json",
+ "spec": [
+  "Mh2@0",
+  0.0,
+  "lp",
+  1.0
+ ],
+ "name": "Mh2@0|a0|lp|t1",
+ "meaning": "per view: one-sided memory g = d + max(0, 2 - (rho - med)/mad) with rho the distance to the nearest memory member admitted up to and including the current batch (the image itself excluded), times the calibrated rank of the zero-start propagation; entrance, graph and thresholds as frozen v5",
+ "dev1": {
+  "near_AUROC": {
+   "mean": 0.0993876666666722,
+   "lo": 0.07823959132989729,
+   "hi": 0.12053574200344712,
+   "n": 5
+  },
+  "near_FPR95": {
+   "mean": -0.677333333333334,
+   "lo": -0.8739715174930693,
+   "hi": -0.4806951491735987,
+   "n": 5
+  },
+  "far_FPR95": {
+   "mean": 0.0,
+   "lo": -0.16008734367658195,
+   "hi": 0.16008734367658195,
+   "n": 5
+  },
+  "nearT_FPR95": {
+   "mean": -0.6880000000000003,
+   "lo": -0.785312101508262,
+   "hi": -0.5906878984917385,
+   "n": 5
+  },
+  "F1": {
+   "mean": -2.7333333333333316,
+   "lo": -3.2729772615695647,
+   "hi": -2.1936894050970985,
+   "n": 5
+  }
+ },
+ "dev2": {
+  "near_AUROC": {
+   "mean": 0.1549765185185123,
+   "lo": 0.1225540292320894,
+   "hi": 0.18739900780493518,
+   "n": 5
+  },
+  "near_FPR95": {
+   "mean": -0.8173333333333332,
+   "lo": -1.0452800588877775,
+   "hi": -0.589386607778889,
+   "n": 5
+  },
+  "nearT_AUROC": {
+   "mean": 0.16128881481482438,
+   "lo": 0.12874387871181725,
+   "hi": 0.1938337509178315,
+   "n": 5
+  },
+  "nearT_FPR95": {
+   "mean": -0.8506666666666675,
+   "lo": -1.0132567080584634,
+   "hi": -0.6880766252748717,
+   "n": 5
+  },
+  "far_FPR95": {
+   "mean": 0.11344299489506718,
+   "lo": -0.13445211269218504,
+   "hi": 0.3613381024823194,
+   "n": 5
+  },
+  "F1": {
+   "mean": -2.6000000000000014,
+   "lo": -4.159649486226599,
+   "hi": -1.0403505137734037,
+   "n": 5
+  },
+  "A1": {
+   "mean": 0.7676907407407298,
+   "lo": 0.6235156972856624,
+   "hi": 0.9118657841957973,
+   "n": 5
+  }
+ },
+ "code_sha256": {
+  "engine7.py": "3984d9ce565bb39be7d1c48d82ca50d631fb0d2d4dcff86e7a07fed73c282fcf",
+  "run7.py": "20c9cc48f545bb4b730816e5531169364ad83efa3629bd0de4f2833b56b13db1",
+  "dev7.py": "ee2d3d2cd0069f8b3f004c766eff402d7859a800eac276318014b839b0d1bc45",
+  "an7.py": "719e1110cc2af0bbfdca1559e01521931af014d06ea92cf8659d1818927b624f",
+  "an_a_dev.py": "2d4b06290dc9487c2a253c3c26d8fadd30d45fd949414b764507e5c78bc03f32",
+  "an_within.py": "4d3fc7c63d1b53579179cfafbf976aaf2b89649eb2e2b9f144caab101706fadc"
+ }
+}

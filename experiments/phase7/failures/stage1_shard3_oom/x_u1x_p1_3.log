@@ -1,0 +1,55 @@
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/reprise_p7_20261003/code/extract7.py:56: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(CKPT / f"dinov2_{tag}_pretrain.pth", map_location="cpu"), strict=True)
+Loading weights:   0%|          | 0/590 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 79/590 [00:00<00:00, 687.75it/s]Loading weights: 100%|██████████| 590/590 [00:00<00:00, 3492.05it/s]
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/792 [00:00<?, ?it/s]Loading weights:  51%|█████     | 401/792 [00:00<00:00, 4005.94it/s]Loading weights: 100%|██████████| 792/792 [00:00<00:00, 5169.72it/s]
+Traceback (most recent call last):
+  File "/home/omote/reprise_p7_20261003/code/extract7.py", line 200, in <module>
+    run_shard(a)
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p7_20261003/code/extract7.py", line 144, in run_shard
+    f = torch.cat([pooled(enc[n](xi[lo:lo + a.sub])).float() for lo in range(0, len(xi), a.sub)])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p7_20261003/code/extract7.py", line 65, in <lambda>
+    return (lambda x: m.forward_features(x)[:, 0]), "dino256", transform256(), n
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/timm/models/eva.py", line 1048, in forward_features
+    x = blk(x, rope=rot_pos_embed, attn_mask=attn_mask, is_causal=is_causal)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/timm/models/eva.py", line 397, in forward
+    x = x + self.drop_path2(self.gamma_2 * self.mlp(self.norm2(x)))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/timm/layers/mlp.py", line 49, in forward
+    x = self.act(x)
+        ^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 734, in forward
+    return F.gelu(input, approximate=self.approximate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 262.00 MiB. GPU 0 has a total capacity of 10.57 GiB of which 60.75 MiB is free. Process 324172 has 4.83 GiB memory in use. Including non-PyTorch memory, this process has 5.67 GiB memory in use. Of the allocated memory 5.10 GiB is allocated by PyTorch, and 397.47 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

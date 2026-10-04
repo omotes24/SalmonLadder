@@ -1,0 +1,13 @@
+test_classwise_all_classes_and_dense_reference (test_core.CoreTests.test_classwise_all_classes_and_dense_reference) ... ok
+test_graph_prefix_against_rebuild (test_core.CoreTests.test_graph_prefix_against_rebuild) ... ok
+test_legacy_equivalence (test_core.CoreTests.test_legacy_equivalence) ... ok
+test_linear_solution_and_error_bound (test_core.CoreTests.test_linear_solution_and_error_bound) ... ok
+test_monotone_rank_and_ties (test_core.CoreTests.test_monotone_rank_and_ties) ... ok
+test_permutation_equivariance_without_ties (test_core.CoreTests.test_permutation_equivariance_without_ties) ... ok
+test_prefix_and_immutable_scores (test_core.CoreTests.test_prefix_and_immutable_scores) ... ok
+test_split_calibration_no_feedback (test_core.CoreTests.test_split_calibration_no_feedback) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.267s
+
+OK

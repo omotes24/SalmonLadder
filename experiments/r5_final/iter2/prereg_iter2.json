@@ -1,0 +1,35 @@
+{
+  "name": "VINS iteration 2 (beyond CLAVIS-M)",
+  "registered_utc": "2026-09-26T10:45:00Z",
+  "baseline": {
+    "method": "CLAVIS-M c1 (frozen_c1.json): S_final * p_t, admission p_all <= 0.10, m_mem = 2, kind = diff",
+    "dev1": {
+      "near_AUROC": 84.62,
+      "far_AUROC": 96.25,
+      "near_FPR95": 52.9,
+      "far_FPR95": 21.25
+    },
+    "dev2": {
+      "near_AUROC": 82.56,
+      "far_AUROC": 96.04,
+      "near_FPR95": 53.21,
+      "far_FPR95": 22.59
+    }
+  },
+  "metric": "AUROC (%) averaged over the 3 order seeds (123, 124, 125) of the (ID dev + near dev) and (ID dev + far dev) streams, upstream get_measures",
+  "stopping_rule": {
+    "pass": "near_AUROC >= baseline.near_AUROC + 2.0 AND far_AUROC >= baseline.far_AUROC - 0.3, on dev1 AND on dev2",
+    "rationale": "+2.0 pt is about 13% of the remaining near AUROC error of CLAVIS-M on dev1 (the previous loop required +3.0 over CLAVIS, about 14% of its remaining error)",
+    "procedure": [
+      "Exploration uses dev1 only. dev2 is evaluated only for a configuration frozen (file + sha256) after it passes on dev1.",
+      "Every dev2 evaluation is appended to iter2/dev2_looks.jsonl before the verdict is read. At most 3 dev2 looks in this loop.",
+      "The first frozen configuration that passes on both dev1 and dev2 stops the loop.",
+      "The OpenOOD test split (already used twice) is evaluated at most once more, only for the stopping configuration, after a separate pre-registration, and is reported as the third use."
+    ]
+  },
+  "not_allowed": [
+    "reading OpenOOD test images or test-derived scores for any design decision",
+    "reading val_imagenet"
+  ],
+  "disclosure": "The paper analyses (after the second test use) already showed test results for Fisher fusion p_T*p_t, min fusion, S^a*p_t, pooled standardization and kNN views. These are known; any candidate that uses them is still selected on dev1 and confirmed on dev2 only."
+}

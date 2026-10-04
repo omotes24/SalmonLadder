@@ -1,0 +1,38 @@
+/home/omote/reprise_p5_20261002/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+B14 {'memory': 0.691314447671175, 'lp': 0.7834151089191437, 'extra': 0.521720390766859}
+L14 {'memory': 0.6864731349050999, 'lp': 0.5035911239683628, 'extra': 0.5340130813419819}
+U1 logM {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+U1 logS {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+U1 static {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+U1 M {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+U1 lp0 {'max_abs': 0.0019743343037177397, 'rows_gt_1e-9': 19, 'n': 23000}
+U1 z {'max_abs': 3.8798067006240444e-05, 'rows_gt_1e-9': 22943, 'n': 23000}
+U1 lp {'max_abs': 0.0014035090023201136, 'rows_gt_1e-9': 11, 'n': 23000}
+U1 REPRISE {'max_abs': 0.0019743343037177397, 'rows_gt_1e-9': 19, 'n': 23000}
+REPRISE new {'AUROC': 93.87770277777777, 'FPR95': np.float64(25.840000000000003)} phase4 {'AUROC': 93.87770388888889, 'FPR95': np.float64(25.840000000000003)}
+zeta new {'AUROC': 92.18941777777778, 'FPR95': np.float64(30.680000000000003)} phase4 {'AUROC': 92.18941888888888, 'FPR95': np.float64(30.680000000000003)}
+U4 B14 static {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+U4 B14 M {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+U4 B14 lp0 {'max_abs': 0.0044742803949211485, 'rows_gt_1e-9': 8, 'n': 23000}
+U4 B14 lp {'max_abs': 0.0074349784875180625, 'rows_gt_1e-9': 8, 'n': 23000}
+U4 B14 z {'max_abs': 2.0492740540944965e-05, 'rows_gt_1e-9': 22872, 'n': 23000}
+/home/omote/reprise_lp_audit_20260927/vendor/scripts/r5_round2.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pos_text = torch.load(C.RUNS_DIR / "setup" / "tins_setup.pt", map_location="cpu")["positive_features"].float()
+/home/omote/reprise_lp_audit_20260927/vendor/vins/features.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(path, map_location="cpu")
+/home/omote/reprise_lp_audit_20260927/vendor/vins/features.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(path, map_location="cpu")
+/home/omote/reprise_lp_audit_20260927/vendor/vins/features.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(path, map_location="cpu")
+/home/omote/reprise_p5_20261002/code/dev5.py:131: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  s, d_ = torch.load(fs, map_location="cpu"), torch.load(fd, map_location="cpu")
+{"exp": "dev", "view": "L14", "task": "dev1_draw0_near_seed123", "seconds": 3.5, "utc": "2026-10-03T12:59:56Z"}
+dev1 L14 static {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+dev1 L14 M {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+dev1 L14 lp0 {'max_abs': 0.0010454784015527796, 'rows_gt_1e-9': 5, 'n': 23000}
+dev1 L14 lp {'max_abs': 0.0019980026626729153, 'rows_gt_1e-9': 5, 'n': 23000}
+dev1 L14 z {'max_abs': 3.347923876084735e-05, 'rows_gt_1e-9': 22880, 'n': 23000}
+dev1 logS {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+dev1 logM {'max_abs': 0.0, 'rows_gt_1e-9': 0, 'n': 23000}
+TEST7_HADES_OK

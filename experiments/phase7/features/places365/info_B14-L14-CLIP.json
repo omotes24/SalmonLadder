@@ -1,0 +1,19 @@
+{
+ "utc": "2026-10-03T14:19:18Z",
+ "n": 36500,
+ "table_sha256": "9f84562bd0823cc963ff659a2cfc4be0e07521ee9590afe30fccc9d514198631",
+ "files": {
+  "B14": {
+   "sha256": "3369e430ef8ab64848a05dadb086b79df79098703d0d505215618907bdf90f63",
+   "dim": 768
+  },
+  "L14": {
+   "sha256": "f2d5ca8b01cd55c8c2749e3ef1372ee2fc15d429c06656b9ea2b31e8abca6932",
+   "dim": 1024
+  },
+  "CLIP": {
+   "sha256": "e4fd5ccffd5f77dab1fe83e066117e7fdc9e33a2372f1eeaac7e968cec676b4c",
+   "dim": 512
+  }
+ }
+}

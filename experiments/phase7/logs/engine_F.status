@@ -1,0 +1,4 @@
+2026-10-03T14:35:48Z start: gpus 3, 3 workers, steps dsw
+2026-10-03T14:43:20Z dsw done: 348 tasks logged, 0 worker logs with errors
+2026-10-03T14:43:20Z ENGINE_F_DONE
+2026-10-03T15:24:52Z DS_DONE

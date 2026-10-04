@@ -1,0 +1,21 @@
+test_capacity_applies_to_graph_and_all_memories (test_bounded.BoundedTests.test_capacity_applies_to_graph_and_all_memories) ... ok
+test_capped_prefix (test_bounded.BoundedTests.test_capped_prefix) ... ok
+test_deletion_update_equals_exact_rebuild (test_bounded.BoundedTests.test_deletion_update_equals_exact_rebuild) ... ok
+test_large_capacity_equals_full (test_bounded.BoundedTests.test_large_capacity_equals_full) ... ok
+test_memory_baselines_bounded_and_causal (test_bounded.BoundedTests.test_memory_baselines_bounded_and_causal) ... ok
+test_classwise_all_classes_and_dense_reference (test_core.CoreTests.test_classwise_all_classes_and_dense_reference) ... ok
+test_graph_prefix_against_rebuild (test_core.CoreTests.test_graph_prefix_against_rebuild) ... ok
+test_legacy_equivalence (test_core.CoreTests.test_legacy_equivalence) ... ok
+test_linear_solution_and_error_bound (test_core.CoreTests.test_linear_solution_and_error_bound) ... ok
+test_monotone_rank_and_ties (test_core.CoreTests.test_monotone_rank_and_ties) ... ok
+test_permutation_equivariance_without_ties (test_core.CoreTests.test_permutation_equivariance_without_ties) ... ok
+test_prefix_and_immutable_scores (test_core.CoreTests.test_prefix_and_immutable_scores) ... ok
+test_split_calibration_no_feedback (test_core.CoreTests.test_split_calibration_no_feedback) ... ok
+test_legacy_object_ids_round_trip_without_pickle_output (test_identity_cache.IdentityTests.test_legacy_object_ids_round_trip_without_pickle_output) ... ok
+test_ties_accept_at_least_target_id (test_metrics.MetricTests.test_ties_accept_at_least_target_id) ... ok
+test_zero_products_keep_exact_ties (test_metrics.MetricTests.test_zero_products_keep_exact_ties) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.513s
+
+OK

@@ -1,0 +1,217 @@
+{
+  "completed": [
+    {
+      "task": "draw0_far_seed123",
+      "exit_code": 0,
+      "seconds": 297.2044943757355,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw0_far_seed124",
+      "exit_code": 0,
+      "seconds": 300.16269055753946,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw0_near_seed123",
+      "exit_code": 0,
+      "seconds": 363.3522100932896,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw0_near_seed124",
+      "exit_code": 0,
+      "seconds": 363.26207223907113,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw0_far_seed125",
+      "exit_code": 0,
+      "seconds": 300.1734858453274,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw1_far_seed123",
+      "exit_code": 0,
+      "seconds": 294.13053462281823,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw0_near_seed125",
+      "exit_code": 0,
+      "seconds": 363.31175499781966,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw1_near_seed123",
+      "exit_code": 0,
+      "seconds": 363.27217580005527,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw1_far_seed124",
+      "exit_code": 0,
+      "seconds": 297.1710415780544,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw1_near_seed124",
+      "exit_code": 0,
+      "seconds": 369.27967596799135,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw1_far_seed125",
+      "exit_code": 0,
+      "seconds": 294.17828296124935,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw1_near_seed125",
+      "exit_code": 0,
+      "seconds": 363.276375323534,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw2_far_seed123",
+      "exit_code": 0,
+      "seconds": 303.1804442182183,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw2_near_seed123",
+      "exit_code": 0,
+      "seconds": 363.2769721671939,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw2_far_seed124",
+      "exit_code": 0,
+      "seconds": 297.1786003485322,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw2_near_seed124",
+      "exit_code": 0,
+      "seconds": 363.27971310541034,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw2_far_seed125",
+      "exit_code": 0,
+      "seconds": 294.17673134058714,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw2_near_seed125",
+      "exit_code": 0,
+      "seconds": 369.28310230374336,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw3_far_seed123",
+      "exit_code": 0,
+      "seconds": 294.1774983815849,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw3_near_seed123",
+      "exit_code": 0,
+      "seconds": 363.28313386440277,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw3_far_seed124",
+      "exit_code": 0,
+      "seconds": 300.18302427232265,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw3_near_seed124",
+      "exit_code": 0,
+      "seconds": 363.28165581822395,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw3_far_seed125",
+      "exit_code": 0,
+      "seconds": 297.1781672798097,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw3_near_seed125",
+      "exit_code": 0,
+      "seconds": 360.28003291785717,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw4_far_seed123",
+      "exit_code": 0,
+      "seconds": 294.1898593083024,
+      "gpu": 2,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw4_near_seed123",
+      "exit_code": 0,
+      "seconds": 369.2950691282749,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw4_far_seed124",
+      "exit_code": 0,
+      "seconds": 294.18870640173554,
+      "gpu": 0,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw4_near_seed124",
+      "exit_code": 0,
+      "seconds": 363.2542219646275,
+      "gpu": 1,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw4_far_seed125",
+      "exit_code": 0,
+      "seconds": 297.1101530790329,
+      "gpu": 3,
+      "state": "COMPLETE"
+    },
+    {
+      "task": "draw4_near_seed125",
+      "exit_code": 0,
+      "seconds": 360.17467852309346,
+      "gpu": 2,
+      "state": "COMPLETE"
+    }
+  ],
+  "pending": [],
+  "gpu_seconds_completed": 9915.746558785439,
+  "limit_seconds": 14400.0
+}

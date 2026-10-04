@@ -1,0 +1,204 @@
+{
+  "description": "Rules of tools/make_submission_zip.py. This file, the tool and its test are not part of the anonymized archive. 'replace' is applied in order to every text file, to text inside gzip files and to strings inside parquet files. 'forbidden' is searched in every file of the finished archive, also after escapes, character references, percent-encoding and compatibility characters are resolved; a hit that 'allow' does not cover aborts the export. 'encoded_needles' are searched as raw bytes in UTF-16/32, hex and base64 form. 'keep_hashes' and 'third_party' name the files whose hashes are data and are not rewritten. E-mail addresses and home directories must be listed to pass.",
+  "archive_root": "SalmonLadder-supplementary",
+  "exclude": [
+    "CITATION.cff",
+    ".github/**",
+    "docs/SUBMISSION.md",
+    "tools/make_submission_zip.py",
+    "tools/anonymization_rules.json",
+    "tests/test_anonymization.py"
+  ],
+  "replace": [
+    {
+      "id": "repository_commit",
+      "pattern": "(?i)(?<![0-9a-f])965e744(?:20e6395cda902486aa62ed8fe04d6bcae)?(?![0-9a-f])",
+      "replacement": "0000000"
+    },
+    {
+      "id": "other_repository",
+      "pattern": "git\\+https://github\\.com/omotes24/[^\\s\"',]+",
+      "replacement": "git+https://github.com/anonymous/unrelated-project"
+    },
+    {
+      "id": "github_account",
+      "pattern": "(?i)omotes24",
+      "replacement": "anonymous"
+    },
+    {
+      "id": "environment_name",
+      "pattern": "granood_ke",
+      "replacement": "shared_env"
+    },
+    {
+      "id": "full_name",
+      "pattern": "(?i)k(?:oo|ou|oh|o|ō|ô)tar(?:oo|ou|oh|o|ō|ô)[\\s._-]*omote|omote[\\s._-]*k(?:oo|ou|oh|o|ō|ô)tar(?:oo|ou|oh|o|ō|ô)",
+      "replacement": "[author]"
+    },
+    {
+      "id": "given_name",
+      "pattern": "(?i)k(?:oo|ou|oh|o|ō|ô)tar(?:oo|ou|oh|o|ō|ô)",
+      "replacement": "[author]"
+    },
+    {
+      "id": "server_name",
+      "pattern": "(?i)[a-z0-9.-]*\\.keio\\.(?:ac\\.)?jp",
+      "replacement": "server.example.org"
+    },
+    {
+      "id": "institution",
+      "pattern": "(?i)keio",
+      "replacement": "institution"
+    },
+    {
+      "id": "server_home",
+      "pattern": "/home/omote",
+      "replacement": "/home/anonymous"
+    },
+    {
+      "id": "account_name",
+      "pattern": "(?i)(?<![A-Za-z])omote(?![A-Za-z])",
+      "replacement": "anonymous"
+    },
+    {
+      "id": "account_name_after_escape",
+      "pattern": "(?i)(?<=\\\\[nrt])omote(?![A-Za-z])",
+      "replacement": "anonymous"
+    },
+    {
+      "id": "account_name_after_colour_code",
+      "pattern": "(?i)(\\x1b\\[[0-9;]*m)omote(?![A-Za-z])",
+      "replacement": "\\1anonymous"
+    },
+    {
+      "id": "lab_name",
+      "pattern": "(?i)(?<![A-Za-z])d[-_. ]?hacks(?![A-Za-z])",
+      "replacement": "[lab]"
+    },
+    {
+      "id": "advisor_name",
+      "pattern": "(?i)zacke?y",
+      "replacement": "[advisor]"
+    },
+    {
+      "id": "session_link",
+      "pattern": "https://claude\\.ai/[^\\s\"')>]+",
+      "replacement": "[link removed]"
+    },
+    {
+      "id": "maintainer_line",
+      "pattern": "(?m)^.*<!-- maintainers -->.*\\n?",
+      "replacement": "",
+      "only": [
+        "*.md"
+      ]
+    }
+  ],
+  "forbidden": [
+    {
+      "id": "github_account",
+      "pattern": "(?i)omotes24"
+    },
+    {
+      "id": "account_name",
+      "pattern": "(?i)[a-z]*omote[a-z]*",
+      "allowed_words": [
+        "promote",
+        "promoted",
+        "promoter",
+        "promoters",
+        "promotes",
+        "jetpromoted",
+        "locomote",
+        "locomoted",
+        "locomotes"
+      ]
+    },
+    {
+      "id": "given_name",
+      "pattern": "(?i)k(?:oo|ou|oh|o|ō|ô)tar(?:oo|ou|oh|o|ō|ô)"
+    },
+    {
+      "id": "names_in_japanese_script",
+      "pattern": "おもて|オモテ|こうたろう|コウタロウ|ｵﾓﾃ"
+    },
+    {
+      "id": "institution",
+      "pattern": "(?i)keio|慶應|慶応|義塾|湘南藤沢"
+    },
+    {
+      "id": "campus",
+      "pattern": "(?i)(?<![A-Za-z0-9])sfc(?![A-Za-z0-9])|ＳＦＣ"
+    },
+    {
+      "id": "lab_name",
+      "pattern": "(?i)(?<![A-Za-z])d[-_. ]?hacks(?![A-Za-z])"
+    },
+    {
+      "id": "advisor_name",
+      "pattern": "(?i)zacke?y"
+    },
+    {
+      "id": "environment_name",
+      "pattern": "(?i)granood"
+    },
+    {
+      "id": "repository_commit",
+      "pattern": "(?i)(?<![0-9a-f])965e744[0-9a-f]{0,33}(?![0-9a-f])"
+    },
+    {
+      "id": "other_repository",
+      "pattern": "(?i)maf07"
+    },
+    {
+      "id": "session_link",
+      "pattern": "claude\\.ai/|session_0[0-9A-Za-z]{10,}"
+    },
+    {
+      "id": "maintainer_marker",
+      "pattern": "<!-- maintainers -->"
+    }
+  ],
+  "allow": [
+    {
+      "forbidden": "campus",
+      "sha256": "924691ac288e54409236115652ad4aa250f48203de50a9e4722a6ecd48d6804a",
+      "reason": "public CLIP byte-pair vocabulary (bpe_simple_vocab_16e6.txt.gz), byte-identical to the OpenAI release; the string is a vocabulary token"
+    }
+  ],
+  "encoded_needles": [
+    "omote",
+    "omotes24",
+    "kotaro",
+    "keio",
+    "zackey",
+    "granood",
+    "d-hacks",
+    "maf07"
+  ],
+  "keep_hashes": [
+    "manifests/*.csv.gz",
+    "manifests/reference_manifest.jsonl.gz",
+    "experiments/tins_reference/prototype_manifest.jsonl",
+    "experiments/phase7/amendment_03.json",
+    "experiments/phase7/code/amendment_03.json",
+    "experiments/phase7/results/weights_p7b.json",
+    "experiments/phase7/logs/probe7b.log",
+    "experiments/phase5_6/logs/probe6.log",
+    "experiments/tins_reference/model_receipt.json"
+  ],
+  "third_party": [
+    "third_party/**",
+    "experiments/controls_456/src/vendor/tins/**",
+    "experiments/phase4/code/vlm_tta/**"
+  ],
+  "allowed_emails": [
+    "noreply@anthropic.com",
+    "W@sp.diags"
+  ],
+  "allowed_home_dirs": [
+    "anonymous",
+    "miyai",
+    "notebook"
+  ]
+}

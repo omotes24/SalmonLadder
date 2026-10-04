@@ -1,0 +1,168 @@
+== files per experiment / view (expected number in brackets)
+  dev      [60] {'B14': 60, 'L14': 60}
+  devr     [30] {'B14': 30, 'L14': 30}
+  devw     [60] {'B14': 60, 'L14': 60}
+  ds_base  174 files
+  dsw      [174] {'B14': 174, 'L14': 174}
+  e1       [405] {'B14': 405, 'L14': 405}
+  e1w      [405] {'B14': 405, 'L14': 405}
+  e2       [70] {'B14': 70, 'L14': 70}
+  e2w      [70] {'B14': 70, 'L14': 70}
+  e3       [40] {'B14': 40, 'L14': 40}
+  e3w      [40] {'B14': 40, 'L14': 40}
+  u1alone  [5] {'B14': 5, 'L14': 5}
+  u1r      [45] {'B14': 45, 'L14': 45}
+  u1std    [45] {'B14': 45, 'CLIP': 45, 'CLIPL': 45, 'D3B': 45, 'D3L': 45, 'DINO1': 45, 'L14': 45, 'MAE': 45, 'S14': 45, 'SIG2L': 45}
+  u1w      [45] {'B14': 45, 'CLIP': 45, 'CLIPL': 45, 'D3B': 45, 'D3L': 45, 'D3S': 45, 'D3SP': 45, 'DINO1': 45, 'G14': 45, 'L14': 45, 'MAE': 45, 'RN50': 45, 'S14': 45, 'SIG2L': 45}
+  u2std    [15] {'B14': 15, 'CLIP': 15, 'CLIPL': 15, 'D3B': 15, 'D3L': 15, 'DINO1': 15, 'L14': 15, 'MAE': 15, 'S14': 15, 'SIG2L': 15}
+  u2w      [15] {'B14': 15, 'CLIP': 15, 'CLIPL': 15, 'D3B': 15, 'D3L': 15, 'D3S': 15, 'D3SP': 15, 'DINO1': 15, 'G14': 15, 'L14': 15, 'MAE': 15, 'RN50': 15, 'S14': 15, 'SIG2L': 15}
+  u4r      [45] {'B14': 45, 'L14': 45}
+  u4std    [45] {'B14': 45, 'L14': 45}
+  u4w      [45] {'B14': 45, 'L14': 45}
+  x4       255 files
+U1 (45 streams): REPRISE 93.86 / 26.27, zeta FPR95 29.43, static 56.89, x TINS 26.48, REPRISE - zeta (np.float64(-3.15822222222222), np.float64(-4.15382414354578), np.float64(-2.16262030089866)), k=1 miss 52.62
+dev1: frozen FPR95 29.21 F1 56.33; Mh2+lp FPR95 28.71 F1 54.60; dF1 (np.float64(-1.733333333333333), np.float64(-3.022380181849405), np.float64(-0.44428648481726074))
+dev2: frozen FPR95 26.91 F1 55.67; Mh2+lp FPR95 26.34 F1 55.73; dF1 (np.float64(0.06666666666666714), np.float64(-1.0818259217171098), np.float64(1.215159255050444))
+u1r: k=1 miss issued 52.62, delay 5 34.67, end 22.16; FPR95 26.27 -> end 21.34; d(k1, 5) (np.float64(-17.955555555555556), np.float64(-18.751685018255547), np.float64(-17.159426092855565))
+u4r: k=1 miss issued 55.49, delay 5 35.76, end 21.38; FPR95 27.08 -> end 21.58; d(k1, 5) (np.float64(-19.733333333333334), np.float64(-21.469142737823788), np.float64(-17.99752392884288))
+C1 r=1: E_M +2.17 E_G +0.21 E_MG +2.56 I +0.18
+C1 r=20: E_M +11.33 E_G +10.04 E_MG +14.28 I -7.10
+dev2 confirmation of the extension: near AUROC +0.15 [+0.12, +0.19], near FPR95 -0.82 [-1.05, -0.59], far FPR95 +0.11
+u1w lock evaluation (45 streams): AUROC 93.86 -> 93.98 (+0.12 [+0.08, +0.15]); FPR95 26.27 -> 25.50 (-0.77 [-0.86, -0.69]); k=1 miss -2.22 [-3.38, -1.07]
+u4w lock evaluation (45 streams): AUROC 93.44 -> 93.61 (+0.17 [+0.13, +0.21]); FPR95 27.08 -> 26.04 (-1.04 [-1.30, -0.78]); k=1 miss -2.40 [-3.21, -1.59]
+U1 cases (own implementation): R 94.66%  C 1.10%  N1 1.71%  N+ 2.54%; miss rate of case C (frozen) 53.75
+B U1 S14      [u1w]: REPRISE 87.55 / 46.42, REPRISE - zeta -5.65, ext 88.35 / 43.87
+B U1 D3L      [u1w]: REPRISE 94.78 / 22.66, REPRISE - zeta -4.45, ext 95.02 / 21.49
+B U1 G14      [u1w]: REPRISE 93.45 / 27.84, REPRISE - zeta -1.99, ext 93.07 / 28.94
+B U1 SIG2L    [u1w]: REPRISE 89.45 / 40.70, REPRISE - zeta -8.26, ext 89.40 / 41.44
+B U1 B14+L14  [u1w]: REPRISE 93.86 / 26.27, REPRISE - zeta -3.16, ext 93.98 / 25.50
+B U1 L14+D3L  [u1w]: REPRISE 95.23 / 20.83, REPRISE - zeta -3.55, ext 95.34 / 20.24
+B U1 S14+CLIP [u1w]: REPRISE 87.59 / 46.45, REPRISE - zeta -5.18, ext 88.23 / 44.70
+B U1 D3S      [u1w]: REPRISE 84.19 / 54.35, REPRISE - zeta -7.74, ext 85.19 / 51.52
+B U1 D3SP     [u1w]: REPRISE 87.16 / 47.34, REPRISE - zeta -7.73, ext 88.03 / 44.57
+B U1 RN50     [u1w]: REPRISE 71.09 / 77.31, REPRISE - zeta -1.10, ext 71.91 / 76.02
+B U1 S14+D3S  [u1w]: REPRISE 87.39 / 46.50, REPRISE - zeta -6.53, ext 88.27 / 43.75
+B U1 D3S+D3SP [u1w]: REPRISE 86.65 / 48.59, REPRISE - zeta -7.55, ext 87.57 / 45.65
+B U1 S14+RN50 [u1w]: REPRISE 85.88 / 51.28, REPRISE - zeta -3.87, ext 86.74 / 48.80
+B U2 S14      [u2w]: REPRISE 86.92 / 54.53, REPRISE - zeta -9.11, ext 87.02 / 53.53
+B U2 D3L      [u2w]: REPRISE 92.54 / 34.76, REPRISE - zeta -8.68, ext 92.51 / 34.85
+B U2 G14      [u2w]: REPRISE 89.93 / 43.58, REPRISE - zeta -2.79, ext 90.39 / 42.62
+B U2 SIG2L    [u2w]: REPRISE 90.19 / 45.63, REPRISE - zeta -15.43, ext 89.42 / 49.68
+B U2 B14+L14  [u2w]: REPRISE 91.81 / 38.20, REPRISE - zeta -5.96, ext 91.74 / 38.25
+B U2 L14+D3L  [u2w]: REPRISE 92.98 / 32.44, REPRISE - zeta -5.72, ext 92.92 / 32.49
+B U2 S14+CLIP [u2w]: REPRISE 88.03 / 50.17, REPRISE - zeta -11.14, ext 87.84 / 50.51
+B U2 D3S      [u2w]: REPRISE 83.76 / 63.31, REPRISE - zeta -10.97, ext 84.16 / 61.74
+B U2 D3SP     [u2w]: REPRISE 85.06 / 60.37, REPRISE - zeta -11.06, ext 85.40 / 58.80
+B U2 RN50     [u2w]: REPRISE 79.34 / 69.52, REPRISE - zeta -6.61, ext 79.39 / 69.13
+B U2 S14+D3S  [u2w]: REPRISE 86.82 / 54.96, REPRISE - zeta -11.13, ext 87.06 / 53.85
+B U2 D3S+D3SP [u2w]: REPRISE 85.26 / 59.78, REPRISE - zeta -11.56, ext 85.64 / 58.10
+B U2 S14+RN50 [u2w]: REPRISE 87.14 / 52.98, REPRISE - zeta -10.17, ext 87.19 / 52.20
+an_e.json _U30_m20_n4500_random_B256 [e1w]: REPRISE 93.38 / 28.22 static FPR95 56.20 ext 93.47 / 27.60 (units 5, runs 10)
+an_e.json _U100_m1_n18000_random_B256 [e1w]: REPRISE 82.66 / 61.80 static FPR95 57.10 ext 82.82 / 60.80 (units 5, runs 10)
+an_e.json _U100_m50_n18000_random_B256 [e1w]: REPRISE 93.84 / 26.09 static FPR95 56.33 ext 93.97 / 25.31 (units 5, runs 10)
+an_e.json _U100_m50_n18000_emerging_B256 [e2w]: REPRISE 92.79 / 29.92 static FPR95 56.39 ext 93.03 / 28.80 (units 5, runs 5)
+an_e.json _U100_m50_n18000_ood_burst_B256 [e2w]: REPRISE 94.78 / 23.30 static FPR95 56.39 ext 95.92 / 17.79 (units 5, runs 5)
+an_e.json _U100_m10_n18000_emerging_B256 [e2w]: REPRISE 87.33 / 47.82 static FPR95 56.18 ext 87.51 / 46.94 (units 5, runs 5)
+an_e.json _U100_m10_n18000_ood_burst_B256 [e2w]: REPRISE 88.40 / 46.14 static FPR95 56.18 ext 90.48 / 37.20 (units 5, runs 5)
+an_d.json insk|nat [dsw]: REPRISE 88.27 / 42.82 static FPR95 78.06 ext 88.86 / 41.07 (units 5, runs 15)
+an_d.json places365|nat [dsw]: REPRISE 72.31 / 75.07 static FPR95 88.62 ext 72.83 / 74.11 (units 5, runs 15)
+an_d.json cub|nat [dsw]: REPRISE 92.59 / 29.86 static FPR95 63.84 ext 92.35 / 30.77 (units 5, runs 15)
+an_d.json U1|mat [dsw]: REPRISE 93.67 / 25.62 static FPR95 54.76 ext 93.81 / 24.50 (units 5, runs 15)
+an_d.json insk|mat [dsw]: REPRISE 86.79 / 45.35 static FPR95 77.51 ext 87.58 / 42.82 (units 5, runs 15)
+an_d.json places365|mat [dsw]: REPRISE 70.40 / 78.11 static FPR95 89.14 ext 71.32 / 75.93 (units 5, runs 15)
+an_d.json cub|mat [dsw]: REPRISE 91.81 / 31.31 static FPR95 63.13 ext 91.59 / 32.19 (units 5, runs 15)
+== frozen read-outs: first run vs the run with the within-batch read-out (same tasks)
+  u1std  vs u1w  B14: 45 files (45 / 45), 1035000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 295 (0.0118), lp 224 (0.0183), z 1029550 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  u1std  vs u1w  L14: 45 files (45 / 45), 1035000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 285 (0.0140), lp 257 (0.0082), z 1030148 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  u4std  vs u4w  B14: 45 files (45 / 45), 1035000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 300 (0.1542), lp 233 (0.0116), z 1029337 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  u4std  vs u4w  L14: 45 files (45 / 45), 1035000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 341 (0.0116), lp 240 (0.0215), z 1030176 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  u2std  vs u2w  B14: 15 files (15 / 15), 179985 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 71 (0.0177), lp 50 (0.0063), z 179090 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  u2std  vs u2w  L14: 15 files (15 / 15), 179985 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 83 (0.0036), lp 54 (0.0351), z 179171 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  e1     vs e1w  B14: 102 files (405 / 405), 1824450 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 542 (0.0120), lp 405 (0.0107), z 1812332 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  e1     vs e1w  L14: 102 files (405 / 405), 1824450 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 626 (0.0150), lp 430 (0.0104), z 1812545 (0.0001); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  e2     vs e2w  B14: 70 files (70 / 70), 1470000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 457 (0.0220), lp 338 (0.1054), z 1462151 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  e2     vs e2w  L14: 70 files (70 / 70), 1470000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 478 (0.0541), lp 366 (0.0112), z 1462362 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  e3     vs e3w  B14: 40 files (40 / 40), 920000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 264 (0.0126), lp 229 (0.0097), z 915439 (0.0001); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+  e3     vs e3w  L14: 40 files (40 / 40), 920000 rows; same stream and admissions True; rows differing (max |diff|): static 0 (0.0000), M 0 (0.0000), lp0 297 (0.0110), lp 233 (0.0064), z 915758 (0.0000); max |dFPR95| of one view's M x p_LP 0.000 -> ok
+== largest absolute discrepancies (own re-computation vs summary files)
+    0.0038  u1 reprise FPR95 vs Phase 4 (26.27)
+    0.0020  u1 zeta FPR95 vs Phase 4 (29.43)
+    0.0000  an_d.json cub|nat ext AUROC
+    0.0000  an_d.json cub|mat AUROC
+    0.0000  an_d.json cub|mat ext AUROC
+    0.0000  an_d.json cub|nat AUROC
+    0.0000  an_d.json U1|mat AUROC
+    0.0000  an_e.json _U100_m50_n18000_emerging_B256 ext AUROC
+    0.0000  an_d.json places365|mat ext AUROC
+    0.0000  an_e.json _U100_m50_n18000_emerging_B256 AUROC
+    0.0000  u4w lock dAUROC lo
+    0.0000  an_e.json _U100_m50_n18000_ood_burst_B256 ext AUROC
+    0.0000  u4w lock ext AUROC
+    0.0000  dev2 ext dAUROC lo
+    0.0000  u4w lock dAUROC
+    0.0000  an_d.json U1|mat ext AUROC
+    0.0000  an_d.json places365|nat ext AUROC
+    0.0000  u1w lock dAUROC
+    0.0000  u1w lock dAUROC lo
+    0.0000  u1w lock ext AUROC
+    0.0000  an_d.json places365|mat AUROC
+    0.0000  an_e.json _U100_m50_n18000_random_B256 AUROC
+    0.0000  an_e.json _U100_m10_n18000_emerging_B256 ext AUROC
+    0.0000  u1w lock frozen AUROC
+    0.0000  B U1 B14+L14 AUROC
+    0.0000  u1 reprise AUROC
+    0.0000  an_e.json _U100_m50_n18000_random_B256 ext AUROC
+    0.0000  B U2 S14+D3S AUROC
+    0.0000  B U2 S14+RN50 AUROC
+    0.0000  B U1 L14+D3L AUROC
+    0.0000  an_d.json insk|nat AUROC
+    0.0000  dev2 ext dAUROC
+    0.0000  an_e.json _U100_m50_n18000_ood_burst_B256 AUROC
+    0.0000  B U2 B14+L14 AUROC
+    0.0000  B U2 L14+D3L AUROC
+    0.0000  B U1 D3S+D3SP AUROC
+    0.0000  B U1 S14+D3S AUROC
+    0.0000  u4w lock frozen AUROC
+    0.0000  an_d.json places365|nat AUROC
+    0.0000  an_d.json insk|nat ext AUROC
+    0.0000  B U1 S14+CLIP AUROC
+    0.0000  B U1 S14+RN50 AUROC
+    0.0000  B U1 S14 AUROC
+    0.0000  B U1 S14 REPRISE-zeta lo
+    0.0000  B U1 D3L AUROC
+    0.0000  B U1 D3S AUROC
+    0.0000  B U1 RN50 AUROC
+    0.0000  B U2 SIG2L AUROC
+    0.0000  B U2 S14+CLIP AUROC
+    0.0000  B U2 D3SP AUROC
+    0.0000  B U2 RN50 AUROC
+    0.0000  an_e.json _U100_m1_n18000_random_B256 AUROC
+    0.0000  an_e.json _U100_m10_n18000_emerging_B256 AUROC
+    0.0000  B U1 S14 REPRISE-zeta
+    0.0000  B U1 S14+CLIP REPRISE-zeta
+    0.0000  B U1 S14+CLIP ext FPR95
+    0.0000  B U1 D3S REPRISE-zeta lo
+    0.0000  B U1 D3SP REPRISE-zeta lo
+    0.0000  B U1 S14+D3S FPR95
+    0.0000  B U1 D3S+D3SP FPR95
+    0.0000  B U1 G14 REPRISE-zeta lo
+    0.0000  B U1 S14 ext-REPRISE
+    0.0000  B U1 SIG2L ext-REPRISE
+    0.0000  B U1 RN50 ext-REPRISE
+    0.0000  B U1 SIG2L REPRISE-zeta
+    0.0000  B U1 S14+CLIP REPRISE-zeta lo
+    0.0000  B U1 S14+CLIP ext-REPRISE
+    0.0000  B U1 D3SP REPRISE-zeta
+    0.0000  B U1 S14+RN50 REPRISE-zeta
+    0.0000  B U1 RN50 REPRISE-zeta lo
+    0.0000  B U1 D3S+D3SP REPRISE-zeta
+    0.0000  B U1 D3S+D3SP REPRISE-zeta lo
+    0.0000  B U1 S14+RN50 REPRISE-zeta lo
+    0.0000  B U1 D3S ext-REPRISE
+    0.0000  B U1 RN50 REPRISE-zeta
+    0.0000  B U1 S14+D3S REPRISE-zeta lo
+    0.0000  B U1 S14+RN50 ext-REPRISE
+    0.0000  B U1 B14+L14 REPRISE-zeta
+    0.0000  B U1 SIG2L REPRISE-zeta lo
+    0.0000  B U1 L14+D3L REPRISE-zeta lo
+VERIFY7_OK

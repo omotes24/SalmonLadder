@@ -1,0 +1,7 @@
+{
+ "amendment": 2,
+ "reason": "With at most two held-out classes per WordNet parent (amendment 1), the fifth disjoint split reaches only 65 classes (seed 20260933); the build stopped before any image was selected or any feature/score existed.",
+ "change": "U1 held-out selection uses at most three held-out classes per parent for all five splits (every held-out class keeps an ID sibling; splits disjoint from dev1/dev2 and from each other; seeds unchanged).",
+ "unchanged": "all other registered items; the dev1 selection lock (written before any U1-U3 data existed) is not affected",
+ "data_seen_before_amendment": "none (WordNet structure only)"
+}

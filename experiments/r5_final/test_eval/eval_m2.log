@@ -1,0 +1,62 @@
+/home/omote/vins_gonogo_20260925/test_eval/eval_openood_test_m2.py:103: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(RES / "features.pt", map_location="cpu")
+/home/omote/vins_gonogo_20260925/test_eval/eval_openood_test_m2.py:104: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob_l = torch.load(RES / "features_vitl14.pt", map_location="cpu")
+{"ds": "ssb_hard", "seed": 123, "tins": 82.52, "clavism_c1": 87.34, "clavism_m2": 89.74}
+{"ds": "ssb_hard", "seed": 124, "tins": 82.09, "clavism_c1": 87.02, "clavism_m2": 89.46}
+{"ds": "ssb_hard", "seed": 125, "tins": 81.87, "clavism_c1": 86.96, "clavism_m2": 89.48}
+{"ds": "ssb_hard", "seed": 126, "tins": 82.21, "clavism_c1": 87.09, "clavism_m2": 89.66}
+{"ds": "ssb_hard", "seed": 127, "tins": 82.42, "clavism_c1": 87.23, "clavism_m2": 89.64}
+{"ds": "ninco", "seed": 123, "tins": 80.85, "clavism_c1": 93.92, "clavism_m2": 96.34}
+{"ds": "ninco", "seed": 124, "tins": 80.42, "clavism_c1": 93.7, "clavism_m2": 96.28}
+{"ds": "ninco", "seed": 125, "tins": 80.51, "clavism_c1": 93.81, "clavism_m2": 96.48}
+{"ds": "ninco", "seed": 126, "tins": 80.97, "clavism_c1": 93.85, "clavism_m2": 96.1}
+{"ds": "ninco", "seed": 127, "tins": 80.97, "clavism_c1": 93.58, "clavism_m2": 96.26}
+{"ds": "inaturalist", "seed": 123, "tins": 99.93, "clavism_c1": 99.95, "clavism_m2": 99.94}
+{"ds": "inaturalist", "seed": 124, "tins": 99.93, "clavism_c1": 99.95, "clavism_m2": 99.93}
+{"ds": "inaturalist", "seed": 125, "tins": 99.93, "clavism_c1": 99.95, "clavism_m2": 99.94}
+{"ds": "inaturalist", "seed": 126, "tins": 99.93, "clavism_c1": 99.95, "clavism_m2": 99.94}
+{"ds": "inaturalist", "seed": 127, "tins": 99.92, "clavism_c1": 99.95, "clavism_m2": 99.94}
+{"ds": "textures", "seed": 123, "tins": 98.35, "clavism_c1": 98.53, "clavism_m2": 98.33}
+{"ds": "textures", "seed": 124, "tins": 97.92, "clavism_c1": 98.34, "clavism_m2": 98.28}
+{"ds": "textures", "seed": 125, "tins": 98.18, "clavism_c1": 98.45, "clavism_m2": 98.36}
+{"ds": "textures", "seed": 126, "tins": 98.05, "clavism_c1": 98.43, "clavism_m2": 98.4}
+{"ds": "textures", "seed": 127, "tins": 98.05, "clavism_c1": 98.37, "clavism_m2": 98.29}
+{"ds": "openimageo", "seed": 123, "tins": 93.01, "clavism_c1": 97.12, "clavism_m2": 97.19}
+{"ds": "openimageo", "seed": 124, "tins": 92.99, "clavism_c1": 97.09, "clavism_m2": 97.15}
+{"ds": "openimageo", "seed": 125, "tins": 93.16, "clavism_c1": 97.13, "clavism_m2": 97.17}
+{"ds": "openimageo", "seed": 126, "tins": 93.23, "clavism_c1": 97.16, "clavism_m2": 97.17}
+{"ds": "openimageo", "seed": 127, "tins": 93.05, "clavism_c1": 97.11, "clavism_m2": 97.13}
+# OpenOOD ImageNet-1K test：CLAVIS-M2（test の 3 回目の使用、1 回だけの評価）
+
+- 事前登録: `test_eval/prereg_test3.json`（sha256 `4b6cacce2ffd7f69…`）、凍結候補 `iter2/frozen_m2.json`。
+- TINS は upstream 無改変（Codex の設定）の 5 つのストリーム順序（123〜127）。値は 5 順序の平均（AUROC ± SD / FPR95、%）。
+
+| データセット | TINS | CLAVIS-M | S×p_t(B/14) | S×p_t(L/14) | CLAVIS-M2 | 視覚pの積 |
+|---|---|---|---|---|---|---|
+| ssb_hard | 82.22 ± 0.26 / 56.65 | 87.13 ± 0.16 / 43.21 | 89.28 ± 0.15 / 40.39 | 89.13 ± 0.15 / 39.52 | 89.60 ± 0.12 / 38.90 | 87.64 ± 0.08 / 44.83 |
+| ninco | 80.74 ± 0.26 / 56.09 | 93.77 ± 0.13 / 24.83 | 95.48 ± 0.12 / 19.94 | 95.40 ± 0.17 / 21.86 | 96.29 ± 0.14 / 15.48 | 95.83 ± 0.21 / 17.46 |
+| inaturalist | 99.93 ± 0.00 / 0.17 | 99.95 ± 0.00 / 0.12 | 99.95 ± 0.00 / 0.15 | 99.95 ± 0.00 / 0.15 | 99.94 ± 0.00 / 0.21 | 99.52 ± 0.01 / 1.61 |
+| textures | 98.11 ± 0.16 / 8.31 | 98.42 ± 0.07 / 7.20 | 98.60 ± 0.06 / 6.00 | 98.44 ± 0.05 / 7.01 | 98.33 ± 0.05 / 7.61 | 94.75 ± 0.12 / 27.08 |
+| openimageo | 93.09 ± 0.10 / 28.20 | 97.12 ± 0.03 / 15.32 | 97.05 ± 0.03 / 15.71 | 96.83 ± 0.04 / 16.85 | 97.16 ± 0.02 / 15.64 | 95.74 ± 0.02 / 23.33 |
+| near | 81.48 ± 0.24 / 56.37 | 90.45 ± 0.11 / 34.02 | 92.38 ± 0.09 / 30.16 | 92.27 ± 0.12 / 30.69 | 92.94 ± 0.07 / 27.19 | 91.74 ± 0.10 / 31.14 |
+| far | 97.04 ± 0.06 / 12.23 | 98.50 ± 0.03 / 7.55 | 98.53 ± 0.03 / 7.29 | 98.40 ± 0.03 / 8.00 | 98.48 ± 0.02 / 7.82 | 96.67 ± 0.04 / 17.34 |
+
+| 差（シード123） | AUROC 差 | 95% 区間（クラス単位ブートストラップ） | DeLong p |
+|---|---|---|---|
+| CLAVIS-M2 − CLAVIS-M：ssb_hard | +2.40 | [2.03, 2.77] | 0.00e+00 |
+| CLAVIS-M2 − CLAVIS-M：ninco | +2.42 | [1.34, 3.64] | 1.16e-126 |
+| CLAVIS-M2 − CLAVIS-M：inaturalist | -0.01 | [-0.02, -0.00] | 1.71e-02 |
+| CLAVIS-M2 − CLAVIS-M：textures | -0.20 | [-0.37, -0.04] | 2.19e-09 |
+| CLAVIS-M2 − CLAVIS-M：openimageo | +0.07 | [-0.02, 0.16] | 1.57e-02 |
+| CLAVIS-M2 − CLAVIS-M：near | +2.41 | [1.82, 3.03] | – |
+| CLAVIS-M2 − CLAVIS-M：far | -0.05 | [-0.12, 0.02] | – |
+| CLAVIS-M2 − TINS：ssb_hard | +7.21 | [6.30, 8.08] | 0.00e+00 |
+| CLAVIS-M2 − TINS：ninco | +15.49 | [11.38, 19.32] | 0.00e+00 |
+| CLAVIS-M2 − TINS：inaturalist | +0.01 | [-0.01, 0.03] | 3.72e-01 |
+| CLAVIS-M2 − TINS：textures | -0.03 | [-0.35, 0.26] | 7.35e-01 |
+| CLAVIS-M2 − TINS：openimageo | +4.17 | [3.81, 4.58] | 0.00e+00 |
+| CLAVIS-M2 − TINS：near | +11.35 | [9.30, 13.40] | – |
+| CLAVIS-M2 − TINS：far | +1.39 | [1.20, 1.57] | – |
+
+- メモリに入った ID の割合（平均）：B/14 11.77%、L/14 12.18%（目安 10%）

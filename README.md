@@ -1,59 +1,112 @@
-# REPRISE
+<p align="center"><img src="docs/assets/salmon_ladder.png" alt="Salmon Ladder" height="200"></p>
 
-Research code for detecting recurring out-of-distribution images in an online stream.
+# Salmon Ladder
 
-**Authors:** d-hacks B3 omote / 親: zackeyさん.
+Salmon Ladder is a training-free detector of unknown classes that recur in an online image stream. This repository holds its code, the records of every experiment, and tools that verify both on a CPU.
 
-REPRISE combines a fixed visual prototype score, a memory of previously observed images, and label propagation. The reference experiment configuration uses frozen DINOv2 ViT-B/14 and ViT-L/14 features, with CLIP ViT-B/16 selecting five candidate ID classes. Each ID class supplies 12 support images and four calibration images. An optional TINS score multiplies the visual score. Larger scores indicate ID.
+## The idea
 
-This repository archives the code actually used on the experiment server, together with frozen configurations, split manifests, stream plans, dependency versions, and verification records. The original implementation uses the internal name **CLAVIS-M3**. Development scripts retain their historical names. The additional controls were still running when this code snapshot was prepared; this repository does not represent their results as final.
+In a stream, an unknown class rarely appears once: like a salmon, it comes back. Salmon Ladder uses these returns as evidence. It trains nothing, and it never revises a score once it is issued.
 
-## Repository map
+The method works with two frozen encoders (DINOv2 ViT-B/14 and ViT-L/14) and 16 labelled images per known class. For each encoder it computes:
 
-| Location | Contents |
+1. **A prototype distance.** A standardised distance of the image to the prototypes of its candidate classes. CLIP ViT-B/16 selects the 20 candidates.
+2. **A memory rank.** Stream images that looked unknown when they arrived are stored. An entrance of three calibrated tests decides what is stored: the first uses the prototype distance alone, and the second and third compare the image with the images that the test before admitted. A later image that lies close to a stored one is pushed towards "unknown".
+3. **A propagation rank.** The labels of the labelled images are propagated over the exact nearest-neighbour graph of everything seen so far. An unknown image among other unknown images receives little label mass.
+
+The score is the product of the memory rank and the propagation rank over both encoders. It can be multiplied with any vision-language detector such as TINS. [docs/METHOD.md](docs/METHOD.md) states every step exactly as the code computes it and names the function that implements it.
+
+**About the name.** The experiments were run under the working name REPRISE. Archived scripts, registrations, result files and the directory names of the experiment server keep that name, because their content is fixed by hashes. The documentation says Salmon Ladder for the same method.
+
+## Results at a glance
+
+AUROC / FPR95 in %, frozen configuration, batches of 256. `zeta` is the registered comparator: among the detectors that use propagation without the entrance and the memory, it was the strongest on the development split, where every detector was tuned with the same budget. [docs/RESULTS.md](docs/RESULTS.md) holds all result tables. It and the table below are generated from the archived result files. Values that the paper quotes from other publications are not part of it.
+
+<!-- BEGIN GENERATED: results -->
+| evaluation | base detector alone | x zeta | x Salmon Ladder | Salmon Ladder - zeta (FPR95, 95% interval) |
+|:--|--:|--:|--:|--:|
+| U1: new class splits of ImageNet-1K, standalone | – | 92.40 / 29.43 | 93.86 / 26.27 | -3.16 [-4.15, -2.16] |
+| U1, with TINS | 64.95 / 85.67 | 92.27 / 30.17 | 93.79 / 26.48 | -3.69 [-4.67, -2.72] |
+| U2: ImageNet-O, standalone | – | 89.93 / 44.15 | 91.81 / 38.20 | -5.96 [-6.75, -5.16] |
+| U2, with TINS | 78.62 / 68.46 | 90.48 / 42.32 | 92.07 / 37.26 | -5.06 [-5.84, -4.28] |
+| OpenOOD v1.5 ImageNet-1K near-OOD, with TINS | 81.48 / 56.37 | 96.44 / 16.54 | 96.30 / 16.76 |  |
+| OpenOOD v1.5 ImageNet-1K far-OOD, with TINS | 97.04 / 12.23 | 98.74 / 5.79 | 98.85 / 5.55 |  |
+
+Registered endpoints on U1: E1 is the standalone row. E2 uses TINS and gives zeta its development-selected weight (FPR95 26.48 against 29.70): -3.22 [-4.21, -2.24]. The rows with TINS above use weight 1 for both methods.
+<!-- END GENERATED: results -->
+
+U1 and U2 were built after the configurations of both methods had been locked (by the file times of the records). On the OpenOOD test split a frozen configuration was evaluated six times in the course of the project, and analyses scored further variants on it in between, so that split is not independent of the design of the method. [docs/PREREGISTRATION.md](docs/PREREGISTRATION.md) gives the full account, including where the records are weaker than the word "registered" suggests. On OpenOOD the two methods are close, and the registered claim about the entrance and the memory rests on U1 and U2.
+
+## What the repository contains
+
+The experiment code is archived byte for byte as it was on the experiment server when it was exported, together with the registrations and selection locks that fix the order of decisions and the aggregated result files.
+
+| location | contents |
 |---|---|
-| [`experiments/legacy/`](experiments/legacy/) | Original REPRISE implementation, feature extraction, OpenOOD/Four-OOD evaluation, development history, R5 controls, and tests |
-| [`experiments/legacy/scripts/iter3_eval.py`](experiments/legacy/scripts/iter3_eval.py) | Frozen prototype, memory-admission, and propagation implementation |
-| [`experiments/legacy/iter3/frozen_m3.json`](experiments/legacy/iter3/frozen_m3.json) | Original final configuration and source hash |
-| [`experiments/controls_456/src/`](experiments/controls_456/src/) | Online implementation, controlled recurrence, prevalence/retention studies, new-dataset evaluation, and reporting |
-| [`experiments/controls_456/protocol.json`](experiments/controls_456/protocol.json) | Fixed design for the 1,210 additional conditions |
-| [`experiments/tins_reference/`](experiments/tins_reference/) | Initial TINS reproduction and ImageNet prototype-selection code |
-| [`third_party/`](third_party/) | TINS, its dependencies, and the LoCoOp comparison code, with attribution |
-| [`manifests/`](manifests/) | Image identifiers, splits, and portable image paths; no image pixels |
-| [`provenance/`](provenance/) | Server snapshot hashes, exact dependency versions, and submission checks |
-| [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | Environment, data, execution order, and expected outputs |
+| [`docs/METHOD.md`](docs/METHOD.md) | the method, with the function that implements each step |
+| [`docs/RESULTS.md`](docs/RESULTS.md) | all result tables, generated by `tools/make_results_tables.py` |
+| [`docs/PREREGISTRATION.md`](docs/PREREGISTRATION.md) | registrations, selection locks, every use of the test split, deviations and unkept commitments |
+| [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) | which script produced which result |
+| [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | environment, data, model weights, order of execution |
+| [`experiments/phase4/`](experiments/phase4/) | evaluation on new data (U1, U2), original baselines, recurrence intervention, operating conditions; `code/engine.py` is the frozen streaming engine |
+| [`experiments/phase7/`](experiments/phase7/) | first appearances and the extension, encoders, components, data sets, stream conditions; `code/engine7.py` adds the extension |
+| [`experiments/phase5_6/`](experiments/phase5_6/) | improvement loop (two-sided variant, not adopted) and DINOv3 swap |
+| [`experiments/lp_audit/`](experiments/lp_audit/) | audit of the comparison with label propagation; `vendor/` is the frozen implementation that the later phases import |
+| [`experiments/legacy/`](experiments/legacy/), [`experiments/r5_final/`](experiments/r5_final/) | original implementation and development history; matched comparison, final configuration and the final test on OpenOOD, Four-OOD and CUB |
+| [`experiments/controls_456/`](experiments/controls_456/), [`experiments/tins_reference/`](experiments/tins_reference/) | earlier controls and the TINS reproduction |
+| [`third_party/`](third_party/) | TINS, DINOv2 hub source, LoCoOp and licences ([THIRD_PARTY.md](THIRD_PARTY.md)) |
+| [`manifests/`](manifests/) | image identifiers, splits and portable image paths; no image pixels |
+| [`provenance/`](provenance/) | hashes, sizes and server times of every archived file, package versions, records of the checks |
+| [`tests/`](tests/), [`examples/`](examples/) | CPU tests and a runnable example on synthetic features |
+| [`tools/`](tools/) | verification, result tables, materialization of an executable workspace, comparison of a re-run |
 
-## Quick start: CPU verification
+An anonymized export of this repository contains `provenance/anonymized_export.json`. The files listed there differ from the server copies: names and paths are replaced, the hashes and sizes of changed files are updated, and the hashes and sizes of files outside the archive are replaced by pseudonyms and null.
 
-Python **3.12.3**, PyTorch **2.5.1+cu121**, and torchvision **0.20.1+cu121** were used on the server. The CPU verification does not require datasets, checkpoints, or a GPU.
+## Verify on a CPU
+
+Python 3.12.3, PyTorch 2.5.1 and torchvision 0.20.1 were used on the server. Nothing below needs data, model weights or a GPU.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements-core.txt
-python tools/verify_snapshot.py
-OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 CUDA_VISIBLE_DEVICES='' \
-  python -m pytest -q experiments/controls_456/src/test_controls.py
+
+python tools/verify_snapshot.py                    # every archived file, registration and listed quoted hash
+python tools/make_results_tables.py --check        # docs/RESULTS.md follows from the archived result files
+python tools/make_registration_timeline.py --check
+python -m pytest -q tests                          # frozen engine, extension, variants, documentation
+python examples/salmon_ladder_stream.py            # the frozen method and the extension on a synthetic stream
+```
+
+The tests of the earlier stages run the same way:
+
+```bash
+python -m pytest -q experiments/controls_456/src/test_controls.py
 PYTHONPATH=experiments/legacy python -m pytest -q experiments/legacy/tests/test_r5.py
+(cd experiments/lp_audit && python -m unittest discover -s unit_tests)
 python examples/feature_stream.py
 ```
 
-The example uses synthetic normalized features to demonstrate the actual online implementation. It is an API smoke test, **not an OOD benchmark result**.
+`python tools/run_cpu_checks.py` runs all of the commands above. The examples use synthetic features. They show the interface and the behaviour under recurrence; they are not benchmark results.
 
-For GPU experiments, install the CUDA 12.1 PyTorch wheels instead, then the recorded full environment from `requirements-reproduction.txt`. Read the [reproduction guide](docs/REPRODUCIBILITY.md) before using the archived launchers: those launchers preserve the original machine paths and scheduling policy. A workspace-materialization tool creates a separate path-adapted copy without editing the archived scientific code.
+## Run the experiments
 
-## Evaluation conventions
+The archived scripts keep the paths of the server. `python tools/materialize_workspace.py --workspace /absolute/path` writes a separate copy with the server layout, resolves the paths, and rebuilds the image tables from `manifests/`. The archive itself is never edited. Data and model weights are obtained from their providers; [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) lists what is needed and the order of execution. The archived selection locks make it possible to rerun an evaluation without repeating the selection.
 
-- The original OpenOOD and Four-OOD test sets had been used during method development. A frozen configuration does not make those data newly independent.
-- CUB-200-2011 and CIFAR-100 were confirmed unused in REPRISE method development before the new splits were fixed. This does not imply that a pretrained feature model has never seen related or overlapping images.
-- The controls compare static prototypes, memory only, propagation only, and full REPRISE with `s0=1`. Single-encoder conditions use image prototypes for candidate selection. TINS-composed scores are identified separately.
-- History-based memory scores use previous batches. Label propagation also includes the current batch. Independent-query controls restore the pre-query state after each query.
-- The original evaluation uses the TINS upstream FPR95 convention. The new controls use a threshold accepting at least 95% of ID samples, accepting ties and recording achieved TPR and tie counts. Do not mix these conventions silently.
-- Calibration ranks and their products are detection scores. Adaptive reuse of calibration data is not presented here as an established distribution-free guarantee.
+`python tools/compare_rerun.py --workspace /absolute/path` compares the metric tables of a re-run with the archived ones. `provenance/rerun_check_20261004.json` records such a check on the experiment server.
 
-See [the experiment map](docs/EXPERIMENTS.md) for commands and the distinction between development, historical tests, and the new controls. Data and pretrained model files must be obtained from their respective providers. They are not redistributed here.
+## Conventions
 
-## Attribution
+- Scores are large for in-distribution images. AUROC takes ID as the positive class; FPR95 is the share of unknown images accepted at the threshold that accepts 95% of the ID images.
+- `x` denotes the product of scores (the sum of log scores with weight 1). `standalone` means no base detector.
+- Calibration ranks are detection scores. The calibration images are reused by every batch and the memory adapts to the stream, so the ranks are not presented as distribution-free p-values.
+- The original evaluation scripts use the FPR95 convention of the TINS code; the controls and later phases use a threshold that accepts at least 95% of the ID images and count ties as accepted. The conventions are not mixed within a table.
+- Intervals are paired 95% t intervals over the stated units. Analyses that were not registered are labelled descriptive or post hoc.
+- The working names in the archived files (`REPRISE`, `CLAVIS`, `v4`, `v5`, `minimal`) are explained at the end of [docs/METHOD.md](docs/METHOD.md).
 
-See [THIRD_PARTY.md](THIRD_PARTY.md) for upstream revisions and licenses. The repository has no assigned paper venue, DOI, or final-results release. Cite the exact Git commit used for a submission; `CITATION.cff` identifies this code repository.
+## Third-party code and licences
+
+[THIRD_PARTY.md](THIRD_PARTY.md) lists the upstream revisions and licences of the vendored code. Datasets and pretrained models are not redistributed. A licence for the code of Salmon Ladder itself has not been selected yet.
+
+Maintainers: [docs/SUBMISSION.md](docs/SUBMISSION.md) describes how to build the anonymized archive for double-blind review; `CITATION.cff` identifies this repository. <!-- maintainers -->

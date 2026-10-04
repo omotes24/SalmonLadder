@@ -1,0 +1,14 @@
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/reprise_p7_20261003/code/extract7.py:84: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(CKPT / f"dinov2_{tag}_pretrain.pth", map_location="cpu"), strict=True)
+S14 {'params_M': 22.1, 'ms_per_image': 1.46, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.38}
+D3S {'params_M': 21.6, 'ms_per_image': 1.7, 'input': 256, 'batch': 64, 'gpu_mem_GB': 0.4}
+D3SP {'params_M': 28.7, 'ms_per_image': 2.14, 'input': 256, 'batch': 64, 'gpu_mem_GB': 0.62}
+RN50 {'params_M': 38.3, 'ms_per_image': 0.65, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.63}
+S14 timed again: {'params_M': 22.1, 'ms_per_image': 1.46, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.38} earlier: {'params_M': 22.1, 'ms_per_image': 1.41, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.38}
+bench7.json: ['B14', 'CLIP', 'CLIPL', 'D3B', 'D3L', 'D3S', 'D3SP', 'DINO1', 'G14', 'L14', 'MAE', 'RN50', 'S14', 'SIG2L']

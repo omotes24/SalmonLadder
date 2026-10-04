@@ -1,0 +1,6 @@
+2026-10-03T04:13:53Z START post hoc (variants chosen after the Phase 6 dev scores were seen): l14,d3L,d3mixB,d3mixL
+2026-10-03T04:17:53Z RUNS_DONE dev2: l14 30, d3L 30, d3mixB 30, d3mixL 30
+2026-10-03T04:21:40Z dev1 incomplete; single worker on GPU 0
+2026-10-03T04:23:04Z RUNS_DONE dev1: l14 30, d3L 30, d3mixB 30, d3mixL 30
+2026-10-03T04:24:01Z ANALYSIS_DONE rc 0
+2026-10-03T04:24:01Z POSTHOC_ALL_DONE

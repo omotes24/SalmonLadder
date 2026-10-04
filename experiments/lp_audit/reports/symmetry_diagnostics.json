@@ -1,0 +1,9 @@
+{
+  "role_swap_max_abs": {
+    "L0": 0.0002535577589748428,
+    "L1": 6.26093228373037e-08,
+    "L2": 8.82840808236196e-08
+  },
+  "meaning": "Full history replay after exchanging one persistent calibration and one final arriving ID. L0 age asymmetry is measured, not inferred from finite iterations alone.",
+  "tied_graph_permutation_max_abs": 0.15811388194561005
+}

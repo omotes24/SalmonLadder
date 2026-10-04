@@ -1,0 +1,5 @@
+2026-10-03T15:21:37Z start: gpus 0 1 2, 6 workers, steps u1w:G14 u2w:G14
+2026-10-03T15:24:46Z u1w:G14 done: 45 tasks logged, 0 worker logs with errors
+2026-10-03T15:25:11Z u2w:G14 done: 15 tasks logged, 0 worker logs with errors
+2026-10-03T15:25:11Z ENGINE_G_DONE
+2026-10-03T16:02:52Z G14_BENCH_DONE

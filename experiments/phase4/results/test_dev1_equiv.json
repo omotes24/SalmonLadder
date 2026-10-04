@@ -1,0 +1,28 @@
+{
+ "utc": "2026-09-27T21:40:40Z",
+ "B14_L0_plp_maxabs": 0.00027770063871157546,
+ "B14_L0_plp_n_changed": 27,
+ "B14_L1_plp_maxabs": 0.00027770063871151995,
+ "B14_L1_plp_n_changed": 23,
+ "B14_M0_pt_maxabs": 5.551115123125783e-17,
+ "B14_M0_pt_n_changed": 0,
+ "B14_L1_raw_maxabs": 0.0010334305449931913,
+ "B14_L1_raw_n_changed": 22971,
+ "L14_L0_plp_maxabs": 0.00027770063871157546,
+ "L14_L0_plp_n_changed": 22,
+ "L14_L1_plp_maxabs": 0.0005554012774229358,
+ "L14_L1_plp_n_changed": 18,
+ "L14_M0_pt_maxabs": 5.551115123125783e-17,
+ "L14_M0_pt_n_changed": 0,
+ "L14_L1_raw_maxabs": 0.0001585518547625453,
+ "L14_L1_raw_n_changed": 22950,
+ "mine": {
+  "AUROC": 92.6878011111111,
+  "FPR95": 30.64
+ },
+ "audit": {
+  "AUROC": 92.68779555555557,
+  "FPR95": 30.64
+ },
+ "rep_maxabs": 0.007168489478612372
+}

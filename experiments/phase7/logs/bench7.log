@@ -1,0 +1,23 @@
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/reprise_p7_20261003/code/extract7.py:56: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(CKPT / f"dinov2_{tag}_pretrain.pth", map_location="cpu"), strict=True)
+S14 {'params_M': 22.1, 'ms_per_image': 1.41, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.38}
+B14 {'params_M': 86.6, 'ms_per_image': 4.55, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.88}
+L14 {'params_M': 304.4, 'ms_per_image': 15.09, 'input': 224, 'batch': 64, 'gpu_mem_GB': 1.87}
+G14 {'params_M': 1136.5, 'ms_per_image': 55.9, 'input': 224, 'batch': 32, 'gpu_mem_GB': 4.9}
+D3B {'params_M': 85.6, 'ms_per_image': 5.16, 'input': 256, 'batch': 64, 'gpu_mem_GB': 0.9}
+D3L {'params_M': 303.1, 'ms_per_image': 17.0, 'input': 256, 'batch': 64, 'gpu_mem_GB': 1.88}
+DINO1 {'params_M': 85.8, 'ms_per_image': 3.54, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.8}
+MAE {'params_M': 85.8, 'ms_per_image': 3.54, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.8}
+CLIP {'params_M': 86.2, 'ms_per_image': 1.29, 'input': 224, 'batch': 64, 'gpu_mem_GB': 0.68}
+Loading weights:   0%|          | 0/590 [00:00<?, ?it/s]Loading weights:  72%|███████▏  | 424/590 [00:00<00:00, 4220.60it/s]Loading weights: 100%|██████████| 590/590 [00:00<00:00, 4134.63it/s]
+CLIPL {'params_M': 304.0, 'ms_per_image': 16.24, 'input': 224, 'batch': 64, 'gpu_mem_GB': 2.18}
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/792 [00:00<?, ?it/s]Loading weights:  45%|████▌     | 359/792 [00:00<00:00, 3562.64it/s]Loading weights:  95%|█████████▌| 753/792 [00:00<00:00, 3782.30it/s]Loading weights: 100%|██████████| 792/792 [00:00<00:00, 3899.10it/s]
+SIG2L {'params_M': 316.0, 'ms_per_image': 15.77, 'input': 256, 'batch': 64, 'gpu_mem_GB': 1.98}

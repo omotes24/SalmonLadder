@@ -1,0 +1,34 @@
+{
+ "title": "CLAVIS improvement loop: pre-registered stopping rule",
+ "frozen_at_utc": "2026-09-26T04:45:03Z",
+ "baseline": {
+  "method": "CLAVIS = S_final(TINS) * p(d), d = DINOv2 ViT-B/14, m=2, K=zs5, support 12 / calib 4",
+  "dev1": {
+   "near_AUROC": 78.48,
+   "far_AUROC": 96.12
+  },
+  "dev2": {
+   "near_AUROC": 77.3,
+   "far_AUROC": 95.92
+  },
+  "metric": "AUROC (%), mean over order seeds 123,124,125, upstream get_measures"
+ },
+ "big_step_criterion": {
+  "near": "new near AUROC >= baseline + 3.0 on dev1 AND on dev2",
+  "far": "new far AUROC >= baseline - 0.3 on dev1 AND on dev2",
+  "both_required": true
+ },
+ "constraints": [
+  "ID data: only TINS's 16-shot list per class (no extra ID images)",
+  "TINS: CLIP ViT-B/16, upstream hyper-parameters",
+  "visual backbone: DINOv2 family, any size (compute reported)",
+  "test-time adaptation within a stream is allowed (as in TINS); order seeds as before",
+  "no access to OpenOOD test lists or val_imagenet during development"
+ ],
+ "procedure": {
+  "explore": "dev1 only (any number of variants)",
+  "confirm": "a frozen candidate is evaluated once on dev2; at most 3 dev2 looks; each look is logged in iter/dev2_looks.jsonl",
+  "if_dev2_budget_exhausted": "build dev3 (new held-out classes and images) before any further confirmation",
+  "test": "when a candidate meets the criterion on dev1 and dev2: pre-register (sha256) and evaluate once on OpenOOD v1.5 ImageNet-1K test (second use of the test split overall); report whatever the result; stop"
+ }
+}

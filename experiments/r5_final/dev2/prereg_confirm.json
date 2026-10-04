@@ -1,0 +1,29 @@
+{
+ "frozen_utc": "2026-09-26T01:29:01Z",
+ "set_by": "user choice on 2026-09-26: confirm on a fresh dev split, then evaluate once on the OpenOOD ImageNet-1K test",
+ "written_before": "dev2 splits, features and TINS runs exist",
+ "dev2_design": {
+  "split_seed": 1,
+  "heldout": "100 classes, same rules as dev1 (direct WordNet parents, at most one per parent, duplicate-name classes excluded), and none of dev1's 100 held-out classes",
+  "id_classes": "the other 900 ImageNet-1K classes",
+  "support_calib": "TINS 16-shot list: first 12 lines support, last 4 calib (as dev1)",
+  "id_dev": "20 train images per ID class, not shots, not any dev1 id_dev/near_dev image (by file and sha256), not byte-identical to a sealed image",
+  "near_dev": "50 train images per held-out class, not any dev1 id_dev/near_dev image, not byte-identical to a sealed image",
+  "far_dev": "OpenOOD OpenImage-O val list (same images as dev1; far is not independent)",
+  "tins": "upstream 194759d + logging hooks, Codex's hyper-parameters, 900-label setup rebuilt with upstream functions, input features from upstream's stream path",
+  "order_seeds": [123, 124, 125]
+ },
+ "primary": {
+  "score": "fused(x) = S_final(x) * p_d(x); d = frozen visual view with DINOv2 ViT-B/14 CLS features, m = 2, K(x) = CLIP zero-shot top-5 over the 900 ID labels (TINS template), LOO med/MAD shrunk with n0 = 12; p_d(x) = (1 + #{calib d >= d(x)}) / (n_calib + 1)",
+  "criteria": {
+   "near": "mean over order seeds of AUROC_near(fused) - mean AUROC_near(TINS S_final) >= 0.05",
+   "far": "mean AUROC_far(fused) >= max(mean AUROC_far(TINS S_final), AUROC_far(d only))"
+  },
+  "decision": "PASS iff both criteria hold"
+ },
+ "secondary": {
+  "rule": "VINS seed level with K(x) = top-5 classes by cosine to DINOv2 visual prototypes (mean of the 12 support features), DINOv2 view, m = 2, eps = 0.01: mean (c) >= 0.05 and mean (d)[1:1] >= 0.85 over the order seeds"
+ },
+ "reported_not_decisive": ["FPR95", "d-only AUROC", "(a)-(g) standard report"],
+ "next_step_if_primary_pass": "freeze the fused score and evaluate it once on the sealed OpenOOD ImageNet-1K test against TINS and d-only"
+}

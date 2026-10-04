@@ -1,0 +1,1 @@
+run7.py printed arr after del arr (UnboundLocalError): every worker saved its first task and stopped. Fixed the print; the saved first tasks are complete files and are kept; missing tasks re-run. No setting changed.

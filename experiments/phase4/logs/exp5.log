@@ -1,0 +1,14 @@
+/home/omote/reprise_p4_20260928/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{"exp5": "exp5_B256_seed123.parquet", "seconds": 4.4, "utc": "2026-09-28T02:38:23Z"}
+{"exp5": "exp5_B64_seed123.parquet", "seconds": 10.2, "utc": "2026-09-28T02:38:34Z"}
+{"exp5": "exp5_B16_seed123.parquet", "seconds": 40.3, "utc": "2026-09-28T02:39:28Z"}
+{"exp5": "exp5_B1_seed123.parquet", "seconds": 390.2, "utc": "2026-09-28T02:45:59Z"}
+{"exp5": "exp5_B256_seed124.parquet", "seconds": 2.2, "utc": "2026-09-28T02:46:01Z"}
+{"exp5": "exp5_B64_seed124.parquet", "seconds": 6.3, "utc": "2026-09-28T02:46:08Z"}
+{"exp5": "exp5_B16_seed124.parquet", "seconds": 23.4, "utc": "2026-09-28T02:46:32Z"}
+{"exp5": "exp5_B1_seed124.parquet", "seconds": 365.9, "utc": "2026-09-28T02:52:39Z"}
+{"exp5": "exp5_B256_seed125.parquet", "seconds": 2.2, "utc": "2026-09-28T02:52:42Z"}
+{"exp5": "exp5_B64_seed125.parquet", "seconds": 6.3, "utc": "2026-09-28T02:52:49Z"}
+{"exp5": "exp5_B16_seed125.parquet", "seconds": 23.4, "utc": "2026-09-28T02:53:13Z"}
+{"exp5": "exp5_B1_seed125.parquet", "seconds": 368.3, "utc": "2026-09-28T02:59:21Z"}

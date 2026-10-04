@@ -1,0 +1,19 @@
+/home/omote/reprise_p5_20261002/code/merge6.py:27: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  b = torch.load(p, map_location="cpu")
+shots D3B 80000 (80000, 768)
+shots D3L 80000 (80000, 1024)
+shots D3Bs 80000 (80000, 768)
+shots D3Ls 80000 (80000, 1024)
+/home/omote/reprise_p5_20261002/code/merge6.py:27: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  b = torch.load(p, map_location="cpu")
+dev1 D3B 24763 (24763, 768)
+dev1 D3L 24763 (24763, 1024)
+dev1 D3Bs 24763 (24763, 768)
+dev1 D3Ls 24763 (24763, 1024)
+/home/omote/reprise_p5_20261002/code/merge6.py:27: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  b = torch.load(p, map_location="cpu")
+dev2 D3B 24763 (24763, 768)
+dev2 D3L 24763 (24763, 1024)
+dev2 D3Bs 24763 (24763, 768)
+dev2 D3Ls 24763 (24763, 1024)
+MERGE_OK

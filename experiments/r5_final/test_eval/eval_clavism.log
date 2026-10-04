@@ -1,0 +1,31 @@
+/home/omote/vins_gonogo_20260925/test_eval/eval_openood_test_clavism.py:79: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(feat_path, map_location="cpu")
+{"ssb_hard": {"admitted": 26179, "frac_ID_admitted": 0.10973333333333334, "frac_OOD_admitted": 0.43348979591836734, "seconds": 16.0}}
+{"ninco": {"admitted": 8707, "frac_ID_admitted": 0.10973333333333334, "frac_OOD_admitted": 0.6410954243919034, "seconds": 2.5}}
+{"inaturalist": {"admitted": 14329, "frac_ID_admitted": 0.10973333333333334, "frac_OOD_admitted": 0.9391, "seconds": 4.3}}
+{"textures": {"admitted": 8093, "frac_ID_admitted": 0.10973333333333334, "frac_OOD_admitted": 0.6114341085271318, "seconds": 2.3}}
+{"openimageo": {"admitted": 18057, "frac_ID_admitted": 0.10973333333333334, "frac_OOD_admitted": 0.8267061566576344, "seconds": 6.0}}
+# OpenOOD ImageNet-1K test：CLAVIS-M（test の 2 回目の使用、1 回だけの評価）
+
+- 事前登録: `test_eval/prereg_test2.json`（sha256 `8bb64c4c2f698c0c…`）。dev1・dev2 で停止基準を満たした凍結候補 `iter/frozen_c1.json`。
+- TINS は Codex による upstream 無改変の再現スコア（ストリーム順・バッチ 256）。特徴は 1 回目の評価で保存したものを再利用。
+- CLAVIS の再現差（1 回目の評価との AUROC の最大差）: 0.00e+00
+- AUROC / FPR95（%、FPR95 は Codex の規約）。
+
+| データセット | TINS | CLAVIS | CLAVIS-M | 視覚 g 単体 |
+|---|---|---|---|---|
+| ssb_hard | 82.52 / 56.27 | 82.81 / 54.76 | 87.34 / 43.02 | 82.97 / 51.76 |
+| ninco | 80.85 / 55.42 | 89.19 / 45.65 | 93.92 / 24.63 | 92.03 / 25.02 |
+| inaturalist | 99.93 / 0.19 | 99.94 / 0.17 | 99.95 / 0.13 | 98.97 / 2.30 |
+| textures | 98.35 / 7.60 | 98.16 / 8.86 | 98.53 / 6.92 | 92.16 / 33.14 |
+| openimageo | 93.01 / 28.11 | 96.61 / 19.66 | 97.12 / 15.22 | 94.91 / 24.70 |
+| **nearood 平均** | **81.69 / 55.84** | **86.00 / 50.21** | **90.63 / 33.82** | **87.50 / 38.39** |
+| **farood 平均** | **97.10 / 11.96** | **98.24 / 9.56** | **98.53 / 7.42** | **95.35 / 20.05** |
+
+| データセット | メモリ件数 | ID の採用率 | OOD の採用率 |
+|---|---|---|---|
+| ssb_hard | 26179 | 10.97% | 43.3% |
+| ninco | 8707 | 10.97% | 64.1% |
+| inaturalist | 14329 | 10.97% | 93.9% |
+| textures | 8093 | 10.97% | 61.1% |
+| openimageo | 18057 | 10.97% | 82.7% |

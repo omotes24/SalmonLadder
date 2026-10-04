@@ -1,0 +1,51 @@
+test_classwise_all_classes_and_dense_reference (test_core.CoreTests.test_classwise_all_classes_and_dense_reference) ... FAIL
+test_graph_prefix_against_rebuild (test_core.CoreTests.test_graph_prefix_against_rebuild) ... ok
+test_legacy_equivalence (test_core.CoreTests.test_legacy_equivalence) ... ok
+test_linear_solution_and_error_bound (test_core.CoreTests.test_linear_solution_and_error_bound) ... FAIL
+test_monotone_rank_and_ties (test_core.CoreTests.test_monotone_rank_and_ties) ... ok
+test_permutation_equivariance_without_ties (test_core.CoreTests.test_permutation_equivariance_without_ties) ... ok
+test_prefix_and_immutable_scores (test_core.CoreTests.test_prefix_and_immutable_scores) ... ok
+test_split_calibration_no_feedback (test_core.CoreTests.test_split_calibration_no_feedback) ... ok
+
+======================================================================
+FAIL: test_classwise_all_classes_and_dense_reference (test_core.CoreTests.test_classwise_all_classes_and_dense_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/omote/reprise_lp_audit_20260927/unit_tests/test_core.py", line 88, in test_classwise_all_classes_and_dense_reference
+    np.testing.assert_allclose(u,exact,atol=1e-8);self.assertEqual(d['classes'],3)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1780, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 988, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-08
+
+Mismatched elements: 62 / 112 (55.4%)
+First 5 mismatches are at indices:
+ [37]: 0.09244987428950387 (ACTUAL), 0.0924498550407265 (DESIRED)
+ [39]: 0.08668148206834662 (ACTUAL), 0.08668146227884399 (DESIRED)
+ [40]: 0.09440415945025714 (ACTUAL), 0.09440413731943245 (DESIRED)
+ [41]: 0.13654206967222496 (ACTUAL), 0.13654204170945608 (DESIRED)
+ [42]: 0.09284611254224293 (ACTUAL), 0.09284609230509945 (DESIRED)
+Max absolute difference among violations: 3.04900729e-08
+Max relative difference among violations: 2.6170132e-07
+ ACTUAL: array([0.214624, 0.194421, 0.191774, 0.193905, 0.197081, 0.184248,
+       0.192811, 0.182674, 0.193078, 0.18839 , 0.197745, 0.189786,
+       0.228304, 0.232705, 0.213182, 0.222728, 0.204207, 0.190034,...
+ DESIRED: array([0.214624, 0.19442 , 0.191774, 0.193905, 0.197081, 0.184248,
+       0.192811, 0.182674, 0.193078, 0.18839 , 0.197745, 0.189786,
+       0.228304, 0.232705, 0.213182, 0.222728, 0.204207, 0.190033,...
+
+======================================================================
+FAIL: test_linear_solution_and_error_bound (test_core.CoreTests.test_linear_solution_and_error_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/omote/reprise_lp_audit_20260927/unit_tests/test_core.py", line 57, in test_linear_solution_and_error_bound
+    self.assertLessEqual(np.linalg.norm(u-exact),d['l2_error_bound']*1.001+1e-12)
+AssertionError: np.float64(7.272423765109427e-07) not less than or equal to 5.53381459281141e-08
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.740s
+
+FAILED (failures=2)

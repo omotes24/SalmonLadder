@@ -1,0 +1,16 @@
+[
+ {
+  "utc": "2026-09-27T03:48:03Z",
+  "file": "scripts/p3_streams.py",
+  "old_sha256": "2b139f7ad0a6e6744dfc7a9888e367f70695802b26daac4f28483f4df38d9a6a",
+  "new_sha256": "d33c5e0dabb66b81809419dde93506c8463d0e69a8b331e79739c61a313f6e34",
+  "reason": "bug fix before any test score was computed: E3_mixall sampled OpenImage-O under the cache name 'openimageo' while the test ids use the prefix 'openimage_o' (empty pool -> crash in the build stage). No other change."
+ },
+ {
+  "utc": "2026-09-27T04:52:28Z",
+  "file": "scripts/p3_locoop_run.py",
+  "old_sha256": "bddeb61d86469d684adc3504b0516ce5e4b5566b96fbd88c3711bb5b6aabfab5",
+  "new_sha256": "24c594ff201a52818bcf82dd9b0d97ac7c35ae8655d61a097da460e793c24646",
+  "reason": "reporting bug: OpenImage-O sample ids carry the prefix 'openimage_o' (not 'openimageo'), so its LoCoOp metric was empty (NaN). Metrics recomputed from the saved per-image scores; the model was not re-run and no other number changes."
+ }
+]

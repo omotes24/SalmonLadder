@@ -1,0 +1,18 @@
+{
+  "state": "COMPLETE",
+  "pid": 2613264,
+  "upstream_pid": 2599513,
+  "steps": [
+    {
+      "script": "summarize_execution.py",
+      "returncode": 0,
+      "seconds": 0.05709528923034668
+    },
+    {
+      "script": "make_summary.py",
+      "returncode": 0,
+      "seconds": 2.1975061893463135
+    }
+  ],
+  "summary": "/home/omote/reprise_lp_audit_20260927/summary.md"
+}

@@ -1,0 +1,50 @@
+{
+ "amendment": 2,
+ "to": "prereg_p7.json (sha256 345b9704...) and amendment_01.json (sha256 9832dd11...)",
+ "written_utc": "2026-10-03T14:00:38Z",
+ "origin": "User (2026-10-03): 「初出の画像は場合わけして考えたいね。そうすれば異常を検知できて、AUROCがさらに上がるのではないか？」",
+ "status_at_writing": "Seen so far: dev1 / dev2 (A2 candidates incl. the one-sided memory, delayed re-scoring), U1 / U4 delayed re-scoring (amendment 01), intervention re-run. No within-batch read-out and no case analysis has been computed on any data.",
+ "A5_case_analysis": {
+  "kind": "descriptive diagnosis (labels define the cases; no detector is built from them)",
+  "cases": {
+   "R": "an image of the same unknown class from an earlier batch is in the memory M (at least one view)",
+   "C": "not R, but an image of the same class admitted from the same batch (co-arrival)",
+   "N1": "neither, and it is the first image of its class",
+   "N+": "neither, although earlier images of the class exist (none admitted)"
+  },
+  "outcomes": "share of the OOD images per case, miss rate at the ID-95% threshold and AUROC against all ID images per case (static p, static x p_LP, zeta, memory, REPRISE, delayed re-scoring); admission rates; ceiling arithmetic (AUROC against all ID is linear in OOD subsets)",
+  "data": "U1, U4 (45 streams each), dev1 / dev2 near streams"
+ },
+ "A6_within_batch_memory": {
+  "idea": "the case split by observable evidence: (1) a memory member of an earlier batch is near -> frozen read-out; (2) no earlier member but another image of the same batch is admitted and near -> use it; (3) neither -> static evidence only. Case (2) is new: the frozen memory reads only earlier batches.",
+  "readout": "'@0': the frozen memory statistic g = d - (rho - med)/mad with rho = distance to the nearest member admitted up to and including the current batch, the image itself excluded; the calibration images are scored against the same members. Entrance (who is admitted) is unchanged. Hinge variants Mh<c>@0 as before.",
+  "candidates": "memory in {M (frozen), M@0, Mh4@0, Mh3@0, Mh2@0} x propagation in {lp0 (warm, frozen), lp (zero start)}: 10 candidates (frozen included)",
+  "selection_rule_dev1": {
+   "objective": "maximise the standalone near AUROC (dev1, 5 draws x 3 orders)",
+   "constraints": [
+    "near FPR95 <= frozen",
+    "far FPR95 <= frozen + 0.5",
+    "x TINS near FPR95 <= frozen x TINS"
+   ],
+   "tie_break": "within 0.03 AUROC of the best: fewest changes (memory != M, hinge, propagation != lp0), then closer to the frozen read-out",
+   "no_selection": "AUROC gain < 0.05 or no feasible candidate other than frozen"
+  },
+  "confirmation_dev2": {
+   "attempts": 1,
+   "criteria": [
+    "near AUROC difference (candidate - frozen): 95% t interval lower bound > 0",
+    "near FPR95 difference: upper bound < 0",
+    "far FPR95 difference: point <= +0.5"
+   ]
+  },
+  "evaluation_after_lock": {
+   "lock": "selection_lock_p7.json written after the dev2 confirmation, before any '@0' metric on U1 / U4",
+   "data": "U1 and U4 standard streams (45 each), standalone and x TINS; miss rate per appearance bin and per case",
+   "criteria": {
+    "W1": "U1 standalone AUROC difference: lower bound > 0",
+    "W2": "U1 standalone FPR95 difference: upper bound < 0"
+   }
+  },
+  "note": "The scores are still issued when the batch arrives and are never revised; only images of the current and earlier batches are used (the propagation already uses the current batch)."
+ }
+}

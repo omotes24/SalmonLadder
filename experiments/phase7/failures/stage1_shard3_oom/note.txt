@@ -1,0 +1,1 @@
+pass 1 shard 3 (GPU 3) died with CUDA OOM: the regression test (4.8 GB) shared the GPU. Shard re-split over GPUs 0-2 by run_stage1b.sh; no setting changed.

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/omote/reprise_lp_audit_20260927/real_calibration.py", line 100, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--prepare',action='store_true');p.add_argument('--rep',type=int);a=p.parse_args()
+         ^^^^^^^^^^
+  File "/home/omote/reprise_lp_audit_20260927/real_calibration.py", line 89, in run
+    rate=float(np.mean(a[key][mask])) if mask.any() else np.nan,n=int(mask.sum())))
+                                ^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 257, in __getitem__
+    return format.read_array(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/lib/_format_impl.py", line 833, in read_array
+    raise ValueError("Object arrays cannot be loaded when "
+ValueError: Object arrays cannot be loaded when allow_pickle=False

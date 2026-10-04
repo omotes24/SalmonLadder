@@ -1,0 +1,30 @@
+[
+  {
+    "capacity": "all",
+    "fusion": "standalone",
+    "candidate": "L1_plp@cfg0",
+    "near_FPR95": 32.22933333333334,
+    "scope": "all LP without memory, including pLP; exploratory envelope"
+  },
+  {
+    "capacity": "all",
+    "fusion": "+TINS",
+    "candidate": "L1_plp+TINS@cfg0",
+    "near_FPR95": 32.984,
+    "scope": "all LP without memory, including pLP; exploratory envelope"
+  },
+  {
+    "capacity": "8192",
+    "fusion": "standalone",
+    "candidate": "L1_plp@cfg0",
+    "near_FPR95": 37.12133333333333,
+    "scope": "all LP without memory, including pLP; exploratory envelope"
+  },
+  {
+    "capacity": "8192",
+    "fusion": "+TINS",
+    "candidate": "L1_plp+TINS@cfg0",
+    "near_FPR95": 37.88933333333333,
+    "scope": "all LP without memory, including pLP; exploratory envelope"
+  }
+]

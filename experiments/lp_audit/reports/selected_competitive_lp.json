@@ -1,0 +1,30 @@
+[
+  {
+    "capacity": "all",
+    "fusion": "standalone",
+    "candidate": "L1_norm@cfg0",
+    "near_FPR95": 38.2,
+    "n_eligible": 12
+  },
+  {
+    "capacity": "all",
+    "fusion": "+TINS",
+    "candidate": "L1_norm+TINS@cfg0",
+    "near_FPR95": 44.032,
+    "n_eligible": 12
+  },
+  {
+    "capacity": "8192",
+    "fusion": "standalone",
+    "candidate": "L1_norm@cfg0",
+    "near_FPR95": 39.056000000000004,
+    "n_eligible": 12
+  },
+  {
+    "capacity": "8192",
+    "fusion": "+TINS",
+    "candidate": "L1_norm+TINS@cfg0",
+    "near_FPR95": 47.504,
+    "n_eligible": 12
+  }
+]

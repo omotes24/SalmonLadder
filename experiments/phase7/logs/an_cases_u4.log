@@ -1,0 +1,13 @@
+##### u4r (*): 45 streams; cases by the memory evidence at arrival
+share of the OOD images (%): R 94.47  C 1.11  N1 1.72  N+ 2.70  | k=1 images 2.00, of which with a same-class image in the same batch 23.3
+admission to M (%): adm_ood|B14 72.1  adm_ood|L14 74.7  adm_ood|any 80.1  adm_id|B14 10.0  adm_id|L14 9.9  adm_k1|B14 42.5  adm_k1|L14 52.3  adm_k1|any 57.5
+detector      | overall AUROC / FPR95 | AUROC per case      R      C     N1     N+ | miss rate per case      R      C     N1     N+
+static        |  84.00 /  61.13      |  84.74  84.14  82.59  59.83                     |  60.18  63.69  64.29  91.63
+static_plp    |  90.48 /  39.83      |  91.12  86.31  83.10  74.21                     |  37.96  59.13  60.68  84.67
+zeta          |  91.94 /  30.35      |  92.50  87.09  82.63  79.65                     |  28.63  50.00  55.88  67.72
+mem           |  91.78 /  31.95      |  93.13  83.18  81.57  55.61                     |  29.20  65.72  65.76  92.85
+reprise       |  93.44 /  27.08      |  94.27  86.50  82.94  73.55                     |  24.57  56.87  58.15  83.31
+reprise@1     |  93.63 /  26.46      |  94.34  91.41  84.31  75.49                     |  24.41  34.92  52.00  78.98
+reprise@5     |  94.00 /  25.32      |  94.50  92.58  88.46  80.32                     |  23.78  29.91  39.08  68.55
+reprise@end   |  95.07 /  21.58      |  95.21  95.45  94.88  90.40                     |  20.90  20.03  23.10  44.59
+ceiling arithmetic (issued REPRISE): overall 93.43; if N1 were detected like R: 93.62; if every case were like R: 94.27

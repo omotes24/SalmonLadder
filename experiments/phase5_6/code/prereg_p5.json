@@ -1,0 +1,52 @@
+{
+ "title": "REPRISE Phase 5: improvement loop with a pre-specified stop rule and one final evaluation on unused data",
+ "registered_utc": "2026-10-02T08:18:31Z",
+ "request": "User (2026-10-02): improve the performance further; stop once a large improvement is obtained; hades may be used freely.",
+ "state_at_registration": "No Phase 5 score on real data exists. The engine was tested on synthetic streams only (code tests). Known dev1 numbers of the frozen method (Phase 4 tuning files): standalone near AUROC 93.13 / FPR95 29.21, far 96.82 / 16.03; x TINS near 93.05 / 29.65, far 97.20 / 14.47.",
+ "frozen_reference": {"name": "REPRISE v5", "n0": 48, "K": 20, "m": 1, "entrance_thresholds_exact": [0.3, 0.2, 0.10191613435745239],
+   "graph": {"k": 10, "gamma": 1.0, "lambda": 0.9}, "lp_solver": "warm start, 15 sweeps", "score": "s0 x prod_views p_M x p_LP",
+   "views": ["DINOv2 B/14 CLS", "DINOv2 L/14 CLS"]},
+ "data_roles": {
+  "dev1": "exploration and selection (any number of candidates; 5 support/calibration draws x 3 orders x {near, far}, the existing TINS scores)",
+  "dev2": "confirmation of a locked candidate only; never used to choose between candidates. At most 3 confirmation attempts in this phase; every attempt is reported.",
+  "U1_U2": "scored once in Phase 4. Not read before the Phase 5 lock. After the lock the locked method may be re-run on them as a descriptive, non-independent comparison (Phase 5 was motivated by Phase 4 results).",
+  "U4": "new unused bank, built only after the lock: 5 new ImageNet-1K class splits (100 held-out classes each, the Phase 4 sibling rule, seeds 20261003..20261007), held-out classes disjoint from the dev1/dev2 held-out classes; ImageNet train images never used in any earlier phase (dev1/dev2 samples, TINS shots, R5 draws, the Phase 4 pool, sealed images excluded by name and sha256); per split 20 ID images x 900 classes and 50 OOD images x 100 classes; 3 support/calibration draws x 3 orders = 45 streams, batch 256.",
+  "openood_test": "OpenOOD v1.5 ImageNet-1K test (5 orders): scored once with the locked method after the lock (6th use of the test split overall; the count is reported). No selection on it.",
+  "sealed": "OpenOOD test and ImageNet val images stay sealed until the lock (manifest guard)."
+ },
+ "candidate_families": [
+  "LP solver: zero start (every node from 0), sweeps, graph (k_g, gamma, weight of non-mutual edges), multi-scale products",
+  "class-conditional reference for the propagated mass (support nodes of the nearest class)",
+  "class-resolved propagation (one channel per ID class) and propagated embeddings (static score of the diffused feature)",
+  "memory admission: LP-gated, gated by the view's own visual p-value, gated by the fused visual p-value of all views; read-outs of the intermediate sets",
+  "all-stream statistics without an entrance (stream-vs-support similarity contrast, all-stream memory score)",
+  "propagation from memory members as OOD seeds",
+  "feature geometry fitted on the support images only (centring, shrunk within-class whitening)",
+  "views: fused DINOv2 views, CLIP ViT-B/16 image features as an additional view, other frozen encoders (second stage, only if the first stage does not meet the stop rule)",
+  "combination: products (sums of log p) of the above read-outs with weights from a small grid",
+  "any other label-free read-out computed from the same inputs (support, calibration, stream so far); every explored variant is logged"
+ ],
+ "constraints": ["training-free and label-free at test time (16 labelled images per class: 12 support, 4 calibration, unchanged)",
+  "scores are issued per batch and never revised; no future batch is used (prefix test in the code tests)",
+  "the engine never receives OOD labels; labels are used by the evaluation scripts only"],
+ "selection_on_dev1": {
+  "primary": "standalone (s0 = 1) near FPR95, mean over the 5 draws (orders averaged)",
+  "constraints": ["standalone far FPR95 <= frozen + 0.5", "x TINS near FPR95 not above the frozen x TINS value"],
+  "rule": "among candidates meeting the constraints, the lowest primary value; a simpler candidate (fewer components) is preferred when within 0.3 points",
+  "lock": "the selected candidate (all parameters) is written to selection_lock_p5.json with its sha256 before dev2 is scored with it"
+ },
+ "large_improvement": {
+  "definition": "on dev2 (5 draws, orders averaged; paired differences to frozen REPRISE v5, t interval with 4 df): standalone near FPR95 difference <= -5.0 points with the upper end of the 95% interval below -3.0; x TINS near FPR95 difference <= -4.0; standalone far FPR95 difference <= +0.5",
+  "if_met": "lock the method, run the final evaluation once (U4, then the OpenOOD test), report, and stop the loop",
+  "if_not_met": "return to dev1 (other candidates; second stage: additional frozen encoders). After 3 unsuccessful dev2 attempts, report the best confirmed improvement and stop."
+ },
+ "final_evaluation": {
+  "U4_primary": "F1: standalone near FPR95, locked method minus frozen REPRISE v5 (differences averaged within split over its 9 draw x order conditions -> 5 split values -> t 95% interval, df 4). F2: the same x TINS.",
+  "U4_confirmation": "the large improvement is confirmed on unused data when F1 <= -4.0 points and the upper end of its interval is below 0",
+  "U4_secondary": ["AUROC differences", "x MCM", "best minimal configuration (zeta) of Phase 4 as a second reference"],
+  "openood": "near and far AUROC / FPR95 (x TINS and standalone), per data set, 5 orders; paired differences to the Phase 3 values of REPRISE v5 (descriptive)",
+  "no_change_after": "no parameter or rule change after U4 or the test split is scored; later analyses are labelled post hoc"
+ },
+ "guardrails": ["all runs, failures and reruns are kept under logs/ and failures/", "the number of explored configurations is reported",
+  "dev2 attempts are counted and reported", "synthetic data are used for code tests only"]
+}

@@ -1,0 +1,21 @@
+# Causal and data-dependency audit
+
+`S` is 12 support images/class; `C` is four calibration images/class; `X_<t` are previous batches and `B_t` the current batch. All feature extractors are frozen.
+
+The static prototype, per-class median/MAD, shrinkage and memory-distance scale depend on S. K(x) uses x and fixed CLIP ID text features only. C enters static rank calibration, not feature statistics. Exact v5 parameters are stored in `config_original.yaml`; the legacy `vins/config.py` defaults remain old v4 and are overridden by the round-2/final evaluation configuration, not silently treated as final settings.
+
+The LP graph itself uses DINOv2 features, whereas static/pt also use CLIP's top-K known-ID candidate path. Both paths and the same TINS scores are frozen and available under the common information protocol, but their use is not identical. Therefore REPRISE-minus-pLP is the effect of adding the entire pt factor, not a pure memory-adaptation or entrance effect. A separately labeled post-primary diagnostic compares REPRISE against static-p times pLP using identical saved feature/score components; it is excluded from candidate selection.
+
+In M0, `A1_<t = select(d_all, C, X_<t)`, `A2_<t = select(g_A1, C, X_<t)`, `M_<t = select(g_A2, C, X_<t)` and `pt(B_t) = rank_C(g_M(B_t))`. Each stage selects from the whole arriving batch, not just a subset selected by the previous stage. All three prior sets are scored before any current-batch update. Calibration scores are recomputed under the same prior set. Thus there is no future-image path, but there **is** a C -> selected memory -> scoring-function -> C-rank path.
+
+M1 assigns C1 to A1, C2 to A2, C3 to M, C4 to pt. `core.Memory.roles` and the feedback tests check that changing C4 cannot change admissions and changing C3 cannot change A1/A2. LP sees all four calibration roles as unlabeled nodes but does not feed admissions or memory pruning. Hyperparameter-selection history is external to this structural test and remains a validity limitation.
+
+LP graph at t uses `[S,C,X_<t,B_t]`. Edges update symmetrically as max(A,A^T); degrees and propagation are recomputed. Only current-batch coordinates are issued as predictions. The graph changes internal old values but no saved past score is rewritten. `PrefixGraph.append` receives only B_t, not a full-stream neighbor table. A full feature cache is available to the evaluation harness, but indexing/prefix unit tests ensure the detector graph only sees arrived features.
+
+L0 uses y at the first batch, then persists old u; L1 restarts every node at zero and uses exactly 15 sweeps; L2 solves the same numerical graph to equation-relative residual 1e-8. A common graph is used across scoring transformations and solver variants. All score transforms use the same support/calibration features. Frozen CDF is fit once on the support+calibration graph before the stream, with no additional label cost.
+
+TINS's 16-shot prototypes use the same draw's 12+4 images. This exposes calibration images to **TINS**, not to the REPRISE prototype fit. We report standalone visual scores separately from products with TINS. A product does not inherit p-value validity. Upstream TINS constructs its negative bank from generic vocabulary filtered by ID labels; unknown class names can occur naturally in that vocabulary, but no evaluation OOD class list is passed to it. We do not claim the generic vocabulary is semantically disjoint from OOD classes.
+
+The cached TINS runs were produced with fresh negative-bank/buffer state and RNG reset for every draw/stream/order (`vendor/scripts/r5_tins.py`, `vendor/vins/tins_dev.py`). Current-batch images can affect TINS's final current-batch score. Labels are held by the evaluator and never passed to its update. `tins_prefix.py` replays a complete-batch prefix, an extension and a modified future, and compares with the saved full-stream scores. Its result is saved independently of the new method results.
+
+Tests cover complete-batch prefix invariance, changed futures, issued-score immutability, exact prefix graph rebuild, role-separated admission feedback, frozen-rank monotonicity, classwise completeness, FP64 linear-system checks and permutation diagnostics. Prefix invariance inside a batch is not claimed: current-batch access is intentional and common to all compared methods.

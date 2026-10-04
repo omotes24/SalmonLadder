@@ -1,0 +1,172 @@
+##### dev2: per-view parts of the pre-registered runs, standalone (AUROC / FPR95)
+  near B14  | static  79.74 / 68.81 | M0  88.74 / 37.99 | lp (zero start)  90.20 / 36.87 | v5  91.85 / 32.31
+  near L14  | static  83.26 / 58.10 | M0  90.33 / 35.01 | lp (zero start)  92.38 / 30.10 | v5  93.58 / 26.57
+  near D3B  | static  78.49 / 78.14 | M0  89.17 / 41.10 | lp (zero start)  87.47 / 45.79 | v5  90.50 / 38.57
+  near D3L  | static  86.32 / 63.03 | M0  93.56 / 27.38 | lp (zero start)  93.16 / 29.07 | v5  94.73 / 23.57
+  far  B14  | static  96.20 / 20.19 | M0  94.50 / 29.47 | lp (zero start)  94.03 / 27.38 | v5  96.13 / 19.26
+  far  L14  | static  96.51 / 17.08 | M0  93.21 / 41.89 | lp (zero start)  94.79 / 25.03 | v5  96.29 / 18.71
+  far  D3B  | static  95.46 / 24.07 | M0  94.97 / 26.56 | lp (zero start)  93.62 / 28.84 | v5  96.07 / 19.73
+  far  D3L  | static  96.72 / 16.42 | M0  95.74 / 24.38 | lp (zero start)  95.33 / 21.90 | v5  97.02 / 14.47
+== dev2 near, base = none: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      93.43 / 26.91
+  v5         DINOv3 B+L            93.93 / 26.65 | dFPR95  -0.27 [ -0.67, +0.13] | dAUROC  +0.50 [ +0.39, +0.61]
+  v5         DINOv2 L              93.58 / 26.57 | dFPR95  -0.34 [ -0.88, +0.20] | dAUROC  +0.15 [ +0.06, +0.24]
+  v5         DINOv3 L              94.73 / 23.57 | dFPR95  -3.35 [ -3.73, -2.96] | dAUROC  +1.30 [ +1.22, +1.39]
+  v5         DINOv2 B + DINOv3 L   94.47 / 23.67 | dFPR95  -3.25 [ -3.55, -2.94] | dAUROC  +1.04 [ +0.97, +1.12]
+  v5         DINOv2 L + DINOv3 L   95.10 / 21.07 | dFPR95  -5.84 [ -6.32, -5.36] | dAUROC  +1.67 [ +1.61, +1.72]
+  two-sided  DINOv2 B+L (ref)      94.97 / 21.14
+  two-sided  DINOv3 B+L            95.54 / 20.15 | dFPR95  -0.99 [ -1.41, -0.57] | dAUROC  +0.57 [ +0.45, +0.68]
+  two-sided  DINOv2 L              95.01 / 21.11 | dFPR95  -0.03 [ -0.43, +0.37] | dAUROC  +0.04 [ -0.06, +0.14]
+  two-sided  DINOv3 L              96.15 / 17.67 | dFPR95  -3.47 [ -4.03, -2.91] | dAUROC  +1.18 [ +1.07, +1.28]
+  two-sided  DINOv2 B + DINOv3 L   95.88 / 18.53 | dFPR95  -2.61 [ -2.79, -2.42] | dAUROC  +0.91 [ +0.83, +0.98]
+  two-sided  DINOv2 L + DINOv3 L   96.27 / 16.93 | dFPR95  -4.21 [ -4.53, -3.89] | dAUROC  +1.29 [ +1.18, +1.41]
+== dev2 near, base = TINS: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      93.27 / 27.43
+  v5         DINOv3 B+L            93.75 / 27.42 | dFPR95  -0.00 [ -0.47, +0.46] | dAUROC  +0.48 [ +0.36, +0.60]
+  v5         DINOv2 L              93.26 / 27.77 | dFPR95  +0.34 [ -0.16, +0.85] | dAUROC  -0.01 [ -0.10, +0.08]
+  v5         DINOv3 L              94.39 / 24.96 | dFPR95  -2.47 [ -3.00, -1.93] | dAUROC  +1.12 [ +1.02, +1.21]
+  v5         DINOv2 B + DINOv3 L   94.30 / 24.51 | dFPR95  -2.91 [ -3.23, -2.60] | dAUROC  +1.03 [ +0.95, +1.11]
+  v5         DINOv2 L + DINOv3 L   94.95 / 21.78 | dFPR95  -5.64 [ -6.19, -5.10] | dAUROC  +1.68 [ +1.62, +1.73]
+  two-sided  DINOv2 B+L (ref)      94.93 / 21.31
+  two-sided  DINOv3 B+L            95.49 / 20.39 | dFPR95  -0.92 [ -1.51, -0.33] | dAUROC  +0.56 [ +0.44, +0.67]
+  two-sided  DINOv2 L              94.92 / 21.44 | dFPR95  +0.13 [ -0.23, +0.49] | dAUROC  -0.00 [ -0.10, +0.10]
+  two-sided  DINOv3 L              96.04 / 18.11 | dFPR95  -3.20 [ -3.76, -2.64] | dAUROC  +1.12 [ +1.01, +1.22]
+  two-sided  DINOv2 B + DINOv3 L   95.83 / 18.69 | dFPR95  -2.62 [ -2.88, -2.37] | dAUROC  +0.90 [ +0.83, +0.97]
+  two-sided  DINOv2 L + DINOv3 L   96.23 / 17.05 | dFPR95  -4.26 [ -4.68, -3.84] | dAUROC  +1.30 [ +1.18, +1.42]
+== dev2 far, base = none: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      96.79 / 16.35
+  v5         DINOv3 B+L            97.20 / 14.39 | dFPR95  -1.96 [ -3.03, -0.89] | dAUROC  +0.41 [ +0.28, +0.54]
+  v5         DINOv2 L              96.29 / 18.71 | dFPR95  +2.36 [ +1.95, +2.77] | dAUROC  -0.50 [ -0.58, -0.42]
+  v5         DINOv3 L              97.02 / 14.47 | dFPR95  -1.88 [ -2.81, -0.96] | dAUROC  +0.23 [ +0.10, +0.36]
+  v5         DINOv2 B + DINOv3 L   97.31 / 13.48 | dFPR95  -2.87 [ -3.66, -2.07] | dAUROC  +0.52 [ +0.42, +0.63]
+  v5         DINOv2 L + DINOv3 L   97.32 / 12.86 | dFPR95  -3.49 [ -4.31, -2.68] | dAUROC  +0.53 [ +0.45, +0.62]
+  two-sided  DINOv2 B+L (ref)      96.80 / 16.72
+  two-sided  DINOv3 B+L            97.33 / 13.63 | dFPR95  -3.09 [ -3.70, -2.47] | dAUROC  +0.53 [ +0.42, +0.63]
+  two-sided  DINOv2 L              96.47 / 17.64 | dFPR95  +0.92 [ +0.01, +1.83] | dAUROC  -0.33 [ -0.44, -0.23]
+  two-sided  DINOv3 L              97.22 / 13.57 | dFPR95  -3.15 [ -3.62, -2.67] | dAUROC  +0.42 [ +0.33, +0.51]
+  two-sided  DINOv2 B + DINOv3 L   97.31 / 13.72 | dFPR95  -3.00 [ -3.40, -2.60] | dAUROC  +0.51 [ +0.42, +0.59]
+  two-sided  DINOv2 L + DINOv3 L   97.30 / 13.53 | dFPR95  -3.19 [ -3.60, -2.78] | dAUROC  +0.50 [ +0.47, +0.54]
+== dev2 far, base = TINS: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      97.14 / 14.82
+  v5         DINOv3 B+L            97.45 / 13.24 | dFPR95  -1.58 [ -2.36, -0.81] | dAUROC  +0.31 [ +0.19, +0.42]
+  v5         DINOv2 L              96.97 / 15.81 | dFPR95  +0.99 [ +0.74, +1.24] | dAUROC  -0.17 [ -0.24, -0.10]
+  v5         DINOv3 L              97.43 / 12.81 | dFPR95  -2.01 [ -2.62, -1.40] | dAUROC  +0.29 [ +0.18, +0.40]
+  v5         DINOv2 B + DINOv3 L   97.55 / 12.34 | dFPR95  -2.48 [ -3.03, -1.92] | dAUROC  +0.41 [ +0.31, +0.51]
+  v5         DINOv2 L + DINOv3 L   97.64 / 11.63 | dFPR95  -3.19 [ -3.86, -2.51] | dAUROC  +0.50 [ +0.42, +0.57]
+  two-sided  DINOv2 B+L (ref)      96.96 / 16.32
+  two-sided  DINOv3 B+L            97.39 / 13.28 | dFPR95  -3.04 [ -3.66, -2.43] | dAUROC  +0.44 [ +0.34, +0.54]
+  two-sided  DINOv2 L              96.85 / 16.72 | dFPR95  +0.40 [ -0.40, +1.20] | dAUROC  -0.11 [ -0.20, -0.02]
+  two-sided  DINOv3 L              97.40 / 12.95 | dFPR95  -3.37 [ -3.99, -2.76] | dAUROC  +0.44 [ +0.36, +0.52]
+  two-sided  DINOv2 B + DINOv3 L   97.39 / 13.53 | dFPR95  -2.79 [ -2.98, -2.60] | dAUROC  +0.44 [ +0.36, +0.52]
+  two-sided  DINOv2 L + DINOv3 L   97.45 / 13.03 | dFPR95  -3.29 [ -3.79, -2.79] | dAUROC  +0.49 [ +0.45, +0.52]
+== dev2: DINOv3 L alone against DINOv2 L alone (true single-view runs), FPR95 difference [95% CI]
+  near none v5          -3.01 [ -3.63, -2.39]
+  near none two-sided   -3.44 [ -4.10, -2.79]
+  near TINS v5          -2.81 [ -3.77, -1.85]
+  near TINS two-sided   -3.33 [ -3.90, -2.77]
+  far  none v5          -4.24 [ -5.00, -3.49]
+  far  none two-sided   -4.07 [ -5.12, -3.02]
+  far  TINS v5          -3.00 [ -3.64, -2.36]
+  far  TINS two-sided   -3.77 [ -4.54, -3.01]
+== dev2: gain of the two-sided propagation over v5 within each configuration (FPR95 difference)
+  DINOv2 B+L (ref)     near none  -5.77 [ -6.33, -5.22] | near TINS  -6.11 [ -6.66, -5.57] | far none  +0.37 [ -0.51, +1.24] | far TINS  +1.50 [ +0.95, +2.05]
+  DINOv3 B+L           near none  -6.49 [ -7.09, -5.90] | near TINS  -7.03 [ -7.63, -6.43] | far none  -0.76 [ -1.21, -0.31] | far TINS  +0.04 [ -0.48, +0.56]
+  DINOv2 L             near none  -5.47 [ -6.09, -4.84] | near TINS  -6.33 [ -7.15, -5.51] | far none  -1.07 [ -2.28, +0.13] | far TINS  +0.91 [ +0.17, +1.66]
+  DINOv3 L             near none  -5.90 [ -6.43, -5.37] | near TINS  -6.85 [ -7.35, -6.36] | far none  -0.90 [ -1.60, -0.20] | far TINS  +0.14 [ -0.37, +0.64]
+  DINOv2 B + DINOv3 L  near none  -5.13 [ -5.48, -4.79] | near TINS  -5.82 [ -6.36, -5.29] | far none  +0.23 [ -0.27, +0.74] | far TINS  +1.19 [ +0.72, +1.65]
+  DINOv2 L + DINOv3 L  near none  -4.14 [ -4.74, -3.54] | near TINS  -4.73 [ -5.37, -4.10] | far none  +0.67 [ +0.05, +1.29] | far TINS  +1.40 [ +0.80, +1.99]
+== dev2: seed set S2 at the last batch (ID% / OOD% / purity%)
+  DINOv2 B+L (ref)     near   6.9  87.8  78.1 | far   1.9  66.6  78.0
+  DINOv3 B+L           near   7.3  89.6  77.4 | far   1.9  70.8  78.9
+  DINOv2 L             near   7.0  87.5  77.6 | far   1.8  62.4  77.7
+  DINOv3 L             near   7.1  90.7  77.9 | far   1.9  70.8  78.5
+  DINOv2 B + DINOv3 L  near   7.1  90.3  77.9 | far   1.7  70.4  79.9
+  DINOv2 L + DINOv3 L  near   7.1  91.3  78.0 | far   1.9  69.8  78.8
+consistency (v5, near): D3L single-view run  94.73 / 23.57 vs D3L read-out of the two-view run  94.73 / 23.57
+written /home/omote/reprise_p5_20261002/results/d3_posthoc_dev2.json
+##### dev1: per-view parts of the pre-registered runs, standalone (AUROC / FPR95)
+  near B14  | static  79.82 / 71.11 | M0  88.22 / 41.59 | lp (zero start)  89.46 / 40.19 | v5  91.42 / 35.89
+  near L14  | static  82.79 / 60.03 | M0  89.25 / 38.18 | lp (zero start)  92.09 / 30.90 | v5  93.18 / 28.88
+  near D3B  | static  79.15 / 75.91 | M0  88.43 / 44.32 | lp (zero start)  86.98 / 47.63 | v5  89.89 / 41.02
+  near D3L  | static  85.19 / 64.48 | M0  92.48 / 31.43 | lp (zero start)  92.41 / 31.19 | v5  93.98 / 26.62
+  far  B14  | static  96.27 / 20.41 | M0  94.48 / 30.25 | lp (zero start)  94.15 / 27.28 | v5  96.18 / 19.76
+  far  L14  | static  96.60 / 16.94 | M0  93.13 / 41.38 | lp (zero start)  94.79 / 24.04 | v5  96.27 / 18.20
+  far  D3B  | static  95.47 / 24.91 | M0  95.02 / 26.56 | lp (zero start)  93.70 / 28.96 | v5  96.12 / 19.74
+  far  D3L  | static  96.68 / 16.90 | M0  95.75 / 23.57 | lp (zero start)  95.42 / 21.73 | v5  97.07 / 14.01
+== dev1 near, base = none: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      93.13 / 29.21
+  v5         DINOv3 B+L            93.22 / 29.42 | dFPR95  +0.20 [ -0.90, +1.31] | dAUROC  +0.09 [ -0.11, +0.28]
+  v5         DINOv2 L              93.18 / 28.88 | dFPR95  -0.34 [ -0.93, +0.26] | dAUROC  +0.05 [ -0.03, +0.12]
+  v5         DINOv3 L              93.98 / 26.62 | dFPR95  -2.60 [ -3.73, -1.47] | dAUROC  +0.84 [ +0.67, +1.02]
+  v5         DINOv2 B + DINOv3 L   93.93 / 26.68 | dFPR95  -2.53 [ -3.22, -1.84] | dAUROC  +0.79 [ +0.70, +0.89]
+  v5         DINOv2 L + DINOv3 L   94.62 / 23.45 | dFPR95  -5.76 [ -6.59, -4.93] | dAUROC  +1.49 [ +1.38, +1.59]
+  two-sided  DINOv2 B+L (ref)      95.06 / 22.04
+  two-sided  DINOv3 B+L            95.39 / 21.17 | dFPR95  -0.87 [ -1.36, -0.38] | dAUROC  +0.33 [ +0.18, +0.49]
+  two-sided  DINOv2 L              95.01 / 21.91 | dFPR95  -0.13 [ -0.57, +0.31] | dAUROC  -0.04 [ -0.12, +0.03]
+  two-sided  DINOv3 L              95.82 / 19.25 | dFPR95  -2.79 [ -3.45, -2.12] | dAUROC  +0.76 [ +0.61, +0.92]
+  two-sided  DINOv2 B + DINOv3 L   95.71 / 19.72 | dFPR95  -2.32 [ -2.58, -2.05] | dAUROC  +0.66 [ +0.55, +0.77]
+  two-sided  DINOv2 L + DINOv3 L   96.13 / 17.68 | dFPR95  -4.36 [ -4.72, -4.00] | dAUROC  +1.08 [ +1.01, +1.14]
+== dev1 near, base = TINS: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      93.05 / 29.65
+  v5         DINOv3 B+L            93.11 / 29.99 | dFPR95  +0.34 [ -0.76, +1.43] | dAUROC  +0.06 [ -0.14, +0.26]
+  v5         DINOv2 L              93.00 / 29.88 | dFPR95  +0.23 [ -0.21, +0.67] | dAUROC  -0.05 [ -0.12, +0.02]
+  v5         DINOv3 L              93.76 / 27.79 | dFPR95  -1.86 [ -3.05, -0.68] | dAUROC  +0.71 [ +0.53, +0.89]
+  v5         DINOv2 B + DINOv3 L   93.82 / 27.07 | dFPR95  -2.58 [ -3.25, -1.92] | dAUROC  +0.78 [ +0.68, +0.88]
+  v5         DINOv2 L + DINOv3 L   94.53 / 23.85 | dFPR95  -5.80 [ -6.65, -4.95] | dAUROC  +1.49 [ +1.38, +1.60]
+  two-sided  DINOv2 B+L (ref)      95.05 / 22.11
+  two-sided  DINOv3 B+L            95.37 / 21.33 | dFPR95  -0.78 [ -1.27, -0.28] | dAUROC  +0.32 [ +0.16, +0.48]
+  two-sided  DINOv2 L              94.98 / 22.10 | dFPR95  -0.01 [ -0.44, +0.43] | dAUROC  -0.06 [ -0.14, +0.01]
+  two-sided  DINOv3 L              95.77 / 19.59 | dFPR95  -2.52 [ -3.08, -1.95] | dAUROC  +0.72 [ +0.57, +0.88]
+  two-sided  DINOv2 B + DINOv3 L   95.70 / 19.81 | dFPR95  -2.30 [ -2.57, -2.03] | dAUROC  +0.65 [ +0.54, +0.76]
+  two-sided  DINOv2 L + DINOv3 L   96.12 / 17.72 | dFPR95  -4.38 [ -4.68, -4.08] | dAUROC  +1.07 [ +1.01, +1.14]
+== dev1 far, base = none: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      96.82 / 16.03
+  v5         DINOv3 B+L            97.26 / 13.99 | dFPR95  -2.03 [ -3.47, -0.60] | dAUROC  +0.44 [ +0.25, +0.63]
+  v5         DINOv2 L              96.27 / 18.20 | dFPR95  +2.17 [ +1.81, +2.54] | dAUROC  -0.56 [ -0.62, -0.49]
+  v5         DINOv3 L              97.07 / 14.01 | dFPR95  -2.02 [ -3.46, -0.57] | dAUROC  +0.25 [ +0.05, +0.46]
+  v5         DINOv2 B + DINOv3 L   97.33 / 13.07 | dFPR95  -2.96 [ -4.24, -1.68] | dAUROC  +0.51 [ +0.37, +0.65]
+  v5         DINOv2 L + DINOv3 L   97.34 / 12.59 | dFPR95  -3.44 [ -4.65, -2.22] | dAUROC  +0.52 [ +0.39, +0.65]
+  two-sided  DINOv2 B+L (ref)      96.87 / 16.10
+  two-sided  DINOv3 B+L            97.37 / 13.96 | dFPR95  -2.13 [ -3.29, -0.98] | dAUROC  +0.50 [ +0.32, +0.69]
+  two-sided  DINOv2 L              96.52 / 17.26 | dFPR95  +1.16 [ +0.70, +1.63] | dAUROC  -0.35 [ -0.39, -0.30]
+  two-sided  DINOv3 L              97.24 / 13.53 | dFPR95  -2.56 [ -3.64, -1.49] | dAUROC  +0.38 [ +0.19, +0.56]
+  two-sided  DINOv2 B + DINOv3 L   97.33 / 14.06 | dFPR95  -2.03 [ -2.88, -1.19] | dAUROC  +0.46 [ +0.32, +0.60]
+  two-sided  DINOv2 L + DINOv3 L   97.33 / 13.32 | dFPR95  -2.78 [ -3.17, -2.38] | dAUROC  +0.46 [ +0.35, +0.57]
+== dev1 far, base = TINS: AUROC / FPR95; difference to DINOv2 B+L (FPR95, then AUROC) [95% CI]
+  v5         DINOv2 B+L (ref)      97.20 / 14.47
+  v5         DINOv3 B+L            97.53 / 12.71 | dFPR95  -1.76 [ -2.82, -0.70] | dAUROC  +0.33 [ +0.17, +0.50]
+  v5         DINOv2 L              97.02 / 14.86 | dFPR95  +0.39 [ -0.12, +0.90] | dAUROC  -0.18 [ -0.25, -0.12]
+  v5         DINOv3 L              97.53 / 12.02 | dFPR95  -2.45 [ -3.61, -1.28] | dAUROC  +0.33 [ +0.16, +0.51]
+  v5         DINOv2 B + DINOv3 L   97.60 / 11.92 | dFPR95  -2.55 [ -3.60, -1.50] | dAUROC  +0.40 [ +0.28, +0.53]
+  v5         DINOv2 L + DINOv3 L   97.68 / 10.98 | dFPR95  -3.49 [ -4.43, -2.56] | dAUROC  +0.48 [ +0.36, +0.60]
+  two-sided  DINOv2 B+L (ref)      97.03 / 15.54
+  two-sided  DINOv3 B+L            97.46 / 13.56 | dFPR95  -1.98 [ -3.21, -0.75] | dAUROC  +0.42 [ +0.25, +0.59]
+  two-sided  DINOv2 L              96.92 / 15.68 | dFPR95  +0.14 [ -0.19, +0.48] | dAUROC  -0.12 [ -0.16, -0.08]
+  two-sided  DINOv3 L              97.46 / 12.55 | dFPR95  -2.99 [ -4.03, -1.94] | dAUROC  +0.42 [ +0.25, +0.59]
+  two-sided  DINOv2 B + DINOv3 L   97.43 / 13.59 | dFPR95  -1.94 [ -2.89, -1.00] | dAUROC  +0.40 [ +0.28, +0.52]
+  two-sided  DINOv2 L + DINOv3 L   97.48 / 12.62 | dFPR95  -2.92 [ -3.51, -2.33] | dAUROC  +0.45 [ +0.34, +0.55]
+== dev1: DINOv3 L alone against DINOv2 L alone (true single-view runs), FPR95 difference [95% CI]
+  near none v5          -2.26 [ -2.90, -1.61]
+  near none two-sided   -2.65 [ -3.60, -1.71]
+  near TINS v5          -2.09 [ -2.94, -1.24]
+  near TINS two-sided   -2.51 [ -3.24, -1.78]
+  far  none v5          -4.19 [ -5.84, -2.54]
+  far  none two-sided   -3.73 [ -5.23, -2.23]
+  far  TINS v5          -2.84 [ -4.36, -1.32]
+  far  TINS two-sided   -3.13 [ -4.43, -1.83]
+== dev1: gain of the two-sided propagation over v5 within each configuration (FPR95 difference)
+  DINOv2 B+L (ref)     near none  -7.17 [ -7.46, -6.89] | near TINS  -7.55 [ -7.80, -7.30] | far none  +0.07 [ -0.50, +0.64] | far TINS  +1.07 [ +0.70, +1.43]
+  DINOv3 B+L           near none  -8.25 [ -8.77, -7.72] | near TINS  -8.66 [ -9.14, -8.18] | far none  -0.03 [ -0.28, +0.23] | far TINS  +0.84 [ +0.25, +1.44]
+  DINOv2 L             near none  -6.97 [ -7.62, -6.32] | near TINS  -7.78 [ -8.19, -7.37] | far none  -0.94 [ -1.47, -0.41] | far TINS  +0.82 [ +0.43, +1.21]
+  DINOv3 L             near none  -7.37 [ -7.89, -6.84] | near TINS  -8.20 [ -8.69, -7.71] | far none  -0.48 [ -0.89, -0.06] | far TINS  +0.53 [ +0.00, +1.05]
+  DINOv2 B + DINOv3 L  near none  -6.96 [ -7.51, -6.41] | near TINS  -7.26 [ -7.74, -6.78] | far none  +0.99 [ +0.51, +1.47] | far TINS  +1.68 [ +1.48, +1.87]
+  DINOv2 L + DINOv3 L  near none  -5.78 [ -6.18, -5.37] | near TINS  -6.13 [ -6.57, -5.70] | far none  +0.73 [ +0.13, +1.34] | far TINS  +1.64 [ +1.11, +2.17]
+== dev1: seed set S2 at the last batch (ID% / OOD% / purity%)
+  DINOv2 B+L (ref)     near   6.0  85.3  79.8 | far   1.7  67.7  79.8
+  DINOv3 B+L           near   6.5  88.2  79.1 | far   1.9  71.7  79.0
+  DINOv2 L             near   6.2  85.1  79.3 | far   1.6  63.0  79.1
+  DINOv3 L             near   6.5  88.8  79.1 | far   1.9  70.7  78.9
+  DINOv2 B + DINOv3 L  near   6.5  88.5  79.0 | far   2.0  73.0  78.1
+  DINOv2 L + DINOv3 L  near   6.5  89.3  79.3 | far   1.9  71.1  78.9
+consistency (v5, near): D3L single-view run  93.98 / 26.62 vs D3L read-out of the two-view run  93.98 / 26.62
+written /home/omote/reprise_p5_20261002/results/d3_posthoc_dev1.json

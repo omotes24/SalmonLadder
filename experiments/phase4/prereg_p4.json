@@ -1,0 +1,139 @@
+{
+ "title": "REPRISE Phase 4: strongest minimal configuration, independent confirmation, recurrence intervention",
+ "registered_utc": "2026-09-27T21:40:28Z",
+ "context": "Reviewer (2026-09-28): the boundary between a properly re-calibrated label propagation and REPRISE-specific gains is not established on independent data. This phase answers it without touching the used OpenOOD test split.",
+ "frozen_method": {
+  "name": "REPRISE v5 (registered 2026-09, test-evaluated)",
+  "n0": 48,
+  "K": 20,
+  "m": 1,
+  "entrance_thresholds_exact": [
+   0.3,
+   0.2,
+   0.10191613435745239
+  ],
+  "graph": {
+   "k": 10,
+   "gamma": 1.0,
+   "lambda": 0.9
+  },
+  "lp_solver": "warm start from the previous batch, 15 sweeps (L0)",
+  "memory": "M0 (calibration reused)",
+  "score": "s0 x prod_views p_t x p_LP"
+ },
+ "data": {
+  "tuning": "dev1 only (already used selection split): 5 support/calibration draws x 3 orders x {near, far}; the existing TINS scores; MCM from the same CLIP features (softmax over cosines, temperature 1).",
+  "U1": "ImageNet-1K train, 5 new class splits (100 held-out classes each, WordNet sibling rule, seeds 20260929..20260933), disjoint from dev1/dev2 held-out classes and from each other; images never used by REPRISE (dev1/dev2, TINS 16-shot list, R5 draws, sealed OpenOOD/val images excluded by name and sha256). Per split: ID = 20 new images of each of 900 ID classes, OOD = 50 new images of each held-out class; shots = new 16 per class per draw.",
+  "U2": "ImageNet-O (official, 2,000 images) as OOD; ID = 10 new images per ImageNet-1K class; shots of all 1,000 classes.",
+  "U3": "WILD wildlife (5 ID species: buffalo, cheetah, elephant, giraffe, hippo; 5 OOD species: impala, leopard, lion, rhino, wildebeest); duplicate-excluded split of another project of the user, never used by REPRISE. Shots from train/id; ID stream = test/id; OOD stream = 400 per OOD species from test/id-disjoint test/ood.",
+  "no_test_access": "The OpenOOD test and ImageNet val images stay sealed (manifest guard)."
+ },
+ "features": "DINOv2 B/14 and L/14 CLS (the frozen REPRISE transforms), CLIP ViT-B/16 (TINS preprocessing); FP32, TF32 off.",
+ "families": {
+  "raw": "standard label propagation u (all nodes from 0, 15 sweeps)",
+  "cdf": "current-graph calibration rank of u (0-start, 15 sweeps; permutation-equivariant solver)",
+  "cdf_L0": "current-graph calibration rank of u, warm start (REPRISE's LP path)",
+  "z": "Phi((u - median_cal) / (1.4826 MAD_cal)) on the current graph (scale correction without ranks)",
+  "mass": "u x N_t / N_s (propagated-mass correction implied by 1^T S = 1^T on regular graphs)",
+  "rw": "random-walk normalised LP (D^-1 W), all nodes from 0",
+  "sprop": "static prototype distance d_all propagated on the same graph (score propagation), current-calibration rank",
+  "stat_cdf / stat_cdf_L0": "static prototype p x cdf / cdf_L0",
+  "rep_L1 / rep_L0": "REPRISE memory p_t x cdf / cdf_L0 (rep_L0 at the reference configuration = frozen REPRISE v5)",
+  "minimal_set": [
+   "raw",
+   "cdf",
+   "cdf_L0",
+   "z",
+   "mass",
+   "rw",
+   "sprop",
+   "stat_cdf",
+   "stat_cdf_L0"
+  ],
+  "views": "log-scores summed over B/14 and L/14; s0 multiplies (adds in log)"
+ },
+ "tuning": {
+  "grid": {
+   "k_g": [
+    5,
+    10,
+    20
+   ],
+   "gamma": [
+    0,
+    1,
+    3
+   ],
+   "lambda": [
+    0.8,
+    0.9,
+    0.99
+   ]
+  },
+  "equal_budget": "every family gets the same 27 configurations; REPRISE's entrance and prototypes stay frozen",
+  "reference": "k10 g1 l0.9",
+  "rule": "per family: minimise the dev1 mean (15 conditions) of the standalone (s0=1) near FPR95 among configurations whose far FPR95 is at most +0.5 points above the family's reference configuration; ties: higher near AUROC, then the reference",
+  "best_minimal": "the minimal-set family with the lowest selected dev1 near FPR95 (ties: lower far FPR95)",
+  "weighted_control": "log TINS + a x (visual log-score), a in {0.5, 1, 1.5, 2, 3}: a* chosen on dev1 x TINS with the same rule (reference a=1) for the best minimal family and for tuned REPRISE; frozen REPRISE keeps a=1",
+  "lock": "selections are written to selection_lock.json with sha256 before any U1-U3 score is computed"
+ },
+ "evaluation": {
+  "U1": "5 splits x draws {0,1,2} x orders {123,124,125} = 45 streams, batch 256, TINS order rule",
+  "U2": "draws {0..4} x 3 orders",
+  "U3": "draws {0..4} x 3 orders",
+  "bases": [
+   "none",
+   "TINS (pinned upstream, fixed hyper-parameters, run per stream from cached CLIP features)",
+   "MCM"
+  ],
+  "metrics": "AUROC and FPR95 (threshold accepting >= 95% of ID, ties accepted), as the LP audit",
+  "units": "U1: paired differences averaged within split over its 9 draw x order conditions -> 5 split values -> t 95% interval (df 4); sensitivity: 15 split x draw values. U2/U3: 5 draw values (orders averaged).",
+  "pipeline_rerun": "every condition re-runs the full adaptive pipeline (no score re-sampling)"
+ },
+ "primary_endpoints": {
+  "E1": "U1, standalone near FPR95: frozen REPRISE v5 minus the best minimal configuration",
+  "E2": "U1, x TINS near FPR95: frozen REPRISE v5 minus the best minimal configuration with its dev-selected weight a*",
+  "decision": {
+   "upper_CI_below_0": "REPRISE-specific components add value beyond the strongest tuned minimal configuration on unused data; REPRISE stays the main method",
+   "CI_contains_0": "no average added value is shown; the paper is rebuilt around the minimal configuration (calibrated LP) and the memory is reported only where Exp 6 shows condition-specific value",
+   "lower_CI_above_0": "the minimal configuration is better; same restructuring"
+  }
+ },
+ "secondary": [
+  "every family vs frozen REPRISE and vs tuned REPRISE on U1-U3 (near FPR95, AUROC; bases none/TINS/MCM)",
+  "standard converged LP (L2) at the raw family's selected configuration",
+  "U2 and U3 replications of E1/E2"
+ ],
+ "exp4_recurrence_intervention": {
+  "data": "U1 held-out classes: per split 50 probe classes (seeded) and 50 background classes; 250 probe classes in total",
+  "history": "per split a fixed 1,024-image history (768 ID from ID-evaluation images not used as queries, 256 OOD from background classes), batches of 256; r in {0,1,2,5,10,20} nested OOD positions replaced",
+  "replacement_content": {
+   "same": "other images of the probe class",
+   "near": "images of the most similar other probe class (L/14 class means)",
+   "far": "images of the least similar other probe class",
+   "dup": "r weak augmentations of one probe-class image (near-duplicate retrieval control)"
+  },
+  "queries": "8 probe-class images and 128 common ID images per split, each scored alone on a cloned state (then discarded)",
+  "methods": [
+   "frozen REPRISE v5",
+   "static p x p_LP (L0, reference graph)",
+   "best minimal configuration",
+   "p_LP",
+   "memory p_t",
+   "static p"
+  ],
+  "estimand": "per probe class: [AUROC_REPRISE(same, r=20) - AUROC_REPRISE(same, 0)] - [AUROC_staticxLP(same, 20) - AUROC_staticxLP(same, 0)]; class-bootstrap 95% interval (2,000 resamples) and split-clustered bootstrap",
+  "secondary": "same vs near vs far vs dup curves, fraction of classes improved/worsened, first-appearance performance, per-r differences"
+ },
+ "exp5_7_operating": {
+  "status": "descriptive, after the confirmatory evaluation, on U1; no selection",
+  "exp5": "batch sizes {1,16,64,256} (the detector sees the same batch rule; TINS rerun with the same batch size); fixed thresholds from dev1 ID scores at nominal false-alarm rates {0.1,1,5}%: realised ID false alarms, OOD detection, images until first detection",
+  "exp6": "final settings under long ID-only prefix, ID class bursts, 1%/5% OOD, and combinations; erroneous admissions by class, subsequent same-class ID p_t<=0.1 rate, recovery",
+  "exp7": "history caps {1k, 8k, 32k} x retention {FIFO, random, farthest-point diversity} on long streams; time per component, allocated vs reserved GPU memory"
+ },
+ "guardrails": [
+  "no parameter or rule change after U1-U3 are scored; any later analysis is labelled post hoc",
+  "a U bank used to change the method afterwards is re-labelled development",
+  "all failures and reruns are kept in failures/ and dispatch logs"
+ ]
+}

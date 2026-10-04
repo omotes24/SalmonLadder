@@ -1,0 +1,269 @@
+{
+ "part": "fourood",
+ "n_streams": 12,
+ "lock": "REPRISE two-sided (frozen memory x set memory x support mass x seed mass; two rounds of Storey-BH self-labelling, q = 0.5 then 0.2)",
+ "fourood_none": {
+  "frozen_v5": {
+   "AUROC": 97.81732224154848,
+   "FPR95": 8.361205673758866
+  },
+  "locked": {
+   "AUROC": 98.21435861536644,
+   "FPR95": 7.276394799054373
+  },
+  "zeta": {
+   "AUROC": 97.6725456039007,
+   "FPR95": 8.090945626477541
+  },
+  "M0xlp_zero": {
+   "AUROC": 97.74063708699764,
+   "FPR95": 8.730992907801419
+  },
+  "locked_minus_frozen_v5_FPR95": {
+   "mean": -1.0848108747044918,
+   "lo": -1.2053981344148392,
+   "hi": -0.9642236149941443,
+   "n": 3
+  },
+  "locked_minus_frozen_v5_AUROC": {
+   "mean": 0.39703637381795903,
+   "lo": 0.2938517701678124,
+   "hi": 0.5002209774681057,
+   "n": 3
+  },
+  "locked_minus_zeta_FPR95": {
+   "mean": -0.8145508274231684,
+   "lo": -0.9112206045381203,
+   "hi": -0.7178810503082166,
+   "n": 3
+  },
+  "locked_minus_zeta_AUROC": {
+   "mean": 0.5418130114657203,
+   "lo": 0.4564221787900379,
+   "hi": 0.6272038441414026,
+   "n": 3
+  }
+ },
+ "fourood_TINS": {
+  "frozen_v5": {
+   "AUROC": 98.58022660697401,
+   "FPR95": 5.523640661938534
+  },
+  "locked": {
+   "AUROC": 98.59523420118204,
+   "FPR95": 5.760443262411347
+  },
+  "zeta": {
+   "AUROC": 98.78575063628841,
+   "FPR95": 4.502239952718676
+  },
+  "M0xlp_zero": {
+   "AUROC": 98.54698188735226,
+   "FPR95": 5.709060283687943
+  },
+  "base_only": {
+   "AUROC": 98.52484017157211,
+   "FPR95": 6.846317966903073
+  },
+  "locked_minus_frozen_v5_FPR95": {
+   "mean": 0.23680260047281307,
+   "lo": -0.03628819698030453,
+   "hi": 0.5098933979259307,
+   "n": 3
+  },
+  "locked_minus_frozen_v5_AUROC": {
+   "mean": 0.015007594208029218,
+   "lo": -0.04710291955801034,
+   "hi": 0.07711810797406878,
+   "n": 3
+  },
+  "locked_minus_zeta_FPR95": {
+   "mean": 1.2582033096926712,
+   "lo": 1.2344192435539132,
+   "hi": 1.2819873758314293,
+   "n": 3
+  },
+  "locked_minus_zeta_AUROC": {
+   "mean": -0.19051643510638408,
+   "lo": -0.21607846399038164,
+   "hi": -0.16495440622238652,
+   "n": 3
+  }
+ },
+ "fourood_MCM": {
+  "frozen_v5": {
+   "AUROC": 97.8235035180851,
+   "FPR95": 8.350183215130023
+  },
+  "locked": {
+   "AUROC": 98.21713391300237,
+   "FPR95": 7.261962174940899
+  },
+  "zeta": {
+   "AUROC": 97.6921602609929,
+   "FPR95": 8.054958628841609
+  },
+  "M0xlp_zero": {
+   "AUROC": 97.74741266063829,
+   "FPR95": 8.705916075650117
+  },
+  "base_only": {
+   "AUROC": 89.06560972801418,
+   "FPR95": 49.930656028368794
+  },
+  "locked_minus_frozen_v5_FPR95": {
+   "mean": -1.0882210401891255,
+   "lo": -1.2040251851935277,
+   "hi": -0.9724168951847231,
+   "n": 3
+  },
+  "locked_minus_frozen_v5_AUROC": {
+   "mean": 0.3936303949172573,
+   "lo": 0.2908824662725783,
+   "hi": 0.49637832356193634,
+   "n": 3
+  },
+  "locked_minus_zeta_FPR95": {
+   "mean": -0.7929964539007089,
+   "lo": -0.9259143168199673,
+   "hi": -0.6600785909814506,
+   "n": 3
+  },
+  "locked_minus_zeta_AUROC": {
+   "mean": 0.5249736520094549,
+   "lo": 0.4403147027344438,
+   "hi": 0.609632601284466,
+   "n": 3
+  }
+ },
+ "per_dataset": {
+  "dtd|MCM|base_only": {
+   "AUROC": 86.3,
+   "FPR95": 56.93
+  },
+  "dtd|MCM|frozen_v5": {
+   "AUROC": 97.48,
+   "FPR95": 9.86
+  },
+  "dtd|MCM|locked": {
+   "AUROC": 98.15,
+   "FPR95": 7.33
+  },
+  "dtd|TINS|base_only": {
+   "AUROC": 97.94,
+   "FPR95": 9.83
+  },
+  "dtd|TINS|frozen_v5": {
+   "AUROC": 98.53,
+   "FPR95": 5.93
+  },
+  "dtd|TINS|locked": {
+   "AUROC": 98.62,
+   "FPR95": 5.59
+  },
+  "dtd|none|frozen_v5": {
+   "AUROC": 97.47,
+   "FPR95": 9.86
+  },
+  "dtd|none|locked": {
+   "AUROC": 98.15,
+   "FPR95": 7.35
+  },
+  "inat|MCM|base_only": {
+   "AUROC": 89.14,
+   "FPR95": 55.44
+  },
+  "inat|MCM|frozen_v5": {
+   "AUROC": 99.87,
+   "FPR95": 0.38
+  },
+  "inat|MCM|locked": {
+   "AUROC": 99.84,
+   "FPR95": 0.53
+  },
+  "inat|TINS|base_only": {
+   "AUROC": 99.93,
+   "FPR95": 0.22
+  },
+  "inat|TINS|frozen_v5": {
+   "AUROC": 99.94,
+   "FPR95": 0.18
+  },
+  "inat|TINS|locked": {
+   "AUROC": 99.91,
+   "FPR95": 0.37
+  },
+  "inat|none|frozen_v5": {
+   "AUROC": 99.87,
+   "FPR95": 0.38
+  },
+  "inat|none|locked": {
+   "AUROC": 99.84,
+   "FPR95": 0.53
+  },
+  "places|MCM|base_only": {
+   "AUROC": 89.37,
+   "FPR95": 45.83
+  },
+  "places|MCM|frozen_v5": {
+   "AUROC": 95.29,
+   "FPR95": 17.81
+  },
+  "places|MCM|locked": {
+   "AUROC": 95.89,
+   "FPR95": 17.07
+  },
+  "places|TINS|base_only": {
+   "AUROC": 97.12,
+   "FPR95": 12.98
+  },
+  "places|TINS|frozen_v5": {
+   "AUROC": 96.61,
+   "FPR95": 12.84
+  },
+  "places|TINS|locked": {
+   "AUROC": 96.56,
+   "FPR95": 14.19
+  },
+  "places|none|frozen_v5": {
+   "AUROC": 95.27,
+   "FPR95": 17.85
+  },
+  "places|none|locked": {
+   "AUROC": 95.88,
+   "FPR95": 17.11
+  },
+  "sun|MCM|base_only": {
+   "AUROC": 91.46,
+   "FPR95": 41.52
+  },
+  "sun|MCM|frozen_v5": {
+   "AUROC": 98.66,
+   "FPR95": 5.34
+  },
+  "sun|MCM|locked": {
+   "AUROC": 98.99,
+   "FPR95": 4.12
+  },
+  "sun|TINS|base_only": {
+   "AUROC": 99.12,
+   "FPR95": 4.35
+  },
+  "sun|TINS|frozen_v5": {
+   "AUROC": 99.24,
+   "FPR95": 3.14
+  },
+  "sun|TINS|locked": {
+   "AUROC": 99.29,
+   "FPR95": 2.9
+  },
+  "sun|none|frozen_v5": {
+   "AUROC": 98.65,
+   "FPR95": 5.36
+  },
+  "sun|none|locked": {
+   "AUROC": 98.98,
+   "FPR95": 4.12
+  }
+ }
+}

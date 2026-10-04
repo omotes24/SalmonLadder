@@ -1,0 +1,17 @@
+/home/omote/reprise_p4_20260928/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+/home/omote/reprise_p4_20260928/code/bounded_p4.py:205: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  "time_p95_batch_ms": float(1000 * tr[["memory_s", "evict_s", "graph_s", "lp_s"]].sum(1).quantile(0.95)),
+{"bounded": "cap8192_random.json", "seconds": 25.8}
+/home/omote/reprise_p4_20260928/code/bounded_p4.py:205: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  "time_p95_batch_ms": float(1000 * tr[["memory_s", "evict_s", "graph_s", "lp_s"]].sum(1).quantile(0.95)),
+{"bounded": "cap8192_diversity.json", "seconds": 36.2}
+/home/omote/reprise_p4_20260928/code/bounded_p4.py:205: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  "time_p95_batch_ms": float(1000 * tr[["memory_s", "evict_s", "graph_s", "lp_s"]].sum(1).quantile(0.95)),
+{"bounded": "cap32768_fifo.json", "seconds": 37.6}
+/home/omote/reprise_p4_20260928/code/bounded_p4.py:205: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  "time_p95_batch_ms": float(1000 * tr[["memory_s", "evict_s", "graph_s", "lp_s"]].sum(1).quantile(0.95)),
+{"bounded": "cap32768_random.json", "seconds": 37.6}
+/home/omote/reprise_p4_20260928/code/bounded_p4.py:205: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  "time_p95_batch_ms": float(1000 * tr[["memory_s", "evict_s", "graph_s", "lp_s"]].sum(1).quantile(0.95)),
+{"bounded": "cap32768_diversity.json", "seconds": 39.3}

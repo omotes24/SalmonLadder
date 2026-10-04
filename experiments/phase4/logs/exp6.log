@@ -1,0 +1,32 @@
+/home/omote/reprise_p4_20260928/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{"exp6": "exp6_s1_random.parquet", "seconds": 3.4, "utc": "2026-09-28T02:38:11Z"}
+{"exp6": "exp6_s1_id_first9000.parquet", "seconds": 2.1, "utc": "2026-09-28T02:38:14Z"}
+{"exp6": "exp6_s1_id_burst10.parquet", "seconds": 2.3, "utc": "2026-09-28T02:38:17Z"}
+{"exp6": "exp6_s1_ood1pct.parquet", "seconds": 2.1, "utc": "2026-09-28T02:38:20Z"}
+{"exp6": "exp6_s1_ood5pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:38:23Z"}
+{"exp6": "exp6_s1_burst10_ood5pct.parquet", "seconds": 2.6, "utc": "2026-09-28T02:38:27Z"}
+{"exp6": "exp6_s2_random.parquet", "seconds": 3.8, "utc": "2026-09-28T02:38:34Z"}
+{"exp6": "exp6_s2_id_first9000.parquet", "seconds": 3.2, "utc": "2026-09-28T02:38:38Z"}
+{"exp6": "exp6_s2_id_burst10.parquet", "seconds": 3.3, "utc": "2026-09-28T02:38:42Z"}
+{"exp6": "exp6_s2_ood1pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:38:46Z"}
+{"exp6": "exp6_s2_ood5pct.parquet", "seconds": 2.9, "utc": "2026-09-28T02:38:49Z"}
+{"exp6": "exp6_s2_burst10_ood5pct.parquet", "seconds": 3.1, "utc": "2026-09-28T02:38:53Z"}
+{"exp6": "exp6_s3_random.parquet", "seconds": 3.3, "utc": "2026-09-28T02:39:00Z"}
+{"exp6": "exp6_s3_id_first9000.parquet", "seconds": 3.4, "utc": "2026-09-28T02:39:04Z"}
+{"exp6": "exp6_s3_id_burst10.parquet", "seconds": 3.5, "utc": "2026-09-28T02:39:09Z"}
+{"exp6": "exp6_s3_ood1pct.parquet", "seconds": 2.9, "utc": "2026-09-28T02:39:12Z"}
+{"exp6": "exp6_s3_ood5pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:39:16Z"}
+{"exp6": "exp6_s3_burst10_ood5pct.parquet", "seconds": 2.6, "utc": "2026-09-28T02:39:19Z"}
+{"exp6": "exp6_s4_random.parquet", "seconds": 3.3, "utc": "2026-09-28T02:39:26Z"}
+{"exp6": "exp6_s4_id_first9000.parquet", "seconds": 3.4, "utc": "2026-09-28T02:39:30Z"}
+{"exp6": "exp6_s4_id_burst10.parquet", "seconds": 3.3, "utc": "2026-09-28T02:39:34Z"}
+{"exp6": "exp6_s4_ood1pct.parquet", "seconds": 2.5, "utc": "2026-09-28T02:39:37Z"}
+{"exp6": "exp6_s4_ood5pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:39:41Z"}
+{"exp6": "exp6_s4_burst10_ood5pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:39:44Z"}
+{"exp6": "exp6_s5_random.parquet", "seconds": 3.4, "utc": "2026-09-28T02:39:51Z"}
+{"exp6": "exp6_s5_id_first9000.parquet", "seconds": 3.4, "utc": "2026-09-28T02:39:55Z"}
+{"exp6": "exp6_s5_id_burst10.parquet", "seconds": 3.4, "utc": "2026-09-28T02:39:59Z"}
+{"exp6": "exp6_s5_ood1pct.parquet", "seconds": 2.6, "utc": "2026-09-28T02:40:03Z"}
+{"exp6": "exp6_s5_ood5pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:40:06Z"}
+{"exp6": "exp6_s5_burst10_ood5pct.parquet", "seconds": 2.7, "utc": "2026-09-28T02:40:09Z"}

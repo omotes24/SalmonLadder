@@ -1,0 +1,26 @@
+{
+  "name": "CLAVIS-M2",
+  "frozen_utc": "2026-09-26T11:30:00Z",
+  "config": {
+    "dino_files": ["dino.pt", "dino_vitl14.pt"],
+    "views": ["DINOv2 ViT-B/14 (frozen CLAVIS view)", "DINOv2 ViT-L/14 (same support/calibration split, candidate sets, m, n0)"],
+    "m": 2,
+    "m_mem": 2,
+    "kind": "diff",
+    "eps_cand": 0.30,
+    "eps_admit": 0.10,
+    "fusion": "S_final * prod_views p_t(view)"
+  },
+  "definition": [
+    "Per view: candidate memory = stream samples with p_all <= eps_cand (appended after their batch is scored).",
+    "Per view: p_C = conformal p-value of g_C = d - (r_C - med_all)/mad_all against the calibration shots' g_C under the same candidate memory.",
+    "Per view: scoring memory = stream samples with p_C <= eps_admit; p_t = conformal p-value of g = d - (r_M - med_all)/mad_all (CLAVIS-M c1 with this memory).",
+    "Score = S_final * p_t(B/14) * p_t(L/14). No training, no weights."
+  ],
+  "selection_on_dev1": {
+    "explored": "TINS seed gating / visual seeds (no gain after fusion), text-based and joint admission (worse), self-admission, within-batch memory (+0.1), class-conditional memory offsets (worse after fusion), backbones B/L/g (L best, g worse than L), two-stage admission eps_cand in {0.2,0.3,0.4,0.5}, two-view products",
+    "choice": "eps_cand = 0.30 (middle of the grid, largest value keeping far within the margin for B/14 alone), same values for both views, L/14 over g/14 (g/14 weaker on dev1)",
+    "dev1_exploration_result": {"near_AUROC": 89.07, "far_AUROC": 96.25, "near_FPR95": 40.12, "far_FPR95": 20.91}
+  },
+  "prereg": "iter2/prereg_iter2.json (sha256 1cbdcdc4da5fa7b0c51945c77418903029ce2b69d508c95c8bd6a01a922e6800)"
+}

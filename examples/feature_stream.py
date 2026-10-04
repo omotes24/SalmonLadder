@@ -22,7 +22,7 @@ def main():
         stop = start + 4
         scores = detector.step(query[start:stop], view["d"][start:stop], view["pall"][start:stop])
         assert np.isfinite(scores["full"]).all()
-        print(f"batch {start // 4}: REPRISE ID scores {scores['full'].round(5).tolist()}")
+        print(f"batch {start // 4}: Salmon Ladder ID scores {scores['full'].round(5).tolist()}")
     state = detector.clone()
     state.step(query[:1], view["d"][:1], view["pall"][:1])
     assert detector.seen == 16 and state.seen == 17

@@ -1,0 +1,48 @@
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/reprise_p4_20260928/code/extract.py:43: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(C.HOME / ".cache/torch/hub/checkpoints" / f"dinov2_{tag}_pretrain.pth",
+{"shard": 0, "done": 128, "total": 49059, "img_per_s": 19.9}
+{"shard": 0, "done": 2688, "total": 49059, "img_per_s": 28.1}
+{"shard": 0, "done": 5248, "total": 49059, "img_per_s": 31.8}
+{"shard": 0, "done": 7808, "total": 49059, "img_per_s": 33.5}
+{"shard": 0, "done": 10368, "total": 49059, "img_per_s": 35.5}
+{"shard": 0, "done": 12928, "total": 49059, "img_per_s": 36.9}
+{"shard": 0, "done": 15488, "total": 49059, "img_per_s": 37.9}
+{"shard": 0, "done": 18048, "total": 49059, "img_per_s": 38.6}
+{"shard": 0, "done": 20608, "total": 49059, "img_per_s": 39.2}
+{"shard": 0, "done": 23168, "total": 49059, "img_per_s": 39.6}
+{"shard": 0, "done": 25728, "total": 49059, "img_per_s": 40.0}
+{"shard": 0, "done": 28288, "total": 49059, "img_per_s": 40.3}
+{"shard": 0, "done": 30848, "total": 49059, "img_per_s": 40.6}
+{"shard": 0, "done": 33408, "total": 49059, "img_per_s": 40.8}
+{"shard": 0, "done": 35968, "total": 49059, "img_per_s": 41.0}
+{"shard": 0, "done": 38528, "total": 49059, "img_per_s": 41.2}
+{"shard": 0, "done": 41088, "total": 49059, "img_per_s": 41.4}
+{"shard": 0, "done": 43648, "total": 49059, "img_per_s": 41.5}
+{"shard": 0, "done": 46208, "total": 49059, "img_per_s": 41.6}
+{"shard": 0, "done": 48768, "total": 49059, "img_per_s": 41.8}
+Traceback (most recent call last):
+  File "/home/omote/reprise_p4_20260928/code/extract.py", line 114, in <module>
+    run_shard(a.shard, a.nshards)
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p4_20260928/code/extract.py", line 83, in run_shard
+    np.savez(tmp, rows=rows, **{k: np.concatenate(v) for k, v in buf.items()})
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 673, in savez
+    _savez(file, args, kwds, False, allow_pickle=allow_pickle)
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 779, in _savez
+    zipf = zipfile_factory(file, mode="w", compression=compression)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 112, in zipfile_factory
+    return zipfile.ZipFile(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/zipfile/__init__.py", line 1331, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/omote/reprise_p4_20260928/features/shard0of4.npz.2745221.npz'

@@ -1,0 +1,11 @@
+{
+  "calibration_groups": 5058,
+  "aggregate_max_differences": {
+    "mean": 1.6653345369377348e-16,
+    "lo": 2.220446049250313e-16,
+    "hi": 1.6653345369377348e-16,
+    "n": 0.0
+  },
+  "batch_AUROC_max_difference": 7.105427357601002e-15,
+  "detector_changes": false
+}

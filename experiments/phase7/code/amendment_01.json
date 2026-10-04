@@ -1,0 +1,28 @@
+{
+ "amendment": 1,
+ "to": "prereg_p7.json (sha256 345b97046f3e848e36024c4cd029896f034b689f9c9ecb02c049f2bea24acb39)",
+ "written_utc": "2026-10-03T13:18:16Z",
+ "status_at_writing": "dev1 and dev2 have been scored for experiment A. No Phase 7 metric has been computed on U1, U2, U4 or any dataset bank; the engine has only been regression-tested there against the Phase 4 / 5 scores of the frozen read-outs.",
+ "A2_outcome": {
+  "dev1_selection": "the registered rule chose Mh2|a=0|lp|tau=1 (one-sided memory with c = 2 and zero-start propagation): first-appearance miss rate 54.60 vs frozen 56.33, difference -1.73 [-3.02, -0.44]; overall near FPR95 -0.51, far +0.05, x TINS -0.50 (126 candidates, all listed in results/a_dev1_selection.json)",
+  "dev2_confirmation_attempt_1": "NOT confirmed: first-appearance miss rate +0.07 [-1.08, +1.22] (criterion: upper bound < 0); overall near FPR95 -0.57 [-0.74, -0.40]",
+  "decision": "no further attempt, nothing is locked: on dev1 no candidate reduces the first-appearance miss rate by more than its own interval width, so two more attempts would be a search on dev2. A3 (one-time evaluation of a locked candidate on U1 / U4 and in the intervention) is therefore not executed. The hinge / static-weight read-outs may be shown on U1 / U4 / the intervention only as descriptive rows labelled 'not confirmed on dev2'."
+ },
+ "observation_dev1": "On the natural dev streams the frozen REPRISE is not below the static p at first appearance (dev1 miss 56.33 vs 62.73, AUROC of k = 1 images 82.18 vs 81.49; dev2 55.67 vs 59.27, 83.05 vs 82.38). The deficit of the paper (82.88 vs 84.20) is the r = 0 point of the intervention design.",
+ "A4_new_analysis_delayed_rescoring": {
+  "origin": "designed after the dev1 exploration (post hoc with respect to dev1; dev1 near streams only so far: frozen REPRISE k = 1 miss 56.1 issued, 37.8 after 5 batches, 24.1 at the end of the stream)",
+  "definition": "The issued score is never changed. '@delay' re-scores an image with the graph and the memory `delay` batches later (frozen components; the image is never its own memory neighbour; ranks against the calibration images under that state). All images (ID and OOD) are re-scored at the same delay; the ID-95% threshold is that of the re-scored ID images. Delays: 1, 2, 5, 10, 20 batches and the end of the stream.",
+  "data": "U1 and U4 standard streams (45 each), dev2 near streams; frozen REPRISE (p_M x p_LP), p_M only, p_LP only",
+  "outcomes": "first-appearance (k = 1) miss rate and AUROC per delay; miss rate per appearance bin; overall AUROC / FPR95 per delay; unit split (dev: draw)",
+  "confirmatory_on_U1": {
+   "R1": "k = 1 miss rate at delay 5 minus issued: 95% t interval upper bound < 0",
+   "R2": "k = 1 miss rate at the end of the stream minus issued: upper bound < 0",
+   "R3": "overall FPR95 at the end of the stream minus issued: upper bound < 0"
+  },
+  "note": "This changes the protocol (decisions may be revised), not the detector; it is reported as such."
+ },
+ "additional_descriptive": [
+  "first appearances of the natural U1 streams split by arrival position (history length)",
+  "intervention (x4 re-run): every read-out at r = 0..20, including the unconfirmed hinge read-outs, labelled descriptive"
+ ]
+}

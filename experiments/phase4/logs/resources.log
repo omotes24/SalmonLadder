@@ -1,0 +1,71 @@
+/home/omote/reprise_p4_20260928/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/reprise_p4_20260928/code/extract.py:43: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(C.HOME / ".cache/torch/hub/checkpoints" / f"dinov2_{tag}_pretrain.pth",
+pos:   0%|          | 0/1 [00:00<?, ?it/s]pos: 100%|██████████| 1/1 [00:00<00:00,  2.80it/s]pos: 100%|██████████| 1/1 [00:00<00:00,  2.80it/s]
+/home/omote/vins_gonogo_20260925/tins/eval_tins_w_init.py:872: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  cache = torch.load(cache_path, map_location="cpu")
+2026-09-28 03:13:38,998 Loaded tins negative bank from /home/omote/reprise_p4_20260928/tins/cache/negative_bank/tins_bank_4a7b9599e52ab959.pt
+/home/omote/vins_gonogo_20260925/tins/eval_tins_w_init.py:1029: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  cache = torch.load(cache_path, map_location="cpu")
+2026-09-28 03:13:39,004 Loaded inversion init candidates from /home/omote/reprise_p4_20260928/tins/cache/inversion_init/tins_init_candidates_9d681b0ed47eaf3e.pt
+tins scores:   0%|          | 0/90 [00:00<?, ?it/s]tins scores:   1%|          | 1/90 [00:01<01:53,  1.28s/it]tins scores:   2%|▏         | 2/90 [00:02<01:45,  1.20s/it]tins scores:   3%|▎         | 3/90 [00:03<01:43,  1.19s/it]tins scores:   4%|▍         | 4/90 [00:04<01:41,  1.18s/it]tins scores:   6%|▌         | 5/90 [00:05<01:39,  1.18s/it]tins scores:   7%|▋         | 6/90 [00:07<01:38,  1.17s/it]tins scores:   8%|▊         | 7/90 [00:08<01:37,  1.18s/it]tins scores:   9%|▉         | 8/90 [00:08<01:22,  1.00s/it]tins scores:  10%|█         | 9/90 [00:10<01:25,  1.06s/it]tins scores:  11%|█         | 10/90 [00:11<01:27,  1.10s/it]tins scores:  12%|█▏        | 11/90 [00:11<01:15,  1.05it/s]tins scores:  13%|█▎        | 12/90 [00:13<01:18,  1.01s/it]tins scores:  14%|█▍        | 13/90 [00:14<01:21,  1.06s/it]tins scores:  16%|█▌        | 14/90 [00:15<01:22,  1.08s/it]tins scores:  17%|█▋        | 15/90 [00:16<01:23,  1.11s/it]tins scores:  18%|█▊        | 16/90 [00:17<01:23,  1.13s/it]tins scores:  19%|█▉        | 17/90 [00:18<01:23,  1.15s/it]tins scores:  20%|██        | 18/90 [00:20<01:23,  1.15s/it]tins scores:  21%|██        | 19/90 [00:21<01:22,  1.16s/it]tins scores:  22%|██▏       | 20/90 [00:22<01:21,  1.17s/it]tins scores:  23%|██▎       | 21/90 [00:23<01:21,  1.18s/it]tins scores:  24%|██▍       | 22/90 [00:24<01:20,  1.18s/it]tins scores:  26%|██▌       | 23/90 [00:25<01:19,  1.18s/it]tins scores:  27%|██▋       | 24/90 [00:26<01:10,  1.06s/it]tins scores:  28%|██▊       | 25/90 [00:27<01:00,  1.08it/s]tins scores:  29%|██▉       | 26/90 [00:28<00:53,  1.20it/s]tins scores:  30%|███       | 27/90 [00:28<00:48,  1.30it/s]tins scores:  31%|███       | 28/90 [00:29<00:44,  1.38it/s]tins scores:  32%|███▏      | 29/90 [00:29<00:42,  1.45it/s]tins scores:  33%|███▎      | 30/90 [00:30<00:40,  1.49it/s]tins scores:  34%|███▍      | 31/90 [00:31<00:38,  1.53it/s]tins scores:  36%|███▌      | 32/90 [00:31<00:37,  1.55it/s]tins scores:  37%|███▋      | 33/90 [00:32<00:36,  1.57it/s]tins scores:  38%|███▊      | 34/90 [00:32<00:35,  1.59it/s]tins scores:  39%|███▉      | 35/90 [00:33<00:34,  1.59it/s]tins scores:  40%|████      | 36/90 [00:34<00:33,  1.60it/s]tins scores:  41%|████      | 37/90 [00:34<00:33,  1.57it/s]tins scores:  42%|████▏     | 38/90 [00:35<00:32,  1.58it/s]tins scores:  43%|████▎     | 39/90 [00:36<00:32,  1.59it/s]tins scores:  44%|████▍     | 40/90 [00:36<00:31,  1.60it/s]tins scores:  46%|████▌     | 41/90 [00:37<00:30,  1.60it/s]tins scores:  47%|████▋     | 42/90 [00:37<00:29,  1.61it/s]tins scores:  48%|████▊     | 43/90 [00:38<00:29,  1.61it/s]tins scores:  49%|████▉     | 44/90 [00:39<00:28,  1.61it/s]tins scores:  50%|█████     | 45/90 [00:39<00:27,  1.62it/s]tins scores:  51%|█████     | 46/90 [00:40<00:27,  1.61it/s]tins scores:  52%|█████▏    | 47/90 [00:41<00:26,  1.62it/s]tins scores:  53%|█████▎    | 48/90 [00:41<00:26,  1.61it/s]tins scores:  54%|█████▍    | 49/90 [00:42<00:25,  1.62it/s]tins scores:  56%|█████▌    | 50/90 [00:42<00:24,  1.62it/s]tins scores:  57%|█████▋    | 51/90 [00:43<00:24,  1.61it/s]tins scores:  58%|█████▊    | 52/90 [00:44<00:23,  1.62it/s]tins scores:  59%|█████▉    | 53/90 [00:44<00:22,  1.61it/s]tins scores:  60%|██████    | 54/90 [00:45<00:22,  1.61it/s]tins scores:  61%|██████    | 55/90 [00:45<00:21,  1.61it/s]tins scores:  62%|██████▏   | 56/90 [00:46<00:21,  1.61it/s]tins scores:  63%|██████▎   | 57/90 [00:47<00:20,  1.61it/s]tins scores:  64%|██████▍   | 58/90 [00:47<00:19,  1.61it/s]tins scores:  66%|██████▌   | 59/90 [00:48<00:19,  1.61it/s]tins scores:  67%|██████▋   | 60/90 [00:49<00:18,  1.61it/s]tins scores:  68%|██████▊   | 61/90 [00:49<00:17,  1.62it/s]tins scores:  69%|██████▉   | 62/90 [00:50<00:17,  1.61it/s]tins scores:  70%|███████   | 63/90 [00:50<00:16,  1.61it/s]tins scores:  71%|███████   | 64/90 [00:51<00:16,  1.61it/s]tins scores:  72%|███████▏  | 65/90 [00:52<00:15,  1.61it/s]tins scores:  73%|███████▎  | 66/90 [00:52<00:14,  1.61it/s]tins scores:  74%|███████▍  | 67/90 [00:53<00:14,  1.61it/s]tins scores:  76%|███████▌  | 68/90 [00:54<00:13,  1.61it/s]tins scores:  77%|███████▋  | 69/90 [00:54<00:13,  1.62it/s]tins scores:  78%|███████▊  | 70/90 [00:55<00:12,  1.62it/s]tins scores:  79%|███████▉  | 71/90 [00:55<00:11,  1.62it/s]tins scores:  80%|████████  | 72/90 [00:56<00:11,  1.62it/s]tins scores:  81%|████████  | 73/90 [00:57<00:10,  1.62it/s]tins scores:  82%|████████▏ | 74/90 [00:57<00:09,  1.62it/s]tins scores:  83%|████████▎ | 75/90 [00:58<00:09,  1.62it/s]tins scores:  84%|████████▍ | 76/90 [00:58<00:08,  1.62it/s]tins scores:  86%|████████▌ | 77/90 [00:59<00:08,  1.62it/s]tins scores:  87%|████████▋ | 78/90 [01:00<00:07,  1.62it/s]tins scores:  88%|████████▊ | 79/90 [01:00<00:06,  1.61it/s]tins scores:  89%|████████▉ | 80/90 [01:01<00:06,  1.60it/s]tins scores:  90%|█████████ | 81/90 [01:02<00:05,  1.59it/s]tins scores:  91%|█████████ | 82/90 [01:02<00:05,  1.58it/s]tins scores:  92%|█████████▏| 83/90 [01:03<00:04,  1.58it/s]tins scores:  93%|█████████▎| 84/90 [01:04<00:04,  1.41it/s]tins scores:  94%|█████████▍| 85/90 [01:05<00:04,  1.23it/s]tins scores:  96%|█████████▌| 86/90 [01:06<00:03,  1.15it/s]tins scores:  97%|█████████▋| 87/90 [01:06<00:02,  1.26it/s]tins scores:  98%|█████████▊| 88/90 [01:07<00:01,  1.35it/s]tins scores:  99%|█████████▉| 89/90 [01:08<00:00,  1.42it/s]tins scores: 100%|██████████| 90/90 [01:08<00:00,  1.47it/s]tins scores: 100%|██████████| 90/90 [01:08<00:00,  1.31it/s]
+{
+ "utc": "2026-09-28T03:12:25Z",
+ "stream": "U1_s1_d0_seed123",
+ "n": 23000,
+ "gpu": "NVIDIA GeForce RTX 2080 Ti",
+ "REPRISE_frozen": {
+  "static_s": 1.8393627405166626,
+  "graph_s": 0.5572117082774639,
+  "memory_s": 0.9623905569314957,
+  "lp_s": 1.5699211992323399,
+  "last_batch_ms_B14": 61.61348894238472,
+  "last_batch_ms_L14": 15.084385871887207,
+  "alloc_MiB": 387.33251953125,
+  "reserved_MiB": 9478.0,
+  "ms_per_image": 0.21429940021556357
+ },
+ "minimal_z": {
+  "static_s": 1.671397190541029,
+  "graph_s": 0.454300656914711,
+  "memory_s": 0.0,
+  "lp_s": 0.603835940361023,
+  "last_batch_ms_B14": 6.163269281387329,
+  "last_batch_ms_L14": 6.618309766054153,
+  "alloc_MiB": 378.64404296875,
+  "reserved_MiB": 9478.0,
+  "ms_per_image": 0.11867538207898969
+ },
+ "encoders": {
+  "B14": {
+   "ms_per_image": 4.5178233631304465,
+   "alloc_MiB": 2122.25,
+   "reserved_MiB": 5590.0
+  },
+  "L14": {
+   "ms_per_image": 15.030970731459092,
+   "alloc_MiB": 2830.0,
+   "reserved_MiB": 6612.0
+  },
+  "CLIP": {
+   "ms_per_image": 1.2459200297598727,
+   "alloc_MiB": 1258.0,
+   "reserved_MiB": 4494.0
+  }
+ },
+ "TINS": {
+  "setup_s": 0.39788561314344406,
+  "stream_s": 68.82747184857726,
+  "ms_per_image": 2.9924987760250983,
+  "alloc_MiB": 1086.21240234375,
+  "reserved_MiB": 2256.0,
+  "note": "negative bank loaded from the per-split cache if present (setup time then excludes its construction)"
+ }
+}

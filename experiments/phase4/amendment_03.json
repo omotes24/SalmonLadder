@@ -1,0 +1,8 @@
+{
+ "amendment": 3,
+ "supersedes": [2],
+ "reason": "Disjointness among the five new splits is infeasible under the sibling rule even with three held-out classes per parent (the fifth split reaches 72 classes after excluding 600); stopped before any image selection, feature or score.",
+ "change": "Each new split independently selects 100 held-out classes (every held-out class keeps an ID sibling; at most two per WordNet parent, as amendment 1) excluding only the 200 dev1/dev2 held-out classes; different new splits may share held-out classes (overlaps recorded in build_info.json). Seeds unchanged.",
+ "analysis_note": "Split-level intervals treat the 5 splits as units (mild dependence through shared classes, reported). Exp 4 probe classes are identified by (split, class).",
+ "data_seen_before_amendment": "none (WordNet structure only)"
+}

@@ -1,0 +1,24 @@
+{
+ "name": "CLAVIS-M_c1",
+ "description": "CLAVIS with a test-time visual OOD memory (vins/clavism.py). Admission p_all <= eps_admit (d over ALL ID classes), g = d - (r_M - med_all)/mad_all with r_M the m_mem-th NN cosine distance to the memory, per-batch conformal p_t, score S_final * p_t.",
+ "config": {
+  "m": 2,
+  "eps_admit": 0.1,
+  "m_mem": 2,
+  "kind": "diff"
+ },
+ "selection": {
+  "explored_on": "dev1 only",
+  "runs": [
+   "iter/memory_dev1",
+   "iter/memory_dev1_eps",
+   "iter/memory_dev1_m"
+  ],
+  "rule": "simplest setting (m_mem = m = 2, eps 10%, diff) whose dev1 far AUROC is not below CLAVIS; not the dev1 argmax",
+  "dev1": {
+   "near_AUROC": 84.62,
+   "far_AUROC": 96.25
+  }
+ },
+ "frozen_at_utc": "2026-09-26T04:57:51Z"
+}

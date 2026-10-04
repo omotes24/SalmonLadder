@@ -1,0 +1,40 @@
+fourood_none   frozen_v5 97.82/8.36  locked 98.21/7.28  zeta 97.67/8.09  M0xlp_zero 97.74/8.73
+               locked - frozen: FPR95 -1.08 [-1.21, -0.96]  AUROC +0.40 [+0.29, +0.50] (n=3)
+fourood_TINS   frozen_v5 98.58/5.52  locked 98.60/5.76  zeta 98.79/4.50  M0xlp_zero 98.55/5.71  base_only 98.52/6.85
+               locked - frozen: FPR95 +0.24 [-0.04, +0.51]  AUROC +0.02 [-0.05, +0.08] (n=3)
+fourood_MCM    frozen_v5 97.82/8.35  locked 98.22/7.26  zeta 97.69/8.05  M0xlp_zero 97.75/8.71  base_only 89.07/49.93
+               locked - frozen: FPR95 -1.09 [-1.20, -0.97]  AUROC +0.39 [+0.29, +0.50] (n=3)
+                       AUROC  FPR95
+ds     base method                 
+dtd    MCM  base_only  86.30  56.93
+            frozen_v5  97.48   9.86
+            locked     98.15   7.33
+       TINS base_only  97.94   9.83
+            frozen_v5  98.53   5.93
+            locked     98.62   5.59
+       none frozen_v5  97.47   9.86
+            locked     98.15   7.35
+inat   MCM  base_only  89.14  55.44
+            frozen_v5  99.87   0.38
+            locked     99.84   0.53
+       TINS base_only  99.93   0.22
+            frozen_v5  99.94   0.18
+            locked     99.91   0.37
+       none frozen_v5  99.87   0.38
+            locked     99.84   0.53
+places MCM  base_only  89.37  45.83
+            frozen_v5  95.29  17.81
+            locked     95.89  17.07
+       TINS base_only  97.12  12.98
+            frozen_v5  96.61  12.84
+            locked     96.56  14.19
+       none frozen_v5  95.27  17.85
+            locked     95.88  17.11
+sun    MCM  base_only  91.46  41.52
+            frozen_v5  98.66   5.34
+            locked     98.99   4.12
+       TINS base_only  99.12   4.35
+            frozen_v5  99.24   3.14
+            locked     99.29   2.90
+       none frozen_v5  98.65   5.36
+            locked     98.98   4.12

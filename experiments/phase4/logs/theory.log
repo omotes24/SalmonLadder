@@ -1,0 +1,114 @@
+/home/omote/reprise_lp_audit_20260927/vendor/scripts/r5_round2.py:68: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  pos_text = torch.load(C.RUNS_DIR / "setup" / "tins_setup.pt", map_location="cpu")["positive_features"].float()
+/home/omote/reprise_lp_audit_20260927/vendor/vins/features.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(path, map_location="cpu")
+/home/omote/reprise_lp_audit_20260927/vendor/vins/features.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  blob = torch.load(path, map_location="cpu")
+/home/omote/reprise_p4_20260928/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{
+ "T1_first": {
+  "batch": 0,
+  "N_t": 14656,
+  "Ns_over_Nt": 0.7368995633187773,
+  "mass_L2": 0.9999999969736383,
+  "mass_L0": 1.0000000062337002,
+  "mass_L1": 0.7941088713771522,
+  "mean_u_L2": 0.7197091707342601,
+  "mean_u_unlabelled_L2": 0.6410954734783846,
+  "mean_sqrtdeg_support": 2.6907283557332105,
+  "mean_sqrtdeg_all": 2.6912858952455405,
+  "cal_median_L2": 0.6508773160003922,
+  "iters_L2": 174,
+  "res_L2": 9.195750650092892e-09
+ },
+ "T1_last": {
+  "batch": 89,
+  "N_t": 37400,
+  "Ns_over_Nt": 0.2887700534759358,
+  "mass_L2": 0.999999979220178,
+  "mass_L0": 1.000012217155514,
+  "mass_L1": 0.7941088668855697,
+  "mean_u_L2": 0.27863084371732194,
+  "mean_u_unlabelled_L2": 0.2389611868275745,
+  "mean_sqrtdeg_support": 3.0086029281645468,
+  "mean_sqrtdeg_all": 3.0157076291910507,
+  "cal_median_L2": 0.26506481299488804,
+  "iters_L2": 169,
+  "res_L2": 9.736927699712497e-09
+ },
+ "T2": {
+  "near|B14|L0": {
+   "rho_first_vs_last_min": 0.7802250452848544,
+   "rho_first_vs_last_mean": 0.7914591762957185,
+   "rho_consecutive_min": 0.9889962658690536,
+   "rho_consecutive_mean": 0.9964826706748335
+  },
+  "near|B14|L1": {
+   "rho_first_vs_last_min": 0.7614083424440593,
+   "rho_first_vs_last_mean": 0.7736238369051315,
+   "rho_consecutive_min": 0.9874005921348192,
+   "rho_consecutive_mean": 0.9961539110062348
+  },
+  "near|B14|L2": {
+   "rho_first_vs_last_min": 0.7817893566195491,
+   "rho_first_vs_last_mean": 0.7926085653590285,
+   "rho_consecutive_min": 0.9897842283784127,
+   "rho_consecutive_mean": 0.996631720945848
+  },
+  "near|L14|L0": {
+   "rho_first_vs_last_min": 0.7491439958187239,
+   "rho_first_vs_last_mean": 0.7648705033079093,
+   "rho_consecutive_min": 0.9853142869326869,
+   "rho_consecutive_mean": 0.9956942261945979
+  },
+  "near|L14|L1": {
+   "rho_first_vs_last_min": 0.7282135345843777,
+   "rho_first_vs_last_mean": 0.7469149621419295,
+   "rho_consecutive_min": 0.9837815326991924,
+   "rho_consecutive_mean": 0.9953833516164272
+  },
+  "near|L14|L2": {
+   "rho_first_vs_last_min": 0.7506162623932301,
+   "rho_first_vs_last_mean": 0.7661300248728585,
+   "rho_consecutive_min": 0.9863368860342249,
+   "rho_consecutive_mean": 0.9958462539205285
+  },
+  "far|B14|L0": {
+   "rho_first_vs_last_min": 0.8077736888714268,
+   "rho_first_vs_last_mean": 0.8187979456034081,
+   "rho_consecutive_min": 0.9884030255969412,
+   "rho_consecutive_mean": 0.9957560258436354
+  },
+  "far|B14|L1": {
+   "rho_first_vs_last_min": 0.787978187343996,
+   "rho_first_vs_last_mean": 0.7988120569728097,
+   "rho_consecutive_min": 0.9869623248684921,
+   "rho_consecutive_mean": 0.9953520499736086
+  },
+  "far|B14|L2": {
+   "rho_first_vs_last_min": 0.808461394171404,
+   "rho_first_vs_last_mean": 0.8193933654024372,
+   "rho_consecutive_min": 0.9891435742651935,
+   "rho_consecutive_mean": 0.9959449834092547
+  },
+  "far|L14|L0": {
+   "rho_first_vs_last_min": 0.7698354292568489,
+   "rho_first_vs_last_mean": 0.7852104523396267,
+   "rho_consecutive_min": 0.983980387395606,
+   "rho_consecutive_mean": 0.9947725494530153
+  },
+  "far|L14|L1": {
+   "rho_first_vs_last_min": 0.7472715298820625,
+   "rho_first_vs_last_mean": 0.764674458522549,
+   "rho_consecutive_min": 0.9824769256026435,
+   "rho_consecutive_mean": 0.9944016139751037
+  },
+  "far|L14|L2": {
+   "rho_first_vs_last_min": 0.7701273197114701,
+   "rho_first_vs_last_mean": 0.7856319143234504,
+   "rho_consecutive_min": 0.9847084844168069,
+   "rho_consecutive_mean": 0.9949697130048292
+  }
+ }
+}

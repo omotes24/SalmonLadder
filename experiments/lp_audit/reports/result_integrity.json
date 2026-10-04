@@ -1,0 +1,1987 @@
+{
+  "checks": [
+    {
+      "stage": "primary",
+      "run": "draw0_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw0_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw0_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw0_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw0_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw0_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw1_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw1_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw1_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw1_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw1_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw1_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw2_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw2_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw2_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw2_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw2_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw2_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw3_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw3_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw3_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw3_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw3_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw3_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw4_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw4_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw4_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw4_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw4_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "primary",
+      "run": "draw4_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 49
+    },
+    {
+      "stage": "baselines",
+      "run": "draw0_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw0_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw0_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw0_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw0_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw0_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw1_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw1_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw1_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw1_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw1_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw1_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw2_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw2_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw2_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw2_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw2_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw2_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw3_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw3_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw3_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw3_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw3_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw3_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw4_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw4_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw4_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw4_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw4_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "baselines",
+      "run": "draw4_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 36
+    },
+    {
+      "stage": "capacity",
+      "run": "draw0_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw0_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw0_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw0_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw0_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw0_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw1_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw1_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw1_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw1_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw1_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw1_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw2_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw2_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw2_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw2_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw2_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw2_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw3_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw3_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw3_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw3_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw3_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw3_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw4_far_seed123",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw4_far_seed124",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw4_far_seed125",
+      "n_ID": 18000,
+      "n_OOD": 1763,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw4_near_seed123",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw4_near_seed124",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "capacity",
+      "run": "draw4_near_seed125",
+      "n_ID": 18000,
+      "n_OOD": 5000,
+      "methods": 48
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep0",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep1",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep10",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep11",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep12",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep13",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep14",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep15",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep16",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep17",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep18",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep19",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep2",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep20",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep21",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep22",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep23",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep24",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep25",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep26",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep27",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep28",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep29",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep3",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep30",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep31",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep32",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep33",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep34",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep35",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep36",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep37",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep38",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep39",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep4",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep40",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep41",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep42",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep43",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep44",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep45",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep46",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep47",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep48",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep49",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep5",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep6",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep7",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep8",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "real_calibration",
+      "run": "rep9",
+      "n_calibration": 3600,
+      "conditions": 3,
+      "views": 2
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep0",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep1",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep10",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep100",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep101",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep102",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep103",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep104",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep105",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep106",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep107",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep108",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep109",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep11",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep110",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep111",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep112",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep113",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep114",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep115",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep116",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep117",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep118",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep119",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep12",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep120",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep121",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep122",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep123",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep124",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep125",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep126",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep127",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep128",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep129",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep13",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep130",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep131",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep132",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep133",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep134",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep135",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep136",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep137",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep138",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep139",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep14",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep140",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep141",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep142",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep143",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep144",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep145",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep146",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep147",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep148",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep149",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep15",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep150",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep151",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep152",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep153",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep154",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep155",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep156",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep157",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep158",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep159",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep16",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep160",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep161",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep162",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep163",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep164",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep165",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep166",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep167",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep168",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep169",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep17",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep170",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep171",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep172",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep173",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep174",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep175",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep176",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep177",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep178",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep179",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep18",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep180",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep181",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep182",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep183",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep184",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep185",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep186",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep187",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep188",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep189",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep19",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep190",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep191",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep192",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep193",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep194",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep195",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep196",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep197",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep198",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep199",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep2",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep20",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep21",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep22",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep23",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep24",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep25",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep26",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep27",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep28",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep29",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep3",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep30",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep31",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep32",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep33",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep34",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep35",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep36",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep37",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep38",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep39",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep4",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep40",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep41",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep42",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep43",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep44",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep45",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep46",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep47",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep48",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep49",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep5",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep50",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep51",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep52",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep53",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep54",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep55",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep56",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep57",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep58",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep59",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep6",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep60",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep61",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep62",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep63",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep64",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep65",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep66",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep67",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep68",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep69",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep7",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep70",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep71",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep72",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep73",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep74",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep75",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep76",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep77",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep78",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep79",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep8",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep80",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep81",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep82",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep83",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep84",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep85",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep86",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep87",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep88",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep89",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep9",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep90",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep91",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep92",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep93",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep94",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep95",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep96",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep97",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep98",
+      "conditions": 5
+    },
+    {
+      "stage": "synthetic",
+      "run": "rep99",
+      "conditions": 5
+    }
+  ],
+  "errors": [],
+  "result_files": 1100,
+  "notes": "Checks apply only to completed receipts. Unexecuted/failed jobs remain in dispatch ledgers. Negative infinity is an exact log-zero score. Real calibration identities are replayed from the registered seeds and checked against the original preparation hash."
+}

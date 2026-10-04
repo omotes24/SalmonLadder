@@ -1,0 +1,7 @@
+white03 (numpy transform, 16 tasks; stopped because each task took >10 min under CPU contention) moved to failures/
+second-stage feature extraction stopped at 2026-10-02T11:16:58Z: not needed (dev2 attempt 1 met the stop rule); the extracted features were never used for any score
+final_analysis.py: upstream metric needed import_tins() first (ModuleNotFoundError: utils); scores were already saved and are unchanged; analysis re-run
+2026-10-03 Phase 6 (DINOv3 swap): prereg_p6.json (sha256 f796aac9...) placed 02:58Z before any DINOv3 weight / feature / score.
+  run_d3.sh finished 03:49Z (D3_ALL_DONE); analysis logs/d3_analysis.log; independent re-computation verify6.py agrees on all cells.
+  Post hoc (after the dev scores were seen): run_posthoc.sh, cfgs l14,d3L,d3mixB,d3mixL; logs/d3_posthoc.log; verify6b.py.
+  One OOM in the post-hoc dev1 run (failures/posthoc_oom_dev1), re-run with a single worker.

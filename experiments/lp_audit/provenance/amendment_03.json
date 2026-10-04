@@ -1,0 +1,26 @@
+{
+  "utc": "2026-09-27T12:19:12.421998+00:00",
+  "reason": "Own cached pandas string IDs were stored as NumPy object arrays; loading pool_ids at final serialization with allow_pickle=False failed.",
+  "affected_runs": [
+    "real_calibration/rep0",
+    "real_calibration/rep1",
+    "real_calibration/rep2",
+    "real_calibration/rep3",
+    "real_calibration/rep4",
+    "real_calibration/rep5",
+    "real_calibration/rep6",
+    "real_calibration/rep7"
+  ],
+  "saved_scores": false,
+  "fix": "Load our own hashed identity cache explicitly, convert ID arrays to Unicode and keep numeric arrays unchanged. Save calibration_ids as Unicode. Added regression round-trip test, all16 tests pass. Future cache creation uses plain Unicode arrays; the existing hashed cache is preserved.",
+  "change_to_detector_parameters": false,
+  "change_to_rng_or_data_choice": false,
+  "retry": "Same50 registered seeds, failed8 rerun once after correction; history and logs preserved.",
+  "budget": "Earlier failed attempts are charged in restarted controller prior_gpu_seconds. First4 durations measured; next4 charged an upper bound covering paused-controller time, with log-time lower bounds stored separately.",
+  "controller": "Added exclusive lock and cumulative previous-ledger accounting for restarts.",
+  "code_sha256": {
+    "real_calibration.py": "38d38ec111844da3932dbf2bbf7fd4df0f2b9c0b6000b597653c8e4abd702383",
+    "post_schedule.py": "ef44197dca66e820795f3ad50e9bcaaf34595b223e6d5920bc1fc201cd9e8beb",
+    "unit_tests/test_identity_cache.py": "3bde084ff68ba97d08db91b985104c6e19bfe744c40272f21afa7f620e11d343"
+  }
+}

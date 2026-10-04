@@ -1,0 +1,7 @@
+{
+ "amendment": 1,
+ "reason": "The dev1/dev2 held-out rule (one held-out class per WordNet parent, sibling kept in ID) admits only 36 classes once the 200 dev1/dev2 held-out classes are excluded and the new splits are required to be disjoint; the bank build stopped before any image was selected or any feature/score existed.",
+ "change": "U1 held-out selection: every held-out class still keeps at least one WordNet sibling in the ID set of its split, but up to two held-out classes may share a parent. Splits remain disjoint from dev1/dev2 held-out classes and from each other; seeds unchanged (20260929..20260933).",
+ "unchanged": "all other registered items (families, grid, selection rule, endpoints, decision rules)",
+ "data_seen_before_amendment": "none (WordNet structure only)"
+}

@@ -1,0 +1,158 @@
+{
+ "utc": "2026-10-03T17:49:13Z",
+ "timm": "1.0.27",
+ "torch": "2.5.1+cu121",
+ "gpu": "NVIDIA GeForce RTX 2080 Ti",
+ "offline": false,
+ "models": {
+  "D3S": {
+   "timm": "vit_small_patch16_dinov3.lvd1689m",
+   "class": "Eva",
+   "params_M": 21.59,
+   "num_features": 384,
+   "prefix_tokens": 5,
+   "global_pool": "avg",
+   "load_seconds": 6.6,
+   "cfg": {
+    "hf_hub_id": "timm/vit_small_patch16_dinov3.lvd1689m",
+    "input_size": [
+     3,
+     256,
+     256
+    ],
+    "crop_pct": 1.0,
+    "interpolation": "bicubic",
+    "mean": [
+     0.485,
+     0.456,
+     0.406
+    ],
+    "std": [
+     0.229,
+     0.224,
+     0.225
+    ],
+    "license": "dinov3-license"
+   },
+   "checks": {
+    "256": {
+     "tokens": [
+      4,
+      261,
+      384
+     ],
+     "cls_vs_token_pool": 0.0,
+     "default_out_vs_patch_mean": 0.0,
+     "repeat": 0.0,
+     "batch_invariance": 1.996755599975586e-06,
+     "cls_norm": 10.262
+    },
+    "224": {
+     "tokens": [
+      4,
+      201,
+      384
+     ],
+     "cls_vs_token_pool": 0.0,
+     "default_out_vs_patch_mean": 0.0,
+     "repeat": 0.0,
+     "batch_invariance": 1.9073486328125e-06,
+     "cls_norm": 10.222
+    }
+   },
+   "extract7_vs_cls": 0.0,
+   "extract7_transform": "dino256",
+   "files": [
+    {
+     "file": "model.safetensors",
+     "bytes": 86362376,
+     "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040"
+    }
+   ]
+  },
+  "D3SP": {
+   "timm": "vit_small_plus_patch16_dinov3.lvd1689m",
+   "class": "Eva",
+   "params_M": 28.68,
+   "num_features": 384,
+   "prefix_tokens": 5,
+   "global_pool": "avg",
+   "load_seconds": 7.0,
+   "cfg": {
+    "hf_hub_id": "timm/vit_small_plus_patch16_dinov3.lvd1689m",
+    "input_size": [
+     3,
+     256,
+     256
+    ],
+    "crop_pct": 1.0,
+    "interpolation": "bicubic",
+    "mean": [
+     0.485,
+     0.456,
+     0.406
+    ],
+    "std": [
+     0.229,
+     0.224,
+     0.225
+    ],
+    "license": "dinov3-license"
+   },
+   "checks": {
+    "256": {
+     "tokens": [
+      4,
+      261,
+      384
+     ],
+     "cls_vs_token_pool": 0.0,
+     "default_out_vs_patch_mean": 0.0,
+     "repeat": 0.0,
+     "batch_invariance": 4.0531158447265625e-06,
+     "cls_norm": 13.493
+    },
+    "224": {
+     "tokens": [
+      4,
+      201,
+      384
+     ],
+     "cls_vs_token_pool": 0.0,
+     "default_out_vs_patch_mean": 0.0,
+     "repeat": 0.0,
+     "batch_invariance": 3.5762786865234375e-06,
+     "cls_norm": 13.426
+    }
+   },
+   "extract7_vs_cls": 0.0,
+   "extract7_transform": "dino256",
+   "files": [
+    {
+     "file": "model.safetensors",
+     "bytes": 114750056,
+     "sha256": "423e7b4b1103de4100a5c19a436cc00f1a994d82835ed51623b209ccfd1e9615"
+    }
+   ]
+  },
+  "RN50": {
+   "arch": "RN50",
+   "params_M_image_tower": 38.32,
+   "out_dim": 1024,
+   "dtype": "torch.float16",
+   "transform": "clip_rn50",
+   "preprocess": "Compose(     Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)     CenterCrop(size=(224, 224))     <function _transform.<locals>.<lambda> at 0x723d4e1360c0>     ToTensor()     Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711)) )",
+   "repeat": 0.0,
+   "batch_invariance": 0.001953125,
+   "finite": true,
+   "load_seconds": 6.8,
+   "files": [
+    {
+     "file": "RN50.pt",
+     "bytes": 255827503,
+     "sha256": "afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762"
+    }
+   ]
+  }
+ }
+}

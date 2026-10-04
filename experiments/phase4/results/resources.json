@@ -1,0 +1,53 @@
+{
+ "utc": "2026-09-28T03:12:25Z",
+ "stream": "U1_s1_d0_seed123",
+ "n": 23000,
+ "gpu": "NVIDIA GeForce RTX 2080 Ti",
+ "REPRISE_frozen": {
+  "static_s": 1.8393627405166626,
+  "graph_s": 0.5572117082774639,
+  "memory_s": 0.9623905569314957,
+  "lp_s": 1.5699211992323399,
+  "last_batch_ms_B14": 61.61348894238472,
+  "last_batch_ms_L14": 15.084385871887207,
+  "alloc_MiB": 387.33251953125,
+  "reserved_MiB": 9478.0,
+  "ms_per_image": 0.21429940021556357
+ },
+ "minimal_z": {
+  "static_s": 1.671397190541029,
+  "graph_s": 0.454300656914711,
+  "memory_s": 0.0,
+  "lp_s": 0.603835940361023,
+  "last_batch_ms_B14": 6.163269281387329,
+  "last_batch_ms_L14": 6.618309766054153,
+  "alloc_MiB": 378.64404296875,
+  "reserved_MiB": 9478.0,
+  "ms_per_image": 0.11867538207898969
+ },
+ "encoders": {
+  "B14": {
+   "ms_per_image": 4.5178233631304465,
+   "alloc_MiB": 2122.25,
+   "reserved_MiB": 5590.0
+  },
+  "L14": {
+   "ms_per_image": 15.030970731459092,
+   "alloc_MiB": 2830.0,
+   "reserved_MiB": 6612.0
+  },
+  "CLIP": {
+   "ms_per_image": 1.2459200297598727,
+   "alloc_MiB": 1258.0,
+   "reserved_MiB": 4494.0
+  }
+ },
+ "TINS": {
+  "setup_s": 0.39788561314344406,
+  "stream_s": 68.82747184857726,
+  "ms_per_image": 2.9924987760250983,
+  "alloc_MiB": 1086.21240234375,
+  "reserved_MiB": 2256.0,
+  "note": "negative bank loaded from the per-split cache if present (setup time then excludes its construction)"
+ }
+}

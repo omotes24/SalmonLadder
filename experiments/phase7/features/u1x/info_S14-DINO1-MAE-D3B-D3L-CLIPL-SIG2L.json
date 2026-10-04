@@ -1,0 +1,35 @@
+{
+ "utc": "2026-10-03T13:39:20Z",
+ "n": 117699,
+ "table_sha256": "8d12c7faa9402cb35f02006f1a6949512c94771da4bcb018dc9e2acc6d1ddaab",
+ "files": {
+  "S14": {
+   "sha256": "ee433e027f5c76e58bc8595d2217709a8d4b7855537ee9277e3876908b1dbe39",
+   "dim": 384
+  },
+  "DINO1": {
+   "sha256": "1898dcd0a5a7e7b4b41f34f363b80f7329140e0124f5cc6b539a65222a8676e2",
+   "dim": 768
+  },
+  "MAE": {
+   "sha256": "e2013caaab41dbdbfc78606b884a9735aa90ad65b834141b6288afd5850abd7f",
+   "dim": 768
+  },
+  "D3B": {
+   "sha256": "8ba55c7b2a13c32ef5248f9884222e45cd6ae94c38e5c5549239df4c6cb44dfa",
+   "dim": 768
+  },
+  "D3L": {
+   "sha256": "af77dc34d62b100e29da1556c44159f97e9f26676ea954d1ffb17907b1a7fde5",
+   "dim": 1024
+  },
+  "CLIPL": {
+   "sha256": "17b819873b6b40d4ca723826d045e114cd844f02d86e2b261366f5446e887fad",
+   "dim": 768
+  },
+  "SIG2L": {
+   "sha256": "b16cf251ff4fd8ff1c7d282e36a2ee1467395df3e5446f2317f847a48182c93d",
+   "dim": 1024
+  }
+ }
+}

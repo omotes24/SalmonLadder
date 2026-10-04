@@ -1,0 +1,18 @@
+/home/omote/reprise_p4_20260928/code/vlm_tta.py:99: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  d = torch.load(p, map_location="cuda")
+Traceback (most recent call last):
+  File "/home/omote/reprise_p4_20260928/code/vlm_tta.py", line 210, in <module>
+    job(F, classes, cfp, b, int(s), seeds)
+  File "/home/omote/reprise_p4_20260928/code/vlm_tta.py", line 186, in job
+    sc, secs, peak = run_stream(snet, feats, kind, args, classes, seed)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p4_20260928/code/vlm_tta.py", line 158, in run_stream
+    _, conf = pp.postprocess(snet, x)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p4_20260928/code/vlm_tta/openood/postprocessors/ttaprompt_postprocessor.py", line 900, in postprocess
+    output = logit_scale * (image_features.unsqueeze(1) * sa_text_features).sum(-1) ## 256*11k
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.66 GiB. GPU 0 has a total capacity of 10.57 GiB of which 1.14 GiB is free. Including non-PyTorch memory, this process has 9.43 GiB memory in use. Of the allocated memory 8.18 GiB is allocated by PyTorch, and 1.06 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

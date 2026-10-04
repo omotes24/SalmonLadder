@@ -1,0 +1,32 @@
+{
+  "event": "Reanalysis of previously issued OpenOOD predictions",
+  "files": [
+    "inaturalist_seed123.npz",
+    "inaturalist_seed124.npz",
+    "inaturalist_seed125.npz",
+    "inaturalist_seed126.npz",
+    "inaturalist_seed127.npz",
+    "ninco_seed123.npz",
+    "ninco_seed124.npz",
+    "ninco_seed125.npz",
+    "ninco_seed126.npz",
+    "ninco_seed127.npz",
+    "openimageo_seed123.npz",
+    "openimageo_seed124.npz",
+    "openimageo_seed125.npz",
+    "openimageo_seed126.npz",
+    "openimageo_seed127.npz",
+    "ssb_hard_seed123.npz",
+    "ssb_hard_seed124.npz",
+    "ssb_hard_seed125.npz",
+    "ssb_hard_seed126.npz",
+    "ssb_hard_seed127.npz",
+    "textures_seed123.npz",
+    "textures_seed124.npz",
+    "textures_seed125.npz",
+    "textures_seed126.npz",
+    "textures_seed127.npz"
+  ],
+  "new_config_selection": false,
+  "utc": "2026-09-27T11:27:57.421745+00:00"
+}

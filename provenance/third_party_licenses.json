@@ -1,0 +1,20 @@
+{
+ "description": "Licence files of vendored third-party code that are not part of a server export.",
+ "files": {
+  "third_party/OPENAI_CLIP_LICENSE": {
+   "sha256": "987e63b32f6c89ff5160e429458a872ff048e6860b590a3912e938f9da8f14db",
+   "bytes": 1064,
+   "source": "MIT licence of OpenAI CLIP (https://github.com/openai/CLIP); present since the first export"
+  },
+  "third_party/OPENOOD_VLM_LICENSE": {
+   "sha256": "82c3d9772f2655f5b0316f48ec58d01d444e82d36bb8cacf481751efe91c3979",
+   "bytes": 1070,
+   "source": "LICENSE of https://github.com/YBZh/OpenOOD-VLM at c6fef2f5ed890df2f59f9c6c3f9ae14fb5a72ab9"
+  },
+  "third_party/NEGLABEL_LICENSE": {
+   "sha256": "b52e89b364918149602d3004e62093279198983b50e58c5896d2dfcfbdee82ad",
+   "bytes": 11401,
+   "source": "LICENSE of https://github.com/XueJiang16/NegLabel at 3253db684075b2db47844676eccdfda40d67a573"
+  }
+ }
+}

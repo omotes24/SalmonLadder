@@ -1,0 +1,40 @@
+{
+  "measured_pilot": {
+    "L14_512_binary_seconds": 3.1820872165,
+    "L14_4096_all900class_seconds": 20.2584011815
+  },
+  "first_full_runs_seconds": {
+    "far": [
+      297.2044943757,
+      300.1626905575
+    ],
+    "near": [
+      363.3522100933,
+      363.2620722391
+    ]
+  },
+  "primary_30_gpu_hours_estimate": 2.75829472347,
+  "remaining_estimates_gpu_hours": {
+    "real50": [
+      0.6,
+      1.6
+    ],
+    "baselines30": [
+      0.3,
+      1.0
+    ],
+    "tuning30_two_configs": [
+      4.8,
+      6.5
+    ],
+    "capacity30": [
+      1.8,
+      3.0
+    ]
+  },
+  "limits": {
+    "primary": 4,
+    "cumulative": 8
+  },
+  "policy": "Estimates are not completed runs. Fixed priority, no outcome-based early termination or extension. Hard stop cumulative8 GPUh. Unexecuted individual tasks remain in ledger."
+}

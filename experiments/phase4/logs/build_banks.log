@@ -1,0 +1,80 @@
+{
+ "utc": "2026-09-27T22:46:51Z",
+ "seed": 20260928,
+ "wordnet_version": "3.0",
+ "n_pool": 175700,
+ "pool_roles": {
+  "shot": 80000,
+  "long": 60000,
+  "ideval": 20000,
+  "oodeval": 15700
+ },
+ "n_imagenet_o": 1999,
+ "n_wild": 18535,
+ "wild_id_species": [
+  "buffalo",
+  "cheetah",
+  "elephant",
+  "giraffe",
+  "hippo"
+ ],
+ "wild_ood_species": [
+  "impala",
+  "leopard",
+  "lion",
+  "rhino",
+  "wildebeest"
+ ],
+ "wild_exact_duplicates": 0,
+ "n_feature_rows": 196234,
+ "n_r5_excluded": 80000,
+ "n_used_hashes": 143635,
+ "n_cross_class_duplicates": 143,
+ "n_heldout_union": 314,
+ "split_overlap": {
+  "1-2": 22,
+  "1-3": 27,
+  "1-4": 26,
+  "1-5": 19,
+  "2-3": 26,
+  "2-4": 21,
+  "2-5": 25,
+  "3-4": 21,
+  "3-5": 22,
+  "4-5": 20
+ },
+ "rejected": {
+  "sealed_path": 0,
+  "sealed_hash": 149,
+  "used_hash": 179,
+  "duplicate": 1,
+  "cross_class_duplicate": 286
+ },
+ "splits": [
+  {
+   "split": 1,
+   "seed": 20260929,
+   "n_heldout": 100
+  },
+  {
+   "split": 2,
+   "seed": 20260930,
+   "n_heldout": 100
+  },
+  {
+   "split": 3,
+   "seed": 20260931,
+   "n_heldout": 100
+  },
+  {
+   "split": 4,
+   "seed": 20260932,
+   "n_heldout": 100
+  },
+  {
+   "split": 5,
+   "seed": 20260933,
+   "n_heldout": 100
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+Encoding positive labels:   0%|          | 0/1 [00:00<?, ?it/s]Encoding positive labels: 100%|██████████| 1/1 [00:00<00:00,  2.16it/s]
+[features] clip: 134908 images in 192.3s
+2026-09-26 01:58:48,539 zero-shot candidates computed
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/vins_gonogo_20260925/vins/features.py:65: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(C.DINO_CKPT, map_location="cpu")
+[features] dino: 146908 images in 716.3s
+{
+ "means": {
+  "nearood": {
+   "tins": {
+    "AUROC": 0.8168772705668046,
+    "FPR95_codex": 0.558434878901382,
+    "FPR95_upstream": 0.5584858993095452
+   },
+   "d_only": {
+    "AUROC": 0.8087453987400482,
+    "FPR95_codex": 0.6113529737460557,
+    "FPR95_upstream": 0.6115842951911161
+   },
+   "fused": {
+    "AUROC": 0.8599871125855354,
+    "FPR95_codex": 0.5020762364139396,
+    "FPR95_upstream": 0.502304142034429
+   }
+  },
+  "farood": {
+   "tins": {
+    "AUROC": 0.970986894850529,
+    "FPR95_codex": 0.1196400327259541,
+    "FPR95_upstream": 0.1196400327259541
+   },
+   "d_only": {
+    "AUROC": 0.9262082363767098,
+    "FPR95_codex": 0.3863452388361232,
+    "FPR95_upstream": 0.3866230585431137
+   },
+   "fused": {
+    "AUROC": 0.9823683148921863,
+    "FPR95_codex": 0.09562521124588708,
+    "FPR95_upstream": 0.09562521124588708
+   }
+  }
+ },
+ "seconds": 935.5
+}

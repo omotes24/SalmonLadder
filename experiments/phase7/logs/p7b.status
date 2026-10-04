@@ -1,0 +1,7 @@
+2026-10-03T17:49:05Z amendment_03 installed 09adb9ff0a687cd7a5f68781be7cd86977e72da661a07a109e7e158bc9eb08eb
+2026-10-03T17:50:06Z start
+2026-10-03T17:50:23Z smoke ok: {"tag": "D3S-D3SP-RN50", "shard": 0, "complete": "/home/omote/reprise_p7_20261003/features/u1x/D3S-D3SP-RN50.shard0of4.limit96.npz", "n": 96, "seconds": 2.2, "dims": {"D3S": 384, "D3SP": 384, "RN50": 1024}, "params_M": {"D3S": 21.6, "D3SP": 28.7, "RN50": 38.3}}
+2026-10-03T18:16:17Z features merged: merged D3S-D3SP-RN50 117699 {'D3S': 384, 'D3SP': 384, 'RN50': 1024}
+2026-10-03T18:18:25Z engine: u1w:D3S,D3SP,RN50 done: 135 tasks logged, 0 worker logs with errors;u2w:D3S,D3SP,RN50 done: 45 tasks logged, 0 worker logs with errors;
+2026-10-03T18:23:05Z an_b: AN_B_UNCHANGED
+2026-10-03T18:23:55Z P7B_DONE VERIFY7_OK

@@ -1,0 +1,108 @@
+{
+ "phase": 6,
+ "title": "Encoder swap: DINOv3 views in place of the DINOv2 views (no tuning), development splits only",
+ "written_utc": "2026-10-03T02:23:31Z",
+ "written_before": "any DINOv3 weight was downloaded and any DINOv3 feature or score was computed",
+ "question": "What happens to frozen REPRISE v5 and to the locked two-sided propagation (selection_lock_p5.json) when the two DINOv2 views (ViT-B/14, ViT-L/14) are replaced by DINOv3 views (ViT-B/16, ViT-L/16)?",
+ "status": "Descriptive comparison on development data. dev1 was used for selection in every earlier phase and dev2 for the Phase 5 confirmation (attempt 1); all hyper-parameters were chosen with DINOv2 features, so the comparison is, if anything, tilted towards DINOv2. Nothing is selected in this phase; every pre-specified comparison is reported. The result supports no claim on unused data and does not change the Phase 5 lock; it is not a Phase 5 confirmation attempt.",
+ "not_used": [
+  "U1",
+  "U2",
+  "U3",
+  "U4",
+  "OpenOOD v1.5 test (6 uses so far)",
+  "ImageNet val",
+  "Four-OOD"
+ ],
+ "encoders": {
+  "source": "Hugging Face hub, timm organisation (not gated), file model.safetensors, DINOv3 License; download approved by the user on 2026-10-03",
+  "B": {
+   "timm": "vit_base_patch16_dinov3.lvd1689m",
+   "size": "343 MB"
+  },
+  "L": {
+   "timm": "vit_large_patch16_dinov3.lvd1689m",
+   "size": "1.21 GB"
+  },
+  "not_downloaded": "ViT-H+/16 (permission was given for B/16 and L/16 only); ViT-7B/16 does not fit an 11 GB GPU"
+ },
+ "feature": "CLS token after the final norm (timm forward_features()[:, 0]; token 0 is the class token, tokens 1-4 are registers), L2-normalised, float32; fp32 inference, TF32 off. This mirrors x_norm_clstoken of the DINOv2 pipeline. (timm's default pooling for these models is the patch mean; it is not used.)",
+ "views": {
+  "primary (run d3)": {
+   "D3B": "ViT-B/16",
+   "D3L": "ViT-L/16",
+   "input": "Resize(293, bicubic) + CenterCrop(256) + ImageNet normalisation: the centre-crop ratio of the DINOv2 pipeline (0.875), 256 patch tokens (as DINOv2 /14 at 224 px), the resolution DINOv3 was trained at"
+  },
+  "sensitivity (run d3s)": {
+   "D3Bs": "ViT-B/16",
+   "D3Ls": "ViT-L/16",
+   "input": "the exact DINOv2 input: Resize(256, bicubic) + CenterCrop(224) (196 patch tokens)"
+  },
+  "reference (run lock)": {
+   "B14": "DINOv2 ViT-B/14",
+   "L14": "DINOv2 ViT-L/14",
+   "input": "Resize(256, bicubic) + CenterCrop(224)"
+  }
+ },
+ "unchanged": "Everything except the two views: R5 shots (5 draws, 12 support + 4 calibration per class), CLIP zero-shot candidate classes (K = 20), n0 = 48, m = 1, entrance thresholds (0.3, 0.2, 0.10191613435745239), graph k = 10, gamma = 1, lambda = 0.9, 15 sweeps; the two-sided propagation exactly as in selection_lock_p5.json (sha256 8fea3cbd77104a63dd40c3ec98c22290ca0204c9b6da3ae48ab2fdb218f6ae4a); TINS and MCM scores; streams, orders (seeds 123, 124, 125) and batches.",
+ "methods": {
+  "v5": [
+   [
+    "M0",
+    1.0
+   ],
+   [
+    "lp0|k10g1b1l0.9",
+    1.0
+   ]
+  ],
+  "two-sided": [
+   [
+    "M0",
+    1.0
+   ],
+   [
+    "IB0.2s<B0.5s",
+    1.0
+   ],
+   [
+    "lp|k10g1b1l0.9",
+    1.0
+   ],
+   [
+    "neg:IB0.2s<B0.5s",
+    1.0
+   ]
+  ]
+ },
+ "runs": {
+  "dev2": "lock (exists: Phase 5 confirmation), d3, d3s",
+  "dev1": "lock (new run, same code path), d3, d3s",
+  "tasks": "5 draws x {near, far} x 3 orders per run and split"
+ },
+ "metrics": "AUROC and FPR95 (threshold accepting 95% of ID); standalone (no base detector), x TINS, x MCM; unit = support draw (the three orders averaged); paired difference DINOv3 - DINOv2 with a 95% t interval (df = 4)",
+ "primary_comparisons": [
+  "P1: v5, standalone, near FPR95, dev2, d3 - lock",
+  "P2: two-sided, standalone, near FPR95, dev2, d3 - lock"
+ ],
+ "secondary": [
+  "the same on dev1",
+  "far FPR95",
+  "x TINS and x MCM",
+  "AUROC",
+  "run d3s (224 px)",
+  "gain of the two-sided propagation over v5 within each encoder",
+  "single-view read-outs (B only, L only) of the same runs",
+  "seed-set statistics of the two-sided method (ID share, OOD share, purity)"
+ ],
+ "reading_rule": "A difference is called an improvement (deterioration) only if its 95% interval excludes 0; otherwise 'no clear difference'. No hyper-parameter, view or preprocessing is changed after a dev score has been seen; any later variation is labelled post hoc.",
+ "sanity_gate_before_scoring": "Nearest-class-mean accuracy of the calibration shots (prototypes = mean of the 12 support shots, ID classes of dev1, train images only). The dev runs start only if every DINOv3 view reaches at least 50% (a broken read-out gives chance level, 0.1%); the accuracies are reported.",
+ "code": [
+  "extract6.py",
+  "merge6.py",
+  "ncm6.py",
+  "dev5.py (SWAP configurations d3, d3s)",
+  "d3_analysis.py",
+  "run_d3.sh"
+ ]
+}

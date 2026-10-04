@@ -1,0 +1,40 @@
+{
+  "round": "R5 (matched-condition audit of the frozen v4 = REPRISE / CLAVIS-M3)",
+  "registered_utc": "2026-09-27T04:00:00Z",
+  "frozen_method": {
+    "code": "scripts/iter3_eval.py",
+    "code_sha256": "40a9bf336c7ea02cb062b2b78fc48492445add34168c309857f12df670c161ad",
+    "config": "iter3/frozen_m3.json",
+    "note": "v4 is not modified in R5. Re-implementations in vins/r5.py are asserted equal to the frozen functions (tests/test_r5.py and r5_eval.py --check-v4)."
+  },
+  "data_policy": {
+    "dev_only": "All R5 decisions (baseline hyper-parameters, entrance thresholds, method changes) use dev1/dev2 only.",
+    "test": "The OpenOOD test split is not read in R5 until a separate pre-registration for the single final run (Phase 3)."
+  },
+  "conditions": {
+    "shot_draws": "5 disjoint 16-shot draws per ImageNet-1K class (12 support + 4 calibration), seeded, excluding every dev1/dev2 image, the TINS 16-shot list, Codex duplicates, sealed images (scripts/r5_shots.py). The same draws serve dev1 and dev2 (their own ID classes).",
+    "orders": [123, 124, 125],
+    "splits": ["dev1", "dev2"],
+    "n_conditions_per_split": 15,
+    "tins": "Re-run per draw (prototypes, negatives and inversion initialisation rebuilt with the draw's shots by the upstream functions); the stream images and orders are identical across draws and methods.",
+    "reference": "draw 'orig' = the shots used during development (reported separately; regression check of the R5 pipeline)."
+  },
+  "metrics": {
+    "primary": "near FPR95 (%)",
+    "secondary": ["near AUROC", "far AUROC", "far FPR95", "within-batch AUROC"],
+    "implementation": "upstream TINS utils.detection_util.get_measures (ID positive)"
+  },
+  "uncertainty": "Differences are computed within a condition; each draw contributes the mean over its 3 orders; 95% t interval over the 5 draw means (4 d.o.f.); sign counts reported.",
+  "stageA_question": {
+    "question": "Does the entrance + memory add to TINS x label propagation under matched conditions?",
+    "comparison": "s_full (S * p_t * p_LP, both views) - s_lp (S * p_LP, both views)",
+    "criterion": "Stable if the 95% interval of the near FPR95 difference is below 0 on both dev1 and dev2; reported with near AUROC and far metrics. Otherwise the added value of the entrance/memory is not established under matched conditions.",
+    "also_reported": ["s_full - s_single_lp", "s_mem - s_static", "s_full_i - s_lpi (per-image LP)", "visual-only versions"]
+  },
+  "baselines_(1)": {
+    "knn": "k-th NN cosine distance to the pooled 12-shot support, k in {1,2,3,5,10,20,50}",
+    "mahalanobis_pp": "L2-normalised features, class means of the support, shared covariance shrunk (1-l)S + l tr(S)/D I, l in {0, 0.001, 0.01, 0.05, 0.1, 0.2, 0.5}",
+    "calibration": "the same 4 calibration shots per class; conformal p per view; product over the two views, alone and x TINS (same as REPRISE)",
+    "tuning": "hyper-parameter chosen on dev1 by mean near FPR95 (separately for alone and x TINS), frozen, evaluated on dev2"
+  }
+}

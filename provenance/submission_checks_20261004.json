@@ -1,0 +1,107 @@
+{
+ "checked_utc": "2026-10-04T09:53:27Z",
+ "python": "3.12.3",
+ "platform": "Linux-6.18.44-fc-v64-x86_64-with-glibc2.39",
+ "packages": {
+  "torch": "2.5.1+cpu",
+  "numpy": "2.5.0",
+  "scipy": "1.18.0",
+  "pandas": "3.0.3",
+  "pyarrow": "24.0.0",
+  "sklearn": "1.9.0",
+  "pytest": "9.1.1"
+ },
+ "GPU_benchmark_rerun": false,
+ "checks": [
+  {
+   "command": "python tools/verify_snapshot.py",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 0.3,
+   "last_output": [
+    "  \"mismatches\": []",
+    "}"
+   ]
+  },
+  {
+   "command": "python tools/make_results_tables.py --check",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 2.3,
+   "last_output": [
+    "docs/RESULTS.md is up to date",
+    "the results table of README.md is up to date"
+   ]
+  },
+  {
+   "command": "python tools/make_registration_timeline.py --check",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 0.1,
+   "last_output": [
+    "timeline is up to date"
+   ]
+  },
+  {
+   "command": "python -m pytest -q tests",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 51.6,
+   "last_output": [
+    "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+    "30 passed, 1 warning in 50.65s"
+   ]
+  },
+  {
+   "command": "python -m pytest -q experiments/controls_456/src/test_controls.py",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 3.3,
+   "last_output": [
+    "......                                                                   [100%]",
+    "6 passed in 2.42s"
+   ]
+  },
+  {
+   "command": "python -m pytest -q experiments/legacy/tests/test_r5.py",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 3.9,
+   "last_output": [
+    "..............                                                           [100%]",
+    "14 passed in 3.04s"
+   ]
+  },
+  {
+   "command": "python -m unittest discover -s unit_tests",
+   "directory": "experiments/lp_audit",
+   "returncode": 0,
+   "seconds": 3.3,
+   "last_output": [
+    "Ran 16 tests in 0.350s",
+    "OK"
+   ]
+  },
+  {
+   "command": "python examples/feature_stream.py",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 1.7,
+   "last_output": [
+    "batch 3: Salmon Ladder ID scores [0.048, 0.576, 0.2448, 0.1296]",
+    "Synthetic feature smoke test passed. No benchmark metric is reported."
+   ]
+  },
+  {
+   "command": "python examples/salmon_ladder_stream.py",
+   "directory": ".",
+   "returncode": 0,
+   "seconds": 3.5,
+   "last_output": [
+    "  memory admission in the last view: 78.4% of the unknown-class images, 11.3% of the ID images",
+    "Synthetic feature example finished. No benchmark metric is reported."
+   ]
+  }
+ ],
+ "all_passed": true
+}

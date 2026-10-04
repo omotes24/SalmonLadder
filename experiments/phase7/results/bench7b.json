@@ -1,0 +1,30 @@
+{
+ "S14": {
+  "params_M": 22.1,
+  "ms_per_image": 1.46,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.38
+ },
+ "D3S": {
+  "params_M": 21.6,
+  "ms_per_image": 1.7,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 0.4
+ },
+ "D3SP": {
+  "params_M": 28.7,
+  "ms_per_image": 2.14,
+  "input": 256,
+  "batch": 64,
+  "gpu_mem_GB": 0.62
+ },
+ "RN50": {
+  "params_M": 38.3,
+  "ms_per_image": 0.65,
+  "input": 224,
+  "batch": 64,
+  "gpu_mem_GB": 0.63
+ }
+}

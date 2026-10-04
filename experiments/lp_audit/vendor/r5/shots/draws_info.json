@@ -1,0 +1,817 @@
+{
+ "utc": "2026-09-26T18:32:17Z",
+ "n_draws": 5,
+ "per_draw": 16,
+ "n_images": 80000,
+ "rejections": {
+  "n01514668": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01630670": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01631663": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01641577": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01693334": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01734418": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01740131": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01742172": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01753488": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 3,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01755581": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01756291": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01773157": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01773549": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01773797": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01775062": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01776313": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01796340": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n01797886": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01807496": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n01978455": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02085782": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02090622": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02091831": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02093256": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 2,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02093428": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02093991": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02096437": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02097047": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02097209": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02097298": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02098286": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02107908": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 2
+  },
+  "n02108000": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 2
+  },
+  "n02114548": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02114712": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02114855": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02119022": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02119789": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02120079": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02123045": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02128385": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02128925": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02129604": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02236044": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02268443": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02395406": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02396427": {
+   "sealed_path": 0,
+   "sealed_hash": 3,
+   "excluded_hash": 3,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02403003": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02412080": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02415577": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02441942": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02442845": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02443114": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02483362": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02484975": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02492035": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02493509": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02504013": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02607072": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02749479": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02791270": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02795169": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02910353": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02966687": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n02978881": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n02979186": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03017168": {
+   "sealed_path": 0,
+   "sealed_hash": 4,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03028079": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03085013": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03109150": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03124170": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03179701": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03197337": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03208938": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03255030": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03325584": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03447721": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03492542": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03496892": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03633091": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03690938": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03710637": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03710721": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 2,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03773504": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03775546": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n03782006": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n03868242": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04004767": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04008634": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04009552": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04039381": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04041544": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04049303": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04152593": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04201297": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04264628": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04286575": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04328186": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04367480": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04392985": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 2
+  },
+  "n04399382": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04505470": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04517823": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04525038": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n04590129": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04591713": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04596742": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n04597913": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n07715103": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n07747607": {
+   "sealed_path": 0,
+   "sealed_hash": 2,
+   "excluded_hash": 1,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n07871810": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n07930864": {
+   "sealed_path": 0,
+   "sealed_hash": 1,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 0
+  },
+  "n12144580": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  },
+  "n13133613": {
+   "sealed_path": 0,
+   "sealed_hash": 0,
+   "excluded_hash": 0,
+   "duplicate": 0,
+   "cross_class_duplicate": 1
+  }
+ },
+ "n_rejected": {
+  "sealed_path": 0,
+  "sealed_hash": 53,
+  "excluded_hash": 48,
+  "duplicate": 0,
+  "cross_class_duplicate": 54
+ },
+ "n_cross_class_duplicates": 27,
+ "min_pool": 676,
+ "seconds": 139.5,
+ "rule": "R5 step 1: five disjoint 16-shot draws (12 support + 4 calibration) for every ImageNet-1K class.\n\nPool per class: ImageNet-1K train images of the class minus\n  - every image of dev1 and dev2 (stream images and the original shots; by file name and by sha256),\n  - the TINS 16-shot list (all 1000 classes) and Codex's excluded duplicates,\n  - sealed images (path or sha256; OpenOOD test lists and val_imagenet), and images already drawn (sha256).\nDraw: seeded permutation per class (numpy rng [20260927, 5, idx_1k]); the first 80 eligible images form draws\n0..4 in order (16 each); inside a draw a second seeded permutation assigns 12 support / 4 calibration.\nImages drawn for two classes (byte-identical files under two class folders) are dropped from both; 12 spare picks\nper class fill the gap in the same seeded order.\nOutputs (global, shared by dev1 and dev2): <R5>/shots/draws.parquet, draws_info.json,\n          lists/draw{k}_train16.txt (TINS --train-imglist format: \"train/<wnid>/<file> <label>\", 1000 classes)\nNo OOD label or stream order is involved.\n"
+}

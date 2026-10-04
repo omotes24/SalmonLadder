@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-27T11:39:36.368305+00:00",
+  "stage": "before any post-primary run",
+  "reason": "First full runs measured about 297-363 seconds. Entire optional tuning plus capacity grid does not fit initial8 GPUh. Do not waste remaining budget on a partial paired grid.",
+  "change": "Order real50, baseline30, capacity30, tuning30. Before each stage, require conservative whole-stage estimate to fit remaining8 GPUh. Non-admitted individual runs are recorded, not silently reduced. Main data, metrics, configurations and candidates unchanged.",
+  "estimate_factors_over_measured_primary_mean": {
+    "real50": 0.6,
+    "baselines": 0.8,
+    "capacity": 1.0,
+    "tuning_two_configs": 2.2
+  },
+  "source_sha256": "79eeedbf1f234eab68761dadf192a8f8c945b63effcd80529f93c4035efc6a9d",
+  "known_outcomes": "Four primary runs compared to frozen reference for numerical equivalence; no method selected. Synthetic validity diagnostics already inspected. No post-primary data/results yet."
+}

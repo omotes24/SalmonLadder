@@ -1,0 +1,11 @@
+{
+ "utc": "2026-10-03T15:20:59Z",
+ "n": 117699,
+ "table_sha256": "8d12c7faa9402cb35f02006f1a6949512c94771da4bcb018dc9e2acc6d1ddaab",
+ "files": {
+  "G14": {
+   "sha256": "7b361fb378ea504bcdf96ef7fe922c1f6c92ba8d9a716fbadbaa60f699581d01",
+   "dim": 1536
+  }
+ }
+}

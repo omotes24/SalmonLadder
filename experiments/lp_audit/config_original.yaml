@@ -1,0 +1,19 @@
+# Exact serialized paper v5 configuration; JSON is also valid YAML.
+{
+  "n0": 48,
+  "K": 20,
+  "m": 1,
+  "gamma": 1.0,
+  "alpha": 0.9,
+  "kg": 10,
+  "support_per_class": 12,
+  "cal_per_class": 4,
+  "batch": 256,
+  "iterations": 15,
+  "thresholds": [
+    0.3,
+    0.2,
+    0.10191613435745239
+  ],
+  "paper_epsilon3_rounded": 0.102
+}

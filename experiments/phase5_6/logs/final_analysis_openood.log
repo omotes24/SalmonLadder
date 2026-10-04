@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/omote/reprise_p5_20261002/code/final_analysis.py", line 105, in <module>
+    main()
+  File "/home/omote/reprise_p5_20261002/code/final_analysis.py", line 56, in main
+    r = met(score(z, c, vs, base), z["is_ood"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p5_20261002/code/final_analysis.py", line 24, in upstream
+    m = measures(x[~f], x[f])
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_lp_audit_20260927/vendor/vins/metrics.py", line 29, in measures
+    from utils.detection_util import get_measures
+ModuleNotFoundError: No module named 'utils'

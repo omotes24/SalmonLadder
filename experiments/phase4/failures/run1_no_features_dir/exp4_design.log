@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/omote/reprise_p4_20260928/code/exp4_design.py", line 59, in <module>
+    main()
+  File "/home/omote/reprise_p4_20260928/code/exp4_design.py", line 51, in main
+    F = Features()
+        ^^^^^^^^^^
+  File "/home/omote/reprise_p4_20260928/code/bank_data.py", line 22, in __init__
+    self.F = {n: np.load(FEATS / f"{n}.npy", mmap_mode="r") for n in ("B14", "L14", "CLIP")}
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/omote/granood_ke/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/omote/reprise_p4_20260928/features/B14.npy'

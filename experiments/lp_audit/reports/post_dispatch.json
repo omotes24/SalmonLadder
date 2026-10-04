@@ -1,0 +1,1100 @@
+{
+  "completed": [
+    {
+      "stage": "real_calibration",
+      "name": "rep0",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.15697460621595,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep1",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.11655531823635,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep2",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.074224434793,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep3",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03491647541523,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep4",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.15581767261028,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep5",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.1133379265666,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep6",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.07316408678889,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep7",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03354938700795,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep8",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.1592116355896,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep9",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.11840055510402,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep10",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.07543182373047,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep11",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03520115464926,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep12",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.15615792945027,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep13",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.11608995497227,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep14",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.07705019414425,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep15",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03631180152297,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep16",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.16193787381053,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep17",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.11691841483116,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep18",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.0747313387692,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep19",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.0371216237545,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep20",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.1544497013092,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep21",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.11794414743781,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep22",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.07750726863742,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep23",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03850086033344,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep24",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.15696486458182,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep25",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.1157541051507,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep26",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.0815275683999,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep27",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03900414705276,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep28",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.17491466552019,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep29",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.12592807784677,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep30",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.07881728187203,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep31",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.03859251737595,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep32",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.14786101132631,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep33",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.10832798480988,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep34",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.06926766782999,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep35",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.04003578424454,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep36",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.15921990200877,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep37",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.11496089026332,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep38",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.08168179541826,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep39",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.0426381714642,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep40",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.16733982786536,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep41",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.12369007617235,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep42",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.08299373090267,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep43",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.04295180737972,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep44",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.16842734068632,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep45",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.12271965295076,
+      "gpu": 1
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep47",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 66.04066301509738,
+      "gpu": 3
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep46",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 69.17647778987885,
+      "gpu": 2
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep48",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 63.08523352444172,
+      "gpu": 0
+    },
+    {
+      "stage": "real_calibration",
+      "name": "rep49",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 63.03811187297106,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw0_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.08456540480256,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw0_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.0206383690238,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw0_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 36.21270351484418,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw0_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 36.134248454123735,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw0_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.099912755191326,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw0_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.17378931865096,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw1_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.09265749156475,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw1_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.17367237061262,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw1_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.14324665442109,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw1_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.1016030870378,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw1_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.14288102835417,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw1_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.100665003061295,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw2_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.087916485965252,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw2_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.1671761572361,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw2_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.098569590598345,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw2_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.17386068031192,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw2_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.148487865924835,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw2_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.10712632536888,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw3_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.14257552102208,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw3_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.095655653625727,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw3_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.103635612875223,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw3_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.18114276975393,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw3_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.098084591329098,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw3_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.184705540537834,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw4_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.105867262929678,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw4_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 36.190942242741585,
+      "gpu": 3
+    },
+    {
+      "stage": "baselines",
+      "name": "draw4_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.14889935031533,
+      "gpu": 2
+    },
+    {
+      "stage": "baselines",
+      "name": "draw4_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.104936614632607,
+      "gpu": 0
+    },
+    {
+      "stage": "baselines",
+      "name": "draw4_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 33.064196195453405,
+      "gpu": 1
+    },
+    {
+      "stage": "baselines",
+      "name": "draw4_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 30.021109592169523,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw0_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.31286964938045,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw0_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 303.2727060802281,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw0_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 348.3902902342379,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw0_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 351.5170866921544,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw0_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.30813736468554,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw1_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.2671986222267,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw0_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 354.47037973999977,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw1_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 351.43198077753186,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw1_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.32039869204164,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw1_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 360.45081627741456,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw1_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.31638400256634,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw1_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 354.44239868596196,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw2_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 303.3194005526602,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw2_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 348.4322432205081,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw2_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 300.31909028440714,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw2_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 351.43779153749347,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw2_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.3234862051904,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw2_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 357.45510018989444,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw3_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.3352190218866,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw3_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 354.45998415350914,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw3_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 303.33086185902357,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw3_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 351.4565074890852,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw3_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 294.3221605233848,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw3_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 354.45670668035746,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw4_far_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.3333749547601,
+      "gpu": 0
+    },
+    {
+      "stage": "capacity",
+      "name": "draw4_near_seed123",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 357.4674855172634,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw4_far_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 297.34220085665584,
+      "gpu": 2
+    },
+    {
+      "stage": "capacity",
+      "name": "draw4_near_seed124",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 351.42689963430166,
+      "gpu": 1
+    },
+    {
+      "stage": "capacity",
+      "name": "draw4_far_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 300.2532243281603,
+      "gpu": 3
+    },
+    {
+      "stage": "capacity",
+      "name": "draw4_near_seed125",
+      "state": "COMPLETE",
+      "exit_code": 0,
+      "seconds": 348.344376783818,
+      "gpu": 0
+    }
+  ],
+  "pending": [],
+  "skipped": [
+    {
+      "stage": "tuning",
+      "name": "draw0_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw0_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw1_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw2_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw3_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_near_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_far_seed123",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_near_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_far_seed124",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_near_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    },
+    {
+      "stage": "tuning",
+      "name": "draw4_far_seed125",
+      "state": "BUDGET_NOT_ADMITTED",
+      "stage_estimated_gpu_seconds": 21814.642429327967,
+      "remaining_gpu_seconds": 3182.210111707449
+    }
+  ],
+  "prior_gpu_seconds": 11581.83204491809,
+  "gpu_seconds_completed": 14035.957843374461,
+  "hard_limit_gpu_seconds": 28800
+}
