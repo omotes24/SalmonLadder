@@ -98,7 +98,7 @@ The first column is the modification time of the file on the experiment server (
 
 ## Test split
 
-A newly frozen configuration was evaluated on the OpenOOD test split six times, each under a registration written before the run (`docs/RESULTS.md`, Section 2, lists all six results).
+Up to Phase 7, a newly frozen configuration was evaluated on the OpenOOD test split six times, each under a registration written before the run (`docs/RESULTS.md`, Section 2, lists all six results). Phases 10 and 11, which produced the paper of October 2026, scored the same test streams without registration (see the end of this section).
 
 | use | configuration | chain checked by `tools/verify_snapshot.py` |
 |:-:|---|---|
@@ -117,7 +117,14 @@ These six are not the only times test data were scored:
 
 The registrations of uses 1–4 each state that nothing is changed after the test. The rule of loop 1 states that the loop stops after the test; the rules of loops 2 and 3 state that the test split is evaluated at most once more, and loop 3 calls itself the final loop; the round-1 rule of R5 allows at most one modification. Development continued after each of them: loops 2 and 3, R5 with a second round and a fifth use of the test split, and Phases 4–7 with a sixth. These statements were not kept.
 
-The test split is therefore **not independent of the design of the method**: its results were known when every later configuration was designed, even though each selection rule refers to the development splits only. This is the reason Phase 4 exists. The numbers of use 5 are reported in the paper as results on a public benchmark under a frozen configuration, and the claim that the entrance and the memory add to propagation rests on U1 and U2.
+The test split is therefore **not independent of the design of the method**: its results were known when every later configuration was designed, even though each selection rule refers to the development splits only. This is the reason Phase 4 exists. The numbers of use 5 were reported in the earlier versions of the paper as results on a public benchmark under a frozen configuration, and the claim that the entrance and the memory add to propagation rests on U1 and U2.
+
+**Phases 10 and 11 (October 2026, the paper).** No registration was written, and the test streams of use 5 were scored repeatedly:
+
+- Phase 10 scored the online read-out with the DINOv3 views (every pairing of the four encoders, three read-out variants, six base detectors) and the base detectors themselves on the OpenOOD and Four-OOD streams, and a configuration was chosen from that table (`experiments/phase10_11/phase10/results/p10_table.txt`).
+- Phase 11 scored the post-stream read-out on the same streams in five sweeps (`results/p11_table.txt`, `sweep/p11b_table.txt`, `sweep_c/p11c_table.txt`, `sweep_d/p11d_table.txt`, `sweep_e/p11e_table.txt`: graph sizes, mutual graphs, `lambda`, the level `q` and the construction of the seeds, a nearest-seed term, smoothing, term weights, view sets, base detectors) and then ran the chosen configuration with its ablations once more (`results/final/`). The views, `q` and the base detector of the paper were chosen on these tables; `k_g` and `lambda` are the values of the frozen configuration `v5`.
+
+The paper states that its configuration was selected on the benchmark and that scores are assigned after the whole stream has arrived. The result tables of these phases (`docs/RESULTS.md`, Section 8) are therefore results of a configuration selected on the data it is reported on, not a test on unused data; no development split and no unused set was scored in these phases, and nothing in them was registered. The generated timeline above ends with Phase 7; the server file times of Phases 10 and 11 are in `provenance/server_snapshot_20261011.json`.
 
 Two scripts of use 5 differ from the hashes in the registration. Both changes are recorded in `experiments/r5_final/r5/phase3/deviations.json` with the old and the new hash: a wrong cache name that made one stream builder crash before any score existed, and a wrong prefix that left one comparison metric empty (recomputed from saved scores; no model was re-run). The verification reports them as `documented_deviations`.
 
@@ -137,6 +144,8 @@ Two scripts of use 5 differ from the hashes in the registration. Both changes ar
 
 - A, first appearances. The first registered attempt (one-sided memory without within-batch members) was selected on dev1 and **not confirmed** on dev2; nothing was locked and the planned evaluation was not run (amendment 1). Amendment 2 registered the within-batch memory with ten candidates, a selection rule on dev1 and one confirmation on dev2. One dispatcher computed the read-outs of all ten candidates on dev1, dev2, U1 and U4 in sequence: the scoring of U1 began at 14:09:02, when dev2 was finished, 73 s before the lock was written (14:10:15). The first metric of the extension on U1 and U4 was computed at 14:21:04, after the lock; the lock itself says "before any metric". Before the selection, U1, U2 and U4 had been scored with the frozen method, the delayed re-scoring analysis of amendment 1 had been read on U1 and U4 (13:37), and the case analysis of amendment 2, which splits the unknown images by the evidence available at arrival, had been computed for the frozen method on U1 and U4 (14:01). The evaluation of the extension on these sets is therefore an evaluation of a locked configuration on data **not used for selection**; it is not a test on unused data. Registered criteria on U1: AUROC difference with lower limit above 0 and FPR95 difference with upper limit below 0; both met (+0.12 [+0.08, +0.15], −0.77 [−0.86, −0.69]). On U2 the extension does not differ from the frozen method (`docs/RESULTS.md`, Section 1.1).
 - B–E (encoders, separation of memory and propagation, data sets, stream conditions) apply frozen hyper-parameters and select nothing. They are descriptive. Amendment 3 added three encoders after the weights could be obtained.
+
+**Phases 10 and 11.** Selection on the test streams, as stated above; nothing registered. The code of the final run is archived with the hashes computed on the server at export (`provenance/server_snapshot_20261011.json`); no hash was taken before the run.
 
 ## The code that produced the results
 

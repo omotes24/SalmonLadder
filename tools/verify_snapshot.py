@@ -23,7 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOTS = ["server_snapshot.json", "extra_snapshot.json", "dinov2_snapshot.json", "reference_inputs.json", "server_snapshot_20261004.json",
-             "third_party_licenses.json"]
+             "server_snapshot_20261011.json", "third_party_licenses.json"]
 ARCHIVE_DIRECTORIES = ["experiments", "manifests", "third_party"]
 E = "experiments/"
 # (hash file, hashed file); a hash file holds the hex digest, optionally followed by the file name

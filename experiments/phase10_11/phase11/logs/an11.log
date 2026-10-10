@@ -1,0 +1,137 @@
+{"part": "openood", "stream": "inaturalist_seed123", "rows": 312}
+{"part": "openood", "stream": "inaturalist_seed124", "rows": 624}
+{"part": "openood", "stream": "inaturalist_seed125", "rows": 936}
+{"part": "openood", "stream": "inaturalist_seed126", "rows": 1248}
+{"part": "openood", "stream": "inaturalist_seed127", "rows": 1560}
+{"part": "openood", "stream": "ninco_seed123", "rows": 1872}
+{"part": "openood", "stream": "ninco_seed124", "rows": 2184}
+{"part": "openood", "stream": "ninco_seed125", "rows": 2496}
+{"part": "openood", "stream": "ninco_seed126", "rows": 2808}
+{"part": "openood", "stream": "ninco_seed127", "rows": 3120}
+{"part": "openood", "stream": "openimageo_seed123", "rows": 3432}
+{"part": "openood", "stream": "openimageo_seed124", "rows": 3744}
+{"part": "openood", "stream": "openimageo_seed125", "rows": 4056}
+{"part": "openood", "stream": "openimageo_seed126", "rows": 4368}
+{"part": "openood", "stream": "openimageo_seed127", "rows": 4680}
+{"part": "openood", "stream": "ssb_hard_seed123", "rows": 4992}
+{"part": "openood", "stream": "ssb_hard_seed124", "rows": 5304}
+{"part": "openood", "stream": "ssb_hard_seed125", "rows": 5616}
+{"part": "openood", "stream": "ssb_hard_seed126", "rows": 5928}
+{"part": "openood", "stream": "ssb_hard_seed127", "rows": 6240}
+{"part": "openood", "stream": "textures_seed123", "rows": 6552}
+{"part": "openood", "stream": "textures_seed124", "rows": 6864}
+{"part": "openood", "stream": "textures_seed125", "rows": 7176}
+{"part": "openood", "stream": "textures_seed126", "rows": 7488}
+{"part": "openood", "stream": "textures_seed127", "rows": 7800}
+{"part": "fourood", "stream": "dtd_seed123", "rows": 8112}
+{"part": "fourood", "stream": "dtd_seed124", "rows": 8424}
+{"part": "fourood", "stream": "dtd_seed125", "rows": 8736}
+{"part": "fourood", "stream": "inat_seed123", "rows": 9048}
+{"part": "fourood", "stream": "inat_seed124", "rows": 9360}
+{"part": "fourood", "stream": "inat_seed125", "rows": 9672}
+{"part": "fourood", "stream": "places_seed123", "rows": 9984}
+{"part": "fourood", "stream": "places_seed124", "rows": 10296}
+{"part": "fourood", "stream": "places_seed125", "rows": 10608}
+{"part": "fourood", "stream": "sun_seed123", "rows": 10920}
+{"part": "fourood", "stream": "sun_seed124", "rows": 11232}
+{"part": "fourood", "stream": "sun_seed125", "rows": 11544}
+== fourood fourood: top 30 by FPR95 ==
+D3B+D3L|zfull|TINS                          99.00 /   3.24   dFPR -1.72 [-1.99,-1.46]
+B14+D3L|zfull|TINS                          99.02 /   3.26   dFPR -1.70 [-1.83,-1.57]
+D3L|zfull|TINS                              99.02 /   3.28   dFPR -1.68 [-1.95,-1.41]
+D3L|LPfull|TINS                             99.00 /   3.35   dFPR -1.61 [-1.83,-1.39]
+D3B+D3L|LPfull|TINS                         98.97 /   3.42   dFPR -1.54 [-1.81,-1.26]
+L14+D3L|zfull|TINS                          99.00 /   3.44   dFPR -1.53 [-1.77,-1.28]
+L14+D3B+D3L|zfull|TINS                      98.97 /   3.45   dFPR -1.51 [-1.70,-1.31]
+B14+D3L|LPfull|TINS                         98.99 /   3.50   dFPR -1.46 [-1.60,-1.33]
+B14+L14+D3L|zfull|TINS                      98.95 /   3.59   dFPR -1.37 [-1.58,-1.16]
+B14+L14+D3B+D3L|zfull|TINS                  98.92 /   3.61   dFPR -1.36 [-1.51,-1.20]
+L14+D3B+D3L|LPfull|TINS                     98.93 /   3.65   dFPR -1.31 [-1.43,-1.18]
+L14+D3L|LPfull|TINS                         98.96 /   3.69   dFPR -1.27 [-1.48,-1.05]
+B14+L14|zfull|TINS                          98.96 /   3.72   dFPR -1.24 [-1.48,-1.01]
+B14+L14+D3B+D3L|LPfull|TINS                 98.88 /   3.86   dFPR -1.10 [-1.26,-0.94]
+B14+L14+D3L|LPfull|TINS                     98.90 /   3.90   dFPR -1.06 [-1.22,-0.91]
+D3B+D3L|zfull|TANL                          98.75 /   3.91   dFPR -1.05 [-1.25,-0.85]
+B14+L14|LPfull|TINS                         98.90 /   4.01   dFPR -0.95 [-1.19,-0.70]
+B14+D3L|zfull|TANL                          98.76 /   4.03   dFPR -0.93 [-1.11,-0.74]
+D3L|M0_LPfull|TINS                          98.91 /   4.03   dFPR -0.93 [-1.12,-0.74]
+L14+D3B+D3L|zfull|TANL                      98.74 /   4.05   dFPR -0.91 [-1.13,-0.70]
+D3B+D3L|LPfull|TANL                         98.72 /   4.08   dFPR -0.89 [-1.13,-0.64]
+D3L|SLfull|TINS                             98.90 /   4.11   dFPR -0.86 [-1.16,-0.55]
+D3L|Mfull_zfull|TINS                        98.89 /   4.15   dFPR -0.81 [-1.16,-0.46]
+D3B+D3L|M0_LPfull|TINS                      98.84 /   4.19   dFPR -0.77 [-0.98,-0.56]
+B14+L14+D3B+D3L|zfull|TANL                  98.71 /   4.25   dFPR -0.72 [-0.95,-0.48]
+B14+D3L|LPfull|TANL                         98.72 /   4.25   dFPR -0.71 [-0.82,-0.59]
+L14+D3B+D3L|LPfull|TANL                     98.70 /   4.26   dFPR -0.70 [-0.89,-0.51]
+D3L|zfull|TANL                              98.67 /   4.27   dFPR -0.69 [-0.89,-0.48]
+D3B+D3L|SLfull|TINS                         98.81 /   4.32   dFPR -0.64 [-0.82,-0.45]
+D3L|LPfull|TANL                             98.64 /   4.36   dFPR -0.60 [-0.76,-0.45]
+-- reference L14+D3L|SL|TINS: 98.69 / 4.96
+
+== openood near: top 30 by FPR95 ==
+B14+L14+D3L|LPfull|TINS                     97.60 /  12.18   dFPR -2.58 [-2.84,-2.32]
+B14+L14+D3L|zfull|TINS                      97.60 /  12.18   dFPR -2.58 [-2.82,-2.33]
+B14+L14+D3B+D3L|zfull|TINS                  97.62 /  12.18   dFPR -2.57 [-2.78,-2.37]
+B14+L14+D3B+D3L|LPfull|TINS                 97.61 /  12.22   dFPR -2.54 [-2.79,-2.28]
+L14+D3B+D3L|LPfull|TINS                     97.59 /  12.25   dFPR -2.51 [-2.82,-2.20]
+L14+D3B+D3L|zfull|TINS                      97.59 /  12.28   dFPR -2.48 [-2.78,-2.17]
+L14+D3L|LPfull|TINS                         97.53 /  12.43   dFPR -2.33 [-2.54,-2.11]
+L14+D3B+D3L|zfull|TANL                      97.52 /  12.50   dFPR -2.26 [-2.45,-2.06]
+L14+D3L|zfull|TANL                          97.47 /  12.50   dFPR -2.25 [-2.44,-2.06]
+L14+D3L|zfull|TINS                          97.51 /  12.51   dFPR -2.25 [-2.47,-2.02]
+B14+L14+D3L|zfull|TANL                      97.51 /  12.52   dFPR -2.24 [-2.48,-2.00]
+L14+D3B+D3L|LPfull|TANL                     97.52 /  12.55   dFPR -2.21 [-2.42,-1.99]
+B14+L14+D3L|LPfull|TANL                     97.51 /  12.58   dFPR -2.18 [-2.40,-1.96]
+L14+D3L|zfull|none                          97.51 /  12.58   dFPR -2.18 [-2.39,-1.96]
+L14+D3L|LPfull|TANL                         97.48 /  12.60   dFPR -2.16 [-2.36,-1.95]
+B14+L14+D3B+D3L|zfull|TANL                  97.52 /  12.62   dFPR -2.13 [-2.31,-1.95]
+L14+D3L|LPfull|none                         97.50 /  12.66   dFPR -2.10 [-2.31,-1.88]
+B14+L14+D3B+D3L|LPfull|TANL                 97.52 /  12.67   dFPR -2.09 [-2.26,-1.91]
+B14+L14+D3L|zfull|none                      97.50 /  12.71   dFPR -2.05 [-2.26,-1.83]
+L14+D3B+D3L|zfull|none                      97.51 /  12.73   dFPR -2.02 [-2.24,-1.81]
+B14+L14+D3L|LPfull|none                     97.49 /  12.83   dFPR -1.93 [-2.14,-1.71]
+L14+D3B+D3L|LPfull|none                     97.49 /  12.86   dFPR -1.89 [-2.11,-1.68]
+B14+L14+D3B+D3L|zfull|none                  97.50 /  12.94   dFPR -1.81 [-2.03,-1.60]
+B14+D3L|LPfull|TINS                         97.43 /  13.03   dFPR -1.72 [-1.98,-1.47]
+L14+D3B+D3L|M0_LPfull|TINS                  97.28 /  13.05   dFPR -1.71 [-1.84,-1.57]
+B14+D3L|zfull|TANL                          97.38 /  13.06   dFPR -1.70 [-1.87,-1.53]
+B14+L14+D3B+D3L|LPfull|none                 97.48 /  13.06   dFPR -1.69 [-1.91,-1.47]
+B14+D3L|zfull|TINS                          97.40 /  13.09   dFPR -1.66 [-1.92,-1.40]
+B14+D3L|zfull|none                          97.43 /  13.16   dFPR -1.60 [-1.82,-1.38]
+B14+D3L|LPfull|TANL                         97.39 /  13.16   dFPR -1.59 [-1.77,-1.41]
+-- reference L14+D3L|SL|TINS: 96.74 / 14.76
+
+== openood far: top 30 by FPR95 ==
+D3B+D3L|M0_LPfull|TINS                      99.07 /   4.30   dFPR -0.43 [-0.61,-0.25]
+B14+D3L|M0_LPfull|TINS                      99.07 /   4.33   dFPR -0.41 [-0.52,-0.30]
+D3L|M0_LPfull|TINS                          99.04 /   4.34   dFPR -0.39 [-0.55,-0.24]
+L14+D3B+D3L|M0_LPfull|TINS                  99.05 /   4.42   dFPR -0.32 [-0.45,-0.18]
+D3L|SLfull|TINS                             99.03 /   4.42   dFPR -0.31 [-0.45,-0.17]
+B14+D3L|SLfull|TINS                         99.05 /   4.46   dFPR -0.27 [-0.45,-0.10]
+D3B+D3L|SLfull|TINS                         99.04 /   4.49   dFPR -0.25 [-0.39,-0.10]
+D3L|Mfull_zfull|TINS                        99.02 /   4.54   dFPR -0.20 [-0.36,-0.03]
+B14+D3L|Mfull_zfull|TINS                    99.04 /   4.55   dFPR -0.18 [-0.39,+0.02]
+L14+D3B+D3L|zfull|TINS                      98.97 /   4.56   dFPR -0.17 [-0.27,-0.07]
+B14+D3L|zfull|TINS                          98.97 /   4.57   dFPR -0.16 [-0.27,-0.06]
+L14+D3L|M0_LPfull|TINS                      99.02 /   4.57   dFPR -0.16 [-0.28,-0.04]
+L14+D3L|zfull|TINS                          98.97 /   4.58   dFPR -0.15 [-0.26,-0.04]
+B14+L14+D3B+D3L|M0_LPfull|TINS              99.02 /   4.60   dFPR -0.14 [-0.29,+0.02]
+D3B+D3L|Mfull_zfull|TINS                    99.03 /   4.60   dFPR -0.14 [-0.30,+0.02]
+B14+D3L|LPfull|TINS                         98.95 /   4.62   dFPR -0.12 [-0.21,-0.02]
+L14+D3B+D3L|LPfull|TINS                     98.95 /   4.63   dFPR -0.10 [-0.23,+0.02]
+L14+D3B+D3L|SLfull|TINS                     99.02 /   4.63   dFPR -0.10 [-0.26,+0.06]
+B14+L14+D3L|zfull|TINS                      98.96 /   4.63   dFPR -0.10 [-0.21,+0.00]
+D3L|SL_SLfull|TINS                          98.98 /   4.65   dFPR -0.08 [-0.24,+0.07]
+B14+D3L|SL|TINS                             99.01 /   4.65   dFPR -0.08 [-0.19,+0.02]
+L14+D3L|LPfull|TINS                         98.95 /   4.66   dFPR -0.08 [-0.17,+0.02]
+B14+L14+D3B+D3L|zfull|TINS                  98.94 /   4.68   dFPR -0.06 [-0.16,+0.04]
+D3L|SL|TINS                                 98.97 /   4.69   dFPR -0.04 [-0.18,+0.10]
+B14+D3L|Mfull_lp0|TINS                      99.02 /   4.70   dFPR -0.03 [-0.17,+0.11]
+B14+D3L|SL_SLfull|TINS                      98.99 /   4.71   dFPR -0.03 [-0.14,+0.09]
+D3B+D3L|zfull|TINS                          98.93 /   4.71   dFPR -0.03 [-0.15,+0.10]
+B14+L14+D3L|M0_LPfull|TINS                  98.99 /   4.72   dFPR -0.02 [-0.12,+0.09]
+D3L|Mfull_lp0|TINS                          98.98 /   4.72   dFPR -0.02 [-0.16,+0.13]
+L14+D3L|SL|TINS                             98.97 /   4.73   dFPR +0.00 [+0.00,+0.00]
+-- reference L14+D3L|SL|TINS: 98.97 / 4.73
+
+AN11_DONE

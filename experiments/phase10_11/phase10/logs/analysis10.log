@@ -1,0 +1,47 @@
+{"part": "openood", "stream": "inaturalist_seed123", "rows": 545}
+{"part": "openood", "stream": "inaturalist_seed124", "rows": 1090}
+{"part": "openood", "stream": "inaturalist_seed125", "rows": 1635}
+{"part": "openood", "stream": "inaturalist_seed126", "rows": 2180}
+{"part": "openood", "stream": "inaturalist_seed127", "rows": 2725}
+{"part": "openood", "stream": "ninco_seed123", "rows": 3270}
+{"part": "openood", "stream": "ninco_seed124", "rows": 3815}
+{"part": "openood", "stream": "ninco_seed125", "rows": 4360}
+{"part": "openood", "stream": "ninco_seed126", "rows": 4905}
+{"part": "openood", "stream": "ninco_seed127", "rows": 5450}
+{"part": "openood", "stream": "openimageo_seed123", "rows": 5995}
+{"part": "openood", "stream": "openimageo_seed124", "rows": 6540}
+{"part": "openood", "stream": "openimageo_seed125", "rows": 7085}
+{"part": "openood", "stream": "openimageo_seed126", "rows": 7630}
+{"part": "openood", "stream": "openimageo_seed127", "rows": 8175}
+{"part": "openood", "stream": "ssb_hard_seed123", "rows": 8720}
+{"part": "openood", "stream": "ssb_hard_seed124", "rows": 9265}
+{"part": "openood", "stream": "ssb_hard_seed125", "rows": 9810}
+{"part": "openood", "stream": "ssb_hard_seed126", "rows": 10355}
+{"part": "openood", "stream": "ssb_hard_seed127", "rows": 10900}
+{"part": "openood", "stream": "textures_seed123", "rows": 11445}
+{"part": "openood", "stream": "textures_seed124", "rows": 11990}
+{"part": "openood", "stream": "textures_seed125", "rows": 12535}
+{"part": "openood", "stream": "textures_seed126", "rows": 13080}
+{"part": "openood", "stream": "textures_seed127", "rows": 13625}
+{"part": "fourood", "stream": "dtd_seed123", "rows": 545}
+{"part": "fourood", "stream": "dtd_seed124", "rows": 1090}
+{"part": "fourood", "stream": "dtd_seed125", "rows": 1635}
+{"part": "fourood", "stream": "inat_seed123", "rows": 2180}
+{"part": "fourood", "stream": "inat_seed124", "rows": 2725}
+{"part": "fourood", "stream": "inat_seed125", "rows": 3270}
+{"part": "fourood", "stream": "places_seed123", "rows": 3815}
+{"part": "fourood", "stream": "places_seed124", "rows": 4360}
+{"part": "fourood", "stream": "places_seed125", "rows": 4905}
+{"part": "fourood", "stream": "sun_seed123", "rows": 5450}
+{"part": "fourood", "stream": "sun_seed124", "rows": 5995}
+{"part": "fourood", "stream": "sun_seed125", "rows": 6540}
+Traceback (most recent call last):
+  File "/home/omote/reprise_p10_20261010/code/analysis10.py", line 172, in <module>
+    main()
+  File "/home/omote/reprise_p10_20261010/code/analysis10.py", line 165, in main
+    t = table(summary)
+        ^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p10_20261010/code/analysis10.py", line 136, in table
+    items = sorted(res[g].items(), key=lambda kv: kv[1]["FPR95"])
+                   ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'items'

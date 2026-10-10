@@ -2,7 +2,7 @@
 
 ## Environment
 
-The complete recorded package versions and Python version are in `provenance/server_snapshot.json` (first export) and `provenance/server_snapshot_20261004.json` (second export; the same versions, on Ubuntu 24.04 with four NVIDIA RTX 2080 Ti, 11 GB each). Core matching and propagation tests run on CPU. TINS inversion and image feature extraction require a CUDA-capable GPU in this implementation.
+The complete recorded package versions and Python version are in `provenance/server_snapshot.json` (first export) and `provenance/server_snapshot_20261004.json` (second export; the same versions, on Ubuntu 24.04 with four NVIDIA RTX 2080 Ti, 11 GB each). Phases 10 and 11 ran in the same environment (`provenance/server_snapshot_20261011.json`, third export). Core matching and propagation tests run on CPU. TINS inversion and image feature extraction require a CUDA-capable GPU in this implementation.
 
 ```bash
 python3.12 -m venv .venv
@@ -82,8 +82,10 @@ The initial TINS reproduction checks an actual pristine Git revision, unlike the
 | `reprise_p4_20260928` | `experiments/phase4` | Phase 4 |
 | `reprise_p5_20261002` | `experiments/phase5_6` | Phase 5 and Phase 6 |
 | `reprise_p7_20261003` | `experiments/phase7` | Phase 7 |
+| `reprise_p10_20261010` | `experiments/phase10_11/phase10` | Phase 10 (third export, `provenance/server_snapshot_20261011.json`) |
+| `reprise_p11_20261010` | `experiments/phase10_11/phase11` | Phase 11, the paper of October 2026 (third export) |
 
-The scripts of one phase import the code of earlier phases through these directory names (`phase7/code/p7common.py` puts the Phase 5 and Phase 4 code on the import path; both import `reprise_lp_audit_20260927/vendor`). Keep the names.
+The scripts of one phase import the code of earlier phases through these directory names (`phase7/code/p7common.py` puts the Phase 5 and Phase 4 code on the import path; both import `reprise_lp_audit_20260927/vendor`; `phase10/code/p10common.py` and `phase11/code/p11common.py` import the Phase 5 code and read the Phase 3 feature space of `vins_gonogo_20260925`). Keep the names.
 
 Materialization rebuilds the image tables of these phases from `manifests/phase*_*.csv.gz` with the workspace path in place of the token `<DATA_HOME>`: `banks/imagenet_pool.parquet`, `banks/U2_imagenet_o.parquet`, `banks/exp4/aug_table.parquet` and `banks/feature_table.parquet` for Phase 4, `banks/imagenet_pool.parquet` and `banks/feature_table.parquet` for Phase 5, and `banks/<data set>/images.parquet` for Phase 7. `materialization.json` lists each rebuilt table with the hash of the server table it corresponds to. With the recorded versions of pandas and pyarrow, a table rebuilt with the server home directory as workspace has the same bytes as the server table. The class splits (`banks/U1/split?.json`, `banks/U4/split?.json`, `banks/<data set>/split?.parquet`) are archived as they were, so a re-run uses the same classes, labelled images and streams without calling the build scripts again.
 
@@ -110,7 +112,7 @@ None is redistributed. The paths are those of `phase7/code/extract7.py` and `pha
 |---|---|---|
 | DINOv2 ViT-B/14, ViT-L/14 (and ViT-S/14, ViT-g/14 in Phase 7 B) | [facebookresearch/dinov2](https://github.com/facebookresearch/dinov2) checkpoints, loaded through the hub source archived in `third_party/dinov2` | the two views of the method |
 | CLIP ViT-B/16 (and RN50, ViT-L/14 in Phase 7 B) | [OpenAI CLIP](https://github.com/openai/CLIP); `openai/clip-vit-large-patch14` on the Hugging Face hub | candidate classes, MCM, TINS, NegLabel, AdaNeg, TANL |
-| DINOv3 ViT-S/16, ViT-S+/16, ViT-B/16, ViT-L/16 (LVD-1689M) | `timm/vit_*_patch16_dinov3.lvd1689m` on the Hugging Face hub; released under the DINOv3 License, which has to be accepted by the user | Phase 6, Phase 7 B |
+| DINOv3 ViT-S/16, ViT-S+/16, ViT-B/16, ViT-L/16 (LVD-1689M) | `timm/vit_*_patch16_dinov3.lvd1689m` on the Hugging Face hub; released under the DINOv3 License, which has to be accepted by the user | Phase 6, Phase 7 B; ViT-L/16 is one view of the paper (Phases 10–11) |
 | DINO ViT-B/16, MAE ViT-B/16 | `timm/vit_base_patch16_224.dino`, `timm/vit_base_patch16_224.mae` | Phase 7 B |
 | SigLIP 2 ViT-L/16 (256 px) | `google/siglip2-large-patch16-256` | Phase 7 B |
 
@@ -129,7 +131,13 @@ Phase 6   run_d3.sh      (probe6.py -> extract6.py -> merge6.py -> ncm6.py -> de
 Phase 7   run_stage1.sh  (u1x_table.py, extract7.py, build7.py, text7.py)
           run_engine.sh <tag> "<gpus>" <workers per gpu> <steps>   (dev7.py, x4.py, run7.py --exp ...)
           run_ds.sh, an_*.py, verify7.py
+Phase 10  orchestrate10.sh (extract10.py --part openood|fourood -> vlm10.py --text-only, vlm10.py --part ... ->
+                            final10.py --part ... -> analysis10.py)
+Phase 11  orchestrate11.sh, orchestrate11b.sh ... orchestrate11e.sh (the sweeps), then
+          orchestrate11f.sh (final11.py --part openood|fourood --worker w --nworkers n -> final11.py --aggregate)
 ```
+
+Phases 10 and 11 need the Phase 3 stream files and feature caches of `vins_gonogo_20260925` (the final test of the online variant, `scripts/p3_pipeline.sh`), the Phase 5 code, and the cached DINOv3 ViT-B/16 and ViT-L/16 weights (`HF_HUB_OFFLINE=1`). The final run alone (`orchestrate11f.sh`) takes a few minutes on four RTX 2080 Ti once the features exist.
 
 U3 cannot be re-run: its images are private and its image table is not archived. In a materialized workspace, skip `build_banks.py` (the image tables and class splits come from the archive), pass `--banks U1,U2` to `evaluate.py`, and leave the `U3:` jobs out of the job lists of the launchers and of `vlm_tta.py`. `banks/feature_table.parquet` then has 177,699 rows, and `extract.py` writes feature arrays with these rows; on the server the table and the arrays had 18,535 further rows for U3 at the end.
 
@@ -145,4 +153,4 @@ The selection steps (`dev1_tune.py` and `select_lock.py` in Phase 4, `dev5.py` a
 
 ### Not archived
 
-Image files, feature arrays, model weights, per-image score files (about 40 GB) and per-worker run logs are not in the repository; `provenance/server_snapshot_20261004.json` lists what was left out and why. The narrative working notes of the propagation audit (four Markdown files that its README mentions) are not archived either; the tables they were written from are in `experiments/lp_audit/reports/`.
+Image files, feature arrays, model weights, per-image score files (about 40 GB) and per-worker run logs are not in the repository; `provenance/server_snapshot_20261004.json` lists what was left out and why, and `provenance/server_snapshot_20261011.json` does the same for Phases 10 and 11 (feature arrays and per-image score files of about 6 GB; the per-stream metric tables, the aggregated results and the analysis logs are archived). The narrative working notes of the propagation audit (four Markdown files that its README mentions) are not archived either; the tables they were written from are in `experiments/lp_audit/reports/`.

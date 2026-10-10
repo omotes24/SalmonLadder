@@ -27,6 +27,7 @@ CHECKS = [
     ("python -m unittest discover -s unit_tests", "experiments/lp_audit", {}),
     ("python examples/feature_stream.py", ".", {}),
     ("python examples/salmon_ladder_stream.py", ".", {}),
+    ("python examples/salmon_ladder_rereading.py", ".", {}),
 ]
 PACKAGES = ["torch", "numpy", "scipy", "pandas", "pyarrow", "sklearn", "pytest"]
 

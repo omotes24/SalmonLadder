@@ -1,0 +1,167 @@
+{"part": "openood", "stream": "inaturalist_seed123", "rows": 384}
+{"part": "openood", "stream": "inaturalist_seed124", "rows": 768}
+{"part": "openood", "stream": "inaturalist_seed125", "rows": 1152}
+{"part": "openood", "stream": "inaturalist_seed126", "rows": 1536}
+{"part": "openood", "stream": "inaturalist_seed127", "rows": 1920}
+{"part": "openood", "stream": "ninco_seed123", "rows": 2304}
+{"part": "openood", "stream": "ninco_seed124", "rows": 2688}
+{"part": "openood", "stream": "ninco_seed125", "rows": 3072}
+{"part": "openood", "stream": "ninco_seed126", "rows": 3456}
+{"part": "openood", "stream": "ninco_seed127", "rows": 3840}
+{"part": "openood", "stream": "openimageo_seed123", "rows": 4224}
+{"part": "openood", "stream": "openimageo_seed124", "rows": 4608}
+{"part": "openood", "stream": "openimageo_seed125", "rows": 4992}
+{"part": "openood", "stream": "openimageo_seed126", "rows": 5376}
+{"part": "openood", "stream": "openimageo_seed127", "rows": 5760}
+{"part": "openood", "stream": "ssb_hard_seed123", "rows": 6144}
+{"part": "openood", "stream": "ssb_hard_seed124", "rows": 6528}
+{"part": "openood", "stream": "ssb_hard_seed125", "rows": 6912}
+{"part": "openood", "stream": "ssb_hard_seed126", "rows": 7296}
+{"part": "openood", "stream": "ssb_hard_seed127", "rows": 7680}
+{"part": "openood", "stream": "textures_seed123", "rows": 8064}
+{"part": "openood", "stream": "textures_seed124", "rows": 8448}
+{"part": "openood", "stream": "textures_seed125", "rows": 8832}
+{"part": "openood", "stream": "textures_seed126", "rows": 9216}
+{"part": "openood", "stream": "textures_seed127", "rows": 9600}
+{"part": "fourood", "stream": "dtd_seed123", "rows": 9984}
+{"part": "fourood", "stream": "dtd_seed124", "rows": 10368}
+{"part": "fourood", "stream": "dtd_seed125", "rows": 10752}
+{"part": "fourood", "stream": "inat_seed123", "rows": 11136}
+{"part": "fourood", "stream": "inat_seed124", "rows": 11520}
+{"part": "fourood", "stream": "inat_seed125", "rows": 11904}
+{"part": "fourood", "stream": "places_seed123", "rows": 12288}
+{"part": "fourood", "stream": "places_seed124", "rows": 12672}
+{"part": "fourood", "stream": "places_seed125", "rows": 13056}
+{"part": "fourood", "stream": "sun_seed123", "rows": 13440}
+{"part": "fourood", "stream": "sun_seed124", "rows": 13824}
+{"part": "fourood", "stream": "sun_seed125", "rows": 14208}
+== fourood fourood: top 40 by FPR95 ==
+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                        99.19 /   2.80   dFPR -0.60 [-0.70,-0.49]
+D3L|LPxNEG1|k20|q0.05|l0.9|TINS                       99.16 /   2.82   dFPR -0.58 [-0.69,-0.47]
+D3L|LPxNEG2|k20|q0.05|TINS                            99.16 /   2.84   dFPR -0.56 [-0.66,-0.46]
+D3L|LPxNEG2|k20|q0.1|TINS                             99.17 /   2.84   dFPR -0.55 [-0.64,-0.47]
+D3L|LPxNEG2|k10|q0.05|TINS                            99.12 /   2.90   dFPR -0.50 [-0.63,-0.37]
+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                        99.19 /   2.90   dFPR -0.50 [-0.59,-0.41]
+D3L|LPxNEG1xNN1|k10|q0.05|TINS                        99.13 /   2.92   dFPR -0.48 [-0.60,-0.37]
+D3L|LPxNEG1|k10|q0.05|l0.9|TINS                       99.12 /   2.93   dFPR -0.47 [-0.57,-0.38]
+D3L|LPxNEG1xNEG2|k20|q0.1|TINS                        99.13 /   2.93   dFPR -0.47 [-0.56,-0.38]
+D3L|LPxNEG1|k20|q0.2|l0.99|TINS                       99.13 /   2.94   dFPR -0.46 [-0.54,-0.38]
+D3L|LPxNEG1|k20|q0.1|l0.99|TINS                       99.12 /   2.95   dFPR -0.45 [-0.49,-0.41]
+L14xD3L+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                99.15 /   2.96   dFPR -0.44 [-0.53,-0.36]
+D3L|LPxNEG2|k20|q0.2|TINS                             99.18 /   2.96   dFPR -0.44 [-0.58,-0.29]
+D3L|LPxNEG1|k20|q0.05|l0.99|TINS                      99.10 /   2.96   dFPR -0.43 [-0.53,-0.34]
+D3L|LPxNEG1xNEG2|k10|q0.05|TINS                       99.06 /   2.97   dFPR -0.43 [-0.54,-0.32]
+D3L|LPxNEG1xNEG2|k20|q0.05|TINS                       99.09 /   2.97   dFPR -0.43 [-0.54,-0.32]
+L14xD3L|LPxNEG2|k20|q0.05|TINS                        99.14 /   2.97   dFPR -0.43 [-0.55,-0.31]
+L14xD3L|LPxNEG1|k20|q0.1|l0.9|TINS                    99.16 /   2.98   dFPR -0.42 [-0.58,-0.26]
+L14xD3L|LPxNEG1|k20|q0.05|l0.9|TINS                   99.14 /   2.98   dFPR -0.42 [-0.56,-0.28]
+L14xD3L+D3L|LPxNEG2|k20|q0.1|TINS                     99.13 /   2.99   dFPR -0.41 [-0.49,-0.34]
+L14xD3L+D3L|LPxNEG2|k20|q0.05|TINS                    99.12 /   2.99   dFPR -0.41 [-0.57,-0.25]
+L14xD3L+D3L|LPxNEG1|k20|q0.05|l0.9|TINS               99.12 /   2.99   dFPR -0.41 [-0.53,-0.29]
+L14xD3L|LPxNEG2|k20|q0.1|TINS                         99.14 /   3.00   dFPR -0.40 [-0.51,-0.29]
+L14+D3B+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                99.15 /   3.01   dFPR -0.38 [-0.41,-0.36]
+D3L|LP|k20|TINS                                       99.08 /   3.02   dFPR -0.38 [-0.50,-0.26]
+L14+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                    99.14 /   3.02   dFPR -0.38 [-0.45,-0.31]
+L14+D3B+D3L|LPxNEG1|k20|q0.05|l0.9|TINS               99.13 /   3.03   dFPR -0.37 [-0.45,-0.29]
+L14+D3B+D3L|LPxNEG2|k20|q0.05|TINS                    99.13 /   3.03   dFPR -0.37 [-0.43,-0.30]
+L14+D3B+D3L|LPxNEG2|k20|q0.1|TINS                     99.13 /   3.04   dFPR -0.36 [-0.40,-0.33]
+D3L|LPxNEG2|k10|q0.1|TINS                             99.13 /   3.05   dFPR -0.35 [-0.48,-0.23]
+L14+D3B+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                99.14 /   3.05   dFPR -0.35 [-0.43,-0.26]
+L14+D3L|LPxNEG2|k20|q0.1|TINS                         99.13 /   3.05   dFPR -0.35 [-0.42,-0.27]
+L14+D3B+D3L|LPxNEG2|k10|q0.05|TINS                    99.10 /   3.06   dFPR -0.34 [-0.45,-0.22]
+D3L|LPxNEG1|k10|q0.05|l0.99|TINS                      99.05 /   3.06   dFPR -0.33 [-0.39,-0.28]
+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                        99.14 /   3.07   dFPR -0.33 [-0.44,-0.21]
+L14+D3B+D3L|LPxNEG1|k10|q0.05|l0.9|TINS               99.10 /   3.08   dFPR -0.32 [-0.39,-0.25]
+D3L|LPxNEG1xNEG2|k20|q0.2|TINS                        99.14 /   3.08   dFPR -0.32 [-0.44,-0.21]
+L14+D3L|LPxNEG1|k20|q0.05|l0.9|TINS                   99.12 /   3.09   dFPR -0.31 [-0.39,-0.24]
+L14+D3L|LPxNEG2|k20|q0.05|TINS                        99.12 /   3.09   dFPR -0.30 [-0.41,-0.20]
+D3L|LPxNEG1|k10|q0.1|l0.99|TINS                       99.06 /   3.10   dFPR -0.30 [-0.34,-0.26]
+-- reference L14+D3L|LPxNEG1|k10|q0.1|l0.9|TINS: 99.08 / 3.40
+
+== openood near: top 40 by FPR95 ==
+L14xD3L+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                98.07 /  10.22   dFPR -0.24 [-0.35,-0.14]
+L14xD3L+D3L|LPxNEG1xNN1|k10|q0.05|TINS                97.93 /  10.31   dFPR -0.15 [-0.26,-0.04]
+L14xD3L+D3L|LPxNEG1xNN1|k10|q0.1|TINS                 98.08 /  10.39   dFPR -0.07 [-0.19,+0.05]
+L14+D3B+D3L|LPxNEG1xNN1|k10|q0.1|TINS                 98.08 /  10.43   dFPR -0.03 [-0.13,+0.07]
+L14+D3L|LPxNEG1xNN1|k10|q0.05|TINS                    97.91 /  10.43   dFPR -0.03 [-0.13,+0.08]
+L14+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                    98.04 /  10.46   dFPR +0.00 [+0.00,+0.00]
+L14xD3L+D3L|LPxNEG2|k10|q0.1|TINS                     98.02 /  10.52   dFPR +0.06 [+0.01,+0.11]
+L14+D3L|LPxNEG1xNN1|k10|q0.1|TINS                     98.08 /  10.53   dFPR +0.07 [-0.02,+0.15]
+L14xD3L|LPxNEG1xNN1|k10|q0.05|TINS                    97.86 /  10.54   dFPR +0.07 [-0.03,+0.18]
+L14xD3L+D3L|LPxNEG1xNEG2|k10|q0.05|TINS               97.81 /  10.56   dFPR +0.10 [-0.01,+0.21]
+L14xD3L+D3L|LPxNEG1|k10|q0.05|l0.9|TINS               97.91 /  10.59   dFPR +0.13 [+0.04,+0.21]
+L14xD3L+D3L|LPxNEG1|k10|q0.2|l0.9|TINS                98.06 /  10.61   dFPR +0.15 [+0.07,+0.23]
+L14+D3B+D3L|LPxNEG1xNN1|k10|q0.05|TINS                97.86 /  10.63   dFPR +0.17 [+0.07,+0.28]
+L14xD3L+D3L|LPxNEG2|k10|q0.05|TINS                    97.84 /  10.64   dFPR +0.18 [+0.10,+0.26]
+L14+D3B+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                98.01 /  10.66   dFPR +0.20 [+0.11,+0.28]
+B14+L14+D3L|LPxNEG1xNN1|k10|q0.1|TINS                 98.04 /  10.72   dFPR +0.26 [+0.14,+0.39]
+L14+D3L|LPxNEG1|k10|q0.2|l0.9|TINS                    98.06 /  10.74   dFPR +0.28 [+0.24,+0.32]
+L14+D3B+D3L|LPxNEG1|k10|q0.2|l0.9|TINS                98.07 /  10.75   dFPR +0.29 [+0.20,+0.38]
+L14xD3L|LPxNEG1xNEG2|k10|q0.05|TINS                   97.72 /  10.75   dFPR +0.29 [+0.22,+0.36]
+D3L|LPxNEG1xNN1|k10|q0.1|TINS                         97.98 /  10.75   dFPR +0.29 [+0.17,+0.41]
+L14xD3L+D3L|LPxNEG1xNEG2|k10|q0.1|TINS                97.98 /  10.77   dFPR +0.31 [+0.26,+0.35]
+L14+D3L|LPxNEG1|k10|q0.05|l0.9|TINS                   97.88 /  10.77   dFPR +0.31 [+0.19,+0.43]
+L14+D3L|LPxNEG2|k10|q0.1|TINS                         98.00 /  10.79   dFPR +0.33 [+0.28,+0.39]
+L14+D3B+D3L|LPxNEG2|k10|q0.2|TINS                     98.06 /  10.80   dFPR +0.34 [+0.24,+0.44]
+L14xD3L+D3L|LPxNEG2|k10|q0.2|TINS                     98.03 /  10.81   dFPR +0.35 [+0.26,+0.45]
+L14xD3L|LPxNEG1xNN1|k10|q0.1|TINS                     97.98 /  10.82   dFPR +0.36 [+0.32,+0.41]
+L14xD3L+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                98.06 /  10.82   dFPR +0.36 [+0.28,+0.45]
+B14+L14+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                97.98 /  10.84   dFPR +0.38 [+0.31,+0.44]
+L14+D3B+D3L|LPxNEG1xNN1|k10|q0.2|TINS                 98.03 /  10.84   dFPR +0.38 [+0.25,+0.50]
+L14+D3L|LPxNEG2|k10|q0.2|TINS                         98.04 /  10.85   dFPR +0.39 [+0.34,+0.44]
+D3L|LPxNEG1xNN1|k10|q0.05|TINS                        97.81 /  10.86   dFPR +0.40 [+0.32,+0.49]
+L14xD3L+D3L|LPxNEG1xNN1|k10|q0.05|none                97.86 /  10.86   dFPR +0.40 [+0.29,+0.52]
+L14+D3L|LPxNEG2|k10|q0.05|TINS                        97.80 /  10.87   dFPR +0.40 [+0.32,+0.49]
+L14xD3L+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                97.96 /  10.87   dFPR +0.41 [+0.34,+0.48]
+L14+D3L|LPxNEG1xNEG2|k10|q0.05|TINS                   97.75 /  10.87   dFPR +0.41 [+0.31,+0.52]
+L14+D3L|LPxNEG1xNN1|k10|q0.05|none                    97.84 /  10.88   dFPR +0.42 [+0.31,+0.54]
+D3L|LPxNEG1xNEG2|k10|q0.1|TINS                        97.93 /  10.89   dFPR +0.43 [+0.34,+0.51]
+L14xD3L+D3L|LPxNEG2|k20|q0.2|TINS                     98.06 /  10.89   dFPR +0.43 [+0.39,+0.48]
+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                        97.89 /  10.92   dFPR +0.45 [+0.41,+0.50]
+B14+L14+D3L|LPxNEG1xNN1|k10|q0.05|TINS                97.83 /  10.93   dFPR +0.47 [+0.36,+0.57]
+-- reference L14+D3L|LPxNEG1|k10|q0.1|l0.9|TINS: 98.04 / 10.46
+
+== openood far: top 40 by FPR95 ==
+L14+D3B+D3L|LPxNN1|k10|q0.05|TINS                     99.21 /   3.81   dFPR -0.54 [-0.60,-0.49]
+D3L|LPxNN1|k10|q0.05|TINS                             99.16 /   3.84   dFPR -0.52 [-0.60,-0.44]
+D3L|LPxNEG1xNN1|k10|q0.05|TINS                        99.17 /   3.84   dFPR -0.51 [-0.54,-0.49]
+L14xD3L+D3L|LPxNEG1xNN1|k10|q0.05|TINS                99.15 /   3.87   dFPR -0.48 [-0.51,-0.45]
+L14+D3B+D3L|LPxNEG1xNN1|k10|q0.05|TINS                99.21 /   3.88   dFPR -0.47 [-0.52,-0.42]
+L14+D3L|LPxNN1|k10|q0.05|TINS                         99.17 /   3.89   dFPR -0.47 [-0.50,-0.44]
+L14xD3L|LPxNN1|k10|q0.05|TINS                         99.15 /   3.89   dFPR -0.47 [-0.53,-0.40]
+B14+L14+D3L|LPxNN1|k10|q0.05|TINS                     99.17 /   3.89   dFPR -0.46 [-0.51,-0.41]
+L14xD3L|LPxNEG1xNN1|k10|q0.05|TINS                    99.14 /   3.90   dFPR -0.45 [-0.48,-0.42]
+L14+D3B+D3L|LPxNN1|k10|q0.1|TINS                      99.18 /   3.91   dFPR -0.45 [-0.49,-0.40]
+L14+D3B+D3L|LPxNEG1xNN1|k10|q0.1|TINS                 99.18 /   3.94   dFPR -0.42 [-0.48,-0.35]
+L14xD3L+D3L|LPxNN1|k10|q0.05|TINS                     99.14 /   3.94   dFPR -0.42 [-0.48,-0.35]
+L14xD3L+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                99.10 /   3.95   dFPR -0.40 [-0.44,-0.36]
+D3L|LPxNEG1xNN1|k10|q0.1|TINS                         99.14 /   3.96   dFPR -0.40 [-0.44,-0.35]
+L14+D3L|LPxNEG1xNN1|k10|q0.05|TINS                    99.15 /   3.98   dFPR -0.38 [-0.42,-0.33]
+D3L|LPxNN1|k10|q0.1|TINS                              99.14 /   3.99   dFPR -0.36 [-0.43,-0.30]
+L14xD3L+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                99.09 /   4.01   dFPR -0.34 [-0.39,-0.29]
+B14+L14+D3L|LPxNEG1xNN1|k10|q0.05|TINS                99.16 /   4.02   dFPR -0.34 [-0.40,-0.28]
+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                        99.07 /   4.04   dFPR -0.32 [-0.34,-0.29]
+L14xD3L+D3L|LPxNEG2|k20|q0.1|TINS                     99.09 /   4.04   dFPR -0.31 [-0.33,-0.29]
+L14+D3L|LPxNEG1|k20|q0.1|l0.9|TINS                    99.09 /   4.05   dFPR -0.30 [-0.35,-0.25]
+D3L|LPxNEG2|k20|q0.1|TINS                             99.06 /   4.07   dFPR -0.29 [-0.33,-0.24]
+L14+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                    99.08 /   4.08   dFPR -0.27 [-0.32,-0.23]
+L14+D3L|LPxNN1|k10|q0.1|TINS                          99.13 /   4.10   dFPR -0.26 [-0.31,-0.21]
+L14xD3L|LPxNEG2|k20|q0.1|TINS                         99.07 /   4.10   dFPR -0.26 [-0.30,-0.21]
+L14xD3L|LPxNEG1|k20|q0.1|l0.9|TINS                    99.08 /   4.10   dFPR -0.25 [-0.29,-0.22]
+L14xD3L+D3L|LPxNEG2|k10|q0.05|TINS                    99.03 /   4.11   dFPR -0.25 [-0.27,-0.23]
+L14xD3L+D3L|LPxNEG1|k20|q0.05|l0.9|TINS               99.07 /   4.11   dFPR -0.25 [-0.30,-0.20]
+L14xD3L+D3L|LPxNEG1|k10|q0.05|l0.9|TINS               99.03 /   4.12   dFPR -0.23 [-0.26,-0.21]
+L14xD3L+D3L|LPxNEG1xNN1|k10|q0.1|TINS                 99.11 /   4.13   dFPR -0.23 [-0.29,-0.17]
+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                        99.07 /   4.13   dFPR -0.22 [-0.28,-0.17]
+L14xD3L|LPxNEG1|k20|q0.2|l0.9|TINS                    99.07 /   4.14   dFPR -0.22 [-0.27,-0.17]
+L14+D3L|LPxNEG2|k20|q0.1|TINS                         99.08 /   4.14   dFPR -0.21 [-0.25,-0.18]
+L14+D3B+D3L|LPxNEG1|k20|q0.2|l0.9|TINS                99.09 /   4.15   dFPR -0.21 [-0.25,-0.17]
+D3L|LPxNEG1xNEG2|k20|q0.1|TINS                        99.00 /   4.18   dFPR -0.18 [-0.21,-0.15]
+D3L|LPxNEG1|k10|q0.1|l0.9|TINS                        99.04 /   4.18   dFPR -0.18 [-0.21,-0.14]
+L14+D3B+D3L|LPxNEG1xNN1|k10|q0.05|none                99.13 /   4.18   dFPR -0.17 [-0.23,-0.12]
+L14+D3L|LPxNEG1xNN1|k10|q0.1|TINS                     99.11 /   4.18   dFPR -0.17 [-0.23,-0.11]
+B14+L14+D3L|LPxNEG1xNN1|k10|q0.1|TINS                 99.12 /   4.19   dFPR -0.17 [-0.22,-0.12]
+B14+L14+D3L|LPxNN1|k10|q0.1|TINS                      99.13 /   4.19   dFPR -0.17 [-0.20,-0.13]
+-- reference L14+D3L|LPxNEG1|k10|q0.1|l0.9|TINS: 99.04 / 4.36
+
+AN11C_DONE

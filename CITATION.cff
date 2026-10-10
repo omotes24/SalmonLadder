@@ -6,4 +6,4 @@ authors:
   - family-names: "omote"
     affiliation: "d-hacks B3"
 repository-code: "https://github.com/omotes24/SalmonLadder"
-abstract: "Code and frozen protocols for prototype, memory, and label-propagation based detection of recurring out-of-distribution images."
+abstract: "Code and records of Salmon Ladder, a training-free detector of recurring out-of-distribution images: label propagation from a few labelled images over one graph of all test images, self-labelled seeds selected by the Benjamini-Hochberg procedure on conformal ranks, and propagation from the seeds; with the records of the earlier online variant."

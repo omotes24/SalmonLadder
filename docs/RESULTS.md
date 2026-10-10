@@ -478,3 +478,96 @@ Calibration images across batches (Spearman correlation of their masses; mean ch
 | far, ViT-L/14, warm start | 0.995 | 0.785 | 0.0171 | 0.0222 | 0.143 | 0.204 |
 | near, ViT-B/14, zero start | 0.996 | 0.774 | 0.0144 | 0.0189 | 0.146 | 0.209 |
 | near, ViT-L/14, zero start | 0.995 | 0.747 | 0.0156 | 0.0198 | 0.154 | 0.222 |
+
+## 8. Public benchmarks: Phase 10 (DINOv3 views, streaming) and Phase 11 (post-stream read-out; the paper of October 2026)
+
+Streams of the OpenOOD v1.5 ImageNet-1K benchmark (45,000 ID validation images mixed with one OOD data set; near-OOD: SSB-hard, NINCO; far-OOD: iNaturalist, Textures, OpenImage-O; five stream orders each) and of Four-OOD (50,000 ID images with iNaturalist, SUN, Places, Textures; three orders each). 16 labelled ImageNet-1K training images per class (12 support + 4 calibration). Means over the data sets of a group, then over the orders; the per-stream tables are `experiments/phase10_11/phase10/results/p10_rows.csv` and `phase11/results/final/p11_rows.csv`. The base detectors (official implementations, no training) were measured on the same streams in Phase 10. Phase 11 scores every image after the whole stream has arrived (Section 1 of `METHOD.md`); its configuration was selected on these streams, see `PREREGISTRATION.md`.
+
+### 8.1 Main result
+
+| detector | near-OOD | far-OOD | Four-OOD | near FPR95 - main (95% interval, unit: order) |
+|:--|--:|--:|--:|--:|
+| MCM alone (measured) | 66.86 / 85.92 | 88.91 / 53.24 | 89.07 / 49.93 |  |
+| NegLabel alone (measured) | 74.64 / 75.90 | 94.67 / 24.61 | 94.38 / 24.55 |  |
+| AdaNeg alone (measured) | 76.60 / 72.00 | 96.18 / 17.56 | 96.34 / 14.38 |  |
+| TANL alone (measured) | 82.85 / 56.80 | 96.19 / 15.91 | 97.55 / 8.91 |  |
+| TINS alone (measured) | 81.48 / 56.37 | 97.04 / 12.23 | 98.52 / 6.85 |  |
+| Salmon Ladder, standalone | 97.95 / 11.02 | 98.78 / 5.23 | 98.78 / 4.39 | +0.81 [+0.68, +0.93] |
+| Salmon Ladder x TANL | 97.97 / 10.70 | 98.89 / 4.94 | 98.92 / 3.84 | +0.49 [+0.26, +0.72] |
+| **Salmon Ladder x TINS** (the paper) | 98.07 / 10.22 | 99.03 / 4.28 | 99.06 / 3.36 |  |
+
+### 8.2 Per data set
+
+| OpenOOD v1.5 | SSB-hard | NINCO | iNaturalist | Textures | OpenImage-O |
+|:--|--:|--:|--:|--:|--:|
+| TINS alone (measured) | 82.22 / 56.65 | 80.74 / 56.09 | 99.93 / 0.17 | 98.11 / 8.31 | 93.09 / 28.20 |
+| Salmon Ladder, standalone | 96.22 / 20.96 | 99.68 / 1.09 | 99.92 / 0.12 | 98.88 / 4.22 | 97.55 / 11.34 |
+| Salmon Ladder x TINS | 96.43 / 19.62 | 99.71 / 0.81 | 99.96 / 0.08 | 99.29 / 2.45 | 97.84 / 10.32 |
+
+| Four-OOD | iNaturalist | SUN | Places | Textures |
+|:--|--:|--:|--:|--:|
+| TINS alone (measured) | 99.93 / 0.22 | 99.12 / 4.35 | 97.12 / 12.98 | 97.94 / 9.83 |
+| Salmon Ladder, standalone | 99.92 / 0.15 | 99.48 / 1.57 | 97.01 / 11.24 | 98.73 / 4.59 |
+| Salmon Ladder x TINS | 99.96 / 0.09 | 99.65 / 0.97 | 97.48 / 9.57 | 99.17 / 2.83 |
+
+### 8.3 Views (p+ x p-, q = 0.1, k_g = 10, x TINS)
+
+| views | near-OOD | far-OOD | Four-OOD | near FPR95 - main |
+|:--|--:|--:|--:|--:|
+| DINOv2 ViT-L/14 | 97.57 / 12.50 | 98.87 / 5.15 | 99.00 / 3.85 | +2.29 [+2.17, +2.40] |
+| DINOv3 ViT-L/16 | 97.89 / 10.92 | 99.04 / 4.18 | 99.14 / 3.07 | +0.70 [+0.61, +0.79] |
+| joint view (DINOv2 L/14 (+) DINOv3 L/16) | 97.87 / 11.02 | 99.00 / 4.29 | 99.08 / 3.32 | +0.80 [+0.71, +0.89] |
+| DINOv2 B/14 + L/14 | 97.73 / 12.02 | 98.94 / 4.98 | 99.02 / 3.73 | +1.80 [+1.71, +1.90] |
+| DINOv2 L/14 + DINOv3 L/16 | 98.04 / 10.46 | 99.04 / 4.36 | 99.08 / 3.40 | +0.24 [+0.14, +0.35] |
+| DINOv3 B/16 + L/16 | 97.91 / 11.10 | 99.07 / 4.23 | 99.15 / 3.02 | +0.88 [+0.75, +1.01] |
+| joint view + DINOv3 L/16 (the paper) | 98.07 / 10.22 | 99.03 / 4.28 | 99.06 / 3.36 | +0.00 [+0.00, +0.00] |
+| DINOv2 L/14 + DINOv3 B/16 + L/16 | 98.01 / 10.66 | 99.08 / 4.22 | 99.11 / 3.25 | +0.44 [+0.39, +0.50] |
+| DINOv2 B/14 + L/14 + DINOv3 L/16 | 97.98 / 10.84 | 99.04 / 4.42 | 99.07 / 3.45 | +0.62 [+0.53, +0.72] |
+| all four encoders | 97.96 / 11.03 | 99.06 / 4.42 | 99.09 / 3.32 | +0.82 [+0.72, +0.91] |
+
+### 8.4 Read-outs (joint view + DINOv3 L/16, x TINS)
+
+| read-out | near-OOD | far-OOD | Four-OOD | near FPR95 - main |
+|:--|--:|--:|--:|--:|
+| p+ only (no seeds) | 97.48 / 12.43 | 98.90 / 4.70 | 98.91 / 3.78 | +2.21 [+2.11, +2.31] |
+| p+ only, k_g = 20 | 97.48 / 13.05 | 99.04 / 4.31 | 99.04 / 3.23 | +2.84 [+2.71, +2.96] |
+| p+ x p-, q = 0.05 | 97.91 / 10.59 | 99.03 / 4.12 | 99.06 / 3.15 | +0.37 [+0.30, +0.44] |
+| p+ x p-, q = 0.1 (the paper) | 98.07 / 10.22 | 99.03 / 4.28 | 99.06 / 3.36 | +0.00 [+0.00, +0.00] |
+| p+ x p-, q = 0.2 | 98.06 / 10.61 | 98.96 / 4.58 | 99.01 / 3.72 | +0.40 [+0.28, +0.51] |
+| p+ x p-, k_g = 20 | 97.96 / 10.87 | 99.10 / 3.95 | 99.15 / 2.96 | +0.66 [+0.58, +0.74] |
+| p+ x p- x rank of the distance to the nearest seed | 98.08 / 10.39 | 99.11 / 4.13 | 99.05 / 3.49 | +0.18 [+0.06, +0.29] |
+
+### 8.5 Seeds of the main configuration
+
+Storey-BH at q = 0.1 on the calibrated rank p+ of every stream image, per view. The ID fraction is the share of ID images among the selected seeds (the realised false discovery proportion), averaged over the orders; the guarantee of Proposition 3 of the paper assumes that the calibration images (ImageNet-1K training images) and the ID test images (validation images) are exchangeable.
+
+| part | data set | view | seeds | OOD images | ID fraction among the seeds |
+|:--|:--|:--|--:|--:|--:|
+| fourood | dtd | L14xD3L | 5,411 | 5,640 | 0.134 |
+| fourood | dtd | D3L | 5,523 | 5,640 | 0.152 |
+| fourood | inat | L14xD3L | 11,835 | 10,000 | 0.159 |
+| fourood | inat | D3L | 12,106 | 10,000 | 0.177 |
+| fourood | places | L14xD3L | 9,232 | 10,000 | 0.141 |
+| fourood | places | D3L | 9,780 | 10,000 | 0.156 |
+| fourood | sun | L14xD3L | 11,204 | 10,000 | 0.150 |
+| fourood | sun | D3L | 11,549 | 10,000 | 0.164 |
+| openood | inaturalist | L14xD3L | 11,772 | 10,000 | 0.154 |
+| openood | inaturalist | D3L | 11,957 | 10,000 | 0.167 |
+| openood | ninco | L14xD3L | 6,867 | 5,879 | 0.174 |
+| openood | ninco | D3L | 6,941 | 5,879 | 0.181 |
+| openood | openimageo | L14xD3L | 15,949 | 15,869 | 0.140 |
+| openood | openimageo | D3L | 16,302 | 15,869 | 0.150 |
+| openood | ssb_hard | L14xD3L | 51,747 | 49,000 | 0.127 |
+| openood | ssb_hard | D3L | 51,303 | 49,000 | 0.126 |
+| openood | textures | L14xD3L | 5,258 | 5,160 | 0.148 |
+| openood | textures | D3L | 5,285 | 5,160 | 0.156 |
+
+### 8.6 The streaming configuration on the same streams (Phase 10)
+
+The online read-out of Phases 4-9 (entrance memory p_M x warm-start propagation p_LP, `METHOD.md` Section 2) with the Phase 10 views, scored at arrival. It is superseded by the post-stream read-out above and is not part of the paper.
+
+| streaming Salmon Ladder (Phase 10) | near-OOD | far-OOD | Four-OOD |
+|:--|--:|--:|--:|
+| DINOv2 B/14 + L/14, x TINS | 96.30 / 16.76 | 98.85 / 5.55 | 98.58 / 5.52 |
+| DINOv2 L/14 + DINOv3 L/16, standalone | 96.60 / 15.54 | 98.54 / 6.52 | 98.04 / 7.50 |
+| DINOv2 L/14 + DINOv3 L/16, x TINS | 96.74 / 14.76 | 98.97 / 4.73 | 98.69 / 4.96 |

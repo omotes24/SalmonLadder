@@ -1,0 +1,20 @@
+2026-10-10T09:00:27Z START gpus=0 1 2 3
+2026-10-10T09:39:52Z FEATURES openood done
+2026-10-10T09:59:08Z FEATURES fourood done
+2026-10-10T09:59:08Z CHECK exit=0 CHECK_DIFFERS
+2026-10-10T10:08:21Z VLM text ready
+2026-10-10T10:24:26Z VLM openood done (25 streams)
+2026-10-10T10:31:07Z VLM fourood done (12 streams)
+2026-10-10T10:31:16Z FAILED final10 openood (logs/final_openood_*.log)
+2026-10-10T11:31:35Z RELAUNCH after fix of add_views
+2026-10-10T11:31:35Z START gpus=0 1 2 3
+2026-10-10T11:31:56Z FEATURES openood done
+2026-10-10T11:32:03Z FEATURES fourood done
+2026-10-10T11:32:24Z CHECK exit=0 CHECK_DIFFERS
+2026-10-10T11:32:29Z VLM text ready
+2026-10-10T11:32:34Z VLM openood done (25 streams)
+2026-10-10T11:32:40Z VLM fourood done (12 streams)
+2026-10-10T11:35:01Z READOUTS openood done (25 streams)
+2026-10-10T11:36:17Z READOUTS fourood done (12 streams)
+2026-10-10T11:50:36Z FAILED analysis10 (logs/analysis10.log)
+2026-10-10T11:54:03Z DONE (table rewritten after the _meta fix)

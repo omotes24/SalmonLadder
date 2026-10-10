@@ -1,0 +1,10 @@
+2026-10-10T11:31:35Z START gpus=0 1 2 3
+2026-10-10T11:31:56Z FEATURES openood done
+2026-10-10T11:32:03Z FEATURES fourood done
+2026-10-10T11:32:24Z CHECK exit=0 CHECK_DIFFERS
+2026-10-10T11:32:29Z VLM text ready
+2026-10-10T11:32:34Z VLM openood done (25 streams)
+2026-10-10T11:32:40Z VLM fourood done (12 streams)
+2026-10-10T11:35:01Z READOUTS openood done (25 streams)
+2026-10-10T11:36:17Z READOUTS fourood done (12 streams)
+2026-10-10T11:50:36Z FAILED analysis10 (logs/analysis10.log)

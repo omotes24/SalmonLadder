@@ -4,7 +4,8 @@ All paths below are relative to a materialized workspace (`tools/materialize_wor
 
 | part of the paper | section below | archive |
 |---|---|---|
-| frozen method and its final test (OpenOOD, Four-OOD, CUB) | [R5 round 2 and the final test](#r5-round-2-and-the-final-test) | `experiments/legacy` + `experiments/r5_final` |
+| **the paper of October 2026**: Salmon Ladder (post-stream read-out) on OpenOOD v1.5 ImageNet-1K and Four-OOD, with the DINOv3 views and the measured base detectors | [Phase 10 and Phase 11](#phase-10-and-phase-11-public-benchmarks) | `experiments/phase10_11` |
+| the online variant and its final test (OpenOOD, Four-OOD, CUB) | [R5 round 2 and the final test](#r5-round-2-and-the-final-test) | `experiments/legacy` + `experiments/r5_final` |
 | comparison with label propagation on the development split | [Propagation audit](#propagation-audit) | `experiments/lp_audit` |
 | evaluation on images not used for selection, baselines, intervention, operating conditions | [Phase 4](#phase-4-evaluation-on-new-data) | `experiments/phase4` |
 | two-sided variant, DINOv3 swap | [Phase 5 and Phase 6](#phase-5-and-phase-6) | `experiments/phase5_6` |
@@ -120,3 +121,30 @@ Workspace directory `reprise_p7_20261003` (`experiments/phase7`). `engine7.py` w
 | verification | `test7_hades.py` (frozen read-outs against the stored scores), `verify7.py` (independent re-computation of the headline numbers) | `results/test7_hades.json`, `logs/verify7*.log` |
 
 `run_engine.sh <tag> "<gpus>" <workers> <steps>` is the dispatcher used for every `run7.py` and `dev7.py` step; `logs/engine_*.status` record what each dispatcher ran and when. Experiment A selects on the development splits only; B–E apply frozen hyper-parameters. `run_p7b.sh` is amendment 3 (DINOv3 ViT-S/16 and ViT-S+/16, CLIP RN50).
+
+## Phase 10 and Phase 11: public benchmarks
+
+Workspace directories `reprise_p10_20261010` (`experiments/phase10_11/phase10`) and `reprise_p11_20261010` (`experiments/phase10_11/phase11`); scripts in `code/`, run from there. Both phases score the streams of the final test (use 5 of the test split: the OpenOOD v1.5 ImageNet-1K streams, five arrival orders per OOD data set, and the Four-OOD streams, three orders), whose sample order, batches and TINS scores the Phase 3 stream files fix. Phase 11 reads the Phase 3 DINOv2 ViT-L/14 features and the Phase 10 DINOv3 features through `p10common.py` (which imports the Phase 5 code, and through it the vendored implementation).
+
+**Phase 10** (`orchestrate10.sh`, status in `STATUS`):
+
+| step | scripts | output |
+|---|---|---|
+| DINOv3 features of the 16,000 labelled images and of every evaluated image | `extract10.py --part openood\|fourood` (shards, then merge; Phase 7's `extract7.load`) | `features/` (not archived) |
+| base detectors on the same streams (official OpenOOD-VLM post-processors: TANL, AdaNeg, NegLabel; MCM and TINS from the Phase 3 stream files) | `vlm10.py --text-only`, then `--part ... --worker w` | `results/vlm/<part>/<stream>.npz` (not archived) |
+| the online read-out with the Phase 10 views (DINOv3 B/16, L/16, single and paired with the DINOv2 views) | `final10.py --part ... --worker w` | `results/<part>/D3B+D3L/<stream>.npz` (not archived) |
+| analysis | `analysis10.py` (every views \| read-out \| base configuration, paired t intervals; `--table-only`) | `results/p10_rows.csv`, `results/p10_summary.json`, `results/p10_table.txt` |
+
+**Phase 11** (one orchestrator per sweep; status in `STATUS`). Every script writes one file per stream and the analysis aggregates them:
+
+| step | scripts | output |
+|---|---|---|
+| sweep 11: transductive read-outs on the full graph (support mass, memory re-read, robust z) | `trans11.py`, `an11.py` | `results/<part>/<stream>.npz` (not archived), `results/p11_rows.csv`, `results/p11_summary.json`, `results/p11_table.txt` |
+| sweep 11b: graph sizes, mutual graphs, `lambda`, first seeds (Storey-BH on `p+`), negative mass, ratios | `sweep11.py`, `an11b.py` | `results/sweep/p11b_*` |
+| sweep 11c: `q` in {0.05, 0.1, 0.2}, `lambda` of the negative mass, nearest-seed distance, a second round of seeds | `sweep11c.py`, `an11c.py` | `results/sweep_c/p11c_*` |
+| sweep 11d: joint seeds over the views, `k_neg`, neighbour smoothing | `sweep11d.py` (class `ViewGraph`), `--aggregate` | `results/sweep_d/<part>/<stream>.csv`, `results/sweep_d/p11d_*` |
+| sweep 11e: weights of the terms and of the base detectors (TINS, TANL) | `sweep11e.py`, `--aggregate` | `results/sweep_e/p11e_*` (the per-stream tables of this sweep are not archived) |
+| **final run**: the configuration of the paper and its ablations (views, `q`, `k_g`, nearest-seed term, base detector) on all 37 streams | `final11.py --part ... --worker w`, `final11.py --aggregate` (`orchestrate11f.sh`) | `results/final/<part>/<stream>.csv`, `<stream>.meta.json` (seeds and their ID fraction), `results/final/p11_rows.csv`, `p11_summary.json`, `p11_table.txt` |
+
+The read-out keys of the final tables are explained in Section 1 of [METHOD.md](METHOD.md) (`T` is the paper's read-out; the configuration of the paper is `L14xD3L+D3L|T|TINS`). [RESULTS.md](RESULTS.md), Section 8 is generated from `p10_rows.csv`, `final/p11_rows.csv` and the `meta.json` files. The sweeps selected on these test streams; [PREREGISTRATION.md](PREREGISTRATION.md) records it.
+

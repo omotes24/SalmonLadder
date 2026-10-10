@@ -8,6 +8,8 @@ The workspace reproduces the directory layout of the experiment server:
   <workspace>/reprise_p4_20260928         experiments/phase4
   <workspace>/reprise_p5_20261002         experiments/phase5_6
   <workspace>/reprise_p7_20261003         experiments/phase7
+  <workspace>/reprise_p10_20261010        experiments/phase10_11/phase10
+  <workspace>/reprise_p11_20261010        experiments/phase10_11/phase11
 
 Server-specific paths in the executable copies are replaced by the workspace path; image tables are rebuilt from
 manifests/. The archived outputs of the later phases (results, logs, failure records) are placed under
@@ -28,12 +30,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SERVER_HOME = "/home/omote"
 PHASES = {"experiments/lp_audit": "reprise_lp_audit_20260927", "experiments/phase4": "reprise_p4_20260928",
-          "experiments/phase5_6": "reprise_p5_20261002", "experiments/phase7": "reprise_p7_20261003"}
+          "experiments/phase5_6": "reprise_p5_20261002", "experiments/phase7": "reprise_p7_20261003",
+          "experiments/phase10_11/phase10": "reprise_p10_20261010", "experiments/phase10_11/phase11": "reprise_p11_20261010"}
 # archived outputs, relative to the server directory: kept out of the executable directories (see the module docstring)
 OUTPUTS = {"reprise_lp_audit_20260927": ["reports", "failures", "unit_tests/*.log"],
            "reprise_p4_20260928": ["results", "logs", "failures"],
            "reprise_p5_20261002": ["results", "results_final", "logs", "failures", "confirm_dev2_attempt1.json"],
            "reprise_p7_20261003": ["results", "logs", "failures", "features"],
+           "reprise_p10_20261010": ["results", "logs", "STATUS", "STATUS.run1"],
+           "reprise_p11_20261010": ["results", "logs", "STATUS"],
            "vins_gonogo_20260925": ["r5/phase3/openood", "r5/phase3/fourood", "r5/phase3/cub/eval_*.json", "r5/phase3/streams", "r5/phase3/summary.*",
                                     "r5/phase3/locoop_metrics.json", "r5/round2/search.json", "r5/summary", "r5/audit", "r5/paper",
                                     "r5/entrance/tune_table.json", "r5/entrance/eval", "r5/entrance/inject", "test_eval/results*",

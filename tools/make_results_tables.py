@@ -561,6 +561,110 @@ def section_identities():
     return L
 
 
+
+# ------------------------------------------------------------------------------------------------ 8. Phases 10 and 11: public benchmarks
+P1011 = E / "phase10_11"
+OO_NEAR, OO_FAR, FOUR_SETS = ["ssb_hard", "ninco"], ["inaturalist", "textures", "openimageo"], ["inat", "sun", "places", "dtd"]
+MAIN11 = "L14xD3L+D3L|T|TINS"
+VIEW11 = {"L14": "DINOv2 ViT-L/14", "D3L": "DINOv3 ViT-L/16", "L14xD3L": "joint view (DINOv2 L/14 (+) DINOv3 L/16)", "B14+L14": "DINOv2 B/14 + L/14",
+          "L14+D3L": "DINOv2 L/14 + DINOv3 L/16", "D3B+D3L": "DINOv3 B/16 + L/16", "L14xD3L+D3L": "joint view + DINOv3 L/16 (the paper)",
+          "L14+D3B+D3L": "DINOv2 L/14 + DINOv3 B/16 + L/16", "B14+L14+D3L": "DINOv2 B/14 + L/14 + DINOv3 L/16", "B14+L14+D3B+D3L": "all four encoders"}
+READ11 = {"Tlp": "p+ only (no seeds)", "Tlp20": "p+ only, k_g = 20", "Tq0.05": "p+ x p-, q = 0.05", "T": "p+ x p-, q = 0.1 (the paper)",
+          "Tq0.2": "p+ x p-, q = 0.2", "Tk20": "p+ x p-, k_g = 20", "Tnn": "p+ x p- x rank of the distance to the nearest seed"}
+
+
+def rows1011(name):
+    d = pd.read_csv(P1011 / name)
+    d["ds"] = d.stream.str.replace(r"_seed\d+$", "", regex=True)
+    d["seed"] = d.stream.str.extract(r"seed(\d+)$", expand=False).astype(int)
+    d["cfg"] = d.views + "|" + d.readout + "|" + d.base
+    return d
+
+
+def agg1011(d):
+    """Per configuration: mean over stream orders of the mean over the data sets of the group (near, far, fourood), the per-data-set
+    means, and the paired FPR95 difference to the main configuration over stream orders."""
+    out = {}
+    for part, sets in (("openood", {"near": OO_NEAR, "far": OO_FAR}), ("fourood", {"fourood": FOUR_SETS})):
+        dd = d[d.part == part]
+        for g, names in sets.items():
+            per_seed = dd[dd.ds.isin(names)].groupby(["cfg", "seed", "ds"])[["AUROC", "FPR95"]].mean().groupby(["cfg", "seed"]).mean()
+            ref = per_seed.loc[MAIN11] if MAIN11 in per_seed.index.get_level_values(0) else None
+            for c in per_seed.index.get_level_values(0).unique():
+                v = per_seed.loc[c]
+                e = {"AUROC": float(v.AUROC.mean()), "FPR95": float(v.FPR95.mean()), "n": int(len(v))}
+                if ref is not None and len(v) == len(ref) and len(v) > 1:
+                    e["dFPR95"] = tci((v.FPR95 - ref.FPR95).values)
+                out[(c, g)] = e
+        for (c, ds), v in dd.groupby(["cfg", "ds"])[["AUROC", "FPR95"]].mean().iterrows():
+            out[(c, ds)] = {"AUROC": float(v.AUROC), "FPR95": float(v.FPR95)}
+    return out
+
+
+def section_phase1011():
+    p10, p11 = agg1011(rows1011("phase10/results/p10_rows.csv")), agg1011(rows1011("phase11/results/final/p11_rows.csv"))
+
+    def three(src, c):
+        return [af(src[(c, g)]["AUROC"], src[(c, g)]["FPR95"]) for g in ("near", "far", "fourood")]
+
+    def ds_row(src, c, names):
+        return [af(src[(c, n)]["AUROC"], src[(c, n)]["FPR95"]) for n in names]
+
+    def d_near(c):
+        e = p11[(c, "near")]
+        return ci(e["dFPR95"]) if "dFPR95" in e else ""
+
+    L = ["## 8. Public benchmarks: Phase 10 (DINOv3 views, streaming) and Phase 11 (post-stream read-out; the paper of October 2026)", "",
+         "Streams of the OpenOOD v1.5 ImageNet-1K benchmark (45,000 ID validation images mixed with one OOD data set; near-OOD: SSB-hard, NINCO; "
+         "far-OOD: iNaturalist, Textures, OpenImage-O; five stream orders each) and of Four-OOD (50,000 ID images with iNaturalist, SUN, Places, "
+         "Textures; three orders each). 16 labelled ImageNet-1K training images per class (12 support + 4 calibration). Means over the data sets "
+         "of a group, then over the orders; the per-stream tables are `experiments/phase10_11/phase10/results/p10_rows.csv` and `phase11/results/final/p11_rows.csv`. The base detectors "
+         "(official implementations, no training) were measured on the same streams in Phase 10. Phase 11 scores every image after the whole "
+         "stream has arrived (Section 1 of `METHOD.md`); its configuration was selected on these streams, see `PREREGISTRATION.md`.", "",
+         "### 8.1 Main result", ""]
+    rows = [[f"{b} alone (measured)"] + three(p10, f"-|-|{b}") + [""] for b in ("MCM", "NegLabel", "AdaNeg", "TANL", "TINS")]
+    rows += [["Salmon Ladder, standalone"] + three(p11, "L14xD3L+D3L|T|none") + [d_near("L14xD3L+D3L|T|none")],
+             ["Salmon Ladder x TANL"] + three(p11, "L14xD3L+D3L|T|TANL") + [d_near("L14xD3L+D3L|T|TANL")],
+             ["**Salmon Ladder x TINS** (the paper)"] + three(p11, MAIN11) + [""]]
+    L += table(["detector", "near-OOD", "far-OOD", "Four-OOD", "near FPR95 - main (95% interval, unit: order)"], rows)
+    L += ["### 8.2 Per data set", ""]
+    names = OO_NEAR + OO_FAR
+    rows = [["TINS alone (measured)"] + ds_row(p10, "-|-|TINS", names), ["Salmon Ladder, standalone"] + ds_row(p11, "L14xD3L+D3L|T|none", names),
+            ["Salmon Ladder x TINS"] + ds_row(p11, MAIN11, names)]
+    L += table(["OpenOOD v1.5", "SSB-hard", "NINCO", "iNaturalist", "Textures", "OpenImage-O"], rows)
+    rows = [["TINS alone (measured)"] + ds_row(p10, "-|-|TINS", FOUR_SETS), ["Salmon Ladder, standalone"] + ds_row(p11, "L14xD3L+D3L|T|none", FOUR_SETS),
+            ["Salmon Ladder x TINS"] + ds_row(p11, MAIN11, FOUR_SETS)]
+    L += table(["Four-OOD", "iNaturalist", "SUN", "Places", "Textures"], rows)
+    L += ["### 8.3 Views (p+ x p-, q = 0.1, k_g = 10, x TINS)", ""]
+    rows = [[VIEW11[v]] + three(p11, f"{v}|T|TINS") + [d_near(f"{v}|T|TINS")] for v in VIEW11]
+    L += table(["views", "near-OOD", "far-OOD", "Four-OOD", "near FPR95 - main"], rows)
+    L += ["### 8.4 Read-outs (joint view + DINOv3 L/16, x TINS)", ""]
+    rows = [[READ11[r]] + three(p11, f"L14xD3L+D3L|{r}|TINS") + [d_near(f"L14xD3L+D3L|{r}|TINS")] for r in READ11]
+    L += table(["read-out", "near-OOD", "far-OOD", "Four-OOD", "near FPR95 - main"], rows)
+    L += ["### 8.5 Seeds of the main configuration", "",
+          "Storey-BH at q = 0.1 on the calibrated rank p+ of every stream image, per view. The ID fraction is the share of ID images among the "
+          "selected seeds (the realised false discovery proportion), averaged over the orders; the guarantee of Proposition 3 of the paper assumes "
+          "that the calibration images (ImageNet-1K training images) and the ID test images (validation images) are exchangeable.", ""]
+    seeds = {}
+    for f in sorted(P1011.glob("phase11/results/final/*/*.meta.json")):
+        m = J(f)
+        ds = m["stream"].rsplit("_seed", 1)[0]
+        for v in ("L14xD3L", "D3L"):
+            e = m["views"][v]["q0.1"]
+            seeds.setdefault((m["part"], ds, v), []).append((e["seeds"], e["id_frac"], m["n_ood"]))
+    rows = []
+    for (part, ds, v), vals in seeds.items():
+        a = np.array(vals, float)
+        rows.append([part, ds, v, f"{a[:, 0].mean():,.0f}", f"{a[:, 2].mean():,.0f}", f"{a[:, 1].mean():.3f}"])
+    L += table(["part", "data set", "view", "seeds", "OOD images", "ID fraction among the seeds"], rows, ["l", "l", "l", "r", "r", "r"])
+    L += ["### 8.6 The streaming configuration on the same streams (Phase 10)", "",
+          "The online read-out of Phases 4-9 (entrance memory p_M x warm-start propagation p_LP, `METHOD.md` Section 2) with the Phase 10 views, "
+          "scored at arrival. It is superseded by the post-stream read-out above and is not part of the paper.", ""]
+    rows = [[lab] + three(p10, c) for lab, c in (("DINOv2 B/14 + L/14, x TINS", "B14+L14|SL|TINS"), ("DINOv2 L/14 + DINOv3 L/16, standalone", "L14+D3L|SL|none"),
+                                                   ("DINOv2 L/14 + DINOv3 L/16, x TINS", "L14+D3L|SL|TINS"))]
+    L += table(["streaming Salmon Ladder (Phase 10)", "near-OOD", "far-OOD", "Four-OOD"], rows)
+    return L
+
 # ------------------------------------------------------------------------------------------------ README block
 README = ROOT / "README.md"
 BEGIN, END = "<!-- BEGIN GENERATED: results -->", "<!-- END GENERATED: results -->"
@@ -589,7 +693,17 @@ def readme_block():
         o = s[f"{part}_TINS"]
         rows.append([f"OpenOOD v1.5 ImageNet-1K {lab}, with TINS", afd(o["base_only"]), afd(o["zeta"]), afd(o["frozen_v5"]), ""])
     e = summary["banks"]["U1"]
-    lines = table(["evaluation", "base detector alone", "x zeta", "x Salmon Ladder", "Salmon Ladder - zeta (FPR95, 95% interval)"], rows)
+    p10, p11 = agg1011(rows1011("phase10/results/p10_rows.csv")), agg1011(rows1011("phase11/results/final/p11_rows.csv"))
+
+    def three(src, c):
+        return [af(src[(c, g)]["AUROC"], src[(c, g)]["FPR95"]) for g in ("near", "far", "fourood")]
+
+    lines = ["Salmon Ladder (Phase 11, the paper): scores assigned after the whole stream has arrived, two views, 16 labelled images per class.", ""]
+    lines += table(["public benchmark streams", "OpenOOD near-OOD", "OpenOOD far-OOD", "Four-OOD"],
+                   [["TINS alone (measured on the same streams)"] + three(p10, "-|-|TINS"), ["Salmon Ladder, standalone"] + three(p11, "L14xD3L+D3L|T|none"),
+                    ["**Salmon Ladder x TINS**"] + three(p11, MAIN11)])
+    lines += ["The online variant of Phases 4-7 (entrance memory and warm-start propagation, scored at arrival), on the data that no selection had used:", ""]
+    lines += table(["evaluation", "base detector alone", "x zeta", "x online variant", "online variant - zeta (FPR95, 95% interval)"], rows)
     lines += [f"Registered endpoints on U1: E1 is the standalone row. E2 uses TINS and gives zeta its development-selected weight "
               f"(FPR95 {e['E2_FPR95']['A_mean']:.2f} against {e['E2_FPR95']['B_mean']:.2f}): {ci(e['E2_FPR95'])}. The rows with TINS above use weight 1 "
               "for both methods.", ""]
@@ -610,7 +724,7 @@ def build():
          "configuration: DINOv2 ViT-B/14 and ViT-L/14 CLS features, 16 labelled images per class (12 support + 4 calibration), entrance thresholds "
          "(0.3, 0.2, 0.1019), graph k = 10, gamma = 1, lambda = 0.9, 15 sweeps, warm start. Which evaluation was registered before it was run, and how "
          "often the public test split was used, is recorded in `docs/PREREGISTRATION.md`.", ""]
-    for section in (section_unused, section_test, section_intervention, section_operating, section_phase56, section_phase7, section_identities):
+    for section in (section_unused, section_test, section_intervention, section_operating, section_phase56, section_phase7, section_identities, section_phase1011):
         L += section()
     return "\n".join(L).rstrip() + "\n"
 
