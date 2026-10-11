@@ -1,4 +1,12 @@
-支持画像$\mathcal{S}$，参照画像$\mathcal{R}$，較正画像$\mathcal{C}$，テスト画像$\mathcal{T}$のすべてを節点とする．ビュー$v$ごとに，各節点からコサイン類似度の上位$k_g{=}10$の節点へ重み$a^v_{ij}=\max(f_v(x_i)^{\top}f_v(x_j),0)$の辺を張って$W_v=\max(A_v,A_v^{\top})$とし，それぞれの次数の中央値で割って足した$W=\sum_vW_v/\mathrm{med}_i\,\delta^v_i$を1つのグラフとする（次数$\delta_i=\sum_jW_{ij}$，$P=D^{-1}W$）．$\mathcal{R}$，$\mathcal{C}$，$\mathcal{T}$はすべてラベルのない節点として同じ扱いを受け，グラフは節点の名札に依らない．
+支持画像$\mathcal{S}$，参照画像$\mathcal{R}$，較正画像$\mathcal{C}$，テスト画像$\mathcal{T}$のすべてを節点とする．ビュー$v$ごとに，各節点からコサイン類似度の上位$k_g{=}10$の節点へ重み
+\begin{equation*}
+a^v_{ij}=\max\big(f_v(x_i)^{\top}f_v(x_j),\,0\big)
+\end{equation*}
+の辺を張って$W_v=\max(A_v,A_v^{\top})$とし，それぞれの次数の中央値で割って足した
+\begin{equation*}
+W=\sum_v\frac{W_v}{\mathrm{med}_i\,\delta^v_i}
+\end{equation*}
+を1つのグラフとする（$\delta^v_i$は$W_v$での節点$i$の次数）．次数を$\delta_i=\sum_jW_{ij}$，$D=\mathrm{diag}(\delta_i)$，遷移確率を$P=D^{-1}W$と書く．$\mathcal{R}$，$\mathcal{C}$，$\mathcal{T}$はすべてラベルのない節点として同じ扱いを受け，グラフは節点の名札に依らない．
 
 このグラフの上で，節点$i$に平均$1/\delta_i$の指数時間とどまり，確率$P_{ij}$で$j$へ跳ぶ連続時間のランダムウォーク$X_t$を考える．ランダムウォークはジャンプのたびに確率$1-\lambda$で，また単位時間あたり率$\gamma$で消える．支持画像と種$\hat{Q}$（\secref{seed19}）を吸収壁とし，
 \begin{equation}
@@ -10,15 +18,48 @@ h(x)&=\Pr\nolimits_x\big(\text{消える前に，}\hat{Q}\text{より先に}\mat
 \end{equation}
 を画像$x$のIDらしさとする（$\tau_A$は集合$A$に初めて着く時刻，$N$と$T$はそこまでのジャンプの回数と時間）．$h$は「支持画像に着く」「種に着く」「消える」という排反な3つの行き先のうち，支持画像が最初になる確率であり，3つの確率の和は1である（付録\ref{sec:app_h19}）．$\lambda{=}1,\gamma{=}0$では調和関数~\cite{zhu2003harmonic}やランダムウォーカーによる領域分割~\cite{grady2006rw}の到達確率，一般には部分吸収ランダムウォーク~\cite{wu2012parw}の一つの形である．
 
-\textbf{\TFaces（三つの表示）．}自由な節点を$F=V\setminus(\mathcal{S}\cup\hat{Q})$とすると，次の3つは同じ$h$を与える．(i) 確率\eqnref{h}．(ii) 連立一次方程式$(D+\gamma I-\lambda W)_{FF}\,h_F=\lambda W_{F\mathcal{S}}\mathbf{1}$（係数行列は対称正定値）．(iii) $f|_{\mathcal{S}}=1$，$f|_{\hat{Q}}=0$のもとで
+\appblock
+\textbf{\TFaces（三つの表示）．}自由な節点を$F=V\setminus(\mathcal{S}\cup\hat{Q})$とすると，次の3つは同じ$h$を与える．
+\begin{itemize}
+\item[(i)] 確率\eqnref{h}．
+\item[(ii)] 連立一次方程式（係数行列は対称正定値）
+\begin{equation*}
+(D+\gamma I-\lambda W)_{FF}\,h_F=\lambda W_{F\mathcal{S}}\mathbf{1}.
+\end{equation*}
+\item[(iii)] $f|_{\mathcal{S}}=1$，$f|_{\hat{Q}}=0$のもとで
 \begin{equation}
 \mathcal{E}(f)=\lambda\sum_{i<j}W_{ij}(f_i-f_j)^2+\sum_i\big((1-\lambda)\delta_i+\gamma\big)f_i^2
 \label{eq:energy}
 \end{equation}
-を最小にする$f$．これは辺に伝導度$\lambda W_{ij}$，各節点と接地の間に伝導度$(1-\lambda)\delta_i+\gamma$の漏れを置いた抵抗回路で，支持画像を電位1，種を接地したときの電位である~\cite{doyle1984}（証明は付録\ref{sec:app_h19}）．
+を最小にする$f$．
+\end{itemize}
+この$f$は，辺に伝導度$\lambda W_{ij}$，各節点と接地の間に伝導度$(1-\lambda)\delta_i+\gamma$の漏れを置いた抵抗回路で，支持画像を電位1，種を接地したときの電位である~\cite{doyle1984}（証明は付録\ref{sec:app_h19}）．
 
-\textbf{二つの代価．}\eqnref{energy}の漏れ$(1-\lambda)\delta_i$は次数に比例するので，これだけなら$W$を定数倍しても$h$は変わらず，$h$はグラフの形（$P$）だけで決まる．漏れ$\gamma$は絶対的で，次数の小さい疎な節点ほど流れの多くを失う．1回の訪問で消えずに次へ跳ぶ確率$\rho_x=\lambda\delta_x/(\delta_x+\gamma)$は疎な節点で小さい．$h(cW;\lambda,c\gamma)=h(W;\lambda,\gamma)$なので，$\gamma$は次数の中央値に対する比$g$で置き，$h$を重みの全体の尺度に依らない量にする．
+\appblock
+\textbf{二つの代価．}\eqnref{energy}の漏れ$(1-\lambda)\delta_i$は次数に比例するので，これだけなら$W$を定数倍しても$h$は変わらず，$h$はグラフの形（$P$）だけで決まる．漏れ$\gamma$は絶対的で，次数の小さい疎な節点ほど流れの多くを失う．1回の訪問で消えずに次へ跳ぶ確率
+\begin{equation*}
+\rho_x=\frac{\lambda\,\delta_x}{\delta_x+\gamma}
+\end{equation*}
+は疎な節点で小さい．重みの尺度については
+\begin{equation*}
+h(cW;\lambda,c\gamma)=h(W;\lambda,\gamma)\qquad(c>0)
+\end{equation*}
+なので，$\gamma$は次数の中央値に対する比$g$で置き，$h$を重みの全体の尺度に依らない量にする．
 
-\textbf{\TLimits（二つの代価の極限）．}(i) 種がなく，$\lambda=1-\mu\varepsilon$，$\gamma=\nu\varepsilon$（$\mu,\nu\ge0$）とすると，$\varepsilon\to0$で$(1-h(x))/\varepsilon\to\mu\,\mathbb{E}_x[N_{\mathcal{S}}]+\nu\,\mathbb{E}_x[T_{\mathcal{S}}]$である（$N_{\mathcal{S}}$，$T_{\mathcal{S}}$は支持画像に着くまでの歩数と時間）．(ii) 支持画像に置いた質量を伝播させる局所・大域一貫性~\cite{zhou2004lgc}の解$u=(1-\lambda)(I-\lambda D^{-1/2}WD^{-1/2})^{-1}\mathbf{1}_{\mathcal{S}}$は，連結なグラフで$\lambda\to1$のとき$\sqrt{\boldsymbol{\delta}}$に比例する量に収束する．
+\appblock
+\textbf{\TLimits（二つの代価の極限）．}
+\begin{itemize}
+\item[(i)] 種がなく，$\lambda=1-\mu\varepsilon$，$\gamma=\nu\varepsilon$（$\mu,\nu\ge0$）とすると，$\varepsilon\to0$で
+\begin{equation*}
+\frac{1-h(x)}{\varepsilon}\;\longrightarrow\;\mu\,\mathbb{E}_x[N_{\mathcal{S}}]+\nu\,\mathbb{E}_x[T_{\mathcal{S}}]
+\end{equation*}
+である（$N_{\mathcal{S}}$，$T_{\mathcal{S}}$は支持画像に着くまでの歩数と時間）．
+\item[(ii)] 支持画像に置いた質量を伝播させる局所・大域一貫性~\cite{zhou2004lgc}の解
+\begin{equation*}
+u=(1-\lambda)\big(I-\lambda D^{-1/2}WD^{-1/2}\big)^{-1}\mathbf{1}_{\mathcal{S}}
+\end{equation*}
+は，連結なグラフで$\lambda\to1$のとき$\sqrt{\boldsymbol{\delta}}$に比例する量に収束する．
+\end{itemize}
 
+\appblock
 \textbf{形と密度．}(i)から，代価の小さい極限で種のない$h$の順位は，支持画像に着くまでの期待費用「1歩あたり$\mu$，時間あたり$\nu$」で決まる．ランダムウォークは節点$i$に平均$1/\delta_i$とどまるので，時間は経路の疎さを，歩数はたどる近傍の段数を測る．支持画像と疎にしかつながらない未知の塊（near-OOD）は形の現象，IDから離れた疎な領域（far-OOD）は密度の現象であり，二つの代価が一本のランダムウォークの上でそれぞれを測る（\figref{toy}）．支持画像を吸収壁にしない伝播(ii)は，ランダムウォークが支持画像を通り抜けて定常分布に近づくため次数だけの量に退化するが，$h$は支持画像に着いた時点で止まる．

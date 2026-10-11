@@ -131,9 +131,17 @@ OOD検知は，学習時のクラス（ID）以外の入力を見分ける問題
 \clearpage
 \onecolumn
 \appendix
-% 付録は1段組：幅の広い図表も通常の図表と同じく本文幅のキャプションにする
+\makeatletter
+\@secpenalty=0 % 付録では節の前で早めに改ページしない
+\raggedbottom
+\predisplaypenalty=10000 % 数式の直前で改ページしない
+% 付録は1段組：図表は浮動させず，本文の流れのその位置に置く（入りきらなければ次のページへ送り，キャプションは本文幅）
+\renewenvironment{table}[1][]{\par\addvspace{\medskipamount}\noindent\begin{minipage}{\linewidth}\def\@captype{table}\capwidth\hsize\ecapwidth\hsize\abovecaptionskip\z@\belowcaptionskip1mm\centering}{\end{minipage}\par\addvspace{\medskipamount}}
+\renewenvironment{figure}[1][]{\par\addvspace{\medskipamount}\noindent\begin{minipage}{\linewidth}\def\@captype{figure}\capwidth\hsize\ecapwidth\hsize\abovecaptionskip1mm\belowcaptionskip\z@\centering}{\end{minipage}\par\addvspace{\medskipamount}}
 \expandafter\let\csname table*\endcsname\table \expandafter\let\csname endtable*\endcsname\endtable
 \expandafter\let\csname figure*\endcsname\figure \expandafter\let\csname endfigure*\endcsname\endfigure
+\newcommand\appblock{\par\ifdim\dimexpr\pagegoal-\pagetotal\relax<5\baselineskip\newpage\else\medskip\fi} % 見出しだけがページの下に残らないように
+\makeatother
 \input{sections/appendix19.tex}
 \input{sections/app_h16_19.tex}
 \input{sections/app_h19.tex}

@@ -1,13 +1,15 @@
 # Paper
 
-`Salmon_Ladder.pdf` is the paper in Japanese, version 20, titled "Salmon Ladder: Conformal Label Propagation for OOD
+`Salmon_Ladder.pdf` is the paper in Japanese, version 21, titled "Salmon Ladder: Conformal Label Propagation for OOD
 Detection" (main text and references on nine pages in two columns, appendix in one column after `\clearpage`): Salmon
 Ladder as conformal label propagation for transductive OOD detection with self-labelled seeds, evaluated on OpenOOD v1.5
 ImageNet-1K, Four-OOD, ImageNet-200 and CIFAR-100. Version 19 kept the main text of version 18 and added, in Appendix
 A.13–A.14, the registered Phase 16 variant (one quantity: the probability that a random walk reaches a support image before
 a self-labelled seed) with its theorems and all its registered results, and the disclosed deviation from its registered
-adoption rule (`experiments/phase16/prereg_p16_amendments.json`). Version 20 shortens the title and sets the appendix in
-one column; the body text and every number are those of version 19.
+adoption rule (`experiments/phase16/prereg_p16_amendments.json`). Version 20 shortened the title and set the appendix in
+one column. Version 21 typesets the appendix for reading: the formulas of the proofs and theorems are displayed and the
+derivations are written out step by step, and tables and figures stay where the text refers to them. The main text and
+every number are those of version 19.
 
 `src/` holds the LaTeX source (MIRU2025 class), the data files every number is generated from (`src/data/`), the
 generators (`make_p18.py`, `make_fig18*.py`, `make_p19.py`, `make_fig19toy.py`, `order_refs19.py`) and the checker

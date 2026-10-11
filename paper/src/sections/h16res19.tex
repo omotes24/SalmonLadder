@@ -1,6 +1,6 @@
 \textbf{登録と判定．}開発用分割dev1で\NHsExplNCfg{}通りの構成を探索した後，構成を1つに固定し（$\lambda{=}0.95$，$g{=}1/16$，ビューの重みを次数の中央値で割った和のグラフ，クラスあたり支持12・参照2・較正2，$q{=}0.2$，折なし），ベース検出器との積の形を選ぶdev1の規則，dev2での3つの仮説，採否の規則を登録してから実行した（付録\ref{sec:app_hyp}）．dev1の規則は積を$s_0\cdot p$に決めた（$s_0\cdot s$は$\times$TINSのfar-OODが\NHsDevOneTinsFarS\%で$\sigma$の\NHsDevOneTinsSigFar\%+0.5を超える）．dev2ではH1（near-OODの\FPR{}の差が+0.5以下）が\NHsDevTwoNearD{}，H2（far-OOD）が\NHsDevTwoFarD{}，H3（$p$の誤警報率が$\alpha{=}0.05$で0.06以下，$0.2$で0.21以下）が\NHsDevTwoFprFive{}／\NHsDevTwoFprTwenty{}とすべて成立し，登録した規則では$h$を主構成にすることになった．ただし\AUC{}は$\sigma$より低かった（\NHsDevTwoNearDAuc{} [\NHsDevTwoNearDAucLo, \NHsDevTwoNearDAucHi]，\NHsDevTwoFarDAuc{} [\NHsDevTwoFarDAucLo, \NHsDevTwoFarDAucHi]ポイント）．
 
-\begin{table*}[t]
+\begin{table*}[htbp]
 \centering
 \caption{一つの量$h$（登録した構成）と本文の$\sigma$（単体，ベンチマークは6通りの抽出の平均，dev2は5通り；差は$h-\sigma$，抽出を単位とする対応のある95\% $t$区間）．$\times$TINSの$h$はdev1の規則で選んだ$s_0\cdot p$．}
 \label{tab:h16}
