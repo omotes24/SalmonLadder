@@ -1,5 +1,5 @@
 #!/bin/sh
-# MIRU2025 形式のビルド（pLaTeX + dvipdfmx）．main.tex = preamble_p18.tex + body_p18.tex
+# MIRU2025 形式のビルド（pLaTeX + dvipdfmx）．main.tex = preamble_p19.tex + body_p19.tex
 set -e
 cd "$(dirname "$0")"
 cat preamble_p19.tex body_p19.tex > main.tex

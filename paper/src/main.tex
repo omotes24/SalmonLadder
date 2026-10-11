@@ -1,4 +1,4 @@
-% Salmon Ladder: Catching Repeated Unknowns ― 公開ベンチマーク版 v17（MIRU2025 形式，ページ制限なし）
+% Salmon Ladder: Conformal Label Propagation for OOD Detection ― v20（MIRU2025 形式；本文と参考文献は9ページ，付録は1段組）
 % ビルド：pLaTeX + dvipdfmx（同梱の latexmkrc．Overleaf では Compiler を「LaTeX」にする）．
 % 表は make_p17.py が data/ から生成する．\sota は列の最良値（星印），\cellcolor{upd}＋太字は比較手法のすべてを上回る値，\gap は最良の比較手法との差．
 \documentclass[MIRU,submit]{miru2025j}
@@ -41,7 +41,7 @@
 \interfootnotelinepenalty=10000  % 脚注をページ間で分割しない
 
 \begin{document}
-\title{\titleicon Salmon Ladder: Conformal Label Propagation for\\ Transductive OOD Detection with Self-Labelled Seeds}
+\title{\titleicon Salmon Ladder:\\ Conformal Label Propagation for OOD Detection}
 \affiliate{keio}{慶應義塾大学　総合政策学部3年\\中澤・大越研究室d-hacks　72402035}
 \affiliate{keio2}{慶應義塾大学院　政策・メディア研究科}
 \author{表 紘太朗}{Kotaro Omote}{keio}
@@ -129,9 +129,14 @@ OOD検知は，学習時のクラス（ID）以外の入力を見分ける問題
 {\makeatletter\@secpenalty=0 \makeatother\input{sections/refs19.tex}}
 
 \clearpage
+\onecolumn
 \appendix
+% 付録は1段組：幅の広い図表も通常の図表と同じく本文幅のキャプションにする
+\expandafter\let\csname table*\endcsname\table \expandafter\let\csname endtable*\endcsname\endtable
+\expandafter\let\csname figure*\endcsname\figure \expandafter\let\csname endfigure*\endcsname\endfigure
 \input{sections/appendix19.tex}
 \input{sections/app_h16_19.tex}
 \input{sections/app_h19.tex}
+\par\ifdim\dimexpr\pagegoal-\pagetotal\relax<12\baselineskip\newpage\fi % 付録の参考文献を途中で改ページしない
 \input{sections/refs_app19.tex}
 \end{document}

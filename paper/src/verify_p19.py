@@ -326,7 +326,7 @@ assert "$n_b=|\\mathcal{C}_b|=2{,}000$" in text
 # --- vocabulary and hygiene
 assert "$k{=}10$" in text and "kNN" in text
 title = re.search(r"\\title\{(.*?)\}", texts["preamble_p19.tex"], re.S).group(1).replace("\\titleicon", "").replace("\\\\", " ")
-assert len(title.split()) <= 14 and title.startswith(" Salmon Ladder: Conformal Label Propagation") and "Self-Labelled Seeds" in title, title
+assert " ".join(title.split()) == "Salmon Ladder: Conformal Label Propagation for OOD Detection", title
 for word in ("前版", "pM", "pLP", "オンライン", "メモリ", "確かに未知", "確かな未知", "DisCoNet", "ストリーム", "15回", "再来", "Recurring", "酔歩", "魚道", "見立て", "名の由来", "段構え"):
     assert word not in text.replace("\\pP", "").replace("\\pN", ""), word
 for f, tx in texts.items():
@@ -338,6 +338,7 @@ log = (HERE / "main.log").read_text(errors="ignore")
 assert not re.search(r"^! ", log, re.M) and "Overfull" not in log, "build log has errors or overfull boxes"
 assert "undefined" not in log.replace("Font shape `JY1/mc/bx/it' undefined", "").replace("Font shape `JT1/mc/b/it' undefined", "").replace("Font shape `JY1/mc/b/it' undefined", ""), "undefined references"
 # main text (incl. references) within 9 pages: the appendix starts on page 10
+assert "\\clearpage\n\\onecolumn\n\\appendix\n" in texts["body_p19.tex"], "the appendix must be one column"
 import subprocess
 pages = subprocess.run(["pdftotext", "-layout", str(HERE / "main.pdf"), "-"], capture_output=True, text=True).stdout.split("\f")
 last_ref = re.findall(r"\\bibitem\{[^}]+\} ([^:]+):", (HERE / "sections" / "refs19.tex").read_text())[-1].replace("~", " ")

@@ -76,9 +76,14 @@ OOD検知は，学習時のクラス（ID）以外の入力を見分ける問題
 {\makeatletter\@secpenalty=0 \makeatother\input{sections/refs19.tex}}
 
 \clearpage
+\onecolumn
 \appendix
+% 付録は1段組：幅の広い図表も通常の図表と同じく本文幅のキャプションにする
+\expandafter\let\csname table*\endcsname\table \expandafter\let\csname endtable*\endcsname\endtable
+\expandafter\let\csname figure*\endcsname\figure \expandafter\let\csname endfigure*\endcsname\endfigure
 \input{sections/appendix19.tex}
 \input{sections/app_h16_19.tex}
 \input{sections/app_h19.tex}
+\par\ifdim\dimexpr\pagegoal-\pagetotal\relax<12\baselineskip\newpage\fi % 付録の参考文献を途中で改ページしない
 \input{sections/refs_app19.tex}
 \end{document}
