@@ -37,3 +37,5 @@
 2026-10-11T06:02:29Z ana start
 2026-10-11T06:02:38Z ana done
 2026-10-11T06:02:38Z P15 DONE steps=smoke,cap_dev,cap_test,cap_in200,cap_cifar,cap_rec,kg,views,ana
+2026-10-11T09:54:52Z F cor15 launched (descriptive: Corollary 1 bound on the grid; not registered, no selection)
+2026-10-11T10:08:22Z F cor15 re-run with the exact escape probability pi (descriptive)

@@ -982,6 +982,33 @@ def main():
                 e = CD[dev].get(f"xfit|{rule}|{QK}|pp|pooled|TINS", {}).get("near")
                 if e:
                     N[f"capdev_{dev}_{rule}_tins_near_FPR95"] = e["FPR95"]
+    # ------------------------------------------------------------------ Phase 15 (f): the Corollary-1 check on the grid (descriptive)
+    CORP = HERE / "data" / "p15_cor_summary.json"
+    if CORP.exists():
+        COR = json.load(open(CORP))
+        N["cor_n_rows"], N["cor_max_ratio_pi"], N["cor_max_excess_pi"] = COR["n_rows"], COR["max_ratio_pi"], COR["max_excess_pi"]
+        N["cor_all_valid"] = int(COR["all_valid_psi"] and COR["all_valid_pi"] and COR["all_pi_le_psi"])
+        N["cor_n_clusters_total"] = sum(v["n_clusters"] for v in COR["cells"].values())
+        for key, e in COR["cells"].items():
+            ds, r, kg, v = key.split("|")
+            if v != "D3L":
+                continue
+            tag = f"cor_{ds}_{r}_{kg}"
+            N[f"{tag}_pi_med"], N[f"{tag}_ebar_med"], N[f"{tag}_p_act_med"], N[f"{tag}_p_bound_pi_med"] = e["pi_med"], e["ebar_med"], e["p_act_med"], e["p_bound_pi_med"]
+            N[f"{tag}_frac_act_le005_pct"], N[f"{tag}_frac_bound_pi_le005_pct"], N[f"{tag}_frac_bound_psi_le005_pct"] = 100 * e["frac_act_le005"], 100 * e["frac_bound_pi_le005"], 100 * e["frac_bound_psi_le005"]
+            N[f"{tag}_n_boundary_med"] = e["n_boundary_med"]
+        rows = []
+        for ds, lab, rs in (("ninco", "NINCO", (10, 20, 30)), ("ssb_hard", "SSB-hard", (10, 20, 50))):
+            for r in rs:
+                cells = []
+                for kg in (3, 5, 10, 20, 40):
+                    e = COR["cells"][f"{ds}|r{r}|kg{kg}|D3L"]
+                    cells.append(f"{e['pi_med']:.2f} & {100 * e['frac_act_le005']:.0f} & {100 * e['frac_bound_pi_le005']:.0f}")
+                rows.append(f"{lab} & {r} & " + " & ".join(cells) + " \\\\")
+        tcor = ("{\\fontsize{6.3pt}{7.4pt}\\selectfont\\renewcommand{\\arraystretch}{1.0}%\n\\setlength{\\tabcolsep}{1.6pt}\\begin{tabular}{@{}lr|rrr|rrr|rrr|rrr|rrr@{}}\n\\hline\n"
+                "\\rule[-2.0pt]{0pt}{8.2pt} & & \\multicolumn{3}{c|}{$k_g{=}3$} & \\multicolumn{3}{c|}{$k_g{=}5$} & \\multicolumn{3}{c|}{$k_g{=}10$} & \\multicolumn{3}{c|}{$k_g{=}20$} & \\multicolumn{3}{c}{$k_g{=}40$} \\\\\n"
+                "\\rule[-2.0pt]{0pt}{8.2pt} & $r$ & $\\pi$ & 実 & 系 & $\\pi$ & 実 & 系 & $\\pi$ & 実 & 系 & $\\pi$ & 実 & 系 & $\\pi$ & 実 & 系 \\\\\n\\hline\n" + "\n".join(rows) + TAIL)
+        (sec / "t18_cor.tex").write_text(tcor)
     # ------------------------------------------------------------------ helpers: absolute differences, percent ratios
     for k in list(N):
         if isinstance(N[k], float) and (k.endswith(("_dFPR95_vs_lp", "_dFPR95_vs_storey", "_dFPR95_vs_lp_lo", "_dFPR95_vs_lp_hi", "_dFPR95_vs_storey_lo", "_dFPR95_vs_storey_hi")) or "_minus_lp" in k or "_minus_raw_" in k) and f"{k}_abs" not in N:
@@ -999,6 +1026,12 @@ def main():
         if isinstance(v, float):
             if any(k.startswith(p) for p in ("vcal_", "vtrain_")) and not k.endswith(("_AUROC", "_FPR95", "_n", "_pi0")):
                 dec = 3                                                           # realised rates: three decimals
+            elif k == "cor_max_ratio_pi":
+                dec = 7
+            elif k.startswith("cor_") and k.endswith("_pct"):
+                dec = 0
+            elif k.startswith("cor_") and (k.endswith("_p_act_med") or k.endswith("_p_bound_pi_med")):
+                dec = 3
             elif k.endswith("_idfrac_pct") or k.endswith("_above_thr95_pct"):
                 dec = 1
             elif "fpr005" in k or "bhfdp" in k or "idfrac" in k or "mean_cos" in k or "max_cos" in k or k.endswith("_recall") or "_val_" in k and k.endswith("_max"):

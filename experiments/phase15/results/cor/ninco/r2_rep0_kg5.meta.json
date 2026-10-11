@@ -1,0 +1,20 @@
+{
+ "ds": "ninco",
+ "c": 64,
+ "r": 2,
+ "rep": 0,
+ "kg": 5,
+ "n_id": 45000,
+ "n_ood": 128,
+ "n_cal": 4000,
+ "lambda": 0.9,
+ "views": [
+  "L14",
+  "D3L"
+ ],
+ "seconds": 0.2,
+ "utc": "2026-10-11T10:10:36Z",
+ "all_bounds_valid": true,
+ "all_pi_bounds_valid": true,
+ "all_pi_le_psi": true
+}

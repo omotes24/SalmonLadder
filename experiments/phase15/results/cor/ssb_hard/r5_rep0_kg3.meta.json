@@ -1,0 +1,20 @@
+{
+ "ds": "ssb_hard",
+ "c": 980,
+ "r": 5,
+ "rep": 0,
+ "kg": 3,
+ "n_id": 45000,
+ "n_ood": 4900,
+ "n_cal": 4000,
+ "lambda": 0.9,
+ "views": [
+  "L14",
+  "D3L"
+ ],
+ "seconds": 1.7,
+ "utc": "2026-10-11T10:11:00Z",
+ "all_bounds_valid": true,
+ "all_pi_bounds_valid": true,
+ "all_pi_le_psi": true
+}

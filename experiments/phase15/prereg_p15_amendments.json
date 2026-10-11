@@ -19,5 +19,14 @@
   "H4": "first half refuted (kNN over all training images, k = 50, does not beat the 16-label static read-out on ImageNet-200 (28.04 vs 26.72 near, 4.40 vs 3.71 far) nor on CIFAR-100 far-OOD (32.15 vs 29.19); it does on CIFAR-100 near-OOD (16.35 vs 16.49)); second half confirmed (sigma 9.07 / p+ only 7.45 vs kNN-all 28.04 near-OOD FPR95 on ImageNet-200)",
   "H5": "first half refuted (the r at which sigma first beats the static read-out does not decrease with smaller k_g: NINCO r = 10 for k_g in {3, 5, 10, 20} and r = 1 for k_g = 40; SSB-hard r = 2 for k_g <= 10 and r = 1 for k_g >= 20); second half partially confirmed (best at the largest r: k_g = 10 on NINCO, k_g = 5 on SSB-hard with k_g = 10 within 0.3)",
   "H6": "first half refuted (centred CLIP static read-out: near 91.41, far 78.46 FPR95); second half confirmed for the static read-out (DINO views move at most 8.97 points) and not for the kNN rank (DINO v1 far-OOD moves 10.92 points)"
- }
+ },
+ "post_hoc_descriptive_additions": [
+  {
+   "name": "cor15 (Corollary 1 check on the recurrence grid)",
+   "added_utc": "2026-10-11T10:12Z",
+   "reason": "after the review of v18: the paper now states Corollary 1 (escape probability of the stopped random walk bounds the calibrated rank); cor15.py measures the bound on repetition 0 of the recurrence grid (NINCO c = 64, SSB-hard c = 980, all k_g, all r, views L14 and D3L, calibration set = all 4,000 images, no cross-fitting)",
+   "selection": "none; a deterministic computation of a proven bound and of the actual p+; reported in the appendix as descriptive and unregistered",
+   "outcome": "the bound holds in all 62,640 (class x view x cell) rows (max u_i/b_i = 1.0000005, equality cases when |dQ| = 1); informative only for sparse graphs and many recurrences (NINCO r = 30: 50 % of unknown images provably at p+ <= 0.05 with k_g = 3, 0 % with k_g = 40; actual 88-93 %); the escape probability grows with k_g at fixed r"
+  }
+ ]
 }

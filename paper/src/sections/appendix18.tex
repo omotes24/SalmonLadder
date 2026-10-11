@@ -4,6 +4,8 @@
 
 \textbf{命題4．}$\sigma$を折$b$の節点の上の関数とみる．それを定めるのは，支持画像，折$\bar b$の節点とその較正・テストの区別，および「$\mathcal{C}_b\cup\mathcal{T}_b$という節点の集合」だけである．グラフと$\mathbf{u}^{+}$は節点の名札に依らず（\secref{graph}），$\hat{Q}_{\bar b}$と$\mathbf{u}^{-}_{\bar b}$は折$\bar b$の画像と$\mathbf{u}^{+}$から決まり，参照する較正画像は$\mathcal{C}_{\bar b}$である．したがって$\sigma$は，$\mathcal{C}_b\cup\mathcal{T}_b$の中でどの節点を較正画像と呼ぶかを入れ替えても変わらない．これはAdaDetectの条件(8)（学習標本を支持画像と折$\bar b$の全節点，帰無の較正標本を$\mathcal{C}_b$，テスト標本を$\mathcal{T}_b$としたもの．同論文の証明は学習標本を所与とした置換の議論なので，その中身は問わない）であり，\eqnref{pfin}の$\pfin$は同論文の経験$p$値(10)である．よって定理3.3から(i)と(ii)のPRDS・超一様性が従い，系3.5と系3.7がFDRの上界を与える．$\square$
 
+\textbf{系1．}\eqnref{walk}のランダムウォーク（各ステップで確率$1-\lambda$で止まる）で，$Q$から初めて外へ出る時刻を$\tau$とする．$Q\cap Y=\emptyset$なので$X_T\in Y$には$\tau\le T$が要り，止まる時刻$T$は幾何分布で無記憶だから，強マルコフ性より$u_i/\sqrt{\delta_i}=\mathbb{E}_i[\mathbf{1}[\tau\le T]\,u_{X_\tau}/\sqrt{\delta_{X_\tau}}]\le\Pr_i(\tau\le T)\max_{j\in\partial Q}u_j/\sqrt{\delta_j}$（$X_\tau\in\partial Q$）．$\pi_i=\Pr_i(\tau\le T)$は最初の1歩で分けると$\pi_i=\lambda(e_i+\sum_{j\in Q}P_{ij}\pi_j)$，すなわち$\boldsymbol{\pi}=\lambda(I-\lambda P_{QQ})^{-1}\mathbf{e}$を満たす（$\lambda P_{QQ}$のスペクトル半径は1未満）．$\pi^{*}=\max_{x\in Q}\pi_x$は$e_x\le\bar e_Q$から$\pi^{*}\le\lambda(\bar e_Q+(1-\bar e_Q)\pi^{*})$，すなわち$\pi^{*}\le\psi(\bar e_Q)$を満たす．$u^{+}_{x'}\le u^{+}_i$なら$u^{+}_{x'}\le b_i$なので，\eqnref{plp}の数え上げから第2式が従い，$\bar e_Q=0$なら$\boldsymbol{\pi}=\mathbf{0}$，$u^{+}_i=0$である．$\square$
+
 \textbf{命題2．}$i\in Q$では$y_i=0$なので$u_i=\lambda\sum_jW_{ij}u_j/\sqrt{\delta_i\delta_j}$．両辺に$\sqrt{\delta_i}$を掛けて$Q$で足すと，$Q$の内側の辺からの寄与は$\sum_{j\in Q}(u_j/\sqrt{\delta_j})\sum_{i\in Q}W_{ij}\le\sum_{j\in Q}\sqrt{\delta_j}u_j$で抑えられ，外側の辺からの寄与は$w(Q,\bar{Q})\max_{j}u_j/\sqrt{\delta_j}$で抑えられる．\eqnref{walk}と同じランダムウォークの表現より$u_j/\sqrt{\delta_j}\le1/\min_{s\in Y}\sqrt{\delta_s}$なので，移項して\eqnref{cond}を得る．$\square$
 
 \section{最終読み出しの保証の実測と種に混じるIDの割合}
@@ -167,6 +169,16 @@ CLIP ViT-B/16はベース検出器TINSが使う画像エンコーダと同じ重
 \label{sec:app_kg}
 \figref{kg}に，同じ格子のNINCO（$c{=}64$）とSSB-hard（$c{=}980$）で，グラフの近傍数を$k_g\in\{3,5,10,20,40\}$と変えた値を示す（単体，本稿の抽出1通り，3回の平均；1つのテスト集合につき上位40個の近傍リストを1回作り，全$k_g$を同じリストで評価）．\input{sections/kg18.tex}
 
+\textbf{系1の実測．}同じ格子（1回目の反復，較正画像は4,000枚全部，交差適合なし，DINOv3 L/16のビュー）の各未知クラス$Q$について，$\pi_i$，\eqnref{esc}の$b_i$，実際の$\pP$を計算した（\tabref{cor}；登録外の記述的な計算で，何も選ばない）．$u_i\le b_i$はクラス$\times$ビュー$\times$条件の全\NCorNRows{}組で成り立つ（$u_i/b_i$の最大は\NCorMaxRatioPi{}で，$|\partial Q|=1$のときの等号が数値誤差の範囲で表れたもの）．NINCO 64クラス$\times$30枚では，逃げる確率$\pi$の中央値は$k_g{=}3$の\NCorNincoRThreeZeroKgThreePiMed{}から$k_g{=}40$の\NCorNincoRThreeZeroKgFourZeroPiMed{}へ増え，系1だけから$\pP\le0.05$が言える未知の割合は\NCorNincoRThreeZeroKgThreeFracBoundPiLeZeroZeroFivePct\%から\NCorNincoRThreeZeroKgFourZeroFracBoundPiLeZeroZeroFivePct\%に下がる（実際に$\pP\le0.05$の割合は\NCorNincoRThreeZeroKgThreeFracActLeZeroZeroFivePct{}--\NCorNincoRThreeZeroKgOneZeroFracActLeZeroZeroFivePct\%）．SSB-hardでは$\pi$の中央値が\NCorSsbHardRFiveZeroKgThreePiMed{}以上で（兄弟クラスの未知はID側へ辺を多く張る），系1は多くを言わない．系1が効くのは疎なグラフで未知が多数回再出現する条件であり，$r\le2$（$\bar e_Q=1$）では何も言わない．$k_g$とともに$\pi$が増える向きは，密なグラフが再出現の多い側で不利になる実測と一致する．緩さの源は，出口の節点の質量を最大で押さえることと，閉じた形$\psi(\bar e_Q)$がクラスで最も漏れる節点で決まることである（$\psi$で$\pP\le0.05$が言える割合は$k_g{=}3$，$r{=}30$で\NCorNincoRThreeZeroKgThreeFracBoundPsiLeZeroZeroFivePct\%）．
+
+\begin{table*}[t]
+\centering
+\caption{系1の実測（1回目の反復，DINOv3 L/16，較正画像4,000枚）．$\pi$は逃げる確率の中央値（クラスの中央値のさらに中央値），「実」は実際に$\pP\le0.05$となった未知の割合（\%），「系」は系1の上界だけから$\pP\le0.05$が言える割合（\%）．}
+\label{tab:cor}
+\vspace{1.5mm}
+\input{sections/t18_cor.tex}
+\end{table*}
+
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig18_kg.pdf}
@@ -188,7 +200,7 @@ CLIP ViT-B/16はベース検出器TINSが使う画像エンコーダと同じ重
 
 \section{追加実験の事前登録と仮説の判定}
 \label{sec:app_hyp}
-\secref{cap}の上限付きの種，\secref{in200}の全学習画像・ゼロショットの基線，付録\ref{sec:app_kg}の$k_g$の格子，付録\ref{sec:app_views}の中心化は，1つの登録文書（公開リポジトリの\texttt{experiments/phase15/prereg\_p15.json}，SHA-256 \texttt{83ea4061}$\cdots$）に計算の内容・報告の形・6つの仮説を記してから実行した．登録文書は評価の実行前に公開リポジトリのブランチ\texttt{phase12-15-registrations}（コミット\texttt{8ef9c8d}）にコミットし，その時刻が第三者の確認できる時刻である（学習画像の特徴抽出だけはコミット前に始めた）．構成の選択は行わず（$\tau$と$q$は固定，本稿の主構成は変えない），登録からの逸脱はない．判定は次のとおりである．
+\secref{cap}の上限付きの種，\secref{in200}の全学習画像・ゼロショットの基線，付録\ref{sec:app_kg}の$k_g$の格子，付録\ref{sec:app_views}の中心化は，1つの登録文書（公開リポジトリの\texttt{experiments/phase15/prereg\_p15.json}，SHA-256 \texttt{83ea4061}$\cdots$）に計算の内容・報告の形・6つの仮説を記してから実行した．登録文書は評価の実行前に公開リポジトリのブランチ\texttt{phase12-15-registrations}（コミット\texttt{8ef9c8d}）にコミットし，その時刻が第三者の確認できる時刻である（学習画像の特徴抽出だけはコミット前に始めた）．構成の選択は行わず（$\tau$と$q$は固定，本稿の主構成は変えない），登録からの逸脱はない．系1の実測（付録\ref{sec:app_kg}）は査読後に加えた登録外の記述的な計算で，選択を含まない．判定は次のとおりである．
 \textbf{H1}（上限は害を消す：CIFAR-100 far-OODとImageNet-200 near-OODで上限付きの規則は$\pP$だけの+0.5ポイント以内）：成立（+\NCifarStoreycFarDfprVsLp{}，\NInTwoZeroZeroStoreycNearDfprVsLp{}ポイント）．
 \textbf{H2}（上限はImageNet-1K near-OODで上限なしの0.5ポイント以内）：成立（単体\NCapStoreycAloneNearDfprVsStorey{}，$\times$TINS +\NCapStoreycNearDfprVsStorey{}ポイント）．
 \textbf{H3}（格子：混入率30\%以上で$\pP$だけより1ポイント以上悪くならず，$r\ge10$・混入率30\%未満で上限なしの利得を1ポイント以内に保つ）：成立（付録\ref{sec:app_cap}）．

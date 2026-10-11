@@ -303,6 +303,16 @@ assert m["kg_ninco_best_kg_rmax"] == 10 and m["kg_ssb_hard_best_kg_rmax"] == 5 a
 assert m["kg_ninco_kg40_cross_r"] == 1 and m["kg_ninco_kg3_cross_r"] == m["kg_ninco_kg10_cross_r"] == 10 and m["kg_ssb_hard_kg3_cross_r"] == 2 and m["kg_ssb_hard_kg20_cross_r"] == 1     # H5 first half refuted
 assert m["kg_ninco_kg3_r1_main_FPR95"] == max(m[f"kg_ninco_kg{k}_r1_main_FPR95"] for k in (3, 5, 10, 20, 40))
 assert "否定され" in texts["sections/kgmain18.tex"] and "$k_g{=}10$は登録どおり変えない" in text
+# --- Corollary 1 check (descriptive; data/p15_cor_summary.json)
+COR = json.load(open(HERE / "data" / "p15_cor_summary.json"))
+assert COR["all_valid_psi"] and COR["all_valid_pi"] and COR["all_pi_le_psi"] and COR["max_excess_pi"] < 1e-5 and m["cor_n_rows"] == COR["n_rows"]
+c3, c40 = COR["cells"]["ninco|r30|kg3|D3L"], COR["cells"]["ninco|r30|kg40|D3L"]
+assert c3["pi_med"] < c40["pi_med"] and c3["frac_bound_pi_le005"] > 0.4 and c40["frac_bound_pi_le005"] < 0.01 and c3["frac_act_le005"] > 0.8
+assert all(COR["cells"][f"ninco|r30|kg{k}|D3L"]["pi_med"] < COR["cells"][f"ninco|r30|kg{k2}|D3L"]["pi_med"] for k, k2 in ((3, 5), (5, 10), (10, 20), (20, 40)))   # pi grows with k_g
+assert min(COR["cells"][f"ssb_hard|r50|kg{k}|D3L"]["pi_med"] for k in (3, 5, 10, 20, 40)) == COR["cells"]["ssb_hard|r50|kg3|D3L"]["pi_med"] > 0.8
+assert all(abs(COR["cells"][f"{ds}|r{r}|kg{k}|D3L"]["ebar_med"] - 1.0) < 1e-9 for ds in ("ninco", "ssb_hard") for r in (1,) for k in (3, 5, 10, 20, 40))   # r = 1: ebar = 1
+assert "登録外の記述的な計算" in text and "$r\\ge k_g+1$で尽きる（$r=k_g$では1本残る）" in text
+assert "命題4が及ぶのは単体の$\\pfin$まで" in text and "緊張から来る構造" in text and "系1" in texts["sections/method18.tex"]
 # --- Phase 15 registration statements
 assert "83ea4061" in text and "8ef9c8d" in text and "登録からの逸脱はない" in text
 for h in ("H1", "H2", "H3", "H4", "H5", "H6"):
