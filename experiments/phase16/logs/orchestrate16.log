@@ -1,0 +1,16 @@
+2026-10-11T12:56:27Z P16 START gpus=0 1 2 3 steps=dev1,dev2,test,in200,cifar,rec,ana prereg_sha256=2e16ae0c8dc4c3fa
+2026-10-11T12:56:27Z dev1 start
+2026-10-11T12:56:49Z dev1 done: base combination "chosen": "h16|p"
+2026-10-11T12:56:49Z dev2 start
+2026-10-11T12:57:11Z dev2 done: adopt="adopt_h16_as_main": true
+2026-10-11T12:57:11Z test start
+2026-10-11T13:00:41Z test done
+2026-10-11T13:00:41Z in200 start
+2026-10-11T13:01:18Z in200 done
+2026-10-11T13:01:18Z cifar start
+2026-10-11T13:01:47Z cifar done
+2026-10-11T13:01:47Z rec start
+2026-10-11T13:05:16Z rec done
+2026-10-11T13:05:16Z ana start
+2026-10-11T13:05:19Z ana done
+2026-10-11T13:05:19Z P16 DONE steps=dev1,dev2,test,in200,cifar,rec,ana

@@ -1,0 +1,13 @@
+ラベル付き画像をクラスごとに支持画像12枚，参照画像2枚，較正画像2枚に，画像に依らない位置で分ける．(1) 種のない$h$を$h^{(0)}$とし，プール$\mathcal{U}=\mathcal{C}\cup\mathcal{T}$の各画像を参照画像の中での順位$p_{\mathcal{R}}(u)=(1+|\{r\in\mathcal{R}:h^{(0)}(r)\le h^{(0)}(u)\}|)/(|\mathcal{R}|+1)$で読む．(2) $p_{\mathcal{R}}$にStorey型のBH法~\cite{benjamini1995bh,storey2002}（水準$q{=}0.2$）をかけ，棄却された画像を種$\hat{Q}\subset\mathcal{U}$とする（較正画像も候補に入る）．(3) 種を吸収壁にした$h$を解き，すべてのラベルなし画像を一歩先読みの値
+\begin{equation}
+s(x)=\rho_x\,(Ph)(x)=\frac{\lambda(Wh)(x)}{\delta_x+\gamma}
+\label{eq:s}
+\end{equation}
+で採点する．種でない画像では$s=h$，種では「一歩跳んだ後に種より先に支持画像に着く確率」（自分に戻れば種に着いたとみなす）である．(4) $s$の較正画像の中での順位
+\begin{equation}
+p(x)=\frac{1+|\{x'\in\mathcal{C}:s(x')\le s(x)\}|}{|\mathcal{C}|+1}
+\label{eq:p}
+\end{equation}
+を判定に，$s$を順位付けに使う．較正画像の集合は1つなので$p$は$s$の単調関数であり，二つは同点を除いて同じ順序を与える．計算は疎な正定値系2本を共役勾配法で解くだけである．
+
+\textbf{\TValid（有効性）．}較正画像とIDのテスト画像が，他のすべての画像を所与として交換可能なら，(i) IDのテスト画像$x$について$\Pr(p(x)\le\alpha)\le\alpha$，(ii) $\{p(x)\}_{x\in\mathcal{T}}$はIDの画像の上でPRDSであり，水準$q$のBH法で選んだ集合の偽発見率は$q\,m_0/m$以下，Storey型では$q$以下である（$m_0$はIDのテスト画像の数）．(iii) さらに参照画像とプールのIDの画像が交換可能なら，種の偽発見率も$q$以下である．$s$は$\mathcal{S}$，$\mathcal{R}$と$\mathcal{U}$の画像の特徴の集まり（順序なし）だけの関数で，$\mathcal{U}$の中でどの画像を較正画像と呼ぶかに依らない．これはAdaDetect~\cite{marandon2024adadetect}の条件であり，$p$は同論文の経験$p$値である（付録\ref{sec:app_h19}）．種を$\mathcal{T}$だけから$\mathcal{C}$に対する順位で選ぶと$s$が較正画像の名札に依存して条件が崩れる．参照画像を分けて較正画像も種の候補にすることで，較正画像とテスト画像を折に分けずに保証が得られる．

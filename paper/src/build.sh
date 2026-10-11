@@ -2,7 +2,7 @@
 # MIRU2025 形式のビルド（pLaTeX + dvipdfmx）．main.tex = preamble_p18.tex + body_p18.tex
 set -e
 cd "$(dirname "$0")"
-cat preamble_p18.tex body_p18.tex > main.tex
+cat preamble_p19.tex body_p19.tex > main.tex
 if command -v extractbb >/dev/null 2>&1; then for f in figs/*.pdf figs/*.png; do [ -f "$f" ] && extractbb "$f"; done; fi
 platex -interaction=nonstopmode main >/dev/null 2>&1 || true
 platex -interaction=nonstopmode main >/dev/null 2>&1 || true

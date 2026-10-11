@@ -1,0 +1,32 @@
+{
+ "rule": "min dev1-near FPR95 (x TINS) among candidates with dev1-far FPR95 (x TINS) <= sigma x TINS + 0.5; else min far; ties -> h16|s",
+ "sigma_x_tins": {
+  "near": 13.857333333333333,
+  "far": 15.855549253166947
+ },
+ "candidates": {
+  "h16|s": {
+   "near_x_tins": 18.76533333333333,
+   "far_x_tins": 24.004537719795803,
+   "eligible": false
+  },
+  "h16|p": {
+   "near_x_tins": 14.866666666666669,
+   "far_x_tins": 15.897145017961808,
+   "eligible": true
+  }
+ },
+ "chosen": "h16|p",
+ "standalone_dev1": {
+  "near": {
+   "h16|s": 13.74,
+   "sigma": 13.748
+  },
+  "far": {
+   "h16|s": 16.76687464549064,
+   "sigma": 16.50595575723199
+  }
+ },
+ "n_tasks": 10,
+ "utc": "2026-10-11T12:56:48Z"
+}

@@ -1,0 +1,29 @@
+2026-10-11T11:12:52Z P16 exploration of the absorbing random walk read-out: dev1 only (no dev2, no test data); harm16.py afa7fe345f0c launched on GPUs 0,1
+2026-10-11T11:16:52Z P16 exploration round 2 (dev1 only): grounded walk / continuous-time hitting time; harm16b.py af6ca0ed93b3
+2026-10-11T11:20:30Z P16 exploration round 3 (dev1 only): joint generating function E[lam^N exp(-gamma T)], lam x gamma grid; harm16c.py 8f2fb0df36c9
+2026-10-11T11:23:02Z P16 exploration round 4 (dev1 only): no-fold design with half the calibration as the seed reference, normalised union; harm16d.py 4daad63eb82d
+2026-10-11T11:26:08Z P16 exploration (dev1 only): degree factor of the Phase 14 mass; harm16e.py e96cb0ba84b4
+2026-10-11T12:34:00Z P16 registered pipeline: code deployed (core16/h16/ana16/smoke16/orchestrate16, prereg_p16.json draft); smoke16 (dev1 reproduction + order checks; no dev2 scoring, no test data) launched
+2026-10-11T12:35:07Z P16 smoke16 relaunched (order of the checks fixed: a dev-split load re-points the vins work directory)
+2026-10-11T12:35:43Z P16 smoke16 relaunched with the reordered checks (sha c9fdfe010ae1)
+2026-10-11T12:38:32Z P16 smoke16 relaunched: dev calibration labels read from the shot paths (sha 5b4c60913f78)
+2026-10-11T12:40:05Z P16 registration placed: prereg_p16.json sha256 6f659632da0f790b (code hashes in prereg_p16.sha256); dev1 selection / dev2 / test runs wait for the public commit
+2026-10-11T12:40:32Z P16 registration re-placed with written_utc corrected to 12:40:00Z (the 12:40:05Z placement said 12:42:00Z; no other change; nothing run in between): prereg_p16.json sha256 2e16ae0c8dc4c3fa
+2026-10-11T12:56:26Z P16 registration public: github.com omotes24/SalmonLadder branch phase12-15-registrations at 6bbae3d (confirmed with git ls-remote at 2026-10-11T12:56:17Z); launching dev1 selection -> dev2 confirmation -> test -> in200 -> cifar -> rec -> ana
+2026-10-11T12:56:27Z P16 START gpus=0 1 2 3 steps=dev1,dev2,test,in200,cifar,rec,ana prereg_sha256=2e16ae0c8dc4c3fa
+2026-10-11T12:56:27Z dev1 start
+2026-10-11T12:56:49Z dev1 done: base combination "chosen": "h16|p"
+2026-10-11T12:56:49Z dev2 start
+2026-10-11T12:57:11Z dev2 done: adopt="adopt_h16_as_main": true
+2026-10-11T12:57:11Z test start
+2026-10-11T13:00:41Z test done
+2026-10-11T13:00:41Z in200 start
+2026-10-11T13:01:18Z in200 done
+2026-10-11T13:01:18Z cifar start
+2026-10-11T13:01:47Z cifar done
+2026-10-11T13:01:47Z rec start
+2026-10-11T13:05:16Z rec done
+2026-10-11T13:05:16Z ana start
+2026-10-11T13:05:19Z ana done
+2026-10-11T13:05:19Z P16 DONE steps=dev1,dev2,test,in200,cifar,rec,ana
+2026-10-11T13:16:17Z P16 amendment 01 placed (prereg_p16_amendments.json sha256 e41e5344f333ec80): registered adoption rule met on dev2, h16 worse than sigma on the benchmarks; sigma stays the main configuration (author's pre-run statement), h16 reported as a registered variant -- a disclosed deviation

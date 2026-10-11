@@ -1,0 +1,38 @@
+{
+ "phase": "16",
+ "amendment": "01",
+ "written_utc": "2026-10-11T13:16:00Z",
+ "status": "written after all registered Phase 16 runs (2026-10-11 12:56:27Z - 13:05:19Z, STATUS) and after the results were read",
+ "timeline": {
+  "exploration_dev1_only": "2026-10-11 11:12:52Z - 11:26:08Z (95 configurations; STATUS lines marked 'dev1 only')",
+  "registration_placed_on_server": "12:40:05Z (re-placed 12:40:32Z with written_utc corrected; SHA-256 2e16ae0c8dc4c3faa1303ef75edf2c3f4a8f704704cc86597818ef0bf65b7d2b)",
+  "smoke16": "12:38:34Z (dev1 reproduction and calibration-order checks only)",
+  "author_statement_before_the_runs": "between the placement of the registration and the push (12:40-12:56Z) the author decided: 'if the results are good, the main text; if they are bad, the supplement'. This conditional was not written into prereg_p16.json.",
+  "registration_public": "github.com omotes24/SalmonLadder, branch phase12-15-registrations at 6bbae3d, confirmed with git ls-remote at 12:56:17Z",
+  "runs": "dev1 selection 12:56:48Z, dev2 confirmation 12:57:11Z, test 13:00:41Z, in200 13:01:18Z, cifar 13:01:47Z, rec 13:05:16Z, summary 13:05:19Z"
+ },
+ "registered_outcome": {
+  "base_combination_rule_on_dev1": "chosen s0 * p ('h16|p'): x TINS near 14.87 / far 15.90 (far within sigma x TINS 15.86 + 0.5); s0 * s not eligible (far 24.00)",
+  "H1_dev2_near": "FPR95 h16 12.87 vs sigma 12.92, difference -0.06 [-1.00, +0.89] <= +0.5: holds",
+  "H2_dev2_far": "FPR95 h16 16.98 vs sigma 16.73, difference +0.25 [-1.04, +1.54] <= +0.5: holds",
+  "H3_dev2_validity": "false-alarm rate of p 0.053 at alpha = 0.05 (<= 0.06) and 0.204 at alpha = 0.2 (<= 0.21): holds",
+  "adoption_by_the_registered_rule": "h16 becomes the main configuration (H1, H2 and H3 hold)",
+  "also_on_dev2": "AUROC lower than sigma by 0.27 [0.11, 0.43] (near) and 0.38 [0.27, 0.48] (far); x TINS FPR95 +1.18 (near), +0.76 (far)"
+ },
+ "test_results_registered_runs": {
+  "imagenet1k_near": "FPR95 sigma 11.50 -> h16 13.65 (+2.14 [+1.70, +2.58]); AUROC 97.94 -> 97.18",
+  "imagenet1k_far": "FPR95 5.17 -> 7.32 (+2.15 [+1.87, +2.42]); AUROC 98.79 -> 98.20",
+  "fourood": "FPR95 4.56 -> 7.00 (+2.44 [+2.06, +2.81]); AUROC 98.80 -> 98.04",
+  "imagenet200": "near FPR95 9.07 -> 8.10 (-0.97 [-1.38, -0.56], AUROC 98.17 -> 96.57); far 2.15 -> 4.15 (+2.00)",
+  "cifar100": "near FPR95 2.90 -> 6.42 (+3.52); far 2.34 -> 3.31 (+0.97)",
+  "x_tins_with_the_dev1_combination": "near 10.50 -> 18.58 (+8.09); far 4.16 -> 4.92 (+0.77); Four-OOD 3.39 -> 3.56 (+0.18)",
+  "recurrence_grid": "h16 better than sigma in 10 of 60 cells; in the 20 cells with r <= 2 worse by 14.1 points on average",
+  "sigma_reproduces_the_paper": "the sigma values recomputed in these runs equal the v18 table (near 97.94 / 11.50, far 98.79 / 5.17, Four-OOD 98.80 / 4.56)"
+ },
+ "deviation": "The registered adoption rule was met on dev2, so the registration made h16 the main configuration of the paper. On the test sets h16 is worse than sigma on every ImageNet-1K group (intervals of the FPR95 difference above 0), on CIFAR-100 and on ImageNet-200 far-OOD, and better only on the ImageNet-200 near-OOD FPR95 (with a lower AUROC). Following the author's statement made before the runs ('good -> main text, bad -> supplement'), sigma remains the main configuration of the paper and h16 is reported as a registered variant in the appendix (paper v19, Appendix A.13-A.14) with all its values. This is a deviation from the registered adoption rule. It was decided after the test results were read and is disclosed here, in docs/PREREGISTRATION.md and in the paper (Appendix A.12, A.13.4).",
+ "notes": [
+  "dev2 has the construction of dev1 and shares its far-OOD set (OpenImage-O validation list); non-inferiority on dev2 did not carry over to the benchmarks.",
+  "The base combination chosen on dev1 (s0 * p) is outside the validity statement; on the benchmarks its x TINS near-OOD value is far worse than sigma x TINS because the floor of p lets the base detector order the unknowns (the same reason the paper multiplies the base detector with sigma).",
+  "Nothing was changed in the code or the configuration after the registration; all values are reported."
+ ]
+}

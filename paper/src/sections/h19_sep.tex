@@ -1,0 +1,19 @@
+両側の評価は一つの関数
+\begin{equation}
+\varphi(\rho,a,b)=\frac{\rho\,a}{1-\rho\,(1-a-b)}\qquad(a=0\text{では}\varphi=0)
+\label{eq:phi}
+\end{equation}
+で書ける．$\varphi$は$\rho$と$a$について増加，$b$について減少し，漏れがなければ$\varphi(1,a,b)=a/(a+b)$である．出口$a$と出口$b$の競争に，訪問ごとの生存率$\rho$が掛かる量と読める．
+
+\textbf{\TEscape（逃げる確率：未知の側）．}支持画像も種も含まない節点の集合$Q$について，$Q$を初めて出る先が$z$である割引確率を$H_Q(y,z)$とすると，$h(y)=\sum_{z\in\partial Q}H_Q(y,z)\,h(z)$（等式）であり，種でない外へ逃げる確率$\pi_Q(y)=\sum_{z\in\partial Q\setminus\hat{Q}}H_Q(y,z)$について$h(y)\le\pi_Q(y)$である．$y\in Q$の重みのうち種でない外へ向かう割合を$e_y$，種へ向かう割合を$\zeta_y$とすると，$\pi_Q\le\varphi(\max_Q\rho,\max_Qe,\min_Q\zeta)$．
+
+\textbf{\TCapture（捕まる確率：IDの側）．}支持画像も種も含まない節点の集合$B$について，$y\in B$の重みのうち支持画像へ向かう割合を$\omega_y$，$B$にも支持画像にも属さない節点へ向かう割合を$\eta_y$とすると，$B$を出ずに支持画像に着く確率$\kappa_B$について$h\ge\kappa_B\ge\varphi(\min_B\rho,\min_B\omega,\max_B\eta)$である．また，すべてのラベルなし画像で$s(x)\ge\rho_x\,\omega_x$である．
+
+\textbf{\CSep（分離）．}種でないテスト画像$y$が\TEscape{}の$Q$に属し，各較正画像$x'$について$\ell(x')\le s(x')$（例えば$\rho_{x'}\omega_{x'}$）なら，
+\begin{equation}
+p(y)\le\frac{1+|\{x'\in\mathcal{C}:\ell(x')\le\pi_Q(y)\}|}{|\mathcal{C}|+1}.
+\label{eq:sep}
+\end{equation}
+特に$\pi_Q(y)<\min_{x'\in\mathcal{C}}\ell(x')$なら$p(y)$は床$1/(|\mathcal{C}|+1)$に落ち，$y$は$\alpha\ge1/(|\mathcal{C}|+1)$のすべての水準でOODと判定される（証明は付録\ref{sec:app_h19}）．
+
+\textbf{読み方．}未知の塊では「種でない外への辺」と「種への辺」が競い，IDの近傍では「支持画像への辺」と「漏れる辺」が競う．同じ$\varphi$が両側を抑え，その大小が較正順位の分離\eqnref{sep}を決める．有効性（\TValid）と検知力（\TEscape{}--\CSep）は同じ量$s$についての主張である．種を増やすと$h$は単調に減り，塊のどの節点でも重みの割合$\zeta$以上が種へ向かえば，漏れがなくても逃げる確率は$\max_Qe/(\max_Qe+\zeta)$以下になる．同じ未知クラスの画像が複数枚あるとき，種になった画像は残りの画像の重みの一部を占め，その逃げる確率を下げる．これが自己ラベル付けの効く理由である．
