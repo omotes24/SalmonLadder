@@ -1,0 +1,23 @@
+{
+ "phase": "14",
+ "amendments": [
+  {
+   "id": "01",
+   "written_utc": "2026-10-11T09:50:00Z",
+   "stage": "after the development-split runs (sel14.py, dev1 and dev2), before any test-set run",
+   "outcome_of_the_registered_rule": "chosen = xfit|storey|q0.2|pp (Storey-AdaDetect seeds at q = 0.2, read-out p+ p-), 14 of the 18 candidates feasible; dev1 near FPR95 13.55 (v1 reference 14.10), dev1 far 16.53 (reference 16.43, within +0.5); dev2 (confirmation) near 13.01 vs 13.58, far 16.97 vs 16.93",
+   "mechanical": "the rule of prereg_p14.json was applied by sel14.py --aggregate without change; the chosen configuration coincides with one of the two fixed references, so pairs_for() runs (storey, 0.2) and (bh, 0.2) on the secondary benchmarks",
+   "validity_on_dev": "p_final of the chosen configuration: P(p_final <= 0.05) = 0.051, <= 0.1: 0.102, <= 0.2: 0.202 (dev1, mean over tasks); FDP of BH on p_final at q = 0.2: 0.165",
+   "stage_B_launched": "STEPS=test_train,test_val,in200,rec,views,cifar,online,ana with the chosen configuration read from results/sel/sel14_summary.json; nothing else changed",
+   "note": "the dev-split calibration images are exchangeable with the dev ID images (same pool), hence the uniformity above; the benchmark calibration (training images) is checked separately under test_val"
+  },
+  {
+   "id": "02",
+   "written_utc": "2026-10-11T02:20:00Z",
+   "stage": "after the test-set runs (benchmark calibration, 6 draws) were read",
+   "deviation": "The registration named p_fin (the calibrated rank of the cross-fitted statistic sigma) as the method's output and the fold-pooled sigma as a diagnostic. On the test sets, p_fin x TINS is worse than the Phase 12 read-out x TINS by 3.00 [2.90, 3.10] FPR95 points on near-OOD (13.25 vs 10.26) and worse than p_fin alone (11.52), while sigma x TINS is 10.50 (+0.24 [0.13, 0.35] vs the Phase 12 read-out) and sigma alone 11.50 (p_fin alone 11.52). Cause: p_fin is a rank with floor 1/(n_b+1); every image whose sigma is below the smallest calibration sigma (most of the unknowns) gets the same minimum, so the base detector's log-score decides their order and the near-OOD weakness of TINS enters the product. sigma has no floor. The same ordering was already visible on dev1 (sigma|TINS 13.80 < v1|TINS 14.34 < p_fin|TINS 14.99), but the registration did not foresee it.",
+   "change": "The score used for AUROC/FPR95 in every table is s = s0 * exp(sigma) (sigma = sum over views of log p+~ + log p-~, cross-fitted); p_fin = calibrated rank of sigma remains the decision output and the object of Proposition 4 and of all validity checks. Standalone, sigma and p_fin give the same ranking up to the fold pooling (11.50 vs 11.52 near, 5.17 vs 5.15 far, 4.56 vs 4.55 Four-OOD). The registered-form rows (p_fin standalone and p_fin x TINS) are reported in the ablation table and this deviation is stated in the paper.",
+   "not_changed": "the selected configuration (storey, q = 0.2, pp), the views, k_g, lambda, the fold split, the base detector, every data set and draw"
+  }
+ ]
+}

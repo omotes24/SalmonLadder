@@ -1,0 +1,43 @@
+{
+ "phase": "15",
+ "title": "Salmon Ladder Phase 15: many-label and zero-shot baselines on ImageNet-200 / CIFAR-100, the k_g grid, a capped seed rule, centred static read-outs",
+ "written_utc": "2026-10-11T04:25:00Z",
+ "status": "written before any Phase 15 run; SHA-256 recorded on the compute server before launching (prereg_p15.sha256) and the file committed to the public repository omotes24/SalmonLadder (the commit and push times are the public timestamps; the server file time and the job logs are available on request)",
+ "context": "Paper v17 (Phase 14) left four open points raised in review: (1) the seeds (p-) are the method's signature part but contribute ~1.6 FPR95 points on ImageNet-1K and are harmful on ImageNet-200 and CIFAR-100 at high mixing rates; (2) the ImageNet-200 / CIFAR-100 comparisons used only the OpenOOD ResNet-18 reported values; (3) the recurrence threshold r ~ k_g was shown for k_g = 10 only; (4) the CLIP ViT-B/16 static read-out looked implausibly weak. This registration fixes, before any run, what is computed and how it is reported.",
+ "fixed_in_advance": {
+  "main_configuration_of_the_paper": "unchanged: the Phase 14 registered configuration (views DINOv2 L/14 + DINOv3 L/16, k_g = 10, lambda = 0.9, Storey seeds q = 0.2, statistic p+ p-, cross-fitted, score s0 * exp(sigma) per amendment 02 of Phase 14). Nothing in Phase 15 changes the main rows of any table; Phase 15 rows are added as baselines, a robustness variant and sensitivity analyses.",
+  "capped_seed_rules": {
+   "definition": "step-up with critical values c_i = min(level * i / m, tau), i = 1..m over the fold's test p+ values (sorted), rejecting the first i* order statistics with i* = max{i : p_(i) <= c_i}; level = q (rule 'bhc') or q / pi0_hat with the Storey estimator of Phase 12 (rule 'storeyc'); q = 0.2 as in the main configuration",
+   "tau": 0.05,
+   "why_tau_0.05": "the conventional per-image level; E[number of ID images among the seeds] <= tau * m0 for conformal (super-uniform) p+ regardless of the mixing rate, which is the quantity that destroyed p- on CIFAR-100 Places365 and ImageNet-200 SSB-hard (FDR <= q bounds the proportion, not the count)",
+   "guarantees_claimed": "bhc: FDR <= q m0/m under PRDS by self-consistency with the linear threshold collection (every rejected p satisfies p <= q i*/m; Blanchard and Roquain 2008) and E[#ID seeds] <= tau m0; storeyc: E[#ID seeds] <= tau m0 only (the FDR statement of the uncapped Storey rule is not claimed for the capped set and is reported empirically)",
+   "evaluated_on": "dev1 and dev2 (every draw / stream / order of Phase 14's sel14), OpenOOD ImageNet-1K near / far and Four-OOD with the benchmark calibration (6 draws, standalone and x TINS / NegLabel / AdaNeg / TANL), ImageNet-200 (6 draws), CIFAR-100 (6 draws, views L14 + D3L), the recurrence x mixing-rate grid (60 cells x 3 repetitions); next to the uncapped rules in the same runs",
+   "no_selection": "tau is not tuned; q stays 0.2; the modes pp / pps / min are all computed but the paper reports pp for the capped rules exactly as for the main configuration; the capped rule is presented as a robustness variant in its own rows / subsection, not as a new main configuration, whatever the outcome"
+  },
+  "k_g_grid": {
+   "values": [3, 5, 10, 20, 40],
+   "cells": "NINCO c = 64 and SSB-hard c = 980, r in the Phase 12-14 grid (NINCO: 1, 2, 5, 10, 20, 30; SSB-hard: 1, 2, 5, 10, 20, 50), 3 repetitions with the same random choice of classes and images as rec14",
+   "read_outs": "sigma (Storey q = 0.2, p+ p-, cross-fitted), p+ only, static (independent of k_g), the Phase 12 read-out, kNN (independent of k_g); standalone and x TINS; one graph with exact top-40 lists per test set, all k_g evaluated on it",
+   "reported_as": "a figure / table of FPR95 against r per k_g; the statement of the paper (r >~ k_g) is checked, not tuned: k_g = 10 remains the paper's value"
+  },
+  "baselines_with_many_labels_or_zero_shot": {
+   "knn_all": "cosine similarity to the k-th nearest training image over ALL training images of the benchmark (ImageNet-200: 258,951; CIFAR-100: 50,000), k = 50 (OpenOOD's KNN default) and k = 10, features = the paper's two views L2-normalised and concatenated (cosine = mean of the per-view cosines); per single view with k = 50 as well",
+   "ncm_all": "maximum cosine to the class means over all training images, same features",
+   "mcm_clip": "zero-shot MCM with CLIP ViT-B/16 (the TINS path image features), prompt 'a photo of a {}.', softmax of the cosine similarities at temperature 1, maximum over the ID classes; as measured on ImageNet-1K in Phase 11",
+   "neglabel_clip": "zero-shot NegLabel through the official OpenOOD-VLM post-processor (AdaNeg vanilla score) with the official text side for the benchmark's class names (dataset 'imagenet200' / 'cifar100' of the official code; 10,000 negative labels, 'nice' prompt, text_center)",
+   "reported_as": "rows of the ImageNet-200 and CIFAR-100 tables and the text; these baselines use far more labels (all training images) or a VLM; the comparison states which uses what"
+  },
+  "centred_static_read_outs": "for the six single views of Phase 14 (DINOv2 B/14, L/14, DINOv3 B/16, L/16, DINO v1 ViT-B/16, CLIP ViT-B/16): the prototype rank and the kNN rank after subtracting the mean of the support features (then re-normalising), next to the raw ones; standalone and x TINS; reported in the backbone appendix to explain the weak raw CLIP static read-out (anisotropy of CLIP image embeddings; the Phase 14 CLIP features are the TINS-path embeddings, unit norm, no projection mix-up)",
+  "other_fixes_committed_here": "the paired difference of the CIFAR-100 sigma rows against p+ only is recomputed against the pooled p+ only row (ana14's cifar_summary compared the pooled sigma with the unpooled p+ only); the gap rows of the Four-OOD / per-data-set tables are computed from the displayed (rounded) values; the FPR@95 reported values of OpenOOD v1.5 for CIFAR-100 and ImageNet-200 are taken from the OpenOOD v1.5 online table (footnote 6 of arXiv:2306.09301) and added to the tables"
+ },
+ "hypotheses_stated_before_running": {
+  "H1_cap_removes_the_harm": "on CIFAR-100 far-OOD and ImageNet-200 near-OOD the capped rules' FPR95 (mean over draws) is within +0.5 points of p+ only (the uncapped Storey rule is +1.07 and +1.6 points worse there)",
+  "H2_cap_is_neutral_where_seeds_help": "on OpenOOD ImageNet-1K near-OOD (standalone and x TINS) the capped Storey rule is within 0.5 FPR95 points of the uncapped one (the cap binds only where the Storey threshold exceeds 0.05, i.e. SSB-hard)",
+  "H3_cap_on_the_grid": "in every grid cell with mixing rate >= 0.3 the capped rules are not worse than p+ only by more than 1 FPR95 point; in cells with r >= 10 and mixing rate <= 0.3 they keep the gain of the uncapped rule within 1 point",
+  "H4_many_label_baselines": "kNN over all training images (k = 50) beats the 16-label static read-out on both benchmarks; sigma with 16 labels per class remains below kNN-all in near-OOD FPR95 on ImageNet-200 (no prediction for far-OOD or CIFAR-100: reported either way)",
+  "H5_k_g": "the r at which sigma overtakes the static read-out decreases with k_g (k_g = 3, 5 overtake at smaller r than k_g = 10) and the gain at large r is largest for k_g in {10, 20}",
+  "H6_centring": "centring raises the raw CLIP static read-out from ~94% FPR95 to the range of the DINO views (< 70% near, < 40% far) and changes the DINO views by less than 10 points"
+ },
+ "analysis": "means over draws / repetitions / stream orders exactly as in Phase 14; paired 95% t intervals over the draws for the differences vs p+ only and vs the registered rule; no configuration is selected from Phase 15; every hypothesis is reported as confirmed or refuted with the numbers; deviations, if any, are logged in prereg_p15_amendments.json with their reason and stage",
+ "code": "p15common.py (capped rules), core15.py (Graph15 with kmax = 40, centring), extra15.py (tables and features), base15.py, kg15.py, cap15.py, views15.py, ana15.py, orchestrate15.sh, smoke15.py (synthetic checks of the cap and of Graph15 passed on CPU before this file was hashed)"
+}
