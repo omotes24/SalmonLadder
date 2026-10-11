@@ -5,7 +5,7 @@
 \label{fig:rec}
 \end{figure*}
 
-同じクラスが何枚あり，どの混入率から効くのかを，OpenOODのIDの検証画像45,000枚に，NINCO（64クラス）またはSSB-hard（980クラス，各50枚）から$c$個の未知クラスを$r$枚ずつ加えたテスト集合で実測した（\figref{rec}，全条件は付録\ref{sec:app_rec}；未知が数枚の条件では\FPR{}の刻みが粗い）．
+同じクラスが何枚あり，どの混入率から効くのかを，OpenOODのIDの検証画像45,000枚に，NINCO（64クラス）またはSSB-hard（980クラス，各50枚）から$c$個の未知クラスを$r$枚ずつ加えたテスト集合で実測した（\figref{rec}，全条件は付録\ref{sec:app_rec}）．
 
 \textbf{再出現しない未知には静的な検出器より劣る．}$r\le5$では，$\sigma$は同じ特徴の静的$p$より\FPR{}が高い（\NRecNRLeFive{}条件中\NRecNRLeFiveMainWorseStatic{}条件，差は最大\NRecMaxMainMinusStaticLeFive{}ポイント）．NINCOの64クラス$\times$1枚では$\sigma$ \NRecNincoCSixFourROneMainFpr\%，$\pP$だけでも\NRecNincoCSixFourROneLpFpr\%に対し，静的$p$は\NRecNincoCSixFourROneStaticFpr\%である．1枚だけの未知は$k_g{=}10$本の辺をすべて外へ張るので，伝播はその画像を隣のIDに均す．$r\ge10$では逆転し（\NRecNRGeOneZero{}条件中\NRecNRGeOneZeroMainBetterStatic{}条件），NINCOの64クラス$\times$10枚で\NRecNincoCSixFourROneZeroMainFpr\%，30枚で\NRecNincoCSixFourRThreeZeroMainFpr\%（静的$p$は\NRecNincoCSixFourRThreeZeroStaticFpr\%）まで下がる．SSB-hard（兄弟クラス）は遅く，980クラス$\times$10枚で\NRecSsbCNineEightZeroROneZeroMainFpr\%，50枚で\NRecSsbCNineEightZeroRFiveZeroMainFpr\%である．
 

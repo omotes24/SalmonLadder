@@ -4,7 +4,7 @@
 
 \textbf{命題4．}$\sigma$を折$b$の節点の上の関数とみる．それを定めるのは，支持画像，折$\bar b$の節点とその較正・テストの区別，および「$\mathcal{C}_b\cup\mathcal{T}_b$という節点の集合」だけである．グラフと$\mathbf{u}^{+}$は節点の名札に依らず（\secref{graph}），$\hat{Q}_{\bar b}$と$\mathbf{u}^{-}_{\bar b}$は折$\bar b$の画像と$\mathbf{u}^{+}$から決まり，参照する較正画像は$\mathcal{C}_{\bar b}$である．したがって$\sigma$は，$\mathcal{C}_b\cup\mathcal{T}_b$の中でどの節点を較正画像と呼ぶかを入れ替えても変わらない．これはAdaDetectの条件(8)（学習標本を支持画像と折$\bar b$の全節点，帰無の較正標本を$\mathcal{C}_b$，テスト標本を$\mathcal{T}_b$としたもの．同論文の証明は学習標本を所与とした置換の議論なので，その中身は問わない）であり，\eqnref{pfin}の$\pfin$は同論文の経験$p$値(10)である．よって定理3.3から(i)と(ii)のPRDS・超一様性が従い，系3.5と系3.7がFDRの上界を与える．$\square$
 
-\textbf{命題2．}$i\in Q$では$y_i=0$なので$u_i=\lambda\sum_jW_{ij}u_j/\sqrt{\delta_i\delta_j}$．両辺に$\sqrt{\delta_i}$を掛けて$Q$で足すと，$Q$の内側の辺からの寄与は$\sum_{j\in Q}(u_j/\sqrt{\delta_j})\sum_{i\in Q}W_{ij}\le\sum_{j\in Q}\sqrt{\delta_j}u_j$で抑えられ，外側の辺からの寄与は$w(Q,\bar{Q})\max_{j}u_j/\sqrt{\delta_j}$で抑えられる．\eqnref{walk}と同じ酔歩の表現より$u_j/\sqrt{\delta_j}\le1/\min_{s\in Y}\sqrt{\delta_s}$なので，移項して\eqnref{cond}を得る．$\square$
+\textbf{命題2．}$i\in Q$では$y_i=0$なので$u_i=\lambda\sum_jW_{ij}u_j/\sqrt{\delta_i\delta_j}$．両辺に$\sqrt{\delta_i}$を掛けて$Q$で足すと，$Q$の内側の辺からの寄与は$\sum_{j\in Q}(u_j/\sqrt{\delta_j})\sum_{i\in Q}W_{ij}\le\sum_{j\in Q}\sqrt{\delta_j}u_j$で抑えられ，外側の辺からの寄与は$w(Q,\bar{Q})\max_{j}u_j/\sqrt{\delta_j}$で抑えられる．\eqnref{walk}と同じランダムウォークの表現より$u_j/\sqrt{\delta_j}\le1/\min_{s\in Y}\sqrt{\delta_s}$なので，移項して\eqnref{cond}を得る．$\square$
 
 \section{最終読み出しの保証の実測と種に混じるIDの割合}
 \label{sec:app_fdp}

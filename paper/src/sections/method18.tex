@@ -1,7 +1,7 @@
 \section{提案手法}
 \label{sec:method}
 \subsection{問題設定と全体像}
-IDの各クラス$c$に16枚のラベル付き画像が与えられ，12枚を支持画像$\mathcal{S}_c$，4枚を較正画像とする（全体を$\mathcal{S}$，$\mathcal{C}$，$n=|\mathcal{C}|=4{,}000$）．テスト集合$\mathcal{T}$はIDとOODが混ざったラベルなしの画像の集合で，各画像$x\in\mathcal{T}$にスコア$s(x)$（大きいほどIDらしい）を返す．本稿の主たる設定では$\mathcal{T}$の全画像が揃ってから，$\mathcal{T}$全体を見て採点する（\textbf{事後採点}，transductive）．画像が順に届き，到着時に採点する\textbf{到着時採点}は付録\ref{sec:app_online}で扱う．特徴抽出器$f$は凍結し，モデルは更新しない．Salmon Ladderは次の4つの部品からなる（\figref{overview}）．
+IDの各クラス$c$に16枚のラベル付き画像が与えられ，12枚を支持画像$\mathcal{S}_c$，4枚を較正画像とする（全体を$\mathcal{S}$，$\mathcal{C}$，$n=|\mathcal{C}|=4{,}000$）．テスト集合$\mathcal{T}$はIDとOODが混ざったラベルなしの画像の集合で，各画像$x\in\mathcal{T}$にスコア$s(x)$（大きいほどIDらしい）を返す．主たる設定は$\mathcal{T}$の全画像が揃ってから採点する\textbf{事後採点}（transductive）で，画像が届くたびに採点する\textbf{到着時採点}は付録\ref{sec:app_online}で扱う．特徴抽出器$f$は凍結し，モデルは更新しない．Salmon Ladderは次の4つの部品からなる（\figref{overview}）．
 \begin{enumerate}
 \setlength{\itemsep}{0pt}
 \item \textbf{較正順位}：IDらしさの値を，固定した較正画像の中での順位に変えて読む（\secref{rank}）．すべての部品の共通の物差しで，共形$p$値である．
@@ -36,13 +36,13 @@ S=D^{-1/2}WD^{-1/2}
 \end{equation}
 を作る~\cite{zhou2004lgc}．$S$は対称で固有値は$[-1,1]$にあり，非零成分は$O(Nk_g)$の疎行列である．較正画像とテスト画像はどちらもラベルを持たない節点として全く同じ扱いを受け，グラフは節点の順序や名札に依らない（\figref{graph}a）．グラフはビューごとに1つ作り，2つの質量を同じグラフで伝播させる．
 
-\subsubsection{伝播の反復と酔歩としての意味}
+\subsubsection{伝播の反復とランダムウォークとしての意味}
 支持画像の節点で1，他で0のベクトル$\mathbf{y}^{+}\in\{0,1\}^{N}$と$\lambda{=}0.9$で
 \begin{equation}
 \mathbf{u}^{(\ell+1)}=\lambda S\mathbf{u}^{(\ell)}+(1-\lambda)\mathbf{y}^{+}
 \label{eq:lp}
 \end{equation}
-を収束するまで反復する（$\mathbf{u}^{(0)}=\mathbf{0}$；局所・大域一貫性~\cite{zhou2004lgc}の反復）．$\lambda<1$かつ$\|S\|_2\le1$なので縮小写像であり，収束解$\mathbf{u}^{+}=(1-\lambda)\sum_{\ell\ge0}\lambda^{\ell}S^{\ell}\mathbf{y}^{+}$を持つ．$(S^{\ell}\mathbf{y}^{+})_i$は節点$i$と支持画像を結ぶ長さ$\ell$の歩道の重みの和なので，$u^{+}_i$は「短い歩道で支持画像とつながる節点ほど大きい」量である．酔歩で言えば，$P=D^{-1}W$を遷移確率とし，各ステップで確率$1-\lambda$で止まる酔歩を節点$i$から始めたとき，
+を収束するまで反復する（$\mathbf{u}^{(0)}=\mathbf{0}$；局所・大域一貫性~\cite{zhou2004lgc}の反復）．$\lambda<1$かつ$\|S\|_2\le1$なので縮小写像であり，収束解$\mathbf{u}^{+}=(1-\lambda)\sum_{\ell\ge0}\lambda^{\ell}S^{\ell}\mathbf{y}^{+}$を持つ．$(S^{\ell}\mathbf{y}^{+})_i$は節点$i$と支持画像を結ぶ長さ$\ell$の歩道の重みの和なので，$u^{+}_i$は「短い歩道で支持画像とつながる節点ほど大きい」量である．ランダムウォークで言えば，$P=D^{-1}W$を遷移確率とし，各ステップで確率$1-\lambda$で止まるランダムウォークを節点$i$から始めたとき，
 \begin{equation}
 \frac{u^{+}_i}{\sqrt{\delta_i}}=\mathbb{E}_i\Big[\frac{\mathbf{1}[X_T\in\mathcal{S}]}{\sqrt{\delta_{X_T}}}\Big]
 \label{eq:walk}
@@ -84,7 +84,7 @@ $\pP$は，IDのテスト画像について超一様な$p$値である．そこ�
 較正画像（学習画像）とIDのテスト画像（検証画像）は厳密には交換可能ではなく，実際に混じるIDの割合は\secref{fdp}で報告する．\textbf{順位の粒度．}$\pP$の最小値は$1/(n'+1)$なので，種が1枚でも選ばれるには最小値を取る画像が$\hat{\pi}_0 m'/(q(n'+1))$枚以上要る（\secref{xfit}の折では$n'{=}2{,}000$，$q{=}0.2$なら折のテスト画像の約$0.25\%$）．未知がそれより少なければ種は選ばれず，$\pN\equiv1$として$\pP$だけの読み出しに戻る（\secref{rec}）．\textbf{種の数の上限．}命題3が抑えるのは種に混じるIDの\textit{割合}であり，未知が大半を占めるテスト集合では割合$q$の種がIDのほぼ全数になる（\secref{in200}）．そこで，step-upの臨界値を$c_i=\min(q\,i/m',\,\tau)$（Storey型では$q/\hat{\pi}_0$）に置き換えた規則も用意する（\secref{cap}）．棄却された$p$はすべて$\tau$以下なので種に混じるIDの\textit{数}の期待値は$\tau m'_0$以下であり，単純BH法では$p\le q\,i^*/m'$（$i^*$は棄却数）も満たすので，PRDSのもとで自己整合な手続きとしてFDR$\le q\,m'_0/m'$が保たれる~\cite{blanchard2008two}．$\tau{=}0.05$は選ばずに固定した．
 
 \subsubsection{負の質量とその読み出し}
-種で1，他で0のベクトル$\mathbf{y}^{-}=\mathbf{1}_{\hat{Q}}$を初期質量とし，同じグラフ・同じ$\lambda$で\eqnref{lp}を収束まで反復した値を$\mathbf{u}^{-}$とする．\eqnref{walk}と同様に，$u^{-}_i/\sqrt{\delta_i}$は節点$i$から出た酔歩が種で止まる確率である．種は未知なので，$u^{-}$は\textbf{大きいほど未知らしい}．較正画像も同じ反復で$u^{-}$を受け取るので，不等号を逆にした較正順位
+種で1，他で0のベクトル$\mathbf{y}^{-}=\mathbf{1}_{\hat{Q}}$を初期質量とし，同じグラフ・同じ$\lambda$で\eqnref{lp}を収束まで反復した値を$\mathbf{u}^{-}$とする．\eqnref{walk}と同様に，$u^{-}_i/\sqrt{\delta_i}$は節点$i$から出たランダムウォークが種で止まる確率である．種は未知なので，$u^{-}$は\textbf{大きいほど未知らしい}．較正画像も同じ反復で$u^{-}$を受け取るので，不等号を逆にした較正順位
 \begin{equation}
 \pN(x)=\frac{1+|\{x'\in\mathcal{C}':u^{-}(x')\ge u^{-}(x)\}|}{|\mathcal{C}'|+1}
 \label{eq:pneg}
@@ -109,7 +109,7 @@ $\pP$は，IDのテスト画像について超一様な$p$値である．そこ�
 
 \subsection{スコアと枠組み}
 \label{sec:score}
-$s(x)=s_0(x)\exp\sigma(x)$を返す．特徴抽出器ごとの値を\textbf{ビュー}$v$と呼び，ビューごとにグラフと種を持ち，\eqnref{pfin}の和で合わせる．$s_0$はベース検出器で，$s_0{=}1$を\textbf{単体}と呼ぶ．ベース検出器は較正画像のスコアを持たない（テスト画像にしか付かない）ので較正順位に変えられず，$\sigma$との積で合わせる（v16までと同じ形）．事前登録では$\pfin$との積を予定していたが，$\pfin$の床の上ではベース検出器の対数スコアが順序を決めてしまうため$\sigma$に替えた（\secref{abl}；登録文書の修正記録に開示）．本稿の構成は，DINOv2~\cite{oquab2024dinov2} ViT-L/14とDINOv3~\cite{simeoni2025dinov3} ViT-L/16の2ビュー，Storey型の種，$q{=}0.2$で，\secref{exp}の規則で開発用分割から選んだ．ベース検出器にはTINS~\cite{yang2026tins}（CLIP ViT-B/16）を用い，NegLabel，AdaNeg，TANLに差し替えた値も示す．グラフも種もVLMには依らない．計算は，ビューごとに厳密な$k_g$近傍探索と疎行列と密ベクトルの積$O(Nk_g)$の反復3回で，OpenOODの1つのテスト集合（$N\approx6$--$11$万）に1枚のGPUで1分以内である．
+$s(x)=s_0(x)\exp\sigma(x)$を返す．特徴抽出器ごとの値を\textbf{ビュー}$v$と呼び，ビューごとにグラフと種を持ち，\eqnref{pfin}の和で合わせる．$s_0$はベース検出器で，$s_0{=}1$を\textbf{単体}と呼ぶ．ベース検出器は較正画像のスコアを持たない（テスト画像にしか付かない）ので較正順位に変えられず，$\sigma$との積で合わせる．事前登録では$\pfin$との積を予定していたが，$\pfin$の床の上ではベース検出器の対数スコアが順序を決めてしまうため$\sigma$に替えた（\secref{abl}；登録文書の修正記録に開示）．本稿の構成は，DINOv2~\cite{oquab2024dinov2} ViT-L/14とDINOv3~\cite{simeoni2025dinov3} ViT-L/16の2ビュー，Storey型の種，$q{=}0.2$で，\secref{exp}の規則で開発用分割から選んだ．ベース検出器にはTINS~\cite{yang2026tins}（CLIP ViT-B/16）を用い，NegLabel，AdaNeg，TANLに差し替えた値も示す．グラフも種もVLMには依らない．計算は，ビューごとに厳密な$k_g$近傍探索と疎行列と密ベクトルの積$O(Nk_g)$の反復3回で，OpenOODの1つのテスト集合（$N\approx6$--$11$万）に1枚のGPUで1分以内である．
 
 \subsection{関連する枠組みとの関係}
 \label{sec:related}
