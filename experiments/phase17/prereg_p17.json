@@ -1,0 +1,61 @@
+{
+ "phase": "17",
+ "title": "Salmon Ladder Phase 17: sigma_ref (the paper's read-out with reference images instead of folds), registered with an interval adoption rule; descriptive analyses without selection: the decomposition u = sqrt(delta) x probability on the benchmarks, the separation bounds on the recurrence grid (Corollary 2 for sigma and sigma_ref, Corollary A1 for the Phase 16 read-out h), and covariate-shifted ID images (ImageNet-V2, ImageNet-R)",
+ "written_utc": "2026-10-11T15:20:00Z",
+ "status": "Written before any metric of sigma_ref, of the decomposition, of the bounds or of the covariate-shift analysis is computed. Done before this registration: (a) feature extraction of ImageNet-V2 and ImageNet-R with the paper's two views (2026-10-11 14:50-15:00 UTC; no score; STATUS); (b) smoke17 (15:16 UTC): reproduction of sigma on dev1 draw 0 near (equal to the Phase 16 run), seed counts of sigma_ref on that task, the three bounds on one grid task (violation counts only), completeness of the new features; no metric of sigma_ref or of the descriptive analyses was printed or looked at; (c) offline analyses of results that already existed (rank agreement between the development splits and the benchmark over the 18 Phase 14 candidates; the fold-assignment check of sigma on dev1/dev2; seeds' ID fraction against the mixing rate and the cells with r <= 5 of the Phase 14 grid). (c) is not part of this registration.",
+ "request": "User (2026-10-11): (1) the theorems A2-A1 describe h, not the reported method sigma; no measurement of Corollary A1 or of the calibration-side lower bound; (2) two deviations from registered rules, both after the test values and both toward the better numbers; the adoption rule used a point estimate (difference <= +0.5) although the dev2 interval upper ends were +0.89 and +1.54; contribution (4) should read 'disclosure of the selection procedure and of the deviations'; (3) the development splits did not predict the benchmark (h, Storey vs plain BH); (4) earlier points: covariate-shifted ID, the 17-of-18 count is x TINS (12 standalone), which variant to recommend, seeds' ID fraction at low mixing, degradation for r <= 5; (5) dev values of sigma differ between Table A.10 and Appendix A.13; (6) use the reference images for sigma (no folds, seeds from all test images) and show on the test sets which factor of u = sqrt(delta) x (probability) drives near and far.",
+ "user_decisions": {
+  "sigma_ref_adoption": "AskUserQuestion answer 'dev2で区間判定 (Recommended)': adopt sigma_ref as the main configuration iff the interval rule below holds on dev2; the test values are reported as they come, without any deviation from this rule",
+  "covariate_shift_data": "AskUserQuestion answer 'V2とRだけ (Recommended)': ImageNet-V2 (matched frequency, 10,000) and ImageNet-R (30,000), already on the server; ImageNet-C is not on the server and is not downloaded"
+ },
+ "sigma_ref": {
+  "graph": "the paper's: per view (DINOv2 L/14, DINOv3 L/16) the symmetric k_g-NN graph (k_g = 10, W = max(A, A^T), clamped cosine weights) over [12 support images per class; the 4 calibration images per class; the test images]; u+_v = converged propagation of the support mass (eq. lp, lambda = 0.9)",
+  "labelled_split": "fixed by position, data independent (as in Phase 16): of the 4 calibration images of each class (stored class-major order) positions 0, 1 are the reference R, positions 2, 3 the calibration set C; pool U = C u T",
+  "p_R": "p_R,v(x) = (1 + #{r in R : u+_v(r) <= u+_v(x)}) / (|R| + 1) for x in U",
+  "seeds": "per view: Storey-BH at level q = 0.2 with the uncapped pi0_hat and lambda_S = floor(|R|/2)/(|R|+1) (AdaDetect Cor. 3.7) on p_R,v over the whole pool U (calibration images are candidates too); no folds",
+  "negative_mass": "u-_v = converged propagation of the seed mass of view v (same graph, lambda = 0.9); u~-_v = u-_v - (1 - lambda) 1_seeds = lambda S u-_v (a node's own injected mass is not counted, so every node of U is scored by the same rule)",
+  "statistic": "sigma_ref(x) = sum_v [ log p_R,v(x) + log (1 + #{r in R : u~-_v(r) >= u~-_v(x)}) / (|R| + 1) ]  (ranking rows; 'ref|storey|q0.2|pp|stat')",
+  "p_fin": "p_fin(x) = (1 + #{c in C : sigma_ref(c) <= sigma_ref(x)}) / (|C| + 1)  (validity rows; 'ref|storey|q0.2|pp'); sigma_ref is invariant to permutations of U with S and R fixed, so p_fin is a conformal p-value (AdaDetect Thm 3.3) without folds",
+  "with_a_base": "s0 * exp(sigma_ref) (the form of the paper's x base rows), reported for every base",
+  "also_reported": "'ref|lp|stat' / 'ref|lp': p+ only with the reference R (sum_v log p_R,v) and its calibrated rank",
+  "nothing_selected": "every value is the paper's (views, k_g, lambda, q, Storey rule) or Phase 16's (12/2/2 split); there is no free parameter"
+ },
+ "comparator": "sigma = the paper's statistic ('xfit|storey|q0.2|pp|pooled'; p_fin 'xfit|storey|q0.2|pp'), recomputed in the same runs on the same graphs; on dev1/dev2 one fold assignment per draw with the test ids sorted (the Phase 16 protocol: the three TINS orders of a draw are bases of one graph)",
+ "adoption_rule": {
+  "data": "dev2 (5 draws x {near, far}), standalone",
+  "near": "upper end of the paired 95% t interval over the 5 draws of FPR95(sigma_ref) - FPR95(sigma) <= +0.5",
+  "far": "the same on far <= +0.5",
+  "validity": "mean over the 10 dev2 tasks of the false-alarm rate of p_fin(sigma_ref) on the ID test images <= 0.06 at alpha = 0.05 and <= 0.21 at alpha = 0.2",
+  "decision": "all three hold -> sigma_ref becomes the main configuration of the paper (v22): the read-out of Salmon Ladder in the main text is sigma_ref and sigma is reported as the cross-fitted form of v18-v21; otherwise sigma stays the main configuration and sigma_ref is reported as a registered variant in the appendix",
+  "no_deviation": "the decision is final whatever the benchmark values are; all sigma_ref values are reported",
+  "dev1": "evaluated and reported (descriptive); not used by the rule"
+ },
+ "benchmarks_run_once": {
+  "test": "OpenOOD v1.5 ImageNet-1K near (SSB-hard, NINCO) / far (iNaturalist, Textures, OpenImage-O) and Four-OOD, the benchmark calibration, six draws (p3 + pool 0-4), standalone and x bases (TINS per order, TANL / NegLabel / AdaNeg official scores)",
+  "in200": "ImageNet-200, six draws, standalone",
+  "cifar": "CIFAR-100, six draws, views L14 + D3L, standalone",
+  "rec": "the recurrence x mixing grid of Phases 12-16 (NINCO and SSB-hard cells, 3 repetitions), standalone and x TINS",
+  "metrics": "AUROC, FPR95 (empirical threshold accepting >= 95% of ID), paired 95% t intervals over draws of sigma_ref - sigma; validity of p_fin (false-alarm rates at alpha in {0.01, 0.05, 0.1, 0.2}, BH FDP at q = 0.2); seeds per view (count, calibration seeds, ID fraction)"
+ },
+ "descriptive_analyses_no_selection": {
+  "decomposition": {
+   "where": "test (OpenOOD, Four-OOD), in200, cifar; standalone; on the paper's graphs",
+   "rows": "'dec|deg' = sum_v log rank of sqrt(delta_v) among all calibration images (density factor alone); 'dec|q' = the same for q_v = u+_v / sqrt(delta_v) (probability factor; u+_i / sqrt(delta_i) = E_i[1(X_T in S) / sqrt(delta_X_T)], eq. walk); 'dec|u' = the same for u+_v (their product); 'dec|sigma_q' = the paper's cross-fitted statistic with u+ and u- replaced by u+- / sqrt(delta) in the two read-out ranks (seeds and folds unchanged)",
+   "question": "which factor carries near-OOD and which far-OOD"
+  },
+  "bounds": {
+   "where": "the recurrence grid (every cell and repetition), every unknown image y with Q = the test images of its class",
+   "corollary2_sigma": "u+_v(y) <= b_v(y) (Corollary 1 of the paper) and u-_{v,b'}(y) >= c_v(y) = lambda (1 - lambda) sum_{j seed of the other fold} W_v(y, j) / sqrt(delta_v(y) delta_v(j)); sigma(y) <= B(y) = sum_v [log p_low(u+_v[C_b'], b_v(y)) + log p_high(u-_{v,b'}[C_b'], c_v(y))]; p_fin(y) <= pbar(y) = p_low(sigma[C_b], B(y)); reported: share of unknown images with pbar <= 0.05 (certified) vs with p_fin <= 0.05 (actual), violations, slack B - sigma",
+   "corollary2_ref": "the same for sigma_ref (reference R, seeds from the pool, u~- = lambda S u- bounded by c(y) for every y)",
+   "corollaryA1_h": "the registered Phase 16 read-out h on the same graphs: for every non-seed unknown y, Q = the non-seed test images of its class: pi_Q(y) (Theorem A3, exact), phibar = phi(max rho, max e, min zeta), pbar_l(y) = (1 + #{c in C : rho_c omega_c <= pi_Q(y)}) / (|C| + 1) (calibration-side lower bound of Theorem A4), pbar_s(y) with the actual calibration scores s(c), the actual p(y); on the calibration images the ratio rho omega / s; reported: certified shares (pbar_l, pbar_s <= 0.05) vs actual, medians of h / pi_Q, pi_Q / phibar, (rho omega) / s"
+  },
+  "covariate_shift": {
+   "data": "ImageNet-V2 (10,000) or ImageNet-R (30,000) added to the ImageNet-1K ID test images of the benchmark as ID images, with one OpenOOD OOD set; six draws; standalone (no base scores exist for these images)",
+   "metrics": "for sigma, sigma_ref, p+ only, static p (all calibration images), kNN: full-spectrum AUROC / FPR95 (ID and shifted ID both accepted), shifted ID vs OOD, ID vs OOD in the same run, ID vs shifted ID (AUROC; how much the read-out calls shifted ID images unknown); false-alarm rates of p_fin (sigma, sigma_ref) at alpha 0.05 and 0.2 on the ID and on the shifted ID images; share of the seeds that are shifted ID images"
+  }
+ },
+ "outputs": "P17/results/p17_<step>/... (CSV + meta.json + npz per task), p17_dev/adoption.json, p17_summary.json, p17_table.txt; STATUS lines with UTC times",
+ "server": "/home/omote/reprise_p17_20261011 (code, tables, features, results, logs, STATUS); code imports the Phase 12-16 modules unchanged",
+ "code_files": "p17common.py, core17.py, run17.py, ana17.py, smoke17.py, orchestrate17.sh, extract17.py (SHA-256 in prereg_p17.sha256)",
+ "publication": "this file and the code are committed to github.com/omotes24/SalmonLadder (branch phase12-15-registrations) before the runs; the runs start only after the commit is visible publicly"
+}

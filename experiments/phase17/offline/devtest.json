@@ -1,0 +1,464 @@
+{
+ "pfin": {
+  "n": 18,
+  "near": {
+   "spearman_dev1_test": 0.7131062951496387,
+   "spearman_dev2_test": 0.6367389060887513,
+   "spearman_dev1_dev2": 0.981424148606811,
+   "kendall_dev2_test": 0.47712418300653603,
+   "best_dev1": "xfit|storey|q0.2|pp",
+   "best_dev2": "xfit|storey|q0.2|pp",
+   "best_test": "xfit|bh|q0.2|pp",
+   "rank_on_test_of_dev1_best": 10,
+   "storey_vs_bh": {
+    "dev1": -0.221,
+    "dev2": -0.359,
+    "test": 0.515
+   },
+   "q0.2_vs_q0.1": {
+    "dev1": -1.041,
+    "dev2": -1.379,
+    "test": 0.49
+   },
+   "pair_sign_agreement_dev2_test": 0.739,
+   "spearman_dev2_test_pp_only": 0.3714285714285715,
+   "values": {
+    "xfit|bh|q0.05|min": [
+     19.97,
+     19.97,
+     12.89
+    ],
+    "xfit|bh|q0.05|pp": [
+     19.7,
+     19.95,
+     12.84
+    ],
+    "xfit|bh|q0.05|pps": [
+     22.93,
+     21.25,
+     14.19
+    ],
+    "xfit|bh|q0.1|min": [
+     15.36,
+     15.43,
+     11.45
+    ],
+    "xfit|bh|q0.1|pp": [
+     15.19,
+     15.3,
+     11.41
+    ],
+    "xfit|bh|q0.1|pps": [
+     18.01,
+     17.19,
+     12.96
+    ],
+    "xfit|bh|q0.2|min": [
+     14.0,
+     13.51,
+     11.04
+    ],
+    "xfit|bh|q0.2|pp": [
+     13.77,
+     13.37,
+     11.01
+    ],
+    "xfit|bh|q0.2|pps": [
+     16.55,
+     15.62,
+     12.3
+    ],
+    "xfit|storey|q0.05|min": [
+     17.98,
+     18.24,
+     11.39
+    ],
+    "xfit|storey|q0.05|pp": [
+     17.74,
+     18.16,
+     11.3
+    ],
+    "xfit|storey|q0.05|pps": [
+     20.92,
+     19.67,
+     12.9
+    ],
+    "xfit|storey|q0.1|min": [
+     14.73,
+     14.52,
+     11.06
+    ],
+    "xfit|storey|q0.1|pp": [
+     14.59,
+     14.39,
+     11.03
+    ],
+    "xfit|storey|q0.1|pps": [
+     17.48,
+     16.48,
+     12.25
+    ],
+    "xfit|storey|q0.2|min": [
+     13.74,
+     13.14,
+     11.49
+    ],
+    "xfit|storey|q0.2|pp": [
+     13.55,
+     13.01,
+     11.52
+    ],
+    "xfit|storey|q0.2|pps": [
+     16.29,
+     15.28,
+     12.51
+    ]
+   }
+  },
+  "far": {
+   "spearman_dev1_test": 0.5789473684210527,
+   "spearman_dev2_test": 0.587203302373581,
+   "spearman_dev1_dev2": 0.9958720330237358,
+   "kendall_dev2_test": 0.3725490196078432,
+   "best_dev1": "xfit|storey|q0.2|pps",
+   "best_dev2": "xfit|storey|q0.2|pps",
+   "best_test": "xfit|bh|q0.1|pps",
+   "rank_on_test_of_dev1_best": 5,
+   "storey_vs_bh": {
+    "dev1": -0.125,
+    "dev2": -0.019,
+    "test": 0.19
+   },
+   "q0.2_vs_q0.1": {
+    "dev1": -0.858,
+    "dev2": -0.715,
+    "test": 0.349
+   },
+   "pair_sign_agreement_dev2_test": 0.686,
+   "spearman_dev2_test_pp_only": -0.8857142857142858,
+   "values": {
+    "xfit|bh|q0.05|min": [
+     14.77,
+     14.9,
+     4.97
+    ],
+    "xfit|bh|q0.05|pp": [
+     17.13,
+     17.28,
+     4.99
+    ],
+    "xfit|bh|q0.05|pps": [
+     11.88,
+     11.84,
+     4.5
+    ],
+    "xfit|bh|q0.1|min": [
+     16.09,
+     16.45,
+     4.72
+    ],
+    "xfit|bh|q0.1|pp": [
+     17.52,
+     17.72,
+     4.71
+    ],
+    "xfit|bh|q0.1|pps": [
+     11.72,
+     11.74,
+     4.29
+    ],
+    "xfit|bh|q0.2|min": [
+     15.73,
+     16.1,
+     4.94
+    ],
+    "xfit|bh|q0.2|pp": [
+     16.65,
+     16.99,
+     4.96
+    ],
+    "xfit|bh|q0.2|pps": [
+     11.36,
+     11.53,
+     4.4
+    ],
+    "xfit|storey|q0.05|min": [
+     15.3,
+     15.08,
+     4.71
+    ],
+    "xfit|storey|q0.05|pp": [
+     17.47,
+     17.36,
+     4.75
+    ],
+    "xfit|storey|q0.05|pps": [
+     11.92,
+     11.81,
+     4.36
+    ],
+    "xfit|storey|q0.1|min": [
+     15.95,
+     16.33,
+     4.81
+    ],
+    "xfit|storey|q0.1|pp": [
+     17.39,
+     17.69,
+     4.8
+    ],
+    "xfit|storey|q0.1|pps": [
+     11.56,
+     11.72,
+     4.32
+    ],
+    "xfit|storey|q0.2|min": [
+     15.58,
+     16.03,
+     5.13
+    ],
+    "xfit|storey|q0.2|pp": [
+     16.53,
+     16.97,
+     5.15
+    ],
+    "xfit|storey|q0.2|pps": [
+     11.33,
+     11.5,
+     4.48
+    ]
+   }
+  }
+ },
+ "sigma": {
+  "n": 18,
+  "near": {
+   "spearman_dev1_test": 0.6862745098039216,
+   "spearman_dev2_test": 0.6449948400412797,
+   "spearman_dev1_dev2": 0.9896800825593396,
+   "kendall_dev2_test": 0.47712418300653603,
+   "best_dev1": "xfit|storey|q0.2|pp",
+   "best_dev2": "xfit|storey|q0.2|pp",
+   "best_test": "xfit|bh|q0.2|pp",
+   "rank_on_test_of_dev1_best": 10,
+   "storey_vs_bh": {
+    "dev1": -0.283,
+    "dev2": -0.313,
+    "test": 0.502
+   },
+   "q0.2_vs_q0.1": {
+    "dev1": -1.06,
+    "dev2": -1.244,
+    "test": 0.493
+   },
+   "pair_sign_agreement_dev2_test": 0.739,
+   "spearman_dev2_test_pp_only": 0.3714285714285715,
+   "values": {
+    "xfit|bh|q0.05|min": [
+     20.01,
+     20.07,
+     12.91
+    ],
+    "xfit|bh|q0.05|pp": [
+     19.71,
+     19.98,
+     12.84
+    ],
+    "xfit|bh|q0.05|pps": [
+     22.97,
+     21.21,
+     14.2
+    ],
+    "xfit|bh|q0.1|min": [
+     15.31,
+     15.32,
+     11.44
+    ],
+    "xfit|bh|q0.1|pp": [
+     15.15,
+     15.22,
+     11.4
+    ],
+    "xfit|bh|q0.1|pps": [
+     17.98,
+     17.23,
+     12.96
+    ],
+    "xfit|bh|q0.2|min": [
+     13.98,
+     13.53,
+     11.01
+    ],
+    "xfit|bh|q0.2|pp": [
+     13.82,
+     13.4,
+     11.0
+    ],
+    "xfit|bh|q0.2|pps": [
+     16.54,
+     15.58,
+     12.31
+    ],
+    "xfit|storey|q0.05|min": [
+     18.04,
+     18.18,
+     11.37
+    ],
+    "xfit|storey|q0.05|pp": [
+     17.76,
+     18.1,
+     11.32
+    ],
+    "xfit|storey|q0.05|pps": [
+     20.97,
+     19.65,
+     12.94
+    ],
+    "xfit|storey|q0.1|min": [
+     14.72,
+     14.41,
+     11.01
+    ],
+    "xfit|storey|q0.1|pp": [
+     14.6,
+     14.33,
+     11.01
+    ],
+    "xfit|storey|q0.1|pps": [
+     17.44,
+     16.46,
+     12.3
+    ],
+    "xfit|storey|q0.2|min": [
+     13.74,
+     13.21,
+     11.49
+    ],
+    "xfit|storey|q0.2|pp": [
+     13.54,
+     13.09,
+     11.5
+    ],
+    "xfit|storey|q0.2|pps": [
+     16.31,
+     15.3,
+     12.57
+    ]
+   }
+  },
+  "far": {
+   "spearman_dev1_test": 0.5046439628482973,
+   "spearman_dev2_test": 0.6099071207430341,
+   "spearman_dev1_dev2": 0.9442724458204333,
+   "kendall_dev2_test": 0.3856209150326798,
+   "best_dev1": "xfit|storey|q0.2|pps",
+   "best_dev2": "xfit|bh|q0.2|pps",
+   "best_test": "xfit|bh|q0.1|pps",
+   "rank_on_test_of_dev1_best": 5,
+   "storey_vs_bh": {
+    "dev1": -0.185,
+    "dev2": 0.008,
+    "test": 0.214
+   },
+   "q0.2_vs_q0.1": {
+    "dev1": -1.422,
+    "dev2": -0.753,
+    "test": 0.391
+   },
+   "pair_sign_agreement_dev2_test": 0.693,
+   "spearman_dev2_test_pp_only": -0.4285714285714286,
+   "values": {
+    "xfit|bh|q0.05|min": [
+     16.12,
+     15.45,
+     5.03
+    ],
+    "xfit|bh|q0.05|pp": [
+     19.6,
+     19.47,
+     5.06
+    ],
+    "xfit|bh|q0.05|pps": [
+     12.4,
+     12.47,
+     4.53
+    ],
+    "xfit|bh|q0.1|min": [
+     16.93,
+     16.38,
+     4.71
+    ],
+    "xfit|bh|q0.1|pp": [
+     18.98,
+     17.81,
+     4.7
+    ],
+    "xfit|bh|q0.1|pps": [
+     12.08,
+     11.84,
+     4.28
+    ],
+    "xfit|bh|q0.2|min": [
+     15.8,
+     16.15,
+     4.96
+    ],
+    "xfit|bh|q0.2|pp": [
+     16.79,
+     16.99,
+     4.96
+    ],
+    "xfit|bh|q0.2|pps": [
+     11.27,
+     11.45,
+     4.39
+    ],
+    "xfit|storey|q0.05|min": [
+     16.82,
+     15.64,
+     4.73
+    ],
+    "xfit|storey|q0.05|pp": [
+     20.62,
+     19.74,
+     4.74
+    ],
+    "xfit|storey|q0.05|pps": [
+     12.55,
+     12.5,
+     4.34
+    ],
+    "xfit|storey|q0.1|min": [
+     16.54,
+     16.32,
+     4.8
+    ],
+    "xfit|storey|q0.1|pp": [
+     18.03,
+     17.75,
+     4.78
+    ],
+    "xfit|storey|q0.1|pps": [
+     11.79,
+     11.78,
+     4.3
+    ],
+    "xfit|storey|q0.2|min": [
+     15.71,
+     16.12,
+     5.17
+    ],
+    "xfit|storey|q0.2|pp": [
+     16.6,
+     17.0,
+     5.17
+    ],
+    "xfit|storey|q0.2|pps": [
+     11.26,
+     11.46,
+     4.48
+    ]
+   }
+  }
+ }
+}
