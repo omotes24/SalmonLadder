@@ -1,0 +1,5 @@
+2026-10-11T11:12:52Z P16 exploration of the absorbing random walk read-out: dev1 only (no dev2, no test data); harm16.py afa7fe345f0c launched on GPUs 0,1
+2026-10-11T11:16:52Z P16 exploration round 2 (dev1 only): grounded walk / continuous-time hitting time; harm16b.py af6ca0ed93b3
+2026-10-11T11:20:30Z P16 exploration round 3 (dev1 only): joint generating function E[lam^N exp(-gamma T)], lam x gamma grid; harm16c.py 8f2fb0df36c9
+2026-10-11T11:23:02Z P16 exploration round 4 (dev1 only): no-fold design with half the calibration as the seed reference, normalised union; harm16d.py 4daad63eb82d
+2026-10-11T11:26:08Z P16 exploration (dev1 only): degree factor of the Phase 14 mass; harm16e.py e96cb0ba84b4

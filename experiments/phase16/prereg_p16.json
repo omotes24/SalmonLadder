@@ -1,0 +1,72 @@
+{
+ "phase": "16",
+ "title": "Salmon Ladder Phase 16: one quantity — the two-cost absorbing random walk read-out (h16) — confirmed on dev2 and evaluated on the benchmarks",
+ "written_utc": "2026-10-11T12:40:00Z",
+ "status": "frozen after smoke16 passed (2026-10-11T12:38:34Z: calibration images class-major on dev1, dev2, the OpenOOD shots and the pool draws; the dev1 exploration value reproduced exactly on dev1 draw 0; solver exact) and before any dev2 or test-set run of h16; SHA-256 of this file and of the code recorded on the compute server before launching (prereg_p16.sha256); the file and the code are committed to the public repository omotes24/SalmonLadder (branch phase12-15-registrations); the dev1 selection, the dev2 confirmation and every test-set run are launched only after the push (STATUS records the launch times)",
+ "context": "Paper v18 reads out two LGC masses (support u+, seeds u-) through calibrated ranks, multiplies them, cross-fits two folds and multiplies the views' ranks; its propositions concern different quantities (mass conservation, the absolute mass, the escape probability of u/sqrt(delta), ranks and per-fold FDR). Phase 16 replaces the read-out by one quantity: h(x) = probability that the continuous-time random walk with jump rates W_ij, started at x, reaches a support image before a seed and before it vanishes (killed w.p. 1 - lambda per jump and at rate gamma per unit time). Theory (note 'Salmon_Ladder_theory_note_p16.pdf'): probability = linear system = energy minimum; limits = expected cost of steps and time; conformal validity without folds when the seeds are chosen from the pool (calibration + test) against a separate labelled reference; escape (unknown side) and capture (ID side) bounds with one function phi; separation of the calibrated ranks.",
+ "exploration_disclosed": {
+  "split": "dev1 only (5 draws x near/far, standalone); dev2 and every test set untouched by Phase 16 before this registration",
+  "n_configurations": 95,
+  "code_and_results": "server /home/omote/reprise_p16_20261011: code/harm16.py, harm16b.py, harm16c.py, harm16d.py, harm16e.py; results/dev1, dev1_b, dev1_c, dev1_d, dev1_e; STATUS lines 2026-10-11T11:12:52Z - 11:26:08Z (each 'dev1 only')",
+  "findings": "the scale-free absorbing walk (gamma = 0) matches sigma on dev1 near but loses far (FPR95 28.27 vs 16.74): v18's sqrt(delta) carried the far density signal; the price per time gamma restores it; the configuration fixed below gave dev1 FPR95 16.77 far / 13.74 near vs sigma 16.74 / 13.69 (AUROC 0.34 / 0.28 lower), FPR at alpha = 0.05 of 0.049 / 0.050. These dev1 values are optimistic (chosen after 95 configurations)."
+ },
+ "fixed_in_advance": {
+  "h16_configuration": {
+   "views": "DINOv2 L/14 + DINOv3 L/16 (as v18)",
+   "graph": "per view the symmetric k_g-NN graph of Phases 12-15 (k_g = 10, weights max(cos, 0), W = max(A, A^T)); each view's W divided by that view's median degree; the views summed into one graph",
+   "walk": "continuous-time random walk with jump rates W_ij; survival per jump lambda = 0.95; killing rate per unit time gamma = median degree of the summed graph / 16",
+   "labelled_split": "support S = all 12 support images per class (absorbing, value 1); of the 4 calibration images per class (stored class-major order, checked by smoke16.py) positions 0, 1 = reference R, positions 2, 3 = calibration C (fixed, data independent)",
+   "stage1": "h0 = P(reach S before vanishing), no seeds",
+   "seeds": "Storey-BH at q = 0.2 (pi0_hat = (1 + #{p >= lambda_S}) / (m (1 - lambda_S)), uncapped, lambda_S = floor(|R|/2) / (|R| + 1)) on p_R(u) = (1 + #{r in R : h0(r) <= h0(u)}) / (|R| + 1) over the pool U = C u T",
+   "stage2": "h = P(reach S before a seed and before vanishing), seeds absorbing with value 0",
+   "score": "s(x) = lambda (W h)(x) / (delta_x + gamma) for every unlabelled node (= h off the seeds; one-step look-ahead on the seeds); the standalone ranking score of the paper is s ('h16|s')",
+   "p_value": "p(x) = (1 + #{c in C : s(c) <= s(x)}) / (|C| + 1) ('h16|p'; ties counted with <=, conservative); no folds",
+   "solver": "Jacobi-preconditioned conjugate gradients, relative residual < 1e-11",
+   "code": "core16.py (h16), h16.py (runs), ana16.py (analysis), orchestrate16.sh, smoke16.py"
+  },
+  "reference": "sigma of paper v18 (cross-fitted Storey q = 0.2, p+ p-, pooled statistic; 'xfit|storey|q0.2|pp|pooled') recomputed in the same run on the same graphs (on the dev splits with the test images in sample-id order, so its fold split differs from the Phase 14 runs), its p_final, p+ only, the Phase 12 read-out and kNN",
+  "base_combination": {
+   "candidates": [
+    "s0 * s (cfg 'h16|s' with a base)",
+    "s0 * p (cfg 'h16|p' with a base)"
+   ],
+   "rule_on_dev1": "the candidate with the lower mean dev1-near FPR95 x TINS (mean over the 5 draws of the mean over the 3 TINS orders) among the candidates whose mean dev1-far FPR95 x TINS is at most that of sigma x TINS + 0.5; if none qualifies, the lower far value; ties -> s0 * s. Computed by ana16.py --dev1-select before dev2 is run.",
+   "status": "a rule for the ranking score only: the product with a base detector is outside the validity statement (the bases have no calibration scores)"
+  },
+  "steps_and_order": [
+   "smoke16 (calibration order; reproduction of the dev1 exploration value on dev1 draw 0; solver check)",
+   "dev1: h16 and the references, standalone and x TINS (3 orders) -> base-combination rule",
+   "dev2: the same -> H1-H3 and the adoption decision",
+   "test: OpenOOD v1.5 ImageNet-1K near (SSB-hard, NINCO) / far (iNaturalist, Textures, OpenImage-O) and Four-OOD, benchmark calibration, six draws of the labelled images, standalone and x TINS / TANL / NegLabel / AdaNeg",
+   "in200: ImageNet-200, six draws, standalone",
+   "cifar: CIFAR-100, six draws, standalone",
+   "rec: the recurrence x mixing-rate grid (60 cells x 3 repetitions, the Phase 12-15 test sets), standalone and x TINS",
+   "ana16 --summary"
+  ],
+  "nothing_else_selected": "no parameter of h16 is changed after this registration; all test-set values are reported whatever they are"
+ },
+ "hypotheses_stated_before_running": {
+  "H1": "dev2 near: mean over the 5 draws of FPR95(h16|s) - FPR95(sigma), standalone, <= +0.5 (point estimate; the paired 95% t interval is reported)",
+  "H2": "dev2 far: the same, <= +0.5",
+  "H3": "dev2: mean false-alarm rate of p (standalone, over draws x streams) <= 0.06 at alpha = 0.05 and <= 0.21 at alpha = 0.2",
+  "adoption_rule": "if H1 and H2 and H3 hold, h16 becomes the main configuration of the paper (headline = h16 standalone on the test sets; sigma becomes a comparison row); otherwise sigma stays the main configuration and h16 is reported as a registered variant with its test-set values",
+  "H4_descriptive": "test sets: h16 - sigma per benchmark group (paired t intervals over the six draws), standalone and x bases (the dev1-chosen combination); no threshold"
+ },
+ "analysis": {
+  "units": "draws (6 on the benchmarks, 5 on the dev splits); per-dataset means first, then group means (near, far, Four-OOD; CIFAR near/far as Phase 14)",
+  "validity": "realised ID false-alarm rate of p <= alpha (0.01, 0.05, 0.1, 0.2), OOD recall, FDP of BH(0.2) on p over the whole test set",
+  "descriptive_unregistered_but_declared": "tightness of the escape bound (Theorem 3), the capture bound (Theorem 4) and Corollary 1 of the theory note on repetition 0 of the recurrence grid (as cor15.py for v18's Corollary 1)"
+ },
+ "code": {
+  "files": [
+   "p16common.py",
+   "core16.py",
+   "h16.py",
+   "ana16.py",
+   "smoke16.py",
+   "orchestrate16.sh"
+  ],
+  "server_directory": "/home/omote/reprise_p16_20261011/code",
+  "inherits": "Phase 12-15 code (core14.Graph / score_all, draws12, test14.vlm_bases, in200_14.layout, rec14 grid, extract14 CIFAR) unchanged"
+ }
+}

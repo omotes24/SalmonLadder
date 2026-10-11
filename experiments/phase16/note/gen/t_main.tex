@@ -1,0 +1,32 @@
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{dev1 far} & \multicolumn{2}{c}{dev1 near} & \multicolumn{2}{c}{誤警報率（$\alpha{=}0.05$）}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+構成 & \AUC$\uparrow$ & \FPR$\downarrow$ & \AUC$\uparrow$ & \FPR$\downarrow$ & far & near\\
+\midrule
+\multicolumn{7}{l}{\textit{v18の読み出し（参照）}}\\
+\quad $\sigma$（$\pP\pN$，2折） & 96.69 & 16.74 & \textbf{97.09} & 13.69 & 0.051 & 0.050\\
+\quad $\pP$のみ & 96.51 & 16.30 & 95.67 & 18.75 & -- & --\\
+\midrule
+\multicolumn{7}{l}{\textit{歩数の代価だけ（$\gamma{=}0$）}}\\
+\quad 種なし，$\lambda{=}0.9$ & 90.74 & 28.27 & 96.02 & \textbf{13.43} & 0.047 & 0.052\\
+\quad 種（2折），$\lambda{=}0.9$ & 92.01 & 24.40 & 96.63 & 13.81 & 0.049 & 0.051\\
+\quad 種（折なし），$\lambda{=}0.9$ & 91.65 & 25.35 & 96.53 & 14.19 & 0.049 & 0.051\\
+\quad 種（折なし），$\lambda{\to}1$：調和関数 & 93.57 & 26.15 & 96.83 & 14.38 & 0.050 & 0.050\\
+\quad 種なし，$\lambda{\to}1$：$-\mathbb{E}[N_{\mathcal{S}}]$ & 91.31 & 27.16 & 96.27 & 14.26 & 0.048 & 0.052\\
+\quad 有向$k_g$近傍，種なし & 87.87 & 38.92 & 95.20 & 16.36 & 0.047 & 0.050\\
+\midrule
+\multicolumn{7}{l}{\textit{時間の代価だけ（$\lambda{=}1$）}}\\
+\quad 種なし，$\gamma{=}1$ & 96.70 & 15.53 & 95.67 & 19.27 & 0.049 & 0.051\\
+\quad 種（2折），$\gamma{=}1$ & \textbf{96.77} & 15.84 & 96.29 & 16.34 & 0.050 & 0.049\\
+\quad 種なし，$\gamma{\to}0$：$-\mathbb{E}[T_{\mathcal{S}}]$ & 96.72 & \textbf{15.29} & 95.71 & 19.81 & 0.049 & 0.052\\
+\midrule
+\multicolumn{7}{l}{\textit{二つの代価（$\lambda{=}0.95$，$\gamma\approx\mathrm{median}(\delta)/16$）}}\\
+\quad 種なし & 96.10 & 17.74 & 96.28 & 15.38 & 0.048 & 0.052\\
+\quad 種（2折），和グラフ & 96.27 & 16.79 & 96.71 & 14.16 & 0.048 & 0.050\\
+\quad 種（2折），ビューごと＋順位の積 & 96.21 & 16.69 & 96.69 & 13.51 & 0.047 & 0.050\\
+\quad 折なし，$\mathcal{S}$11/$\mathcal{R}$1/$\mathcal{C}$4 & 96.05 & 17.55 & 96.64 & 14.46 & 0.049 & 0.049\\
+\quad 折なし，12/2/2，ビューごと & 96.27 & 16.74 & 96.73 & 13.72 & 0.048 & 0.051\\
+\quad \textbf{折なし，12/2/2，正規化和：一つの量} & 96.34 & 16.77 & 96.80 & 13.74 & 0.049 & 0.050\\
+\bottomrule
+\end{tabular}
