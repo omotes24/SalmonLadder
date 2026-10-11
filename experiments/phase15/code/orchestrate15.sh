@@ -13,11 +13,17 @@ export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 HF_HUB_OFFLINE=1 PYTHONUNBUFFERED=1
 status() { echo "$(date -u +%FT%TZ) $*" | tee -a "$P15/STATUS"; }
 fail() { status "FAILED $*"; exit 1; }
 GPUS=()
+if [ -n "${GPUS_OVERRIDE:-}" ]; then read -r -a GPUS <<< "$GPUS_OVERRIDE"; else
 while IFS=, read -r idx used; do used=${used// /}; [ "${used%MiB}" -lt 1500 ] && GPUS+=("$idx"); done < <(nvidia-smi --query-gpu=index,memory.used --format=csv,noheader,nounits | sed 's/, /,/')
-NG=${#GPUS[@]}; [ "$NG" -ge 2 ] || fail "need at least two free GPUs"
-HA=$(( NG / 2 )); GA=("${GPUS[@]:0:$HA}"); GB=("${GPUS[@]:$HA}"); NA=${#GA[@]}; NB=${#GB[@]}
+fi
+NG=${#GPUS[@]}; [ "$NG" -ge 2 ] || fail "need at least two free GPUs (or GPUS_OVERRIDE)"
 STEPS=${STEPS:-tables,extract,text,base,smoke,cap_dev,cap_test,cap_in200,cap_cifar,cap_rec,kg,views,ana}
 has() { [[ ",$STEPS," == *",$1,"* ]]; }
+has_any() { for s in "$@"; do has "$s" && return 0; done; return 1; }
+HA=$(( NG / 2 )); GA=("${GPUS[@]:0:$HA}"); GB=("${GPUS[@]:$HA}")
+has_any smoke cap_dev cap_test cap_in200 cap_cifar cap_rec kg views || GA=("${GPUS[@]}")      # only pipeline A requested: all GPUs to A
+has_any tables extract text base || GB=("${GPUS[@]}")                                          # only pipeline B requested: all GPUs to B
+NA=${#GA[@]}; NB=${#GB[@]}
 status "P15 START gpus A=${GA[*]} B=${GB[*]} steps=$STEPS"
 workers() {  # workers <gpu list name> <tag> <script> [args]: one worker per GPU of the list
   local -n G=$1; local tag=$2; shift 2
@@ -92,4 +98,4 @@ wait $PB; RB=$?
 [ $RA -eq 0 ] || status "FAILED pipeline A (see logs/pipeline_a.log and the step logs)"
 [ $RB -eq 0 ] || status "FAILED pipeline B (see logs/pipeline_b.log and the step logs)"
 if has ana; then status "ana start"; CUDA_VISIBLE_DEVICES= $PY ana15.py > "$LOG/ana15.log" 2>&1 || fail "ana15"; grep -q ANA15_DONE "$LOG/ana15.log" || fail "ana15 did not finish"; status "ana done"; fi
-[ $RA -eq 0 ] && [ $RB -eq 0 ] && status "P15 DONE steps=$STEPS" || status "P15 ENDED WITH FAILURES steps=$STEPS"
+if [ $RA -eq 0 ] && [ $RB -eq 0 ]; then status "P15 DONE steps=$STEPS"; else status "P15 ENDED WITH FAILURES steps=$STEPS"; fi   # (the run of 2026-10-11 used "a && b || c" here, which also printed the failure line after a successful DONE line on the pipeline-A run)

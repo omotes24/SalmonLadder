@@ -1,0 +1,137 @@
+{
+ "folds": 2,
+ "views": {
+  "L14": {
+   "fold0|storey|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.9112260306065616,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold0|bh|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold0|storeyc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.9112260306065616,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold0|bhc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|storey|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.894331818623854,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|bh|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|storeyc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.894331818623854,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|bhc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "v1": {
+    "q0.2": {
+     "seeds": 0,
+     "pi0_hat": 0.9045526794125062,
+     "id_frac": null
+    }
+   }
+  },
+  "D3L": {
+   "fold0|storey|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.8417032524997127,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold0|bh|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold0|storeyc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.8417032524997127,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold0|bhc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|storey|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.8479832998859548,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|bh|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|storeyc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 0.8479832998859548,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "fold1|bhc|q0.2": {
+    "seeds": 0,
+    "pi0_hat": 1.0,
+    "n_test": 22600,
+    "n_cal": 2000,
+    "id_frac": null
+   },
+   "v1": {
+    "q0.2": {
+     "seeds": 0,
+     "pi0_hat": 0.8437714107547996,
+     "id_frac": null
+    }
+   }
+  }
+ },
+ "seconds": 6.3,
+ "tau": 0.05
+}

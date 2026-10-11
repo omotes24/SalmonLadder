@@ -1,0 +1,10 @@
+{
+ "benchmark": "cifar100",
+ "ds": "mnist",
+ "group": "far",
+ "n": 79000,
+ "n_ood": 70000,
+ "n_train": 50000,
+ "seconds": 44.0,
+ "utc": "2026-10-11T05:54:58Z"
+}

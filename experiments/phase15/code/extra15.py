@@ -43,12 +43,17 @@ def build_table(name):
         assert t.label.min() == 0 and t.label.max() == 199 and t.path.is_unique
         assert os.path.exists(t.path.iloc[0]), t.path.iloc[0]
     elif name == "cifar_train":
-        t14 = pd.read_parquet(CIFAR / "table.parquet")
-        have = {p: i for i, p in zip(t14.index.values, t14.path.values) if True}
-        tr = {p: i for p, i in have.items() if t14.split.iloc[i] == "train"}
+        t14 = pd.read_parquet(CIFAR / "table.parquet")                    # absolute paths (extract14 resolved the image root)
+        tr = {p: int(i) for i, p, s in zip(t14.index.values, t14.path.values, t14.split.values) if s == "train"}
+        lst = read_list("train_cifar100.txt")
+        first = lst[0][0]
+        from extract14 import ROOT
+        base = next((b for b in (ROOT, ROOT.parent) if (b / first).exists()), None)
+        assert base is not None, first
         rows = []
-        for p, y in read_list("train_cifar100.txt"):
-            rows.append({"path": p, "label": y, "wnid": "", "p14_row": int(tr.get(p, -1))})
+        for p, y in lst:
+            ap = str(base / p)
+            rows.append({"path": ap, "label": y, "wnid": "", "p14_row": tr.get(ap, -1)})
         t = pd.DataFrame(rows)
         assert len(t) == 50000 and (t.p14_row >= 0).sum() == 9600, int((t.p14_row >= 0).sum())
         assert os.path.exists(t.path.iloc[0]), t.path.iloc[0]

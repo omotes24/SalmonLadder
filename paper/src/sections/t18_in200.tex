@@ -1,0 +1,29 @@
+{\fontsize{6.8pt}{8pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}lcccc@{}}
+\hline
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{2}{c}{near-OOD} & \multicolumn{2}{c}{far-OOD} \\
+\rule[-2.0pt]{0pt}{8.6pt}手法 & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ \\
+\hline
+\multicolumn{5}{@{}l}{\rule{0pt}{6.6pt}\textit{ImageNet-200で学習したResNet-18（報告値$^{\dagger}$）}} \\
+OE$^{\dagger}$（外れ値データで学習） & 84.84 & 52.30 & 89.02 & 34.17 \\
+RegMixup + MSP$^{\dagger}$ & 84.13 & 53.78 & 90.81 & 33.88 \\
+TempScale$^{\dagger}$（事後手法の最良） & 83.69 & 54.82 & 90.82 & 34.00 \\
+PixMix + ASH$^{\dagger}$ & 81.36 & 63.51 & 95.01 & 21.22 \\
+NPOS$^{\dagger}$ & 79.40 & 62.09 & 94.49 & 21.76 \\
+\multicolumn{5}{@{}l}{\rule{0pt}{6.6pt}\textit{全学習画像（258,951枚）またはゼロショット（本稿で実測）}} \\
+kNN，全学習画像（$k{=}50$） & 92.09 & 28.04 & 98.56 & 4.40 \\
+クラス平均，全学習画像 & 92.88 & 24.69 & 98.96 & 3.20 \\
+MCM~\cite{ming2022mcm}，ゼロショット & 84.53 & 57.89 & 96.85 & 14.92 \\
+NegLabel~\cite{jiang2024neglabel}，ゼロショット & 86.82 & 56.16 & 97.90 & 10.21 \\
+\multicolumn{5}{@{}l}{\rule{0pt}{6.6pt}\textit{凍結特徴，クラスあたり16枚，学習なし，単体（6通りの抽出の平均）}} \\
+静的$p$（同じ特徴，グラフなし） & 92.25 & 26.72 & 98.71 & 3.71 \\
+kNN（同じ特徴，グラフなし） & 89.20 & 38.95 & 97.84 & 7.62 \\
+LGC-max（同じグラフ） & 98.31 & 7.99 & 99.41 & 1.65 \\
+$\pP$のみ（種なし） & \cellcolor{upd}\textbf{98.43} & \cellcolor{upd}\textbf{7.45} & 99.39 & \cellcolor{upd}\textbf{1.25} \\
+$\pP\pN$，交差適合なし & 98.11 & 9.26 & 99.37 & 2.45 \\
+$\sigma$（本稿の構成） & 98.17 & 9.07 & 99.35 & 2.15 \\
+$\sigma$，単純BH法の種 & \cellcolor{upd}\textbf{98.54}\sota & \cellcolor{upd}\textbf{7.24} & \cellcolor{upd}\textbf{99.45} & \cellcolor{upd}\textbf{1.51} \\
+$\sigma$，上限付きの種（Storey型） & \cellcolor{upd}\textbf{98.43} & \cellcolor{upd}\textbf{6.91}\sota & \cellcolor{upd}\textbf{99.49}\sota & \cellcolor{upd}\textbf{1.23}\sota \\
+$\sigma$，上限付きの種（単純BH法） & \cellcolor{upd}\textbf{98.43} & \cellcolor{upd}\textbf{6.91}\sota & \cellcolor{upd}\textbf{99.49}\sota & \cellcolor{upd}\textbf{1.23}\sota \\
+\hline
+\end{tabular}}%

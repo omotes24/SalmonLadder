@@ -1,0 +1,10 @@
+{
+ "benchmark": "cifar100",
+ "ds": "texture",
+ "group": "far",
+ "n": 14640,
+ "n_ood": 5640,
+ "n_train": 50000,
+ "seconds": 7.9,
+ "utc": "2026-10-11T05:55:55Z"
+}

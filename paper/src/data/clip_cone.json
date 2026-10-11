@@ -1,0 +1,56 @@
+{
+ "_source": "bridge job 701 on hades (2026-10-11): Phase 3 feature space 'openood', CLIP ViT-B/16 TINS-path image embeddings (unit norm), prototypes = means of the 12 support images per class (normalised); mean over images of the mean cosine to all 1,000 prototypes, and the max-prototype cosine",
+ "CLIP": {
+  "mean_cos_all_protos": {
+   "id": 0.586,
+   "textures": 0.614,
+   "ninco": 0.586
+  },
+  "max_proto_cos": {
+   "id": [
+    0.847,
+    0.068
+   ],
+   "textures": [
+    0.809,
+    0.043
+   ],
+   "ninco": [
+    0.82,
+    0.053
+   ]
+  }
+ },
+ "L14": {
+  "mean_cos_all_protos": {
+   "id": 0.024,
+   "textures": 0.016
+  },
+  "max_proto_cos": {
+   "id": [
+    0.661,
+    0.201
+   ],
+   "textures": [
+    0.291,
+    0.148
+   ]
+  }
+ },
+ "DINO1": {
+  "mean_cos_all_protos": {
+   "id": 0.106,
+   "textures": 0.072
+  },
+  "max_proto_cos": {
+   "id": [
+    0.664,
+    0.136
+   ],
+   "textures": [
+    0.393,
+    0.096
+   ]
+  }
+ }
+}

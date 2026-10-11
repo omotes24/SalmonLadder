@@ -1,0 +1,5 @@
+\secref{fdp}の2つの設定の詳細を示す．
+
+\textbf{交換可能な較正（検証画像）．}較正画像をIDの検証画像からクラスあたり4枚取り（残りの検証画像がIDのテスト集合），支持画像は学習画像のままにすると，較正画像とIDのテスト画像は交換可能になる．\NVcalNSplits{}通りの抽出・9データセットで，IDの誤警報率$\Pr(\pfin\le\alpha)$は$\alpha{=}0.01$で\NVcalFprZeroZeroOneMin{}--\NVcalFprZeroZeroOneMax{}，$0.05$で\NVcalFprZeroZeroFiveMin{}--\NVcalFprZeroZeroFiveMax{}，$0.1$で\NVcalFprZeroOneMin{}--\NVcalFprZeroOneMax{}，$0.2$で\NVcalFprZeroTwoMin{}--\NVcalFprZeroTwoMax{}とどの水準でも$\alpha$のまわりに収まり，$\pfin$へのBH法（$q{=}0.2$）の偽発見割合は\NVcalBhFdpMin{}--\NVcalBhFdpMax{}で水準以下，その再現率（未知のうち棄却された割合）は\NVcalBhRecallMin{}--\NVcalBhRecallMax{}である．種に混じるIDの割合（折ごと，命題3の対象）も$q{=}0.2$で\NVcalIdfracStoreyMin{}--\NVcalIdfracStoreyMax{}（Storey型）である．検知性能は学習画像の較正と変わらない（near-OODの\FPR{}は$\times$TINSで\NVcalMainNearFpr\%，単体で\NVcalAloneNearFpr\%）．命題4の保証は実測でも成り立つ．
+
+\textbf{ベンチマークの較正（学習画像）．}同じ量を\tabref{main}の設定（6通りの抽出）で測ると，$\Pr(\pfin\le0.05)$は\NVtrainFprZeroZeroFiveMin{}--\NVtrainFprZeroZeroFiveMax{}，BH法の偽発見割合は\NVtrainBhFdpMin{}--\NVtrainBhFdpMax{}，種のIDの割合は\NVtrainIdfracStoreyMin{}--\NVtrainIdfracStoreyMax{}（単純BH法では\NVtrainIdfracBhMin{}--\NVtrainIdfracBhMax{}）であり，学習画像と検証画像のずれの分だけ水準を超える（\tabref{fdp}）．ベンチマークの値（\tabref{main}）はその定めどおり学習画像の較正で報告する．

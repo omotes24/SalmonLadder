@@ -1,0 +1,10 @@
+{
+ "benchmark": "imagenet200",
+ "ds": "ssb_hard",
+ "group": "near",
+ "n": 58000,
+ "n_ood": 49000,
+ "n_train": 258951,
+ "seconds": 25.0,
+ "utc": "2026-10-11T05:55:04Z"
+}

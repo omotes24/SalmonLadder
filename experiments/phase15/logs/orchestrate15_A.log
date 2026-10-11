@@ -1,0 +1,3 @@
+2026-10-11T03:56:14Z P15 START gpus A=0 1 2 3 B=2 3 steps=tables,extract,text,base
+2026-10-11T03:56:29Z FAILED pipeline A (see logs/pipeline_a.log and the step logs)
+2026-10-11T03:56:29Z P15 ENDED WITH FAILURES steps=tables,extract,text,base

@@ -1,0 +1,10 @@
+# MIRU2025 テンプレートの latexmkrc に，和文フォントの埋め込み（原ノ味）と，Compiler 設定によらず pLaTeX を使う指定を加えたもの．
+# Overleaf では Menu → Compiler を「LaTeX」にする（pdfLaTeX のままだと miru2025j.cls が読めない）．
+$latex     = 'platex %O %S';
+$pdflatex  = 'platex %O %S';
+$xelatex   = 'platex %O %S';
+$lualatex  = 'platex %O %S';
+$bibtex    = 'pbibtex %O %B';
+$dvipdf    = 'dvipdfmx -f ptex-haranoaji.map %O -o %D %S';
+$makeindex = 'mendex %O -o %D %S';
+$pdf_mode  = 3;   # latex -> dvi -> dvipdfmx

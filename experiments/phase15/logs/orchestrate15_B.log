@@ -1,0 +1,4 @@
+2026-10-11T05:24:57Z P15 START gpus A=2 B=2 3 steps=smoke,cap_dev,cap_test,cap_in200,cap_cifar,cap_rec,kg,views,ana
+2026-10-11T06:02:29Z ana start
+2026-10-11T06:02:38Z ana done
+2026-10-11T06:02:38Z P15 DONE steps=smoke,cap_dev,cap_test,cap_in200,cap_cifar,cap_rec,kg,views,ana

@@ -1,0 +1,501 @@
+== baselines cifar100 (training images: 50000) ==
+cifar100     near  ncm_all               97.61 /  12.91
+cifar100     near  knn_all_k10           97.22 /  14.39
+cifar100     near  knn_all_k50           97.09 /  16.35
+cifar100     near  ncm_all_D3L           96.94 /  16.87
+cifar100     near  ncm_all_L14           96.94 /  17.69
+cifar100     near  knn_all_k50_D3L       96.54 /  19.11
+cifar100     near  knn_all_k50_L14       95.97 /  21.89
+cifar100     near  neglabel_clip         72.98 /  76.98
+cifar100     near  mcm_clip              70.30 /  94.06
+cifar100     far   ncm_all_D3L           96.44 /  19.76
+cifar100     far   ncm_all               95.38 /  28.05
+cifar100     far   knn_all_k10           95.20 /  30.32
+cifar100     far   knn_all_k50_D3L       94.89 /  30.36
+cifar100     far   knn_all_k50           94.94 /  32.15
+cifar100     far   knn_all_k50_L14       92.97 /  41.67
+cifar100     far   ncm_all_L14           92.56 /  41.90
+cifar100     far   neglabel_clip         80.25 /  64.84
+cifar100     far   mcm_clip              74.59 /  89.10
+
+== baselines imagenet200 (training images: 258951) ==
+imagenet200  near  ncm_all               92.88 /  24.69
+imagenet200  near  ncm_all_L14           92.19 /  26.31
+imagenet200  near  ncm_all_D3L           92.48 /  26.74
+imagenet200  near  knn_all_k50           92.09 /  28.04
+imagenet200  near  knn_all_k50_L14       91.21 /  29.52
+imagenet200  near  knn_all_k50_D3L       91.85 /  30.58
+imagenet200  near  knn_all_k10           91.01 /  33.33
+imagenet200  near  neglabel_clip         86.82 /  56.16
+imagenet200  near  mcm_clip              84.53 /  57.89
+imagenet200  far   ncm_all               98.96 /   3.20
+imagenet200  far   ncm_all_D3L           98.76 /   3.43
+imagenet200  far   knn_all_k50           98.56 /   4.40
+imagenet200  far   ncm_all_L14           98.60 /   4.54
+imagenet200  far   knn_all_k50_L14       98.46 /   5.74
+imagenet200  far   knn_all_k50_D3L       98.14 /   6.10
+imagenet200  far   knn_all_k10           97.87 /   8.75
+imagenet200  far   neglabel_clip         97.90 /  10.21
+imagenet200  far   mcm_clip              96.85 /  14.92
+
+== k_g grid: FPR95 standalone (sigma | p+ only | static | v1) per (ds, r, k_g) ==
+ninco|c64|r1|kg3              91.1 |  91.1 |  44.3 |  91.7
+ninco|c64|r1|kg5              84.4 |  84.4 |  44.3 |  84.9
+ninco|c64|r1|kg10             75.0 |  75.0 |  44.3 |  75.0
+ninco|c64|r1|kg20             54.7 |  54.7 |  44.3 |  54.7
+ninco|c64|r1|kg40             39.6 |  39.6 |  44.3 |  39.6
+ninco|c64|r2|kg3              83.3 |  83.3 |  46.1 |  84.1
+ninco|c64|r2|kg5              80.5 |  80.5 |  46.1 |  80.5
+ninco|c64|r2|kg10             72.4 |  72.4 |  46.1 |  72.4
+ninco|c64|r2|kg20             56.8 |  56.8 |  46.1 |  56.8
+ninco|c64|r2|kg40             39.6 |  39.6 |  46.1 |  39.8
+ninco|c64|r5|kg3              49.2 |  48.6 |  46.2 |  49.6
+ninco|c64|r5|kg5              56.0 |  56.1 |  46.2 |  55.2
+ninco|c64|r5|kg10             60.9 |  61.6 |  46.2 |  60.2
+ninco|c64|r5|kg20             52.3 |  52.3 |  46.2 |  51.4
+ninco|c64|r5|kg40             42.7 |  42.7 |  46.2 |  42.6
+ninco|c64|r10|kg3             32.4 |  32.1 |  46.9 |  32.1
+ninco|c64|r10|kg5             25.9 |  29.6 |  46.9 |  27.3
+ninco|c64|r10|kg10            30.2 |  33.7 |  46.9 |  29.5
+ninco|c64|r10|kg20            45.0 |  46.7 |  46.9 |  42.1
+ninco|c64|r10|kg40            44.3 |  42.7 |  46.9 |  40.9
+ninco|c64|r20|kg3             18.3 |  17.5 |  45.5 |  16.7
+ninco|c64|r20|kg5              9.7 |  13.6 |  45.5 |   9.8
+ninco|c64|r20|kg10             7.9 |  11.7 |  45.5 |   7.7
+ninco|c64|r20|kg20            13.4 |  15.7 |  45.5 |  11.4
+ninco|c64|r20|kg40            33.5 |  34.1 |  45.5 |  31.3
+ninco|c64|r30|kg3              6.5 |  11.4 |  46.0 |   6.2
+ninco|c64|r30|kg5              4.0 |   8.2 |  46.0 |   3.7
+ninco|c64|r30|kg10             2.5 |   6.7 |  46.0 |   3.1
+ninco|c64|r30|kg20             3.7 |   7.5 |  46.0 |   3.7
+ninco|c64|r30|kg40            15.9 |  18.2 |  46.0 |  14.3
+ssb_hard|c980|r1|kg3          75.7 |  75.8 |  65.9 |  76.0
+ssb_hard|c980|r1|kg5          73.5 |  75.7 |  65.9 |  73.2
+ssb_hard|c980|r1|kg10         73.1 |  72.9 |  65.9 |  73.0
+ssb_hard|c980|r1|kg20         63.8 |  65.1 |  65.9 |  65.1
+ssb_hard|c980|r1|kg40         59.5 |  59.7 |  65.9 |  57.5
+ssb_hard|c980|r2|kg3          65.1 |  67.6 |  66.1 |  65.9
+ssb_hard|c980|r2|kg5          59.6 |  65.5 |  66.1 |  60.1
+ssb_hard|c980|r2|kg10         56.8 |  62.4 |  66.1 |  57.0
+ssb_hard|c980|r2|kg20         53.3 |  58.0 |  66.1 |  51.8
+ssb_hard|c980|r2|kg40         51.3 |  53.3 |  66.1 |  50.4
+ssb_hard|c980|r5|kg3          45.8 |  51.4 |  66.6 |  46.2
+ssb_hard|c980|r5|kg5          44.8 |  49.5 |  66.6 |  44.9
+ssb_hard|c980|r5|kg10         43.1 |  46.7 |  66.6 |  43.2
+ssb_hard|c980|r5|kg20         40.7 |  44.1 |  66.6 |  41.1
+ssb_hard|c980|r5|kg40         43.3 |  43.5 |  66.6 |  43.3
+ssb_hard|c980|r10|kg3         38.0 |  41.2 |  66.7 |  38.3
+ssb_hard|c980|r10|kg5         34.3 |  37.7 |  66.7 |  35.0
+ssb_hard|c980|r10|kg10        32.8 |  35.5 |  66.7 |  33.1
+ssb_hard|c980|r10|kg20        32.2 |  34.7 |  66.7 |  32.6
+ssb_hard|c980|r10|kg40        36.0 |  36.6 |  66.7 |  35.9
+ssb_hard|c980|r20|kg3         30.0 |  32.9 |  66.8 |  29.9
+ssb_hard|c980|r20|kg5         27.0 |  29.5 |  66.8 |  26.8
+ssb_hard|c980|r20|kg10        26.2 |  27.8 |  66.8 |  26.1
+ssb_hard|c980|r20|kg20        27.7 |  28.6 |  66.8 |  27.6
+ssb_hard|c980|r20|kg40        32.1 |  32.2 |  66.8 |  32.2
+ssb_hard|c980|r50|kg3         24.9 |  26.2 |  66.6 |  24.2
+ssb_hard|c980|r50|kg5         22.3 |  23.7 |  66.6 |  21.7
+ssb_hard|c980|r50|kg10        22.6 |  23.4 |  66.6 |  22.5
+ssb_hard|c980|r50|kg20        24.4 |  25.5 |  66.6 |  24.4
+ssb_hard|c980|r50|kg40        28.3 |  28.9 |  66.6 |  28.6
+
+== cap_test: FPR95 (standalone / x TINS where present) ==
+cap_test   openood  near    v1|storey|q0.2|pp|TINS                    98.12 /  10.26  [9.96, 10.56]
+cap_test   openood  near    xfit|bh|q0.2|pp|pooled|TINS               98.03 /  10.29  [10.05, 10.52]
+cap_test   openood  near    xfit|bh|q0.2|min|pooled|TINS              98.00 /  10.34  [10.11, 10.57]
+cap_test   openood  near    xfit|bh|q0.2|pp|pooled|AdaNeg             97.97 /  10.46  [10.30, 10.62]
+cap_test   openood  near    xfit|storey|q0.2|pp|pooled|TINS           98.09 /  10.50  [10.29, 10.71]
+cap_test   openood  near    v1|storey|q0.2|pp|AdaNeg                  98.04 /  10.52  [10.29, 10.74]
+cap_test   openood  near    xfit|storey|q0.2|min|pooled|TINS          98.06 /  10.54  [10.34, 10.75]
+cap_test   openood  near    xfit|bh|q0.2|min|pooled|AdaNeg            97.92 /  10.55  [10.39, 10.72]
+cap_test   openood  near    xfit|bh|q0.2|pp|pooled|NegLabel           97.94 /  10.65  [10.52, 10.77]
+cap_test   openood  near    xfit|bhc|q0.2|pp|pooled|TINS              97.89 /  10.66  [10.45, 10.86]
+cap_test   openood  near    xfit|storeyc|q0.2|pp|pooled|TINS          97.88 /  10.69  [10.48, 10.90]
+cap_test   openood  near    xfit|storey|q0.2|pp|pooled|AdaNeg         98.02 /  10.71  [10.47, 10.95]
+cap_test   openood  near    xfit|bhc|q0.2|min|pooled|TINS             97.85 /  10.72  [10.52, 10.91]
+cap_test   openood  near    v1|storey|q0.2|pp|NegLabel                98.02 /  10.72  [10.47, 10.98]
+cap_test   openood  near    xfit|storeyc|q0.2|min|pooled|TINS         97.84 /  10.74  [10.53, 10.94]
+cap_test   openood  near    xfit|bh|q0.2|min|pooled|NegLabel          97.89 /  10.79  [10.63, 10.95]
+cap_test   openood  near    xfit|storey|q0.2|min|pooled|AdaNeg        97.98 /  10.85  [10.62, 11.07]
+cap_test   openood  near    xfit|bh|q0.2|pp|pooled|TANL               97.94 /  10.87  [10.72, 11.02]
+cap_test   openood  near    xfit|bh|q0.2|min|pooled|TANL              97.90 /  10.89  [10.75, 11.04]
+cap_test   openood  near    xfit|bhc|q0.2|pp|pooled|AdaNeg            97.81 /  10.92  [10.73, 11.11]
+cap_test   openood  near    xfit|storey|q0.2|pp|pooled|NegLabel       97.99 /  10.94  [10.74, 11.13]
+cap_test   openood  near    xfit|storeyc|q0.2|pp|pooled|AdaNeg        97.80 /  10.95  [10.75, 11.14]
+cap_test   openood  near    xfit|bh|q0.2|pp|pooled|none               97.93 /  11.00  [10.82, 11.18]
+cap_test   openood  near    xfit|bh|q0.2|min|pooled|none              97.89 /  11.01  [10.83, 11.19]
+cap_test   openood  near    xfit|bhc|q0.2|min|pooled|AdaNeg           97.76 /  11.03  [10.85, 11.21]
+cap_test   openood  near    xfit|storeyc|q0.2|min|pooled|AdaNeg       97.76 /  11.06  [10.87, 11.24]
+cap_test   openood  near    v1|storey|q0.2|pp|TANL                    98.00 /  11.07  [10.81, 11.34]
+cap_test   openood  near    xfit|bhc|q0.2|pp|pooled|NegLabel          97.78 /  11.08  [10.90, 11.25]
+cap_test   openood  near    xfit|storey|q0.2|min|pooled|NegLabel      97.95 /  11.09  [10.89, 11.29]
+cap_test   openood  near    xfit|storeyc|q0.2|pp|pooled|NegLabel      97.77 /  11.10  [10.92, 11.29]
+cap_test   openood  near    xfit|bhc|q0.2|pp|pooled|TANL              97.80 /  11.22  [11.05, 11.40]
+cap_test   openood  near    xfit|bhc|q0.2|min|pooled|NegLabel         97.72 /  11.22  [11.06, 11.39]
+cap_test   openood  near    xfit|storey|q0.2|pp|pooled|TANL           97.98 /  11.24  [10.98, 11.50]
+cap_test   openood  near    xfit|storey|q0.2|min|pooled|TANL          97.95 /  11.24  [10.99, 11.49]
+cap_test   openood  near    xfit|storeyc|q0.2|min|pooled|NegLabel     97.72 /  11.25  [11.08, 11.42]
+cap_test   openood  near    xfit|storeyc|q0.2|pp|pooled|TANL          97.79 /  11.25  [11.07, 11.44]
+cap_test   openood  near    xfit|bhc|q0.2|min|pooled|TANL             97.76 /  11.26  [11.10, 11.43]
+cap_test   openood  near    xfit|storeyc|q0.2|min|pooled|TANL         97.75 /  11.29  [11.12, 11.45]
+cap_test   openood  near    xfit|bhc|q0.2|pp|pooled|none              97.79 /  11.29  [11.05, 11.53]
+cap_test   openood  near    xfit|bhc|q0.2|min|pooled|none             97.75 /  11.31  [11.07, 11.56]
+cap_test   openood  near    xfit|storeyc|q0.2|pp|pooled|none          97.78 /  11.32  [11.06, 11.59]
+cap_test   openood  near    xfit|storeyc|q0.2|min|pooled|none         97.74 /  11.34  [11.08, 11.60]
+cap_test   openood  near    v1|storey|q0.2|pp|none                    97.96 /  11.39  [11.12, 11.65]
+cap_test   openood  near    xfit|storey|q0.2|min|pooled|none          97.92 /  11.49  [11.19, 11.79]
+cap_test   openood  near    xfit|storey|q0.2|pp|pooled|none           97.94 /  11.50  [11.20, 11.81]
+cap_test   openood  near    xfit|bh|q0.2|pps|pooled|TINS              97.63 /  11.94  [11.69, 12.19]
+cap_test   openood  near    v1|Tlp|TINS                               97.60 /  12.12  [11.94, 12.29]
+cap_test   openood  near    xfit|lp|pooled|TINS                       97.59 /  12.14  [11.98, 12.31]
+cap_test   openood  near    xfit|storey|q0.2|pps|pooled|TINS          97.72 /  12.16  [11.93, 12.39]
+cap_test   openood  near    xfit|bh|q0.2|pps|pooled|TANL              97.57 /  12.21  [11.95, 12.47]
+cap_test   openood  near    xfit|bhc|q0.2|pps|pooled|TINS             97.44 /  12.30  [12.09, 12.50]
+cap_test   openood  near    xfit|storeyc|q0.2|pps|pooled|TINS         97.44 /  12.30  [12.11, 12.50]
+cap_test   openood  near    xfit|bh|q0.2|pps|pooled|none              97.56 /  12.31  [12.06, 12.56]
+cap_test   openood  near    v1|Tlp|none                               97.54 /  12.35  [12.15, 12.55]
+cap_test   openood  near    xfit|lp|pooled|none                       97.53 /  12.36  [12.16, 12.57]
+cap_test   openood  near    v1|Tlp|TANL                               97.54 /  12.38  [12.22, 12.55]
+cap_test   openood  near    xfit|lp|pooled|TANL                       97.53 /  12.41  [12.28, 12.54]
+cap_test   openood  near    xfit|storey|q0.2|pps|pooled|TANL          97.66 /  12.44  [12.21, 12.66]
+cap_test   openood  near    xfit|bh|q0.2|pps|pooled|AdaNeg            97.52 /  12.50  [12.25, 12.75]
+cap_test   openood  near    xfit|storey|q0.2|pps|pooled|none          97.64 /  12.57  [12.32, 12.82]
+cap_test   openood  near    xfit|bhc|q0.2|pps|pooled|TANL             97.38 /  12.60  [12.38, 12.82]
+cap_test   openood  near    xfit|storeyc|q0.2|pps|pooled|TANL         97.38 /  12.61  [12.39, 12.84]
+cap_test   openood  near    v1|Tlp|AdaNeg                             97.49 /  12.63  [12.43, 12.82]
+cap_test   openood  near    xfit|lp|pooled|AdaNeg                     97.48 /  12.65  [12.47, 12.84]
+cap_test   openood  near    xfit|bh|q0.2|pps|pooled|NegLabel          97.46 /  12.67  [12.37, 12.96]
+cap_test   openood  near    v1|Tlp|NegLabel                           97.45 /  12.68  [12.51, 12.84]
+cap_test   openood  near    xfit|lp|pooled|NegLabel                   97.44 /  12.71  [12.56, 12.85]
+cap_test   openood  near    xfit|bhc|q0.2|pps|pooled|none             97.36 /  12.80  [12.59, 13.01]
+cap_test   openood  near    xfit|storeyc|q0.2|pps|pooled|none         97.36 /  12.81  [12.62, 13.01]
+cap_test   openood  near    xfit|storey|q0.2|pps|pooled|AdaNeg        97.59 /  12.85  [12.57, 13.13]
+cap_test   openood  near    xfit|bhc|q0.2|pps|pooled|AdaNeg           97.32 /  12.87  [12.65, 13.08]
+cap_test   openood  near    xfit|storeyc|q0.2|pps|pooled|AdaNeg       97.32 /  12.87  [12.65, 13.09]
+cap_test   openood  near    xfit|bhc|q0.2|pps|pooled|NegLabel         97.26 /  13.05  [12.79, 13.32]
+cap_test   openood  near    xfit|storey|q0.2|pps|pooled|NegLabel      97.54 /  13.06  [12.77, 13.34]
+cap_test   openood  near    xfit|storeyc|q0.2|pps|pooled|NegLabel     97.26 /  13.07  [12.82, 13.32]
+cap_test   openood  near    xfit|static|pooled|TINS                   86.18 /  47.27  [46.21, 48.33]
+cap_test   openood  near    xfit|static|pooled|TANL                   85.75 /  49.28  [48.27, 50.30]
+cap_test   openood  near    knn|TINS                                  83.63 /  51.34  [50.65, 52.03]
+cap_test   openood  near    xfit|static|pooled|AdaNeg                 83.10 /  53.14  [52.07, 54.21]
+cap_test   openood  near    knn|TANL                                  82.88 /  53.65  [52.85, 54.44]
+cap_test   openood  near    xfit|static|pooled|none                   82.30 /  54.36  [52.99, 55.74]
+cap_test   openood  near    xfit|static|pooled|NegLabel               83.11 /  54.82  [53.74, 55.91]
+cap_test   openood  near    knn|AdaNeg                                79.74 /  58.50  [57.92, 59.08]
+cap_test   openood  near    knn|none                                  78.75 /  59.51  [58.78, 60.24]
+cap_test   openood  near    knn|NegLabel                              79.91 /  59.97  [59.23, 60.71]
+cap_test   openood  far     xfit|bhc|q0.2|pps|pooled|TINS             99.20 /   3.64  [3.45, 3.83]
+cap_test   openood  far     xfit|bh|q0.2|pps|pooled|TINS              99.20 /   3.64  [3.46, 3.82]
+cap_test   openood  far     xfit|storeyc|q0.2|pps|pooled|TINS         99.20 /   3.66  [3.48, 3.84]
+cap_test   openood  far     xfit|storey|q0.2|pps|pooled|TINS          99.19 /   3.69  [3.49, 3.88]
+cap_test   openood  far     xfit|bhc|q0.2|min|pooled|TINS             99.11 /   4.01  [3.77, 4.24]
+cap_test   openood  far     xfit|bh|q0.2|min|pooled|TINS              99.10 /   4.02  [3.78, 4.25]
+cap_test   openood  far     xfit|bhc|q0.2|pp|pooled|TINS              99.08 /   4.02  [3.78, 4.26]
+cap_test   openood  far     xfit|storeyc|q0.2|min|pooled|TINS         99.10 /   4.03  [3.79, 4.28]
+cap_test   openood  far     xfit|bh|q0.2|pp|pooled|TINS               99.07 /   4.03  [3.80, 4.27]
+cap_test   openood  far     xfit|storeyc|q0.2|pp|pooled|TINS          99.07 /   4.05  [3.81, 4.30]
+cap_test   openood  far     xfit|bhc|q0.2|pps|pooled|AdaNeg           99.10 /   4.06  [3.84, 4.29]
+cap_test   openood  far     xfit|bh|q0.2|pps|pooled|AdaNeg            99.10 /   4.07  [3.85, 4.29]
+cap_test   openood  far     xfit|storeyc|q0.2|pps|pooled|AdaNeg       99.09 /   4.09  [3.85, 4.33]
+cap_test   openood  far     xfit|bhc|q0.2|pps|pooled|TANL             99.08 /   4.12  [3.87, 4.37]
+cap_test   openood  far     xfit|storey|q0.2|pps|pooled|AdaNeg        99.08 /   4.12  [3.85, 4.40]
+cap_test   openood  far     xfit|bh|q0.2|pps|pooled|TANL              99.08 /   4.13  [3.88, 4.38]
+cap_test   openood  far     xfit|storey|q0.2|min|pooled|TINS          99.08 /   4.14  [3.88, 4.40]
+cap_test   openood  far     xfit|storeyc|q0.2|pps|pooled|TANL         99.08 /   4.14  [3.88, 4.40]
+cap_test   openood  far     xfit|storey|q0.2|pp|pooled|TINS           99.05 /   4.16  [3.90, 4.42]
+cap_test   openood  far     xfit|bhc|q0.2|pps|pooled|NegLabel         99.07 /   4.19  [3.92, 4.46]
+cap_test   openood  far     xfit|bh|q0.2|pps|pooled|NegLabel          99.07 /   4.19  [3.93, 4.45]
+cap_test   openood  far     xfit|storey|q0.2|pps|pooled|TANL          99.06 /   4.19  [3.91, 4.48]
+cap_test   openood  far     v1|storey|q0.2|pp|TINS                    99.05 /   4.21  [3.96, 4.46]
+cap_test   openood  far     xfit|storeyc|q0.2|pps|pooled|NegLabel     99.07 /   4.22  [3.95, 4.50]
+cap_test   openood  far     xfit|storey|q0.2|pps|pooled|NegLabel      99.05 /   4.26  [3.97, 4.55]
+cap_test   openood  far     v1|Tlp|TINS                               99.01 /   4.33  [4.13, 4.53]
+cap_test   openood  far     xfit|lp|pooled|TINS                       99.01 /   4.33  [4.12, 4.54]
+cap_test   openood  far     xfit|bhc|q0.2|pps|pooled|none             99.01 /   4.39  [4.09, 4.68]
+cap_test   openood  far     xfit|bh|q0.2|pps|pooled|none              99.01 /   4.39  [4.10, 4.69]
+cap_test   openood  far     xfit|storeyc|q0.2|pps|pooled|none         99.00 /   4.42  [4.11, 4.74]
+cap_test   openood  far     xfit|bhc|q0.2|pp|pooled|AdaNeg            98.98 /   4.44  [4.18, 4.70]
+cap_test   openood  far     xfit|bhc|q0.2|min|pooled|AdaNeg           99.00 /   4.44  [4.16, 4.72]
+cap_test   openood  far     xfit|bh|q0.2|pp|pooled|AdaNeg             98.97 /   4.46  [4.20, 4.71]
+cap_test   openood  far     xfit|bh|q0.2|min|pooled|AdaNeg            99.00 /   4.46  [4.19, 4.73]
+cap_test   openood  far     xfit|storeyc|q0.2|min|pooled|AdaNeg       98.99 /   4.47  [4.19, 4.76]
+cap_test   openood  far     xfit|storeyc|q0.2|pp|pooled|AdaNeg        98.97 /   4.47  [4.21, 4.74]
+cap_test   openood  far     xfit|storey|q0.2|pps|pooled|none          98.98 /   4.48  [4.16, 4.81]
+cap_test   openood  far     xfit|bhc|q0.2|pp|pooled|NegLabel          98.97 /   4.51  [4.21, 4.80]
+cap_test   openood  far     xfit|bhc|q0.2|min|pooled|NegLabel         98.99 /   4.52  [4.22, 4.83]
+cap_test   openood  far     xfit|bh|q0.2|pp|pooled|NegLabel           98.97 /   4.53  [4.24, 4.83]
+cap_test   openood  far     xfit|bh|q0.2|min|pooled|NegLabel          98.99 /   4.54  [4.25, 4.84]
+cap_test   openood  far     xfit|storeyc|q0.2|pp|pooled|NegLabel      98.96 /   4.55  [4.26, 4.85]
+cap_test   openood  far     xfit|storeyc|q0.2|min|pooled|NegLabel     98.98 /   4.56  [4.25, 4.87]
+cap_test   openood  far     xfit|storey|q0.2|min|pooled|AdaNeg        98.97 /   4.59  [4.28, 4.89]
+cap_test   openood  far     xfit|storey|q0.2|pp|pooled|AdaNeg         98.94 /   4.59  [4.30, 4.87]
+cap_test   openood  far     v1|storey|q0.2|pp|AdaNeg                  98.94 /   4.62  [4.33, 4.92]
+cap_test   openood  far     xfit|bhc|q0.2|min|pooled|TANL             98.96 /   4.64  [4.34, 4.95]
+cap_test   openood  far     xfit|bhc|q0.2|pp|pooled|TANL              98.93 /   4.65  [4.35, 4.94]
+cap_test   openood  far     xfit|bh|q0.2|min|pooled|TANL              98.96 /   4.66  [4.35, 4.96]
+cap_test   openood  far     xfit|bh|q0.2|pp|pooled|TANL               98.93 /   4.66  [4.38, 4.95]
+cap_test   openood  far     xfit|storeyc|q0.2|min|pooled|TANL         98.95 /   4.68  [4.37, 5.00]
+cap_test   openood  far     xfit|storey|q0.2|min|pooled|NegLabel      98.96 /   4.69  [4.36, 5.02]
+cap_test   openood  far     xfit|storey|q0.2|pp|pooled|NegLabel       98.93 /   4.69  [4.37, 5.01]
+cap_test   openood  far     xfit|storeyc|q0.2|pp|pooled|TANL          98.93 /   4.69  [4.39, 5.00]
+cap_test   openood  far     v1|storey|q0.2|pp|NegLabel                98.93 /   4.74  [4.41, 5.08]
+cap_test   openood  far     xfit|storey|q0.2|min|pooled|TANL          98.93 /   4.83  [4.47, 5.19]
+cap_test   openood  far     xfit|storey|q0.2|pp|pooled|TANL           98.89 /   4.84  [4.50, 5.18]
+cap_test   openood  far     v1|storey|q0.2|pp|TANL                    98.89 /   4.86  [4.55, 5.18]
+cap_test   openood  far     xfit|bhc|q0.2|min|pooled|none             98.87 /   4.94  [4.59, 5.28]
+cap_test   openood  far     xfit|bhc|q0.2|pp|pooled|none              98.84 /   4.94  [4.61, 5.28]
+cap_test   openood  far     xfit|bh|q0.2|pp|pooled|none               98.84 /   4.96  [4.64, 5.28]
+cap_test   openood  far     xfit|bh|q0.2|min|pooled|none              98.87 /   4.96  [4.63, 5.29]
+cap_test   openood  far     xfit|storeyc|q0.2|pp|pooled|none          98.83 /   5.00  [4.65, 5.34]
+cap_test   openood  far     xfit|storeyc|q0.2|min|pooled|none         98.86 /   5.00  [4.63, 5.37]
+cap_test   openood  far     xfit|storey|q0.2|min|pooled|none          98.83 /   5.17  [4.75, 5.58]
+cap_test   openood  far     xfit|storey|q0.2|pp|pooled|none           98.79 /   5.17  [4.78, 5.56]
+cap_test   openood  far     xfit|lp|pooled|AdaNeg                     98.78 /   5.18  [4.87, 5.48]
+cap_test   openood  far     v1|Tlp|AdaNeg                             98.78 /   5.18  [4.87, 5.48]
+cap_test   openood  far     v1|storey|q0.2|pp|none                    98.80 /   5.21  [4.83, 5.59]
+cap_test   openood  far     v1|Tlp|TANL                               98.76 /   5.24  [4.95, 5.53]
+cap_test   openood  far     xfit|lp|pooled|TANL                       98.76 /   5.25  [4.96, 5.54]
+cap_test   openood  far     v1|Tlp|NegLabel                           98.76 /   5.25  [4.87, 5.63]
+cap_test   openood  far     xfit|lp|pooled|NegLabel                   98.76 /   5.26  [4.89, 5.64]
+cap_test   openood  far     v1|Tlp|none                               98.46 /   6.03  [5.65, 6.42]
+cap_test   openood  far     xfit|lp|pooled|none                       98.45 /   6.04  [5.68, 6.40]
+cap_test   openood  far     xfit|static|pooled|TINS                   98.61 /   6.62  [6.55, 6.69]
+cap_test   openood  far     knn|TINS                                  98.23 /   8.31  [8.15, 8.47]
+cap_test   openood  far     xfit|static|pooled|TANL                   97.90 /   9.68  [9.53, 9.84]
+cap_test   openood  far     xfit|static|pooled|AdaNeg                 97.62 /  10.71  [10.43, 10.99]
+cap_test   openood  far     knn|TANL                                  97.40 /  11.43  [10.98, 11.88]
+cap_test   openood  far     knn|AdaNeg                                97.12 /  12.79  [12.28, 13.31]
+cap_test   openood  far     xfit|static|pooled|NegLabel               97.28 /  13.04  [12.69, 13.39]
+cap_test   openood  far     knn|NegLabel                              96.69 /  15.61  [14.86, 16.37]
+cap_test   openood  far     xfit|static|pooled|none                   96.48 /  15.92  [15.27, 16.57]
+cap_test   openood  far     knn|none                                  95.52 /  19.27  [18.19, 20.36]
+
+cap_test   fourood  fourood xfit|bhc|q0.2|min|pooled|TINS             99.10 /   3.31  [3.10, 3.52]
+cap_test   fourood  fourood xfit|bh|q0.2|min|pooled|TINS              99.10 /   3.31  [3.10, 3.52]
+cap_test   fourood  fourood xfit|bhc|q0.2|pp|pooled|TINS              99.10 /   3.32  [3.11, 3.54]
+cap_test   fourood  fourood xfit|bh|q0.2|pp|pooled|TINS               99.10 /   3.32  [3.11, 3.54]
+cap_test   fourood  fourood xfit|storeyc|q0.2|min|pooled|TINS         99.09 /   3.36  [3.16, 3.56]
+cap_test   fourood  fourood xfit|storey|q0.2|min|pooled|TINS          99.09 /   3.36  [3.16, 3.57]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pp|pooled|TINS          99.09 /   3.38  [3.17, 3.59]
+cap_test   fourood  fourood xfit|storey|q0.2|pp|pooled|TINS           99.09 /   3.39  [3.18, 3.60]
+cap_test   fourood  fourood v1|storey|q0.2|pp|TINS                    99.07 /   3.50  [3.27, 3.74]
+cap_test   fourood  fourood v1|Tlp|TINS                               98.99 /   3.52  [3.36, 3.67]
+cap_test   fourood  fourood xfit|lp|pooled|TINS                       98.99 /   3.52  [3.37, 3.67]
+cap_test   fourood  fourood xfit|bhc|q0.2|pps|pooled|TINS             99.01 /   3.72  [3.59, 3.85]
+cap_test   fourood  fourood xfit|bh|q0.2|pps|pooled|TINS              99.01 /   3.72  [3.59, 3.85]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pps|pooled|TINS         99.00 /   3.75  [3.62, 3.89]
+cap_test   fourood  fourood xfit|storey|q0.2|pps|pooled|TINS          99.00 /   3.75  [3.62, 3.89]
+cap_test   fourood  fourood xfit|bhc|q0.2|min|pooled|TANL             98.96 /   3.86  [3.65, 4.06]
+cap_test   fourood  fourood xfit|bh|q0.2|min|pooled|TANL              98.96 /   3.86  [3.65, 4.06]
+cap_test   fourood  fourood xfit|bhc|q0.2|pp|pooled|TANL              98.96 /   3.88  [3.66, 4.10]
+cap_test   fourood  fourood xfit|bh|q0.2|pp|pooled|TANL               98.96 /   3.88  [3.66, 4.10]
+cap_test   fourood  fourood xfit|bhc|q0.2|min|pooled|AdaNeg           98.93 /   3.90  [3.69, 4.11]
+cap_test   fourood  fourood xfit|bh|q0.2|min|pooled|AdaNeg            98.93 /   3.90  [3.69, 4.11]
+cap_test   fourood  fourood xfit|bhc|q0.2|pp|pooled|AdaNeg            98.93 /   3.90  [3.69, 4.12]
+cap_test   fourood  fourood xfit|bh|q0.2|pp|pooled|AdaNeg             98.93 /   3.90  [3.69, 4.12]
+cap_test   fourood  fourood xfit|storeyc|q0.2|min|pooled|TANL         98.94 /   3.92  [3.71, 4.14]
+cap_test   fourood  fourood xfit|storey|q0.2|min|pooled|TANL          98.94 /   3.93  [3.71, 4.16]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pp|pooled|TANL          98.94 /   3.95  [3.72, 4.18]
+cap_test   fourood  fourood xfit|storey|q0.2|pp|pooled|TANL           98.94 /   3.96  [3.72, 4.20]
+cap_test   fourood  fourood xfit|storeyc|q0.2|min|pooled|AdaNeg       98.91 /   3.97  [3.75, 4.20]
+cap_test   fourood  fourood xfit|storey|q0.2|min|pooled|AdaNeg        98.90 /   3.98  [3.75, 4.20]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pp|pooled|AdaNeg        98.91 /   3.98  [3.75, 4.21]
+cap_test   fourood  fourood xfit|storey|q0.2|pp|pooled|AdaNeg         98.91 /   3.98  [3.75, 4.22]
+cap_test   fourood  fourood xfit|bhc|q0.2|pp|pooled|NegLabel          98.91 /   4.05  [3.81, 4.30]
+cap_test   fourood  fourood xfit|bh|q0.2|pp|pooled|NegLabel           98.91 /   4.05  [3.81, 4.30]
+cap_test   fourood  fourood xfit|bhc|q0.2|min|pooled|NegLabel         98.91 /   4.06  [3.84, 4.28]
+cap_test   fourood  fourood xfit|bh|q0.2|min|pooled|NegLabel          98.91 /   4.06  [3.84, 4.28]
+cap_test   fourood  fourood v1|storey|q0.2|pp|TANL                    98.93 /   4.10  [3.87, 4.33]
+cap_test   fourood  fourood v1|storey|q0.2|pp|AdaNeg                  98.90 /   4.10  [3.86, 4.34]
+cap_test   fourood  fourood xfit|storeyc|q0.2|min|pooled|NegLabel     98.88 /   4.11  [3.88, 4.33]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pp|pooled|NegLabel      98.89 /   4.12  [3.88, 4.36]
+cap_test   fourood  fourood xfit|storey|q0.2|min|pooled|NegLabel      98.88 /   4.13  [3.89, 4.36]
+cap_test   fourood  fourood xfit|storey|q0.2|pp|pooled|NegLabel       98.89 /   4.13  [3.88, 4.39]
+cap_test   fourood  fourood v1|storey|q0.2|pp|NegLabel                98.88 /   4.27  [4.00, 4.53]
+cap_test   fourood  fourood xfit|bhc|q0.2|pps|pooled|TANL             98.86 /   4.27  [4.12, 4.41]
+cap_test   fourood  fourood xfit|bh|q0.2|pps|pooled|TANL              98.86 /   4.27  [4.12, 4.41]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pps|pooled|TANL         98.85 /   4.31  [4.16, 4.46]
+cap_test   fourood  fourood xfit|storey|q0.2|pps|pooled|TANL          98.84 /   4.32  [4.17, 4.47]
+cap_test   fourood  fourood xfit|bhc|q0.2|pps|pooled|AdaNeg           98.82 /   4.37  [4.22, 4.52]
+cap_test   fourood  fourood xfit|bh|q0.2|pps|pooled|AdaNeg            98.82 /   4.37  [4.22, 4.52]
+cap_test   fourood  fourood xfit|bhc|q0.2|min|pooled|none             98.83 /   4.39  [4.11, 4.66]
+cap_test   fourood  fourood xfit|bh|q0.2|min|pooled|none              98.83 /   4.39  [4.11, 4.66]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pps|pooled|AdaNeg       98.81 /   4.40  [4.26, 4.54]
+cap_test   fourood  fourood xfit|storey|q0.2|pps|pooled|AdaNeg        98.81 /   4.41  [4.27, 4.56]
+cap_test   fourood  fourood v1|Tlp|TANL                               98.72 /   4.41  [4.28, 4.55]
+cap_test   fourood  fourood xfit|lp|pooled|TANL                       98.71 /   4.41  [4.26, 4.56]
+cap_test   fourood  fourood xfit|bhc|q0.2|pp|pooled|none              98.83 /   4.43  [4.15, 4.71]
+cap_test   fourood  fourood xfit|bh|q0.2|pp|pooled|none               98.83 /   4.43  [4.15, 4.71]
+cap_test   fourood  fourood xfit|storeyc|q0.2|min|pooled|none         98.80 /   4.50  [4.19, 4.80]
+cap_test   fourood  fourood xfit|storey|q0.2|min|pooled|none          98.79 /   4.52  [4.20, 4.83]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pp|pooled|none          98.80 /   4.54  [4.24, 4.85]
+cap_test   fourood  fourood xfit|storey|q0.2|pp|pooled|none           98.80 /   4.56  [4.24, 4.89]
+cap_test   fourood  fourood xfit|bhc|q0.2|pps|pooled|NegLabel         98.78 /   4.60  [4.44, 4.75]
+cap_test   fourood  fourood xfit|bh|q0.2|pps|pooled|NegLabel          98.78 /   4.60  [4.44, 4.75]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pps|pooled|NegLabel     98.76 /   4.63  [4.46, 4.80]
+cap_test   fourood  fourood xfit|storey|q0.2|pps|pooled|NegLabel      98.76 /   4.64  [4.46, 4.82]
+cap_test   fourood  fourood v1|storey|q0.2|pp|none                    98.79 /   4.69  [4.39, 4.98]
+cap_test   fourood  fourood xfit|lp|pooled|AdaNeg                     98.60 /   4.69  [4.52, 4.86]
+cap_test   fourood  fourood v1|Tlp|AdaNeg                             98.60 /   4.69  [4.53, 4.85]
+cap_test   fourood  fourood xfit|bhc|q0.2|pps|pooled|none             98.73 /   4.75  [4.53, 4.97]
+cap_test   fourood  fourood xfit|bh|q0.2|pps|pooled|none              98.73 /   4.75  [4.53, 4.97]
+cap_test   fourood  fourood xfit|storeyc|q0.2|pps|pooled|none         98.71 /   4.80  [4.56, 5.04]
+cap_test   fourood  fourood xfit|storey|q0.2|pps|pooled|none          98.71 /   4.81  [4.56, 5.05]
+cap_test   fourood  fourood v1|Tlp|NegLabel                           98.53 /   5.05  [4.82, 5.28]
+cap_test   fourood  fourood xfit|lp|pooled|NegLabel                   98.53 /   5.06  [4.82, 5.29]
+cap_test   fourood  fourood v1|Tlp|none                               98.27 /   5.74  [5.41, 6.06]
+cap_test   fourood  fourood xfit|lp|pooled|none                       98.26 /   5.75  [5.42, 6.08]
+cap_test   fourood  fourood xfit|static|pooled|TINS                   97.84 /   7.97  [7.84, 8.11]
+cap_test   fourood  fourood knn|TINS                                  97.68 /   8.45  [8.23, 8.66]
+cap_test   fourood  fourood xfit|static|pooled|TANL                   96.56 /  12.81  [12.53, 13.10]
+cap_test   fourood  fourood xfit|static|pooled|AdaNeg                 95.96 /  13.21  [12.95, 13.47]
+cap_test   fourood  fourood knn|TANL                                  96.24 /  13.44  [12.84, 14.04]
+cap_test   fourood  fourood knn|AdaNeg                                95.59 /  14.42  [13.89, 14.95]
+cap_test   fourood  fourood xfit|static|pooled|NegLabel               95.20 /  18.80  [18.31, 19.28]
+cap_test   fourood  fourood knn|NegLabel                              94.65 /  20.83  [19.85, 21.80]
+cap_test   fourood  fourood xfit|static|pooled|none                   93.77 /  24.85  [23.79, 25.90]
+cap_test   fourood  fourood knn|none                                  92.71 /  28.55  [27.43, 29.66]
+
+== cap_in200: FPR95 (standalone / x TINS where present) ==
+cap_in200           near    xfit|bhc|q0.2|min|pooled|none             98.39 /   6.90  [6.64, 7.17]
+cap_in200           near    xfit|storeyc|q0.2|min|pooled|none         98.39 /   6.90  [6.64, 7.17]
+cap_in200           near    xfit|bhc|q0.2|pp|pooled|none              98.43 /   6.91  [6.65, 7.17]
+cap_in200           near    xfit|storeyc|q0.2|pp|pooled|none          98.43 /   6.91  [6.65, 7.17]
+cap_in200           near    xfit|bh|q0.2|min|pooled|none              98.52 /   7.24  [7.00, 7.47]
+cap_in200           near    xfit|bh|q0.2|pp|pooled|none               98.54 /   7.24  [7.01, 7.47]
+cap_in200           near    xfit|bh|q0.2|pps|pooled|none              98.42 /   7.33  [7.08, 7.58]
+cap_in200           near    xfit|bhc|q0.2|pps|pooled|none             98.14 /   7.42  [7.17, 7.67]
+cap_in200           near    xfit|storeyc|q0.2|pps|pooled|none         98.14 /   7.42  [7.17, 7.67]
+cap_in200           near    xfit|lp|pooled|none                       98.43 /   7.45  [7.15, 7.74]
+cap_in200           near    v1|Tlp|none                               98.49 /   7.47  [7.25, 7.69]
+cap_in200           near    xfit|storey|q0.2|pps|pooled|none          98.28 /   7.84  [7.48, 8.20]
+cap_in200           near    xfit|storey|q0.2|min|pooled|none          98.18 /   8.53  [8.10, 8.96]
+cap_in200           near    xfit|storey|q0.2|pp|pooled|none           98.17 /   9.07  [8.54, 9.60]
+cap_in200           near    v1|storey|q0.2|pp|none                    98.11 /   9.26  [8.00, 10.52]
+cap_in200           near    xfit|static|pooled|none                   92.25 /  26.72  [26.01, 27.43]
+cap_in200           near    knn|none                                  89.20 /  38.95  [37.97, 39.92]
+cap_in200           far     xfit|bhc|q0.2|pps|pooled|none             99.64 /   1.10  [1.00, 1.20]
+cap_in200           far     xfit|storeyc|q0.2|pps|pooled|none         99.64 /   1.10  [1.00, 1.20]
+cap_in200           far     xfit|bh|q0.2|pps|pooled|none              99.63 /   1.18  [1.09, 1.27]
+cap_in200           far     v1|Tlp|none                               99.44 /   1.22  [1.11, 1.33]
+cap_in200           far     xfit|bhc|q0.2|pp|pooled|none              99.49 /   1.23  [1.12, 1.34]
+cap_in200           far     xfit|storeyc|q0.2|pp|pooled|none          99.49 /   1.23  [1.12, 1.34]
+cap_in200           far     xfit|bhc|q0.2|min|pooled|none             99.50 /   1.23  [1.13, 1.33]
+cap_in200           far     xfit|storeyc|q0.2|min|pooled|none         99.50 /   1.23  [1.13, 1.33]
+cap_in200           far     xfit|lp|pooled|none                       99.39 /   1.25  [1.11, 1.39]
+cap_in200           far     xfit|storey|q0.2|pps|pooled|none          99.62 /   1.27  [1.20, 1.34]
+cap_in200           far     xfit|bh|q0.2|pp|pooled|none               99.45 /   1.51  [1.35, 1.67]
+cap_in200           far     xfit|bh|q0.2|min|pooled|none              99.46 /   1.51  [1.35, 1.67]
+cap_in200           far     xfit|storey|q0.2|min|pooled|none          99.37 /   2.09  [1.83, 2.35]
+cap_in200           far     xfit|storey|q0.2|pp|pooled|none           99.35 /   2.15  [1.89, 2.41]
+cap_in200           far     v1|storey|q0.2|pp|none                    99.37 /   2.45  [2.03, 2.88]
+cap_in200           far     xfit|static|pooled|none                   98.71 /   3.71  [3.49, 3.93]
+cap_in200           far     knn|none                                  97.84 /   7.62  [6.64, 8.60]
+
+== cap_cifar: FPR95 (standalone / x TINS where present) ==
+cap_cifar           near    xfit|bhc|q0.2|pps|pooled|none             99.38 /   2.38  [2.16, 2.60]
+cap_cifar           near    xfit|storeyc|q0.2|pps|pooled|none         99.38 /   2.38  [2.16, 2.60]
+cap_cifar           near    xfit|bh|q0.2|pps|pooled|none              99.36 /   2.51  [2.25, 2.77]
+cap_cifar           near    xfit|bhc|q0.2|min|pooled|none             99.28 /   2.55  [2.38, 2.71]
+cap_cifar           near    xfit|storeyc|q0.2|min|pooled|none         99.28 /   2.55  [2.38, 2.71]
+cap_cifar           near    xfit|bhc|q0.2|pp|pooled|none              99.26 /   2.55  [2.38, 2.71]
+cap_cifar           near    xfit|storeyc|q0.2|pp|pooled|none          99.26 /   2.55  [2.38, 2.71]
+cap_cifar           near    xfit|storey|q0.2|pps|pooled|none          99.34 /   2.60  [2.36, 2.83]
+cap_cifar           near    xfit|bh|q0.2|pp|pooled|none               99.23 /   2.70  [2.50, 2.89]
+cap_cifar           near    xfit|bh|q0.2|min|pooled|none              99.25 /   2.70  [2.50, 2.90]
+cap_cifar           near    v1|Tlp|none                               99.19 /   2.83  [2.53, 3.13]
+cap_cifar           near    v1|storey|q0.2|pp|none                    99.25 /   2.83  [2.58, 3.09]
+cap_cifar           near    xfit|lp|pooled|none                       99.11 /   2.88  [2.56, 3.20]
+cap_cifar           near    xfit|storey|q0.2|pp|pooled|none           99.18 /   2.90  [2.68, 3.12]
+cap_cifar           near    xfit|storey|q0.2|min|pooled|none          99.20 /   2.90  [2.67, 3.13]
+cap_cifar           near    xfit|static|pooled|none                   96.94 /  16.49  [15.80, 17.17]
+cap_cifar           near    knn|none                                  92.35 /  39.22  [38.68, 39.76]
+cap_cifar           far     xfit|bh|q0.2|pps|pooled|none              99.70 /   0.92  [0.87, 0.98]
+cap_cifar           far     xfit|bhc|q0.2|pps|pooled|none             99.68 /   0.96  [0.91, 1.02]
+cap_cifar           far     xfit|storeyc|q0.2|pps|pooled|none         99.68 /   0.96  [0.91, 1.02]
+cap_cifar           far     xfit|storey|q0.2|pps|pooled|none          99.64 /   1.00  [0.93, 1.07]
+cap_cifar           far     v1|Tlp|none                               99.62 /   1.17  [1.11, 1.23]
+cap_cifar           far     xfit|lp|pooled|none                       99.57 /   1.22  [1.13, 1.32]
+cap_cifar           far     xfit|bhc|q0.2|min|pooled|none             99.61 /   1.42  [1.31, 1.52]
+cap_cifar           far     xfit|storeyc|q0.2|min|pooled|none         99.61 /   1.42  [1.31, 1.52]
+cap_cifar           far     xfit|bhc|q0.2|pp|pooled|none              99.59 /   1.46  [1.35, 1.56]
+cap_cifar           far     xfit|storeyc|q0.2|pp|pooled|none          99.59 /   1.46  [1.35, 1.56]
+cap_cifar           far     xfit|bh|q0.2|min|pooled|none              99.58 /   1.57  [1.39, 1.75]
+cap_cifar           far     xfit|bh|q0.2|pp|pooled|none               99.56 /   1.63  [1.46, 1.79]
+cap_cifar           far     xfit|storey|q0.2|min|pooled|none          99.46 /   1.80  [1.52, 2.07]
+cap_cifar           far     xfit|storey|q0.2|pp|pooled|none           99.37 /   2.34  [1.90, 2.77]
+cap_cifar           far     v1|storey|q0.2|pp|none                    99.35 /   2.58  [2.10, 3.07]
+cap_cifar           far     xfit|static|pooled|none                   94.88 /  29.19  [20.77, 37.62]
+cap_cifar           far     knn|none                                  88.47 /  49.80  [46.16, 53.44]
+
+== cap_rec: FPR95 standalone (storey | storeyc | bh | bhc | p+ only | static) ==
+ninco|c5|r1               73.3 |  73.3 |  73.3 |  73.3 |  73.3 |  33.3
+ninco|c5|r2               76.7 |  76.7 |  76.7 |  76.7 |  76.7 |  63.3
+ninco|c5|r5               76.0 |  76.0 |  76.0 |  76.0 |  76.0 |  46.7
+ninco|c5|r10              40.7 |  40.7 |  40.7 |  40.7 |  40.7 |  69.3
+ninco|c5|r20              11.7 |  11.7 |   9.7 |   9.7 |  10.7 |  43.3
+ninco|c5|r30              10.9 |  10.9 |  12.0 |  12.0 |  14.4 |  34.2
+ninco|c10|r1              73.3 |  73.3 |  73.3 |  73.3 |  73.3 |  33.3
+ninco|c10|r2              78.3 |  78.3 |  78.3 |  78.3 |  78.3 |  55.0
+ninco|c10|r5              70.7 |  70.7 |  70.7 |  70.7 |  70.7 |  52.7
+ninco|c10|r10             28.7 |  28.7 |  26.7 |  26.7 |  26.7 |  45.7
+ninco|c10|r20              8.8 |   8.8 |  10.0 |  10.0 |  10.7 |  39.2
+ninco|c10|r30              1.4 |   1.4 |   2.0 |   2.0 |   4.9 |  35.1
+ninco|c20|r1              60.0 |  60.0 |  60.0 |  60.0 |  60.0 |  35.0
+ninco|c20|r2              77.5 |  77.5 |  77.5 |  77.5 |  77.5 |  40.0
+ninco|c20|r5              68.0 |  68.0 |  68.0 |  68.0 |  68.0 |  45.7
+ninco|c20|r10             36.2 |  36.2 |  34.7 |  34.7 |  34.7 |  44.5
+ninco|c20|r20              9.0 |   9.0 |   8.5 |   8.5 |  11.8 |  52.5
+ninco|c20|r30              3.9 |   3.9 |   4.3 |   4.3 |   6.9 |  45.6
+ninco|c40|r1              75.8 |  75.8 |  75.8 |  75.8 |  75.8 |  47.5
+ninco|c40|r2              70.8 |  70.8 |  70.8 |  70.8 |  70.8 |  46.2
+ninco|c40|r5              67.8 |  67.8 |  67.8 |  67.8 |  67.8 |  46.5
+ninco|c40|r10             35.2 |  35.2 |  34.5 |  34.5 |  34.5 |  48.9
+ninco|c40|r20              9.8 |   9.8 |  10.2 |  10.2 |  12.9 |  49.8
+ninco|c40|r30              2.7 |   2.7 |   3.2 |   3.2 |   5.9 |  45.1
+ninco|c64|r1              75.0 |  75.0 |  75.0 |  75.0 |  75.0 |  44.3
+ninco|c64|r2              72.4 |  72.4 |  72.4 |  72.4 |  72.4 |  46.1
+ninco|c64|r5              60.9 |  60.9 |  61.6 |  61.6 |  61.6 |  46.2
+ninco|c64|r10             30.2 |  30.2 |  30.5 |  30.5 |  33.7 |  46.9
+ninco|c64|r20              7.9 |   7.9 |   7.7 |   7.7 |  11.7 |  45.5
+ninco|c64|r30              2.5 |   2.5 |   2.9 |   2.9 |   6.7 |  46.0
+ssb_hard|c10|r1           90.0 |  90.0 |  90.0 |  90.0 |  90.0 |  66.7
+ssb_hard|c10|r2           86.7 |  86.7 |  86.7 |  86.7 |  86.7 |  73.3
+ssb_hard|c10|r5           82.0 |  82.0 |  82.0 |  82.0 |  82.0 |  53.3
+ssb_hard|c10|r10          60.0 |  60.0 |  60.0 |  60.0 |  60.0 |  63.3
+ssb_hard|c10|r20          45.8 |  45.8 |  47.0 |  47.0 |  46.8 |  69.8
+ssb_hard|c10|r50          11.5 |  11.5 |  11.1 |  11.1 |  18.1 |  65.7
+ssb_hard|c30|r1           71.1 |  71.1 |  71.1 |  71.1 |  71.1 |  55.6
+ssb_hard|c30|r2           82.8 |  82.8 |  82.8 |  82.8 |  82.8 |  65.0
+ssb_hard|c30|r5           79.1 |  79.1 |  79.1 |  79.1 |  79.1 |  65.1
+ssb_hard|c30|r10          60.7 |  60.7 |  60.3 |  60.3 |  60.3 |  58.9
+ssb_hard|c30|r20          43.3 |  43.3 |  43.5 |  43.5 |  46.4 |  71.0
+ssb_hard|c30|r50          16.5 |  16.5 |  16.3 |  16.3 |  25.1 |  67.3
+ssb_hard|c100|r1          80.0 |  80.0 |  80.0 |  80.0 |  80.0 |  65.0
+ssb_hard|c100|r2          84.0 |  84.0 |  84.0 |  84.0 |  84.0 |  71.0
+ssb_hard|c100|r5          76.1 |  76.1 |  75.8 |  75.8 |  75.8 |  70.3
+ssb_hard|c100|r10         50.7 |  50.7 |  51.5 |  51.5 |  56.5 |  68.1
+ssb_hard|c100|r20         32.4 |  32.4 |  33.3 |  33.3 |  38.5 |  66.9
+ssb_hard|c100|r50         18.5 |  18.5 |  18.7 |  18.7 |  24.2 |  67.2
+ssb_hard|c300|r1          78.6 |  78.6 |  78.6 |  78.6 |  78.6 |  67.1
+ssb_hard|c300|r2          73.6 |  73.6 |  73.6 |  73.6 |  73.6 |  64.7
+ssb_hard|c300|r5          58.9 |  58.9 |  58.7 |  58.7 |  62.2 |  64.6
+ssb_hard|c300|r10         42.3 |  42.3 |  42.8 |  42.8 |  47.9 |  66.8
+ssb_hard|c300|r20         29.7 |  29.7 |  29.9 |  29.9 |  34.2 |  65.7
+ssb_hard|c300|r50         19.3 |  19.6 |  19.6 |  19.6 |  22.1 |  66.9
+ssb_hard|c980|r1          73.1 |  73.1 |  72.9 |  72.9 |  72.9 |  65.9
+ssb_hard|c980|r2          56.8 |  56.8 |  56.5 |  56.5 |  62.4 |  66.1
+ssb_hard|c980|r5          43.1 |  43.1 |  42.7 |  42.7 |  46.7 |  66.6
+ssb_hard|c980|r10         32.8 |  32.8 |  32.6 |  32.6 |  35.5 |  66.7
+ssb_hard|c980|r20         26.2 |  26.1 |  26.1 |  26.1 |  27.8 |  66.8
+ssb_hard|c980|r50         22.6 |  22.2 |  21.5 |  22.2 |  23.4 |  66.6
+
+== views: static / kNN raw vs centred (near FPR95 / far FPR95, standalone) ==
+B14    knn|centred|none:  65.4/ 24.9  knn|raw|none:  65.1/ 23.2  static|centred|none:  62.0/ 22.8  static|raw|none:  60.8/ 21.1
+CLIP   knn|centred|none:  94.6/ 88.8  knn|raw|none:  95.9/ 97.4  static|centred|none:  91.4/ 78.5  static|raw|none:  93.5/ 95.4
+D3B    knn|centred|none:  83.1/ 38.7  knn|raw|none:  82.7/ 35.0  static|centred|none:  76.8/ 28.3  static|raw|none:  76.1/ 25.3
+D3L    knn|centred|none:  70.7/ 28.6  knn|raw|none:  70.0/ 25.7  static|centred|none:  62.8/ 20.6  static|raw|none:  62.9/ 19.4
+DINO1  knn|centred|none:  88.8/ 63.7  knn|raw|none:  86.1/ 52.8  static|centred|none:  83.3/ 49.6  static|raw|none:  80.2/ 40.6
+L14    knn|centred|none:  59.5/ 27.6  knn|raw|none:  59.4/ 25.8  static|centred|none:  55.9/ 21.7  static|raw|none:  55.5/ 20.2

@@ -1,0 +1,8 @@
+{
+ "view": "CLIP",
+ "ds": "ssb_hard",
+ "dim": 512,
+ "support_mean_norm": 0.7119152545928955,
+ "seconds": 2.4,
+ "utc": "2026-10-11T06:02:23Z"
+}

@@ -1,0 +1,19 @@
+{\fontsize{7pt}{8.2pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+\setlength{\tabcolsep}{2.0pt}\begin{tabular}{@{}lcccccccccc@{}}
+\hline
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{2}{c}{iNaturalist} & \multicolumn{2}{c}{SUN} & \multicolumn{2}{c}{Places} & \multicolumn{2}{c}{Textures} & \multicolumn{2}{c}{平均} \\
+\rule[-2.0pt]{0pt}{8.6pt}手法 & AUROC & FPR95 & AUROC & FPR95 & AUROC & FPR95 & AUROC & FPR95 & AUROC & FPR95 \\
+\hline
+MCM~\cite{ming2022mcm}$^{\dagger}$ & 94.59 & 32.20 & 92.25 & 38.80 & 90.31 & 46.20 & 86.12 & 58.50 & 90.82 & 43.93 \\
+NegLabel~\cite{jiang2024neglabel}$^{\dagger}$ & 99.49 & 1.91 & 95.49 & 20.53 & 91.64 & 35.59 & 90.22 & 43.56 & 94.21 & 25.40 \\
+CSP~\cite{chen2024csp}$^{\dagger}$ & 99.60 & 1.54 & 96.66 & 13.66 & 92.90 & 29.32 & 93.86 & 25.52 & 95.76 & 17.51 \\
+OODD~\cite{yang2025oodd}$^{\dagger}$ & 99.79 & 0.85 & 97.17 & 12.94 & 92.51 & 30.68 & 94.51 & 30.67 & 96.00 & 18.79 \\
+AdaNeg~\cite{zhang2024adaneg}$^{\dagger}$ & 99.71 & 0.59 & 97.44 & 9.50 & 94.55 & 34.34 & 94.93 & 31.27 & 96.66 & 18.92 \\
+InterNeg~\cite{xu2026interneg}$^{\dagger}$ & 99.79 & 0.40 & 98.68 & 6.78 & 95.01 & 27.11 & 96.26 & 21.85 & 97.43 & 14.04 \\
+TINS~\cite{yang2026tins}$^{\dagger}$ & 99.93 & 0.21 & 99.14 & 3.84 & 97.14 & 12.73 & 97.83 & 10.09 & 98.51 & 6.72 \\
+TINS~\cite{yang2026tins}（実測） & 99.93 & 0.22 & 99.12 & 4.35 & 97.12 & 12.98 & 97.94 & 9.83 & 98.52 & 6.85 \\
+Salmon Ladder，単体 & 99.92 & \cellcolor{upd}\textbf{0.16} & \cellcolor{upd}\textbf{99.49} & \cellcolor{upd}\textbf{1.63} & 97.05 & \cellcolor{upd}\textbf{11.35} & \cellcolor{upd}\textbf{98.72} & \cellcolor{upd}\textbf{5.12} & \cellcolor{upd}\textbf{98.80} & \cellcolor{upd}\textbf{4.56} \\
+Salmon Ladder $\times$TINS & \cellcolor{upd}\textbf{99.96}\sota & \cellcolor{upd}\textbf{0.11}\sota & \cellcolor{upd}\textbf{99.66}\sota & \cellcolor{upd}\textbf{0.97}\sota & \cellcolor{upd}\textbf{97.55}\sota & \cellcolor{upd}\textbf{9.26}\sota & \cellcolor{upd}\textbf{99.18}\sota & \cellcolor{upd}\textbf{3.20}\sota & \cellcolor{upd}\textbf{99.09}\sota & \cellcolor{upd}\textbf{3.39}\sota \\
+{\scriptsize\textcolor{black!60}{\quad 最良の比較手法との差}} & \gap{+0.03} & \gap{+0.10} & \gap{+0.52} & \gap{+2.87} & \gap{+0.41} & \gap{+3.47} & \gap{+1.24} & \gap{+6.63} & \gap{+0.57} & \gap{+3.33} \\
+\hline
+\end{tabular}}%

@@ -1,0 +1,882 @@
+{
+ "_note": "Reported values of other methods (AUROC/FPR95 in %). OpenOOD v1.5 ImageNet-1K: near = mean(SSB-hard, NINCO), far = mean(iNaturalist, Textures, OpenImage-O). Four-OOD: ImageNet-1K vs iNaturalist, SUN, Places, Textures (mean). Sources verified 2026-10-10 by fetching the papers.",
+ "openood": {
+  "DisCoPatch": {
+   "cite": "caetano2025discopatch",
+   "venue": "ICCV 2025",
+   "group": "unsup",
+   "label": "DisCoPatch~\\cite{caetano2025discopatch}（教師なし生成）",
+   "per": {
+    "ssb_hard": [
+     95.8,
+     19.8
+    ],
+    "ninco": [
+     94.3,
+     39.0
+    ],
+    "inaturalist": [
+     99.1,
+     3.6
+    ],
+    "textures": [
+     96.4,
+     18.9
+    ],
+    "openimageo": [
+     94.4,
+     29.7
+    ]
+   },
+   "source": "DisCoPatch paper, table 'OOD benchmark results for models trained on ImageNet-1K' (DisCoPatch-64 row)"
+  },
+  "MOODv2": {
+   "cite": "li2024moodv2",
+   "venue": "",
+   "group": "sup",
+   "label": "MOODv2~\\cite{li2024moodv2}（BEiTv2）",
+   "per": {
+    "ssb_hard": [
+     85.0,
+     58.1
+    ],
+    "ninco": [
+     92.7,
+     38.2
+    ],
+    "inaturalist": [
+     99.6,
+     1.8
+    ],
+    "textures": [
+     94.3,
+     24.7
+    ],
+    "openimageo": [
+     97.4,
+     13.6
+    ]
+   },
+   "source": "as reprinted in the DisCoPatch paper (values marked * recomputed following OpenOOD v1.5)"
+  },
+  "NNGuide": {
+   "cite": "park2023nnguide",
+   "venue": "ICCV 2023",
+   "group": "sup",
+   "label": "NNGuide~\\cite{park2023nnguide}（RegNet）",
+   "per": {
+    "ssb_hard": [
+     84.7,
+     54.7
+    ],
+    "ninco": [
+     93.7,
+     28.9
+    ],
+    "inaturalist": [
+     99.9,
+     1.8
+    ],
+    "textures": [
+     95.8,
+     17.0
+    ],
+    "openimageo": [
+     97.7,
+     10.8
+    ]
+   },
+   "source": "as reprinted in the DisCoPatch paper"
+  },
+  "RankFeat": {
+   "cite": "song2022rankfeat",
+   "venue": "NeurIPS 2022",
+   "group": "sup",
+   "label": "RankFeat~\\cite{song2022rankfeat}（ResNetv2-101）",
+   "per": {
+    "ssb_hard": [
+     89.4,
+     47.9
+    ],
+    "ninco": [
+     90.0,
+     39.3
+    ],
+    "inaturalist": [
+     96.0,
+     13.0
+    ],
+    "textures": [
+     95.0,
+     25.4
+    ],
+    "openimageo": [
+     92.4,
+     33.3
+    ]
+   },
+   "source": "as reprinted in the DisCoPatch paper"
+  },
+  "SCALE": {
+   "cite": "xu2024scale",
+   "venue": "ICLR 2024",
+   "group": "sup",
+   "label": "SCALE~\\cite{xu2024scale}（ResNet-50）",
+   "per": {
+    "ssb_hard": [
+     77.4,
+     67.7
+    ],
+    "ninco": [
+     85.4,
+     51.8
+    ],
+    "inaturalist": [
+     98.0,
+     9.5
+    ],
+    "textures": [
+     97.6,
+     11.9
+    ],
+    "openimageo": [
+     94.0,
+     28.2
+    ]
+   },
+   "source": "as reprinted in the DisCoPatch paper"
+  },
+  "ASH": {
+   "cite": "djurisic2023ash",
+   "venue": "ICLR 2023",
+   "group": "sup",
+   "label": "ASH~\\cite{djurisic2023ash}（ResNet-50）",
+   "per": {
+    "ssb_hard": [
+     74.1,
+     80.6
+    ],
+    "ninco": [
+     83.0,
+     64.2
+    ],
+    "inaturalist": [
+     97.9,
+     11.5
+    ],
+    "textures": [
+     97.6,
+     11.9
+    ],
+    "openimageo": [
+     92.8,
+     32.7
+    ]
+   },
+   "source": "as reprinted in the DisCoPatch paper"
+  },
+  "TINS": {
+   "cite": "yang2026tins",
+   "venue": "arXiv 2026",
+   "group": "vlm",
+   "label": "TINS~\\cite{yang2026tins}（CLIP B/16，テスト時適応）",
+   "near": [
+    82.65,
+    57.88
+   ],
+   "far": [
+    96.92,
+    12.99
+   ],
+   "per": {
+    "ssb_hard": [
+     81.38,
+     61.68
+    ],
+    "ninco": [
+     83.91,
+     54.09
+    ],
+    "inaturalist": [
+     99.93,
+     0.21
+    ],
+    "textures": [
+     97.83,
+     10.09
+    ],
+    "openimageo": [
+     92.99,
+     28.68
+    ]
+   },
+   "source": "TINS paper Table 2 and Table 8"
+  },
+  "InterNeg": {
+   "cite": "interneg",
+   "venue": "",
+   "group": "vlm",
+   "label": "InterNeg~\\cite{xu2026interneg}（CLIP B/16，テスト時適応）",
+   "near": [
+    82.2,
+    65.43
+   ],
+   "far": [
+    96.71,
+    16.96
+   ],
+   "source": "TINS paper Table 2"
+  },
+  "AdaNeg": {
+   "cite": "zhang2024adaneg",
+   "venue": "NeurIPS 2024",
+   "group": "vlm",
+   "label": "AdaNeg~\\cite{zhang2024adaneg}（CLIP B/16，テスト時適応）",
+   "near": [
+    76.7,
+    67.51
+   ],
+   "far": [
+    96.43,
+    17.31
+   ],
+   "source": "TINS paper Table 2"
+  },
+  "NegLabel": {
+   "cite": "jiang2024neglabel",
+   "venue": "ICLR 2024",
+   "group": "vlm",
+   "label": "NegLabel~\\cite{jiang2024neglabel}（CLIP B/16，ゼロショット）",
+   "near": [
+    75.18,
+    69.45
+   ],
+   "far": [
+    94.85,
+    23.73
+   ],
+   "source": "TINS paper Table 2"
+  },
+  "LAPT": {
+   "cite": "zhang2024lapt",
+   "venue": "ECCV 2024",
+   "group": "vlm",
+   "label": "LAPT~\\cite{zhang2024lapt}（CLIP B/16，学習あり）",
+   "near": [
+    82.63,
+    58.94
+   ],
+   "far": [
+    94.26,
+    24.86
+   ],
+   "source": "TINS paper Table 2"
+  },
+  "MCM": {
+   "cite": "ming2022mcm",
+   "venue": "NeurIPS 2022",
+   "group": "vlm",
+   "label": "MCM~\\cite{ming2022mcm}（CLIP B/16，ゼロショット）",
+   "near": [
+    60.11,
+    79.02
+   ],
+   "far": [
+    84.77,
+    68.54
+   ],
+   "source": "TINS paper Table 2"
+  }
+ },
+ "fourood": {
+  "TINS": {
+   "cite": "yang2026tins",
+   "label": "TINS~\\cite{yang2026tins}",
+   "per": {
+    "inat": [
+     99.93,
+     0.21
+    ],
+    "sun": [
+     99.14,
+     3.84
+    ],
+    "places": [
+     97.14,
+     12.73
+    ],
+    "dtd": [
+     97.83,
+     10.09
+    ]
+   },
+   "avg": [
+    98.51,
+    6.72
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "InterNeg": {
+   "cite": "interneg",
+   "label": "InterNeg~\\cite{xu2026interneg}",
+   "per": {
+    "inat": [
+     99.79,
+     0.4
+    ],
+    "sun": [
+     98.68,
+     6.78
+    ],
+    "places": [
+     95.01,
+     27.11
+    ],
+    "dtd": [
+     96.26,
+     21.85
+    ]
+   },
+   "avg": [
+    97.43,
+    14.04
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "AdaNeg": {
+   "cite": "zhang2024adaneg",
+   "label": "AdaNeg~\\cite{zhang2024adaneg}",
+   "per": {
+    "inat": [
+     99.71,
+     0.59
+    ],
+    "sun": [
+     97.44,
+     9.5
+    ],
+    "places": [
+     94.55,
+     34.34
+    ],
+    "dtd": [
+     94.93,
+     31.27
+    ]
+   },
+   "avg": [
+    96.66,
+    18.92
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "OODD": {
+   "cite": "yang2025oodd",
+   "label": "OODD~\\cite{yang2025oodd}",
+   "per": {
+    "inat": [
+     99.79,
+     0.85
+    ],
+    "sun": [
+     97.17,
+     12.94
+    ],
+    "places": [
+     92.51,
+     30.68
+    ],
+    "dtd": [
+     94.51,
+     30.67
+    ]
+   },
+   "avg": [
+    96.0,
+    18.79
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "CSP": {
+   "cite": "csp",
+   "label": "CSP~\\cite{chen2024csp}",
+   "per": {
+    "inat": [
+     99.6,
+     1.54
+    ],
+    "sun": [
+     96.66,
+     13.66
+    ],
+    "places": [
+     92.9,
+     29.32
+    ],
+    "dtd": [
+     93.86,
+     25.52
+    ]
+   },
+   "avg": [
+    95.76,
+    17.51
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "CLIPScope": {
+   "cite": "clipscope",
+   "label": "CLIPScope~\\cite{fu2024clipscope}",
+   "per": {
+    "inat": [
+     99.61,
+     1.29
+    ],
+    "sun": [
+     96.77,
+     15.56
+    ],
+    "places": [
+     93.54,
+     28.45
+    ],
+    "dtd": [
+     91.41,
+     38.37
+    ]
+   },
+   "avg": [
+    95.3,
+    20.88
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "NegLabel": {
+   "cite": "jiang2024neglabel",
+   "label": "NegLabel~\\cite{jiang2024neglabel}",
+   "per": {
+    "inat": [
+     99.49,
+     1.91
+    ],
+    "sun": [
+     95.49,
+     20.53
+    ],
+    "places": [
+     91.64,
+     35.59
+    ],
+    "dtd": [
+     90.22,
+     43.56
+    ]
+   },
+   "avg": [
+    94.21,
+    25.4
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "ID-Like": {
+   "cite": "bai2024idlike",
+   "label": "ID-Like~\\cite{bai2024idlike}（学習あり）",
+   "per": {
+    "inat": [
+     98.19,
+     8.98
+    ],
+    "sun": [
+     91.64,
+     42.03
+    ],
+    "places": [
+     90.57,
+     44.0
+    ],
+    "dtd": [
+     94.32,
+     25.27
+    ]
+   },
+   "avg": [
+    93.68,
+    30.07
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "LoCoOp": {
+   "cite": "miyai2023locoop",
+   "label": "LoCoOp~\\cite{miyai2023locoop}（学習あり）",
+   "per": {
+    "inat": [
+     96.86,
+     16.05
+    ],
+    "sun": [
+     95.07,
+     23.44
+    ],
+    "places": [
+     91.98,
+     32.87
+    ],
+    "dtd": [
+     90.19,
+     42.28
+    ]
+   },
+   "avg": [
+    93.52,
+    28.66
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "LSN": {
+   "cite": "lsn",
+   "label": "LSN（学習あり）",
+   "per": {
+    "inat": [
+     95.83,
+     21.56
+    ],
+    "sun": [
+     94.35,
+     26.32
+    ],
+    "places": [
+     91.25,
+     34.48
+    ],
+    "dtd": [
+     90.42,
+     38.54
+    ]
+   },
+   "avg": [
+    92.96,
+    30.22
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "EOE": {
+   "cite": "eoe",
+   "label": "EOE",
+   "per": {
+    "inat": [
+     97.52,
+     12.29
+    ],
+    "sun": [
+     95.73,
+     20.4
+    ],
+    "places": [
+     92.95,
+     30.16
+    ],
+    "dtd": [
+     85.64,
+     57.53
+    ]
+   },
+   "avg": [
+    92.96,
+    30.09
+   ],
+   "source": "TINS paper Table 1"
+  },
+  "MCM": {
+   "cite": "ming2022mcm",
+   "label": "MCM~\\cite{ming2022mcm}",
+   "per": {
+    "inat": [
+     94.59,
+     32.2
+    ],
+    "sun": [
+     92.25,
+     38.8
+    ],
+    "places": [
+     90.31,
+     46.2
+    ],
+    "dtd": [
+     86.12,
+     58.5
+    ]
+   },
+   "avg": [
+    90.82,
+    43.93
+   ],
+   "source": "TINS paper Table 1"
+  }
+ },
+ "imagenet200": {
+  "OE": {
+   "label": "OE$^{\\dagger}$（外れ値データで学習）",
+   "near": [
+    84.84,
+    52.3
+   ],
+   "far": [
+    89.02,
+    34.17
+   ]
+  },
+  "RegMixupMSP": {
+   "label": "RegMixup + MSP$^{\\dagger}$",
+   "near": [
+    84.13,
+    53.78
+   ],
+   "far": [
+    90.81,
+    33.88
+   ]
+  },
+  "TempScale": {
+   "label": "TempScale$^{\\dagger}$（事後手法の最良）",
+   "near": [
+    83.69,
+    54.82
+   ],
+   "far": [
+    90.82,
+    34.0
+   ]
+  },
+  "PixMixASH": {
+   "label": "PixMix + ASH$^{\\dagger}$",
+   "near": [
+    81.36,
+    63.51
+   ],
+   "far": [
+    95.01,
+    21.22
+   ]
+  },
+  "NPOS": {
+   "label": "NPOS$^{\\dagger}$",
+   "near": [
+    79.4,
+    62.09
+   ],
+   "far": [
+    94.49,
+    21.76
+   ]
+  },
+  "_source": "OpenOOD v1.5 leaderboard / online table (footnote 6 of arXiv:2306.09301, sheet gid 133639623: ImageNet-200, ResNet-18, means over 3 runs); AUROC and FPR@95 of near-OOD (SSB-hard, NINCO) and far-OOD (iNaturalist, Textures, OpenImage-O); fetched 2026-10-11"
+ },
+ "cifar100": {
+  "_source": "OpenOOD v1.5 (Zhang et al. 2023, arXiv 2306.09301v5) Table 2 (AUROC) and its online table (footnote 6; sheet gid 2104599404: CIFAR-100, ResNet-18, means over 3 runs; FPR@95 added from there on 2026-10-11); near-OOD = CIFAR-10 + TIN, far-OOD = MNIST + SVHN + Textures + Places365",
+  "MSP": {
+   "label": "MSP$^{\\dagger}$",
+   "near": [
+    80.27,
+    54.8
+   ],
+   "far": [
+    77.76,
+    58.7
+   ],
+   "group": "posthoc"
+  },
+  "TempScale": {
+   "label": "TempScale$^{\\dagger}$",
+   "near": [
+    80.9,
+    54.49
+   ],
+   "far": [
+    78.74,
+    57.94
+   ],
+   "group": "posthoc"
+  },
+  "EBO": {
+   "label": "EBO$^{\\dagger}$",
+   "near": [
+    80.91,
+    55.62
+   ],
+   "far": [
+    79.77,
+    56.59
+   ],
+   "group": "posthoc"
+  },
+  "MLS": {
+   "label": "MLS$^{\\dagger}$（事後手法の近の最良）",
+   "near": [
+    81.05,
+    55.47
+   ],
+   "far": [
+    79.67,
+    56.73
+   ],
+   "group": "posthoc"
+  },
+  "ReAct": {
+   "label": "ReAct$^{\\dagger}$",
+   "near": [
+    80.77,
+    56.39
+   ],
+   "far": [
+    80.39,
+    54.2
+   ],
+   "group": "posthoc"
+  },
+  "KNN": {
+   "label": "KNN$^{\\dagger}$",
+   "near": [
+    80.18,
+    61.22
+   ],
+   "far": [
+    82.4,
+    53.65
+   ],
+   "group": "posthoc"
+  },
+  "RMDS": {
+   "label": "RMDS$^{\\dagger}$（事後手法の遠の最良）",
+   "near": [
+    80.15,
+    55.46
+   ],
+   "far": [
+    82.92,
+    52.81
+   ],
+   "group": "posthoc"
+  },
+  "VIM": {
+   "label": "VIM$^{\\dagger}$",
+   "near": [
+    74.98,
+    62.63
+   ],
+   "far": [
+    81.7,
+    50.74
+   ],
+   "group": "posthoc"
+  },
+  "ASH": {
+   "label": "ASH$^{\\dagger}$",
+   "near": [
+    78.2,
+    65.71
+   ],
+   "far": [
+    80.58,
+    59.2
+   ],
+   "group": "posthoc"
+  },
+  "VOS": {
+   "label": "VOS$^{\\dagger}$",
+   "near": [
+    80.93,
+    55.56
+   ],
+   "far": [
+    81.32,
+    53.7
+   ],
+   "group": "train"
+  },
+  "LogitNorm": {
+   "label": "LogitNorm$^{\\dagger}$",
+   "near": [
+    78.47,
+    62.89
+   ],
+   "far": [
+    81.53,
+    53.61
+   ],
+   "group": "train"
+  },
+  "G-ODIN": {
+   "label": "G-ODIN$^{\\dagger}$",
+   "near": [
+    77.15,
+    67.58
+   ],
+   "far": [
+    85.67,
+    42.68
+   ],
+   "group": "train"
+  },
+  "RotPred": {
+   "label": "RotPred$^{\\dagger}$（学習手法の遠の最良）",
+   "near": [
+    76.43,
+    62.58
+   ],
+   "far": [
+    88.4,
+    34.5
+   ],
+   "group": "train"
+  },
+  "NPOS": {
+   "label": "NPOS$^{\\dagger}$",
+   "near": [
+    78.35,
+    63.35
+   ],
+   "far": [
+    82.29,
+    51.13
+   ],
+   "group": "train"
+  },
+  "CIDER": {
+   "label": "CIDER$^{\\dagger}$",
+   "near": [
+    73.1,
+    72.02
+   ],
+   "far": [
+    80.49,
+    54.22
+   ],
+   "group": "train"
+  },
+  "OE": {
+   "label": "OE$^{\\dagger}$（外れ値データで学習，近の最良）",
+   "near": [
+    88.3,
+    30.73
+   ],
+   "far": [
+    81.41,
+    54.82
+   ],
+   "group": "train_outlier"
+  },
+  "MixOE": {
+   "label": "MixOE$^{\\dagger}$（外れ値データで学習）",
+   "near": [
+    80.95,
+    55.22
+   ],
+   "far": [
+    76.4,
+    63.88
+   ],
+   "group": "train_outlier"
+  }
+ }
+}

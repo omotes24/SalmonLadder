@@ -1,0 +1,10 @@
+{"level": 0.2, "tau": 0.05, "rejections": 740, "max_p_rejected": 0.04969801120076752}
+{"level": 0.2, "tau": 1.0, "rejections": 907, "max_p_rejected": 0.09059971101907587}
+{"level": 0.9, "tau": 0.05, "rejections": 740, "max_p_rejected": 0.04969801120076752}
+/home/omote/reprise_p5_20261002/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{"high_mixing": {"storey": {"seeds": [1800, 1800], "id_frac": [0.104, 0.118], "id_seeds_over_id": [1.0, 1.0]}, "bh": {"seeds": [1665, 1605], "id_frac": [0.031, 0.011], "id_seeds_over_id": [0.278, 0.085]}, "storeyc": {"seeds": [1621, 1592], "id_frac": [0.005, 0.003], "id_seeds_over_id": [0.043, 0.023]}, "bhc": {"seeds": [1621, 1592], "id_frac": [0.005, 0.003], "id_seeds_over_id": [0.043, 0.023]}}}
+{"graph15": {"max|u10-u10'|": 1.261552465270377e-07, "corr(u10,u40)": 0.984499408386357, "corr(u10,u3)": 0.9868041658583802}}
+SMOKE15_SYNTHETIC_OK
+{"selected": ["storey", 0.2, "pp"], "results15": "/home/omote/reprise_p15_20261011/results", "tau": 0.05, "kgs": [3, 5, 10, 20, 40]}
+SMOKE15_OK

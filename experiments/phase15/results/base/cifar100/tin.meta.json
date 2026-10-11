@@ -1,0 +1,10 @@
+{
+ "benchmark": "cifar100",
+ "ds": "tin",
+ "group": "near",
+ "n": 15526,
+ "n_ood": 6526,
+ "n_train": 50000,
+ "seconds": 9.0,
+ "utc": "2026-10-11T05:56:04Z"
+}

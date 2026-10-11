@@ -1,0 +1,10 @@
+{
+ "benchmark": "imagenet200",
+ "ds": "ninco",
+ "group": "near",
+ "n": 14879,
+ "n_ood": 5879,
+ "n_train": 258951,
+ "seconds": 6.1,
+ "utc": "2026-10-11T05:54:28Z"
+}

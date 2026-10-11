@@ -1,0 +1,19 @@
+{\fontsize{7pt}{8.2pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+\setlength{\tabcolsep}{2.0pt}\begin{tabular}{@{}lcccccccccc@{}}
+\hline
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{4}{c}{near-OOD} & \multicolumn{6}{c}{far-OOD} \\
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{2}{c}{SSB-hard} & \multicolumn{2}{c}{NINCO} & \multicolumn{2}{c}{iNaturalist} & \multicolumn{2}{c}{Textures} & \multicolumn{2}{c}{OpenImage-O} \\
+\rule[-2.0pt]{0pt}{8.6pt}手法 & AUROC & FPR95 & AUROC & FPR95 & AUROC & FPR95 & AUROC & FPR95 & AUROC & FPR95 \\
+\hline
+MOODv2~\cite{li2024moodv2}$^{\dagger}$ & 85.00 & 58.10 & 92.70 & 38.20 & 99.60 & 1.80 & 94.30 & 24.70 & 97.40 & 13.60 \\
+NNGuide~\cite{park2023nnguide}$^{\dagger}$ & 84.70 & 54.70 & 93.70 & 28.90 & 99.90 & 1.80 & 95.80 & 17.00 & 97.70 & 10.80 \\
+RankFeat~\cite{song2022rankfeat}$^{\dagger}$ & 89.40 & 47.90 & 90.00 & 39.30 & 96.00 & 13.00 & 95.00 & 25.40 & 92.40 & 33.30 \\
+SCALE~\cite{xu2024scale}$^{\dagger}$ & 77.40 & 67.70 & 85.40 & 51.80 & 98.00 & 9.50 & 97.60 & 11.90 & 94.00 & 28.20 \\
+DisCoPatch~\cite{caetano2025discopatch}$^{\dagger}$ & 95.80 & 19.80\sota & 94.30 & 39.00 & 99.10 & 3.60 & 96.40 & 18.90 & 94.40 & 29.70 \\
+TINS~\cite{yang2026tins}$^{\dagger}$ & 81.38 & 61.68 & 83.91 & 54.09 & 99.93 & 0.21 & 97.83 & 10.09 & 92.99 & 28.68 \\
+TINS~\cite{yang2026tins}（実測） & 82.22 & 56.65 & 80.74 & 56.09 & 99.93 & 0.17 & 98.11 & 8.31 & 93.09 & 28.20 \\
+Salmon Ladder，単体 & \cellcolor{upd}\textbf{96.24} & 21.72 & \cellcolor{upd}\textbf{99.65} & \cellcolor{upd}\textbf{1.28} & 99.93 & \cellcolor{upd}\textbf{0.16} & \cellcolor{upd}\textbf{98.91} & \cellcolor{upd}\textbf{4.37} & 97.55 & 10.98 \\
+Salmon Ladder $\times$TINS & \cellcolor{upd}\textbf{96.51}\sota & 19.96 & \cellcolor{upd}\textbf{99.68}\sota & \cellcolor{upd}\textbf{1.03}\sota & \cellcolor{upd}\textbf{99.96}\sota & \cellcolor{upd}\textbf{0.11}\sota & \cellcolor{upd}\textbf{99.31}\sota & \cellcolor{upd}\textbf{2.56}\sota & \cellcolor{upd}\textbf{97.87}\sota & \cellcolor{upd}\textbf{9.81}\sota \\
+{\scriptsize\textcolor{black!60}{\quad 最良の比較手法との差}} & \gap{+0.71} & \gap{-0.16} & \gap{+5.38} & \gap{+27.87} & \gap{+0.03} & \gap{+0.06} & \gap{+1.20} & \gap{+5.75} & \gap{+0.17} & \gap{+0.99} \\
+\hline
+\end{tabular}}%

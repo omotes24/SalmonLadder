@@ -1,0 +1,23 @@
+{
+ "phase": "15",
+ "written_utc": "2026-10-11T07:10:00Z",
+ "written_when": "after all Phase 15 runs had finished and the summary (p15_summary.json) had been read",
+ "deviations_from_prereg_p15": [],
+ "statement": "No deviation: every computation, read-out, hypothesis and reporting form of prereg_p15.json was executed as written; no configuration was selected from Phase 15; tau = 0.05 and q = 0.2 stayed fixed; the main configuration of the paper is unchanged.",
+ "timeline_utc": {
+  "prereg_p15.json written": "2026-10-11T04:25Z (SHA-256 83ea4061e08d40f250baeb14abd2a877e19354b70f2b1c85be8784a514f2afc8 recorded on the compute server)",
+  "feature extraction of the training images (pipeline A: tables, extract, merge; no evaluation)": "started 03:56Z (failed on the CIFAR table), relaunched 04:05Z after the fix, finished 05:35Z",
+  "public commit of the registration (branch phase12-15-registrations, commit 8ef9c8d)": "confirmed on github.com/omotes24/SalmonLadder at 05:24Z",
+  "pipeline B (smoke, cap_dev, cap_test, cap_in200, cap_cifar, cap_rec, kg, views) and ana15": "launched 05:24:57Z after the commit was confirmed; finished 06:02:38Z",
+  "text sides and baselines (pipeline A: text, base)": "05:35Z-05:56Z, after the commit"
+ },
+ "note_on_the_timeline": "The feature extraction of the ImageNet-200 / CIFAR-100 training images and of the CIFAR-100 CLIP features began before the public commit (it involves no evaluation and no choice); every evaluation ran after it. The paper (Appendix: hypotheses) states this.",
+ "hypotheses_outcome": {
+  "H1": "confirmed (CIFAR-100 far-OOD +0.24, ImageNet-200 near-OOD -0.53 FPR95 points vs p+ only, capped Storey rule)",
+  "H2": "confirmed (ImageNet-1K near-OOD: -0.18 standalone, +0.19 x TINS vs the uncapped rule)",
+  "H3": "confirmed (0 of the 2 cells with mixing rate >= 0.3 worse than p+ only by > 1 point; max |capped - uncapped| = 0.3 in the 28 cells with r >= 10 and mixing rate < 0.3)",
+  "H4": "first half refuted (kNN over all training images, k = 50, does not beat the 16-label static read-out on ImageNet-200 (28.04 vs 26.72 near, 4.40 vs 3.71 far) nor on CIFAR-100 far-OOD (32.15 vs 29.19); it does on CIFAR-100 near-OOD (16.35 vs 16.49)); second half confirmed (sigma 9.07 / p+ only 7.45 vs kNN-all 28.04 near-OOD FPR95 on ImageNet-200)",
+  "H5": "first half refuted (the r at which sigma first beats the static read-out does not decrease with smaller k_g: NINCO r = 10 for k_g in {3, 5, 10, 20} and r = 1 for k_g = 40; SSB-hard r = 2 for k_g <= 10 and r = 1 for k_g >= 20); second half partially confirmed (best at the largest r: k_g = 10 on NINCO, k_g = 5 on SSB-hard with k_g = 10 within 0.3)",
+  "H6": "first half refuted (centred CLIP static read-out: near 91.41, far 78.46 FPR95); second half confirmed for the static read-out (DINO views move at most 8.97 points) and not for the kNN rank (DINO v1 far-OOD moves 10.92 points)"
+ }
+}

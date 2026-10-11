@@ -1,0 +1,197 @@
+\section{命題1と命題2の証明}
+\label{sec:app_proofs}
+\textbf{命題1．}$S\bom=D^{-1/2}WD^{-1/2}D^{1/2}\mathbf{1}=D^{-1/2}W\mathbf{1}=\bom$であり，$S$は対称なので$\bom^{\top}S=\bom^{\top}$．よって$\bom^{\top}\mathbf{u}^{(\ell+1)}=\lambda\bom^{\top}\mathbf{u}^{(\ell)}+(1-\lambda)\bom^{\top}\mathbf{y}^{+}$となり，$\mathbf{u}^{(0)}=\mathbf{0}$から解けば$\bom^{\top}\mathbf{u}^{(L)}=(1-\lambda^{L})\bom^{\top}\mathbf{y}^{+}=(1-\lambda^{L})\sum_{j\in\mathcal{S}}\sqrt{\delta_j}$を得る．$\square$
+
+\textbf{命題4．}$\sigma$を折$b$の節点の上の関数とみる．それを定めるのは，支持画像，折$\bar b$の節点とその較正・テストの区別，および「$\mathcal{C}_b\cup\mathcal{T}_b$という節点の集合」だけである．グラフと$\mathbf{u}^{+}$は節点の名札に依らず（\secref{graph}），$\hat{Q}_{\bar b}$と$\mathbf{u}^{-}_{\bar b}$は折$\bar b$の画像と$\mathbf{u}^{+}$から決まり，参照する較正画像は$\mathcal{C}_{\bar b}$である．したがって$\sigma$は，$\mathcal{C}_b\cup\mathcal{T}_b$の中でどの節点を較正画像と呼ぶかを入れ替えても変わらない．これはAdaDetectの条件(8)（学習標本を支持画像と折$\bar b$の全節点，帰無の較正標本を$\mathcal{C}_b$，テスト標本を$\mathcal{T}_b$としたもの．同論文の証明は学習標本を所与とした置換の議論なので，その中身は問わない）であり，\eqnref{pfin}の$\pfin$は同論文の経験$p$値(10)である．よって定理3.3から(i)と(ii)のPRDS・超一様性が従い，系3.5と系3.7がFDRの上界を与える．$\square$
+
+\textbf{命題2．}$i\in Q$では$y_i=0$なので$u_i=\lambda\sum_jW_{ij}u_j/\sqrt{\delta_i\delta_j}$．両辺に$\sqrt{\delta_i}$を掛けて$Q$で足すと，$Q$の内側の辺からの寄与は$\sum_{j\in Q}(u_j/\sqrt{\delta_j})\sum_{i\in Q}W_{ij}\le\sum_{j\in Q}\sqrt{\delta_j}u_j$で抑えられ，外側の辺からの寄与は$w(Q,\bar{Q})\max_{j}u_j/\sqrt{\delta_j}$で抑えられる．\eqnref{walk}と同じ酔歩の表現より$u_j/\sqrt{\delta_j}\le1/\min_{s\in Y}\sqrt{\delta_s}$なので，移項して\eqnref{cond}を得る．$\square$
+
+\section{最終読み出しの保証の実測と種に混じるIDの割合}
+\label{sec:app_fdp}
+\input{sections/fdp18.tex}
+
+\tabref{val}に，交換可能な較正での$\pfin$の実測の誤警報率とBH法の偽発見割合をデータセット別に示す．\tabref{fdp}に，\tabref{main}の設定（学習画像の較正，$q{=}0.2$，6通りの抽出の平均）で折ごとに選ばれた種の数（2つの折の平均）と，種に混じっていたIDの割合（実測の偽発見割合）を，Storey型と単純BH法の両方について，データセット別・ビュー別に示す（\secref{fdp}）．交換可能な較正での同じ量は\secref{fdp}の本文に範囲で示した．
+
+\begin{table}[t]
+\centering
+\caption{最終スコア$\pfin$の保証の実測（交換可能な較正：IDの検証画像からクラスあたり4枚を較正画像とし，\NVcalNSplits{}通りの抽出の平均，単体）．IDの誤警報率は$\pfin\le\alpha$と判定されたIDのテスト画像の割合（命題4(i)：$\le\alpha$），偽発見割合はBH法（$q{=}0.2$）で棄却された画像のうちIDの割合（命題4(ii)：期待値$\le0.2$），再現率は未知のうち棄却された割合．}
+\label{tab:val}
+\vspace{1.5mm}
+\input{sections/t18_val.tex}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{学習画像の較正で選ばれた種（折あたり，6通りの抽出の平均）．種は種の数，ID率は種に混じっていたIDの割合（実測の偽発見割合，水準$q{=}0.2$）．}
+\label{tab:fdp}
+\vspace{1.5mm}
+\input{sections/t18_fdp.tex}
+\end{table}
+
+\section{データセット別の値と散布図}
+\label{sec:app_four}
+\tabref{perds}と\tabref{four}に\tabref{main}のデータセット別の値を示す（\secref{main}）．\figref{scatter}は\tabref{main}の全手法の\AUC{}と\FPR{}の散布図である．
+
+\begin{table*}[t]
+\centering
+\caption{OpenOOD v1.5 ImageNet-1Kのデータセット別の結果（[\%]，AUROC$\uparrow$／FPR95$\downarrow$）．記法は\tabref{main}と同じ．TINSの報告値は原論文の表8のとおりで，iNaturalistとTexturesは同論文のFour-OODの表1と同じ値が報告されている（\tabref{four}）．}
+\label{tab:perds}
+\vspace{1.5mm}
+\input{sections/t18_perds.tex}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig18_scatter.pdf}
+\caption{OpenOOD v1.5 ImageNet-1Kでの\AUC{}と\FPR{}（\tabref{main}の全手法，右上ほど良い）．大きな星が本稿の構成（$\times$TINS），小さな星は単体．比較手法は報告値（TANLのみ実測）．}
+\label{fig:scatter}
+\end{figure*}
+
+\begin{table*}[t]
+\centering
+\caption{Four-OOD（ImageNet-1Kに対するiNaturalist，SUN，Places，Textures，[\%]）．比較手法はすべてCLIP ViT-B/16による報告値$\dagger$（TINSは実測も併記）．記法は\tabref{main}と同じ．}
+\label{tab:four}
+\vspace{1.5mm}
+\input{sections/t18_four.tex}
+\end{table*}
+
+\section{ImageNet-200とCIFAR-100}
+\label{sec:app_in200}
+\tabref{in200}と\tabref{cifar}に\secref{in200}のImageNet-200とCIFAR-100の値を示す．CIFAR-100のIDの誤警報率$\Pr(\pfin\le0.05)$は\NCifarValNearFprZeroZeroFive{}（near）／\NCifarValFarFprZeroZeroFive{}（far），BH法の偽発見割合は\NCifarValNearBhfdp{}／\NCifarValFarBhfdp{}である（学習画像の較正）．CIFAR-100の$32\times32$の画像は他と同じ前処理で拡大して入力し，TexturesはImageNet-1Kベンチマークと同じ画像ファイルなので特徴を共有する．CIFAR-100の種は，Storey型$q{=}0.2$でCIFAR-10・Tiny ImageNetでは折の\NCifarSeedNearStoreyRatioMin{}--\NCifarSeedNearStoreyRatioMax\%，MNIST・SVHN・Places365では\NCifarSeedFarHiStoreyRatioMin{}--\NCifarSeedFarHiStoreyRatioMax\%，Texturesでは\NCifarSeedTextureStoreyRatio\%を占め，種に混じるIDの割合は\NCifarSeedStoreyIdfracMin{}--\NCifarSeedStoreyIdfracMax{}である（DINOv3 L/16のビュー，2つの折・6通りの抽出の平均）．単純BH法の種は折の\NCifarSeedTextureBhRatio{}--\NCifarSeedMnistBhRatio\%，IDの割合\NCifarSeedMnistBhIdfrac{}--\NCifarSeedTinBhIdfrac{}である．種に混じるIDの割合は命題3どおり$q$以下でも，割合$q$の種がIDのほぼ全数になって$\pN$は情報を失う（Places365：$\sigma$ \NCifarMainPlacesThreeSixFiveFpr\%，$\pP$だけ\NCifarLpPlacesThreeSixFiveFpr\%，単純BH法の種で\NCifarBhPlacesThreeSixFiveFpr\%，上限付きの種で\NCifarStoreycPlacesThreeSixFiveFpr\%）．ImageNet-200のSSB-hardでは未知が全画像の\NInTwoZeroZeroMixSsbHard\%を占めてStorey型の$\hat{\pi}_0$が\NInTwoZeroZeroSeedSsbHardStoreyPiZero{}になり，水準$q/\hat{\pi}_0$が1を超えて折の全画像が種になる（単純BH法の種は折の\NInTwoZeroZeroSeedSsbHardBhRatioPct\%，上限付きの種は\NInTwoZeroZeroSeedSsbHardStoreycRatioPct\%，IDの割合\NInTwoZeroZeroSeedSsbHardStoreycIdfrac{}）．
+
+\begin{table}[t]
+\centering
+\caption{OpenOOD v1.5 CIFAR-100（[\%]，単体，\NCifarNDraws{}通りの抽出の平均）．$\dagger$はOpenOOD v1.5~\cite{zhang2023openood}の報告値（\AUC{}は論文の表2，\FPR{}は同論文の脚注6が指す公開の表）．全学習画像のkNN・クラス平均は本稿と同じ2つの特徴（L2正規化して連結），ゼロショットはCLIP ViT-B/16（\secref{in200}）．上限付きの種は$\tau{=}0.05$（\secref{cap}）．\textcolor{sotacol}{$\bigstar$}は列の最良値，\colorbox{upd}{青}は本手法以外の全行（報告値，全学習画像・ゼロショットの基線，静的検出器，LGC-max）を上回る値．}
+\label{tab:cifar}
+\vspace{1.5mm}
+\input{sections/t18_cifar.tex}
+\end{table}
+
+
+\begin{table}[t]
+\centering
+\caption{OpenOOD v1.5 ImageNet-200（[\%]，単体，\NInTwoZeroZeroNDraws{}通りの抽出の平均）．$\dagger$はOpenOOD v1.5~\cite{zhang2023openood}の報告値（ImageNet-200で学習したResNet-18；リーダーボードと同論文の脚注6が指す公開の表）．全学習画像のkNN・クラス平均は本稿と同じ2つの特徴，ゼロショットはCLIP ViT-B/16（\secref{in200}）．上限付きの種は$\tau{=}0.05$（\secref{cap}）．\textcolor{sotacol}{$\bigstar$}は列の最良値，\colorbox{upd}{青}は本手法以外の全行（報告値，全学習画像・ゼロショットの基線，静的検出器，LGC-max）を上回る値．}
+\label{tab:in200}
+\vspace{1.5mm}
+\input{sections/t18_in200.tex}
+\end{table}
+
+\section{特徴抽出器の族}
+\label{sec:app_views}
+\input{sections/views18.tex}
+CLIP ViT-B/16はベース検出器TINSが使う画像エンコーダと同じ重みで，DINO (v1)はImageNet-1Kの画像だけで自己教師あり学習したViT-B/16である．
+
+\begin{table*}[t]
+\centering
+\caption{6つの特徴抽出器をそれぞれ単一のビューとした値（\FPR{}[\%]，OpenOOD v1.5 ImageNet-1K，近＝near-OOD，遠＝far-OOD，抽出1通り）．}
+\label{tab:views}
+\vspace{1.5mm}
+\input{sections/t18_views.tex}
+\end{table*}
+
+\section{到着時採点モード}
+\label{sec:app_online}
+画像がバッチ（256枚）で順に届く設定では，届いた画像を節点に加えてグラフを厳密な$k_g$近傍グラフに保ち，画像の折は到着番号の偶奇で決める（較正画像の折は最初に1回決める）．各バッチで，$\mathbf{u}^{+}$と各折の$\mathbf{u}^{-}_b$をその時点のグラフ上で\eqnref{lp}の不動点まで反復し（前のバッチの値を初期値にして反復を減らすが，不動点は初期値に依らない．相対残差$10^{-8}$まで平均\NOnlItersMean{}回），種はその時点までに届いた各折の画像の$\pP$に\eqnref{bh}をかけて毎バッチ選び直す．届いたバッチの画像は\eqnref{pfin}のとおり採点し，$\pfin$はその時点の自分の折の較正画像の$\sigma$の中での順位で確定して後のバッチで見直さない．到着順がランダムなら，各時点で折$b$の較正画像とそれまでに届いた折$b$のID画像は交換可能なので，命題4は各時点の判定に当てはまる．事後採点との違いは，各画像が「それより後に届く画像」を使えないことだけである．
+
+\tabref{online}に到着時採点モードのデータセット別の値を示す（本稿の2ビュー，Storey型$q{=}0.2$，折は到着番号の偶奇；OpenOODは5通り，Four-OODは3通りの到着順の平均，抽出は1通り）．交差適合なしの到着時採点（v16までの読み出し）も併記する．このモード（near-OODの\FPR{}は単体\NOnlOneFourNoneNearFpr\%，$\times$TINS \NOnlOneFourTinsNearFpr\%）は後に届く画像を使えない分だけ劣るが，報告値の最良は上回る．到着時の$\pfin$のIDの誤警報率$\Pr(\pfin\le0.05)$は近\NOnlOneFourValNearFprZeroZeroFive{}，遠\NOnlOneFourValFarFprZeroZeroFive{}，Four-OOD \NOnlOneFourValFourFprZeroZeroFive{}である（学習画像の較正）．
+
+\begin{table*}[t]
+\centering
+\caption{到着時採点モードのデータセット別の値（[\%]，AUROC／FPR95）．}
+\label{tab:online}
+\vspace{1.5mm}
+\input{sections/t18_online.tex}
+\end{table*}
+
+\section{開発用分割での構成の選択}
+\label{sec:app_sel}
+\tabref{sel}に第1段（ビューと$q$，交差適合なしの$\pP\pN$），\tabref{selq}に第2段（交差適合の種の規則・$q$・統計量）の，開発用分割dev1（選択）とdev2（確認）での候補の値を示す（単体，5通りの抽出の平均；各分割はnearとfarの2つの未知の集合を持つ）．第2段では，静的$p$を統計量に含める候補はdev1のfar-OODでは最も良いがnear-OODで悪く（\NSelqDevOnePpsNearFpr\%／\NSelqDevOnePpsFarFpr\%），$q{=}0.05$はどの組でも悪い．選ばれたStorey型・$q{=}0.2$・$\pP\pN$はdev1 nearで\NSelqDevOneNearFpr\%（\NSelqNCandidates{}候補中\NSelqDevOneRankOfChosen{}位），dev2 nearで\NSelqDevTwoNearFpr\%であり，交差適合なしの参照（dev1 \NSelqRefDevOneNearFpr\%）より良い．LGC-maxはdev1 nearで\NSelqDevOneLgcNearFpr\%である．
+
+\begin{table*}[t]
+\centering
+\caption{第1段の候補（ビューと$q$；[\%]，交差適合なしの$\pP\pN$，単体，5通りの抽出の平均）．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\label{tab:sel}
+\vspace{1.5mm}
+\input{sections/t18_sel.tex}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{第2段の候補（交差適合の種の規則・$q$・統計量；[\%]，$\pfin$，単体，5通りの抽出の平均）と参照．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\label{tab:selq}
+\vspace{1.5mm}
+\input{sections/t18_sel14.tex}
+\end{table*}
+
+\section{テスト集合での感度と選択の履歴}
+\label{sec:app_sens}
+\tabref{ablx}に，\tabref{abl}の読み出しの単体での値と，第2段の候補（種の規則，$q$，統計量）の一部のテスト集合での値を示す．テスト集合では単純BH法の種がStorey型よりわずかに良く，$q{=}0.1$が$q{=}0.2$よりわずかに良いが，構成は開発用分割の規則で選んだものを変えない（\secref{exp}）．\tabref{sens}に，交差適合なしの$\pP\pN$について，ビューの組と$q$とベース検出器のすべての組合せのテスト集合での値（6通りの抽出の平均）を示す．v16までの版では，グラフの近傍数，相互近傍グラフ，$\lambda$，種の2巡目，種への最近傍項，重み，DINOv3の採用，静的$p$との積をテスト集合上で探索し，その上で第1段の候補の集合を決めた．本稿の構成はこの表からは選んでおらず（\secref{exp}），交差適合に関わる第2段の候補と規則はテスト集合の計算前に登録した．探索の記録は\url{https://github.com/omotes24/SalmonLadder}に残している．
+
+\begin{table*}[t]
+\centering
+\caption{同じ特徴での読み出しの比較（単体）と第2段の他の候補の値（[\%]，6通りの抽出の平均）．記法は\tabref{abl}と同じ．}
+\label{tab:ablx}
+\vspace{1.5mm}
+\input{sections/t18_ablx.tex}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{テスト集合での感度（[\%]，交差適合なしの$\pP\pN$，6通りの抽出の平均）．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\label{tab:sens}
+\vspace{1.5mm}
+\input{sections/t18_sens.tex}
+\end{table*}
+
+\section{再出現と混入率の格子}
+\label{sec:app_rec}
+\secref{rec}の格子の全条件を\tabref{recninco}（NINCO）と\tabref{recssb}（SSB-hard）に示す．交差適合なしの$\pP\pN$との\FPR{}の差は\NRecNAll{}条件で\NRecMinMainMinusVOne{}--+\NRecMaxMainMinusVOne{}ポイントの範囲にある．種は各折のテスト画像から選ばれるので1つの折に入る未知は半分になるが，他方の折の種が同じクラスの残りを引き上げる．$\sigma$に静的$p$を加えると，$r\le5$で静的$p$に劣る条件は\NRecNRLeFivePpsWorseStatic{}に減り差も最大\NRecMaxPpsMinusStaticLeFive{}ポイントになるが，64クラス$\times$30枚では\NRecNincoCSixFourRThreeZeroMainFpr\%から\NRecNincoCSixFourRThreeZeroPpsFpr\%へ悪化する．$c$は未知クラスの数，$r$は各クラスの枚数，混入率は未知の枚数をテスト集合の枚数で割った値．検出器の列は\AUC{}／\FPR{}（DINOv2 L/14 + DINOv3 L/16，ラベル付き画像は本稿の抽出1通り，クラスと画像の選び方を変えた3回の平均；学習画像の較正）．$\Pr(\pfin\le0.05)$は本稿の構成の$\pfin$のIDの誤警報率．種はDINOv3 L/16のビューでStorey型$q{=}0.2$のときに選ばれた枚数（2つの折の合計），IDはそのうちIDだった割合（\%），再現は未知のうち種に選ばれた割合（\%）．
+
+\begin{table*}[t]
+\centering
+\caption{再出現と混入率の格子：NINCO（[\%]）．}
+\label{tab:recninco}
+\vspace{1.5mm}
+\input{sections/t18_rec_ninco.tex}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{再出現と混入率の格子：SSB-hard（[\%]）．}
+\label{tab:recssb}
+\vspace{1.5mm}
+\input{sections/t18_rec_ssb_hard.tex}
+\end{table*}
+
+\section{近傍数$k_g$を変えた格子}
+\label{sec:app_kg}
+\figref{kg}に，同じ格子のNINCO（$c{=}64$）とSSB-hard（$c{=}980$）で，グラフの近傍数を$k_g\in\{3,5,10,20,40\}$と変えた値を示す（単体，本稿の抽出1通り，3回の平均；1つのテスト集合につき上位40個の近傍リストを1回作り，全$k_g$を同じリストで評価）．\input{sections/kg18.tex}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig18_kg.pdf}
+\caption{近傍数$k_g$を変えた再出現の格子（\FPR{}，単体，DINOv2 L/14 + DINOv3 L/16）．実線は$\sigma$，破線は$\pP$だけ，灰色の点線は静的$p$（$k_g$に依らない）．}
+\label{fig:kg}
+\end{figure*}
+
+\section{種の上限$\tau$の格子}
+\label{sec:app_cap}
+\tabref{caprec}に，\secref{cap}の上限付きの規則を\secref{rec}の格子の全条件で評価した\FPR{}を示す（単体，3回の平均）．\input{sections/caprec18.tex}
+
+\begin{table*}[t]
+\centering
+\caption{種の上限$\tau{=}0.05$の規則の格子（\FPR{}[\%]，単体，3回の平均）．Storey型・単純BH法はそれぞれ上限なし／あり．種はDINOv3 L/16のビューで上限付きStorey型に選ばれた枚数（2つの折の合計）とそのうちIDの割合（\%）．}
+\label{tab:caprec}
+\vspace{1.5mm}
+\input{sections/t18_caprec.tex}
+\end{table*}
+
+\section{追加実験の事前登録と仮説の判定}
+\label{sec:app_hyp}
+\secref{cap}の上限付きの種，\secref{in200}の全学習画像・ゼロショットの基線，付録\ref{sec:app_kg}の$k_g$の格子，付録\ref{sec:app_views}の中心化は，1つの登録文書（公開リポジトリの\texttt{experiments/phase15/prereg\_p15.json}，SHA-256 \texttt{83ea4061}$\cdots$）に計算の内容・報告の形・6つの仮説を記してから実行した．登録文書は評価の実行前に公開リポジトリのブランチ\texttt{phase12-15-registrations}（コミット\texttt{8ef9c8d}）にコミットし，その時刻が第三者の確認できる時刻である（学習画像の特徴抽出だけはコミット前に始めた）．構成の選択は行わず（$\tau$と$q$は固定，本稿の主構成は変えない），登録からの逸脱はない．判定は次のとおりである．
+\textbf{H1}（上限は害を消す：CIFAR-100 far-OODとImageNet-200 near-OODで上限付きの規則は$\pP$だけの+0.5ポイント以内）：成立（+\NCifarStoreycFarDfprVsLp{}，\NInTwoZeroZeroStoreycNearDfprVsLp{}ポイント）．
+\textbf{H2}（上限はImageNet-1K near-OODで上限なしの0.5ポイント以内）：成立（単体\NCapStoreycAloneNearDfprVsStorey{}，$\times$TINS +\NCapStoreycNearDfprVsStorey{}ポイント）．
+\textbf{H3}（格子：混入率30\%以上で$\pP$だけより1ポイント以上悪くならず，$r\ge10$・混入率30\%未満で上限なしの利得を1ポイント以内に保つ）：成立（付録\ref{sec:app_cap}）．
+\textbf{H4}（全学習画像のkNN（$k{=}50$）は両ベンチマークで16枚の静的$p$より良く，ImageNet-200のnear-OODでは$\sigma$がkNNより低い\FPR{}を保つ）：前半は否定（ImageNet-200でkNN \NInTwoZeroZeroKnnAllKFiveZeroNearFpr\%／\NInTwoZeroZeroKnnAllKFiveZeroFarFpr\%対静的$p$ \NInTwoZeroZeroStaticNearFpr\%／\NInTwoZeroZeroStaticFarFpr\%，CIFAR-100のfar-OODで\NCifarKnnAllKFiveZeroFarFpr\%対\NCifarStaticFarFpr\%；CIFAR-100のnear-OODだけ\NCifarKnnAllKFiveZeroNearFpr\%対\NCifarStaticNearFpr\%），後半は成立（\NInTwoZeroZeroMainNearFpr\%対\NInTwoZeroZeroKnnAllKFiveZeroNearFpr\%）．
+\textbf{H5}（$\sigma$が静的$p$を下回る$r$は$k_g$が小さいほど小さく，大きい$r$での利得は$k_g\in\{10,20\}$で最大）：前半は否定，後半は$\{5,10\}$として部分的に成立（付録\ref{sec:app_kg}）．
+\textbf{H6}（中心化でCLIPの静的$p$はDINO系の範囲（near 70\%未満，far 40\%未満）に入り，DINO系の変化は10ポイント以内）：前半は否定（near \NViewClipStaticcNearFpr\%，far \NViewClipStaticcFarFpr\%），後半は静的$p$で成立（最大\NViewsDinoCentredMaxabsFpr{}ポイント），kNNではDINO (v1)のfar-OODで\NViewsDinoKnncentredMaxabsFpr{}ポイント動く．

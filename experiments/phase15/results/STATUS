@@ -1,0 +1,39 @@
+2026-10-11T03:56:08Z prereg_p15.json placed; sha256 83ea4061e08d40f250baeb14abd2a877e19354b70f2b1c85be8784a514f2afc8
+2026-10-11T03:56:14Z P15 START gpus A=0 1 2 3 B=2 3 steps=tables,extract,text,base
+2026-10-11T03:56:14Z A tables start
+2026-10-11T03:56:29Z FAILED pipeline A (see logs/pipeline_a.log and the step logs)
+2026-10-11T03:56:29Z P15 ENDED WITH FAILURES steps=tables,extract,text,base
+2026-10-11T04:05:38Z P15 START gpus A=0 1 2 3 B=2 3 steps=tables,extract,text,base
+2026-10-11T04:05:38Z A tables start
+2026-10-11T04:05:38Z A tables done
+2026-10-11T04:05:38Z A extract start
+2026-10-11T05:23:18Z A extract in200_train done
+2026-10-11T05:24:57Z registration branch phase12-15-registrations (8ef9c8d) confirmed on github.com/omotes24/SalmonLadder at 05:24Z; pipeline B launched after it
+2026-10-11T05:24:57Z P15 START gpus A=2 B=2 3 steps=smoke,cap_dev,cap_test,cap_in200,cap_cifar,cap_rec,kg,views,ana
+2026-10-11T05:24:57Z B smoke start
+2026-10-11T05:25:07Z B smoke done
+2026-10-11T05:25:07Z B cap_dev start
+2026-10-11T05:33:42Z A extract cifar_train done
+2026-10-11T05:33:46Z B cap_dev done
+2026-10-11T05:33:46Z B cap_test start
+2026-10-11T05:35:36Z A extract cifar_clip done
+2026-10-11T05:35:36Z A text start
+2026-10-11T05:46:54Z B cap_test done
+2026-10-11T05:46:54Z B cap_in200 start
+2026-10-11T05:47:50Z B cap_in200 done
+2026-10-11T05:47:50Z B cap_cifar start
+2026-10-11T05:48:54Z B cap_cifar done
+2026-10-11T05:48:54Z B cap_rec start
+2026-10-11T05:53:55Z A text done
+2026-10-11T05:53:55Z A base start
+2026-10-11T05:56:05Z A base done
+2026-10-11T05:56:05Z P15 DONE steps=tables,extract,text,base
+2026-10-11T05:56:05Z P15 ENDED WITH FAILURES steps=tables,extract,text,base
+2026-10-11T05:58:11Z B cap_rec done
+2026-10-11T05:58:11Z B kg start
+2026-10-11T06:01:44Z B kg done
+2026-10-11T06:01:44Z B views start
+2026-10-11T06:02:29Z B views done
+2026-10-11T06:02:29Z ana start
+2026-10-11T06:02:38Z ana done
+2026-10-11T06:02:38Z P15 DONE steps=smoke,cap_dev,cap_test,cap_in200,cap_cifar,cap_rec,kg,views,ana
