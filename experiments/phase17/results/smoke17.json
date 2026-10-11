@@ -1,0 +1,77 @@
+{
+ "utc_start": "2026-10-11T15:16:21Z",
+ "dev1_draw0_near": {
+  "phase16_equal": {
+   "xfit|storey|q0.2|pp|pooled": {
+    "dFPR95": 0.0,
+    "dAUROC": 0.0
+   },
+   "xfit|storey|q0.2|pp": {
+    "dFPR95": 1.7763568394002505e-15,
+    "dAUROC": 2.222222221348602e-06
+   },
+   "xfit|lp|pooled": {
+    "dFPR95": 0.0,
+    "dAUROC": 0.0
+   }
+  },
+  "all_equal": true,
+  "sigma_recomputed_maxdiff": 9.521188530925428e-07,
+  "ref_seeds": {
+   "L14": {
+    "seeds": 4654,
+    "cal_seeds": 76,
+    "pi0_hat": 0.7900452006730873
+   },
+   "D3L": {
+    "seeds": 4607,
+    "cal_seeds": 88,
+    "pi0_hat": 0.8071324872006015
+   }
+  },
+  "finite_ref": true,
+  "seconds": 4.9
+ },
+ "grid_ninco_c5_r10_rep0": {
+  "violations": {
+   "cor2_sigma_violations": 0,
+   "cor2_ref_violations": 0,
+   "corA1_violations": 0,
+   "corA1_phibar_violations": 0
+  },
+  "n_unknown": 50,
+  "n_a1": 50,
+  "finite": true,
+  "seconds": 0.9
+ },
+ "csid_features": {
+  "imagenet_v2": {
+   "rows": 10000,
+   "features": {
+    "L14": [
+     10000,
+     1024
+    ],
+    "D3L": [
+     10000,
+     1024
+    ]
+   }
+  },
+  "imagenet_r": {
+   "rows": 30000,
+   "features": {
+    "L14": [
+     30000,
+     1024
+    ],
+    "D3L": [
+     30000,
+     1024
+    ]
+   }
+  }
+ },
+ "ok": true,
+ "utc_end": "2026-10-11T15:16:41Z"
+}

@@ -1,0 +1,146 @@
+{
+ "folds": 2,
+ "views": {
+  "L14": {
+   "fold0|storey|q0.2": {
+    "seeds": 7298,
+    "pi0_hat": 0.7700151848151848,
+    "n_test": 32500,
+    "n_cal": 2000,
+    "id_frac": 0.30528912030693345
+   },
+   "fold1|storey|q0.2": {
+    "seeds": 6627,
+    "pi0_hat": 0.7866837777607009,
+    "n_test": 32500,
+    "n_cal": 2000,
+    "id_frac": 0.2622604496755696
+   },
+   "v1": {
+    "q0.2": {
+     "seeds": 14048,
+     "pi0_hat": 0.77743645869373,
+     "id_frac": 0.2909310933940774
+    }
+   }
+  },
+  "D3L": {
+   "fold0|storey|q0.2": {
+    "seeds": 7056,
+    "pi0_hat": 0.7598049027895182,
+    "n_test": 32500,
+    "n_cal": 2000,
+    "id_frac": 0.2813208616780045
+   },
+   "fold1|storey|q0.2": {
+    "seeds": 7019,
+    "pi0_hat": 0.7644794897410282,
+    "n_test": 32500,
+    "n_cal": 2000,
+    "id_frac": 0.3021797976919789
+   },
+   "v1": {
+    "q0.2": {
+     "seeds": 14016,
+     "pi0_hat": 0.7623633029639026,
+     "id_frac": 0.28867009132420096
+    }
+   }
+  }
+ },
+ "ref": {
+  "views": {
+   "L14": {
+    "seeds": 14432,
+    "cal_seeds": 126,
+    "pi0_hat": 0.7771936869101048
+   },
+   "D3L": {
+    "seeds": 14008,
+    "cal_seeds": 106,
+    "pi0_hat": 0.7795805537745836
+   }
+  },
+  "n_ref": 2000,
+  "n_cal": 2000,
+  "nfix": 16000
+ },
+ "csid_metrics": {
+  "sigma": {
+   "fs_AUROC": 99.91565363636363,
+   "fs_FPR95": 0.16,
+   "csid_ood_AUROC": 99.9084165,
+   "csid_ood_FPR95": 0.16999999999999998,
+   "id_ood_AUROC": 99.9172618888889,
+   "id_ood_FPR95": 0.16,
+   "id_csid_AUROC": 54.39536722222223,
+   "id_csid_FPR95": 94.32000000000001
+  },
+  "sigma_ref": {
+   "fs_AUROC": 99.9206740909091,
+   "fs_FPR95": 0.16,
+   "csid_ood_AUROC": 99.915289,
+   "csid_ood_FPR95": 0.16,
+   "id_ood_AUROC": 99.92187077777778,
+   "id_ood_FPR95": 0.16,
+   "id_csid_AUROC": 54.346704777777774,
+   "id_csid_FPR95": 94.35
+  },
+  "lp": {
+   "fs_AUROC": 99.84428327272725,
+   "fs_FPR95": 0.27,
+   "csid_ood_AUROC": 99.8376675,
+   "csid_ood_FPR95": 0.32,
+   "id_ood_AUROC": 99.84575344444444,
+   "id_ood_FPR95": 0.27,
+   "id_csid_AUROC": 56.00438533333334,
+   "id_csid_FPR95": 92.96
+  },
+  "static_all": {
+   "fs_AUROC": 99.18498372727271,
+   "fs_FPR95": 3.27,
+   "csid_ood_AUROC": 98.74199799999998,
+   "csid_ood_FPR95": 5.66,
+   "id_ood_AUROC": 99.28342500000001,
+   "id_ood_FPR95": 2.83,
+   "id_csid_AUROC": 56.10834566666667,
+   "id_csid_FPR95": 90.78
+  },
+  "knn": {
+   "fs_AUROC": 99.04146754545454,
+   "fs_FPR95": 2.19,
+   "csid_ood_AUROC": 98.8004285,
+   "csid_ood_FPR95": 3.38,
+   "id_ood_AUROC": 99.09503177777779,
+   "id_ood_FPR95": 1.8800000000000001,
+   "id_csid_AUROC": 53.738224,
+   "id_csid_FPR95": 92.35
+  },
+  "fpr_id@0.05": {
+   "sigma": 0.06773333333333334,
+   "sigma_ref": 0.06186666666666667
+  },
+  "fpr_csid@0.05": {
+   "sigma": 0.0841,
+   "sigma_ref": 0.0728
+  },
+  "fpr_id@0.2": {
+   "sigma": 0.23228888888888888,
+   "sigma_ref": 0.23395555555555556
+  },
+  "fpr_csid@0.2": {
+   "sigma": 0.2908,
+   "sigma_ref": 0.2897
+  },
+  "seeds_sigma": {
+   "all": 28000,
+   "csid": 1934
+  },
+  "seeds_ref": {
+   "all": 28440,
+   "csid": 1973
+  }
+ },
+ "seconds": 13.9,
+ "utc": "2026-10-11T15:37:28Z"
+}

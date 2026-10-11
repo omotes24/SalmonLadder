@@ -1,0 +1,4 @@
+{"table": "imagenet_v2", "rows": 10000, "labels": 1000, "sealed": 0, "utc": "2026-10-11T14:50:19Z"}
+{"merged": "imagenet_v2", "models": ["L14", "D3L"], "n": 10000}
+{"table": "imagenet_r", "rows": 30000, "labels": 200, "sealed": 0, "utc": "2026-10-11T14:53:31Z"}
+{"merged": "imagenet_r", "models": ["L14", "D3L"], "n": 30000}

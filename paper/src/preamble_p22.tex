@@ -1,0 +1,57 @@
+% Salmon Ladder: Conformal Label Propagation for OOD Detection ― v22（MIRU2025 形式；本文と参考文献は9ページ，付録は1段組）．主構成は参照画像による読み出し sigma_ref
+% ビルド：pLaTeX + dvipdfmx（同梱の latexmkrc．Overleaf では Compiler を「LaTeX」にする）．
+% 表と数値は make_p18.py（交差適合の sigma と再計算しない節），make_p19.py（一つの量 h），make_p22.py（sigma_ref；Phase 17）が data/ から生成する．\sota は列の最良値（星印），\cellcolor{upd}＋太字は比較手法のすべてを上回る値，\gap は最良の比較手法との差．
+\documentclass[MIRU,submit]{miru2025j}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,table]{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\def\pgfsysdriver{pgfsys-dvipdfmx.def}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,backgrounds,calc,shapes.geometric}
+\definecolor{upd}{HTML}{D8E7FA}
+\definecolor{sotacol}{HTML}{C8860A}
+\makeatletter
+\renewcommand{\signame}{}          % ヘッダの回次・シンポジウム名（第28回画像の認識・理解シンポジウム）を空欄にする
+\makeatother
+\setcounter{dbltopnumber}{3}\setcounter{topnumber}{3}\setcounter{totalnumber}{5}
+\renewcommand{\dbltopfraction}{0.92}\renewcommand{\topfraction}{0.92}\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.85}\renewcommand{\dblfloatpagefraction}{0.9}
+\setlength{\dblfloatsep}{7pt plus 1pt minus 2pt}\setlength{\dbltextfloatsep}{9pt plus 2pt minus 3pt}\setlength{\floatsep}{7pt plus 1pt minus 2pt}\setlength{\textfloatsep}{9pt plus 2pt minus 3pt}
+
+\renewcommand\figref[1]{\textbf{図~\ref{fig:#1}}}   % クラスの \figref を上書き（ラベルは fig:）
+\renewcommand\tabref[1]{\textbf{表~\ref{tab:#1}}}   % クラスの \tabref を上書き（ラベルは tab:）
+\newcommand\eqnref[1]{式(\ref{eq:#1})}
+\newcommand\secref[1]{\ref{sec:#1}節}
+\newcommand\AUC{AUROC}
+\newcommand\FPR{FPR95}
+\newcommand\pP{p^{+}}
+\newcommand\pN{p^{-}}
+\newcommand\bom{\boldsymbol{\omega}}
+\newcommand\pfin{p^{\mathrm{fin}}}
+\newcommand\tP{\tilde{p}^{+}}
+\newcommand\tN{\tilde{p}^{-}}
+\newcommand\sR{\sigma_{\mathrm{ref}}}
+% 星印：その表の列の最良値
+\newcommand\sota{\textcolor{sotacol}{\raisebox{0.15ex}{\scriptsize$\bigstar$}}}
+% 最良の比較手法との差（本手法の行のみ．正は本手法が良い）
+\newcommand\gap[1]{{\scriptsize\textcolor{black!60}{(#1)}}}
+\newlength{\iconheight}
+\newcommand{\titleicon}{\begingroup\setbox0\hbox{S}\setlength{\iconheight}{1.9\ht0}\smash{\raisebox{-0.45\ht0}{\includegraphics[height=\iconheight]{figs/salmon_ladder.png}}}\endgroup\hspace{0.35em}}
+\hyphenation{AUROC Image-Net Open-OOD}
+\interfootnotelinepenalty=10000  % 脚注をページ間で分割しない
+
+\begin{document}
+\title{\titleicon Salmon Ladder:\\ Conformal Label Propagation for OOD Detection}
+\affiliate{keio}{慶應義塾大学　総合政策学部3年\\中澤・大越研究室d-hacks　72402035}
+\affiliate{keio2}{慶應義塾大学院　政策・メディア研究科}
+\author{表 紘太朗}{Kotaro Omote}{keio}
+\author{尾崎 慶次郎}{Keijiro Ozaki}{keio2}
+\maketitle
+
+\input{sections/numbers.tex}
+\input{sections/numbers19.tex}
+\input{sections/numbers22.tex}
+\section*{概要}
+\input{sections/abstract22.tex}
+

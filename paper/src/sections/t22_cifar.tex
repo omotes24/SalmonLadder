@@ -1,0 +1,31 @@
+{\fontsize{6.8pt}{8pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}lcccc@{}}
+\hline
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{2}{c}{near-OOD} & \multicolumn{2}{c}{far-OOD} \\
+\rule[-2.0pt]{0pt}{8.6pt}手法 & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ \\
+\hline
+\multicolumn{5}{@{}l}{\rule{0pt}{6.6pt}\textit{CIFAR-100で学習したResNet-18（報告値$^{\dagger}$）}} \\
+MSP$^{\dagger}$ & 80.27 & 54.80 & 77.76 & 58.70 \\
+MLS$^{\dagger}$ & 81.05 & 55.47 & 79.67 & 56.73 \\
+RMDS$^{\dagger}$ & 80.15 & 55.46 & 82.92 & 52.81 \\
+VOS$^{\dagger}$ & 80.93 & 55.56 & 81.32 & 53.70 \\
+G-ODIN$^{\dagger}$ & 77.15 & 67.58 & 85.67 & 42.68 \\
+RotPred$^{\dagger}$ & 76.43 & 62.58 & 88.40 & 34.50 \\
+OE$^{\dagger}$（外れ値データで学習） & 88.30 & 30.73 & 81.41 & 54.82 \\
+\multicolumn{5}{@{}l}{\rule{0pt}{6.6pt}\textit{全学習画像（50,000枚）またはゼロショット（本稿で実測）}} \\
+kNN，全学習画像（$k{=}50$） & 97.09 & 16.35 & 94.94 & 32.15 \\
+クラス平均，全学習画像 & 97.61 & 12.91 & 95.38 & 28.05 \\
+MCM~\cite{ming2022mcm}，ゼロショット & 70.30 & 94.06 & 74.59 & 89.10 \\
+NegLabel~\cite{jiang2024neglabel}，ゼロショット & 72.98 & 76.98 & 80.25 & 64.84 \\
+\multicolumn{5}{@{}l}{\rule{0pt}{6.6pt}\textit{凍結特徴，クラスあたり16枚，学習なし，単体（6通りの抽出の平均）}} \\
+静的$p$（同じ特徴，グラフなし） & 96.94 & 16.49 & 94.88 & 29.19 \\
+kNN（同じ特徴，グラフなし） & 92.35 & 39.22 & 88.47 & 49.80 \\
+LGC-max（同じグラフ） & 98.80 & 5.39 & 99.42 & 2.21 \\
+$\pP$のみ（種なし，参照画像で読む） & \cellcolor{upd}\textbf{99.11} & \cellcolor{upd}\textbf{2.87} & \cellcolor{upd}\textbf{99.59}\sota & \cellcolor{upd}\textbf{1.17}\sota \\
+$\pP\pN$，折も参照画像もなし & \cellcolor{upd}\textbf{99.25} & \cellcolor{upd}\textbf{2.83} & 99.35 & 2.58 \\
+$\sigma$（交差適合） & \cellcolor{upd}\textbf{99.18} & \cellcolor{upd}\textbf{2.90} & 99.37 & 2.34 \\
+$\sR$（本稿の構成） & \cellcolor{upd}\textbf{99.20} & \cellcolor{upd}\textbf{2.90} & 99.37 & 2.48 \\
+$\sigma$，上限付きの種（Storey型） & \cellcolor{upd}\textbf{99.26}\sota & \cellcolor{upd}\textbf{2.55}\sota & \cellcolor{upd}\textbf{99.59} & \cellcolor{upd}\textbf{1.46} \\
+$\sigma$，上限付きの種（単純BH法） & \cellcolor{upd}\textbf{99.26}\sota & \cellcolor{upd}\textbf{2.55}\sota & \cellcolor{upd}\textbf{99.59} & \cellcolor{upd}\textbf{1.46} \\
+\hline
+\end{tabular}}%

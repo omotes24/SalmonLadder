@@ -1,0 +1,21 @@
+2026-10-11T14:50:10Z Phase 17 directory created (preparatory feature extraction of ImageNet-V2 / ImageNet-R; no registration yet, nothing scored)
+2026-10-11T15:00:51Z extract17 done (ImageNet-V2, ImageNet-R features; preparatory, no scores)
+2026-10-11T15:21:23Z registration placed: prereg_p17.json sha256 068dd4d9ccddeecf (code hashes in prereg_p17.sha256); runs start only after the public commit
+2026-10-11T15:25:35Z registration public: github.com omotes24/SalmonLadder branch phase12-15-registrations at ee565d8 (git ls-remote)
+2026-10-11T15:25:53Z P17 START gpus=0 1 2 3 steps=dev,test,in200,cifar,rec,csid,ana prereg_sha256=068dd4d9ccddeecf
+2026-10-11T15:25:53Z dev start
+2026-10-11T15:26:28Z dev done: adopt="adopt_sigma_ref_as_main": true
+2026-10-11T15:26:28Z test start
+2026-10-11T15:30:36Z test done
+2026-10-11T15:30:36Z in200 start
+2026-10-11T15:31:15Z in200 done
+2026-10-11T15:31:15Z cifar start
+2026-10-11T15:31:48Z cifar done
+2026-10-11T15:31:48Z rec start
+2026-10-11T15:35:46Z rec done
+2026-10-11T15:35:46Z csid start
+2026-10-11T15:39:35Z csid done
+2026-10-11T15:39:35Z ana start
+2026-10-11T15:39:38Z FAILED ana17 summary
+2026-10-11T15:42:01Z ana17 summary failed on a file-name parsing bug in bounds_summary ('rep' starts with 'r'); ana17_fix.py = ana17.py with that one line fixed (no metric changed); summary rerun
+2026-10-11T15:42:05Z P17 DONE (summary by ana17_fix.py)

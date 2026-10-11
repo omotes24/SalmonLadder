@@ -1,0 +1,11 @@
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/omote/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/omote/reprise_p7_20261003/code/extract7.py:84: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  m.load_state_dict(torch.load(CKPT / f"dinov2_{tag}_pretrain.pth", map_location="cpu"), strict=True)
+{"table": "imagenet_r", "shard": 0, "done": 128, "total": 7500, "img_per_s": 4.2, "utc": "2026-10-11T14:54:34Z"}
+{"table": "imagenet_r", "shard": 0, "done": 6528, "total": 7500, "img_per_s": 20.9, "utc": "2026-10-11T14:59:16Z"}
+{"table": "imagenet_r", "shard": 0, "complete": "/home/omote/reprise_p17_20261011/features/imagenet_r/L14-D3L.shard0of4.npz", "n": 7500, "seconds": 347.7, "dims": {"L14": 1024, "D3L": 1024}}

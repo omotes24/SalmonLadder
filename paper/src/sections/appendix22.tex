@@ -1,0 +1,392 @@
+% 付録の一つの量 h の定理の名前（付録\ref{sec:app_bounds}でも使う）
+\newcommand\TFaces{命題A1}
+\newcommand\TLimits{定理A1}
+\newcommand\TValid{定理A2}
+\newcommand\TEscape{定理A3}
+\newcommand\TCapture{定理A4}
+\newcommand\CSep{系A1}
+\section{命題1，2，4と系1，2の証明}
+\label{sec:app_proofs}
+\figref{graph}に，本文\secref{graph}のグラフと命題1，2の図を示す．
+
+\begin{figure*}[htbp]
+\centering
+\scalebox{0.77}{\input{sections/fig_graph22.tex}}
+\caption{ラベル伝播のグラフ．(a) 節点は支持画像・ラベル付きの参照画像と較正画像・テスト画像で，各節点をコサイン類似度の上位$k_g$個と結ぶ．支持画像に置いた質量$\mathbf{y}^{+}$が辺を伝わり（\eqnref{lp}），支持画像に近いID画像には多く，互いに近い同じ未知クラスの画像には少ししか届かない．種に置いた質量$\mathbf{y}^{-}$も同じ辺を伝わる．(b) 初期質量を置いた節点を含まない集合$Q$に届く質量は，$Q$と外とを結ぶ辺の重みの和$w(Q,\bar{Q})$で上から抑えられる（命題2）．これには$Q$の節点が自ら張る辺（実線）と外の節点が$Q$へ張る辺（点線）が入り，同じ未知クラスが$r$枚そろうと前者は減るが後者は残り得る．(c) 質量の総和は支持画像の次数だけで決まるので（命題1）$u$の尺度はビューやテスト集合ごとに違うが，ラベル付き画像の$u$も同じ尺度で動くので，その中での順位で読めば閾値もビューの積も同じ物差しに乗る．}
+\label{fig:graph}
+\end{figure*}
+
+\textbf{命題1の証明}（主張は\secref{mass}）．$\bom=D^{1/2}\mathbf{1}$について
+\begin{equation*}
+S\bom=D^{-1/2}WD^{-1/2}D^{1/2}\mathbf{1}=D^{-1/2}W\mathbf{1}=D^{-1/2}\boldsymbol{\delta}=\bom
+\end{equation*}
+であり（$\boldsymbol{\delta}=W\mathbf{1}$は次数のベクトル），$S$は対称なので$\bom^{\top}S=\bom^{\top}$である．\eqnref{lp}に左から$\bom^{\top}$を掛けると
+\begin{equation*}
+\bom^{\top}\mathbf{u}^{(\ell+1)}
+=\lambda\,\bom^{\top}S\,\mathbf{u}^{(\ell)}+(1-\lambda)\,\bom^{\top}\mathbf{y}^{+}
+=\lambda\,\bom^{\top}\mathbf{u}^{(\ell)}+(1-\lambda)\,\bom^{\top}\mathbf{y}^{+}
+\end{equation*}
+となり，$\mathbf{u}^{(0)}=\mathbf{0}$からこの漸化式を解けば
+\begin{equation*}
+\bom^{\top}\mathbf{u}^{(L)}=(1-\lambda^{L})\,\bom^{\top}\mathbf{y}^{+}=(1-\lambda^{L})\sum_{j\in\mathcal{S}}\sqrt{\delta_j}
+\end{equation*}
+を得る．$L\to\infty$とすれば収束解の式になる．$\square$
+
+\appblock
+\textbf{命題2の証明}（主張は\secref{cut}）．収束解は$\mathbf{u}=\lambda S\mathbf{u}+(1-\lambda)\mathbf{1}_Y$を満たし，$Q\cap Y=\emptyset$なので
+\begin{equation*}
+\sqrt{\delta_i}\,u_i=\lambda\sum_{j}W_{ij}\,\frac{u_j}{\sqrt{\delta_j}}\qquad(i\in Q)
+\end{equation*}
+である．$U=\sum_{i\in Q}\sqrt{\delta_i}\,u_i$，$\beta=\max_{j}u_j/\sqrt{\delta_j}$とおく．$i\in Q$で足して$j$が$Q$の内か外かで分けると，$u_j\ge0$と$\sum_{i\in Q}W_{ij}\le\delta_j$から
+\begin{align*}
+U&=\lambda\sum_{j\in Q}\frac{u_j}{\sqrt{\delta_j}}\sum_{i\in Q}W_{ij}\;+\;\lambda\sum_{i\in Q,\,j\notin Q}W_{ij}\,\frac{u_j}{\sqrt{\delta_j}}\\
+&\le\lambda\sum_{j\in Q}\sqrt{\delta_j}\,u_j\;+\;\lambda\,w(Q,\bar{Q})\,\beta
+\;=\;\lambda\,U+\lambda\,w(Q,\bar{Q})\,\beta
+\end{align*}
+を得る．\eqnref{walk}と同じランダムウォークの表現から
+\begin{equation*}
+\frac{u_j}{\sqrt{\delta_j}}=\mathbb{E}_j\Big[\frac{\mathbf{1}[X_T\in Y]}{\sqrt{\delta_{X_T}}}\Big]\le\frac{1}{\min_{s\in Y}\sqrt{\delta_s}}
+\end{equation*}
+なので$\beta\le1/\min_{s\in Y}\sqrt{\delta_s}$であり，
+\begin{equation*}
+(1-\lambda)\,U\le\lambda\,w(Q,\bar{Q})\,\beta\le\lambda\,\frac{w(Q,\bar{Q})}{\min_{s\in Y}\sqrt{\delta_s}}
+\end{equation*}
+を$1-\lambda$で割れば\eqnref{cond}を得る．$\square$
+
+\appblock
+\textbf{命題4の証明}（主張は\secref{ref}）．$\sR$をプール$\mathcal{U}=\mathcal{C}\cup\mathcal{T}$の節点の上の関数とみる．
+\begin{itemize}
+\item[(1)] それを定めるのは，支持画像$\mathcal{S}$，参照画像$\mathcal{R}$，および「$\mathcal{U}$という節点の集合」だけである．グラフと$\mathbf{u}^{+}$は節点の名札に依らない（\secref{graph}）．$\pP$は固定した$\mathcal{R}$との比較なので各画像の$u^{+}$だけで決まる．種はプールの$\pP$の多重集合から\eqnref{bh}の閾値を決めて選ぶので，どの画像が種になるかは$\mathcal{U}$の画像を対称に扱う．$\mathbf{u}^{-}$と$\tilde{\mathbf{u}}^{-}=\lambda S\mathbf{u}^{-}$も同様で，$\pN$は固定した$\mathcal{R}$との比較である．
+\item[(2)] したがって$\sR$は，$\mathcal{U}$の中でどの節点を較正画像と呼ぶかを入れ替えても変わらない．これはAdaDetectの条件(8)である（学習標本を$\mathcal{S}\cup\mathcal{R}$，帰無の較正標本を$\mathcal{C}$，テスト標本を$\mathcal{T}$としたもの．同論文の証明は学習標本を所与とした置換の議論なので，その中身は問わない）．種の候補に較正画像を含めるのはこの対称性のためで，テスト画像だけから種を選ぶと，較正画像とテスト画像を入れ替えたときに種の集合が変わり得て条件(8)が崩れる．
+\item[(3)] \eqnref{pfin}の$\pfin$は同論文の経験$p$値(10)である．よって定理3.3から(i)と(ii)のPRDS・超一様性が従い，系3.5と系3.7がFDRの上界を与える．$\square$
+\end{itemize}
+
+\appblock
+\textbf{系1の証明}（主張は\secref{mass}）．\eqnref{walk}のランダムウォーク（各ステップで確率$1-\lambda$で止まる）で，$Q$から初めて外へ出る時刻を$\tau$とする．
+
+\textit{\eqnref{esc}の上界．}$Q\cap Y=\emptyset$なので，$X_T\in Y$となるには$\tau\le T$が要る．止まる時刻$T$は幾何分布で無記憶だから，強マルコフ性より（$X_\tau\in\partial Q$）
+\begin{equation*}
+\frac{u_i}{\sqrt{\delta_i}}
+=\mathbb{E}_i\Big[\mathbf{1}[\tau\le T]\,\frac{u_{X_\tau}}{\sqrt{\delta_{X_\tau}}}\Big]
+\le\Pr\nolimits_i(\tau\le T)\,\max_{j\in\partial Q}\frac{u_j}{\sqrt{\delta_j}}
+\end{equation*}
+である．$\pi_i=\Pr_i(\tau\le T)$とおいて両辺に$\sqrt{\delta_i}$を掛ければ$u_i\le b_i$である．
+
+\textit{逃げる確率．}最初の1歩で場合を分けると
+\begin{equation*}
+\pi_i=\lambda\Big(e_i+\sum_{j\in Q}P_{ij}\,\pi_j\Big)\quad(i\in Q),\qquad\text{すなわち}\qquad\boldsymbol{\pi}=\lambda(I-\lambda P_{QQ})^{-1}\mathbf{e}
+\end{equation*}
+である（$\lambda P_{QQ}$のスペクトル半径は1未満）．$\pi^{*}=\max_{x\in Q}\pi_x$とおくと，$\sum_{j\in Q}P_{xj}=1-e_x$と$e_x\le\bar e_Q$から
+\begin{equation*}
+\pi^{*}\le\lambda\big(\bar e_Q+(1-\bar e_Q)\,\pi^{*}\big),\qquad\text{すなわち}\qquad
+\pi^{*}\le\frac{\lambda\,\bar e_Q}{1-\lambda+\lambda\,\bar e_Q}=\psi(\bar e_Q)
+\end{equation*}
+を満たす．$\bar e_Q=0$なら$\boldsymbol{\pi}=\mathbf{0}$なので$u^{+}_i=0$である．$\square$
+
+\appblock
+\textbf{系2の証明}（主張は\secref{ref}）．$Q$は支持画像を含まないので，系1（$Y=\mathcal{S}$）から$u^{+}_v(y)\le b_v(y)$である．種の各節点$j$では収束解が$u^{-}_v(j)=\lambda(S_vu^{-}_v)(j)+(1-\lambda)\ge1-\lambda$を満たし，$\mathbf{u}^{-}_v\ge\mathbf{0}$なので，$y$が種であってもなくても
+\begin{equation*}
+\tilde u^{-}_v(y)=\lambda\sum_jS_v(y,j)\,u^{-}_v(j)\ge\lambda\sum_{j\in\hat{Q}_v}\frac{W_v(y,j)}{\sqrt{\delta_v(y)\,\delta_v(j)}}\,(1-\lambda)=c_v(y)
+\end{equation*}
+である．$\pP_v$は$u^{+}$について非減少，$\pN_v$は$\tilde u^{-}$について非増加なので
+\begin{equation*}
+\log\pP_v(y)\le\log\pP_v[b_v(y)],\qquad\log\pN_v(y)\le\log\pN_v[c_v(y)]
+\end{equation*}
+で，ビューで足せば$\sR(y)\le B(y)$を得る．$\pfin$は$\sR$について非減少なので$\pfin(y)\le\bar p(y)$である．交差適合した$\sigma$（付録\ref{sec:app_p17}）では，$y$の折$b$に対して他方の折$\bar b$の較正画像と種で同じ議論をすれば（$y$は折$\bar b$の種ではない），$\sigma(y)\le B(y)$と$\pfin(y)\le(1+|\{c\in\mathcal{C}_b:\sigma(c)\le B(y)\}|)/(|\mathcal{C}_b|+1)$を得る．$\square$
+
+\section{参照画像による読み出しの登録と結果}
+\label{sec:app_p17}
+\textbf{交差適合した$\sigma$（v18--v21の読み出し）．}ラベル付きの4枚（クラスあたり；$\sigma$ではすべて較正画像として使う）とテスト画像を，画像とは独立に等確率で2つの折$b\in\{1,2\}$に分ける（$n_b=|\mathcal{C}_b|=2{,}000$）．折$b$の種$\hat{Q}_b$は，$\mathcal{T}_b$の画像の$u^{+}$の$\mathcal{C}_b$の中での順位に\eqnref{bh}をかけて選ぶ．折$b$の節点$x\in\mathcal{C}_b\cup\mathcal{T}_b$は，他方の折$\bar b$の較正画像と種で採点し，
+\begin{equation*}
+\sigma(x)=\sum_v\big[\log\tP_v(x)+\log\tN_v(x)\big],\qquad\pfin(x)=\frac{1+|\{x'\in\mathcal{C}_b:\sigma(x')\le\sigma(x)\}|}{n_b+1}
+\end{equation*}
+とする（$\tP_v$は$u^{+}_v$の$\mathcal{C}_{\bar b}$の中での順位，$\tN_v$は$u^{-}_{\bar b,v}$の$\mathcal{C}_{\bar b}$の中での逆順位）．$\sigma$は$\mathcal{C}_b\cup\mathcal{T}_b$の中の名札の入れ替えに不変なので（$\hat{Q}_{\bar b}$と$\mathbf{u}^{-}_{\bar b}$は折$\bar b$の画像から決まる），命題4と同じ保証が折ごとに成り立つ．局外関数を一方の標本で推定し他方で評価する交差適合~\cite{chernozhukov2018dml}と同じ構造である．付録の他の節の$\sigma$もこの読み出しで，折は乱数で決める．
+
+\textbf{登録．}$\sR$は，$\sigma$の折を参照画像に置き換える読み出しとして，計算の内容・採否の規則・記述的な解析（\tabref{dec}の分解，系2と系A1の格子での実測，共変量シフト）を登録文書（\texttt{experiments/phase17/prereg\_p17.json}，SHA-256 \texttt{068dd4d9}$\cdots$）に記してから実行した．クラスあたりの4枚のうち並びの位置で最初の2枚を参照画像，残り2枚を較正画像とし（付録\ref{sec:app_h16}の$h$と同じ分割），自由な値はない．登録の前に行ったのは，ImageNet-V2とImageNet-Rの特徴抽出（スコアなし），動作確認（dev1の1課題での$\sigma$の値の再現と$\sR$の種の数と$\hat\pi_0$，格子の1課題での上界の違反の数；$\sR$の指標は計算していない），既存の結果の解析（\tabref{devtest}と折の割り当ての確認）である．登録文書は2026年10月11日15:21 UTCに計算サーバに置き，公開リポジトリのブランチ\texttt{phase12-15-registrations}（コミット\texttt{ee565d8}）で公開されたことを15:25 UTCに確かめてから実行した（15:25--15:39 UTC）．登録した集計スクリプトはファイル名の解釈の誤り（\texttt{rep0}の先頭の\texttt{r}を$r$の値と読む）で出力の前に止まったので，その1行だけを直したもの（\texttt{ana17\_fix.py}）で集計した．計算する量は同じで，それ以外の変更と登録からの逸脱はない（\texttt{experiments/phase17/prereg\_p17\_outcome.json}）．
+
+\textbf{採否と結果．}\tabref{dev}に，採否の規則を当てたdev2，記述的に報告するdev1，ベンチマークでの$\sR$と$\sigma$を示す．dev2で規則が成り立ったので$\sR$が主構成になり，ベンチマークの値は計算されたとおりに報告している．ベンチマークでは，$\sR$はImageNet-1Kのnear-OODで$\sigma$より良く（単体\NRAloneNearDSig{} [\NRAloneNearDSigLo, \NRAloneNearDSigHi]，$\times$TINS \NRTinsNearDSig{}），他の設定では区間が0を含む．開発用分割ではdev1のnearでも\NRDevOneNearD{} [\NRDevOneNearDLo, \NRDevOneNearDHi]と良い．
+
+\begin{table}[htbp]
+\centering
+\caption{参照画像による読み出し$\sR$と交差適合した$\sigma$（単体，dev1とdev2は5通り，ベンチマークは6通りの抽出の平均；差は$\sR-\sigma$，抽出を単位とする対応のある95\% $t$区間）．dev2の2行が登録した採否の規則の対象（区間の上端が+0.5以下）．}
+\label{tab:dev}
+\vspace{1.5mm}
+\input{sections/t22_dev.tex}
+\end{table}
+
+\textbf{種．}\tabref{seeds}に，ベンチマークで$\sR$に選ばれた種（登録した記録；ビューごと，6通りの抽出の平均）を示す．種に混じるIDの割合は\NRSeedBenchIdMin--\NRSeedBenchIdMax{}と水準$q{=}0.2$を超え，較正画像も種に選ばれる（SSB-hardでは未知がプールの半分を占め，種がプールの6割を超える）．
+
+\begin{table}[htbp]
+\centering
+\caption{学習画像の較正で$\sR$に選ばれた種（ビューごと，6通りの抽出の平均）．種は種の数，プール\%はプール$\mathcal{U}=\mathcal{C}\cup\mathcal{T}$に占める割合，較正は種になった較正画像の数（2,000枚中），ID率は種に混じっていたIDの割合（実測の偽発見割合，水準$q{=}0.2$）．}
+\label{tab:seeds}
+\vspace{1.5mm}
+\input{sections/t22_seeds.tex}
+\end{table}
+
+\textbf{$\sigma$の開発用分割の値が表ごとに違う理由．}$\sigma$は折の乱数に依存する．\tabref{selq}（第2段の選択）の$\sigma$は，各抽出で3通りのTINSの順序ごとに位置で折を割り当てた値の平均（dev1 \NRFcDevOneNearPFourteen\%／\NRFcDevOneFarPFourteen\%，dev2 \NRFcDevTwoNearPFourteen\%／\NRFcDevTwoFarPFourteen\%；near／far）で，\tabref{dev}と付録\ref{sec:app_h16}の\tabref{h16}の値は画像の番号順に1通りの折を割り当てたもの（dev1 \NRFcDevOneNearPSixteen\%／\NRFcDevOneFarPSixteen\%，dev2 \NRFcDevTwoNearPSixteen\%／\NRFcDevTwoFarPSixteen\%）である．同じ抽出で折の割り当てを4通り（第14段階の3通りと番号順の1通り）に変えたときの値の範囲は1抽出あたり平均\NRFcRangeFourMean{}，最大\NRFcRangeFourMax{}ポイント（番号順の値と3通りの平均の差は最大\NRFcDevSixteenMax{}ポイント）で，表どうしの違いはこの揺れに収まる．付録\ref{sec:app_h16res}の探索の段落の$\sigma$（dev1 \NHsExplSigNear\%／\NHsExplSigFar\%）は，探索時のコードでのさらに別の割り当ての値である．$\sR$は乱数を含まないので，この揺れはない．
+
+\section{開発用分割とテスト集合の一致}
+\label{sec:app_devtest}
+\tabref{devtest}に，$\sigma$の第2段の\NRDtNCand{}候補の開発用分割（dev1，dev2；5通りの抽出，折は3通りの平均）とテスト集合（OpenOOD v1.5 ImageNet-1K，6通りの抽出）での\FPR{}を示す（単体；既存の結果の解析で，登録外）．dev1とdev2の順位相関はnear \NRDtNearSpDevOneDevTwo{}，far \NRDtFarSpDevOneDevTwo{}と高いが，dev2とテストではnear \NRDtNearSpDevTwoTest{}，far \NRDtFarSpDevTwoTest{}（dev1とテストでは\NRDtNearSpDevOneTest{}，\NRDtFarSpDevOneTest{}）に下がる．候補の対のうち差の符号がdev2とテストで一致するのはnear \NRDtNearPairAgree{}，far \NRDtFarPairAgree{}で，選ばれた統計量$\pP\pN$の6候補に限ると順位相関はnear \NRDtNearSpPpOnly{}，far \NRDtFarSpPpOnly{}である．静的$p$を加えたときの向き（nearで悪くfarで良い）は再現するが，$q$の差は開発用分割で数ポイントあっても再現しない（$q{=}0.05$はdev1のnearで$q{=}0.2$より約4ポイント悪いが，テストでは良い）．種の規則の差も再現しない．dev1で選んだ候補（Storey型，$q{=}0.2$，$\pP\pN$）はテストのnearで\NRDtNCand{}候補中\NRDtNearRankOnTest{}位，farで\NRDtFarRankChosen{}位である（dev1のfarで最良の候補はテストのfarで\NRDtFarRankOnTest{}位）．dev1とdev2はどちらもImageNet-1Kの学習画像から作った分割でfar-OODの画像集合も共通であり，学習画像と検証画像のずれやOpenOODのOOD集合の性質を含まない．付録\ref{sec:app_h16}の$h$がdev2で非劣，テスト集合のImageNet-1Kで単体\NRHsTestMinDiff--\NRHsTestMaxDiff{}ポイント，$\times$TINSのnearで\NRHsTestTinsNearDiff{}ポイント悪かったのも同じ限界の表れである．
+
+\begin{table}[htbp]
+\centering
+\caption{$\sigma$の第2段の候補の開発用分割とテスト集合での\FPR{}（単体）．順位はテスト集合での順位（\NRDtNCand{}候補中）．行はdev1 nearの昇順．}
+\label{tab:devtest}
+\vspace{1.5mm}
+\input{sections/t22_devtest.tex}
+\end{table}
+
+\section{二つの因子の詳細}
+\label{sec:app_dec}
+\tabref{dec}の因子をOpenOODのデータセット別に見ると，密度の因子$\sqrt{\delta}$だけの\AUC{}はSSB-hard \NRDecDegSsbHardAuroc\%，NINCO \NRDecDegNincoAuroc\%，iNaturalist \NRDecDegInatAuroc\%，Textures \NRDecDegTexturesAuroc\%，OpenImage-O \NRDecDegOpenimageoAuroc\%で，SSB-hard，NINCO，iNaturalistでは未知の方が密，Texturesでは差がなく，OpenImage-OではIDの方が密である．確率の因子$q$だけの\FPR{}と積$u^{+}$の\FPR{}は，SSB-hardで\NRDecQSsbHardFpr\%と\NRDecUSsbHardFpr\%，NINCOで\NRDecQNincoFpr\%と\NRDecUNincoFpr\%，iNaturalistで\NRDecQInatFpr\%と\NRDecUInatFpr\%，Texturesで\NRDecQTexturesFpr\%と\NRDecUTexturesFpr\%，OpenImage-Oで\NRDecQOpenimageoFpr\%と\NRDecUOpenimageoFpr\%である．付録\ref{sec:app_h16res}の探索（dev1）では次数だけの\AUC{}がfar-OODで80\%を超えたが，テスト集合では再現しなかった．密度の因子は単独の手がかりとしてではなく，確率の因子と組んで未知の塊の内側の質量を薄める形で効くと解釈できる．$\sigma$の読み出しの順位を$u^{\pm}/\sqrt{\delta}$で取ると（\tabref{dec}の4行目），ImageNet-1Kではnearでもfarでも$\sigma$より悪い．
+
+\section{分離の上界の実測}
+\label{sec:app_bounds}
+\tabref{bounds}に，\secref{rec}の格子の各条件（3回の平均）で，系2の上界から$\pfin\le0.05$が言える未知の割合（保証），実際に$\pfin\le0.05$の割合（実），$\sR$での上界の余裕$B(y)-\sR(y)$の中央値（対数），付録の$h$の系A1（\TCapture{}の較正画像側の下界$\ell=\rho\omega$で読んだ割合（下界），実際の較正画像のスコア$s$で読んだ割合（実較正），実際に$p\le0.05$の割合（実），$\pi_Q/\bar\phi$と較正画像での$\ell/s$の中央値）を示す（登録した記述的な計算で，何も選ばない）．上界はすべての未知画像で成り立つ（系2の$\sR$と$\sigma$，系A1の$h\le\pi_Q$と$\pi_Q\le\bar\phi$のいずれも違反0）．$\sR$の系2はNINCOの$r{=}30$で実際の検知の約半分を保証し，$r\le5$ではほとんど保証しない．SSB-hardの$r{=}50$では保証の割合は未知クラスの数とともに下がる（$c{=}10$で\NRBdRefSsbCTenRFiftyCert\%，$c{=}980$で\NRBdRefSsbCNineEightyRFiftyCert\%）．余裕の中央値は\NRBdRefSlackMin--\NRBdRefSlackMax{}で，緩さの源は，系1が出口の質量を最大値で押さえること（$b_v$）と，種への辺だけを数えて種から2歩以上離れた質量を捨てること（$c_v$）である．$h$の系A1では，較正画像側の下界$\ell$が実際のスコア$s$の\NRBdHOneEllOverSMedMin--\NRBdHOneEllOverSMedMax{}倍（中央値）しかないので，下界で読むと保証される未知は全条件で0になり，実際のスコアで読めば最大\NRBdHOneCertSMax\%を保証する．
+
+\begin{table}[htbp]
+\centering
+\caption{分離の上界の実測（格子の各条件，3回の平均；[\%]，余裕と比は中央値）．保証：上界だけから$\pfin\le0.05$（$h$では$p\le0.05$）が言える未知の割合，実：実際の割合．}
+\label{tab:bounds}
+\vspace{1.5mm}
+\input{sections/t22_bounds.tex}
+\end{table}
+
+\section{共変量シフトしたID}
+\label{sec:app_csid}
+\tabref{csid}に\secref{csid}の値を示す（登録した記述的な計算；6通りの抽出の平均，単体，学習画像の較正）．テスト集合はIDの検証画像45,000枚，シフトしたID（ImageNet-V2 matched-frequencyの10,000枚またはImageNet-Rの30,000枚），OpenOODのOOD集合1つからなり，ベース検出器のスコアはこれらの画像にないので単体だけを測った．「全体」はIDとシフトしたIDの両方を受け入れるときの\AUC{}と\FPR{}，「シフト対OOD」はシフトしたIDとOODだけ，「ID対OOD」は同じ実行のIDとOODだけ，「ID対シフト」はIDとシフトしたIDを見分ける\AUC{}（大きいほどシフトしたIDを未知とみなす）である．$\sR$の$\pfin$の$\alpha{=}0.05$での誤警報率は，IDで\NRCsVTwoNearFprIdFive{}／\NRCsRNearFprIdFive{}（V2／R，near-OODの実行），シフトしたIDで\NRCsVTwoNearFprCsFive{}／\NRCsRNearFprCsFive{}である．ImageNet-Rの描画はIDの写真と特徴の分布が離れて互いに近い塊をなすので，伝播では未知と同じ扱いを受ける（種の\NRCsRNearSeedShare--\NRCsRFarSeedShare\%がR）．
+
+\begin{table}[htbp]
+\centering
+\caption{共変量シフトしたIDを加えたテスト集合（[\%]，単体，6通りの抽出の平均）．}
+\label{tab:csid}
+\vspace{1.5mm}
+\input{sections/t22_csid.tex}
+\end{table}
+
+\section{交差適合した$\sigma$の保証の実測と種に混じるIDの割合}
+\label{sec:app_fdp}
+本節の値は交差適合した$\sigma$のものである（$\sR$では交換可能な較正を実行していない；$\sR$の値は\secref{fdp}）．\input{sections/fdp22.tex}
+
+\tabref{val}に，交換可能な較正での$\pfin$の実測の誤警報率とBH法の偽発見割合をデータセット別に示す．\tabref{fdp}に，学習画像の較正（6通りの抽出の平均）で折ごとに選ばれた種の数（2つの折の平均）と，種に混じっていたIDの割合（実測の偽発見割合）を，Storey型と単純BH法の両方について，データセット別・ビュー別に示す．
+
+\begin{table}[htbp]
+\centering
+\caption{交差適合した$\sigma$の$\pfin$の保証の実測（交換可能な較正：IDの検証画像からクラスあたり4枚を較正画像とし，\NVcalNSplits{}通りの抽出の平均，単体）．IDの誤警報率は$\pfin\le\alpha$と判定されたIDのテスト画像の割合（命題4(i)：$\le\alpha$），偽発見割合はBH法（$q{=}0.2$）で棄却された画像のうちIDの割合（命題4(ii)：期待値$\le0.2$），再現率は未知のうち棄却された割合．}
+\label{tab:val}
+\vspace{1.5mm}
+\input{sections/t18_val.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{学習画像の較正で交差適合した$\sigma$に選ばれた種（折あたり，6通りの抽出の平均）．種は種の数，ID率は種に混じっていたIDの割合（実測の偽発見割合，水準$q{=}0.2$）．}
+\label{tab:fdp}
+\vspace{1.5mm}
+\input{sections/t18_fdp.tex}
+\end{table}
+
+\section{データセット別の値と散布図}
+\label{sec:app_four}
+\tabref{perds}と\tabref{four}に\tabref{main}のデータセット別の値を示す（\secref{main}；$\sR$）．括弧の行は単体と$\times$TINSのそれぞれと最良の比較手法との差である．\figref{scatter}は\tabref{main}の全手法の\AUC{}と\FPR{}の散布図である．
+
+\begin{table*}[htbp]
+\centering
+\caption{OpenOOD v1.5 ImageNet-1Kのデータセット別の結果（[\%]，AUROC$\uparrow$／FPR95$\downarrow$）．記法は\tabref{main}と同じ．TINSの報告値は原論文の表8のとおりで，iNaturalistとTexturesは同論文のFour-OODの表1と同じ値が報告されている（\tabref{four}）．}
+\label{tab:perds}
+\vspace{1.5mm}
+\input{sections/t22_perds.tex}
+\end{table*}
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figs/fig22_scatter.pdf}
+\caption{OpenOOD v1.5 ImageNet-1Kでの\AUC{}と\FPR{}（\tabref{main}と\tabref{perds}の比較手法とMCM~\cite{ming2022mcm}，右上ほど良い）．大きな星が本稿の構成（$\sR\times$TINS），小さな星は単体．比較手法は報告値（TANLのみ実測）．}
+\label{fig:scatter}
+\end{figure*}
+
+\begin{table*}[htbp]
+\centering
+\caption{Four-OOD（ImageNet-1Kに対するiNaturalist，SUN，Places，Textures，[\%]）．比較手法はすべてCLIP ViT-B/16による報告値$\dagger$（TINSは実測も併記）．記法は\tabref{main}と同じ．}
+\label{tab:four}
+\vspace{1.5mm}
+\input{sections/t22_four.tex}
+\end{table*}
+
+\section{ImageNet-200とCIFAR-100}
+\label{sec:app_in200}
+\tabref{in200}と\tabref{cifar}に\secref{in200}のImageNet-200とCIFAR-100の値を示す（$\sR$と交差適合した$\sigma$の両方）．$\sR$の$\pfin$の$\alpha{=}0.05$での誤警報率は，ImageNet-200で\NRITNearValFive{}／\NRITFarValFive{}（near／far），CIFAR-100で\NRCFNearValFive{}／\NRCFFarValFive{}である（学習画像の較正）．以下の種と誤警報率の値は$\sigma$のものである．CIFAR-100のIDの誤警報率$\Pr(\pfin\le0.05)$は\NCifarValNearFprZeroZeroFive{}（near）／\NCifarValFarFprZeroZeroFive{}（far），BH法の偽発見割合は\NCifarValNearBhfdp{}／\NCifarValFarBhfdp{}である．CIFAR-100の$32\times32$の画像は他と同じ前処理で拡大して入力し，TexturesはImageNet-1Kベンチマークと同じ画像ファイルなので特徴を共有する．CIFAR-100の種は，Storey型$q{=}0.2$でCIFAR-10・Tiny ImageNetでは折の\NCifarSeedNearStoreyRatioMin{}--\NCifarSeedNearStoreyRatioMax\%，MNIST・SVHN・Places365では\NCifarSeedFarHiStoreyRatioMin{}--\NCifarSeedFarHiStoreyRatioMax\%，Texturesでは\NCifarSeedTextureStoreyRatio\%を占め，種に混じるIDの割合は\NCifarSeedStoreyIdfracMin{}--\NCifarSeedStoreyIdfracMax{}である（DINOv3 L/16のビュー，2つの折・6通りの抽出の平均）．単純BH法の種は折の\NCifarSeedTextureBhRatio{}--\NCifarSeedMnistBhRatio\%，IDの割合\NCifarSeedMnistBhIdfrac{}--\NCifarSeedTinBhIdfrac{}である．種に混じるIDの割合は命題3どおり$q$以下でも，割合$q$の種がIDのほぼ全数になって$\pN$は情報を失う（Places365：$\sigma$ \NCifarMainPlacesThreeSixFiveFpr\%，$\pP$だけ\NCifarLpPlacesThreeSixFiveFpr\%，単純BH法の種で\NCifarBhPlacesThreeSixFiveFpr\%，上限付きの種で\NCifarStoreycPlacesThreeSixFiveFpr\%）．ImageNet-200のSSB-hardでは未知が全画像の\NInTwoZeroZeroMixSsbHard\%を占めてStorey型の$\hat{\pi}_0$が\NInTwoZeroZeroSeedSsbHardStoreyPiZero{}になり，水準$q/\hat{\pi}_0$が1を超えて折の全画像が種になる（単純BH法の種は折の\NInTwoZeroZeroSeedSsbHardBhRatioPct\%，上限付きの種は\NInTwoZeroZeroSeedSsbHardStoreycRatioPct\%，IDの割合\NInTwoZeroZeroSeedSsbHardStoreycIdfrac{}）．
+
+\begin{table}[htbp]
+\centering
+\caption{OpenOOD v1.5 CIFAR-100（[\%]，単体，\NCifarNDraws{}通りの抽出の平均）．$\dagger$はOpenOOD v1.5~\cite{zhang2023openood}の報告値（\AUC{}は論文の表2，\FPR{}は同論文の脚注6が指す公開の表）．全学習画像のkNN・クラス平均は本稿と同じ2つの特徴（L2正規化して連結），ゼロショットはCLIP ViT-B/16（\secref{in200}）．上限付きの種は$\tau{=}0.05$の$\sigma$（付録\ref{sec:app_cap}）．\textcolor{sotacol}{$\bigstar$}は列の最良値，\colorbox{upd}{青}は本手法以外の全行（報告値，全学習画像・ゼロショットの基線，静的検出器，LGC-max）を上回る値．}
+\label{tab:cifar}
+\vspace{1.5mm}
+\input{sections/t22_cifar.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{OpenOOD v1.5 ImageNet-200（[\%]，単体，\NInTwoZeroZeroNDraws{}通りの抽出の平均）．$\dagger$はOpenOOD v1.5~\cite{zhang2023openood}の報告値（ImageNet-200で学習したResNet-18；リーダーボードと同論文の脚注6が指す公開の表）．全学習画像のkNN・クラス平均は本稿と同じ2つの特徴，ゼロショットはCLIP ViT-B/16（\secref{in200}）．上限付きの種は$\tau{=}0.05$の$\sigma$（付録\ref{sec:app_cap}）．\textcolor{sotacol}{$\bigstar$}は列の最良値，\colorbox{upd}{青}は本手法以外の全行（報告値，全学習画像・ゼロショットの基線，静的検出器，LGC-max）を上回る値．}
+\label{tab:in200}
+\vspace{1.5mm}
+\input{sections/t22_in200.tex}
+\end{table}
+
+\section{特徴抽出器の族}
+\label{sec:app_views}
+本節の値は交差適合した$\sigma$のものである（$\sR$では再計算していない）．\input{sections/views18.tex}
+CLIP ViT-B/16はベース検出器TINSが使う画像エンコーダと同じ重みで，DINO (v1)~\cite{caron2021dino}はImageNet-1Kの画像だけで自己教師あり学習したViT-B/16である．
+
+\begin{table*}[htbp]
+\centering
+\caption{6つの特徴抽出器をそれぞれ単一のビューとした値（\FPR{}[\%]，OpenOOD v1.5 ImageNet-1K，近＝near-OOD，遠＝far-OOD，抽出1通り）．}
+\label{tab:views}
+\vspace{1.5mm}
+\input{sections/t22x_views.tex}
+\end{table*}
+
+\section{到着時採点モード}
+\label{sec:app_online}
+本節のモードは交差適合した$\sigma$で実装した（$\sR$では実行していない）．画像がバッチ（256枚）で順に届く設定では，届いた画像を節点に加えてグラフを厳密な$k_g$近傍グラフに保ち，画像の折は到着番号の偶奇で決める（較正画像の折は最初に1回決める）．各バッチで，$\mathbf{u}^{+}$と各折の$\mathbf{u}^{-}_b$をその時点のグラフ上で\eqnref{lp}の不動点まで反復し（前のバッチの値を初期値にして反復を減らすが，不動点は初期値に依らない．相対残差$10^{-8}$まで平均\NOnlItersMean{}回），種はその時点までに届いた各折の画像に\eqnref{bh}をかけて毎バッチ選び直す．届いたバッチの画像は付録\ref{sec:app_p17}の$\sigma$のとおり採点し，$\pfin$はその時点の自分の折の較正画像の$\sigma$の中での順位で確定して後のバッチで見直さない．到着順がランダムなら，各時点で折$b$の較正画像とそれまでに届いた折$b$のID画像は交換可能なので，命題4と同じ保証が各時点の判定に当てはまる．事後採点との違いは，各画像が「それより後に届く画像」を使えないことだけである．
+
+\tabref{online}に到着時採点モードのデータセット別の値を示す（本稿の2ビュー，Storey型$q{=}0.2$，折は到着番号の偶奇；OpenOODは5通り，Four-OODは3通りの到着順の平均，抽出は1通り）．交差適合なしの到着時採点（v16までの読み出し）も併記する．このモード（near-OODの\FPR{}は単体\NOnlOneFourNoneNearFpr\%，$\times$TINS \NOnlOneFourTinsNearFpr\%）は後に届く画像を使えない分だけ劣るが，報告値の最良は上回る．到着時の$\pfin$のIDの誤警報率$\Pr(\pfin\le0.05)$は近\NOnlOneFourValNearFprZeroZeroFive{}，遠\NOnlOneFourValFarFprZeroZeroFive{}，Four-OOD \NOnlOneFourValFourFprZeroZeroFive{}である（学習画像の較正）．
+
+\begin{table*}[htbp]
+\centering
+\caption{到着時採点モードのデータセット別の値（[\%]，AUROC／FPR95）．}
+\label{tab:online}
+\vspace{1.5mm}
+\input{sections/t18_online.tex}
+\end{table*}
+
+\section{開発用分割での構成の選択}
+\label{sec:app_sel}
+\tabref{sel}に第1段（ビューと$q$，交差適合なしの$\pP\pN$），\tabref{selq}に第2段（交差適合の種の規則・$q$・統計量）の，開発用分割dev1（選択）とdev2（確認）での候補の値を示す（単体，5通りの抽出の平均；各分割はnearとfarの2つの未知の集合を持つ）．第2段では，静的$p$を統計量に含める候補はdev1のfar-OODでは最も良いがnear-OODで悪く（\NSelqDevOnePpsNearFpr\%／\NSelqDevOnePpsFarFpr\%），$q{=}0.05$はどの組でも悪い．選ばれたStorey型・$q{=}0.2$・$\pP\pN$はdev1 nearで\NSelqDevOneNearFpr\%（\NSelqNCandidates{}候補中\NSelqDevOneRankOfChosen{}位），dev2 nearで\NSelqDevTwoNearFpr\%であり，交差適合なしの参照（dev1 \NSelqRefDevOneNearFpr\%）より良い．LGC-maxはdev1 nearで\NSelqDevOneLgcNearFpr\%である．$\sR$はこの選択の後に，選ばれた$\sigma$の折を参照画像に置き換えるものとして登録した（付録\ref{sec:app_p17}）．
+
+\begin{table*}[htbp]
+\centering
+\caption{第1段の候補（ビューと$q$；[\%]，交差適合なしの$\pP\pN$，単体，5通りの抽出の平均）．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\label{tab:sel}
+\vspace{1.5mm}
+\input{sections/t18_sel.tex}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{第2段の候補（交差適合の種の規則・$q$・統計量；[\%]，$\pfin$，単体，5通りの抽出の平均，折は3通りの割り当ての平均）と参照．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\label{tab:selq}
+\vspace{1.5mm}
+\input{sections/t18_sel14.tex}
+\end{table*}
+
+\section{テスト集合での感度と選択の履歴}
+\label{sec:app_sens}
+\tabref{ablx}に，\tabref{abl}の読み出しの単体での値と，$\sigma$の第2段の候補（種の規則，$q$，統計量）の一部のテスト集合での値を示す．テスト集合では単純BH法の種がStorey型よりわずかに良く，$q{=}0.1$が$q{=}0.2$よりわずかに良いが，構成は開発用分割の規則で選んだものを変えない（\secref{exp}，付録\ref{sec:app_devtest}）．\tabref{sens}に，交差適合なしの$\pP\pN$について，ビューの組と$q$とベース検出器のすべての組合せのテスト集合での値（6通りの抽出の平均）を示す．v16までの版では，グラフの近傍数，相互近傍グラフ，$\lambda$，種の2巡目，種への最近傍項，重み，DINOv3の採用，静的$p$との積をテスト集合上で探索し，その上で第1段の候補の集合を決めた．本稿の構成はこの表からは選んでおらず（\secref{exp}），交差適合に関わる第2段の候補と規則，$\sR$とその採否の規則はテスト集合の計算前に登録した．探索の記録は\url{https://github.com/omotes24/SalmonLadder}に残している．
+
+\begin{table*}[htbp]
+\centering
+\caption{同じ特徴での読み出しの比較（単体）と$\sigma$の第2段の他の候補の値（[\%]，6通りの抽出の平均）．記法は\tabref{abl}と同じ．}
+\label{tab:ablx}
+\vspace{1.5mm}
+\input{sections/t22_ablx.tex}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{テスト集合での感度（[\%]，交差適合なしの$\pP\pN$，6通りの抽出の平均）．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\label{tab:sens}
+\vspace{1.5mm}
+\input{sections/t18_sens.tex}
+\end{table*}
+
+\section{再出現と混入率の格子}
+\label{sec:app_rec}
+\tabref{recrefninco}と\tabref{recrefssb}に，\secref{rec}の格子の全条件での$\sR$の値を，静的$p$，$\pP$だけ（参照画像で読む），交差適合した$\sigma$と並べて示す（\FPR{}，単体と$\times$TINS，3回の平均；種は$\sR$のDINOv3 L/16のビューで選ばれた枚数とそのうちIDの割合（\%））．\tabref{recninco}と\tabref{recssb}は交差適合した$\sigma$の詳細（v18--v21の表）である．$\sigma$と交差適合なしの$\pP\pN$との\FPR{}の差は\NRecNAll{}条件で\NRecMinMainMinusVOne{}--+\NRecMaxMainMinusVOne{}ポイントの範囲にある．$\sigma$に静的$p$を加えると，$r\le5$で静的$p$に劣る条件は\NRecNRLeFivePpsWorseStatic{}に減り差も最大\NRecMaxPpsMinusStaticLeFive{}ポイントになるが，64クラス$\times$30枚では\NRecNincoCSixFourRThreeZeroMainFpr\%から\NRecNincoCSixFourRThreeZeroPpsFpr\%へ悪化する．$c$は未知クラスの数，$r$は各クラスの枚数，混入率は未知の枚数をテスト集合の枚数で割った値．$\sigma$の表の検出器の列は\AUC{}／\FPR{}（DINOv2 L/14 + DINOv3 L/16，ラベル付き画像は本稿の抽出1通り，クラスと画像の選び方を変えた3回の平均；学習画像の較正）．$\Pr(\pfin\le0.05)$は$\sigma$の$\pfin$のIDの誤警報率．種はDINOv3 L/16のビューでStorey型$q{=}0.2$のときに選ばれた枚数（2つの折の合計），IDはそのうちIDだった割合（\%），再現は未知のうち種に選ばれた割合（\%）．
+
+\begin{table}[htbp]
+\centering
+\caption{再出現と混入率の格子：NINCO，$\sR$（\FPR{}[\%]）．}
+\label{tab:recrefninco}
+\vspace{1.5mm}
+\input{sections/t22_recref_ninco.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{再出現と混入率の格子：SSB-hard，$\sR$（\FPR{}[\%]）．}
+\label{tab:recrefssb}
+\vspace{1.5mm}
+\input{sections/t22_recref_ssb_hard.tex}
+\end{table}
+
+\begin{table*}[htbp]
+\centering
+\caption{再出現と混入率の格子：NINCO，交差適合した$\sigma$（[\%]）．}
+\label{tab:recninco}
+\vspace{1.5mm}
+\input{sections/t22x_rec_ninco.tex}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\caption{再出現と混入率の格子：SSB-hard，交差適合した$\sigma$（[\%]）．}
+\label{tab:recssb}
+\vspace{1.5mm}
+\input{sections/t22x_rec_ssb_hard.tex}
+\end{table*}
+
+\section{近傍数$k_g$を変えた格子}
+\label{sec:app_kg}
+\figref{kg}に，同じ格子のNINCO（$c{=}64$）とSSB-hard（$c{=}980$）で，グラフの近傍数を$k_g\in\{3,5,10,20,40\}$と変えた値を示す（交差適合した$\sigma$，単体，本稿の抽出1通り，3回の平均；1つのテスト集合につき上位40個の近傍リストを1回作り，全$k_g$を同じリストで評価）．\input{sections/kgmain22.tex}
+
+\input{sections/kg18.tex}
+
+\textbf{系1の実測．}同じ格子（1回目の反復，ラベル付き画像4,000枚，交差適合なし，DINOv3 L/16のビュー）の各未知クラス$Q$について，$\pi_i$，\eqnref{esc}の$b_i$，実際の$\pP$（ラベル付き画像4,000枚での順位）を計算した（\tabref{cor}；登録外の記述的な計算で，何も選ばない）．$u_i\le b_i$はクラス$\times$ビュー$\times$条件の全\NCorNRows{}組で成り立つ（$u_i/b_i$の最大は\NCorMaxRatioPi{}で，$|\partial Q|=1$のときの等号が数値誤差の範囲で表れたもの）．NINCO 64クラス$\times$30枚では，逃げる確率$\pi$の中央値は$k_g{=}3$の\NCorNincoRThreeZeroKgThreePiMed{}から$k_g{=}40$の\NCorNincoRThreeZeroKgFourZeroPiMed{}へ増え，系1だけから$\pP\le0.05$が言える未知の割合は\NCorNincoRThreeZeroKgThreeFracBoundPiLeZeroZeroFivePct\%から\NCorNincoRThreeZeroKgFourZeroFracBoundPiLeZeroZeroFivePct\%に下がる（実際に$\pP\le0.05$の割合は\NCorNincoRThreeZeroKgThreeFracActLeZeroZeroFivePct{}--\NCorNincoRThreeZeroKgOneZeroFracActLeZeroZeroFivePct\%）．SSB-hardでは$\pi$の中央値が\NCorSsbHardRFiveZeroKgThreePiMed{}以上で（兄弟クラスの未知はID側へ辺を多く張る），系1は多くを言わない．系1が効くのは疎なグラフで未知が多数回再出現する条件であり，$r\le2$（$\bar e_Q=1$）では何も言わない．$k_g$とともに$\pi$が増える向きは，密なグラフが再出現の多い側で不利になる実測と一致する．緩さの源は，出口の節点の質量を最大で押さえることと，閉じた形$\psi(\bar e_Q)$がクラスで最も漏れる節点で決まることである（$\psi$で$\pP\le0.05$が言える割合は$k_g{=}3$，$r{=}30$で\NCorNincoRThreeZeroKgThreeFracBoundPsiLeZeroZeroFivePct\%）．系1に種からの下界を加えた系2の実測は付録\ref{sec:app_bounds}にある．
+
+\begin{table*}[htbp]
+\centering
+\caption{系1の実測（1回目の反復，DINOv3 L/16，ラベル付き画像4,000枚）．$\pi$は逃げる確率の中央値（クラスの中央値のさらに中央値），「実」は実際に$\pP\le0.05$となった未知の割合（\%），「系」は系1の上界だけから$\pP\le0.05$が言える割合（\%）．}
+\label{tab:cor}
+\vspace{1.5mm}
+\input{sections/t18_cor.tex}
+\end{table*}
+
+\begin{figure*}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figs/fig18_kg.pdf}
+\caption{近傍数$k_g$を変えた再出現の格子（\FPR{}，交差適合した$\sigma$，単体，DINOv2 L/14 + DINOv3 L/16）．実線は$\sigma$，破線は$\pP$だけ，灰色の点線は静的$p$（$k_g$に依らない）．}
+\label{fig:kg}
+\end{figure*}
+
+\section{種の上限$\tau$}
+\label{sec:app_cap}
+\input{sections/cap22.tex}
+
+\tabref{caprec}に，上限付きの規則を\secref{rec}の格子の全条件で評価した\FPR{}を示す（交差適合した$\sigma$，単体，3回の平均）．\input{sections/caprec18.tex}
+
+\begin{table*}[htbp]
+\centering
+\caption{種の上限$\tau{=}0.05$の規則の格子（\FPR{}[\%]，交差適合した$\sigma$，単体，3回の平均）．Storey型・単純BH法はそれぞれ上限なし／あり．種はDINOv3 L/16のビューで上限付きStorey型に選ばれた枚数（2つの折の合計）とそのうちIDの割合（\%）．}
+\label{tab:caprec}
+\vspace{1.5mm}
+\input{sections/t18_caprec.tex}
+\end{table*}
+
+\section{追加実験の事前登録と仮説の判定}
+\label{sec:app_hyp}
+付録\ref{sec:app_cap}の上限付きの種，\secref{in200}の全学習画像・ゼロショットの基線，付録\ref{sec:app_kg}の$k_g$の格子，付録\ref{sec:app_views}の中心化は，1つの登録文書（公開リポジトリの\texttt{experiments/phase15/prereg\_p15.json}，SHA-256 \texttt{83ea4061}$\cdots$）に計算の内容・報告の形・6つの仮説を記してから実行した．登録文書は評価の実行前に公開リポジトリのブランチ\texttt{phase12-15-registrations}（コミット\texttt{8ef9c8d}）に置いた（学習画像の特徴抽出だけはその前に始めた）．構成の選択は行わず（$\tau$と$q$は固定，主構成は変えない），登録からの逸脱はない．系1の実測（付録\ref{sec:app_kg}）は査読後に加えた登録外の記述的な計算で，選択を含まない．判定は次のとおりである（いずれも交差適合した$\sigma$についての仮説）．
+\begin{itemize}
+\item \textbf{H1}（上限は害を消す：CIFAR-100 far-OODとImageNet-200 near-OODで上限付きの規則は$\pP$だけの+0.5ポイント以内）：成立（+\NCifarStoreycFarDfprVsLp{}，\NInTwoZeroZeroStoreycNearDfprVsLp{}ポイント）．
+\item \textbf{H2}（上限はImageNet-1K near-OODで上限なしの0.5ポイント以内）：成立（単体\NCapStoreycAloneNearDfprVsStorey{}，$\times$TINS +\NCapStoreycNearDfprVsStorey{}ポイント）．
+\item \textbf{H3}（格子：混入率30\%以上で$\pP$だけより1ポイント以上悪くならず，$r\ge10$・混入率30\%未満で上限なしの利得を1ポイント以内に保つ）：成立（付録\ref{sec:app_cap}）．
+\item \textbf{H4}（全学習画像のkNN（$k{=}50$）は両ベンチマークで16枚の静的$p$より良く，ImageNet-200のnear-OODでは$\sigma$がkNNより低い\FPR{}を保つ）：前半は否定（ImageNet-200でkNN \NInTwoZeroZeroKnnAllKFiveZeroNearFpr\%／\NInTwoZeroZeroKnnAllKFiveZeroFarFpr\%対静的$p$ \NInTwoZeroZeroStaticNearFpr\%／\NInTwoZeroZeroStaticFarFpr\%，CIFAR-100のfar-OODで\NCifarKnnAllKFiveZeroFarFpr\%対\NCifarStaticFarFpr\%；CIFAR-100のnear-OODだけ\NCifarKnnAllKFiveZeroNearFpr\%対\NCifarStaticNearFpr\%），後半は成立（\NInTwoZeroZeroMainNearFpr\%対\NInTwoZeroZeroKnnAllKFiveZeroNearFpr\%）．
+\item \textbf{H5}（$\sigma$が静的$p$を下回る$r$は$k_g$が小さいほど小さく，大きい$r$での利得は$k_g\in\{10,20\}$で最大）：前半は否定，後半は$\{5,10\}$として部分的に成立（付録\ref{sec:app_kg}）．
+\item \textbf{H6}（中心化でCLIPの静的$p$はDINO系の範囲（near 70\%未満，far 40\%未満）に入り，DINO系の変化は10ポイント以内）：前半は否定（near \NViewClipStaticcNearFpr\%，far \NViewClipStaticcFarFpr\%），後半は静的$p$で成立（最大\NViewsDinoCentredMaxabsFpr{}ポイント），kNNではDINO (v1)のfar-OODで\NViewsDinoKnncentredMaxabsFpr{}ポイント動く．
+\end{itemize}
+
+\textbf{一つの量の変種（付録\ref{sec:app_h16}）．}開発用分割dev1だけで\NHsExplNCfg{}通りの構成を探索した後，構成，ベース検出器との積の形を選ぶ規則，dev2での3つの仮説，採否の規則を登録文書（\texttt{experiments/phase16/prereg\_p16.json}，SHA-256 \texttt{2e16ae0c}$\cdots$）に記し，公開リポジトリのブランチ\texttt{phase12-15-registrations}（コミット\texttt{6bbae3d}）で公開されたことを確かめてから実行した（2026年10月11日12:56 UTC）．H1--H3はdev2ですべて成立し，登録した規則では$h$が主構成になる．しかしテスト集合では$\sigma$に劣ったため（\tabref{h16}），$\sigma$を主構成のまま$h$を変種として報告した（v19--v21）．これは登録からの逸脱であり，判断はテスト集合の値を見た後に行った（「結果が良ければ本文，悪ければ付録」とすることは実行前に決めていたが，登録文書には書いていない）．採否の規則は点推定（dev2の差が+0.5以下）で定めていた．dev2の差の区間の上端は+\NRHsUpperNear{}，+\NRHsUpperFar{}で，上端で判定していれば$h$は採用されず，この逸脱は生じなかった．修正記録は\texttt{experiments/phase16/prereg\_p16\_amendments.json}にある．
+
+\textbf{参照画像による読み出し（付録\ref{sec:app_p17}）．}$\sR$，その採否の規則（区間の上端による），記述的な解析を登録文書（\texttt{experiments/phase17/prereg\_p17.json}）に記し，公開を確かめてから実行した．規則はdev2で成り立ち，$\sR$を主構成にした．登録からの逸脱はない．

@@ -1,0 +1,130 @@
+\section{提案手法}
+\label{sec:method}
+\subsection{問題設定と全体像}
+IDの各クラス$c$に16枚のラベル付き画像が与えられ，12枚を支持画像$\mathcal{S}_c$，2枚を参照画像$\mathcal{R}_c$，2枚を較正画像$\mathcal{C}_c$とする（クラスごとの並びの位置で固定；全体を$\mathcal{S}$，$\mathcal{R}$，$\mathcal{C}$，$|\mathcal{R}|=|\mathcal{C}|=2{,}000$）．テスト集合$\mathcal{T}$はIDとOODが混ざったラベルなしの画像の集合で，各画像$x\in\mathcal{T}$にスコア$s(x)$（大きいほどIDらしい）を返す．主たる設定は$\mathcal{T}$の全画像が揃ってから採点する\textbf{事後採点}（transductive）で，画像が届くたびに採点する\textbf{到着時採点}は付録\ref{sec:app_online}で扱う．特徴抽出器$f$は凍結し，モデルは更新しない．Salmon Ladderは次の4つの部品からなる（\figref{overview}）．
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\item \textbf{較正順位}：IDらしさの値を，固定したラベル付き画像の中での順位に変えて読む（\secref{rank}）．すべての部品の共通の物差しで，共形$p$値である．
+\item \textbf{支持画像からの質量$u^{+}$}：支持画像・参照画像・較正画像・テスト画像を節点とする1つのグラフ上で支持画像に置いた質量を伝播させ，参照画像の中での順位$\pP$で読む（\secref{graph}）．
+\item \textbf{未知からの質量$u^{-}$}：$\pP$に偽発見率を制御する多重検定（AdaDetect~\cite{marandon2024adadetect}の意味でのBH法）をかけ，較正画像とテスト画像の全体から未知の側に偏った画像の集合$\hat{Q}$（種）を自己ラベル付けし，種の質量を同じグラフで伝播させる（\secref{seed}）．
+\item \textbf{参照画像による読み出し}：2つの質量の参照画像での順位を足した統計量$\sR$を，較正画像の中での順位$\pfin$で読む（\secref{ref}）．$\pfin$は折に分けずに共形$p$値になり，IDの誤警報率とBH法の偽発見率が保証される（命題4）．
+\end{enumerate}
+スコアは$s(x)=s_0(x)\exp\sR(x)$で，$s_0$は任意のベース検出器である（\secref{score}）．判定には$\pfin$を使う．
+
+\subsection{較正順位：固定したラベル付き画像の中での順位}
+\label{sec:rank}
+IDらしさを表す値$a(x)$（小さいほどOODらしい）を，ラベル付き画像の集合$\mathcal{C}'$（$n'=|\mathcal{C}'|$）を同じ方法で採点した値の中での順位
+\begin{equation}
+p(x)=\frac{1+|\{x'\in\mathcal{C}':a(x')\le a(x)\}|}{n'+1}\in\Big[\frac{1}{n'+1},1\Big]
+\label{eq:rank}
+\end{equation}
+で読む（\textbf{較正順位}）．$\mathcal{C}'$とIDのテスト画像が交換可能で，$a$が両者を対称に扱うなら，これは$\Pr(p(x)\le\alpha)\le\alpha$を満たす共形$p$値~\cite{bates2023conformal,marandon2024adadetect}であり，閾値$\alpha$でOODと判定したときのIDの誤警報率は$\alpha$以下になる．大きいほどOODらしい値は不等号を逆にして読む（\eqnref{pneg}）．順位は$[0,1]$の値なので尺度の違うビューどうしの積が取れる．
+
+\subsection{支持画像からの質量：ラベル伝播のグラフ}
+\label{sec:graph}
+\subsubsection{グラフの構成}
+支持画像$\mathcal{S}$，参照画像$\mathcal{R}$，較正画像$\mathcal{C}$，テスト画像$\mathcal{T}$のすべてを節点とする（節点数$N$）．各節点$i$から，コサイン類似度$f(x_i)^{\top}f(x_j)$が上位$k_g{=}10$の節点$j$へ向かう辺を張り，重みを$a_{ij}=\max(f(x_i)^{\top}f(x_j),0)$とする（行列$A$）．向きのない辺にするために$W=\max(A,A^{\top})$（成分ごとの最大）とし，次数$\delta_i=\sum_jW_{ij}$，$D=\mathrm{diag}(\delta_i)$，正規化した行列
+\begin{equation}
+S=D^{-1/2}WD^{-1/2}
+\label{eq:S}
+\end{equation}
+を作る~\cite{zhou2004lgc}．$S$は対称で固有値は$[-1,1]$にあり，非零成分は$O(Nk_g)$の疎行列である．参照画像・較正画像・テスト画像はどれもラベルを持たない節点として全く同じ扱いを受け，グラフは節点の順序や名札に依らない（付録の\figref{graph}a）．グラフはビューごとに1つ作り，2つの質量を同じグラフで伝播させる．
+
+\subsubsection{伝播の反復とランダムウォークとしての意味}
+支持画像の節点で1，他で0のベクトル$\mathbf{y}^{+}\in\{0,1\}^{N}$と$\lambda{=}0.9$で
+\begin{equation}
+\mathbf{u}^{(\ell+1)}=\lambda S\mathbf{u}^{(\ell)}+(1-\lambda)\mathbf{y}^{+}
+\label{eq:lp}
+\end{equation}
+を収束するまで反復する（$\mathbf{u}^{(0)}=\mathbf{0}$；局所・大域一貫性~\cite{zhou2004lgc}の反復）．$\lambda<1$かつ$\|S\|_2\le1$なので縮小写像であり，収束解$\mathbf{u}^{+}=(1-\lambda)\sum_{\ell\ge0}\lambda^{\ell}S^{\ell}\mathbf{y}^{+}$を持つ．ランダムウォークで言えば，$P=D^{-1}W$を遷移確率とし，各ステップで確率$1-\lambda$で止まるランダムウォークを節点$i$から始めたとき，
+\begin{equation}
+u^{+}_i=\sqrt{\delta_i}\;q_i,\qquad q_i=\mathbb{E}_i\Big[\frac{\mathbf{1}[X_T\in\mathcal{S}]}{\sqrt{\delta_{X_T}}}\Big]
+\label{eq:walk}
+\end{equation}
+である（$X_T$は止まった節点．$S^{\ell}=D^{1/2}P^{\ell}D^{-1/2}$から従う）．$u^{+}$は，次数（密度）の因子$\sqrt{\delta_i}$と，支持画像で止まる確率（止まった支持画像の$1/\sqrt{\delta}$で重みづけたもの）の因子$q_i$の積である．支持画像に近いID画像からは数歩で支持画像に着くので$q$は大きく，互いに近い未知の塊からは支持画像へ出る辺が少ないので$q$は小さい（\figref{graph}a；どちらの因子がnearとfarに効くかは\secref{abl}）．
+
+\subsubsection{参照画像での順位による読み出し}
+参照画像はグラフの節点であり（$y^{+}=0$），同じ反復で$u^{+}$を受け取るので，
+\begin{equation}
+\pP(x)=\frac{1+|\{r\in\mathcal{R}:u^{+}(r)\le u^{+}(x)\}|}{|\mathcal{R}|+1}
+\label{eq:plp}
+\end{equation}
+とする．$u^{+}$は支持画像の特徴と「参照画像・較正画像・テスト画像を合わせた集合」だけで決まり，その集合の中の節点を入れ替えても各画像の値は変わらない（置換不変性）．したがって参照画像とIDのテスト画像が交換可能なら，$\pP$はAdaDetect~\cite{marandon2024adadetect}の経験$p$値で，IDのテスト画像について超一様である．$\pP$だけでも検知器として完結し（\tabref{abl}の「$\pP$のみ」），以下の種は再出現する未知のための拡張である．
+
+\subsubsection{質量の保存とカットの上界}
+\label{sec:mass}
+\textbf{命題1（質量の保存）．}$\bom=D^{1/2}\mathbf{1}$とすると，\eqnref{lp}を$\mathbf{u}^{(0)}=\mathbf{0}$から$L$回反復した値は$\bom^{\top}\mathbf{u}^{(L)}=(1-\lambda^{L})\sum_{j\in\mathcal{S}}\sqrt{\delta_j}$を満たし，収束解では$\bom^{\top}\mathbf{u}^{+}=\sum_{j\in\mathcal{S}}\sqrt{\delta_j}$である（証明は付録\ref{sec:app_proofs}）．重みづけた質量の総和は支持画像の次数だけで決まり，テスト画像の枚数に比例しては増えないので，1節点あたりの$u^{+}$の尺度はテスト集合やビューごとに変わり（\figref{graph}c），値をそのまま閾値にかけたりビューどうしで掛けたりはできない．順位\eqnref{plp}がこの尺度を取り除く．
+\label{sec:cut}
+\textbf{命題2（カットの上界）．}初期質量を置いた節点の集合$Y$を含まない節点の集合$Q$について，$Q$と外とを結ぶ辺の重みの和を$w(Q,\bar{Q})=\sum_{i\in Q,\,j\notin Q}W_{ij}$とすると，収束解$\mathbf{u}$は
+\begin{equation}
+\sum_{i\in Q}\sqrt{\delta_i}\,u_i\le\frac{\lambda}{1-\lambda}\cdot\frac{w(Q,\bar{Q})}{\min_{j\in Y}\sqrt{\delta_j}}
+\label{eq:cond}
+\end{equation}
+を満たす（証明は付録\ref{sec:app_proofs}）．$W=\max(A,A^{\top})$なので，$w(Q,\bar{Q})$には\textbf{$Q$の節点が自ら張る辺}と\textbf{外の節点が$Q$へ張る辺}の両方が入る（\figref{graph}b）．$Y=\mathcal{S}$，$Q$を同じ未知クラスの$r$枚とし，それらが互いの近傍の上位を占めるなら，前者は節点あたり$(k_g-r+1)_+$本に減り，$r\ge k_g+1$で尽きる．後者は外の節点が$Q$の画像を近傍に選ぶかどうかで決まる．
+
+\textbf{系1（逃げる確率）．}$Q$の節点$i$から出たランダムウォークが止まる前に$Q$の外へ出る確率を$\pi_i$とすると，$\boldsymbol{\pi}=\lambda(I-\lambda P_{QQ})^{-1}\mathbf{e}$（$P_{QQ}$は$P$の$Q$への制限，$e_i=\sum_{j\notin Q}W_{ij}/\delta_i$）で，$\pi_i\le\psi(\bar e_Q)$，$\bar e_Q=\max_{i\in Q}e_i$，$\psi(e)=\lambda e/(1-\lambda+\lambda e)$である．$\partial Q$を$Q$に隣接する外の節点の集合とすると，$Q$の各節点$i$で
+\begin{equation}
+u_i\le b_i:=\pi_i\sqrt{\delta_i}\max_{j\in\partial Q}\frac{u_j}{\sqrt{\delta_j}}
+\label{eq:esc}
+\end{equation}
+が成り立つ．特に$\bar e_Q=0$なら$u^{+}_i=0$で，$\pP(i)$は床$1/(|\mathcal{R}|+1)$に落ちる（参照画像の$u^{+}$がすべて正のとき；証明は付録\ref{sec:app_proofs}）．
+
+\subsection{未知からの質量：自己ラベル付けと負の伝播}
+\label{sec:seed}
+\subsubsection{種の選択：AdaDetect の意味での BH 法}
+$\pP$は，IDの画像について超一様な$p$値である．そこで較正画像とテスト画像を合わせた\textbf{プール}$\mathcal{U}=\mathcal{C}\cup\mathcal{T}$（$m=|\mathcal{U}|$）の各画像に「$x$はIDである」を帰無仮説とする検定を当て，偽発見率（FDR：選んだ集合に混じるIDの割合の期待値）を水準$q$に抑える選び方で未知の集合$\hat{Q}$を選ぶ．Benjamini--Hochberg（BH）法~\cite{benjamini1995bh}は，$p_{(1)}\le\dots\le p_{(m)}$を$\pP$の昇順として$p_{(i)}\le q\,i/m$を満たす最大の$i$まで棄却する．本稿はIDの割合$\pi_0$を推定して水準を$q/\hat{\pi}_0$に上げるStorey型~\cite{storey2002}を用い，$\lambda_{\mathrm{S}}=K/(|\mathcal{R}|+1)$（$K=\lfloor|\mathcal{R}|/2\rfloor$）として
+\begin{equation}
+\hat{\pi}_0=\frac{1+|\{x:\pP(x)\ge\lambda_{\mathrm{S}}\}|}{m\,(1-\lambda_{\mathrm{S}})},\;\;
+\hat{k}=\max\{i:p_{(i)}\le\tfrac{q\,i}{\hat{\pi}_0 m}\}
+\label{eq:bh}
+\end{equation}
+とし，$\pP$が小さい方から$\hat{k}$枚の画像の集合$\hat{Q}$を\textbf{種}と呼ぶ（ビューごと）．本稿の構成は$q{=}0.2$である．較正画像も候補に入れるのは，種の選び方を較正画像とテスト画像について対称にするためである（命題4）．
+
+\textbf{命題3（偽発見率，AdaDetect~\cite{marandon2024adadetect}）．}参照画像とプールのIDの画像が交換可能なら，(i) 水準$q$のBH法（$\hat{\pi}_0=1$）で選んだ$\hat{Q}$のFDRは$q\,m_0/m\le q$以下，(ii) \eqnref{bh}のStorey型で選んだ$\hat{Q}$のFDRは$q$以下である（$m_0$はプールのIDの画像の数）．\textit{証明．}$u^{+}$は支持画像を学習標本とし，参照画像とプールを合わせた集合の中での置換に不変なのでAdaDetectの条件(8)を満たし，\eqnref{plp}は同論文の経験$p$値(10)である．同論文の定理3.3と系3.5・3.7による．$\square$
+
+較正画像（学習画像）とIDのテスト画像（検証画像）は厳密には交換可能ではなく，実際に混じるIDの割合は\secref{rec}，\secref{fdp}で報告する．\textbf{順位の粒度．}$\pP$の最小値は$1/(|\mathcal{R}|+1)$なので，種が1枚でも選ばれるには最小値を取る画像が$\hat{\pi}_0 m/(q(|\mathcal{R}|+1))$枚以上要る（$q{=}0.2$ならプールの約$0.25\%$）．未知がそれより少なければ種は選ばれず，$\pP$だけの読み出しに戻る（\secref{rec}）．種の閾値に上限$\tau$を付けた規則も登録して評価した（付録\ref{sec:app_cap}）．
+
+\subsection{参照画像による読み出し}
+\label{sec:ref}
+\label{sec:xfit}
+種で1，他で0のベクトル$\mathbf{y}^{-}=\mathbf{1}_{\hat{Q}}$を初期質量とし，同じグラフ・同じ$\lambda$で\eqnref{lp}を収束まで反復した値を$\mathbf{u}^{-}$とする．$u^{-}/\sqrt{\delta}$は種で止まる確率の因子で，種は未知なので，$u^{-}$は\textbf{大きいほど未知らしい}．種は自分に注入した質量$1-\lambda$を持つので，それを除いた$\tilde{\mathbf{u}}^{-}=\mathbf{u}^{-}-(1-\lambda)\mathbf{1}_{\hat{Q}}=\lambda S\mathbf{u}^{-}$を使い，プールのどの画像も同じ規則で採点する．参照画像の中での逆順位
+\begin{equation}
+\pN(x)=\frac{1+|\{r\in\mathcal{R}:\tilde{u}^{-}(r)\ge\tilde{u}^{-}(x)\}|}{|\mathcal{R}|+1}
+\label{eq:pneg}
+\end{equation}
+で読み（種が選ばれなければ$\pN\equiv1$），ビュー$v$ごとの値を足して
+\begin{equation}
+\begin{aligned}
+\sR(x)&=\textstyle\sum_{v}\big[\log\pP_v(x)+\log\pN_v(x)\big],\\
+\pfin(x)&=\frac{1+|\{c\in\mathcal{C}:\sR(c)\le\sR(x)\}|}{|\mathcal{C}|+1}
+\end{aligned}
+\label{eq:pfin}
+\end{equation}
+とする．命題2を$Y=\hat{Q}$，$Q$を種を含まないIDの画像の集合として適用すると，IDに届く負の質量はIDと種を隔てるカットで上から抑えられる．種は同じ未知クラスのうち支持画像から遠い画像として命題3の意味で誤りを抑えながら選ばれ，その質量がクラス内の密な辺を通って残りへ流れる．
+
+\textbf{命題4（最終読み出しの保証）．}較正画像$\mathcal{C}$と$\mathcal{T}$のIDの画像が，支持画像・参照画像・未知の画像を所与として交換可能なら，(i) $\mathcal{T}$の各ID画像$x$について$\Pr(\pfin(x)\le\alpha)\le\alpha$，すなわち閾値$\alpha$でOODと判定したときのIDの誤警報率は$\alpha$以下である．(ii) $\{\pfin(x):x\in\mathcal{T}\}$はIDの画像の上でPRDSであり，水準$q$のBH法で選んだ集合のFDRは$q\,|\mathcal{T}_0|/|\mathcal{T}|\le q$以下（$\mathcal{T}_0$は$\mathcal{T}$のIDの画像），Storey型（$\lambda_{\mathrm{S}}=\lfloor|\mathcal{C}|/2\rfloor/(|\mathcal{C}|+1)$）では$q$以下である．\textit{証明の要点．}$\sR$は，$\mathcal{S}$，$\mathcal{R}$と「$\mathcal{U}$という節点の集合」だけで決まり，$\mathcal{U}$の中でどの節点を較正画像と呼ぶかを入れ替えても変わらない（グラフと$\mathbf{u}^{\pm}$は名札に依らず，種はプールの$\pP$の多重集合から対称に決まり，読み出しの順位は固定した$\mathcal{R}$に対して取る）．これはAdaDetectの条件(8)であり，$\pfin$は同論文の経験$p$値(10)なので，定理3.3と系3.5・3.7が従う（付録\ref{sec:app_proofs}）．
+
+$\pfin$は有効な共形$p$値なので，利用者は「IDの誤警報率$\alpha$」という閾値を調整なしに直接指定できる．順位付け（\AUC{}，\FPR{}）には$\sR$を使う．$\pfin$は$1/(|\mathcal{C}|+1)$刻みで，$\sR$が較正画像の最小値を下回る画像はすべて同じ最小値になる（床）．比較に用いる読み出し$\sigma$は，ラベル付きの4枚（クラスあたり）とテスト画像を2つの\textbf{折}に分け，一方の折の種と較正画像で他方の折を採点する\textbf{交差適合}で同じ保証を得る（付録\ref{sec:app_p17}）．$\sR$は折を使わずに保証を得て，種を較正画像とテスト画像の全体から選ぶ．参照する枚数（$|\mathcal{R}|=|\mathcal{C}|=2{,}000$）は折の較正画像と同じで，折の乱数による値の揺れ（開発用分割で，折の割り当てを4通りに変えたときの1抽出あたりの範囲が平均\NRFcRangeFourMean{}，最大\NRFcRangeFourMax{}ポイント）もない．
+
+\textbf{系2（分離の上界）．}同じ未知クラスのテスト画像の集合を$Q$（種を含んでよい）とし，系1の$b_v(y)$（$Y=\mathcal{S}$）と
+\begin{equation}
+c_v(y)=\lambda(1-\lambda)\sum_{j\in\hat{Q}_v}\frac{W_v(y,j)}{\sqrt{\delta_v(y)\,\delta_v(j)}}
+\label{eq:cy}
+\end{equation}
+を使うと，$Q$の各画像$y$で$u^{+}_v(y)\le b_v(y)$，$\tilde{u}^{-}_v(y)\ge c_v(y)$なので
+\begin{equation}
+\begin{aligned}
+\sR(y)&\le B(y):=\textstyle\sum_v\big[\log\pP_v[b_v(y)]+\log\pN_v[c_v(y)]\big],\\
+\pfin(y)&\le\bar p(y):=\frac{1+|\{c\in\mathcal{C}:\sR(c)\le B(y)\}|}{|\mathcal{C}|+1}
+\end{aligned}
+\label{eq:cor2}
+\end{equation}
+が成り立つ（$\pP_v[b]$，$\pN_v[c]$は値$b$，$c$の参照画像の中での順位と逆順位；証明は付録\ref{sec:app_proofs}）．$b_v$は同じクラスの画像が外へ張る辺が少ないほど小さく，$c_v$は種と結ぶ辺が多いほど大きい．囲まれた未知と種に囲まれた未知には，$y$自身のスコアを見ずに，クラスの境界の質量と種への辺から小さな$\pfin$が保証される（実測は\secref{rec}）．
+
+\subsection{スコアと枠組み}
+\label{sec:score}
+$s(x)=s_0(x)\exp\sR(x)$を返す．特徴抽出器ごとの値を\textbf{ビュー}$v$と呼び，ビューごとにグラフと種を持ち，\eqnref{pfin}の和で合わせる．$s_0$はベース検出器で，$s_0{=}1$を\textbf{単体}と呼ぶ．ベース検出器は較正画像のスコアを持たない（テスト画像にしか付かない）ので較正順位に変えられず，$\sR$との積で合わせる．命題4が及ぶのは単体の$\pfin$までで，$s_0\exp\sR$は順位付けのためのスコアであり保証の外にある．$\pfin$との積では，床の上でベース検出器の対数スコアが未知の順序を決めてしまう（\secref{abl}）．本稿の構成は，DINOv2~\cite{oquab2024dinov2} ViT-L/14とDINOv3~\cite{simeoni2025dinov3} ViT-L/16の2ビュー，Storey型の種，$q{=}0.2$で，\secref{exp}の手続きで開発用分割から選んだ．ベース検出器にはTINS~\cite{yang2026tins}（CLIP ViT-B/16）を用い，NegLabel，AdaNeg，TANLに差し替えた値も示す．計算は，ビューごとに厳密な$k_g$近傍探索と疎行列と密ベクトルの積$O(Nk_g)$の反復で，OpenOODの1つのテスト集合（$N\approx6$--$11$万）に1枚のGPUで1分以内である．
+
+\subsection{関連する枠組みとの関係}
+\label{sec:related}
+\textbf{共形$p$値と半教師あり新奇性検知．}ラベル付きのID標本と未知が混じったラベルなし標本から未知を見分ける設定はScottとBlanchard~\cite{scott2009novelty,blanchard2010ssnd}が定式化した．固定したスコアの較正順位による共形$p$値とFDR制御~\cite{bates2023conformal,haroush2022statistical,liang2024integrative}に対し，AdaDetect~\cite{marandon2024adadetect}は混合標本から学んだ置換不変なスコアに同じ保証を与え，本稿の$\pP$と$\pfin$はその特別な場合である．本稿のスコアは16枚のラベルで動くグラフ上の伝播で，棄却集合（種）から第2段の伝播を起こし，その読み出しを再び共形$p$値にする．\textbf{ラベル伝播とテスト時適応．}局所・大域一貫性~\cite{zhou2004lgc}やTPN~\cite{liu2019tpn}は閉集合を仮定してクラスへ割り当てるが，本稿は「IDである」質量と「未知である」質量だけを伝播させる（LGC-maxとの比較は\secref{abl}）．AdaNeg~\cite{zhang2024adaneg}，OODD~\cite{yang2025oodd}，TANL~\cite{zhang2026tanl}，TINS~\cite{yang2026tins}はテスト画像の特徴や負例を蓄えて適応し，RTL~\cite{fan2024rtl}はテストバッチ上の回帰でスコアを補正し，AUTO~\cite{yang2023auto}はモデルを更新するが，いずれも誤警報率やFDRの保証を持たない．テスト集合全体を見られる分の有利は，同条件の静的検出器とLGC-max，全学習画像を使う基線，到着時採点モードで埋める．

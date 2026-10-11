@@ -1,0 +1,21 @@
+% v22: the one-quantity read-out h16 as a registered variant in the appendix (the main read-out is sigma_ref).
+\section{一つの量としての読み出し（登録した変種）}
+\label{sec:app_h16}
+v18--v21の読み出し$\sigma$（付録\ref{sec:app_p17}）は，支持画像と種からの2本の伝播の較正順位を掛け，2つの折で交差適合したものである．これを一つの量「画像から出たランダムウォークは支持画像と種のどちらに先に着くか」に置き換える読み出し$h$を，開発用分割dev1での探索の後に登録し，dev2で確認し，テスト集合で構成を凍結したまま評価した（付録\ref{sec:app_hyp}）．dev2では登録した仮説がすべて成立したが，ベンチマークでは$\sigma$に及ばなかった（\tabref{h16}）．参照画像で種を選び折を使わない仕組みは$h$から取り出して$\sR$に使った（\secref{ref}）．
+
+\subsection{定義}
+\label{sec:h19def}
+\input{sections/h19_def.tex}
+\input{sections/fig_toy19.tex}
+
+\subsection{種と較正順位}
+\label{sec:seed19}
+\input{sections/h19_read.tex}
+
+\subsection{逃げる確率と捕まる確率}
+\label{sec:sep19}
+\input{sections/h19_sep.tex}
+
+\subsection{結果}
+\label{sec:app_h16res}
+\input{sections/h16res22.tex}

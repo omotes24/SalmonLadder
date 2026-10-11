@@ -1,6 +1,6 @@
-% Salmon Ladder: Conformal Label Propagation for OOD Detection ― v20（MIRU2025 形式；本文と参考文献は9ページ，付録は1段組）
+% Salmon Ladder: Conformal Label Propagation for OOD Detection ― v22（MIRU2025 形式；本文と参考文献は9ページ，付録は1段組）．主構成は参照画像による読み出し sigma_ref
 % ビルド：pLaTeX + dvipdfmx（同梱の latexmkrc．Overleaf では Compiler を「LaTeX」にする）．
-% 表は make_p17.py が data/ から生成する．\sota は列の最良値（星印），\cellcolor{upd}＋太字は比較手法のすべてを上回る値，\gap は最良の比較手法との差．
+% 表と数値は make_p18.py（交差適合の sigma と再計算しない節），make_p19.py（一つの量 h），make_p22.py（sigma_ref；Phase 17）が data/ から生成する．\sota は列の最良値（星印），\cellcolor{upd}＋太字は比較手法のすべてを上回る値，\gap は最良の比較手法との差．
 \documentclass[MIRU,submit]{miru2025j}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx,table]{xcolor}
@@ -31,6 +31,7 @@
 \newcommand\pfin{p^{\mathrm{fin}}}
 \newcommand\tP{\tilde{p}^{+}}
 \newcommand\tN{\tilde{p}^{-}}
+\newcommand\sR{\sigma_{\mathrm{ref}}}
 % 星印：その表の列の最良値
 \newcommand\sota{\textcolor{sotacol}{\raisebox{0.15ex}{\scriptsize$\bigstar$}}}
 % 最良の比較手法との差（本手法の行のみ．正は本手法が良い）
@@ -48,85 +49,100 @@
 \author{尾崎 慶次郎}{Keijiro Ozaki}{keio2}
 \maketitle
 
-\section*{概要}
-\input{sections/abstract18.tex}
-
 \input{sections/numbers.tex}
 \input{sections/numbers19.tex}
+\input{sections/numbers22.tex}
+\section*{概要}
+\input{sections/abstract22.tex}
+
 \section{はじめに}
 OOD検知は，学習時のクラス（ID）以外の入力を見分ける問題である．CLIP~\cite{radford2021clip}などのVLMは学習なしにOODを検知でき~\cite{ming2022mcm}，負例ラベル~\cite{jiang2024neglabel}やテスト時の適応~\cite{zhang2024adaneg,zhang2026tanl,xu2026interneg,yang2026tins}でfar-OODの\AUC{}は97\%に達したが，IDに近いnear-OODは難しい．OpenOOD v1.5~\cite{zhang2023openood}のImageNet-1Kでは，VLMによる最良の報告値でもnear-OODの\AUC{}は82.65\%，\FPR{}は57.88\%にとどまり~\cite{yang2026tins}，ImageNet-1Kのラベルで学習した検出器~\cite{park2023nnguide,li2024moodv2}や教師なし生成モデルのDisCoPatch~\cite{caetano2025discopatch}でも\FPR{}は29--48\%残る（\tabref{main}）．
 
-本研究は，凍結した特徴抽出器とIDクラスあたり16枚のラベル付き画像だけで，この残りを学習なしで減らす転導的な枠組み\textbf{Salmon Ladder}を提案する．支持画像・較正画像・テスト画像を節点とする1つのグラフの上で，支持画像に置いた質量を伝播させ，届いた質量を固定した較正画像の中での順位（\textbf{較正順位}）で読む．支持画像から遠く互いに近い未知の塊には質量が届かず，較正順位はAdaDetect~\cite{marandon2024adadetect}の意味での共形$p$値になる．この伝播だけで見出しの数字の大半が得られる（\tabref{abl}）．その上で，テスト集合に同じ未知クラスの画像が複数枚含まれる（\textbf{再出現}）ときの拡張として，偽発見率を制御する多重検定で未知の側に偏った画像を自己ラベル付けして\textbf{種}にし，種に置いた質量を同じグラフで伝播させて同じクラスの残りの未知を引き上げる\footnote{コード：\url{https://github.com/omotes24/SalmonLadder}}．較正画像とテスト画像を2つの折に分け，一方の折の種で他方の折を採点する\textbf{交差適合}により，種を含む読み出しの較正順位そのものが共形$p$値になる．
+本研究は，凍結した特徴抽出器とIDクラスあたり16枚のラベル付き画像だけで，この残りを学習なしで減らす転導的な枠組み\textbf{Salmon Ladder}を提案する．支持画像・ラベル付きの参照画像と較正画像・テスト画像を節点とする1つのグラフの上で，支持画像に置いた質量を伝播させ，届いた質量をラベル付き画像の中での順位（\textbf{較正順位}）で読む．支持画像から遠く互いに近い未知の塊には質量が届かず，較正順位はAdaDetect~\cite{marandon2024adadetect}の意味での共形$p$値になる．この伝播だけで見出しの数字の大半が得られる（\tabref{abl}）．その上で，テスト集合に同じ未知クラスの画像が複数枚含まれる（\textbf{再出現}）ときの拡張として，偽発見率を制御する多重検定で未知の側に偏った画像を自己ラベル付けして\textbf{種}にし，種に置いた質量を同じグラフで伝播させて同じクラスの残りの未知を引き上げる\footnote{コード：\url{https://github.com/omotes24/SalmonLadder}}．種の選択と読み出しの順位を参照画像に対して取ることで，テスト画像を折に分けずに，種を含む読み出しの較正順位そのものが共形$p$値になる．
 
-主たる設定はテスト集合全体を見て採点する\textbf{事後採点}（transductive）で，\textbf{到着時採点}も示す（付録\ref{sec:app_online}）．貢献は4点である．(1) \textbf{共形ラベル伝播}：グラフ上のラベル伝播を共形$p$値として読む検知器（命題1--3）．学習なし・16枚のラベルだけで，OpenOOD v1.5 ImageNet-1Kのnear-OODで\AUC{} \NAloneNearAuroc\%，\FPR{} \NAloneNearFpr\%（6通りの抽出の平均，単体）を達成し，公開の最良値を\AUC{}で\NAloneGapNearAuroc{}ポイント，\FPR{}で\NAloneGapNearFpr{}ポイント更新した（\tabref{main}，付録\ref{sec:app_four}の\figref{scatter}）．far-OODとFour-OOD~\cite{huang2021mos}でも最良で，ベース検出器との積（\NNearFpr\%）や構成を固定したまま評価したImageNet-200とCIFAR-100でも報告値の最良を上回る（\secref{in200}）．(2) \textbf{種と交差適合}：種は再出現（クラスあたり10枚以上）と混入率が中程度のときの拡張であり，ImageNet-1Kのnear-OODで\FPR{}を\NAloneNearDfprVsLpAbs{}（単体）／\NNearDfprVsLpAbs{}（$\times$TINS）ポイント下げるが，ImageNet-200とCIFAR-100では効かない．効く範囲を再出現の枚数と混入率の格子で実測し（\secref{rec}），種の閾値に上限$\tau$を付けた規則（実行前に登録）は混入率が高いときの害をほぼ消す（ImageNet-200のnear-OODで\FPR{} \NInTwoZeroZeroMainNearFpr\%→\NInTwoZeroZeroStoreycNearFpr\%，$\pP$だけは\NInTwoZeroZeroLpNearFpr\%；\secref{cap}）．交差適合により読み出しが共形$p$値になり（命題4），利用者は閾値を「IDの誤警報率$\alpha$」として直接指定できる．交換可能な設定での実測の誤警報率と偽発見割合は水準どおりである（\secref{fdp}）．(3) \textbf{比較}：同じ特徴の静的な検出器，同じグラフ上のクラスラベル伝播（LGC-max），全学習画像を使うkNNとクラス平均，ゼロショットのMCMとNegLabelとの比較で利得の出どころを切り分け（\tabref{abl}，\secref{in200}），4つのベース検出器と6つの特徴抽出器で確かめる．(4) \textbf{事前登録}：構成は開発用分割の事前登録した規則で選んでテスト集合では変えず（\secref{exp}），登録からの逸脱（ベース検出器との積の形，付録の一つの量による変種の採否）と探索の履歴を開示する．
+主たる設定はテスト集合全体を見て採点する\textbf{事後採点}（transductive）で，\textbf{到着時採点}も示す（付録\ref{sec:app_online}）．貢献は4点である．(1) \textbf{共形ラベル伝播}：グラフ上のラベル伝播を共形$p$値として読む検知器（命題1--3）．学習なし・16枚のラベルだけで，OpenOOD v1.5 ImageNet-1Kのnear-OODで\AUC{} \NRAloneNearAuroc\%，\FPR{} \NRAloneNearFpr\%（6通りの抽出の平均，単体）を達成し，公開の最良値を\AUC{}で\NRAloneGapNearAuroc{}ポイント，\FPR{}で\NRAloneGapNearFpr{}ポイント更新した（\tabref{main}）．far-OODとFour-OOD~\cite{huang2021mos}でも最良で，構成を固定したまま評価したImageNet-200とCIFAR-100でも報告値の最良を上回る（\secref{in200}）．$u^{+}=\sqrt{\delta}\times$（確率）の分解で，確率の因子が検知の大半を担い，密度の因子は単独では手がかりにならず確率の因子と組んで効く（向きはデータセットに依る）ことを示す（\secref{abl}）．(2) \textbf{種と参照画像}：種は再出現（クラスあたり10枚以上）のときの拡張で，ImageNet-1Kのnear-OODで\FPR{}を\NRvsLpAloneNearDAbs{}（単体）／\NRvsLpTinsNearDAbs{}（$\times$TINS）ポイント下げるが，未知が大半を占めるImageNet-200とCIFAR-100では効かない．参照画像による読み出し$\sR$は折なしで共形$p$値になり（命題4），較正画像とテスト画像が交換可能なら，利用者は閾値を「IDの誤警報率$\alpha$」として直接指定できる．同じ未知クラスの画像に小さな$p$値を保証する分離の上界（系2）を導き，格子で実測する（\secref{rec}）．(3) \textbf{比較と限界}：同じ特徴の静的な検出器，同じグラフ上のクラスラベル伝播，全学習画像を使う基線，ゼロショットの手法と比べて利得の出どころを切り分け（\tabref{abl}，\secref{in200}），1枚だけ現れる未知には静的な検出器より弱く，描画への共変量シフト（ImageNet-R）をIDとして受け入れないことを示す（\secref{rec}，\secref{csid}）．(4) \textbf{選択手続きと逸脱の開示}：構成は開発用分割の事前登録した規則で選び，登録からの逸脱2件（いずれもテスト集合の値を見た後）と，開発用分割が構成の細部（$q$や種の規則）の差を予測しないことを開示する（\secref{exp}）．
 
 \begin{figure}[t]
 \centering
-\scalebox{0.76}{\input{sections/fig_overview18.tex}}
-\caption{Salmon Ladderの概要．(a) 支持画像$\mathcal{S}$・較正画像$\mathcal{C}$・テスト画像$\mathcal{T}$を節点とする1つの$k_g$近傍グラフで，支持画像に置いた質量$u^{+}$を伝播させる．(b) テスト画像の$u^{+}$を$\mathcal{C}$の中での順位$p^{+}$（共形$p$値）に変え，偽発見率を制御するBH法で棄却された画像を種$\hat{Q}$とする（折ごと）．(c) 種に置いた質量$u^{-}$を同じグラフで伝播させ，他方の折の較正画像の中での順位に変えて足した統計量$\sigma$を，自分の折の較正画像の中での順位$\pfin$で読む．スコアは$s_0\exp\sigma$（$s_0$はベース検出器）．}
+\scalebox{0.76}{\input{sections/fig_overview22.tex}}
+\caption{Salmon Ladderの概要．(a) 支持画像$\mathcal{S}$・参照画像$\mathcal{R}$・較正画像$\mathcal{C}$・テスト画像$\mathcal{T}$を節点とする1つの$k_g$近傍グラフで，支持画像に置いた質量$u^{+}$を伝播させる．(b) $u^{+}$を$\mathcal{R}$の中での順位$p^{+}$（共形$p$値）に変え，偽発見率を制御するBH法で棄却された画像を種$\hat{Q}$とする（候補は$\mathcal{C}\cup\mathcal{T}$）．(c) 種に置いた質量$u^{-}$を同じグラフで伝播させ，$\mathcal{R}$の中での逆順位に変えて足した統計量$\sR$を，$\mathcal{C}$の中での順位$\pfin$で読む．スコアは$s_0\exp\sR$（$s_0$はベース検出器）．}
 \label{fig:overview}
 \end{figure}
 
-\input{sections/method18.tex}
+\input{sections/method22.tex}
 
 \section{実験設定}
 \label{sec:exp}
 \textbf{ベンチマーク．}評価はOpenOOD v1.5~\cite{zhang2023openood}のImageNet-1Kベンチマークに従う．IDはImageNet-1Kの検証画像45,000枚，near-OODはSSB-hardとNINCO，far-OODはiNaturalist，Textures，OpenImage-Oである．Four-OOD~\cite{huang2021mos}は検証画像50,000枚に対するiNaturalist，SUN，Places，Texturesである．OODデータセットごとにIDと混ぜた集合を1つのテスト集合とし，指標は\AUC{}と，IDの95\%を受け入れる閾値でのOODの誤受理率\FPR{}である．ImageNet-200（IDは200クラスの検証画像9,000枚；OODは同じ5データセット）とCIFAR-100（near-OODはCIFAR-10とTiny ImageNet，far-OODはMNIST，SVHN，Textures，Places365）のOpenOOD v1.5ベンチマークでも，構成を固定したまま単体で評価する（\secref{in200}）．
 
-\textbf{ラベル付き画像とその抽出．}クラスあたり16枚（支持12枚，較正4枚）をIDの学習画像から取る．抽出は6通り（ベース検出器の16枚と同じ1通りと，重ならない5通り）で，表の値はその平均，本文の区間は抽出を単位とする対応のある95\% $t$区間である．事後採点のスコアは画像の順序に依らない．ベース検出器は到着順に依存するので，$\times$ベース検出器の値はさらにOpenOODで5通り，Four-OODで3通りの順序の平均である．
+\textbf{ラベル付き画像とその抽出．}クラスあたり16枚（支持12枚，参照2枚，較正2枚）をIDの学習画像から取る．抽出は6通り（ベース検出器の16枚と同じ1通りと，重ならない5通り）で，表の値はその平均，本文の区間は抽出を単位とする対応のある95\% $t$区間である．事後採点のスコアは画像の順序に依らない．ベース検出器は到着順に依存するので，$\times$ベース検出器の値はさらにOpenOODで5通り，Four-OODで3通りの順序の平均である．
 
-\textbf{構成の選び方（事前登録）．}$k_g{=}10$，$\lambda{=}0.9$は，ImageNet-1Kの学習画像だけから作った開発用分割（900クラスをID，残りを未知とする2つの分割dev1，dev2）で以前に決めた値を凍結して用いる．構成の選択は2段階とも開発用分割で行い，規則「dev1のnear-OODの\FPR{}を最小にする．ただしdev1のfar-OODの\FPR{}が参照構成より0.5ポイント以上悪化しない」をテスト集合の計算前に登録した（dev2は確認用）．第1段はビューの組（8通り）$\times q\in\{0.05,0.1,0.2\}$の24候補からDINOv2 L/14 + DINOv3 L/16，$q{=}0.2$を，第2段は種の規則$\{$Storey型，単純BH$\}\times q\times$統計量$\{\pP\pN,\ \pP\pN\times$静的$p,\ \min(\cdot)\}$の\NSelqNCandidates{}候補からStorey型・$q{=}0.2$・$\pP\pN$を選んだ（付録\ref{sec:app_sel}）．登録文書はSHA-256とともに計算サーバに実行前に置き（ファイル時刻と実行ログ），公開リポジトリには本稿の執筆時にコミットした．追加実験（\secref{cap}，\secref{in200}の全学習画像の基線，付録\ref{sec:app_kg}の$k_g$の格子）の登録文書は評価の実行前に公開リポジトリにコミットし，そのコミット時刻が第三者の確認できる時刻である（付録\ref{sec:app_hyp}）．ベース検出器は報告値が最良のVLM手法TINS~\cite{yang2026tins}（CLIP ViT-B/16）で，本稿の実験では選んでいない．登録は$\pfin$とベース検出器の積を予定していたが，テスト集合の値を見て$\sigma$との積に替えた（\secref{score}，\secref{abl}）．これは登録からの逸脱であり，単体の値は登録どおりである．v16までの版で候補の集合を決めるまでにテスト集合上の探索を行ったことも開示し，その表を付録\ref{sec:app_sens}に示す．
+\textbf{構成の選び方と逸脱．}$k_g{=}10$，$\lambda{=}0.9$は，ImageNet-1Kの学習画像だけから作った開発用分割（900クラスをID，残りを未知とする2つの分割dev1，dev2）で以前に決めた値である．v16までの版では，これらを含む構成をテスト集合上でも探索したうえで第1段の候補の集合を決めた（値は変えていない；付録\ref{sec:app_sens}）．その後の選択は「dev1のnear-OODの\FPR{}を最小にし，far-OODの悪化を0.5ポイント未満に抑える」という事前登録した規則で行い，第1段でビュー（DINOv2 L/14 + DINOv3 L/16）と$q{=}0.2$を折なしの$\pP\pN$について，第2段で種の規則（Storey型），$q{=}0.2$，統計量$\pP\pN$を折を使う読み出し$\sigma$について選んだ（付録\ref{sec:app_sel}）．$\sR$は$\sigma$の折を参照画像に置き換えた読み出しとして登録し，dev2で「$\sR-\sigma$の\FPR{}の対応のある95\%区間の上端がnearとfarで+0.5以下，$\pfin$の誤警報率が$\alpha{=}0.05$で0.06以下，$0.2$で0.21以下」なら主構成にすると定めた（付録\ref{sec:app_p17}）．dev2の差はnear \NRDevTwoNearD{} [\NRDevTwoNearDLo, \NRDevTwoNearDHi]，far \NRDevTwoFarD{} [\NRDevTwoFarDLo, \NRDevTwoFarDHi]，誤警報率は$\alpha{=}0.05$で\NRDevTwoFprFive{}，$0.2$で\NRDevTwoFprTwenty{}で規則を満たし，テスト集合の値が出る前に$\sR$が主構成になった．登録は評価の実行前に公開リポジトリに置き，公開されたことを確かめてから実行した（付録\ref{sec:app_hyp}）．ベース検出器は報告値が最良のVLM手法TINS~\cite{yang2026tins}（CLIP ViT-B/16）で，本稿の実験では選んでいない．
 
-\textbf{比較手法．}公開されている値は報告値（$\dagger$）を用い，公式実装のあるNegLabel，AdaNeg，TANL，TINSは同じテスト集合で実測した．これらは到着順に採点するテスト時適応の手法なので，(i) 同じ特徴と同じ16枚で動く静的な検出器（静的$p$：支持画像12枚の平均を原型とし，最も近い原型への余弦類似度の較正順位；kNN~\cite{sun2022knn}：支持画像への$k$近傍（$k{=}10$）の類似度の較正順位），(ii) 同じグラフ上で支持画像のクラスラベルを伝播させ最大のクラス質量を較正順位で読むLGC-max~\cite{zhou2004lgc,liu2019tpn}，(iii) 伝播だけの読み出しを同じテスト集合・同じ6通りの抽出で実測し（\tabref{abl}），(iv) 到着時採点モードも示す（付録\ref{sec:app_online}）．ImageNet-200とCIFAR-100では，同じ2つの特徴で全学習画像を使うkNN（$k{=}50$）とクラス平均，CLIP ViT-B/16のゼロショットのMCM~\cite{ming2022mcm}とNegLabel（公式実装）も実測する（\secref{in200}）．6つの単一ビュー（CLIP ViT-B/16とDINO (v1)~\cite{caron2021dino}を含む）の値は付録\ref{sec:app_views}に示す．
+登録からの逸脱は2件あり，どちらもテスト集合の値を見た後に，数字の良い側へ倒した．(a) ベース検出器との積は，$\sigma$の登録では$\pfin\times s_0$だったが，テスト集合でnear-OODの\FPR{}が悪化したのを見て$\exp\sigma$との積に替えた（\secref{abl}）．$\sR$の登録はこの形を引き継いだ．(b) 付録の一つの量$h$は，点推定（dev2の差が+0.5以下）による採否の規則では主構成になったが，テスト集合で$\sigma$に劣ったため変種にとどめた（付録\ref{sec:app_h16}）．区間の上端（+\NRHsUpperNear，+\NRHsUpperFar）で判定していれば$h$は採用されず，(b)は生じなかった．$\sR$の採否を区間で定めたのはこのためである．
+
+\textbf{開発用分割の予測力．}$\sigma$の第2段の\NRDtNCand{}候補では，dev2とテスト集合の\FPR{}の順位相関はnear \NRDtNearSpDevTwoTest{}，far \NRDtFarSpDevTwoTest{}（dev1とdev2では\NRDtNearSpDevOneDevTwo{}，\NRDtFarSpDevOneDevTwo{}）で，dev1で選んだ候補はテストのnearで\NRDtNCand{}候補中\NRDtNearRankOnTest{}位，farで\NRDtFarRankChosen{}位だった．Storey型と単純BH法の差（nearの\FPR{}，dev2 \NRDtNearStoreyBhDevTwo{}，テスト\NRDtNearStoreyBhTest{}）も，$q{=}0.2$と$0.1$の差（\NRDtNearQDevTwo{}，\NRDtNearQTest{}）も符号が逆転した（付録\ref{sec:app_devtest}）．$q{=}0.05$はdev1のnearで\NRDtQFiveDevOneNear\%と$q{=}0.2$（\NRDtQTwentyDevOneNear\%）より4ポイント悪いが，テストでは\NRDtQFiveTestNear\%と\NRDtQTwentyTestNear\%で逆に良い．再現したのはnear-OODでの種の有無の向きと静的$p$を加えたときの向きで，構成の細部の選択はテスト集合から見て偶然と区別できない．$\sR$と$\sigma$の差もdev2の\NRDevTwoNearD{}に対し，テストでは\NRAloneNearDSig{}である．
+
+\textbf{比較手法．}公開されている値は報告値（$\dagger$）を用い，公式実装のあるNegLabel，AdaNeg，TANL，TINSは同じテスト集合で実測した．さらに，同じ特徴と同じ16枚で動く静的な検出器（静的$p$：支持画像12枚の平均を原型とした最大の余弦類似度の較正順位；kNN~\cite{sun2022knn}：支持画像への$k{=}10$近傍の類似度の較正順位），同じグラフ上でクラスラベルを伝播させ最大のクラス質量を較正順位で読むLGC-max~\cite{zhou2004lgc,liu2019tpn}，到着時採点モード（付録\ref{sec:app_online}）を測る．ImageNet-200とCIFAR-100では，同じ2つの特徴で全学習画像を使うkNN（$k{=}50$）とクラス平均，CLIP ViT-B/16のゼロショットのMCM~\cite{ming2022mcm}とNegLabelも測る．6つの単一ビューの値は付録\ref{sec:app_views}に示す．
 
 \section{結果}
 \subsection{OpenOOD v1.5 ImageNet-1K（表~\ref{tab:main}）}
 \label{sec:main}
-\textbf{単体（主結果）．}ベース検出器を使わないSalmon Ladderは，\tabref{main}の6列すべてで報告値の最良を上回る．near-OODでは\AUC{} \NAloneNearAuroc\%，\FPR{} \NAloneNearFpr\%（抽出を振った95\%区間 [\NAloneNearFprLo, \NAloneNearFprHi]）で，報告値の最良であるDisCoPatch（\NBestOtherNearAuroc\%，\NBestOtherNearFpr\%）を\AUC{}で\NAloneGapNearAuroc{}ポイント上回り，\FPR{}を\NAloneGapNearFpr{}ポイント（\NAloneNearFprRatioVsBestOther{}分の1に）下げた．far-OODでは\AUC{} \NAloneFarAuroc\%，\FPR{} \NAloneFarFpr\%で，ラベルで学習した検出器の最良（NNGuide，\NBestOtherFarAuroc\%，\NBestOtherFarFpr\%）を\FPR{}で\NAloneGapFarFpr{}ポイント下回り，Four-OODでは\AUC{} \NAloneFourAuroc\%，\FPR{} \NAloneFourFpr\%で，報告値の最良であるTINS（98.51\%，6.72\%）を下回る．抽出による幅は\FPR{}で1ポイント程度である．\textbf{データセット別}（付録\ref{sec:app_four}）では，9データセットの\NTTwoThreeColsDs{}列のうち\NTTwoThreeWinsDs{}列で本手法が報告値の最良を上回る．残る1列はSSB-hard（IDの兄弟クラス）の\FPR{}で，$\times$TINSの\NSsbHardFpr\%はDisCoPatch（95.8\%／19.8\%）より\NSsbHardVsDiscopatchFprAbs{}ポイント高いが，抽出による95\%区間[\NSsbHardFprLo, \NSsbHardFprHi]は19.8\%を含み，\AUC{}（\NSsbHardAuroc\%）は\NSsbHardVsDiscopatchAuroc{}ポイント上回る．NINCO（64クラス）では\FPR{} \NNincoFpr\%で，DisCoPatch（39.0\%）を\NNincoVsDiscopatchFpr{}ポイント下回る．
+\textbf{単体（主結果）．}ベース検出器を使わないSalmon Ladderは，\tabref{main}の6列すべてで報告値の最良を上回る．near-OODでは\AUC{} \NRAloneNearAuroc\%，\FPR{} \NRAloneNearFpr\%（抽出を振った95\%区間 [\NRAloneNearFprLo, \NRAloneNearFprHi]）で，報告値の最良であるDisCoPatch（\NBestOtherNearAuroc\%，\NBestOtherNearFpr\%）を\AUC{}で\NRAloneGapNearAuroc{}ポイント上回り，\FPR{}を\NRAloneGapNearFpr{}ポイント（\NRAloneNearFprRatio{}分の1に）下げた．far-OODでは\AUC{} \NRAloneFarAuroc\%，\FPR{} \NRAloneFarFpr\%，Four-OODでは\NRAloneFourAuroc\%，\NRAloneFourFpr\%である．\textbf{データセット別}（付録\ref{sec:app_four}）では，9データセットの\NRPerdsCols{}列のうち単体で\NRPerdsWinsAlone{}列，$\times$TINSで\NRPerdsWinsTins{}列で報告値の最良を上回る．単体が上回らない6列は，SSB-hard（IDの兄弟クラス）の\FPR{}（\NRAloneSsbHardFpr\%；DisCoPatchは\NRDiscoSsbHardFpr\%），OpenImage-Oの2列，Placesの\AUC{}と，小数2桁で同値のiNaturalistの\AUC{}（OpenOODとFour-OOD）である．$\times$TINSのSSB-hardの\FPR{}（\NRTinsSsbHardFpr\%）はDisCoPatchを下回るが，抽出による95\%区間[\NRTinsSsbHardFprLo, \NRTinsSsbHardFprHi]は\NRDiscoSsbHardFpr\%を含む．
 
-\textbf{ベース検出器との積（登録外の形）．}ベース検出器$s_0$は$s_0\exp\sigma$の形で掛ける．事前登録では$\pfin\times s_0$を予定していたが，テスト集合でnear-OODの\FPR{}が\NPfNearFpr\%と単体より悪化したのを見て$\sigma$に替えた（原因は$\pfin$の床，\secref{score}；両方を\tabref{abl}に示す）．TINSとの積はnear-OOD \AUC{} \NNearAuroc\%，\FPR{} \NNearFpr\%，far-OOD \NFarAuroc\%，\NFarFpr\%，Four-OOD \NFourAuroc\%，\NFourFpr\%で，報告値の最良をnear-OODの\FPR{}で\NGapNearFpr{}ポイント，Four-OODのTINSの\FPR{}をほぼ半分に下げる．NegLabel，AdaNeg，TANLとの積もすべての列で報告値を上回り，同じテスト集合で実測した各ベース検出器のnear-OODの\FPR{}（\NMeasTinsNearFpr{}--\NMeasNeglabelNearFpr\%）を\NBaseTanlNearGainFpr{}--\NBaseNeglabelNearGainFpr{}ポイント下げる．
+\textbf{ベース検出器との積．}ベース検出器$s_0$は$s_0\exp\sR$の形で掛ける（逸脱(a)の形）．TINSとの積はnear-OOD \AUC{} \NRTinsNearAuroc\%，\FPR{} \NRTinsNearFpr\%，far-OOD \NRTinsFarAuroc\%，\NRTinsFarFpr\%，Four-OOD \NRTinsFourAuroc\%，\NRTinsFourFpr\%で，報告値の最良をnear-OODの\FPR{}で\NRTinsGapNearFpr{}ポイント，Four-OODのTINSの\FPR{}をほぼ半分に下げる．NegLabel，AdaNeg，TANLとの積もすべての列で報告値を上回り，同じテスト集合で実測した各ベース検出器のnear-OODの\FPR{}（\NRMeasTINSNearFpr--\NRMeasNegLabelNearFpr\%）を\NRGainTANLNearFpr--\NRGainNegLabelNearFpr{}ポイント下げる．
 
 \begin{table*}[t]
 \centering
-\caption{OpenOOD v1.5 ImageNet-1KとFour-OOD（[\%]）．$\dagger$は原論文の報告値（近／遠の平均は本稿で計算）．実測値は同じテスト集合での値（到着順の平均，\secref{exp}）．本手法は抽出6通りの平均（$\times$ベース検出器の行は順序の平均も取る）．\textcolor{sotacol}{$\bigstar$}は列の最良値，\colorbox{upd}{青}は比較手法のすべてを上回る値，括弧の行は最良の比較手法との差（正は本手法が良い）．}
+\caption{OpenOOD v1.5 ImageNet-1KとFour-OOD（[\%]）．$\dagger$は原論文の報告値（近／遠の平均は本稿で計算）．実測値は同じテスト集合での値（到着順の平均，\secref{exp}）．本手法は$\sR$，抽出6通りの平均（$\times$ベース検出器の行は順序の平均も取る）．\textcolor{sotacol}{$\bigstar$}は列の最良値，\colorbox{upd}{青}は比較手法のすべてを上回る値，括弧の行は最良の比較手法との差（正は本手法が良い）．}
 \label{tab:main}
 \vspace{0.5mm}
-\input{sections/t18_main.tex}
+\input{sections/t22_main.tex}
 \end{table*}
 
 \subsection{利得の出どころ：同じ特徴での比較（表~\ref{tab:abl}）}
 \label{sec:abl}
-\textbf{特徴とラベルの分．}同じ2つの特徴抽出器と同じ16枚で動く静的な検出器は，near-OODの\FPR{}が$\times$TINSで静的$p$ \NAblXfitStaticPooledTinsNearFpr\%，kNN \NAblKnnTinsNearFpr\%，単体で\NAblXfitStaticPooledNoneNearFpr\%，\NAblKnnNoneNearFpr\%であり，報告値の最良（29.40\%）に及ばない．\textbf{伝播の分．}$\pP$だけで\FPR{}は\NAblXfitLpPooledNoneNearFpr\%（単体），\NAblXfitLpPooledTinsNearFpr\%（$\times$TINS）になり，見出しの数字の大半はこの共形ラベル伝播による．\textbf{クラスラベル伝播．}同じグラフでクラスラベルを伝播させるLGC-maxは\NAblLgcmaxNoneNearFpr\%（単体），\NAblLgcmaxTinsNearFpr\%（$\times$TINS）で，静的な検出器よりは良いが$\pP$に遠く及ばない．閉集合を仮定する伝播は未知を近いIDクラスへ引き寄せる．\textbf{種の分．}種からの質量$\pN$を加えた$\sigma$は\NAloneNearFpr\%（単体），\NNearFpr\%（$\times$TINS）で，$\pP$だけとの差は単体で\NAloneNearDfprVsLp{} [\NAloneNearDfprVsLpLo, \NAloneNearDfprVsLpHi]，$\times$TINSで\NNearDfprVsLp{} [\NNearDfprVsLpLo, \NNearDfprVsLpHi]ポイント（抽出を単位とする対応のある95\% $t$区間）．far-OODとFour-OODでも種は\FPR{}を下げる．\textbf{交差適合の代価．}交差適合なしの$\pP\pN$（v16までの読み出し）に対する$\sigma$の差は，near-OODで単体\NAloneNearDfprVsVOne{} [\NAloneNearDfprVsVOneLo, \NAloneNearDfprVsVOneHi]，$\times$TINS \NNearDfprVsVOne{} [\NNearDfprVsVOneLo, \NNearDfprVsVOneHi]ポイント，far-OODで\NFarDfprVsVOne{}，Four-OODで\NFourDfprVsVOne{}ポイントと改善する．\textbf{$\pfin$をそのままスコアにした場合．}単体では\NPfAloneNearFpr\%と$\sigma$と同じだが，TINSとの積は\NPfNearFpr\%（$\sigma$より\NPfNearDfprVsAlone{}ポイント悪化），Four-OODでは逆に\NPfFourFpr\%と良い．$\pfin$の床（\secref{xfit}）の上ではベース検出器が順序を決めるので，TINSが弱いnear-OODで悪化し，強いFour-OODで改善する．\textbf{種の規則と統計量．}種を単純なBH法で選ぶと\NAblXfitBhQZeroTwoPpPooledNoneNearFpr\%（単体），\NAblXfitBhQZeroTwoPpPooledTinsNearFpr\%（$\times$TINS）で，テスト集合ではStorey型よりわずかに良い（開発用分割では逆，付録\ref{sec:app_sel}）．$\sigma$に静的$p$を加えると，near-OODは\NAblXfitStoreyQZeroTwoPpsPooledTinsNearFpr\%（$\times$TINS）と悪化し，far-OODでは\NAblXfitStoreyQZeroTwoPpsPooledTinsFarFpr\%と改善する（\tabref{ablx}）．
+\textbf{特徴とラベルの分．}同じ2つの特徴抽出器と同じ16枚で動く静的な検出器は，near-OODの\FPR{}が$\times$TINSで静的$p$ \NAblXfitStaticPooledTinsNearFpr\%，kNN \NAblKnnTinsNearFpr\%，単体で\NAblXfitStaticPooledNoneNearFpr\%，\NAblKnnNoneNearFpr\%であり，報告値の最良（29.40\%）に及ばない．\textbf{伝播の分．}$\pP$だけで\FPR{}は\NRLpAloneNearFpr\%（単体），\NRLpTinsNearFpr\%（$\times$TINS）になり，見出しの数字の大半はこの共形ラベル伝播による．同じグラフでクラスラベルを伝播させるLGC-maxは\NAblLgcmaxNoneNearFpr\%（単体），\NAblLgcmaxTinsNearFpr\%（$\times$TINS）で，静的な検出器よりは良いが$\pP$に遠く及ばない．閉集合を仮定する伝播は未知を近いIDクラスへ引き寄せる．\textbf{種の分．}種からの質量を加えた$\sR$と$\pP$だけとの差は，near-OODで単体\NRvsLpAloneNearD{} [\NRvsLpAloneNearDLo, \NRvsLpAloneNearDHi]，$\times$TINS \NRvsLpTinsNearD{} [\NRvsLpTinsNearDLo, \NRvsLpTinsNearDHi]ポイント，far-OODで\NRvsLpAloneFarD{}，Four-OODで\NRvsLpAloneFourD{}ポイント（単体）である．\textbf{参照画像の代価はない．}$\sR$と$\sigma$の差はnear-OODで単体\NRAloneNearDSig{} [\NRAloneNearDSigLo, \NRAloneNearDSigHi]，$\times$TINS \NRTinsNearDSig{} [\NRTinsNearDSigLo, \NRTinsNearDSigHi]，far-OODとFour-OODで絶対値\NRDSigFarFourMaxAbs{}以下であり，読み出しの保証を持たない折なしの$\pP\pN$（\NRVOneAloneNearFpr\%）との差も\NRvsVOneAloneNearD{} [\NRvsVOneAloneNearDLo, \NRvsVOneAloneNearDHi]である．\textbf{$\pfin$をスコアにした場合．}単体では\NRPfAloneNearFpr\%と$\sR$と同じだが，TINSとの積は\NRPfTinsNearFpr\%（\NRPfTinsNearWorse{}ポイント悪化），Four-OODでは逆に\NRPfTinsFourFpr\%と良い．$\pfin$の床の上ではベース検出器が順序を決めるので，TINSが弱いnear-OODで悪化し強いFour-OODで改善する．
+
+\textbf{二つの因子（表~\ref{tab:dec}）．}\eqnref{walk}の$u^{+}=\sqrt{\delta}\,q$の因子を別々に較正順位で読むと，確率の因子$q$だけでnear-OOD \NRDecQINNearFpr\%，far-OOD \NRDecQINFarFpr\%に達し，密度の因子$\sqrt{\delta}$だけでは\AUC{}が\NRDecDegINNearAuroc\%（near），\NRDecDegINFarAuroc\%（far）と無情報か逆向きである（未知の塊はIDより密なことが多い）．それでも積$u^{+}$は$q$だけよりfar-OODで\FPR{}を\NRDecUHelpsINFar{}ポイント下げ（Four-OOD \NRDecUHelpsFour{}，ImageNet-200 far \NRDecUHelpsITFar{}，CIFAR-100 near \NRDecUHelpsCFNear{}），ImageNet-1Kのnear-OODの平均では\NRDecUHurtsINNear{}ポイント上げる．後者はSSB-hard（IDの兄弟クラス；\NRDecQSsbHardFpr\%→\NRDecUSsbHardFpr\%）によるもので，NINCOでは下げる（\NRDecQNincoFpr\%→\NRDecUNincoFpr\%）．密度の因子は単独では手がかりにならず，確率の因子と組んで効き，その向きはデータセットに依る．種の側の分解は登録どおり$\sigma$でだけ行い，$u^{\pm}$を$u^{\pm}/\sqrt{\delta}$に置き換えるとImageNet-1Kではnearでもfarでも悪化する．
 
 \begin{table*}[t]
-\caption{同じ特徴での読み出しの比較（[\%]，$\times$TINS；単体は付録\ref{sec:app_sens}の\tabref{ablx}）．静的$p$とkNNはグラフを使わない検出器，LGC-maxは同じグラフ上のクラスラベル伝播（いずれも較正順位で読む）．$\pP$は支持画像からの伝播，$\pN$は種からの伝播，$\sigma$は交差適合した統計量，$\pfin$はその較正順位（\secref{xfit}）．到着時採点は付録\ref{sec:app_online}のモード（抽出は1通り）．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
+\caption{同じ特徴での読み出しの比較（[\%]，$\times$TINS；単体は付録\ref{sec:app_sens}の\tabref{ablx}）．静的$p$とkNNはグラフを使わない検出器，LGC-maxは同じグラフ上のクラスラベル伝播（いずれも較正順位で読む）．$\pP$は支持画像からの伝播，$\pN$は種からの伝播．到着時採点は付録\ref{sec:app_online}のモード（抽出は1通り）．\textcolor{sotacol}{$\bigstar$}は列の最良値．}
 \label{tab:abl}
 \centering
 \vspace{0.5mm}
-\input{sections/t18_abl.tex}
+\input{sections/t22_abl.tex}
+\end{table*}
+
+\begin{table*}[t]
+\caption{$u^{+}=\sqrt{\delta}\,q$の二つの因子（単体，AUROC／FPR95 [\%]，6通りの抽出の平均）．上の3行はビューごとの値のラベル付き画像4,000枚（参照画像と較正画像）の中での順位の対数和（$\sqrt{\delta}$と$q$はそれぞれ単独，$u^{+}$は積），4行目は交差適合した$\sigma$の読み出しの順位を$u^{\pm}/\sqrt{\delta}$で取ったもの（種は同じ）．}
+\label{tab:dec}
+\centering
+\vspace{0.5mm}
+\input{sections/t22_dec.tex}
 \end{table*}
 
 \subsection{再出現と混入率（図~\ref{fig:rec}）}
 \label{sec:rec}
-\input{sections/rec18.tex}
-
-\subsection{種の数の上限：混入率が高いときの害を抑える}
-\label{sec:cap}
-\input{sections/cap18.tex}
+\input{sections/rec22.tex}
 
 \subsection{最終スコアの保証の実測}
 \label{sec:fdp}
-命題4が仮定する折の較正画像とIDのテスト画像の交換可能性は，ベンチマークでは前者が学習画像，後者が検証画像なので厳密には成り立たない．較正画像をIDの検証画像から取った交換可能な設定（\NVcalNSplits{}通り，付録\ref{sec:app_fdp}）では，IDの誤警報率$\Pr(\pfin\le\alpha)$は$\alpha{=}0.05$で\NVcalFprZeroZeroFiveMin{}--\NVcalFprZeroZeroFiveMax{}，$0.2$で\NVcalFprZeroTwoMin{}--\NVcalFprZeroTwoMax{}，BH法（$q{=}0.2$）の偽発見割合は\NVcalBhFdpMin{}--\NVcalBhFdpMax{}と水準以下で，検知性能は変わらない（near-OODの\FPR{}は単体で\NVcalAloneNearFpr\%）．命題4の保証は実測でも成り立つ．学習画像の較正では$\Pr(\pfin\le0.05)$が\NVtrainFprZeroZeroFiveMin{}--\NVtrainFprZeroZeroFiveMax{}，偽発見割合が\NVtrainBhFdpMin{}--\NVtrainBhFdpMax{}と，ずれの分だけ水準を超える．
+命題4が仮定する較正画像とIDのテスト画像の交換可能性は，両者がImageNet-1Kの学習画像である開発用分割ではほぼ成り立ち（較正画像はクラスごとに2枚と層化されている），較正画像が学習画像，テスト画像が検証画像のベンチマークでは厳密には成り立たない．開発用分割での$\sR$の$\pfin$の誤警報率$\Pr(\pfin\le\alpha)$は，$\alpha{=}0.05$でdev1 \NRDevOneFprFive{}，dev2 \NRDevTwoFprFive{}，$0.2$で\NRDevOneFprTwenty{}，\NRDevTwoFprTwenty{}，BH法（$q{=}0.2$）の偽発見割合は\NRDevOneBhFdp{}，\NRDevTwoBhFdp{}と水準どおりである．ベンチマークでは$\alpha{=}0.05$で\NRValNearFprFive{}（near），\NRValFarFprFive{}（far），\NRValFourFprFive{}（Four-OOD）と，学習画像と検証画像のずれの分だけ水準を超える（$\sigma$の$\pfin$も\NRValSigNearFprFive{}，\NRValSigFarFprFive{}，\NRValSigFourFprFive）．種に混じるIDの割合も，データセットとビューごとに\NRSeedBenchIdMin--\NRSeedBenchIdMax{}と水準$q{=}0.2$を超える．ベンチマークでの命題3，4の保証は近似である．$\sigma$については較正画像を検証画像から取った交換可能な設定でも，誤警報率が$\alpha{=}0.05$で\NVcalFprZeroZeroFiveMin{}--\NVcalFprZeroZeroFiveMax{}と水準どおりであることを確かめた（付録\ref{sec:app_fdp}）．
+
+\subsection{共変量シフトしたID}
+\label{sec:csid}
+IDのテスト画像45,000枚に，ImageNet-V2（同じ1,000クラスの新しい検証画像10,000枚）またはImageNet-R（200クラスの絵・彫刻などの描画30,000枚）をIDとして加えた（付録\ref{sec:app_csid}の\tabref{csid}）．ImageNet-V2はIDと区別されず（IDとV2の\AUC{} \NRCsVTwoNearRefIcAuroc\%），V2も受け入れる全体の\FPR{}はnear-OODで\NRCsVTwoNearRefFsFpr\%，far-OODで\NRCsVTwoFarRefFsFpr\%と，同じ実行でIDだけを受け入れる場合（\NRCsVTwoNearRefIoFpr\%，\NRCsVTwoFarRefIoFpr\%）からほとんど変わらない（$\alpha{=}0.05$の誤警報率はV2で\NRCsVTwoNearFprCsFive{}）．ImageNet-Rはほぼすべて未知と判定され（IDとRの\AUC{} \NRCsRNearRefIcAuroc\%，誤警報率\NRCsRNearFprCsFive{}，種の\NRCsRNearSeedShare\%がR），全体の\FPR{}はnear-OODで\NRCsRNearRefFsFpr\%，far-OODで\NRCsRFarRefFsFpr\%に悪化する．同じ特徴の静的$p$はRをIDにより近く扱うので（\AUC{} \NRCsRNearStaticIcAuroc\%），far-OODの全体では\NRCsRFarStaticFsFpr\%と本手法より良い．Salmon Ladderは支持画像の分布からのずれを，意味のずれと共変量のずれの区別なく未知とみなすので，描画のような強い共変量シフトをIDとして受け入れる運用にはそのままでは使えない．
 
 \subsection{ImageNet-200とCIFAR-100}
 \label{sec:in200}
-\input{sections/in200_18.tex}
+\input{sections/in200_22.tex}
 
 \section{結論}
-支持画像の質量をグラフで伝播させ較正順位（共形$p$値）で読む共形ラベル伝播，自己ラベル付けした種からの負の伝播，交差適合で読み出し$\pfin$を共形$p$値にする枠組みSalmon Ladderを提案した．凍結した特徴抽出器とクラスあたり16枚のラベル付き画像だけで，OpenOOD v1.5 ImageNet-1Kのnear-OOD（単体で\AUC{} \NAloneNearAuroc\%，\FPR{} \NAloneNearFpr\%），far-OOD，Four-OOD，ImageNet-200，CIFAR-100のすべてで公開の最良値を更新し，near-OODの\FPR{}を\NAloneNearFprRatioVsBestOther{}分の1にした．利得の大半はグラフ上の伝播にあり，4つのベース検出器と6つの特徴抽出器で再現する．種はImageNet-1Kのnear-OODで\FPR{}をさらに\NAloneNearDfprVsLpAbs{}ポイント下げるが，効くのは再出現がクラスあたり10枚以上で混入率が中程度のときに限られ，閾値に上限$\tau{=}0.05$を付けた規則が混入率の高いときの害をほぼ消す（\secref{cap}）．限界は，1枚しか現れない未知には静的な検出器より劣ること，ベース検出器との積は命題4の外で床のない$\sigma$が要ること（登録外の形），理論が扱うのは有効性であって検知力ではないことである．
+支持画像の質量をグラフで伝播させ順位（共形$p$値）で読む共形ラベル伝播，自己ラベル付けした種からの負の伝播，参照画像で種を選び読む読み出し$\sR$からなる枠組みSalmon Ladderを提案した．凍結した特徴抽出器とクラスあたり16枚のラベル付き画像だけで，OpenOOD v1.5 ImageNet-1Kのnear-OOD（単体で\AUC{} \NRAloneNearAuroc\%，\FPR{} \NRAloneNearFpr\%），far-OOD，Four-OODで公開の最良値を更新し，ImageNet-200とCIFAR-100でも報告値の最良を上回った．利得の大半はグラフ上の伝播の確率の因子にあり，$\sR$は折なしに読み出しの保証を得て，同じ未知クラスの画像の検知の一部を系2でクラスの境界と種への辺から説明する．\textbf{推す構成．}$\sR$（ベース検出器があれば$s_0\exp\sR$）を推す．IDのテスト画像が1万枚程度と少なく未知が多い集合を含むImageNet-200とCIFAR-100では，種を使わない$\pP$だけ（参照画像で読み，同じ保証を持つ）が$\sR$と同等以上だったので，そうした運用には$\pP$だけを推す．45,000枚のIDに未知を加えた格子では，混入率10\%以上の\NRRecHiMixN{}条件（最大\NRRecHiMixMax\%）すべてで$\sR$が良く，混入率だけでは境目は決まらない．\textbf{限界．}1枚しか現れない未知には静的な検出器より劣り，描画への共変量シフトを未知とみなす．ベンチマークでは較正画像とテスト画像のずれのため保証は近似で，ベース検出器との積は命題4の外にある．開発用分割による構成の細部の選択はテスト集合に移らない．理論が扱うのは有効性と分離の上界で，検知力の全体ではない．
 
 
-{\makeatletter\@secpenalty=0 \makeatother\input{sections/refs19.tex}}
+{\makeatletter\@secpenalty=0 \makeatother\input{sections/refs22.tex}}
 
 \clearpage
 \onecolumn
@@ -142,9 +158,9 @@ OOD検知は，学習時のクラス（ID）以外の入力を見分ける問題
 \expandafter\let\csname figure*\endcsname\figure \expandafter\let\csname endfigure*\endcsname\endfigure
 \newcommand\appblock{\par\ifdim\dimexpr\pagegoal-\pagetotal\relax<5\baselineskip\newpage\else\medskip\fi} % 見出しだけがページの下に残らないように
 \makeatother
-\input{sections/appendix19.tex}
-\input{sections/app_h16_19.tex}
+\input{sections/appendix22.tex}
+\input{sections/app_h16_22.tex}
 \input{sections/app_h19.tex}
 \par\ifdim\dimexpr\pagegoal-\pagetotal\relax<12\baselineskip\newpage\fi % 付録の参考文献を途中で改ページしない
-\input{sections/refs_app19.tex}
+\input{sections/refs_app22.tex}
 \end{document}

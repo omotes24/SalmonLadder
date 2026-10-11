@@ -1,0 +1,21 @@
+{\fontsize{6.8pt}{8.0pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+\setlength{\tabcolsep}{2.0pt}\begin{tabular}{@{}lcccccc@{}}
+\hline
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{2}{c}{OpenOOD near-OOD} & \multicolumn{2}{c}{OpenOOD far-OOD} & \multicolumn{2}{c}{Four-OOD} \\
+\rule[-2.0pt]{0pt}{8.6pt}構成 & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ & AUROC$\uparrow$ & FPR95$\downarrow$ \\
+\hline
+\multicolumn{7}{@{}l}{\rule{0pt}{6.6pt}\textit{同じ特徴（DINOv2 L/14 + DINOv3 L/16）での読み出し，$\times$TINS（単体は付録\ref{sec:app_sens}の\tabref{ablx}）}} \\
+静的$p$（原型への余弦の較正順位，グラフなし） & 86.18 & 47.27 & 98.61 & 6.62 & 97.84 & 7.97 \\
+kNN~\cite{sun2022knn}（支持画像への$k{=}10$近傍の較正順位，グラフなし） & 83.63 & 51.34 & 98.23 & 8.31 & 97.68 & 8.45 \\
+LGC-max（支持画像のクラスラベルを伝播，最大クラス質量の較正順位） & 96.07 & 18.04 & 98.82 & 5.31 & 98.56 & 5.60 \\
+$\pP$のみ（支持画像からの伝播，種なし；参照画像で読む） & 97.59 & 12.13 & 99.01 & 4.33 & 98.99 & 3.51 \\
+$\pP\pN$，折も参照画像もなし（保証は種だけ） & 98.12 & 10.26 & 99.05 & 4.21 & 99.07 & 3.50 \\
+$\sigma$：2つの折で交差適合した$\pP\pN$ & 98.09 & 10.50 & 99.05 & 4.16 & 99.09 & 3.39 \\
+$\sigma$，上限付きの種（Storey型）（付録\ref{sec:app_cap}） & 97.88 & 10.69 & 99.07 & 4.05 & 99.09 & 3.38 \\
+$\sigma$，上限付きの種（単純BH法）（付録\ref{sec:app_cap}） & 97.89 & 10.66 & 99.08\sota & 4.02\sota & 99.10 & 3.32 \\
+$\sR$：参照画像で種を選び読む$\pP\pN$（本稿） & 98.13\sota & 10.21\sota & 99.06 & 4.14 & 99.09 & 3.39 \\
+$\sR$の較正順位$\pfin$をそのままスコアにしたもの & 97.50 & 13.00 & 99.03 & 4.40 & 99.17\sota & 2.97\sota \\
+$\pP\pN$，到着時採点，折なし（付録\ref{sec:app_online}） & 97.41 & 13.39 & 98.89 & 5.13 & 98.96 & 4.10 \\
+$\sigma$，到着時採点（付録\ref{sec:app_online}） & 97.35 & 13.83 & 98.87 & 5.25 & 98.97 & 4.00 \\
+\hline
+\end{tabular}}%

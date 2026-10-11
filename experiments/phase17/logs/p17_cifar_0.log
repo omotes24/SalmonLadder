@@ -1,0 +1,12 @@
+/home/omote/reprise_p5_20261002/code/engine.py:85: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at ../aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  return torch.sparse_coo_tensor(torch.stack([r, c]), wn.double(), (n, n)).coalesce().to_sparse_csr()
+{"task": "p17_cifar/draw0/cifar10", "seconds": 6.7, "utc": "2026-10-11T15:31:24Z", "bounds": null}
+{"task": "p17_cifar/draw0/texture", "seconds": 1.1, "utc": "2026-10-11T15:31:25Z", "bounds": null}
+{"task": "p17_cifar/draw1/mnist", "seconds": 5.5, "utc": "2026-10-11T15:31:31Z", "bounds": null}
+{"task": "p17_cifar/draw2/cifar10", "seconds": 1.2, "utc": "2026-10-11T15:31:32Z", "bounds": null}
+{"task": "p17_cifar/draw2/texture", "seconds": 1.0, "utc": "2026-10-11T15:31:33Z", "bounds": null}
+{"task": "p17_cifar/draw3/mnist", "seconds": 5.5, "utc": "2026-10-11T15:31:39Z", "bounds": null}
+{"task": "p17_cifar/draw4/cifar10", "seconds": 1.2, "utc": "2026-10-11T15:31:40Z", "bounds": null}
+{"task": "p17_cifar/draw4/texture", "seconds": 1.0, "utc": "2026-10-11T15:31:41Z", "bounds": null}
+{"task": "p17_cifar/draw5/mnist", "seconds": 5.5, "utc": "2026-10-11T15:31:47Z", "bounds": null}
+P17_DONE

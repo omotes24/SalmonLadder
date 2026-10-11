@@ -1,0 +1,36 @@
+{
+ "phase": "17",
+ "record": "outcome of the registered Phase 17 runs (no amendment of the registration)",
+ "written_utc": "2026-10-11T15:55:00Z",
+ "registration": "prereg_p17.json, SHA-256 068dd4d9ccddeecfd5fb2d2f2cd8ccb10ff47a0ccab7a711e2d9c6d55c2a5054; placed on the server 15:21:23Z; public at ee565d8 (branch phase12-15-registrations), confirmed with git ls-remote at 15:25:35Z",
+ "timeline": {
+  "runs": "START 15:25:53Z; dev done and adoption rule evaluated 15:26:28Z; test 15:30:36Z; in200 15:31:15Z; cifar 15:31:48Z; rec 15:35:46Z; csid 15:39:35Z (STATUS)",
+  "summary": "the registered ana17.py --summary failed at 15:39:38Z before writing any output (bounds_summary parsed the file name 'c5_r1_rep0' and took 'rep0' for an r-value because it starts with 'r'); ana17_fix.py is ana17.py with that one line changed (SHA-256 174d5eb4dabdde1eb657efe0d43f90b8b93254da83cbe26fd3ab65950232949b); it computes the same quantities; summary written 15:42:05Z"
+ },
+ "adoption_rule_on_dev2": {
+  "near": "FPR95 sigma_ref 12.94 vs sigma 12.92, paired difference +0.02 [-0.18, +0.21]; upper end <= +0.5: holds",
+  "far": "FPR95 16.65 vs 16.73, -0.08 [-0.50, +0.34]; upper end <= +0.5: holds",
+  "validity": "mean false-alarm rate of p_fin(sigma_ref) over the 10 dev2 tasks 0.0522 at alpha = 0.05 (<= 0.06) and 0.2045 at alpha = 0.2 (<= 0.21); BH FDP 0.176: holds",
+  "decision": "sigma_ref becomes the main configuration of the paper (v22); sigma is reported as the cross-fitted form of v18-v21. The decision was taken by the registered rule before any benchmark value existed and is not changed.",
+  "dev1_descriptive": "near 13.50 vs 13.75 (-0.25 [-0.43, -0.07]); far 16.51 vs 16.51 (0.00 [-0.86, +0.86]); false-alarm rate 0.0515 / 0.201"
+ },
+ "benchmarks_sigma_ref_vs_sigma": {
+  "imagenet1k_near_standalone": "AUROC 97.98 vs 97.94, FPR95 11.26 vs 11.50, difference -0.24 [-0.34, -0.15]",
+  "imagenet1k_far_standalone": "98.81 vs 98.79, 5.14 vs 5.17, -0.03 [-0.08, +0.01]",
+  "fourood_standalone": "98.81 vs 98.80, 4.55 vs 4.56, -0.01 [-0.07, +0.04]",
+  "x_tins": "near 98.13 / 10.21 vs 98.09 / 10.50 (-0.28 [-0.36, -0.20]); far 99.06 / 4.14 vs 99.05 / 4.16; Four-OOD 99.09 / 3.39 vs 99.09 / 3.39",
+  "imagenet200": "near 98.22 / 8.68 vs 98.17 / 9.07 (-0.39 [-1.06, +0.29]); far 99.40 / 2.06 vs 99.35 / 2.15",
+  "cifar100": "near 99.20 / 2.90 vs 99.18 / 2.90; far 99.37 / 2.48 vs 99.37 / 2.34 (+0.14 [-0.69, +0.98])",
+  "sigma_reproduced": "the sigma values recomputed in these runs equal Phase 14 (per data set, max |difference| 1e-6)"
+ },
+ "descriptive_findings": {
+  "decomposition_test_standalone_FPR95": "near: sqrt(delta) alone 97.97 (AUROC 37.99), q alone 11.85, u 12.35; far: 93.60 (AUROC 50.40), 8.69, 6.03; Four-OOD: 95.75, 7.36, 5.74",
+  "bounds_grid": "no violation of Corollary 2 (sigma, sigma_ref) or of Corollary A1 (h) in any cell; certified share (pbar <= 0.05) vs actual share (p_fin <= 0.05) e.g. NINCO c64 r30 sigma_ref 0.57 vs 0.98, SSB-hard c980 r50 0.006 vs 0.81; for h the calibration-side lower bound certifies no image in any cell (median rho*omega / s on the calibration images 0.31)",
+  "covariate_shift": "ImageNet-V2: ID vs V2 AUROC 54 (sigma_ref), false alarms on V2 at alpha 0.05 0.073 / 0.085 (near / far sets); ImageNet-R: ID vs R AUROC 96.8 / 98.2, false alarms on R at alpha 0.05 0.85 / 0.93 (renditions are treated as unknown)"
+ },
+ "deviation": "none",
+ "notes": [
+  "Every sigma_ref value is reported in the paper (v22) as computed.",
+  "The analysis fix concerns only the parsing of file names in bounds_summary; the per-image arrays and the registered definitions are unchanged."
+ ]
+}

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/omote/reprise_p17_20261011/code/ana17.py", line 239, in <module>
+    summary()
+  File "/home/omote/reprise_p17_20261011/code/ana17.py", line 213, in summary
+    res["bounds"] = bounds_summary()
+                    ^^^^^^^^^^^^^^^^
+  File "/home/omote/reprise_p17_20261011/code/ana17.py", line 129, in bounds_summary
+    c, r, rep = (int(x[1:]) if x[0] in "cr" else int(x[3:]) for x in name.split("_"))
+    ^^^^^^^^^
+  File "/home/omote/reprise_p17_20261011/code/ana17.py", line 129, in <genexpr>
+    c, r, rep = (int(x[1:]) if x[0] in "cr" else int(x[3:]) for x in name.split("_"))
+                 ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'ep0'

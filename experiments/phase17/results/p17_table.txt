@@ -1,0 +1,92 @@
+== dev_dev1 ==
+near     xfit|storey|q0.2|pp|pooled|none    AUROC  97.08 FPR95  13.75
+near     ref|storey|q0.2|pp|stat|none       AUROC  97.11 FPR95  13.50  d_vs_sigma -0.25 [-0.43, -0.07]
+near     ref|storey|q0.2|pp|none            AUROC  97.11 FPR95  13.49  d_vs_sigma -0.26 [-0.43, -0.08]
+near     xfit|lp|pooled|none                AUROC  95.66 FPR95  18.77  d_vs_sigma +5.02 [+4.68, +5.37]
+near     xfit|storey|q0.2|pp|pooled|TINS    AUROC  97.07 FPR95  13.86
+near     ref|storey|q0.2|pp|stat|TINS       AUROC  97.10 FPR95  13.71  d_vs_sigma -0.15 [-0.37, +0.07]
+far      xfit|storey|q0.2|pp|pooled|none    AUROC  96.70 FPR95  16.51
+far      ref|storey|q0.2|pp|stat|none       AUROC  96.66 FPR95  16.51  d_vs_sigma +0.00 [-0.86, +0.86]
+far      ref|storey|q0.2|pp|none            AUROC  96.66 FPR95  16.48  d_vs_sigma -0.02 [-0.97, +0.92]
+far      xfit|lp|pooled|none                AUROC  96.51 FPR95  16.31  d_vs_sigma -0.19 [-1.43, +1.04]
+far      xfit|storey|q0.2|pp|pooled|TINS    AUROC  96.89 FPR95  15.86
+far      ref|storey|q0.2|pp|stat|TINS       AUROC  96.84 FPR95  16.01  d_vs_sigma +0.16 [-0.39, +0.71]
+== dev_dev2 ==
+near     xfit|storey|q0.2|pp|pooled|none    AUROC  97.16 FPR95  12.92
+near     ref|storey|q0.2|pp|stat|none       AUROC  97.19 FPR95  12.94  d_vs_sigma +0.02 [-0.18, +0.21]
+near     ref|storey|q0.2|pp|none            AUROC  97.19 FPR95  12.94  d_vs_sigma +0.01 [-0.28, +0.30]
+near     xfit|lp|pooled|none                AUROC  96.01 FPR95  17.33  d_vs_sigma +4.40 [+3.97, +4.83]
+near     xfit|storey|q0.2|pp|pooled|TINS    AUROC  97.11 FPR95  13.32
+near     ref|storey|q0.2|pp|stat|TINS       AUROC  97.14 FPR95  13.32  d_vs_sigma +0.00 [-0.33, +0.34]
+far      xfit|storey|q0.2|pp|pooled|none    AUROC  96.56 FPR95  16.73
+far      ref|storey|q0.2|pp|stat|none       AUROC  96.56 FPR95  16.65  d_vs_sigma -0.08 [-0.50, +0.34]
+far      ref|storey|q0.2|pp|none            AUROC  96.56 FPR95  16.65  d_vs_sigma -0.08 [-0.49, +0.33]
+far      xfit|lp|pooled|none                AUROC  96.46 FPR95  17.24  d_vs_sigma +0.51 [-0.20, +1.22]
+far      xfit|storey|q0.2|pp|pooled|TINS    AUROC  96.72 FPR95  16.36
+far      ref|storey|q0.2|pp|stat|TINS       AUROC  96.72 FPR95  16.21  d_vs_sigma -0.15 [-0.46, +0.17]
+== test_openood ==
+near     xfit|storey|q0.2|pp|pooled|none    AUROC  97.94 FPR95  11.50
+near     ref|storey|q0.2|pp|stat|none       AUROC  97.98 FPR95  11.26  d_vs_sigma -0.24 [-0.34, -0.15]
+near     ref|storey|q0.2|pp|none            AUROC  97.97 FPR95  11.26  d_vs_sigma -0.24 [-0.33, -0.14]
+near     xfit|lp|pooled|none                AUROC  97.53 FPR95  12.36  d_vs_sigma +0.86 [+0.67, +1.05]
+near     dec|deg|none                       AUROC  37.99 FPR95  97.97  d_vs_sigma +86.47 [+86.16, +86.79]
+near     dec|q|none                         AUROC  97.49 FPR95  11.85  d_vs_sigma +0.35 [+0.19, +0.51]
+near     dec|u|none                         AUROC  97.54 FPR95  12.35  d_vs_sigma +0.85 [+0.67, +1.02]
+near     dec|sigma_q|none                   AUROC  97.77 FPR95  12.09  d_vs_sigma +0.59 [+0.44, +0.74]
+near     xfit|storey|q0.2|pp|pooled|TINS    AUROC  98.09 FPR95  10.50
+near     ref|storey|q0.2|pp|stat|TINS       AUROC  98.13 FPR95  10.21  d_vs_sigma -0.28 [-0.36, -0.20]
+far      xfit|storey|q0.2|pp|pooled|none    AUROC  98.79 FPR95   5.17
+far      ref|storey|q0.2|pp|stat|none       AUROC  98.81 FPR95   5.14  d_vs_sigma -0.03 [-0.08, +0.01]
+far      ref|storey|q0.2|pp|none            AUROC  98.79 FPR95   5.14  d_vs_sigma -0.03 [-0.09, +0.02]
+far      xfit|lp|pooled|none                AUROC  98.45 FPR95   6.04  d_vs_sigma +0.87 [+0.74, +1.00]
+far      dec|deg|none                       AUROC  50.40 FPR95  93.60  d_vs_sigma +88.43 [+88.00, +88.87]
+far      dec|q|none                         AUROC  97.13 FPR95   8.69  d_vs_sigma +3.52 [+3.31, +3.72]
+far      dec|u|none                         AUROC  98.46 FPR95   6.03  d_vs_sigma +0.86 [+0.72, +1.01]
+far      dec|sigma_q|none                   AUROC  98.40 FPR95   6.26  d_vs_sigma +1.09 [+0.91, +1.27]
+far      xfit|storey|q0.2|pp|pooled|TINS    AUROC  99.05 FPR95   4.16
+far      ref|storey|q0.2|pp|stat|TINS       AUROC  99.06 FPR95   4.14  d_vs_sigma -0.02 [-0.07, +0.02]
+== test_fourood ==
+fourood  xfit|storey|q0.2|pp|pooled|none    AUROC  98.80 FPR95   4.56
+fourood  ref|storey|q0.2|pp|stat|none       AUROC  98.81 FPR95   4.55  d_vs_sigma -0.01 [-0.07, +0.04]
+fourood  ref|storey|q0.2|pp|none            AUROC  98.80 FPR95   4.55  d_vs_sigma -0.01 [-0.07, +0.05]
+fourood  xfit|lp|pooled|none                AUROC  98.26 FPR95   5.75  d_vs_sigma +1.19 [+1.09, +1.28]
+fourood  dec|deg|none                       AUROC  48.84 FPR95  95.75  d_vs_sigma +91.18 [+90.87, +91.50]
+fourood  dec|q|none                         AUROC  97.57 FPR95   7.36  d_vs_sigma +2.80 [+2.59, +3.00]
+fourood  dec|u|none                         AUROC  98.27 FPR95   5.74  d_vs_sigma +1.18 [+1.08, +1.28]
+fourood  dec|sigma_q|none                   AUROC  98.58 FPR95   5.32  d_vs_sigma +0.75 [+0.63, +0.88]
+fourood  xfit|storey|q0.2|pp|pooled|TINS    AUROC  99.09 FPR95   3.39
+fourood  ref|storey|q0.2|pp|stat|TINS       AUROC  99.09 FPR95   3.39  d_vs_sigma -0.00 [-0.04, +0.04]
+== in200 ==
+near     xfit|storey|q0.2|pp|pooled|none    AUROC  98.17 FPR95   9.07
+near     ref|storey|q0.2|pp|stat|none       AUROC  98.22 FPR95   8.68  d_vs_sigma -0.39 [-1.06, +0.29]
+near     ref|storey|q0.2|pp|none            AUROC  98.14 FPR95   8.57  d_vs_sigma -0.50 [-1.07, +0.07]
+near     xfit|lp|pooled|none                AUROC  98.43 FPR95   7.45  d_vs_sigma -1.62 [-2.19, -1.05]
+near     dec|deg|none                       AUROC  40.85 FPR95  97.84  d_vs_sigma +88.77 [+88.24, +89.30]
+near     dec|q|none                         AUROC  98.61 FPR95   7.09  d_vs_sigma -1.99 [-2.60, -1.37]
+near     dec|u|none                         AUROC  98.49 FPR95   7.47  d_vs_sigma -1.60 [-2.10, -1.11]
+near     dec|sigma_q|none                   AUROC  97.77 FPR95   9.90  d_vs_sigma +0.82 [+0.28, +1.36]
+far      xfit|storey|q0.2|pp|pooled|none    AUROC  99.35 FPR95   2.15
+far      ref|storey|q0.2|pp|stat|none       AUROC  99.40 FPR95   2.06  d_vs_sigma -0.09 [-0.23, +0.06]
+far      ref|storey|q0.2|pp|none            AUROC  99.31 FPR95   2.18  d_vs_sigma +0.03 [-0.13, +0.19]
+far      xfit|lp|pooled|none                AUROC  99.39 FPR95   1.25  d_vs_sigma -0.90 [-1.11, -0.69]
+far      dec|deg|none                       AUROC  52.90 FPR95  93.34  d_vs_sigma +91.19 [+90.99, +91.38]
+far      dec|q|none                         AUROC  99.21 FPR95   1.89  d_vs_sigma -0.26 [-0.48, -0.05]
+far      dec|u|none                         AUROC  99.44 FPR95   1.22  d_vs_sigma -0.93 [-1.12, -0.73]
+far      dec|sigma_q|none                   AUROC  99.17 FPR95   1.62  d_vs_sigma -0.53 [-0.75, -0.30]
+== cifar ==
+near     xfit|storey|q0.2|pp|pooled|none    AUROC  99.18 FPR95   2.90
+near     ref|storey|q0.2|pp|stat|none       AUROC  99.20 FPR95   2.90  d_vs_sigma +0.01 [-0.09, +0.10]
+near     ref|storey|q0.2|pp|none            AUROC  98.99 FPR95   2.87  d_vs_sigma -0.03 [-0.31, +0.25]
+near     xfit|lp|pooled|none                AUROC  99.11 FPR95   2.88  d_vs_sigma -0.02 [-0.29, +0.25]
+near     dec|deg|none                       AUROC  50.82 FPR95  93.06  d_vs_sigma +90.16 [+89.90, +90.41]
+near     dec|q|none                         AUROC  98.74 FPR95   3.82  d_vs_sigma +0.92 [+0.58, +1.26]
+near     dec|u|none                         AUROC  99.19 FPR95   2.83  d_vs_sigma -0.07 [-0.29, +0.15]
+near     dec|sigma_q|none                   AUROC  98.95 FPR95   3.14  d_vs_sigma +0.25 [+0.17, +0.33]
+far      xfit|storey|q0.2|pp|pooled|none    AUROC  99.37 FPR95   2.34
+far      ref|storey|q0.2|pp|stat|none       AUROC  99.37 FPR95   2.48  d_vs_sigma +0.14 [-0.69, +0.98]
+far      ref|storey|q0.2|pp|none            AUROC  99.19 FPR95   2.48  d_vs_sigma +0.14 [-0.73, +1.00]
+far      xfit|lp|pooled|none                AUROC  99.57 FPR95   1.22  d_vs_sigma -1.11 [-1.49, -0.74]
+far      dec|deg|none                       AUROC  33.35 FPR95  96.72  d_vs_sigma +94.39 [+93.92, +94.85]
+far      dec|q|none                         AUROC  99.49 FPR95   1.51  d_vs_sigma -0.83 [-1.27, -0.38]
+far      dec|u|none                         AUROC  99.62 FPR95   1.17  d_vs_sigma -1.16 [-1.61, -0.72]
+far      dec|sigma_q|none                   AUROC  98.87 FPR95   2.30  d_vs_sigma -0.04 [-0.19, +0.12]

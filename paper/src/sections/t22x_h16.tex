@@ -1,0 +1,23 @@
+{\fontsize{6.5pt}{7.6pt}\selectfont\renewcommand{\arraystretch}{1.0}%
+\setlength{\tabcolsep}{1.7pt}\begin{tabular}{@{}lcc|cc|c@{}}
+\hline
+\rule[-2.0pt]{0pt}{8.6pt} & \multicolumn{2}{c|}{$\sigma$（交差適合）} & \multicolumn{2}{c|}{一つの量$h$} & \\
+\rule[-2.0pt]{0pt}{8.6pt}設定 & \AUC & \FPR & \AUC & \FPR & \FPR{}の差 [95\%区間] \\
+\hline
+dev2 near（登録した確認） & 97.16 & 12.92 & 96.89 & 12.87 & -0.06 [-1.00, +0.89] \\
+dev2 far（登録した確認） & 96.56 & 16.73 & 96.18 & 16.98 & +0.25 [-1.04, +1.54] \\
+\hline
+ImageNet-1K near-OOD & 97.94 & 11.50 & 97.18 & 13.65 & +2.14 [+1.70, +2.58] \\
+ImageNet-1K far-OOD & 98.79 & 5.17 & 98.20 & 7.32 & +2.15 [+1.87, +2.42] \\
+Four-OOD & 98.80 & 4.56 & 98.04 & 7.00 & +2.44 [+2.06, +2.81] \\
+\hline
+ImageNet-200 near-OOD & 98.17 & 9.07 & 96.57 & 8.10 & -0.97 [-1.38, -0.56] \\
+ImageNet-200 far-OOD & 99.35 & 2.15 & 98.59 & 4.15 & +2.00 [+1.77, +2.23] \\
+CIFAR-100 near-OOD & 99.18 & 2.90 & 98.44 & 6.42 & +3.52 [+3.17, +3.87] \\
+CIFAR-100 far-OOD & 99.37 & 2.34 & 97.56 & 3.31 & +0.97 [+0.50, +1.44] \\
+\hline
+ImageNet-1K near-OOD $\times$TINS & 98.09 & 10.50 & 96.75 & 18.58 & +8.09 [+7.54, +8.64] \\
+ImageNet-1K far-OOD $\times$TINS & 99.05 & 4.16 & 98.88 & 4.92 & +0.77 [+0.60, +0.93] \\
+Four-OOD $\times$TINS & 99.09 & 3.39 & 98.97 & 3.56 & +0.18 [+0.07, +0.28] \\
+\hline
+\end{tabular}}%

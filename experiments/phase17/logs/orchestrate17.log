@@ -1,0 +1,15 @@
+2026-10-11T15:25:53Z P17 START gpus=0 1 2 3 steps=dev,test,in200,cifar,rec,csid,ana prereg_sha256=068dd4d9ccddeecf
+2026-10-11T15:25:53Z dev start
+2026-10-11T15:26:28Z dev done: adopt="adopt_sigma_ref_as_main": true
+2026-10-11T15:26:28Z test start
+2026-10-11T15:30:36Z test done
+2026-10-11T15:30:36Z in200 start
+2026-10-11T15:31:15Z in200 done
+2026-10-11T15:31:15Z cifar start
+2026-10-11T15:31:48Z cifar done
+2026-10-11T15:31:48Z rec start
+2026-10-11T15:35:46Z rec done
+2026-10-11T15:35:46Z csid start
+2026-10-11T15:39:35Z csid done
+2026-10-11T15:39:35Z ana start
+2026-10-11T15:39:38Z FAILED ana17 summary
