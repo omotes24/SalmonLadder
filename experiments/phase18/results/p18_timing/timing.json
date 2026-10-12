@@ -1,0 +1,67 @@
+{
+ "task": "openood ssb_hard draw p3, views L14 + D3L",
+ "gpu": "NVIDIA GeForce RTX 2080 Ti",
+ "reps": [
+  {
+   "seconds": {
+    "graph": 6.206,
+    "u_pos": 0.137,
+    "seeds": 0.024,
+    "u_neg": 0.08,
+    "read": 0.017,
+    "pfin": 0.006
+   },
+   "total": 7.361,
+   "nodes": {
+    "L14": 110000,
+    "D3L": 110000
+   },
+   "nnz": {
+    "L14": 1710994,
+    "D3L": 1656984
+   },
+   "peak_gpu_mb": 1363.0
+  },
+  {
+   "seconds": {
+    "graph": 5.897,
+    "u_pos": 0.079,
+    "seeds": 0.02,
+    "u_neg": 0.081,
+    "read": 0.015,
+    "pfin": 0.006
+   },
+   "total": 6.834,
+   "nodes": {
+    "L14": 110000,
+    "D3L": 110000
+   },
+   "nnz": {
+    "L14": 1710994,
+    "D3L": 1656984
+   },
+   "peak_gpu_mb": 1363.0
+  },
+  {
+   "seconds": {
+    "graph": 5.924,
+    "u_pos": 0.08,
+    "seeds": 0.02,
+    "u_neg": 0.081,
+    "read": 0.015,
+    "pfin": 0.006
+   },
+   "total": 6.861,
+   "nodes": {
+    "L14": 110000,
+    "D3L": 110000
+   },
+   "nnz": {
+    "L14": 1710994,
+    "D3L": 1656984
+   },
+   "peak_gpu_mb": 1363.0
+  }
+ ],
+ "utc": "2026-10-12T08:01:08Z"
+}

@@ -1,0 +1,12 @@
+2026-10-12T07:48:37Z P18 START gpus=0 1 2 steps=main,views,valrc,timing,ana code_sha256=4f32d8fcce75fcbc
+2026-10-12T07:48:37Z main start
+2026-10-12T07:57:06Z main done
+2026-10-12T07:57:06Z views start
+2026-10-12T07:58:13Z views done
+2026-10-12T07:58:13Z valrc start
+2026-10-12T08:00:36Z valrc done
+2026-10-12T08:00:36Z timing start
+2026-10-12T08:01:09Z timing done
+2026-10-12T08:01:09Z ana start
+2026-10-12T08:01:12Z ana done
+2026-10-12T08:01:12Z P18 DONE steps=main,views,valrc,timing,ana

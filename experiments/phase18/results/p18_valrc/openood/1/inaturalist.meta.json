@@ -1,0 +1,33 @@
+{
+ "seeds": {
+  "L14": {
+   "seeds": 12873,
+   "cal_seeds": 126,
+   "idfrac": 0.22566612289287658,
+   "pi0_hat": 0.8176264787843736
+  },
+  "D3L": {
+   "seeds": 12339,
+   "cal_seeds": 94,
+   "idfrac": 0.19183078045222465,
+   "pi0_hat": 0.8127517219622483
+  }
+ },
+ "proto_acc_of_val_RC": {
+  "L14": 0.77025,
+  "D3L": 0.796
+ },
+ "n_removed_from_test": 0,
+ "val_first_names": [
+  "ILSVRC2012_val_00048204.JPEG",
+  "ILSVRC2012_val_00006697.JPEG",
+  "ILSVRC2012_val_00048969.JPEG",
+  "ILSVRC2012_val_00040358.JPEG",
+  "ILSVRC2012_val_00004677.JPEG",
+  "ILSVRC2012_val_00013623.JPEG",
+  "ILSVRC2012_val_00030060.JPEG",
+  "ILSVRC2012_val_00006007.JPEG"
+ ],
+ "seconds": 5.0,
+ "utc": "2026-10-12T07:59:14Z"
+}
